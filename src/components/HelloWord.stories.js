@@ -9,3 +9,4 @@ export default {
 const Template = (args) => <HelloWorld {...args} />;
 
 export const Primary = Template.bind({});
+Primary.args = {};

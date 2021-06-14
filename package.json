@@ -20,12 +20,12 @@
     "build-watch": "rollup -c -w",
     "i-all": "npm i && cd playground && npm i",
     "dev": "npm-run-all --parallel build-watch start-playground",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
     "test": "react-scripts test",
     "pre-commit": "lint-staged",
     "lint": "prettier --write \"*.{js,md}\" --write \".storybook/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"playground/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,md,css}": [
@@ -69,10 +69,11 @@
     "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
-    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.2.9",
     "@tailwindcss/postcss7-compat": "^2.1.4",
     "autoprefixer": "^9.8.6",
+    "babel-loader": "^8.2.2",
     "babel-plugin-polyfill-corejs2": "^0.2.2",
     "babel-plugin-polyfill-corejs3": "^0.2.2",
     "babel-plugin-polyfill-regenerator": "^0.2.2",
