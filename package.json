@@ -1,7 +1,6 @@
 {
   "name": "decd-design-system",
   "version": "0.1.0",
-  "private": true,
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "source": "src/index.js",
@@ -19,11 +18,11 @@
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
     "build-watch": "rollup -c -w",
-    "start-playground": "cd playground && npm run start",
     "i-all": "npm i && cd playground && npm i",
     "dev": "npm-run-all --parallel build-watch start-playground",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "test": "react-scripts test",
     "pre-commit": "lint-staged",
     "lint": "prettier --write \"*.{js,md}\" --write \".storybook/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"playground/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
     "prepare": "husky install"
@@ -38,7 +37,7 @@
     "playground/**/*.{js,jsx,ts,tsx,json,md,css}": [
       "prettier --write"
     ],
-    "*.{js,md}":[
+    "*.{js,md}": [
       "prettier --write"
     ]
   },
@@ -74,7 +73,11 @@
     "@storybook/react": "^6.2.9",
     "@tailwindcss/postcss7-compat": "^2.1.4",
     "autoprefixer": "^9.8.6",
-    "babel-loader": "^8.2.2",
+    "babel-plugin-polyfill-corejs2": "^0.2.2",
+    "babel-plugin-polyfill-corejs3": "^0.2.2",
+    "babel-plugin-polyfill-regenerator": "^0.2.2",
+    "husky": "^6.0.0",
+    "jest-axe": "^5.0.1",
     "lint-staged": "^11.0.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^7.0.36",
@@ -83,7 +86,6 @@
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^2.8.2",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.4",
-    "husky": "^6.0.0"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.4"
   }
 }
