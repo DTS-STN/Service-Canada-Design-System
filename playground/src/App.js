@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { HelloWorld } from "decd-design-system";
+import { HelloWorld as ProductionHelloWorld } from "@dts-stn/decd-design-system";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <HelloWorld />
+        <ProductionHelloWorld />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>

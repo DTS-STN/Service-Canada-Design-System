@@ -8,16 +8,26 @@ This library contains reusable components that are accessible and can be used ac
 
 ## Using this Package in Your Project 🤓
 
-The package is hosted in npm. To use it simply install it as one of your dependencies
+The package is hosted in github packages. To use it simply install it as one of your dependencies
+
+First create a `.npmrc` file in the same directory as your `package.json` with the following content.
+
+```text
+@dts-stn:registry=https://npm.pkg.github.com
+```
+
+This specifies that any package scoped @dts-stn should come from the github npm registry (where this package is located).
+
+Then install the package using this command
 
 ```bash
-$ npm install --save decd-design-system
+$ npm install --save @dts-stn/decd-design-system
 ```
 
 You can then import the components you wish to use anywhere in your project
 
 ```js
-import { Component } from "decd-design-system";
+import { Component } from "@dts-stn/decd-design-system";
 ```
 
 ## Developing this Package 👨🏽‍💻👩🏽‍💻
