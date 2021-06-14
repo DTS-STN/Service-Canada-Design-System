@@ -42,7 +42,7 @@ jobs:
             Storybooks Link For Branch
             https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ steps.extract_branch.outputs.branch }}
       - name: Create or update comment # comment in pull request storybooks link
-        if: steps.extract_branch.outputs.branch != 'main'
+        if: steps.extract_branch.outputs.branch != 'master'
         uses: peter-evans/create-or-update-comment@v1
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
