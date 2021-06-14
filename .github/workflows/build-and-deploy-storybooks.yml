@@ -3,7 +3,7 @@ on:
   pull_request:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-deploy:
@@ -32,7 +32,7 @@ jobs:
           CLEAN: true # Automatically remove deleted files from the deploy branch
 
       - name: Find Comment
-        if: steps.extract_branch.outputs.branch != 'main'
+        if: steps.extract_branch.outputs.branch != 'master'
         uses: peter-evans/find-comment@v1
         id: fc
         with:
