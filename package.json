@@ -7,9 +7,9 @@
   "repository": {
     "url": "https://github.com/DTS-STN/DECD-Design-System"
   },
-  "files":  [
-   "dist/**/*"
-    ],
+  "files": [
+    "dist/**/*"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -96,6 +96,7 @@
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^2.8.2",
+    "rollup-plugin-uglify": "^6.0.4",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.4"
   }
 }
