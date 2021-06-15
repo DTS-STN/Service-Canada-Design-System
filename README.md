@@ -1,4 +1,5 @@
 [![Build and Deploy Storybooks](https://github.com/DTS-STN/DECD-Design-System/actions/workflows/build-and-deploy-storybooks.yml/badge.svg)](https://github.com/DTS-STN/DECD-Design-System/actions/workflows/build-and-deploy-storybooks.yml)
+![Version](https://img.shields.io/github/package-json/v/dts-stn/decd-design-system)
 
 # DECD Design System Component Library 🎨
 
