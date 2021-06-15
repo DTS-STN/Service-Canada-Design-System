@@ -101,11 +101,6 @@ html {
   .border-outset {
     border-style: outset;
   }
-
-  .icon-up-caret:before {
-    content: url(../public/up-caret.svg);
-  }
-
   .skip-main {
     @apply absolute w-px h-px -left-96;
   }
@@ -164,8 +159,4 @@ html {
       height: 218px;
     }
   }
-}
-
-.footerBackground {
-  background: #26374a url(../public/landscape.png) no-repeat right bottom;
 }

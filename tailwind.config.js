@@ -45,10 +45,6 @@ module.exports = {
       xxl: "1200px",
     },
     extend: {
-      backgroundImage: (theme) => ({
-        "banner-img": "url('../public/bg-banner.jpg')",
-        "footer-parliament-image": "url(../public/landscape.png)",
-      }),
       colors: {
         "custom-blue": {
           blue: "#1D5B90",
