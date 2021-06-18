@@ -39,6 +39,7 @@ jobs:
         run: echo Release ID ${{ steps.release.outputs.release_id }}
 
       - name: add token to .npmrc file
+        if: ${{ steps.release.outputs.released == 'true' }}
         run: echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> .npmrc
 
       # Publish the package if the release is created
