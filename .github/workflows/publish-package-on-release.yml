@@ -30,13 +30,13 @@ jobs:
         run: npm run build
 
      # create the github release
-      - name: Release
-        uses: justincy/github-action-npm-release@2.0.2
-        id: release
+     # - name: Release
+     #   uses: justincy/github-action-npm-release@2.0.2
+     #   id: release
 
-      - name: Print release output
-        if: ${{ steps.release.outputs.released == 'true' }}
-        run: echo Release ID ${{ steps.release.outputs.release_id }}
+      # - name: Print release output
+        # if: ${{ steps.release.outputs.released == 'true' }}
+      #  run: echo Release ID ${{ steps.release.outputs.release_id }}
 
       # Publish the package if the release is created
       - name: Publish the package
