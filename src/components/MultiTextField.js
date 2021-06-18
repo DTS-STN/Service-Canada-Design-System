@@ -2,9 +2,15 @@ import PropTypes from "prop-types";
 import ErrorLabel from "./ErrorLabel";
 
 /**
- * multi line text field
+ * Multi line text field with label that can be used in forms or stand-alone input.
+ * The value of this component can optionally be controlled by react or by the underlying DOM
  */
 export default function MultiTextField(props) {
+  const ifControlledProps = !props.uncontrolled
+    ? {
+        value: props.value,
+      }
+    : {};
   return (
     <div
       className={`block leading-tight${
@@ -43,6 +49,7 @@ export default function MultiTextField(props) {
         required={props.required}
         data-testid={props.dataTestId}
         data-cy={props.dataCy}
+        {...ifControlledProps}
       >
         {props.value}
       </textarea>
@@ -74,6 +81,10 @@ MultiTextField.propTypes = {
    */
   label: PropTypes.string.isRequired,
 
+  /**
+   * whether or not the component is controlled by react
+   */
+  uncontrolled: PropTypes.bool,
   /**
    * the value for the multi text field
    */

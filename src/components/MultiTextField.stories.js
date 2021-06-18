@@ -28,6 +28,18 @@ Primary.args = {
   placeholder: "some placeholder text",
 };
 
+export const UnControlled = Template.bind({});
+UnControlled.args = {
+  id: "multiTextField1",
+  name: "multiTextField1",
+  label: "I am a multi text field",
+  dataTestId: "multitext-one",
+  requiredText: "required",
+  optionalText: "optional",
+  uncontrolled: true,
+  placeholder: "some placeholder text",
+};
+
 export const BoldLabel = Template.bind({});
 BoldLabel.args = {
   id: "multiTextField1",
