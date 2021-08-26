@@ -1,5 +1,5 @@
 import React from "react";
-import MultiTextField from "./MultiTextField";
+import { MultiTextField } from "./MultiTextField";
 
 export default {
   title: "Components/Form Components/MultiTextField",
@@ -15,7 +15,7 @@ export default {
   ],
 };
 
-const Template = (args) => <MultiTextField {...args} />;
+const Template = (args) => <MultiTextField i {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -25,18 +25,7 @@ Primary.args = {
   dataTestId: "multitext-one",
   requiredText: "required",
   optionalText: "optional",
-  placeholder: "some placeholder text",
-};
-
-export const UnControlled = Template.bind({});
-UnControlled.args = {
-  id: "multiTextField1",
-  name: "multiTextField1",
-  label: "I am a multi text field",
-  dataTestId: "multitext-one",
-  requiredText: "required",
-  optionalText: "optional",
-  uncontrolled: true,
+  doNotIncludeText: "disclaimer",
   placeholder: "some placeholder text",
 };
 
@@ -48,6 +37,7 @@ BoldLabel.args = {
   dataTestId: "multitext-bold",
   requiredText: "required",
   optionalText: "optional",
+  doNotIncludeText: "disclaimer",
   placeholder: "some placeholder text",
   boldLabel: true,
 };
@@ -60,6 +50,7 @@ HardWrap.args = {
   dataTestId: "multitext-hard-wrap",
   requiredText: "required",
   optionalText: "optional",
+  doNotIncludeText: "disclaimer",
   placeholder: "some placeholder text",
   cols: 30,
   rows: 5,

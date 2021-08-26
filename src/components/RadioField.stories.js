@@ -1,5 +1,5 @@
 import React from "react";
-import RadioField from "./RadioField";
+import { RadioField } from "./RadioField";
 
 export default {
   title: "Components/Form Components/RadioField",
@@ -20,50 +20,28 @@ const Template = (args) => <RadioField {...args} />;
 export const UnChecked = Template.bind({});
 UnChecked.args = {
   id: "radio 1",
-  name: "Radio1",
+  name: "RadioField1",
   value: "IsChecked",
-  label: "I am a radio field",
-  dataTestId: "unchecked-radio",
+  label: "I am a radio button",
+  dataTestId: "unchecked-radio-field",
 };
 
 export const Checked = Template.bind({});
 Checked.args = {
   id: "radio 1",
-  name: "Radio1",
+  name: "RadioField1",
   value: "IsChecked",
-  label: "I am a checked radio field",
-  dataTestId: "checked-radio",
+  label: "I am a radio button",
+  dataTestId: "checked-radio-field",
   checked: true,
 };
 
 export const UnControlled = Template.bind({});
 UnControlled.args = {
   id: "radio 1",
-  name: "Radio1",
+  name: "RadioField1",
   value: "IsChecked",
-  label: "I am an uncontrolled radio field",
-  dataTestId: "uncontrolled-radio",
+  label: "I am an uncontrolled checkbox",
+  dataTestId: "uncontrolled-checkbox",
   uncontrolled: true,
-};
-
-export const Error = Template.bind({});
-Error.args = {
-  id: "radio 1",
-  name: "Radio1",
-  value: "IsChecked",
-  error: true,
-  label: "I am a radio field with an error",
-  dataTestId: "error-radio",
-  uncontrolled: true,
-};
-
-export const Required = Template.bind({});
-Required.args = {
-  id: "radio 1",
-  name: "Radio1",
-  value: "IsChecked",
-  label: "I am a required radio field",
-  dataTestId: "required-radio",
-  showRequiredLabel: true,
-  requiredText: "required",
 };
