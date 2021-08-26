@@ -1,5 +1,5 @@
 import React from "react";
-import TextField from "./TextField";
+import { TextField } from "./TextField";
 
 export default {
   title: "Components/Form Components/TextField",
@@ -25,6 +25,7 @@ Primary.args = {
   dataTestId: "textbox-controlled",
   requiredText: "required",
   optionalText: "optional",
+  doNotIncludeText: "disclaimer",
   placeholder: "Some placeholder text",
 };
 
@@ -36,34 +37,9 @@ UnControlled.args = {
   placeholder: "Some placeholder text",
   requiredText: "required",
   optionalText: "optional",
+  doNotIncludeText: "disclaimer",
   dataTestId: "textbox-uncontrolled",
   uncontrolled: true,
-};
-
-export const Required = Template.bind({});
-Required.args = {
-  id: "textField1",
-  name: "textField1",
-  label: "I am a text field",
-  placeholder: "Some placeholder text",
-  requiredText: "required",
-  optionalText: "optional",
-  dataTestId: "textbox-required",
-  uncontrolled: true,
-  required: true,
-};
-
-export const Error = Template.bind({});
-Error.args = {
-  id: "textField1",
-  name: "textField1",
-  label: "I am a text field",
-  placeholder: "Some placeholder text",
-  requiredText: "required",
-  optionalText: "optional",
-  dataTestId: "textbox-error",
-  uncontrolled: true,
-  error: "Some error has occurred",
 };
 
 export const BoldLabel = Template.bind({});
@@ -75,6 +51,7 @@ BoldLabel.args = {
   dataTestId: "textbox-bold",
   requiredText: "required",
   optionalText: "optional",
+  doNotIncludeText: "disclaimer",
   uncontrolled: true,
   boldLabel: true,
 };

@@ -1,14 +1,12 @@
-import React, { useState } from "react";
-import CheckBox from "./CheckBox";
-import TextField from "./TextField";
-import MultiTextField from "./MultiTextField";
-import RadioField from "./RadioField";
+import { useState } from "react";
+import { CheckBox } from "./CheckBox";
+import { TextField } from "./TextField";
+import { MultiTextField } from "./MultiTextField";
+import { RadioField } from "./RadioField";
 import PropTypes from "prop-types";
 
 /**
- * An optional text box that is enabled by a checkbox or radio button. You can specify
- * if the checked state of the checkbox/radio and the value of the text field/multi line text field
- * is controlled by react or the underlying DOM
+ * An optional text box that is enabled by a checkbox
  */
 export function OptionalTextField(props) {
   let [showTextField, setShowTextField] = useState(props.checked || false);
@@ -30,6 +28,7 @@ export function OptionalTextField(props) {
           label={props.controlLabel}
           id={props.controlId}
           name={props.controlName}
+          className={props.checkBoxStyle}
           checked={props.checked}
           uncontrolled={props.uncontrolled}
           value={props.controlValue}
@@ -61,20 +60,22 @@ export function OptionalTextField(props) {
             name={props.textFieldName}
             id={props.textFieldId}
             value={props.textFieldValue}
-            uncontrolled={props.uncontrolled}
             boldLabel={props.textLabelBold}
             rows={props.rows}
             cols={props.cols}
             spellCheck={props.spellCheck}
             wrap={props.wrap}
             required={props.textFieldRequired}
-            requiredText={props.textFieldRequiredText}
-            optionalText={props.textFieldOptionalText}
+            requiredText={props.requiredText}
+            optionalText={props.optionalText}
+            doNotIncludeText={props.doNotIncludeText}
             onChange={
               props.onTextFieldChange ? props.onTextFieldChange : () => {}
             }
             dataTestId={props.textFieldDataTestId}
             dataCy={props.textFieldDataCy}
+            error={props.error}
+            describedby={props.describedby}
           />
         ) : (
           <TextField
@@ -86,12 +87,14 @@ export function OptionalTextField(props) {
             boldLabel={props.textLabelBold}
             uncontrolled={props.uncontrolled}
             required={props.textFieldRequired}
-            requiredText={props.textFieldRequiredText}
-            optionalText={props.textFieldOptionalText}
+            requiredText={props.requiredText}
+            optionalText={props.optionalText}
+            doNotIncludeText={props.doNotIncludeText}
             onChange={
               props.onTextFieldChange ? props.onTextFieldChange : () => {}
             }
             dataTestId={props.textFieldDataTestId}
+            describedby={props.describedby}
             dataCy={props.textFieldDataCy}
           />
         )
@@ -180,16 +183,6 @@ OptionalTextField.propTypes = {
   textFieldRequired: PropTypes.bool,
 
   /**
-   * the text to show in parenthesis after the label if the text field is required
-   */
-  textFieldRequiredText: PropTypes.string.isRequired,
-
-  /**
-   * the text to show in parenthesis after the label if the text field is optional
-   */
-  textFieldOptionalText: PropTypes.string.isRequired,
-
-  /**
    * the test id for the checkbox to select in unit tests
    */
   controlDataTestId: PropTypes.string,
@@ -253,4 +246,34 @@ OptionalTextField.propTypes = {
    * whether or not to spellcheck for the multi text field
    */
   spellCheck: PropTypes.bool,
+
+  /**
+   * message to display if there is an error
+   */
+  error: PropTypes.string,
+
+  /**
+   * aria-describedby label id
+   */
+  describedby: PropTypes.string,
+
+  /**
+   * Styling for checkbox
+   */
+  checkBoxStyle: PropTypes.string,
+
+  /**
+   * the text to show after the label in parenthesis if the field is required
+   */
+  requiredText: PropTypes.string.isRequired,
+
+  /**
+   * the text to show after the label in parenthesis if the field is optional
+   */
+  optionalText: PropTypes.string.isRequired,
+
+  /**
+   * disclaimer text to not disclose any personal information
+   */
+  doNotIncludeText: PropTypes.string.isRequired,
 };

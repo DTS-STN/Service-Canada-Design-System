@@ -1,12 +1,10 @@
+/**
+ * @jest-environment jsdom
+ */
 import { render, screen, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
 import { axe, toHaveNoViolations } from "jest-axe";
-import {
-  Primary,
-  Required,
-  BoldLabel,
-  UnControlled,
-  Error,
-} from "./TextField.stories";
+import { Primary, UnControlled, BoldLabel } from "./TextField.stories";
 
 expect.extend(toHaveNoViolations);
 
@@ -34,19 +32,6 @@ describe("TextField", () => {
     expect(inputElem.value).toEqual("hello");
     expect(mockFn.mock.calls.length).toEqual(1);
     expect(mockFn.mock.calls[0][0]).toEqual("hello");
-  });
-
-  it("renders star and required text when field is specified", () => {
-    render(<Required {...Required.args} />);
-    expect(screen.getByText("*")).toHaveClass("text-error-border-red");
-    expect(screen.getByText(`(${Required.args.requiredText})`)).toHaveClass(
-      "text-error-border-red"
-    );
-  });
-
-  it("renders error label when error is specified", () => {
-    render(<Error {...Error.args} />);
-    expect(screen.getByText(Error.args.error)).toBeTruthy();
   });
 
   it("renders text field with bold label", () => {
