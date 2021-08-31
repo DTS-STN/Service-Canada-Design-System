@@ -9,9 +9,9 @@ module.exports = {
         "border-gray-experiment",
         "bg-custom-blue-experiment-blue",
         "bg-gray-experiment",
-        "opacity-40",
-        "opacity-60",
+        "opacity-70",
         "opacity-80",
+        "opacity-90",
         "opacity-100",
       ],
     },
@@ -27,6 +27,7 @@ module.exports = {
       xs: ["14px", "16px"],
       sm: ["16px", "22px"],
       base: ["18px", "28px"],
+      lg: ["20px", "32px"],
       p: ["20px", "30px"],
       h4: ["22px", "20px"],
       h3: ["24px", "24.3px"],
@@ -34,6 +35,7 @@ module.exports = {
       h1: ["36px", "42px"],
       h1l: ["38px", "42px"],
       h1xl: ["45px", "54px"],
+      h1xxl: ["70px", "84px"],
     },
     screens: {
       xxs: "280px",
@@ -43,15 +45,22 @@ module.exports = {
       lg: "768px",
       xl: "992px",
       xxl: "1200px",
+      "v-xxs": { raw: "(min-height: 300px)" },
     },
     extend: {
+      backgroundImage: (theme) => ({
+        "banner-img": "url('/public/bg-banner-v2.png')",
+        "banner-img-mobile": "url('/public/bg-banner-mobile.png')",
+        //"footer-parliament-image": "url(../public/landscape.png)",
+      }),
       colors: {
         "custom-blue": {
           blue: "#1D5B90",
-          light: "#1492B4",
+          light: "#1F809A",
           dark: "#26374a",
           link: "#0535d2",
           "experiment-blue": "#004986",
+          "projects-link": "#2B4380",
         },
         "error-border-red": "#D3080C",
         "error-background-red": "#F3E9E8",
@@ -70,7 +79,6 @@ module.exports = {
         "gray-experiment": "#575757",
         "gray-breadcrumb": "#474747",
         "text-gray": "#5c5c5c",
-        "dk-blue": "#26374a",
         "hr-red-bar": "#AE3B43",
         "canada-ca-link-colour": "#7834BC",
         "circle-color": "#083C6C",
@@ -78,13 +86,19 @@ module.exports = {
         "canada-footer-hover-font-blue": "#0535d2",
         "footer-background-color": "#f8f8f8",
         "splash-page-bottom": "#e1e4e7",
+        vc: {
+          "blue-md": "#3d96c1",
+          "blue-lt": "#4FB7DC",
+        },
       },
       width: {
         "40px": "40px",
         "44px": "44px",
         "68px": "68px",
+        "80px": "80px",
         "100px": "100px",
         "138px": "138px",
+        "160px": "160px",
         "300px": "300px",
         "400px": "400px",
         "500px": "500px",
@@ -95,7 +109,9 @@ module.exports = {
         "44px": "44px",
         "46px": "46px",
         "100px": "100px",
+        "128px": "128px",
         "187px": "187px",
+        "250px": "250px",
         "400px": "400px",
         "500px": "500px",
       },
@@ -119,11 +135,14 @@ module.exports = {
         "15px": "15px",
         "10px": "10px",
         "20px": "20px",
+        "4.5rem": "4.5rem",
       },
 
       maxWidth: {
         "350px": "350px",
+        "450px": "450px",
         "600px": "600px",
+        "750px": "750px",
         "5rem": "5rem",
       },
 
@@ -134,6 +153,7 @@ module.exports = {
       minHeight: {
         "40px": "40px",
         "200px": "200px",
+        "250px": "250px",
       },
 
       maxHeight: {
@@ -147,12 +167,18 @@ module.exports = {
       lineHeight: {
         "30px": "30px",
       },
+      outline: {
+        "black-solid": ["2px solid #000", "1px"],
+        "dark-goldenrod": ["2px solid #c78100"],
+        "white-solid": ["2px solid #ffffff"],
+      },
     },
   },
   variants: {
     extend: {
       backgroundColor: ["active"],
       textColor: ["visited"],
+      margin: ["checked"],
     },
   },
   plugins: [
