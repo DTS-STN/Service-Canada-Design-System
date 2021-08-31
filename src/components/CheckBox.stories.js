@@ -1,5 +1,5 @@
 import React from "react";
-import CheckBox from "./CheckBox";
+import { CheckBox } from "./CheckBox";
 
 export default {
   title: "Components/Form Components/CheckBox",
@@ -46,17 +46,6 @@ UnControlled.args = {
   uncontrolled: true,
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  id: "checkbox 1",
-  name: "ChexBox1",
-  value: "IsChecked",
-  error: true,
-  label: "I am a checkbox with an error",
-  dataTestId: "uncontrolled-checkbox",
-  uncontrolled: true,
-};
-
 export const Required = Template.bind({});
 Required.args = {
   id: "checkbox 1",
@@ -65,5 +54,4 @@ Required.args = {
   label: "I am an uncontrolled checkbox",
   dataTestId: "required-checkbox",
   showRequiredLabel: true,
-  requiredText: "required",
 };

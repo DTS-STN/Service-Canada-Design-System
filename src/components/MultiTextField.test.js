@@ -1,6 +1,10 @@
+/**
+ * @jest-environment jsdom
+ */
 import { fireEvent, render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
 import { axe, toHaveNoViolations } from "jest-axe";
-import { Primary, UnControlled } from "./MultiTextField.stories";
+import { Primary } from "./MultiTextField.stories";
 
 expect.extend(toHaveNoViolations);
 
@@ -14,7 +18,7 @@ describe("TextField", () => {
   });
 
   it("renders multi text field in primary state", () => {
-    render(<UnControlled {...UnControlled.args} onChange={mockFn} />);
+    render(<Primary {...Primary.args} onChange={mockFn} />);
     const inputElem = screen.getByTestId("multitext-one");
     fireEvent.change(inputElem, { target: { value: "h" } });
     expect(inputElem.value).toBe("h");

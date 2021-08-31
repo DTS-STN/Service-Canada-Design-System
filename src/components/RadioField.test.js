@@ -1,10 +1,14 @@
+/**
+ * @jest-environment jsdom
+ */
 import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
 import { axe, toHaveNoViolations } from "jest-axe";
-import { Checked, UnChecked, Error, Required } from "./RadioField.stories";
+import { Checked, UnChecked } from "./RadioField.stories";
 
 expect.extend(toHaveNoViolations);
 
-describe("RadioField Component", () => {
+describe("RadioField", () => {
   let mockFn;
   beforeEach(() => {
     mockFn = jest.fn();
@@ -15,7 +19,7 @@ describe("RadioField Component", () => {
   it("renders in an unchecked state", () => {
     render(<UnChecked {...UnChecked.args} onChange={mockFn} />);
     expect(screen.getByText(UnChecked.args.label)).toBeTruthy();
-    screen.getByTestId("unchecked-radio").click();
+    screen.getByTestId("unchecked-radio-field").click();
     expect(mockFn.mock.calls.length).toBe(1);
     expect(mockFn.mock.calls[0]).toEqual([
       false,
@@ -26,38 +30,18 @@ describe("RadioField Component", () => {
 
   it("renders in a checked state", () => {
     render(<Checked {...Checked.args} onChange={mockFn} />);
-    expect(screen.getByTestId("checked-radio")).toBeChecked();
-    screen.getByTestId("checked-radio").click();
-    expect(mockFn.mock.calls.length).toBe(0);
-  });
-
-  it("renders in an error state correctly", () => {
-    render(<Error {...Error.args} />);
-    expect(screen.getByText(Error.args.label)).toHaveClass(
-      "text-error-border-red"
-    );
-  });
-
-  it("renders required state correctly", () => {
-    render(<Required {...Required.args} />);
-    expect(screen.getByText("*")).toHaveClass("text-error-border-red");
-    expect(screen.getByText(`(${Required.args.requiredText})`)).toHaveClass(
-      "text-error-border-red"
-    );
-  });
-
-  it("has no accessibility violations Error", async () => {
-    const { container } = render(<Error {...Error.args} />);
-    expect(await axe(container)).toHaveNoViolations();
+    expect(screen.getByTestId("checked-radio-field")).toBeChecked();
   });
 
   it("has no accessibility violations unchecked", async () => {
-    const { container } = render(<UnChecked {...UnChecked.args} />);
-    expect(await axe(container)).toHaveNoViolations();
+    const uncheckedContainer = render(<UnChecked {...UnChecked.args} />);
+    const resultsUnchecked = await axe(uncheckedContainer.container);
+    expect(resultsUnchecked).toHaveNoViolations();
   });
 
   it("has no accessibility violations checked", async () => {
-    const { container } = render(<Checked {...Checked.args} />);
-    expect(await axe(container)).toHaveNoViolations();
+    const checkedContainer = render(<Checked {...Checked.args} />);
+    const resultsChecked = await axe(checkedContainer.container);
+    expect(resultsChecked).toHaveNoViolations(resultsChecked);
   });
 });
