@@ -1,4 +1,4 @@
-import ActionButton from "./ActionButton";
+import { ActionButton } from "./ActionButton";
 
 export default {
   title: "Components/Buttons/ActionButton",
@@ -7,13 +7,13 @@ export default {
 
 const Template = (args) => <ActionButton {...args} />;
 
-export const Primary = Template.bind({});
+export const Default = Template.bind({});
 export const Secondary = Template.bind({});
 export const Tertiary = Template.bind({});
 export const Disabled = Template.bind({});
 export const Link = Template.bind({});
 
-Primary.args = {
+Default.args = {
   id: "default",
   className:
     "bg-custom-blue-blue text-white border border-custom-blue-blue active:bg-custom-blue-dark hover:bg-custom-blue-light",

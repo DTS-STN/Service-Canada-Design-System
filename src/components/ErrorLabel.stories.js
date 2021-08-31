@@ -1,5 +1,5 @@
 import React from "react";
-import ErrorLabel from "./ErrorLabel";
+import { ErrorLabel } from "./ErrorLabel";
 
 export default {
   title: "Components/Form Components/ErrorLabel",

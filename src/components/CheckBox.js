@@ -1,12 +1,9 @@
-import React from "react";
 import PropTypes from "prop-types";
 
 /**
- * Check box input with label that can be used in forms or stand-alone input.
- * The checked state of this component can optionally be controlled by react or
- * by the underlying DOM
+ * check box component for forms
  */
-export default function CheckBox(props) {
+export function CheckBox(props) {
   const ifControlledProps = !props.uncontrolled
     ? {
         checked: props.checked,
@@ -14,8 +11,8 @@ export default function CheckBox(props) {
     : {};
   return (
     <div
-      className={`block leading-tight relative pl-40px h-40px clear-left${
-        props.className ? " " + props.className : " mb-10px"
+      className={`block leading-tight relative pl-40px h-46px clear-left${
+        props.className ? " " + props.className : " mb-4"
       }`}
     >
       <input
@@ -37,18 +34,17 @@ export default function CheckBox(props) {
         {...ifControlledProps}
       />
       <label
-        className={`checkbox-label control-label inline-block cursor-pointer pt-4px pb-5px px-15px text-xs sm:text-sm leading-tight sm:leading-6 font-normal font-body ${
-          props.error ? "text-error-border-red" : ""
+        className={`checkbox-label control-label inline-block cursor-pointer pt-4px pb-5px px-15px text-sm lg:text-p leading-tight sm:leading-6 font-normal font-body${
+          props.error ? " text-error-border-red" : undefined
         }`}
         htmlFor={props.id}
-        onClick={() => props.onChange(props.checked, props.name, props.value)}
       >
         {props.showRequiredLabel ? (
           <b className="text-error-border-red">*</b>
         ) : undefined}{" "}
         {props.label}{" "}
         {props.showRequiredLabel ? (
-          <b className="text-error-border-red">{`(${props.requiredText})`}</b>
+          <b className="text-error-border-red">{props.requiredLabel}</b>
         ) : undefined}
       </label>
     </div>
@@ -92,7 +88,7 @@ CheckBox.propTypes = {
   label: PropTypes.string.isRequired,
 
   /**
-   * whether or not there is an error, when this is specified the label will be red.
+   * whether or not there is an error
    */
   error: PropTypes.bool,
 
@@ -102,14 +98,14 @@ CheckBox.propTypes = {
   required: PropTypes.bool,
 
   /**
-   * the text that shows after the label in brackets when this input is required
-   */
-  requiredText: PropTypes.string,
-
-  /**
    * show the "* ... (required)" in the label. in lists, this isn't necessary, but for an individual checkbox without a parent fieldset this is required
    */
   showRequiredLabel: PropTypes.bool,
+
+  /**
+   * the text for the required label
+   */
+  requiredLabel: PropTypes.string,
 
   /**
    * callback to handle change in checked state, takes three arguments, the checked state, the name and the value
