@@ -20,7 +20,7 @@ describe("DateModified", () => {
 
   it("renders the label properly", () => {
     render(<Primary {...Primary.args} />);
-    screen.getByText("Date modified: ");
+    screen.getByText("Date modified:");
   });
 
   it("has no a11y violations", async () => {
