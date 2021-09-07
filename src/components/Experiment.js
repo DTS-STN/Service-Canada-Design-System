@@ -26,7 +26,11 @@ export const Experiment = (props) => {
       >
         {props.title}
         {props.href.substring(0, 8) === "https://" ? (
-          <img src="/external-link.svg" className="px-1 py-2" />
+          <img
+            alt="external link"
+            src="/external-link.svg"
+            className="px-1 py-2"
+          />
         ) : undefined}
       </a>
       <span
