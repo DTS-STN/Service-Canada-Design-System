@@ -52,6 +52,7 @@ module.exports = {
           dark: "#26374a",
           link: "#0535d2",
           "experiment-blue": "#004986",
+          "projects-link": "#2B4380",
         },
         "error-border-red": "#D3080C",
         "error-background-red": "#F3E9E8",

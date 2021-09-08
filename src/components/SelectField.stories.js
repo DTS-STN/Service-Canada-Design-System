@@ -26,6 +26,7 @@ Primary.args = {
   dataTestId: "select-field-1",
   required: true,
   requiredText: "(required)",
+  optionalText: "optional",
   options: [
     {
       id: "option1",
