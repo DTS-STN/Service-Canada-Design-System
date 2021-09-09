@@ -2,7 +2,7 @@ import React from "react";
 import { Menu } from "./Menu";
 
 export default {
-  title: "Components/Molecules/Menu",
+  title: "Components/Redirect Components/Menu",
   component: Menu,
 };
 
