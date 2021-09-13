@@ -26,7 +26,7 @@ describe("TextButtonField", () => {
 
   it("renders the Text field with some text", async () => {
     render(<Primary {...Primary.args} />);
-    const text = await screen.findByText(Primary.args.html);
+    const text = await screen.findByText("Text");
     expect(text).toBeTruthy();
   });
 
