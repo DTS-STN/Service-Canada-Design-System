@@ -23,7 +23,7 @@ describe("Report A Problem", () => {
     render(<English {...English.args} />);
     const submitButton = screen.getByTestId("report-a-problem-submit");
     submitButton.click();
-    expect(screen.getByText("reportAProblemThankYouForYourHelp")).toBeTruthy();
+    expect(screen.getByText("Thank you for your help!")).toBeTruthy();
   });
   it("renders an empty status div before submitting the form", () => {
     render(<English {...English.args} />);
