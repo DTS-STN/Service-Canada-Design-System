@@ -1,0 +1,10 @@
+.bannerBg {
+  background-image: url("../../public/bg-banner-v2.png");
+}
+
+/* Uses mobile background on smaller screens*/
+@media (max-width: 449px) {
+  .bannerBg {
+    background-image: url("../../public/bg-banner-mobile.png");
+  }
+}
