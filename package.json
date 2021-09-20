@@ -15,6 +15,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "fetch-mock": "^9.11.0",
+    "joi": "^17.4.2",
     "react-scripts": "4.0.3"
   },
   "peerDependencies": {
