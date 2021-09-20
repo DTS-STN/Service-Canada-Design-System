@@ -24,5 +24,17 @@
   "reportAProblemPrivacyStatement": "Lire la politique en matière de protection des renseignements personnels",
   "reportAProblemPrivacyStatementLink": "https://www.canada.ca/fr/transparence/confidentialite.html",
   "reportAProblemFeedbackConfidential": "Vos commentaires sont confidentiels.",
-  "reportAProblemSubmit": "Soumettre"
+  "reportAProblemSubmit": "Soumettre",
+  "phaseBannerTag": "SITE D’ESSAI",
+  "backProjects": "Retour aux projets",
+  "giveFeedback": "Donnez vos commentaires pour aider à améliorer ce service",
+  "thankYouFeedback": "Merci de vos commentaires!",
+  "sorryFeedback": "Désolé, nous ne sommes pas en mesure de recevoir votre message pour le moment. Si le problème persiste, veuillez communiquer avec",
+  "close": "Fermer",
+  "improveService": "Aidez-nous à améliorer ce service",
+  "doBetter": "Comment pouvons-nous faire mieux?",
+  "maximum2000": "Maximum de 2000 caractères",
+  "confidential": "Vos commentaires sont confidentiels et anonymes.",
+  "feedbackRequired": "Ce champ est obligatoire",
+  "breadCrumbsHref2": "https://alpha.service.canada.ca/fr/projects"
 }

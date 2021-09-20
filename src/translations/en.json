@@ -24,5 +24,17 @@
   "reportAProblemPrivacyStatement": "Review the privacy policy",
   "reportAProblemPrivacyStatementLink": "https://www.canada.ca/en/transparency/privacy.html",
   "reportAProblemFeedbackConfidential": "Your feedback will be confidential.",
-  "reportAProblemSubmit": "Submit"
+  "phaseBannerTag": "TEST SITE",
+  "reportAProblemSubmit": "Submit",
+  "backProjects": "Back to projects",
+  "giveFeedback": "Give feedback to help improve this website",
+  "thankYouFeedback": "Thank you for your feedback!",
+  "sorryFeedback": "Sorry, we're unable to receive your message right now. If the problem persists, please contact",
+  "close": "Close",
+  "improveService": "Help us improve this service",
+  "doBetter": "How can we do better?",
+  "maximum2000": "Maximum of 2000 characters",
+  "confidential": "Your feedback is confidential and anonymous.",
+  "feedbackRequired": "Feedback - This field is required",
+  "breadCrumbsHref2": "https://alpha.service.canada.ca/projects"
 }
