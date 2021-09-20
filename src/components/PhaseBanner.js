@@ -123,7 +123,7 @@ export const PhaseBanner = ({
                 id="feedbackButton"
                 onClick={() => setShowFeedback(!showFeedback)}
                 custom="group outline-none focus:outline-white-solid bg-circle-color font-body text-xs lg:text-sm text-white flex text-left lg:ml-4 my-2 lg:my-0 p-2"
-                data-testid="feedbackButton"
+                dataTestId="feedbackButton"
               >
                 <span
                   id="caret"
