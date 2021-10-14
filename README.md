@@ -63,7 +63,7 @@ $ npm run storybook
 
 ### Playground ⛹🏽‍♀️⛹🏽‍♂️
 
-Sometimes it's helpful to see a component in an actual application being rendered in the browser. This project included a create-react-app application with the decd-design-system package being installed via a symlink in the node modules thus simulating a client project. To run this project
+Sometimes it's helpful to see a component in an actual application being rendered in the browser. This project includes a create-react-app application with the decd-design-system package being installed via a symlink in the node modules thus simulating a client project. To run this project
 
 First run rollup in watch mode
 
@@ -75,8 +75,8 @@ This will rebuild the bundle everytime you make a change to the package code.
 
 You can then run the playground application in a separate shell. 
 
-Starting from the root directory, run the following commands in the order shown
+Starting from the root directory, run the following commands in the order shown (**Reminder:** npm install if it's your first time using the playground)
 
 ```bash
-$ cd playground && npm install && npm run start
+$ cd playground && npm run start
 ```
