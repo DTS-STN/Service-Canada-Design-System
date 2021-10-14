@@ -55,7 +55,7 @@ $ npm run test
 
 ### Documentation 📝
 
-This project uses storybooks to document and provide a playground to visually see components in action. To run storybooks
+This project uses storybook to document and provide a playground to visually see components in action. To run storybook, run the command below from the root directory
 
 ```bash
 $ npm run storybook
@@ -73,8 +73,10 @@ $ npm run build-watch
 
 This will rebuild the bundle everytime you make a change to the package code.
 
-You can then run the playground application in a separate shell
+You can then run the playground application in a separate shell. 
+
+Starting from the root directory, run the following commands in the order shown
 
 ```bash
-$ cd playground && npm run start
+$ cd playground && npm install && npm run start
 ```
