@@ -35,7 +35,15 @@ import { Component } from "@dts-stn/decd-design-system";
 
 ## Developing this Package 👨🏽‍💻👩🏽‍💻
 
-### Building the package 👷🏽‍♀️👷🏽
+### Developing and Documenting Components 📝
+
+This project uses storybook to document and provide a playground to visually see components in action. To run storybook, run the command below from the root directory
+
+```bash
+$ npm run storybook
+```
+
+### Building the Package 👷🏽‍♀️👷🏽
 
 This package uses babel and rollup to transpile and create production bundles which are generated in the `/dist` folder at the root level of the project. To build the production bundle at any time simple run the following command
 
@@ -45,20 +53,12 @@ $ npm run build
 
 Rollup looks at the following file [src/index.js](src/index.js) to determine what it should include in the production bundle... as such only import and export things in this file that you want to be included, otherwise do not touch this file.
 
-### Testing 🧪
+### Testing Components 🧪
 
 This project uses jest for testing. To run tests simply run the following command
 
 ```bash
 $ npm run test
-```
-
-### Documentation 📝
-
-This project uses storybook to document and provide a playground to visually see components in action. To run storybook, run the command below from the root directory
-
-```bash
-$ npm run storybook
 ```
 
 ### Playground ⛹🏽‍♀️⛹🏽‍♂️
