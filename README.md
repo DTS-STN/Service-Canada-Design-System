@@ -2,7 +2,6 @@
 ![Version](https://img.shields.io/github/package-json/v/dts-stn/decd-design-system)
 [![Documentation Tool](https://img.shields.io/badge/Documentation%20Tool-storybooks-pink)](https://dts-stn.github.io/DECD-Design-System/master)
 
-
 # DECD Design System Component Library 🎨
 
 This repository contains the source code for the React component library which corresponds to DECD designs following the [canada.ca guidelines](https://www.canada.ca/en/government/about/design-system.html).
@@ -13,10 +12,20 @@ This library contains reusable components that are accessible and can be used ac
 
 The package is hosted in github packages. To use it simply install it as one of your dependencies
 
-First create a `.npmrc` file in the same directory as your `package.json` with the following content.
+First if you don't already have a personal access token;
+
+- log into your github account
+- go to account settings -> developer settings -> personal access token
+- click on "Generate new token"
+- for the permissions, select atleast "read:packages"
+
+Once you've created your token, make sure to copy it for the next step
+
+Create a `.npmrc` file in the same directory as your `package.json` with the following content.
 
 ```text
 @dts-stn:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken={YOUR_PERSONAL_ACCESS_TOKEN}
 ```
 
 This specifies that any package scoped @dts-stn should come from the github npm registry (where this package is located).
@@ -73,7 +82,7 @@ $ npm run build-watch
 
 This will rebuild the bundle everytime you make a change to the package code.
 
-You can then run the playground application in a separate shell. 
+You can then run the playground application in a separate shell.
 
 Starting from the root directory, run the following commands in the order shown (**Reminder:** npm install if it's your first time using the playground)
 

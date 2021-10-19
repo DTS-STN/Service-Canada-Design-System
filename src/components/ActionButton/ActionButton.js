@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useEffect } from "react";
+import React from "react";
 
 /**
  * Button component
@@ -18,17 +18,17 @@ export function ActionButton(props) {
     "py-2 px-4 bg-gray-light text-gray-600 border border-gray-md";
 
   //Activate Links with spacebar
-  useEffect(() => {
-    let link = document.getElementById(props.id);
-    if (link) {
-      link.addEventListener("keydown", (event) => {
-        if (event.key === "Spacebar" || event.key === " ") {
-          event.preventDefault();
-          link.click();
-        }
-      });
-    }
-  });
+  // useEffect(() => {
+  //   let link = document.getElementById(props.id);
+  //   if (link) {
+  //     link.addEventListener("keydown", (event) => {
+  //       if (event.key === "Spacebar" || event.key === " ") {
+  //         event.preventDefault();
+  //         link.click();
+  //       }
+  //     });
+  //   }
+  // });
 
   return props.href ? (
     <a
