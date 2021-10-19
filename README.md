@@ -36,6 +36,15 @@ Then install the package using this command
 $ npm install --save @dts-stn/decd-design-system
 ```
 
+**Important Note** Do not commit your authToken to github. This token shouldn't be shared with others!
+
+Once you've installed the package remove the second line of text from the
+`.npmrc` file. Your file should now look like this;
+
+```text
+@dts-stn:registry=https://npm.pkg.github.com
+```
+
 You can then import the components you wish to use anywhere in your project
 
 ```js
