@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { ActionButton } from "./ActionButton";
+import { ActionButton } from "../ActionButton/ActionButton";
 import { useState } from "react";
 import Joi from "joi";
-import { ErrorLabel } from "./ErrorLabel";
+import { ErrorLabel } from "../ErrorLabel/ErrorLabel";
 
-import EN from "../translations/en";
-import FR from "../translations/fr";
+import EN from "../../translations/en";
+import FR from "../../translations/fr";
 
 /**
  * Displays the PhaseBanner on the page

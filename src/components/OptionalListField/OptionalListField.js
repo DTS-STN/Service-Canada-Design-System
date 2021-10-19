@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { CheckBox } from "./CheckBox";
-import { RadioField } from "./RadioField";
+import { CheckBox } from "../CheckBox/CheckBox";
+import { RadioField } from "../RadioField/RadioField";
 import PropTypes from "prop-types";
 
 /**

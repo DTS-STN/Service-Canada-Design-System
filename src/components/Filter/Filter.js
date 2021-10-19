@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { RadioButton } from "./RadioButton";
+import { RadioButton } from "../RadioButton/RadioButton";
 
 /**
  *  Filter Experiments component

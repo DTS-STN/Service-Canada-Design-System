@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { ActionButton } from "./ActionButton";
+import { ActionButton } from "../ActionButton/ActionButton";
 
 /**
  *  component
