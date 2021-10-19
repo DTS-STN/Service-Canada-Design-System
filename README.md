@@ -87,7 +87,7 @@ After scanning user will be presented with a list of accessibility concerns and 
 
 Jest-axe is ran along with other unit tests. The following is an example test case;
 
-- Testing components with multiple styles line 73 [src/components/ActionButton.test.js](src/components/ActionButton.test.js)
+- Passing the Action Button Props through jest-axe tool line 73 [src/components/ActionButton.test.js](src/components/ActionButton.test.js)
 
 To run unit tests follow instructions listed under the [Testing Strategies 🧪](#Testing-Strategies-🧪) section.
 
