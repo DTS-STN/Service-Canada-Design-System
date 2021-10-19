@@ -61,7 +61,7 @@ This project uses jest for testing. We've decided to use Jest as it is a widely 
 - Clickable components (ex. button component has an onclick prop) line 17 [src/components/Menu.test.js](src/components/Menu.test.js)
 - Rendering with different input props line 19 [src/components/TextField.test.js](src/components/TextField.testjs)
 
-To run tests simply run the following command in the root directory
+To run tests simply use the following command in the root directory
 
 ```bash
 $ npm run test
@@ -69,7 +69,7 @@ $ npm run test
 
 ### Accessibility Strategies
 
-This project uses jest-axe for automated for testing, along with the Axe web browser extension for manual testing. Jest-axe is time efficient but only covers about 30% of unit test cases. Axe is our main web browser testing tool as it provides stricter and clearer infomation in regards to accessibility issues, when compared to other web browser tools. Users must go https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd and install the extension.
+We are using the Axe web browser extension as our main tool for accessibility testing. Axe provides stricter and clearer infomation in regards to accessibility issues, when compared to other web browser tools and is very easy to use. Axe is not ran through our code repo, it is an external tool which users need to download. To download the Axe web browser extension, visit https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd. Along with Axe we are also preforming QA to manually check for accessibility concerns and automated testing done by Jest-axe. Jest-axe is time efficient but only covers about 30% of unit test cases. We use multiple tools and steps to do accessibility testing, as no one tool is capable of check for all instances accessibility concerns.
 
 To use Axe:
 
@@ -83,11 +83,7 @@ Jest-axe is ran along with other unit tests. The following is an example test ca
 
 - Testing components with multiple styles line 73 [src/components/ActionButton.test.js](src/components/ActionButton.test.js)
 
-To run tests use the following command.
-
-```bash
-$ npm run test
-```
+To run unit tests follow instructions listed under the "Testing Strategies" section.
 
 ### Playground ⛹🏽‍♀️⛹🏽‍♂️
 
