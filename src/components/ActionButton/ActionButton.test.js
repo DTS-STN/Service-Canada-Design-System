@@ -59,6 +59,7 @@ describe("Action Button", () => {
     expect(screen.getByRole("button")).toHaveAttribute("href");
   });
 
+  // Test Case for keyboard interraction. Code currently not implemented, so test case can't be applied yet.
   // it("click can be executed with spacebar", () => {
   //   render(<Link {...Link.args} />);
   //   const inputElem = screen.getByRole("button");

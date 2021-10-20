@@ -17,6 +17,7 @@ export function ActionButton(props) {
   const disabledStyle =
     "py-2 px-4 bg-gray-light text-gray-600 border border-gray-md";
 
+  // Currently causes a error with the package. Need to look into resolving this issue and/or removing code completely
   //Activate Links with spacebar
   // useEffect(() => {
   //   let link = document.getElementById(props.id);
