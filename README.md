@@ -107,6 +107,8 @@ Testing will be done manually, to confirm components are displaying correctly on
   - Version 12.1, 13, 13.1, 14
 - Internet Explorer
   - Version 11
+- Edge
+  - Version 17, 18, 87, 89
 
 ### Playground ⛹🏽‍♀️⛹🏽‍♂️
 
