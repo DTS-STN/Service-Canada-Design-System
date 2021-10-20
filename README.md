@@ -54,7 +54,7 @@ Rollup looks at the following file [src/index.js](src/index.js) to determine wha
 
 ### Testing Strategies 🧪
 
-This project uses jest and the react testing library for testing. We've decided to use Jest as it is a widely used testing tool and provides sufficient resources for testing a component library. The React Testing Library integrate provides useful helpers to further push the flexibility of the jest testing tool. Some example test cases include;
+This project uses jest and the react testing library for testing. We've decided to use Jest as it is a widely used testing tool and provides sufficient resources for testing a component library. The React Testing Library provides useful helpers to further push the flexibility of the jest testing tool. Some example test cases include;
 
 - Testing components with multiple styles (ex. button component with different button styles) [src/components/ActionButton.test.js](src/components/ActionButton.test.js)
 - Components styles are correctly rendered (Dimensions, Color, Fontstyle, Fontsize, etc) line 12 [src/components/Banner.test.js](src/components/Banner.test.js)
@@ -69,7 +69,9 @@ $ npm run test
 
 For more information on tools and resources refer to our wifi page https://github.com/DTS-STN/DECD-Design-System/wiki#testing-documentation
 
-### Accessibility Strategies
+### Accessibility Testing Strategies
+
+**Important Note:** we are testing for WCAG 2.0 Level AA compliance: https://www.w3.org/TR/WCAG20/ according to the Standard on Wed Accessibility: https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=23601
 
 We are using the Axe web browser extension as our main tool for accessibility testing. Axe provides stricter and clearer infomation in regards to accessibility issues, when compared to other web browser tools and is very easy to use. Axe is not ran through our code repo, it is an external tool which users need to download.
 
@@ -91,7 +93,20 @@ Jest-axe is ran along with other unit tests. The following is an example test ca
 
 To run unit tests follow instructions listed under the [Testing Strategies 🧪](#Testing-Strategies-🧪) section.
 
-For more information on tools and resources refer to our wifi page https://github.com/DTS-STN/DECD-Design-System/wiki#accessibility-documentation
+For more information on tools and resources refer to our wiki page https://github.com/DTS-STN/DECD-Design-System/wiki#accessibility-documentation
+
+### Browser & Device Testing
+
+We will be building components for mobile first, but also supporting web browsers and all screen sizes.
+
+Testing will be done manually, to confirm components are displaying correctly on different web browsers. Based on data collected, we will be supporting and testing on the following 3 most used browsers (Make sure to test on atleast one of the given versions listed under each web browser);
+
+- Google Chrome
+  - Version 80, 81, 85
+- Safari
+  - Version 12.1, 13, 13.1, 14
+- Internet Explorer
+  - Version 11
 
 ### Playground ⛹🏽‍♀️⛹🏽‍♂️
 
