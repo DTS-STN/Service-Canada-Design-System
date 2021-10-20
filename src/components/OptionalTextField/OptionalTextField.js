@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { CheckBox } from "./CheckBox";
-import { TextField } from "./TextField";
-import { MultiTextField } from "./MultiTextField";
-import { RadioField } from "./RadioField";
+import { CheckBox } from "../CheckBox/CheckBox";
+import { TextField } from "../TextField/TextField";
+import { MultiTextField } from "../MultiTextField/MultiTextField";
+import { RadioField } from "../RadioField/RadioField";
 import PropTypes from "prop-types";
 
 /**

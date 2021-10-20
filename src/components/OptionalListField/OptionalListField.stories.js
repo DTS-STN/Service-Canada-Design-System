@@ -1,7 +1,7 @@
 import React from "react";
 import { OptionalListField } from "./OptionalListField";
-import { CheckBox } from "./CheckBox";
-import { RadioField } from "./RadioField";
+import { CheckBox } from "../CheckBox/CheckBox";
+import { RadioField } from "../RadioField/RadioField";
 
 export default {
   title: "Components/Form Components/OptionalListField",

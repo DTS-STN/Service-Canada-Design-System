@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { ActionButton } from "./ActionButton";
+import { ActionButton } from "../ActionButton/ActionButton";
 
 /**
  * A section that will have a title, small description, and a link to some action we want to user to make

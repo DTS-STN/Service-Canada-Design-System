@@ -1,5 +1,5 @@
 import { Footer } from "./Footer";
-import logo from "../../public/wmms-blk.svg";
+import logo from "../../../public/wmms-blk.svg";
 
 export default {
   title: "Components/Page Layout/Footer",

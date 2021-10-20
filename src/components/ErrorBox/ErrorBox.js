@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { ActionButton } from "./ActionButton";
+import { ActionButton } from "../ActionButton/ActionButton";
 
 /**
  * error box to be used to summarise error in forms
