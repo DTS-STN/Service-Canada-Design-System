@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { ErrorLabel } from "./ErrorLabel";
+import { ErrorLabel } from "../ErrorLabel/ErrorLabel";
 
 export function SelectField(props) {
   const ifControlledProps = !props.uncontrolled
