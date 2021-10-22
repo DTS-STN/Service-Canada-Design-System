@@ -1,8 +1,11 @@
 import { ActionButton } from "./ActionButton";
+// myStories.stories.jsx
+import { withDesign } from "storybook-addon-designs";
 
 export default {
   title: "Components/Buttons/ActionButton",
   component: ActionButton,
+  decorators: [withDesign],
 };
 
 const Template = (args) => <ActionButton {...args} />;
@@ -13,6 +16,14 @@ export const Tertiary = Template.bind({});
 export const Disabled = Template.bind({});
 export const Link = Template.bind({});
 
+// Default Button
+Default.parameters = {
+  // url to button component on figma
+  design: {
+    type: "figma",
+    url: "https://www.figma.com/file/dFM3ltQahFIfvzHB7ftHvl/Sandbox---Design-System?node-id=63%3A4907",
+  },
+};
 Default.args = {
   id: "default",
   className:
@@ -20,6 +31,14 @@ Default.args = {
   text: "Default button 🚀",
 };
 
+// Default Button
+Secondary.parameters = {
+  // url to button component on figma
+  design: {
+    type: "figma",
+    url: "https://www.figma.com/file/Klm6pxIZSaJFiOMX5FpTul9F/storybook-addon-designs-sample?node-id=2%3A5",
+  },
+};
 Secondary.args = {
   id: "secondary",
   text: "Secondary button 🚀",

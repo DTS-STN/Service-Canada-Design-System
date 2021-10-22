@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import React from "react";
 
 /**
  *  Search bar component
@@ -8,7 +9,7 @@ export function SearchBar(props) {
     <form
       className="w-full inline-flex h-9 lg:w-full xl:w-80 w-full border border-solid border-gray-light-100"
       onSubmit={props.onSubmit}
-      data-cy={props.dataCy}
+      // data-cy={props.dataCy}
     >
       <input
         type="text"
@@ -46,8 +47,8 @@ SearchBar.propTypes = {
    */
   onSubmit: PropTypes.func,
 
-  /**
-   * Test id for cypress test
-   */
-  dataCy: PropTypes.string,
+  // /**
+  //  * Test id for cypress test
+  //  */
+  // dataCy: PropTypes.string,
 };
