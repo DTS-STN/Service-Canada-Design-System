@@ -90,7 +90,7 @@ For more information on tools and resources refer to our wifi page https://githu
 
 ### Accessibility Testing Strategies
 
-**Important Note:** we are testing for [WCAG 2.0 Level AA compliance](https://www.w3.org/TR/WCAG20/) according to the [Standard on Web Accessibility](https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=23601)
+**Important Note:** we are testing for [WCAG 2.1 Level AA compliance](https://www.w3.org/TR/WCAG21/) according to the [Standard on Web Accessibility](https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=23601)
 
 We are using the Axe web browser extension as our main tool for accessibility testing. Axe provides stricter and clearer infomation in regards to accessibility issues, when compared to other web browser tools and is very easy to use. Axe is not ran through our code repo, it is an external tool which users need to download.
 
@@ -129,12 +129,11 @@ Testing will be done manually, to confirm components are displaying correctly on
 - Edge
   - Version 17, 18, 87, 89
 
-
 ### PR Procedures
+
 **Naming:** Each branch should be prefixed by the relevant Jira issue and component ID (if applicable), eg. DS-56-A003-Footer
 
-**Review:** Each PR should have at least one person review it before it can be merged. 
-
+**Review:** Each PR should have at least one person review it before it can be merged. Check out these tips for giving productive and thoughtful feedback.
 
 ### Playground ⛹🏽‍♀️⛹🏽‍♂️
 
