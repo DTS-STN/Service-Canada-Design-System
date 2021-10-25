@@ -95,7 +95,7 @@ For more information on tools and resources refer to our wifi page https://githu
 
 We are using the Axe web browser extension as our main tool for accessibility testing. Axe provides stricter and clearer infomation in regards to accessibility issues, when compared to other web browser tools and is very easy to use. Axe is not ran through our code repo, it is an external tool which users need to download.
 
-To download the Axe web browser extension, visit https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd.
+Download the Axe web browser extensionn [here](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
 
 Along with Axe we are also preforming QA to manually check for accessibility concerns and automated testing done by Jest-axe. Jest-axe is time efficient but only covers about 30% of unit test cases. We use multiple tools and steps to do accessibility testing, as no one tool is capable of checking for all instances accessibility concerns.
 
@@ -113,7 +113,7 @@ Jest-axe is ran along with other unit tests. The following is an example test ca
 
 To run unit tests follow instructions listed under the [Testing Strategies 🧪](#Testing-Strategies-🧪) section.
 
-For more information on tools and resources refer to our wiki page https://github.com/DTS-STN/DECD-Design-System/wiki#accessibility-documentation
+For more information on tools and resources refer to our [wiki page](https://github.com/DTS-STN/DECD-Design-System/wiki#accessibility-documentation)
 
 ### Browser & Device Testing
 
