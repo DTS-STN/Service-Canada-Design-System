@@ -53,23 +53,23 @@ import { Component } from "@dts-stn/decd-design-system";
 
 ## Developing this Package 👨🏽‍💻👩🏽‍💻
 
+### Getting Started
+
+[Install Nodes.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+
+```bash
+# Install Packages
+$ npm install
+```
+
 ### Developing and Documenting Components 📝
 
-This project uses storybook to document and provide a playground to visually see components in action. To run storybook, run the command below from the root directory
+This project uses [storybook](https://storybook.js.org/) to document and provide a playground to visually see components in action while you are developing them. To run storybook, run the command below from the root directory
 
 ```bash
+# Start dev environment
 $ npm run storybook
 ```
-
-### Building the Package 👷🏽‍♀️👷🏽
-
-This package uses babel and rollup to transpile and create production bundles which are generated in the `/dist` folder at the root level of the project. To build the production bundle at any time simple run the following command
-
-```bash
-$ npm run build
-```
-
-Rollup looks at the following file [src/index.js](src/index.js) to determine what it should include in the production bundle... as such only import and export things in this file that you want to be included, otherwise do not touch this file.
 
 ### Testing Strategies 🧪
 
@@ -83,6 +83,7 @@ This project uses jest and the react testing library for testing. We've decided 
 To run tests simply use the following command in the root directory
 
 ```bash
+# run tests
 $ npm run test
 ```
 
@@ -129,11 +130,17 @@ Testing will be done manually, to confirm components are displaying correctly on
 - Edge
   - Version 17, 18, 87, 89
 
-### PR Procedures
+### Pull Request Procedures
 
-**Naming:** Each branch should be prefixed by the relevant Jira issue and component ID (if applicable), eg. DS-56-A003-Footer
+**Branching Strategy:**
 
-**Review:** Each PR should have at least one person review it before it can be merged. Check out these tips for giving productive and thoughtful feedback.
+| Branch   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Associated Github Actions                                         |
+| :------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------- |
+| master   | Production branch. Triggers a build to Storybook & publishes a new npm package release.                                                                                                                                                                                                                                                                                                                                                                                                                                      | Publish Package on Release </br></br> Build and Deploy Storybooks |
+| hotfix   | Can be created off of master to allow for immediate fixes to bugs and will not affect current development. Any changes should be pulled back into develop and feature branches                                                                                                                                                                                                                                                                                                                                               |                                                                   |
+| release  | Final culmination of all branches that will be used to test beta versions of the new release. After testing is complete, release will be merged into master.                                                                                                                                                                                                                                                                                                                                                                 | Build and Deploy Storybooks                                       |
+| develop  | Culmination of feature branches                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Build and Deploy Storybooks                                       |
+| features | Created off of develop to work on new features locally that are intended for the next release. Each feature branch should be prefixed by the relevant Jira issue and component ID (if applicable), eg. DS-56-A003-Footer.</br></br> Feature branches should be merged into develop using a PR. Each PR should have at least one person review it before it can be merged. Check out [these tips](https://github.com/DTS-STN/DECD-Design-System/wiki#code-review-helpful-tips) for giving productive and thoughtful feedback. | Build and Deploy Storybooks on PR                                 |
 
 ### Playground ⛹🏽‍♀️⛹🏽‍♂️
 
@@ -154,3 +161,13 @@ Starting from the root directory, run the following commands in the order shown 
 ```bash
 $ cd playground && npm run start
 ```
+
+### Building the Package 👷🏽‍♀️👷🏽
+
+This package uses babel and rollup to transpile and create production bundles which are generated in the `/dist` folder at the root level of the project. To build the production bundle at any time simply run the following command
+
+```bash
+$ npm run build
+```
+
+Rollup looks at the following file [src/index.js](src/index.js) to determine what it should include in the production bundle... as such only import and export things in this file that you want to be included, otherwise do not touch this file.
