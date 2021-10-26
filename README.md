@@ -73,7 +73,7 @@ $ npm run storybook
 
 ### Testing Strategies 🧪
 
-This project uses jest and the react testing library for testing. We've decided to use Jest as it is a widely used testing tool and provides sufficient resources for testing a component library. The React Testing Library provides useful helpers to further push the flexibility of the jest testing tool. Some example test cases include;
+This project uses Jest and the React Testing Library for testing. We've decided to use Jest as it is a widely used testing tool and provides sufficient resources for testing a component library. The React Testing Library provides useful helpers to further push the flexibility of the jest testing tool. Some example test cases include;
 
 - Testing components with multiple styles (ex. button component with different button styles) [src/components/ActionButton.test.js](src/components/ActionButton.test.js)
 - Components styles are correctly rendered (Dimensions, Color, Fontstyle, Fontsize, etc) line 12 [src/components/Banner.test.js](src/components/Banner.test.js)
@@ -87,33 +87,31 @@ To run tests simply use the following command in the root directory
 $ npm run test
 ```
 
-For more information on tools and resources refer to our wifi page https://github.com/DTS-STN/DECD-Design-System/wiki#testing-documentation
+For more information on tools and resources refer to our [wiki page](https://github.com/DTS-STN/DECD-Design-System/wiki#testing-documentation)
 
 ### Accessibility Testing Strategies
 
 **Important Note:** we are testing for [WCAG 2.1 Level AA compliance](https://www.w3.org/TR/WCAG21/) according to the [Standard on Web Accessibility](https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=23601)
 
-We are using the Axe web browser extension as our main tool for accessibility testing. Axe provides stricter and clearer infomation in regards to accessibility issues, when compared to other web browser tools and is very easy to use. Axe is not ran through our code repo, it is an external tool which users need to download.
+We are using multiple tools and steps to do accessibility testing, as no one tool is capable of checking for all accessibility concerns.
 
-Download the Axe web browser extensionn [here](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
+1. We are using the [Storybook Accessibility Addon](https://storybook.js.org/blog/accessibility-testing-with-storybook/) as our main tool for accessibility testing. The Addon uses the Axe accessibility engine developed by Deque Systems. Axe is run on each component in Storybook and the addon will provide a list of accessibility violations, vulnerabilities and links to documentaion to help fix the violations. Tp use, simply run Storybook locally.
 
-Along with Axe we are also preforming QA to manually check for accessibility concerns and automated testing done by Jest-axe. Jest-axe is time efficient but only covers about 30% of unit test cases. We use multiple tools and steps to do accessibility testing, as no one tool is capable of checking for all instances accessibility concerns.
+2. Along with Axe we are also preforming manual tests to check for accessibility concerns and automated testing done by Jest-axe. Jest-axe is time efficient but only covers about 30% of unit test cases.
 
-To use Axe:
+   The following manual tests should be completed on each component:
 
-- Go to the page you want to test and open your dev tools
-- Select the "axe DevTools" tab
-- Select one of the "Scan Page" options
+   - Zoom content to 200% to ensure it is readable
+   - Tab through content using keyboard only
+   - Verify new content using a screen reader
 
-After scanning user will be presented with a list of accessibility concerns and guidance on how to fix them.
+   </br>
 
-Jest-axe is ran along with other unit tests. The following is an example test case;
+3. Jest-axe is ran along with other unit tests. To run unit tests follow instructions listed under the [Testing Strategies 🧪](#Testing-Strategies-🧪) section. The following is an example test case:
 
-- Passing the Action Button Props through jest-axe tool line 73 [src/components/ActionButton.test.js](src/components/ActionButton.test.js)
+   - Passing the Action Button Props through jest-axe tool line 73 [src/components/ActionButton.test.js](src/components/ActionButton.test.js)
 
-To run unit tests follow instructions listed under the [Testing Strategies 🧪](#Testing-Strategies-🧪) section.
-
-For more information on tools and resources refer to our [wiki page](https://github.com/DTS-STN/DECD-Design-System/wiki#accessibility-documentation)
+For more information on accessibility tools and resources refer to our [wiki page](https://github.com/DTS-STN/DECD-Design-System/wiki#accessibility-documentation)
 
 ### Browser & Device Testing
 
