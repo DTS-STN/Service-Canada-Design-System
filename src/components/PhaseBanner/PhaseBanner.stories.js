@@ -1,10 +1,10 @@
 import React from "react";
 import PhaseBanner from "./PhaseBanner";
 
-export default {
-  title: "Components/Reporting Components/PhaseBanner",
-  component: PhaseBanner,
-};
+// export default {
+//   title: "Not Used/Reporting Components/PhaseBanner",
+//   component: PhaseBanner,
+// };
 
 const Template = (args) => <PhaseBanner {...args} />;
 

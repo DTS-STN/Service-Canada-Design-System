@@ -1,9 +1,9 @@
 import { DateModified } from "./DateModified";
 
-export default {
-  title: "Components/Page details/DateModified",
-  component: DateModified,
-};
+// export default {
+//   title: "Not Used/Page details/DateModified",
+//   component: DateModified,
+// };
 
 const Template = (args) => <DateModified {...args} />;
 

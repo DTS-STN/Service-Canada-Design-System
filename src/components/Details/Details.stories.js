@@ -1,10 +1,10 @@
 import React from "react";
 import { Details } from "./Details";
 
-export default {
-  title: "Components/Form components/Details",
-  component: Details,
-};
+// export default {
+//   title: "Not Used/Form components/Details",
+//   component: Details,
+// };
 
 const Template = (args) => <Details {...args} />;
 

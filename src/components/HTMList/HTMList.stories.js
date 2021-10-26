@@ -1,9 +1,9 @@
 import { HTMList } from "./HTMList";
 
-export default {
-  title: "Components/Utility/HTMList",
-  component: HTMList,
-};
+// export default {
+//   title: "Not Used/Utility/HTMList",
+//   component: HTMList,
+// };
 
 const Template = (args) => <HTMList {...args} />;
 

@@ -1,19 +1,19 @@
 import React from "react";
 import { MultiTextField } from "./MultiTextField";
 
-export default {
-  title: "Components/Form Components/MultiTextField",
-  component: MultiTextField,
-  decorators: [
-    (Story) => (
-      <div className="w-full flex justify-center">
-        <div className="w-96">
-          <Story />
-        </div>
-      </div>
-    ),
-  ],
-};
+// export default {
+//   title: "Not Used/Form Components/MultiTextField",
+//   component: MultiTextField,
+//   decorators: [
+//     (Story) => (
+//       <div className="w-full flex justify-center">
+//         <div className="w-96">
+//           <Story />
+//         </div>
+//       </div>
+//     ),
+//   ],
+// };
 
 const Template = (args) => <MultiTextField i {...args} />;
 

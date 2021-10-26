@@ -1,10 +1,10 @@
 import React from "react";
 import { ErrorLabel } from "./ErrorLabel";
 
-export default {
-  title: "Components/Form Components/ErrorLabel",
-  component: ErrorLabel,
-};
+// export default {
+//   title: "Not Used/Form Components/ErrorLabel",
+//   component: ErrorLabel,
+// };
 
 const Template = (args) => <ErrorLabel {...args} />;
 

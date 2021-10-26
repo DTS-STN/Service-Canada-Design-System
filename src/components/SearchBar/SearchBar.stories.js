@@ -1,7 +1,7 @@
 import { SearchBar } from "./SearchBar";
 
 export default {
-  title: "Components/Header Components/SearchBar",
+  title: "Components/Search Bar/Search Bar",
   component: SearchBar,
 };
 

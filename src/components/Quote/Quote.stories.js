@@ -1,10 +1,10 @@
 import React from "react";
 import { Quote } from "./Quote";
 
-export default {
-  title: "Components/Utility/Quote",
-  component: Quote,
-};
+// export default {
+//   title: "Not Used/Utility/Quote",
+//   component: Quote,
+// };
 
 const Template = (args) => <Quote {...args}></Quote>;
 

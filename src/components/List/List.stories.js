@@ -1,10 +1,10 @@
 import React from "react";
 import { List } from "./List";
 
-export default {
-  title: "Components/Informative Components/List",
-  component: List,
-};
+// export default {
+//   title: "Not Used/Informative Components/List",
+//   component: List,
+// };
 
 const Template = (args) => <List {...args}></List>;
 

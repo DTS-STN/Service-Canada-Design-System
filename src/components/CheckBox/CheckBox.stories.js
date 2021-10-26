@@ -1,19 +1,19 @@
 import React from "react";
 import { CheckBox } from "./CheckBox";
 
-export default {
-  title: "Components/Form Components/CheckBox",
-  component: CheckBox,
-  decorators: [
-    (Story) => (
-      <div className="w-full flex justify-center">
-        <div className="w-96">
-          <Story />
-        </div>
-      </div>
-    ),
-  ],
-};
+// export default {
+//   title: "Not Used/Form Components/CheckBox",
+//   component: CheckBox,
+//   decorators: [
+//     (Story) => (
+//       <div className="w-full flex justify-center">
+//         <div className="w-96">
+//           <Story />
+//         </div>
+//       </div>
+//     ),
+//   ],
+// };
 
 const Template = (args) => <CheckBox {...args} />;
 

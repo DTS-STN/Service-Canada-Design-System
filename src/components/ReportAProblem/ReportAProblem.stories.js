@@ -1,10 +1,10 @@
 import React from "react";
 import { ReportAProblem } from "./ReportAProblem";
 
-export default {
-  title: "Components/Reporting Components/ReportAProblem",
-  component: ReportAProblem,
-};
+// export default {
+//   title: "Not Used/Reporting Components/ReportAProblem",
+//   component: ReportAProblem,
+// };
 
 const Template = (args) => <ReportAProblem {...args} />;
 

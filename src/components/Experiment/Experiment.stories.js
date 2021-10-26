@@ -1,10 +1,10 @@
 import React from "react";
 import Experiment from "./Experiment";
 
-export default {
-  title: "Components/Redirect components/Experiment",
-  component: Experiment,
-};
+// export default {
+//   title: "Not Used/Redirect components/Experiment",
+//   component: Experiment,
+// };
 
 const Template = (args) => <Experiment {...args} />;
 

@@ -1,10 +1,10 @@
 import React from "react";
 import { CallToAction } from "./CallToAction";
 
-export default {
-  title: "Components/Redirect Components/CallToAction",
-  component: CallToAction,
-};
+// export default {
+//   title: "Not Used/Redirect Components/CallToAction",
+//   component: CallToAction,
+// };
 
 const Template = (args) => <CallToAction {...args} />;
 

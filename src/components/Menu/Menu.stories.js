@@ -1,10 +1,10 @@
 import React from "react";
 import { Menu } from "./Menu";
 
-export default {
-  title: "Components/Redirect Components/Menu",
-  component: Menu,
-};
+// export default {
+//   title: "Not Used/Redirect Components/Menu",
+//   component: Menu,
+// };
 
 const Template = (args) => <Menu {...args}></Menu>;
 
