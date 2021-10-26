@@ -34,6 +34,7 @@
     "pre-commit": "lint-staged",
     "lint": "prettier --write \"*.{js,md}\" --write \".storybook/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"playground/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
     "prepare": "husky install",
+    "storybook-docs": "start-storybook --docs --no-manager-cache",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook"
   },
