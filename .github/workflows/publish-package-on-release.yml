@@ -2,10 +2,10 @@ name: Publish Package on Release
 on:
   push:
     branches:
-      - release
+      - master
 
 jobs:
-  build-and-deploy:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️

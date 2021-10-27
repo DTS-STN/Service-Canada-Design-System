@@ -53,27 +53,27 @@ import { Component } from "@dts-stn/decd-design-system";
 
 ## Developing this Package 👨🏽‍💻👩🏽‍💻
 
-### Developing and Documenting Components 📝
+### Getting Started
 
-This project uses storybook to document and provide a playground to visually see components in action. To run storybook, run the command below from the root directory
+[Install Nodes.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
 ```bash
+# Install Packages
+$ npm install
+```
+
+### Developing and Documenting Components 📝
+
+This project uses [storybook](https://storybook.js.org/) to document and provide a playground to visually see components in action while you are developing them. To run storybook, run the command below from the root directory
+
+```bash
+# Start dev environment
 $ npm run storybook
 ```
 
-### Building the Package 👷🏽‍♀️👷🏽
-
-This package uses babel and rollup to transpile and create production bundles which are generated in the `/dist` folder at the root level of the project. To build the production bundle at any time simple run the following command
-
-```bash
-$ npm run build
-```
-
-Rollup looks at the following file [src/index.js](src/index.js) to determine what it should include in the production bundle... as such only import and export things in this file that you want to be included, otherwise do not touch this file.
-
 ### Testing Strategies 🧪
 
-This project uses jest and the react testing library for testing. We've decided to use Jest as it is a widely used testing tool and provides sufficient resources for testing a component library. The React Testing Library provides useful helpers to further push the flexibility of the jest testing tool. Some example test cases include;
+This project uses Jest and the React Testing Library for testing. We've decided to use Jest as it is a widely used testing tool and provides sufficient resources for testing a component library. The React Testing Library provides useful helpers to further push the flexibility of the jest testing tool. Some example test cases include;
 
 - Testing components with multiple styles (ex. button component with different button styles) [src/components/ActionButton.test.js](src/components/ActionButton.test.js)
 - Components styles are correctly rendered (Dimensions, Color, Fontstyle, Fontsize, etc) line 12 [src/components/Banner.test.js](src/components/Banner.test.js)
@@ -83,36 +83,35 @@ This project uses jest and the react testing library for testing. We've decided 
 To run tests simply use the following command in the root directory
 
 ```bash
+# run tests
 $ npm run test
 ```
 
-For more information on tools and resources refer to our wifi page https://github.com/DTS-STN/DECD-Design-System/wiki#testing-documentation
+For more information on tools and resources refer to our [wiki page](https://github.com/DTS-STN/DECD-Design-System/wiki#testing-documentation)
 
 ### Accessibility Testing Strategies
 
-**Important Note:** we are testing for WCAG 2.0 Level AA compliance: https://www.w3.org/TR/WCAG20/ according to the Standard on Web Accessibility: https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=23601
+**Important Note:** we are testing for [WCAG 2.1 Level AA compliance](https://www.w3.org/TR/WCAG21/) according to the [Standard on Web Accessibility](https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=23601)
 
-We are using the Axe web browser extension as our main tool for accessibility testing. Axe provides stricter and clearer infomation in regards to accessibility issues, when compared to other web browser tools and is very easy to use. Axe is not ran through our code repo, it is an external tool which users need to download.
+We are using multiple tools and steps to do accessibility testing, as no one tool is capable of checking for all accessibility concerns.
 
-To download the Axe web browser extension, visit https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd.
+1. We are using the [Storybook Accessibility Addon](https://storybook.js.org/blog/accessibility-testing-with-storybook/) as our main tool for accessibility testing. The Addon uses the Axe accessibility engine developed by Deque Systems. Axe is run on each component in Storybook and the addon will provide a list of accessibility violations, vulnerabilities and links to documentaion to help fix the violations. To use, simply run Storybook locally.
 
-Along with Axe we are also preforming QA to manually check for accessibility concerns and automated testing done by Jest-axe. Jest-axe is time efficient but only covers about 30% of unit test cases. We use multiple tools and steps to do accessibility testing, as no one tool is capable of checking for all instances accessibility concerns.
+2. Along with Axe we are also preforming manual tests to check for accessibility concerns and automated testing done by Jest-axe. Jest-axe is time efficient but only covers about 30% of unit test cases.
 
-To use Axe:
+   The following manual tests should be completed on each component:
 
-- Go to the page you want to test and open your dev tools
-- Select the "axe DevTools" tab
-- Select one of the "Scan Page" options
+   - Zoom content to 200% to ensure it is readable
+   - Tab through content using keyboard only
+   - Verify new content using a screen reader
 
-After scanning user will be presented with a list of accessibility concerns and guidance on how to fix them.
+   </br>
 
-Jest-axe is ran along with other unit tests. The following is an example test case;
+3. Jest-axe is ran along with other unit tests. To run unit tests follow instructions listed under the [Testing Strategies 🧪](#Testing-Strategies-🧪) section. The following is an example test case:
 
-- Passing the Action Button Props through jest-axe tool line 73 [src/components/ActionButton.test.js](src/components/ActionButton.test.js)
+   - Passing the Action Button Props through jest-axe tool line 73 [src/components/ActionButton.test.js](src/components/ActionButton.test.js)
 
-To run unit tests follow instructions listed under the [Testing Strategies 🧪](#Testing-Strategies-🧪) section.
-
-For more information on tools and resources refer to our wiki page https://github.com/DTS-STN/DECD-Design-System/wiki#accessibility-documentation
+For more information on accessibility tools and resources refer to our [wiki page](https://github.com/DTS-STN/DECD-Design-System/wiki#accessibility-documentation)
 
 ### Browser & Device Testing
 
@@ -128,6 +127,18 @@ Testing will be done manually, to confirm components are displaying correctly on
   - Version 11
 - Edge
   - Version 17, 18, 87, 89
+
+### Pull Request Procedures
+
+**Branching Strategy:**
+
+| Branch   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Associated Github Actions                                         |
+| :------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------- |
+| master   | Production branch. Triggers a build to Storybook & publishes a new npm package release.                                                                                                                                                                                                                                                                                                                                                                                                                                      | Publish Package on Release </br></br> Build and Deploy Storybooks |
+| hotfix   | Can be created off of master to allow for immediate fixes to bugs and will not affect current development. Any changes should be pulled back into develop and feature branches                                                                                                                                                                                                                                                                                                                                               |                                                                   |
+| release  | Final culmination of all branches that will be used to test beta versions of the new release. After testing is complete, release will be merged into master.                                                                                                                                                                                                                                                                                                                                                                 | Generate Pre-Release </br></br>Build and Deploy Storybooks        |
+| develop  | Culmination of feature branches                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Build and Deploy Storybooks                                       |
+| features | Created off of develop to work on new features locally that are intended for the next release. Each feature branch should be prefixed by the relevant Jira issue and component ID (if applicable), eg. DS-56-A003-Footer.</br></br> Feature branches should be merged into develop using a PR. Each PR should have at least one person review it before it can be merged. Check out [these tips](https://github.com/DTS-STN/DECD-Design-System/wiki#code-review-helpful-tips) for giving productive and thoughtful feedback. | Build and Deploy Storybooks on PR                                 |
 
 ### Playground ⛹🏽‍♀️⛹🏽‍♂️
 
@@ -148,3 +159,13 @@ Starting from the root directory, run the following commands in the order shown 
 ```bash
 $ cd playground && npm run start
 ```
+
+### Building the Package 👷🏽‍♀️👷🏽
+
+This package uses babel and rollup to transpile and create production bundles which are generated in the `/dist` folder at the root level of the project. To build the production bundle at any time simply run the following command
+
+```bash
+$ npm run build
+```
+
+Rollup looks at the following file [src/index.js](src/index.js) to determine what it should include in the production bundle... as such only import and export things in this file that you want to be included, otherwise do not touch this file.
