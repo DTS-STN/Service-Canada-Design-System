@@ -7,15 +7,15 @@ import "./icomoon/style.css";
 /**
  * layout components and navigational page elements
  */
-export { default as LayoutContainer } from "./components/LayoutContainer";
+export { default as LayoutContainer } from "./components/LayoutContainer/LayoutContainer";
 
 /**
  * buttons
  */
-export { default as ActionButton } from "./components/ActionButton";
+export { ActionButton } from "./components/ActionButton/ActionButton";
 
 /**
  * form elements
  */
-export { default as CheckBox } from "./components/CheckBox";
-export { default as RadioField } from "./components/RadioField";
+export { CheckBox } from "./components/CheckBox/CheckBox";
+export { RadioField } from "./components/RadioField/RadioField";

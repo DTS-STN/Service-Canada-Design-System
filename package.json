@@ -14,13 +14,15 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "fetch-mock": "^9.11.0",
+    "joi": "^17.4.2",
     "react-scripts": "4.0.3"
   },
   "peerDependencies": {
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "web-vitals": "^1.1.2",
-    "prop-types": "^15.7.2"
+    "web-vitals": "^1.1.2"
   },
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
@@ -28,10 +30,12 @@
     "i-all": "npm i && cd playground && npm i",
     "dev": "npm-run-all --parallel build-watch start-playground",
     "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test",
+    "test:unit": "jest --forceExit",
     "pre-commit": "lint-staged",
     "lint": "prettier --write \"*.{js,md}\" --write \".storybook/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"playground/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
     "prepare": "husky install",
-    "storybook": "start-storybook -p 6006",
+    "storybook-docs": "start-storybook --docs --no-manager-cache",
+    "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook"
   },
   "lint-staged": {
@@ -72,13 +76,13 @@
     "@babel/preset-env": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
     "@rollup/plugin-babel": "^5.3.0",
-    "@storybook/addon-a11y": "^6.2.9",
-    "@storybook/addon-actions": "^6.2.9",
-    "@storybook/addon-essentials": "^6.2.9",
-    "@storybook/addon-links": "^6.2.9",
+    "@storybook/addon-a11y": "^6.3.7",
+    "@storybook/addon-actions": "^6.3.7",
+    "@storybook/addon-essentials": "^6.3.7",
+    "@storybook/addon-links": "^6.3.7",
     "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/preset-create-react-app": "^3.1.7",
-    "@storybook/react": "^6.2.9",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.7",
     "@tailwindcss/postcss7-compat": "^2.1.4",
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^9.8.6",
