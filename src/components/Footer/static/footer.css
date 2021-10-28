@@ -1,13 +1,134 @@
-/* Browser */
-@media screen and (max-width: 2000px) {
-  button {
-    display: none;
-  }
+a {
+  text-decoration: none;
+  color: #262626;
+}
+ul {
+  list-style: none;
+}
+
+/* Main container surrounding whole footer */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid pink; */
+  height: fit-content;
+  padding: 0 20px 0 20px;
+  margin: 0;
+}
+
+/* button styling */
+.btn {
+  border: 1.5px solid #26374a;
+  box-sizing: border-box;
+  border-radius: 6px;
+  background-color: white;
+  height: 44px;
+  width: 100%;
+  margin-bottom: 28px;
+}
+.btn-text {
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0.0025em;
+  color: #262626;
+}
+.btn-icon {
+  justify-self: end;
+}
+
+.btn:hover {
+  opacity: 0.5;
+}
+
+/* lines separating areas of the footer */
+.breakpoint {
+  border-top: 1px solid #d0d0d0;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+/* icon styling */
+.icon-heading-text {
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.0025em;
+}
+.icon-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 16px;
+}
+
+/* link styling */
+.link-section-mobile {
+  display: flex;
+  flex-direction: column;
+}
+.link-text {
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 40px;
+}
+.link-group {
+  padding-left: 0;
+}
+.link-section-browser {
+  display: none;
+}
+
+/* switch icons from desktop to mobile */
+.logo {
+  display: none;
+}
+.logo-mobile {
+  width: 89px;
+  height: 23.88px;
+  margin-bottom: 30px;
+  display: flex;
+}
+
+/* Large screen */
+@media screen and (min-width: 980px) {
+  /* main container for footer on larger screen */
   .footer-container {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     height: 220px;
   }
+  /* don't display button on larger screens */
+  .btn {
+    display: none;
+  }
+  /* larger screens don't have break points */
+  .breakpoint {
+    display: none;
+  }
+  /* link styling */
+  .link-section-browser {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 48px;
+  }
+  .link-text {
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+  }
+  .link-section-mobile {
+    display: none;
+  }
 
+  /* Styling for main footer sub sections */
   .top-footer {
     font-family: Noto Sans;
     font-style: normal;
@@ -19,33 +140,14 @@
     margin-bottom: 28px;
     padding: 0 150px 0 150px;
   }
-
   .bottom-footer {
     display: flex;
+    flex-direction: row;
     margin-top: 28px;
     padding: 0 150px 0 150px;
   }
-
   .bottom-footer-first {
-    width: 500px;
-  }
-
-  .breakpoint {
-    border-top: 1px solid #d0d0d0;
-  }
-  .mobile-breakpoint {
-    display: none;
-  }
-
-  .sub-footer-links {
-    font-family: Noto Sans;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 30px;
-  }
-  .sub-footer-links-mobile {
-    display: none;
+    width: 600px;
   }
 
   /* icon styling */
@@ -53,121 +155,19 @@
     max-width: 280.52px;
     max-height: 71px;
   }
-  .icon-heading {
-    font-family: Noto Sans;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
+  .icon-heading-text {
     line-height: 30px;
-    color: #537688;
-  }
-  .icon-group {
-    padding-top: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
   }
 
-  .sub-footer-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top: 48px;
-  }
   /* 102-28 padding, bottom footer accounts for 28 */
   .logo {
+    display: flex;
     max-width: 167.84px;
     max-height: 40px;
-    padding-top: 74px;
     margin-left: auto;
+    padding-top: 74px;
   }
   .logo-mobile {
     display: none;
-  }
-}
-
-/* Mobile */
-@media screen and (max-width: 878px) {
-  button {
-    display: flex;
-    border: 1.5px solid #3d8174;
-    box-sizing: border-box;
-    border-radius: 6px;
-    background-color: white;
-    height: 44px;
-    width: 100%;
-    margin-bottom: 28px;
-    align-items: center;
-    justify-content: center;
-  }
-  button:hover {
-    opacity: 0.5;
-  }
-  .btn-text {
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 26px;
-  }
-
-  .btn-arrow {
-    padding-left: 5px;
-  }
-
-  .footer-container {
-    border: 2px solid pink;
-    display: block;
-    /* align-self: center;
-    justify-self: center; */
-    width: 280px;
-    height: fit-content;
-    padding: 0 20px 0 20px;
-    margin: 0;
-  }
-  /* mobile top-footer/bottom-footer */
-  .top-footer {
-    margin-bottom: 0px;
-    padding: 0;
-  }
-  .bottom-footer {
-    margin-top: 0px;
-    padding: 0;
-  }
-
-  /* switch breakpoints from desktop to mobile */
-  .breakpoint {
-    display: none;
-  }
-  .mobile-breakpoint {
-    display: flex;
-    border-top: 1px solid #d0d0d0;
-    margin-top: 24px;
-    margin-bottom: 24px;
-  }
-
-  /* switch links from desktop to mobile */
-  .sub-footer-links {
-    display: none;
-  }
-  .sub-footer-links-mobile {
-    display: flex;
-    flex-direction: column;
-    font-family: Noto Sans;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 40px;
-  }
-
-  /* switch icons from desktop to mobile */
-  .logo {
-    display: none;
-  }
-  .logo-mobile {
-    width: 89px;
-    height: 23.88px;
-    margin-bottom: 30px;
-    display: flex;
   }
 }
