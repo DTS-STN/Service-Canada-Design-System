@@ -1,87 +1,95 @@
 <!DOCTYPE html>
 <html>
-<!-- footer css file -->
+
+<!-- When using this html, make sure to includes these links -->
 
 <head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <!-- google fonts load these in at project level -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:wght@400;700&family=Rubik:wght@500&display=swap"
+    rel="stylesheet">
   <link href="footer.css" rel="stylesheet" type="text/css" />
 </head>
-<!-- Main div holding footer component-->
+
+<!-- html for the footer -->
 <footer class="footer-container">
-  <!-- top section of the footer -->
-  <div class="top-footer">
-    <a>Date modified: 2021-02-27</a>
+  <div class="footer-top">
+    <!-- Replace with your date modified component -->
+    <span>Date modified: 2021-02-27</span>
   </div>
-  <!-- line to separate sections of footer -->
   <div class="breakpoint"></div>
-  <!-- Bottom section of the footer -->
-  <div class="bottom-footer">
-    <!-- bottom footer first section with icons and links -->
-    <div class="bottom-footer-first">
-      <!-- icon section -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-first">
       <div class="icon-section">
-        <a class="icon-heading-text">Follow Us</a>
-        <div class="icon-group">
-          <a href="https://www.facebook.com">
-            <img src="../../../assets/facebook.png" alt="Facebook Icon">
-          </a>
-          <a href="https://www.instagram.com">
-            <img src="../../../assets/instagram.png" alt="Instagram Icon">
-          </a>
-          <a href="https://www.linkedin.com">
-            <img src="../../../assets/linkedin.png" alt="Linkedin Icon">
-          </a>
-          <a href="https://twitter.com">
-            <img src="../../../assets/twitter.png" alt="Twitter Icon">
-          </a>
-          <a href="https://www.youtube.com">
-            <img src="../../../assets/youtube.png" alt="Youtube Icon">
-          </a>
-        </div>
+        <h2 class="hide-element">About Social Media Platforms</h2>
+        <span class="icon-heading-text">Follow Us</span>
+        <ul class="icon-group">
+          <li>
+            <a href="https://www.facebook.com">
+              <img src="../../../assets/facebook.png" alt="Facebook Icon">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com">
+              <img src="../../../assets/instagram.png" alt="Instagram Icon">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com">
+              <img src="../../../assets/linkedin.png" alt="Linkedin Icon">
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com">
+              <img src="../../../assets/twitter.png" alt="Twitter Icon">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com">
+              <img src="../../../assets/youtube.png" alt="Youtube Icon">
+            </a>
+          </li>
+        </ul>
       </div>
-      <!-- line to separate sections of footer. Mobile version--->
       <div class="breakpoint"></div>
-      <!-- links section browser-->
-      <!-- Should this be in a list format? -->
-      <div class="link-section-browser">
-        <a href="https://www.canada.ca/en/employment-social-development/corporate/portfolio/service-canada.html">About
-          Service Canada</a>
-        <a>•</a>
-        <a href="https://www.canada.ca/en/government/about.html">About Canada.ca</a>
-        <a>•</a>
-        <a href="https://www.canada.ca/en/transparency/privacy.html">Privacy</a>
-        <a>•</a>
-        <a href="https://www.canada.ca/en/transparency/terms.html">Terms & Conditions</a>
-      </div>
-      <!-- links section mobile-->
-      <div class="link-section-mobile">
+      <div class="link-section">
+        <h2 class="hide-element">Links for about this site</h2>
         <ul class="link-group link-text">
           <li>
             <a href="https://www.canada.ca/en/employment-social-development/corporate/portfolio/service-canada.html">About
               Service Canada</a>
+            <span aria-hidden="true" class="spacer">•</span>
           </li>
           <li>
             <a href="https://www.canada.ca/en/government/about.html">About Canada.ca</a>
+            <span aria-hidden="true" class="spacer">•</span>
           </li>
           <li>
             <a href="https://www.canada.ca/en/transparency/privacy.html">Privacy</a>
+            <span aria-hidden="true" class="spacer">•</span>
           </li>
           <li>
             <a href="https://www.canada.ca/en/transparency/terms.html">Terms & Conditions</a>
           </li>
         </ul>
       </div>
-      <!-- line to separate sections of footer. Mobile version--->
       <div class="breakpoint"></div>
-      <img class="logo-mobile" src="../../../assets/MobileLogo.png">
+      <img class="logo-mobile" src="../../../assets/MobileLogo.png" alt="Canada.ca Logo">
     </div>
-
-    <!-- Bottom footer second section with logo -->
-    <img class="logo" src="../../../assets/GC logo.png">
+    <img class="logo" src="../../../assets/GC logo.png" alt="Canada.ca Logo">
   </div>
-  <!-- Need to add a link here to link back to top of page or header* -->
-  <a href="Add a link to the header/top of the page" class="btn btn-text">
-    Top of Page <img class="btn-icon" src="../../../assets/btnArrow.png">
-  </a>
+
+  <!-- Need to add a link here for the href to link back to top of page or header -->
+  <div class="btn">
+    <a href="Add a link to the header/top of the page">
+      <span class="btn-text">Top of Page</span>
+      <img class="btn-icon" src="../../../assets/btnArrow.png" alt="Up Arrow">
+    </a>
+  </div>
 </footer>
 
 </html>

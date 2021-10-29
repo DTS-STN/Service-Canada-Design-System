@@ -5,12 +5,20 @@ a {
 ul {
   list-style: none;
 }
+/* class to hide elements from visually but allow content to be read out by screen readers */
+.hide-element {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
 
 /* Main container surrounding whole footer */
 .footer-container {
   display: flex;
   flex-direction: column;
-  /* border: 2px solid pink; */
   height: fit-content;
   padding: 0 20px 0 20px;
   margin: 0;
@@ -22,9 +30,10 @@ ul {
   box-sizing: border-box;
   border-radius: 6px;
   background-color: white;
-  height: 44px;
+  height: 42px;
   width: 100%;
-  margin-bottom: 28px;
+  padding: 7px 0 9px 0;
+  text-align: center;
 }
 .btn-text {
   font-family: Noto Sans;
@@ -36,9 +45,10 @@ ul {
   color: #262626;
 }
 .btn-icon {
-  justify-self: end;
+  padding-top: 5px;
+  padding-left: 10px;
+  /* padding-right: 5px; */
 }
-
 .btn:hover {
   opacity: 0.5;
 }
@@ -59,6 +69,7 @@ ul {
   letter-spacing: 0.0025em;
 }
 .icon-group {
+  padding-left: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -66,7 +77,7 @@ ul {
 }
 
 /* link styling */
-.link-section-mobile {
+.link-section {
   display: flex;
   flex-direction: column;
 }
@@ -80,7 +91,7 @@ ul {
 .link-group {
   padding-left: 0;
 }
-.link-section-browser {
+.spacer {
   display: none;
 }
 
@@ -96,10 +107,9 @@ ul {
 }
 
 /* Large screen */
-@media screen and (min-width: 980px) {
+@media screen and (min-width: 850px) {
   /* main container for footer on larger screen */
   .footer-container {
-    /* border: 2px solid black; */
     height: 220px;
   }
   /* don't display button on larger screens */
@@ -111,25 +121,27 @@ ul {
     display: none;
   }
   /* link styling */
-  .link-section-browser {
-    display: flex;
-    flex-direction: row;
+  .link-section {
     justify-content: space-between;
     padding-top: 48px;
+  }
+  .link-section li {
+    display: inline;
   }
   .link-text {
     font-family: Noto Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 30px;
   }
-  .link-section-mobile {
-    display: none;
+  .spacer {
+    display: inline;
+    padding-left: 15px;
+    padding-right: 15px;
   }
-
   /* Styling for main footer sub sections */
-  .top-footer {
+  .footer-top {
     font-family: Noto Sans;
     font-style: normal;
     font-weight: normal;
@@ -140,13 +152,13 @@ ul {
     margin-bottom: 28px;
     padding: 0 150px 0 150px;
   }
-  .bottom-footer {
+  .footer-bottom {
     display: flex;
     flex-direction: row;
     margin-top: 28px;
     padding: 0 150px 0 150px;
   }
-  .bottom-footer-first {
+  .footer-bottom-first {
     width: 600px;
   }
 
