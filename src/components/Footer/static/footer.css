@@ -1,10 +1,12 @@
-a {
+.text-styles {
   text-decoration: none;
   color: #262626;
 }
-ul {
+
+.list-styles {
   list-style: none;
 }
+
 /* class to hide elements from visually but allow content to be read out by screen readers */
 .hide-element {
   clip: rect(1px, 1px, 1px, 1px);
@@ -24,6 +26,25 @@ ul {
   margin: 0;
 }
 
+.date-modified dd {
+  display: inline;
+  margin: 0;
+}
+
+.date-modified dt {
+  display: inline-block;
+}
+
+.date-text {
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.0025em;
+  color: #595959;
+}
+
 /* button styling */
 .btn {
   border: 1.5px solid #26374a;
@@ -35,6 +56,7 @@ ul {
   padding: 7px 0 9px 0;
   text-align: center;
 }
+
 .btn-text {
   font-family: Noto Sans;
   font-style: normal;
@@ -44,22 +66,21 @@ ul {
   letter-spacing: 0.0025em;
   color: #262626;
 }
+
 .btn-icon {
   position: relative;
   float: right;
   padding-top: 5px;
   padding-right: 5px;
 }
-.btn:hover {
-  opacity: 0.5;
-}
 
 /* lines separating areas of the footer */
 .breakpoint {
-  border-top: 1px solid #d0d0d0;
+  border-bottom: 1px solid #d0d0d0;
   margin-top: 24px;
   margin-bottom: 24px;
 }
+
 /* icon styling */
 .icon-heading-text {
   font-family: Noto Sans;
@@ -69,6 +90,7 @@ ul {
   line-height: 19px;
   letter-spacing: 0.0025em;
 }
+
 .icon-group {
   padding-left: 0;
   display: flex;
@@ -82,16 +104,19 @@ ul {
   display: flex;
   flex-direction: column;
 }
+
 .link-text {
-  font-family: Noto Sans;
+  font-family: Noto Sans, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 40px;
 }
+
 .link-group {
   padding-left: 0;
 }
+
 .spacer {
   display: none;
 }
@@ -100,9 +125,10 @@ ul {
 .logo {
   display: none;
 }
+
 .logo-mobile {
   width: 89px;
-  height: 23.88px;
+  height: 24px;
   margin-bottom: 30px;
   display: flex;
 }
@@ -113,22 +139,27 @@ ul {
   .footer-container {
     height: 220px;
   }
+
   /* don't display button on larger screens */
   .btn {
     display: none;
   }
+
   /* larger screens don't have break points */
   .breakpoint {
     display: none;
   }
+
   /* link styling */
   .link-section {
     justify-content: space-between;
     padding-top: 48px;
   }
+
   .link-section li {
     display: inline;
   }
+
   .link-text {
     font-family: Noto Sans;
     font-style: normal;
@@ -136,38 +167,36 @@ ul {
     font-size: 14px;
     line-height: 30px;
   }
+
   .spacer {
     display: inline;
     padding-left: 15px;
     padding-right: 15px;
   }
+
   /* Styling for main footer sub sections */
   .footer-top {
-    font-family: Noto Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 22px;
-    letter-spacing: 0.0025em;
-    color: #595959;
     margin-bottom: 28px;
     padding: 0 150px 0 150px;
   }
+
   .footer-bottom {
     display: flex;
     flex-direction: row;
     margin-top: 28px;
     padding: 0 150px 0 150px;
   }
+
   .footer-bottom-first {
     width: 600px;
   }
 
   /* icon styling */
   .icon-section {
-    max-width: 280.52px;
+    max-width: 281px;
     max-height: 71px;
   }
+
   .icon-heading-text {
     line-height: 30px;
   }
@@ -175,11 +204,12 @@ ul {
   /* 102-28 padding, bottom footer accounts for 28 */
   .logo {
     display: flex;
-    max-width: 167.84px;
+    max-width: 168px;
     max-height: 40px;
     margin-left: auto;
     padding-top: 74px;
   }
+
   .logo-mobile {
     display: none;
   }

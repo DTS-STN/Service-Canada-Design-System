@@ -6,7 +6,7 @@
 <head>
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
   <meta content="utf-8" http-equiv="encoding">
-  <!-- google fonts load these in at project level -->
+  <!-- Developer Note: google fonts load these in at project level -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -17,20 +17,28 @@
 
 <!-- html for the footer -->
 <footer class="footer-container">
-  <div class="footer-top">
-    <!-- Replace with your date modified component -->
-    <span>Date modified: 2021-02-27</span>
-  </div>
+  <section class="footer-top">
+    <h2 class="hide-element">Last Modified Date</h2>
+    <dl class="date-modified">
+      <dt class="date-text">Date Modified:</dt>
+      <dd>
+        <!-- Developer Note: referenece dateModfied property with ur
+        date modified variable and Remove temporary placeholder for
+        time "2021-10-21" -->
+        <time class="date-text" property="dateModified">2021-10-21</time>
+      </dd>
+    </dl>
+  </section>
   <div class="breakpoint"></div>
-  <div class="footer-bottom">
-    <div class="footer-bottom-first">
-      <div class="icon-section">
+  <section class="footer-bottom">
+    <section class="footer-bottom-first">
+      <section class="icon-section">
         <h2 class="hide-element">About Social Media Platforms</h2>
-        <span class="icon-heading-text">Follow Us</span>
-        <ul class="icon-group">
+        <p class="icon-heading-text">Follow Us</p>
+        <ul class="icon-group list-styles text-styles">
           <li>
             <a href="https://www.facebook.com">
-              <img src="../../../assets/facebook.png" alt="Facebook Icon">
+              <img src="../../../assets/facebook.png" title="Facebook Icon" alt="Facebook Icon">
             </a>
           </li>
           <li>
@@ -54,42 +62,41 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="breakpoint"></div>
-      <div class="link-section">
+      <section class="link-section">
         <h2 class="hide-element">Links for about this site</h2>
-        <ul class="link-group link-text">
+        <ul class="link-group link-text list-styles">
           <li>
-            <a href="https://www.canada.ca/en/employment-social-development/corporate/portfolio/service-canada.html">About
+            <a class="text-styles"
+              href="https://www.canada.ca/en/employment-social-development/corporate/portfolio/service-canada.html">About
               Service Canada</a>
             <span aria-hidden="true" class="spacer">•</span>
           </li>
           <li>
-            <a href="https://www.canada.ca/en/government/about.html">About Canada.ca</a>
+            <a class="text-styles" href="https://www.canada.ca/en/government/about.html">About Canada.ca</a>
             <span aria-hidden="true" class="spacer">•</span>
           </li>
           <li>
-            <a href="https://www.canada.ca/en/transparency/privacy.html">Privacy</a>
+            <a class="text-styles" href="https://www.canada.ca/en/transparency/privacy.html">Privacy</a>
             <span aria-hidden="true" class="spacer">•</span>
           </li>
           <li>
-            <a href="https://www.canada.ca/en/transparency/terms.html">Terms & Conditions</a>
+            <a class="text-styles" href="https://www.canada.ca/en/transparency/terms.html">Terms & Conditions</a>
           </li>
         </ul>
-      </div>
+      </section>
       <div class="breakpoint"></div>
       <img class="logo-mobile" src="../../../assets/MobileLogo.png" alt="Canada.ca Logo">
-    </div>
+    </section>
     <img class="logo" src="../../../assets/GC logo.png" alt="Canada.ca Logo">
-  </div>
+  </section>
 
-  <!-- Need to add a link here for the href to link back to top of page or header -->
-  <div class="btn">
-    <a href="Add a link to the header/top of the page">
-      <span class="btn-text">Top of Page</span>
-      <img class="btn-icon" src="../../../assets/btnArrow.png" alt="Up Arrow">
-    </a>
-  </div>
+  <!-- Developer Note: Need to add a link here for the href to link back to top of page or header -->
+  <a class="btn btn-text text-styles" href="Add a link to the header/top of the page">
+    Top of Page
+    <img class="btn-icon" src="../../../assets/btnArrow.png" alt="Up Arrow">
+  </a>
 </footer>
 
 </html>
