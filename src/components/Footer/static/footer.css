@@ -45,9 +45,10 @@ ul {
   color: #262626;
 }
 .btn-icon {
+  position: relative;
+  float: right;
   padding-top: 5px;
-  padding-left: 10px;
-  /* padding-right: 5px; */
+  padding-right: 5px;
 }
 .btn:hover {
   opacity: 0.5;
