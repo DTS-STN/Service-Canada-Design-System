@@ -151,7 +151,7 @@ body {
   background: #edf1f4;
   color: #333333;
   padding: 0 20px 0 13px;
-  margin-right: 0;
+  margin: 0;
 }
 
 .arrow-down-white,
@@ -316,6 +316,7 @@ body {
     color: #ffffff;
     padding: 20px 11px 18px 15px;
     width: auto;
+    display: block;
   }
 
   .sub-menu-button[aria-expanded="true"] {
