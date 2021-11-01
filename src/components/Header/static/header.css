@@ -53,6 +53,7 @@ body {
 
 .header-logo {
   width: 75%;
+  max-height: 19px;
 }
 
 .language-select-section {
@@ -69,7 +70,7 @@ body {
 .language-toggle-text {
   display: none;
   font-family: "Noto Sans", sans-serif;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .language-toggle-abbr {
@@ -89,6 +90,7 @@ body {
 }
 
 .search-input {
+  font-family: "Noto Sans", sans-serif;
   font-size: 15px;
   line-height: 23px;
   width: 100%;
@@ -123,14 +125,14 @@ body {
   color: #ffffff;
   font-size: 22px;
   line-height: 27px;
-  font-weight: 700;
+  font-weight: 400;
   padding: 16px 0 18px 20px;
   margin: 0;
 }
 
 .menu-button {
   font-family: "Noto Sans", sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 18px;
   line-height: 26px;
   border: none;
@@ -345,6 +347,6 @@ body {
 
   .sub-option-button {
     color: #333333;
-    font-weight: 700;
+    padding: 24.5px 0;
   }
 }
