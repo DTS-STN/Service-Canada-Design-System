@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
   height: fit-content;
-  padding: 0 20px 0 20px;
+  padding: 0 12px 0 12px;
   margin: 0;
 }
 
@@ -51,7 +51,7 @@
   box-sizing: border-box;
   border-radius: 6px;
   background-color: white;
-  height: 42px;
+  height: 44px;
   width: 100%;
   padding: 7px 0 9px 0;
   text-align: center;
@@ -65,20 +65,21 @@
   line-height: 26px;
   letter-spacing: 0.0025em;
   color: #262626;
+  padding-left: 28px;
 }
 
 .btn-icon {
   position: relative;
   float: right;
-  padding-top: 5px;
-  padding-right: 5px;
+  padding-top: 7px;
+  padding-right: 20px;
 }
 
 /* lines separating areas of the footer */
 .breakpoint {
   border-bottom: 1px solid #d0d0d0;
-  padding-bottom: 24px;
-  margin-bottom: 24px;
+  padding-bottom: 4px;
+  margin-bottom: 4px;
 }
 
 /* icon styling */
@@ -96,7 +97,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 16px;
 }
 
 /* link styling */
@@ -127,8 +127,8 @@
 }
 
 .logo-mobile {
-  width: 89px;
-  height: 24px;
+  max-width: 89px;
+  max-height: 24px;
   margin-top: 24px;
   margin-bottom: 30px;
   display: flex;
@@ -138,7 +138,7 @@
 @media screen and (min-width: 1000px) {
   /* main container for footer on larger screen */
   .footer-container {
-    height: 220px;
+    height: 434px;
   }
 
   /* don't display button on larger screens */
@@ -148,15 +148,14 @@
 
   /* larger screens don't have break points */
   .breakpoint {
-    border-bottom: 0px;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
   }
 
   /* link styling */
   .link-section {
     justify-content: space-between;
-    padding-top: 48px;
   }
 
   .link-section li {
@@ -179,15 +178,13 @@
 
   /* Styling for main footer sub sections */
   .footer-top {
-    margin-bottom: 28px;
-    padding: 0 150px 0 150px;
+    padding: 0 125px 10px 125px;
   }
 
   .footer-bottom {
     display: flex;
     flex-direction: row;
-    margin-top: 28px;
-    padding: 0 150px 0 150px;
+    padding: 0 125px 0 125px;
   }
 
   .footer-bottom-first {
@@ -202,6 +199,12 @@
 
   .icon-heading-text {
     line-height: 30px;
+    margin-bottom: 8px;
+  }
+
+  .icon-group {
+    margin-top: 8px;
+    margin-bottom: 0px;
   }
 
   /* 102-28 padding, bottom footer accounts for 28 */
@@ -210,7 +213,7 @@
     max-width: 168px;
     max-height: 40px;
     margin-left: auto;
-    padding-top: 74px;
+    padding-top: 60px;
   }
 
   .logo-mobile {
