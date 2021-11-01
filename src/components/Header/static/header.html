@@ -17,7 +17,7 @@
       <a class="hide-element skip-link" href="#main">Skip to main content</a>
     </nav>
     <header>
-      <div class="header-top">
+      <div class="header-top max-width-wrapper">
         <img class="header-logo" src="../../../assets/sig-blk-en.svg" alt="Government of Canada">
         <section class="language-select-section">
           <h2 class="hide-element">Language Selection</h2>
@@ -49,74 +49,78 @@
         </section>
       </div>
       <section class="main-menu">
-        <nav class="main-menu-nav">
-          <h1 class="main-menu-heading">Service Canada</h1>
-          <h2 class="hide-element">Menu</h2>
-          <!-- Developer Note: Functionality will need to be added to this button to change aria-expanded on click/keydown. Ensure the aria-label matches functionality.
-              Styling has already been completed to change the color of the button and arrow and hide/show the main menu list based on the aria-expanded property. -->
-          <button class="menu-button main-menu-button" type="button" aria-haspopup="true" aria-expanded="true" aria-label="Press the SPACEBAR to expand or the escape key to collapse this menu. Use the Up and Down arrow keys to choose a submenu item. Press the Enter or Right arrow key to expand it, or the Left arrow or Escape key to collapse it. Use the Up and Down arrow keys to choose an item on that level and the Enter key to access it.">
-            <span class="hide-element">Main</span>
-            Menu
-            <img class="arrow-down-white" src="../../../assets/arrow-dwn-white.svg" alt="Open main menu">
-            <img class="arrow-down-blk" src="../../../assets/arrow-dwn-blk.svg" alt="Open main menu">
-          </button>  
-          <ul class="main-menu-list" role="menu">
-            <li class="my-account-li" role="presentation">
-              <!-- Developer Note: Functionality will need to be added to all sub-menu-buttons to change aria-expanded on click/keydown.
-                Styling has already been completed to change the arrow and hide/show the sub option menu based on the aria-expanded property. -->
-              <a class="menu-button sub-menu-button" role="menuitem" aria-haspopup="true" aria-controls="gc-mnu-account" aria-expanded="false" href="#" >
-                <!-- French Text: Se connecter -->
-                My Account
-                <img class="arrow-down-blk" src="../../../assets/arrow-dwn-blk.svg" alt="Open sub-menu">
-                <img class="arrow-up-blk" src="../../../assets/arrow-up-blk.svg" alt="Close sub-menu">
-                <img class="arrow-down-white" src="../../../assets/arrow-dwn-white.svg" alt="Open sub-menu">
-              </a>
-            </li>
-            <li role="presentation">
-              <a class="menu-button sub-menu-button" role="menuitem" aria-haspopup="true" aria-controls="gc-mnu-account" aria-expanded="true" href="#" >
-                Services
-                <img class="arrow-down-blk" src="../../../assets/arrow-dwn-blk.svg" alt="Open sub-menu">
-                <img class="arrow-up-blk" src="../../../assets/arrow-up-blk.svg" alt="Close sub-menu">
-                <img class="arrow-down-white" src="../../../assets/arrow-dwn-white.svg" alt="Open sub-menu">
-              </a>
-              <ul class="sub-option-list" id="gc-mnu-account" role="menu">
-                <li role="presentation">
-                  <a class="menu-button sub-option-button" role="menuitem" href="canada.ca">Sub-Option 1</a>
-                </li>
-                <li role="presentation">
-                  <a class="menu-button sub-option-button" role="menuitem" href="canada.ca">Sub-Option 2</a>
-                </li>
-                <li role="presentation">
-                  <a class="menu-button sub-option-button" role="menuitem" href="canada.ca">Sub-Option 3</a>
-                </li>
-                <li role="presentation">
-                  <a class="menu-button sub-option-button" role="menuitem" href="canada.ca">Sub-Option 4</a>
-                </li>
-                <li role="presentation">
-                  <a class="menu-button sub-option-button" role="menuitem" href="canada.ca">Sub-Option 5</a>
-                </li>
-              </ul>
-            </li>
-            <li role="presentation">
-              <a class="menu-button sub-menu-button" role="menuitem" aria-haspopup="true" aria-controls="gc-mnu-account" aria-expanded="false" href="#" >
-                <!-- French Text: Événements de la vie -->
-                Life events
-                <img class="arrow-down-blk" src="../../../assets/arrow-dwn-blk.svg" alt="Open sub-menu">
-                <img class="arrow-up-blk" src="../../../assets/arrow-up-blk.svg" alt="Close sub-menu">
-                <img class="arrow-down-white" src="../../../assets/arrow-dwn-white.svg" alt="Open sub-menu">
-              </a>
-            </li>
-            <li role="presentation">
-              <a class="menu-button sub-menu-button" role="menuitem" aria-haspopup="true" aria-controls="gc-mnu-account" aria-expanded="false" href="#" >
-                <!-- French Text: Contactez-nous -->
-                Contact us
-                <img class="arrow-down-blk" src="../../../assets/arrow-dwn-blk.svg" alt="Open sub-menu">
-                <img class="arrow-up-blk" src="../../../assets/arrow-up-blk.svg" alt="Close sub-menu">
-                <img class="arrow-down-white" src="../../../assets/arrow-dwn-white.svg" alt="Open sub-menu">
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <div class="max-width-wrapper">
+          <nav class="main-menu-nav">
+            <h1 class="main-menu-heading">Service Canada</h1>
+            <h2 class="hide-element">Menu</h2>
+            <!-- Developer Note: Functionality will need to be added to this button to change aria-expanded on click/keydown. Ensure the aria-label matches functionality.
+                Styling has already been completed to change the color of the button and arrow and hide/show the main menu list based on the aria-expanded property. -->
+            <button class="menu-button main-menu-button" type="button" aria-haspopup="true" aria-expanded="true" aria-label="Press the SPACEBAR to expand or the escape key to collapse this menu. Use the Up and Down arrow keys to choose a submenu item. Press the Enter or Right arrow key to expand it, or the Left arrow or Escape key to collapse it. Use the Up and Down arrow keys to choose an item on that level and the Enter key to access it.">
+              <span class="hide-element">Main</span>
+              Menu
+              <img class="arrow-down-white" src="../../../assets/arrow-dwn-white.svg" alt="Open main menu">
+              <img class="arrow-down-blk" src="../../../assets/arrow-dwn-blk.svg" alt="Open main menu">
+            </button>
+            <ul class="main-menu-list" role="menu">
+              <li class="my-account-li" role="presentation">
+                <!-- Developer Note: Functionality will need to be added to all sub-menu-buttons to change aria-expanded on click/keydown.
+                  Styling has already been completed to change the arrow and hide/show the sub option menu based on the aria-expanded property. -->
+                <a class="menu-button sub-menu-button" role="menuitem" aria-haspopup="true" aria-controls="gc-mnu-account" aria-expanded="false" href="#" >
+                  <!-- French Text: Se connecter -->
+                  My Account
+                  <img class="arrow-down-blk" src="../../../assets/arrow-dwn-blk.svg" alt="Open sub-menu">
+                  <img class="arrow-up-blk" src="../../../assets/arrow-up-blk.svg" alt="Close sub-menu">
+                  <img class="arrow-down-white" src="../../../assets/arrow-dwn-white.svg" alt="Open sub-menu">
+                </a>
+              </li>
+              <li role="presentation">
+                <a class="menu-button sub-menu-button" role="menuitem" aria-haspopup="true" aria-controls="gc-mnu-account" aria-expanded="true" href="#" >
+                  Services
+                  <img class="arrow-down-blk" src="../../../assets/arrow-dwn-blk.svg" alt="Open sub-menu">
+                  <img class="arrow-up-blk" src="../../../assets/arrow-up-blk.svg" alt="Close sub-menu">
+                  <img class="arrow-down-white" src="../../../assets/arrow-dwn-white.svg" alt="Open sub-menu">
+                </a>
+                <div class="sub-option-wrapper">
+                  <ul class="sub-option-list max-width-wrapper" id="gc-mnu-account" role="menu">
+                    <li role="presentation">
+                      <a class="menu-button sub-option-button" role="menuitem" href="canada.ca">Sub-Option 1</a>
+                    </li>
+                    <li role="presentation">
+                      <a class="menu-button sub-option-button" role="menuitem" href="canada.ca">Sub-Option 2</a>
+                    </li>
+                    <li role="presentation">
+                      <a class="menu-button sub-option-button" role="menuitem" href="canada.ca">Sub-Option 3</a>
+                    </li>
+                    <li role="presentation">
+                      <a class="menu-button sub-option-button" role="menuitem" href="canada.ca">Sub-Option 4</a>
+                    </li>
+                    <li role="presentation">
+                      <a class="menu-button sub-option-button" role="menuitem" href="canada.ca">Sub-Option 5</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li role="presentation">
+                <a class="menu-button sub-menu-button" role="menuitem" aria-haspopup="true" aria-controls="gc-mnu-account" aria-expanded="false" href="#" >
+                  <!-- French Text: Événements de la vie -->
+                  Life events
+                  <img class="arrow-down-blk" src="../../../assets/arrow-dwn-blk.svg" alt="Open sub-menu">
+                  <img class="arrow-up-blk" src="../../../assets/arrow-up-blk.svg" alt="Close sub-menu">
+                  <img class="arrow-down-white" src="../../../assets/arrow-dwn-white.svg" alt="Open sub-menu">
+                </a>
+              </li>
+              <li role="presentation">
+                <a class="menu-button sub-menu-button" role="menuitem" aria-haspopup="true" aria-controls="gc-mnu-account" aria-expanded="false" href="#" >
+                  <!-- French Text: Contactez-nous -->
+                  Contact us
+                  <img class="arrow-down-blk" src="../../../assets/arrow-dwn-blk.svg" alt="Open sub-menu">
+                  <img class="arrow-up-blk" src="../../../assets/arrow-up-blk.svg" alt="Close sub-menu">
+                  <img class="arrow-down-white" src="../../../assets/arrow-dwn-white.svg" alt="Open sub-menu">
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </section>
     </header>
   </div>
