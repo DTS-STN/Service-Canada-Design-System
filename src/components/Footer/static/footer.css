@@ -135,7 +135,7 @@
 }
 
 /* Large screen */
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 1000px) {
   /* main container for footer on larger screen */
   .footer-container {
     height: 220px;
@@ -148,7 +148,7 @@
 
   /* larger screens don't have break points */
   .breakpoint {
-    border-bottom: 0px solid #d0d0d0;
+    border-bottom: 0px;
     padding-bottom: 0px;
     margin-bottom: 0px;
   }
