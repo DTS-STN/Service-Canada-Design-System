@@ -3,6 +3,12 @@ body {
   margin: 0;
 }
 
+/* Developer Note: Replace with your max width wrappers */
+.max-width-wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
 /* class to hide elements from visually but allow content to be read out by screen readers */
 .hide-element {
   clip: rect(1px, 1px, 1px, 1px);
@@ -188,7 +194,7 @@ body {
 }
 
 .sub-menu-button[aria-expanded="false"] .arrow-up-blk,
-.sub-menu-button[aria-expanded="false"] + .sub-option-list {
+.sub-menu-button[aria-expanded="false"] + .sub-option-wrapper {
   display: none;
 }
 
@@ -217,6 +223,14 @@ body {
 
 /* Developer Note: large screen & up styling, replace with appropriate breakpoint  */
 @media screen and (min-width: 1000px) {
+  .max-width-wrapper {
+    padding: 0 20px;
+  }
+
+  .header-top {
+    padding: 18px 20px;
+  }
+
   .header-logo {
     flex-grow: 2;
     width: auto;
@@ -247,9 +261,12 @@ body {
     max-width: 280px;
   }
 
+  .main-menu {
+    position: relative;
+  }
+
   .main-menu-nav {
     flex-wrap: nowrap;
-    position: relative;
     justify-content: flex-start;
     align-items: stretch;
   }
@@ -258,7 +275,7 @@ body {
     color: #ffffff;
     font-size: 30px;
     line-height: 36px;
-    padding: 10px 115px 15px 20px;
+    padding: 10px 115px 15px 0;
     min-width: 207px;
   }
 
@@ -279,7 +296,7 @@ body {
   .main-menu-list {
     background: #26374a;
     display: flex;
-    padding: 0 20px;
+    padding: 0;
   }
 
   .arrow-down-blk {
@@ -310,16 +327,19 @@ body {
     display: none;
   }
 
-  .sub-option-list {
-    background: #edf1f4;
-    display: flex;
-    justify-content: space-between;
+  .sub-option-wrapper {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    padding: 0 20px;
     box-sizing: border-box;
+    background: #edf1f4;
+  }
+
+  .sub-option-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
   }
 
   .sub-option-button {
