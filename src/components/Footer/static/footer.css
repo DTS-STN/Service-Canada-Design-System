@@ -36,7 +36,7 @@
 }
 
 .date-text {
-  font-family: Noto Sans;
+  font-family: Noto Sans, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -58,7 +58,7 @@
 }
 
 .btn-text {
-  font-family: Noto Sans;
+  font-family: Noto Sans, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -77,13 +77,13 @@
 /* lines separating areas of the footer */
 .breakpoint {
   border-bottom: 1px solid #d0d0d0;
-  margin-top: 24px;
+  padding-bottom: 24px;
   margin-bottom: 24px;
 }
 
 /* icon styling */
 .icon-heading-text {
-  font-family: Noto Sans;
+  font-family: Noto Sans, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -129,6 +129,7 @@
 .logo-mobile {
   width: 89px;
   height: 24px;
+  margin-top: 24px;
   margin-bottom: 30px;
   display: flex;
 }
@@ -147,7 +148,9 @@
 
   /* larger screens don't have break points */
   .breakpoint {
-    display: none;
+    border-bottom: 0px solid #d0d0d0;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
   }
 
   /* link styling */
@@ -161,7 +164,7 @@
   }
 
   .link-text {
-    font-family: Noto Sans;
+    font-family: Noto Sans, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
