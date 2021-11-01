@@ -17,6 +17,12 @@
   width: 1px;
 }
 
+/* Developer Note: Replace with your max width wrappers */
+.max-width-wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
 /* Main container surrounding whole footer */
 .footer-container {
   display: flex;
@@ -177,14 +183,9 @@
   }
 
   /* Styling for main footer sub sections */
-  .footer-top {
-    padding: 0 125px 10px 125px;
-  }
-
   .footer-bottom {
     display: flex;
     flex-direction: row;
-    padding: 0 125px 0 125px;
   }
 
   .footer-bottom-first {
