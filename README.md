@@ -115,9 +115,12 @@ We are using multiple tools and steps to do accessibility testing, as no one too
 
 4. We are using multiple screen reader tools, too test on the different browsers specified in the [Browser & Device Testing](#browser-&-device-testing) section below. The following link contains screen reader tools for the different devices https://dequeuniversity.com/screenreaders/
 
-   Additional Tool Options:
+   Summary of tools:
 
-   - Silktide for Chrome
+   - Voice over on Mac
+   - NVDA on Windows for Firefox, Chrome, Edge
+   - JAWS on Windows for Internet Explorer, Firefox, Chrome, Edge
+   - Silktide for chrome
 
    </br>
    Any tool listed above or in the dequeuniversity link are acceptable to use for testing. Every browser should be tested with atleast 1 screen reader. tool.
