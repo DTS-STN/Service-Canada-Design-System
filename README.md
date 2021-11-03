@@ -111,6 +111,20 @@ We are using multiple tools and steps to do accessibility testing, as no one too
 
    - Passing the Action Button Props through jest-axe tool line 73 [src/components/ActionButton.test.js](src/components/ActionButton.test.js)
 
+  </br>
+
+4. We are using multiple screen reader tools, too test on the different browsers specified in the [Browser & Device Testing](#browser-&-device-testing) section below. The following link contains screen reader tools for the different devices https://dequeuniversity.com/screenreaders/
+
+   Summary of tools:
+
+   - Voice over on Mac
+   - NVDA on Windows for Firefox, Chrome, Edge
+   - JAWS on Windows for Internet Explorer, Firefox, Chrome, Edge
+   - Silktide for chrome
+
+   </br>
+   Any tool listed above or in the dequeuniversity link are acceptable to use for testing. Every browser should be tested with atleast 1 screen reader. tool.
+
 For more information on accessibility tools and resources refer to our [wiki page](https://github.com/DTS-STN/DECD-Design-System/wiki#accessibility-documentation)
 
 ### Browser & Device Testing

@@ -28,6 +28,10 @@ jobs:
      # build package bundle
       - name: Build 🛠
         run: npm run build
+     
+     # create a tarball from the package
+      - name: Create Tarball
+        run: npm pack
         
      # create the github prerelease 
       - name: Pre Release
@@ -38,5 +42,4 @@ jobs:
           prerelease: true
           title: Development Build
           files: |
-            LICENSE.txt
-            *.jar
+            *.tgz
