@@ -1,7 +1,7 @@
 import { DateModified } from "./DateModified";
 
 export default {
-  title: "Components/Page details/DateModified",
+  title: "In Development/DateModified",
   component: DateModified,
 };
 

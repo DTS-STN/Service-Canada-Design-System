@@ -2,7 +2,7 @@ import React from "react";
 import { Details } from "./Details";
 
 export default {
-  title: "Components/Form components/Details",
+  title: "In Development/Details",
   component: Details,
 };
 
