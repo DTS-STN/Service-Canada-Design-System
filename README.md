@@ -183,3 +183,36 @@ $ npm run build
 ```
 
 Rollup looks at the following file [src/index.js](src/index.js) to determine what it should include in the production bundle... as such only import and export things in this file that you want to be included, otherwise do not touch this file.
+
+### Release Process
+
+A [pre-release](https://github.com/DTS-STN/DECD-Design-System/releases/tag/latest) is a development build created whenever new components or bug fixes are ready to be tested by other teams before they are released to production. Pre-release assets that can be used for testing are created on every release.
+
+A [release](https://github.com/DTS-STN/DECD-Design-System/packages/847413) is created whenever new components or bug fixes are ready to go to production. Releases should be completed by an member from the DECD Design System team. A new version of an npm package is created on every release.
+
+**Creating & testing a pre-release:**
+
+1. Create a PR from the delevop branch into the release branch. Include what is in the pre-release in the PR details.
+
+2. Once the PR is approved and merged, the [Generate Pre-release](https://github.com/DTS-STN/DECD-Design-System/actions/workflows/generate-pre-release.yml) Github Action will be triggered.
+
+3. A release will be created with the tag ["latest"](https://github.com/DTS-STN/DECD-Design-System/releases/tag/latest) which will include a .tgz asset.
+
+4. To test the pre-release:
+
+   1. Download the asset onto your local machine.
+
+   2. Go to the project you want to test the new release on.
+   3. Run the below command with the .tgz asset. This will install the pre-release package that is sitting on your local.
+      ```bash
+      $ npm install <tarball file>
+      ```
+   4. Start testing out the pac kage by adding a component from the pakcage to your repo.
+   5. When testing is completed, to ensure you are no longer using the pre-release, run the below command in your repo with the [current version of the npm package](https://github.com/DTS-STN/DECD-Design-System/packages/847413). This will uninstall the pre-relase .tgz file and reinstall the npm package back in your local project.
+      ```bash
+      $ npm install <npm package name>
+      ```
+
+**Creating a release:**
+
+1.
