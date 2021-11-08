@@ -192,13 +192,19 @@ A [release](https://github.com/DTS-STN/DECD-Design-System/packages/847413) is cr
 
 **Creating & testing a pre-release:**
 
-1. Create a PR from the delevop branch into the release branch. Include what is in the pre-release in the PR details.
+1. Update documentation:
 
-2. Once the PR is approved and merged, the [Generate Pre-release](https://github.com/DTS-STN/DECD-Design-System/actions/workflows/generate-pre-release.yml) Github Action will be triggered.
+   - Create a new feature branch and add any changes to unreleased section in CHANGELOG.md
+   - Merge feature branch into develop
+   - Note: If you are repo admin, you can commit any changes to CHANGELOG.md directly to develop </br></br>
 
-3. A release will be created with the tag ["latest"](https://github.com/DTS-STN/DECD-Design-System/releases/tag/latest) which will include a .tgz asset.
+2. Create a PR from the delevop branch into the release branch.
 
-4. To test the pre-release:
+3. Once the PR is approved and merged, the [Generate Pre-release](https://github.com/DTS-STN/DECD-Design-System/actions/workflows/generate-pre-release.yml) Github Action will be triggered.
+
+4. A release will be created with the tag ["latest"](https://github.com/DTS-STN/DECD-Design-System/releases/tag/latest) which will include a .tgz asset.
+
+5. To test the pre-release:
 
    1. Download the asset onto your local machine.
 
@@ -215,4 +221,14 @@ A [release](https://github.com/DTS-STN/DECD-Design-System/packages/847413) is cr
 
 **Creating a release:**
 
-1.
+1. Update documentation:
+
+   - Create a new feature branch
+   - Update version number in package.json & package-lock.json
+   - Create a dated version entry in CHANGELOG.md and add any changes/fixes/additions
+   - Merge feature branch into release
+   - Note: If you are repo admin, you can commit any changes to CHANGELOG.md, package.json & package-lock.json directly to release </br></br>
+
+2. Create a PR from the release branch into the master branch.
+
+3. Once the PR is approved and merged, the [Publish Package on Release](https://github.com/DTS-STN/DECD-Design-System/actions/workflows/publish-package-on-release.yml) Github Action will be triggered and a new version (verison number is based on your package.json updates) will be created.
