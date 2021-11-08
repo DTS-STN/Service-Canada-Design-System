@@ -2,7 +2,7 @@ import React from "react";
 import { ReportAProblem } from "./ReportAProblem";
 
 export default {
-  title: "Components/Reporting Components/ReportAProblem",
+  title: "In Development/ReportAProblem",
   component: ReportAProblem,
 };
 
