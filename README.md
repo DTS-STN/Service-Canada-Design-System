@@ -128,6 +128,24 @@ Testing will be done manually, to confirm components are displaying correctly on
 - Edge
   - Version 17, 18, 87, 89
 
+### Linting
+
+We are using eslint a11y plugin to check code and catch any accessibility errors. We are formatting code using Prettier and Husky to automate formatting during the commit process. These are the most commonly used tools for formatting react projects and have many use cases confirming their reliability.
+
+Whenever any files are committed, linting will be ran to format and clean up the files before comfirming the commit.
+
+To run run eslinting and check for accessibility errors run the following command
+
+```bash
+$ npm run eslint
+```
+
+To manually run linting on all files (Prettier formatting) run the following command
+
+```bash
+$ npm run lint
+```
+
 ### Pull Request Procedures
 
 **Branching Strategy:**
