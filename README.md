@@ -186,11 +186,11 @@ Rollup looks at the following file [src/index.js](src/index.js) to determine wha
 
 ### Release Process
 
-A [pre-release](https://github.com/DTS-STN/DECD-Design-System/releases/tag/latest) is a development build created whenever new components or bug fixes are ready to be tested by other teams before they are released to production. Pre-release assets that can be used for testing are created on every release.
+A [pre-release](https://github.com/DTS-STN/DECD-Design-System/releases/tag/latest) is a development build created whenever new components or bug fixes are ready to be tested by other teams before they are released to production as a new version of our npm package. Pre-release assets (a tarball file) that can be used for testing are created every time there is a change to the release branch.
 
-A [release](https://github.com/DTS-STN/DECD-Design-System/packages/847413) is created whenever new components or bug fixes are ready to go to production. Releases should be completed by an member from the DECD Design System team. A new version of an npm package is created on every release.
+A [release](https://github.com/DTS-STN/DECD-Design-System/packages/847413) is created whenever new components or bug fixes are ready to go to production. Releases should be completed by an member from the DECD Design System team. A new version of our npm package is created on every release.
 
-**Creating & testing a pre-release:**
+**Creating a pre-release:**
 
 1. Update documentation:
 
@@ -204,20 +204,31 @@ A [release](https://github.com/DTS-STN/DECD-Design-System/packages/847413) is cr
 
 4. A release will be created with the tag ["latest"](https://github.com/DTS-STN/DECD-Design-System/releases/tag/latest) which will include a .tgz asset.
 
-5. To test the pre-release:
+**Testing a pre-release:**
 
-   1. Download the asset onto your local machine.
+To test the pre-release you will be downloading a tarball file onto your local machine to mimic an npm package. Once you download the tarball file, you can install it on your local application and import individual components just as you would with an npm package. Follow the steps below to test components using the pre-release:
 
-   2. Go to the project you want to test the new release on.
-   3. Run the below command with the .tgz asset. This will install the pre-release package that is sitting on your local.
-      ```bash
-      $ npm install <tarball file>
-      ```
-   4. Start testing out the pac kage by adding a component from the pakcage to your repo.
-   5. When testing is completed, to ensure you are no longer using the pre-release, run the below command in your repo with the [current version of the npm package](https://github.com/DTS-STN/DECD-Design-System/packages/847413). This will uninstall the pre-relase .tgz file and reinstall the npm package back in your local project.
-      ```bash
-      $ npm install <npm package name>
-      ```
+1.  Download the asset onto your local machine (can be anywhere on your local).
+
+2.  Go to the root folder of the project/application you want to test the new release on (or the folder with your package.json where you would be downlading our npm package).
+
+3.  Run the below command with the correct version number and path to the .tgz asset. This will install the pre-release package that is sitting on your local.
+
+    ```bash
+    $ npm install ~/dts-stn-decd-design-system-0.0.0.tgz
+    ```
+
+4.  Start testing out the package by adding a component from the package to your repo (insert link to ).
+
+    ```js
+    import { Component } from "@dts-stn/decd-design-system";
+    ```
+
+5.  When testing is completed, to ensure you are no longer using the pre-release version of the package, run the below command in your repo with the [current version of the npm package](https://github.com/DTS-STN/DECD-Design-System/packages/847413). This will uninstall the pre-relase .tgz file and reinstall the npm package back in your local project/application.
+
+    ```bash
+    $ npm install @dts-stn/decd-design-system
+    ```
 
 **Creating a release:**
 
