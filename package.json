@@ -33,6 +33,7 @@
     "test:unit": "jest --forceExit",
     "pre-commit": "lint-staged",
     "lint": "prettier --write \"*.{js,md}\" --write \".storybook/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"playground/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
+    "eslint": "eslint src",
     "prepare": "husky install",
     "storybook-docs": "start-storybook --docs --no-manager-cache",
     "storybook": "start-storybook -s ./public -p 6006",
@@ -50,12 +51,9 @@
     ],
     "*.{js,md}": [
       "prettier --write"
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
+    ],
+    "src/**/*.+(js|json|ts|tsx)": [
+      "eslint"
     ]
   },
   "browserslist": {
@@ -90,6 +88,8 @@
     "babel-plugin-polyfill-corejs2": "^0.2.2",
     "babel-plugin-polyfill-corejs3": "^0.2.2",
     "babel-plugin-polyfill-regenerator": "^0.2.2",
+    "eslint": "^8.2.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
     "husky": "^6.0.0",
     "jest-axe": "^5.0.1",
     "lint-staged": "^11.0.0",
