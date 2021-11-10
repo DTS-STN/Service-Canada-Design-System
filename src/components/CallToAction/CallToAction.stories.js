@@ -2,7 +2,7 @@ import React from "react";
 import { CallToAction } from "./CallToAction";
 
 export default {
-  title: "Components/Redirect Components/CallToAction",
+  title: "In Development/CallToAction",
   component: CallToAction,
 };
 
