@@ -2,7 +2,7 @@ import React from "react";
 import PhaseBanner from "./PhaseBanner";
 
 export default {
-  title: "Components/Reporting Components/PhaseBanner",
+  title: "In Development/PhaseBanner",
   component: PhaseBanner,
 };
 

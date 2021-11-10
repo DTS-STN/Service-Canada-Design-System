@@ -2,7 +2,7 @@ import React from "react";
 import { Filter } from "./Filter";
 
 export default {
-  title: "Components/Form components/Filter",
+  title: "In Development/Filter",
   component: Filter,
 };
 
