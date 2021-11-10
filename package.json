@@ -51,16 +51,9 @@
     ],
     "*.{js,md}": [
       "prettier --write"
-    ]
-  },
-  "eslintIgnore": [
-    "*.test.js",
-    "*.stories.js"
-  ],
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
+    ],
+    "src/**/*.+(js|json|ts|tsx)": [
+      "eslint"
     ]
   },
   "browserslist": {

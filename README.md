@@ -130,17 +130,17 @@ Testing will be done manually, to confirm components are displaying correctly on
 
 ### Linting
 
-We are using eslint a11y plugin to check code and catch any accessibility errors. We are formatting code using Prettier and Husky to automate formatting during the commit process. These are the most commonly used tools for formatting react projects and have many use cases confirming their reliability.
+We are using eslint a11y plugin to check for any accessibility errors and Prettier formatter to clean up/format our code. We use Husky to automate these two processes during the commit process, so we can ensure that our code is checked before pushing any of our work to the repo. These are the most commonly used tools for formatting react projects and have many use cases confirming their reliability.
 
-Whenever any files are committed, linting will be ran to format and clean up the files before comfirming the commit.
+Whenever any files are committed, prettier formatter will be ran to format and clean up the files before comfirming the commit. Eslint will also automatically be ran at the same point in the process to check for any a11y concerns.
 
-To run run eslinting and check for accessibility errors run the following command
+To manually run eslinting and check for accessibility errors run the following command in the root directory
 
 ```bash
 $ npm run eslint
 ```
 
-To manually run linting on all files (Prettier formatting) run the following command
+To manually run linting on all files (Prettier formatting) run the following command in the root directory
 
 ```bash
 $ npm run lint
