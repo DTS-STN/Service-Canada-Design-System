@@ -80,12 +80,14 @@ This project uses Jest and the React Testing Library for testing. We've decided 
 - Clickable components (ex. button component has an onclick prop) line 17 [src/components/Menu.test.js](src/components/Menu.test.js)
 - Rendering with different input props line 19 [src/components/TextField.test.js](src/components/TextField.testjs)
 
-To run tests simply use the following command in the root directory
+To manually run tests simply use the following command in the root directory
 
 ```bash
 # run tests
 $ npm run test
 ```
+
+The test script is automatically run when creating a new pull request.
 
 For more information on tools and resources refer to our [wiki page](https://github.com/DTS-STN/DECD-Design-System/wiki#testing-documentation)
 
@@ -97,33 +99,19 @@ We are using multiple tools and steps to do accessibility testing, as no one too
 
 1. We are using the [Storybook Accessibility Addon](https://storybook.js.org/blog/accessibility-testing-with-storybook/) as our main tool for accessibility testing. The Addon uses the Axe accessibility engine developed by Deque Systems. Axe is run on each component in Storybook and the addon will provide a list of accessibility violations, vulnerabilities and links to documentaion to help fix the violations. To use, simply run Storybook locally.
 
-2. Along with Axe we are also preforming manual tests to check for accessibility concerns and automated testing done by Jest-axe. Jest-axe is time efficient but only covers about 30% of unit test cases.
-
-   The following manual tests should be completed on each component:
+2. We are also preforming manual tests to check for accessibility concerns. The following manual tests should be completed on each component:
 
    - Zoom content to 200% to ensure it is readable
    - Tab through content using keyboard only
-   - Verify new content using a screen reader
+   - Verify new content using a least 1 screen reader tool from the following list: https://dequeuniversity.com/screenreaders/
 
    </br>
 
-3. Jest-axe is ran along with other unit tests. To run unit tests follow instructions listed under the [Testing Strategies 🧪](#Testing-Strategies-🧪) section. The following is an example test case:
+3. Jest-axe is ran along with other unit tests. Jest-axe is time efficient but only covers about 30% of unit test cases. To run unit tests follow instructions listed under the [Testing Strategies 🧪](#Testing-Strategies-🧪) section. The following is an example test case:
 
    - Passing the Action Button Props through jest-axe tool line 73 [src/components/ActionButton.test.js](src/components/ActionButton.test.js)
 
   </br>
-
-4. We are using multiple screen reader tools, too test on the different browsers specified in the [Browser & Device Testing](#browser-&-device-testing) section below. The following link contains screen reader tools for the different devices https://dequeuniversity.com/screenreaders/
-
-   Summary of tools:
-
-   - Voice over on Mac
-   - NVDA on Windows for Firefox, Chrome, Edge
-   - JAWS on Windows for Internet Explorer, Firefox, Chrome, Edge
-   - Silktide for chrome
-
-   </br>
-   Any tool listed above or in the dequeuniversity link are acceptable to use for testing. Every browser should be tested with atleast 1 screen reader. tool.
 
 For more information on accessibility tools and resources refer to our [wiki page](https://github.com/DTS-STN/DECD-Design-System/wiki#accessibility-documentation)
 
