@@ -2,7 +2,7 @@ import React from "react";
 import { ErrorBox } from "./ErrorBox";
 
 export default {
-  title: "Components/Form components/ErrorBox",
+  title: "In Development/ErrorBox",
   component: ErrorBox,
   decorators: [
     (Story) => (

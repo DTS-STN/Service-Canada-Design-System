@@ -1,7 +1,7 @@
 import { Breadcrumb } from "./Breadcrumb";
 
 export default {
-  title: "Components/Breadcrumbs/Breadcrumb",
+  title: "In Development/Breadcrumb",
   component: Breadcrumb,
 };
 

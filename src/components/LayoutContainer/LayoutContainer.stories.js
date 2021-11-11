@@ -2,7 +2,7 @@ import React from "react";
 import LayoutContainer from "./LayoutContainer";
 
 export default {
-  title: "Components/Page Layout/LayoutContainer",
+  title: "Components/LayoutContainer",
   component: LayoutContainer,
 };
 

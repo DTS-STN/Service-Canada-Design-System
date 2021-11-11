@@ -2,7 +2,7 @@ import React from "react";
 import { ErrorLabel } from "./ErrorLabel";
 
 export default {
-  title: "Components/Form Components/ErrorLabel",
+  title: "In Development/ErrorLabel",
   component: ErrorLabel,
 };
 
