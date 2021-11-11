@@ -183,3 +183,11 @@ $ npm run build
 ```
 
 Rollup looks at the following file [src/index.js](src/index.js) to determine what it should include in the production bundle... as such only import and export things in this file that you want to be included, otherwise do not touch this file.
+
+### License
+
+Unless otherwise noted, the source code of this project is covered under Crown Copyright, Government of Canada, and is distrubuted under the [MIT](https://github.com/DTS-STN/DECD-Design-System/blob/master/LICENSE.md).
+
+The Canada wordmark and related graphics associated with this distribution are protected under trademark law and copyright law. No permission is granted to use them outside the parameters of the Government of Canada's corporate identity program. For more information, see [Federal identity requirements](https://www.canada.ca/en/treasury-board-secretariat/topics/government-communications/federal-identity-requirements.html).
+
+All content of the Design System Library is available under the [Open Government Licence - Canada](https://open.canada.ca/en/open-government-licence-canada)
