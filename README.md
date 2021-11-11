@@ -261,3 +261,11 @@ To test the pre-release you will be downloading a tarball file onto your local m
 2. Create a PR from the release branch into the master branch.
 
 3. Once the PR is approved and merged, the [Publish Package on Release](https://github.com/DTS-STN/DECD-Design-System/actions/workflows/publish-package-on-release.yml) Github Action will be triggered and a new version (verison number is based on your package.json updates) will be created.
+
+### License
+
+Unless otherwise noted, the source code of this project is covered under Crown Copyright, Government of Canada, and is distrubuted under the [MIT](https://github.com/DTS-STN/DECD-Design-System/blob/master/LICENSE.md).
+
+The Canada wordmark and related graphics associated with this distribution are protected under trademark law and copyright law. No permission is granted to use them outside the parameters of the Government of Canada's corporate identity program. For more information, see [Federal identity requirements](https://www.canada.ca/en/treasury-board-secretariat/topics/government-communications/federal-identity-requirements.html).
+
+All content of the Design System Library is available under the [Open Government Licence - Canada](https://open.canada.ca/en/open-government-licence-canada)
