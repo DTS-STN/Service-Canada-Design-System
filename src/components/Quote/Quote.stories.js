@@ -2,7 +2,7 @@ import React from "react";
 import { Quote } from "./Quote";
 
 export default {
-  title: "Components/Utility/Quote",
+  title: "In Development/Quote",
   component: Quote,
 };
 

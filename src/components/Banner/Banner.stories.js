@@ -2,7 +2,7 @@ import React from "react";
 import Banner from "./Banner";
 
 export default {
-  title: "Components/Banner components/Banner",
+  title: "In Development/Banner",
   component: Banner,
 };
 

@@ -13,9 +13,3 @@ export { default as LayoutContainer } from "./components/LayoutContainer/LayoutC
  * buttons
  */
 export { ActionButton } from "./components/ActionButton/ActionButton";
-
-/**
- * form elements
- */
-export { CheckBox } from "./components/CheckBox/CheckBox";
-export { RadioField } from "./components/RadioField/RadioField";
