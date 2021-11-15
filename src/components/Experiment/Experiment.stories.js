@@ -2,7 +2,7 @@ import React from "react";
 import Experiment from "./Experiment";
 
 export default {
-  title: "Components/Redirect components/Experiment",
+  title: "In Development/Experiment",
   component: Experiment,
 };
 

@@ -130,6 +130,24 @@ Testing will be done manually, to confirm components are displaying correctly on
 - Edge
   - Version 17, 18, 87, 89
 
+### Linting
+
+We are using eslint a11y plugin to check for any accessibility errors and Prettier formatter to clean up/format our code. We use Husky to automate these two processes during the commit process, so we can ensure that our code is checked before pushing any of our work to the repo. These are the most commonly used tools for formatting react projects and have many use cases confirming their reliability.
+
+Whenever any files are committed, prettier formatter will be ran to format and clean up the files before comfirming the commit. Eslint will also automatically be ran at the same point in the process to check for any a11y concerns.
+
+To manually run eslinting and check for accessibility errors run the following command in the root directory
+
+```bash
+$ npm run eslint
+```
+
+To manually run linting on all files (Prettier formatting) run the following command in the root directory
+
+```bash
+$ npm run lint
+```
+
 ### Pull Request Procedures
 
 **Branching Strategy:**
@@ -171,3 +189,71 @@ $ npm run build
 ```
 
 Rollup looks at the following file [src/index.js](src/index.js) to determine what it should include in the production bundle... as such only import and export things in this file that you want to be included, otherwise do not touch this file.
+
+### Release Process
+
+A [pre-release](https://github.com/DTS-STN/DECD-Design-System/releases/tag/latest) is a development build created whenever new components or bug fixes are ready to be tested by other teams before they are released to production as a new version of our npm package. Pre-release assets (a tarball file) that can be used for testing are created every time there is a change to the release branch.
+
+A [release](https://github.com/DTS-STN/DECD-Design-System/packages/847413) is created whenever new components or bug fixes are ready to go to production. Releases should be completed by an member from the DECD Design System team. A new version of our npm package is created on every release.
+
+**Creating a pre-release:**
+
+1. Update documentation:
+
+   - Create a new feature branch and add any changes to unreleased section in CHANGELOG.md
+   - Merge feature branch into develop
+   - Note: If you are repo admin, you can commit any changes to CHANGELOG.md directly to develop </br></br>
+
+2. Create a PR from the delevop branch into the release branch.
+
+3. Once the PR is approved and merged, the [Generate Pre-release](https://github.com/DTS-STN/DECD-Design-System/actions/workflows/generate-pre-release.yml) Github Action will be triggered.
+
+4. A release will be created with the tag ["latest"](https://github.com/DTS-STN/DECD-Design-System/releases/tag/latest) which will include a .tgz asset.
+
+**Testing a pre-release:**
+
+To test the pre-release you will be downloading a tarball file onto your local machine to mimic an npm package. Once you download the tarball file, you can install it on your local application and import individual components just as you would with an npm package. Follow the steps below to test components using the pre-release:
+
+1.  Download the asset onto your local machine (can be anywhere on your local).
+
+2.  Go to the root folder of the project/application you want to test the new release on (or the folder with your package.json where you would be downlading our npm package).
+
+3.  Run the below command with the correct version number and path to the .tgz asset. This will install the pre-release package that is sitting on your local.
+
+    ```bash
+    $ npm install ~/dts-stn-decd-design-system-0.0.0.tgz
+    ```
+
+4.  Start testing out the package by adding a component from the package to your repo (insert link to ).
+
+    ```js
+    import { Component } from "@dts-stn/decd-design-system";
+    ```
+
+5.  When testing is completed, to ensure you are no longer using the pre-release version of the package, run the below command in your repo with the [current version of the npm package](https://github.com/DTS-STN/DECD-Design-System/packages/847413). This will uninstall the pre-relase .tgz file and reinstall the npm package back in your local project/application.
+
+    ```bash
+    $ npm install @dts-stn/decd-design-system
+    ```
+
+**Creating a release:**
+
+1. Update documentation:
+
+   - Create a new feature branch
+   - Update version number in package.json & package-lock.json
+   - Create a dated version entry in CHANGELOG.md and add any changes/fixes/additions
+   - Merge feature branch into release
+   - Note: If you are repo admin, you can commit any changes to CHANGELOG.md, package.json & package-lock.json directly to release </br></br>
+
+2. Create a PR from the release branch into the master branch.
+
+3. Once the PR is approved and merged, the [Publish Package on Release](https://github.com/DTS-STN/DECD-Design-System/actions/workflows/publish-package-on-release.yml) Github Action will be triggered and a new version (verison number is based on your package.json updates) will be created.
+
+### License
+
+Unless otherwise noted, the source code of this project is covered under Crown Copyright, Government of Canada, and is distrubuted under the [MIT](https://github.com/DTS-STN/DECD-Design-System/blob/master/LICENSE.md).
+
+The Canada wordmark and related graphics associated with this distribution are protected under trademark law and copyright law. No permission is granted to use them outside the parameters of the Government of Canada's corporate identity program. For more information, see [Federal identity requirements](https://www.canada.ca/en/treasury-board-secretariat/topics/government-communications/federal-identity-requirements.html).
+
+All content of the Design System Library is available under the [Open Government Licence - Canada](https://open.canada.ca/en/open-government-licence-canada)

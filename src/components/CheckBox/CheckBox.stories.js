@@ -2,7 +2,7 @@ import React from "react";
 import { CheckBox } from "./CheckBox";
 
 export default {
-  title: "Components/Form Components/CheckBox",
+  title: "In Development/CheckBox",
   component: CheckBox,
   decorators: [
     (Story) => (

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 /**
- * Button component
+ * Note this button component is currently in development and is should be used as a demo/test component
  */
 export function ActionButton(props) {
   //Styling for buttons and links
