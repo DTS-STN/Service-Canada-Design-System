@@ -53,6 +53,26 @@ import { Component } from "@dts-stn/decd-design-system";
 
 ## Developing this Package 👨🏽‍💻👩🏽‍💻
 
+### Tech Stack
+
+| Layer                 | Stragety                                      |
+| :-------------------- | :-------------------------------------------- |
+| Web Client Tech       | HTML5, CSS3+, JS                              |
+| Framework             | React                                         |
+| Version Control       | Git                                           |
+| Pre-commit Git Hooks  | Husky                                         |
+| JS Linter             | ESLint                                        |
+| Code Formatter        | Prettier                                      |
+| JS Compiler           | Babel                                         |
+| Task Runner           | NPM Scripts                                   |
+| Module Bundler        | Rollup                                        |
+| CSS & JS Integration  | PostCSS & Tailwind CSS                        |
+| Packaging Stragety    | NPM Packages                                  |
+| Dev Environment       | Storybook                                     |
+| Unit & React Testing  | Jest (React Testing Library)                  |
+| Accessibility Testing | Jest-axe, Storybook Accessibility Addon (axe) |
+| CI/CD Pipeline        | Github Actions                                |
+
 ### Getting Started
 
 [Install Nodes.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
