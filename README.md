@@ -123,7 +123,7 @@ We are using multiple tools and steps to do accessibility testing, as no one too
 
    - Zoom content to 200% to ensure it is readable
    - Tab through content using keyboard only
-   - Verify new content using a least 1 screen reader tool from the following list: https://dequeuniversity.com/screenreaders/
+   - Verify new content using at least 1 screen reader tool from the following list: https://dequeuniversity.com/screenreaders/
 
    </br>
 
