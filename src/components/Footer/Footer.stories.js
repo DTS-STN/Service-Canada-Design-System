@@ -1,8 +1,11 @@
+import React from "react";
 import { Footer } from "./Footer";
-import logo from "../../../public/wmms-blk.svg";
+import { DateModified } from "../DateModified/DateModified";
+import { ActionButton } from "../ActionButton/ActionButton";
+import logo from "../../assets/wmms-blk.svg";
 
 export default {
-  title: "In Development/Footer",
+  title: "Components/Footer",
   component: Footer,
 };
 
@@ -10,79 +13,80 @@ const Template = (args) => <Footer {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  links: [
+  landscapeLinks: [
     {
-      link: "https://some-link-1.com",
-      linkText: "some-link-1",
+      landscapeLink: "https://some-link-11.com",
+      landscapeLinkText: "some-link-9",
     },
     {
-      link: "https://some-link-2.com",
-      linkText: "some-lin-2",
+      landscapeLink: "https://some-link-1.com",
+      landscapeLinkText: "some-link-8",
     },
     {
-      link: "https://some-link-3.com",
-      linkText: "some-link-3",
+      landscapeLink: "https://some-link-1.com",
+      landscapeLinkText: "some-link-7",
     },
     {
-      link: "https://some-link-4.com",
-      linkText: "some-link-4",
+      landscapeLink: "https://some-link-1.com",
+      landscapeLinkText: "some-link-6",
     },
     {
-      link: "https://some-link-5.com",
-      linkText: "some-link-5",
+      landscapeLink: "https://some-link-1.com",
+      landscapeLinkText: "some-link-5",
     },
     {
-      link: "https://some-link-6.com",
-      linkText: "some-link-6",
+      landscapeLink: "https://some-link-1.com",
+      landscapeLinkText: "some-link-1",
     },
     {
-      link: "https://some-link-7.com",
-      linkText: "some-link-7",
+      landscapeLink: "https://some-link-1.com",
+      landscapeLinkText: "some-link-2",
     },
     {
-      link: "https://some-link-8.com",
-      linkText: "some-link-8",
-    },
-  ],
-
-  footerBoxLinks: [
-    {
-      footerBoxlink: "https://some-link-11.com",
-      footerBoxLinkText: "some-link-11",
+      landscapeLink: "https://some-link-1.com",
+      landscapeLinkText: "some-link-3",
     },
     {
-      footerBoxlink: "https://some-link-22.com",
-      footerBoxLinkText: "some-lin-22",
-    },
-    {
-      footerBoxlink: "https://some-link-33.com",
-      footerBoxLinkText: "some-link-33",
-    },
-    {
-      footerBoxlink: "https://some-link-44.com",
-      footerBoxLinkText: "some-link-44",
-    },
-    {
-      footerBoxlink: "https://some-link-55.com",
-      footerBoxLinkText: "some-link-55",
-    },
-    {
-      footerBoxlink: "https://some-link-66.com",
-      footerBoxLinkText: "some-link-66",
-    },
-    {
-      footerBoxlink: "https://some-link-77.com",
-      footerBoxLinkText: "some-link-77",
-    },
-    {
-      footerBoxlink: "https://some-link-88.com",
-      footerBoxLinkText: "some-link-88",
+      landscapeLink: "https://some-link-1.com",
+      landscapeLinkText: "some-link-4",
     },
   ],
+  landscapeBgImg: "footerBg",
+  brandLinks: [
+    {
+      brandLink: "https://some-link-11.com",
+      brandLinkText: "some-link-11",
+    },
+    {
+      brandLink: "https://some-link-11.com",
+      brandLinkText: "some-link-22",
+    },
+  ],
+  logoUrl: logo,
+  logoAltText: "Symbol of the Government of Canada",
+  // Action button doesn't work correctly with icons, need to fix action button code
+  topOfPageBtn: <ActionButton tertiary id="top-btn" text="Top of Page" />,
+  dateModified: <DateModified />,
+  // optional fields
+  isOptional: true,
+  reportAProblemBtn: (
+    <ActionButton
+      disabled
+      id="report"
+      text="Report a problem or mistake on this page"
+      className="xxs:w-full"
+    />
+  ),
+  shareThisPageBtn: (
+    <ActionButton
+      disabled
+      id="share"
+      text="Share this Page"
+      className="xxs:w-full "
+    />
+  ),
 
-  footerLogoAltText: "Symbol of the Government of Canada",
-  footerLogoImage: logo,
-  reportBtnText: "Report a problem",
-  reportDescription:
-    "Experiencing an issue with this product or have you spotted an error?",
+  // Accessibility Headings
+  footerNav1: "About Government",
+  footerNav2: "About this site",
 };

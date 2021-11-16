@@ -1,3 +1,6 @@
+/**
+ * Note issues with using icon when importing this component to other components
+ */
 import PropTypes from "prop-types";
 import React from "react";
 
