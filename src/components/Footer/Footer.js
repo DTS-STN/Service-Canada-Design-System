@@ -7,6 +7,7 @@ export function Footer(props) {
         {props.isOptional && (
           <div className="flex lg:justify-between lg:flex-row xxs:flex-col">
             <div className="mb-2">{props.reportAProblemBtn}</div>
+            {/* Need to build the ShareThisPage Component, for now using an action button as placeholder */}
             <div>{props.shareThisPageBtn}</div>
           </div>
         )}
