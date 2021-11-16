@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 export function Footer(props) {
   return (
     <footer className="w-full">
-      {/* Optional footer elements */}
       <section className="flex flex-col pr-4 pl-4">
         {props.isOptional && (
           <div className="flex lg:justify-between lg:flex-row xxs:flex-col">
@@ -79,7 +78,6 @@ export function Footer(props) {
             </div>
             <img
               className="mb-2.5 mt-8 xl:mt-0 h-6 md:h-10 w-auto float-right"
-              // developer note: replace with your own image path
               src={props.logoUrl}
               alt={props.logoAltText}
             />
