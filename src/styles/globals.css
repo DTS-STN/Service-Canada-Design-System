@@ -1,10 +1,14 @@
 .bannerBg {
-  background-image: url("../../public/bg-banner-v2.png");
+  background-image: url("../assets/bg-banner-v2.png");
 }
 
 /* Uses mobile background on smaller screens*/
 @media (max-width: 449px) {
   .bannerBg {
-    background-image: url("../../public/bg-banner-mobile.png");
+    background-image: url("../assets/bg-banner-mobile.png");
   }
+}
+
+.footerBg {
+  background-image: url("https://www.canada.ca/etc/designs/canada/wet-boew/assets/landscape.png");
 }

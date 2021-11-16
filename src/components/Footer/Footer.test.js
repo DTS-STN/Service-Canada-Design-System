@@ -2,22 +2,30 @@
  * @jest-environment jsdom
  */
 import React from "react";
+import { axe, toHaveNoViolations } from "jest-axe";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { Primary } from "./Footer.stories";
 
-it("renders Footer in its primary state", () => {
-  render(<Primary {...Primary.args} />);
+expect.extend(toHaveNoViolations);
 
-  expect(
-    screen.getByAltText("Symbol of the Government of Canada")
-  ).toBeTruthy();
-
-  Primary.args.footerBoxLinks.forEach((value) => {
-    screen.getByText(value.footerBoxLinkText);
+describe("Footer Component", () => {
+  it("renders Footer component", () => {
+    render(<Primary {...Primary.args} />);
+    expect(
+      screen.getByAltText("Symbol of the Government of Canada")
+    ).toBeTruthy();
+    Primary.args.brandLinks.forEach((value) => {
+      expect(screen.getByText(value.brandLinkText)).toBeDefined();
+    });
+    Primary.args.landscapeLinks.forEach((value) => {
+      expect(screen.getByText(value.landscapeLinkText)).toBeDefined();
+    });
   });
 
-  Primary.args.links.forEach((value) => {
-    screen.getByText(value.linkText);
+  it("has no a11y violations", async () => {
+    const { container } = render(<Primary {...Primary.args} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
