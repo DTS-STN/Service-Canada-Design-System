@@ -3,6 +3,7 @@ import { Footer } from "./Footer";
 import { DateModified } from "../DateModified/DateModified";
 import { ActionButton } from "../ActionButton/ActionButton";
 import logo from "../../assets/wmms-blk.svg";
+import { ReportAProblem } from "../ReportAProblem/ReportAProblem";
 
 export default {
   title: "Components/Footer",
@@ -69,14 +70,8 @@ Primary.args = {
   dateModified: <DateModified />,
   // optional fields
   isOptional: true,
-  reportAProblemBtn: (
-    <ActionButton
-      disabled
-      id="report"
-      text="Report a problem or mistake on this page"
-      className="xxs:w-full"
-    />
-  ),
+  reportAProblemBtn: <ReportAProblem language="en" />,
+  /* Need to build the ShareThisPage Component, for now will use an action button as a placeholder */
   shareThisPageBtn: (
     <ActionButton
       disabled
