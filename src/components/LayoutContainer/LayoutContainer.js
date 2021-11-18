@@ -12,9 +12,7 @@ import PropTypes from "prop-types";
  */
 export default function LayoutContainer(props) {
   return (
-    <div
-      className={`layout-container ${props.className ? props.className : ""}`}
-    >
+    <div className={`${props.className ? props.className : ""}`}>
       {props.children}
     </div>
   );

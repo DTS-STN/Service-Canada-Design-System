@@ -8,11 +8,7 @@ export function Footer(props) {
   return (
     <div className="w-full">
       <div className="w-full h-auto footerBackground bg-custom-blue-dark">
-        <div
-          className="py-7 layout-container"
-          role="navigation"
-          aria-labelledby="footerNav1"
-        >
+        <div className="py-7" role="navigation" aria-labelledby="footerNav1">
           <h3 className="sr-only" id="footerNav1">
             {props.footerNav1}
           </h3>
@@ -34,7 +30,7 @@ export function Footer(props) {
         </div>
       </div>
       <div className="w-full h-full bg-footer-background-color pb-4">
-        <div className="h-auto bg-footer-white pt-5 layout-container flex flex-col xl:flex xl:flex-row md:justify-between">
+        <div className="h-auto bg-footer-white pt-5 flex flex-col xl:flex xl:flex-row md:justify-between">
           <div
             className="mt-3.5 xl:mt-5"
             role="navigation"
