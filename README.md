@@ -168,6 +168,28 @@ To manually run linting on all files (Prettier formatting) run the following com
 $ npm run lint
 ```
 
+### Pull Request Procedures
+
+**Branching Strategy:**
+
+| Branch   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Associated Github Actions                                         |
+| :------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------- |
+| master   | Production branch. Triggers a build to Storybook & publishes a new npm package release.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Publish Package on Release </br></br> Build and Deploy Storybooks |
+| hotfix   | Can be created off of master to allow for immediate fixes to bugs and will not affect current development. Any changes should be pulled back into develop and feature branches                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                   |
+| release  | Final culmination of all branches that will be used to test beta versions of the new release. After testing is complete, release will be merged into master.                                                                                                                                                                                                                                                                                                                                                                                                                        | Generate Pre-Release </br></br>Build and Deploy Storybooks        |
+| develop  | Culmination of feature branches                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Build and Deploy Storybooks                                       |
+| features | Created off of develop to work on new features locally that are intended for the next release. Each feature branch should be prefixed by the relevant Jira issue and component ID (if applicable), eg. DS-56-A003-Footer.</br></br> Feature branches should be merged into develop using a PR. Each PR should include an update to the CHANGELOG.md if necessary and have at least one person review it before it can be merged. Check out [these tips](https://github.com/DTS-STN/DECD-Design-System/wiki#code-review-helpful-tips) for giving productive and thoughtful feedback. | Build and Deploy Storybooks on PR                                 |
+
+### Building the Package 👷🏽‍♀️👷🏽
+
+This package uses babel and rollup to transpile and create production bundles which are generated in the `/dist` folder at the root level of the project. To build the production bundle at any time simply run the following command
+
+```bash
+$ npm run build
+```
+
+Rollup looks at the following file [src/index.js](src/index.js) to determine what it should include in the production bundle... as such only import and export things in this file that you want to be included, otherwise do not touch this file.
+
 ### Testing Package Locally
 
 Sometimes it's helpful to test a component your working on in an actual application to test it's import or see it being rendered in the browser. There are a couple of ways you can test our package locally:
@@ -204,29 +226,7 @@ Sometimes it's helpful to test a component your working on in an actual applicat
 
    Next follow steps 2 - 5 under [Testing a pre-release:](#testing-a-pre-release) to install the tarball file on another chosen application on your local and import individual components just as you would with an npm package.
 
-### Pull Request Procedures
-
-**Branching Strategy:**
-
-| Branch   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Associated Github Actions                                         |
-| :------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------- |
-| master   | Production branch. Triggers a build to Storybook & publishes a new npm package release.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Publish Package on Release </br></br> Build and Deploy Storybooks |
-| hotfix   | Can be created off of master to allow for immediate fixes to bugs and will not affect current development. Any changes should be pulled back into develop and feature branches                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                   |
-| release  | Final culmination of all branches that will be used to test beta versions of the new release. After testing is complete, release will be merged into master.                                                                                                                                                                                                                                                                                                                                                                                                                        | Generate Pre-Release </br></br>Build and Deploy Storybooks        |
-| develop  | Culmination of feature branches                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Build and Deploy Storybooks                                       |
-| features | Created off of develop to work on new features locally that are intended for the next release. Each feature branch should be prefixed by the relevant Jira issue and component ID (if applicable), eg. DS-56-A003-Footer.</br></br> Feature branches should be merged into develop using a PR. Each PR should include an update to the CHANGELOG.md if necessary and have at least one person review it before it can be merged. Check out [these tips](https://github.com/DTS-STN/DECD-Design-System/wiki#code-review-helpful-tips) for giving productive and thoughtful feedback. | Build and Deploy Storybooks on PR                                 |
-
-### Building the Package 👷🏽‍♀️👷🏽
-
-This package uses babel and rollup to transpile and create production bundles which are generated in the `/dist` folder at the root level of the project. To build the production bundle at any time simply run the following command
-
-```bash
-$ npm run build
-```
-
-Rollup looks at the following file [src/index.js](src/index.js) to determine what it should include in the production bundle... as such only import and export things in this file that you want to be included, otherwise do not touch this file.
-
-### Release Process
+### Package Release Process
 
 A [pre-release](https://github.com/DTS-STN/DECD-Design-System/releases/tag/latest) is a development build created whenever new components or bug fixes are ready to be tested by other teams before they are released to production as a new version of our npm package. Pre-release assets (a tarball file) that can be used for testing are created every time there is a change to the release branch.
 
