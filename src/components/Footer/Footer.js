@@ -36,7 +36,7 @@ export function Footer(props) {
           aria-labelledby="accessibleSectionHeader1"
         >
           <h2 className="sr-only" id="accessibleSectionHeader1">
-            {props.accessibleSectionHeader12}
+            {props.accessibleSectionHeader1}
           </h2>
           <ul className="flex flex-col text-xs lg:grid lg:grid-cols-2 xl:grid xl:grid-cols-3 lg:gap-1">
             {" "}
@@ -63,7 +63,7 @@ export function Footer(props) {
             aria-labelledby="accessibleSectionHeader2"
           >
             <h2 className="sr-only" id="accessibleSectionHeader2">
-              {props.accessibleSectionHeader}
+              {props.accessibleSectionHeader2}
             </h2>
             <ul className="flex flex-col md:grid md:grid-cols-2 xl:flex lg:flex-row">
               {props.brandLinks.map((value, index) => {
@@ -184,7 +184,7 @@ Footer.propTypes = {
   /**
    * link to the top of the given page
    */
-  topOfPageLink: PropTypes.object.isRequired,
+  topOfPageLink: PropTypes.string.isRequired,
 
   /**
    * This header is to help screen readers identify the about government links
@@ -224,5 +224,5 @@ Footer.propTypes = {
   /**
    * custom button for anyone using the component to add their own functionality
    */
-  shareThisPageBtn: PropTypes.object,
+  CustomBtn: PropTypes.object,
 };

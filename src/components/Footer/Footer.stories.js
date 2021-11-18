@@ -2,10 +2,9 @@ import React from "react";
 import { Footer } from "./Footer";
 import { ActionButton } from "../ActionButton/ActionButton";
 import logo from "../../assets/wmms-blk.svg";
-// import { ReportAProblem } from "../ReportAProblem/ReportAProblem";
 
 export default {
-  title: "Components/Footer",
+  title: "In Development/Footer",
   component: Footer,
 };
 
@@ -67,13 +66,13 @@ Optional.args = {
   logoAltText: "Symbol of the Government of Canada",
   // Action button doesn't work correctly with icons, need to fix action button code
   topOfPageBtn: <ActionButton tertiary id="top-btn" text="Top of Page" />,
+  topOfPageLink: "",
   // optional fields
   isOptionalReport: true,
 
   /**
    * Need to make changes to, for now will use an action button as a placeholder
    */
-  // reportAProblemBtn: <ReportAProblem language="en" />,
   reportAProblemBtn: (
     <ActionButton
       disabled
@@ -161,6 +160,7 @@ Required.args = {
   logoUrl: logo,
   logoAltText: "Symbol of the Government of Canada",
   topOfPageBtn: <ActionButton tertiary id="top-btn" text="Top of Page" />,
+  topOfPageLink: "",
   isOptionalReport: false,
   isOptionalShare: false,
   isOptionalCustom: false,
