@@ -1,5 +1,6 @@
 /**
- * Note issues with using icon when importing this component to other components
+ * Note issues with using icon when importing this component to other components.
+ * Must be fixed before officially releasing this component.
  */
 import PropTypes from "prop-types";
 import React from "react";
@@ -38,18 +39,22 @@ export function ActionButton(props) {
     <a
       href={props.href}
       className={`${basicStyle}
-        ${
-          !props.secondary &&
-          !props.tertiary &&
-          !props.disabled &&
-          !props.custom
-            ? defaultStyle
-            : props.className
-        }
-        ${props.secondary && !props.disabled ? secondaryStyle : props.className}
-        ${props.tertiary && !props.disabled ? tertiaryStyle : props.className}
-        ${props.custom && !props.tertiary ? props.custom : ""}
-        ${props.disabled ? disabledStyle : props.className}`}
+          ${
+            !props.secondary &&
+            !props.tertiary &&
+            !props.disabled &&
+            !props.custom
+              ? defaultStyle
+              : props.className
+          }
+          ${
+            props.secondary && !props.disabled
+              ? secondaryStyle
+              : props.className
+          }
+          ${props.tertiary && !props.disabled ? tertiaryStyle : props.className}
+          ${props.custom && !props.tertiary ? props.custom : ""}
+          ${props.disabled ? disabledStyle : props.className}`}
       onClick={props.onClick}
       id={props.id}
       data-testid={props.dataTestId}
@@ -72,15 +77,18 @@ export function ActionButton(props) {
   ) : (
     <button
       className={`${basicStyle}
-      ${
-        !props.secondary && !props.tertiary && !props.disabled && !props.custom
-          ? defaultStyle
-          : props.className
-      }
-      ${props.secondary && !props.disabled ? secondaryStyle : props.className}
-      ${props.tertiary && !props.disabled ? tertiaryStyle : props.className}
-      ${props.custom && !props.tertiary ? props.custom : ""}
-      ${props.disabled ? disabledStyle : props.className}`}
+        ${
+          !props.secondary &&
+          !props.tertiary &&
+          !props.disabled &&
+          !props.custom
+            ? defaultStyle
+            : props.className
+        }
+        ${props.secondary && !props.disabled ? secondaryStyle : props.className}
+        ${props.tertiary && !props.disabled ? tertiaryStyle : props.className}
+        ${props.custom && !props.tertiary ? props.custom : ""}
+        ${props.disabled ? disabledStyle : props.className}`}
       onClick={props.onClick}
       type={props.type}
       id={props.id}

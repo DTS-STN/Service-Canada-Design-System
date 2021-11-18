@@ -11,9 +11,11 @@
     "dist/**/*"
   ],
   "dependencies": {
+    "@rollup/plugin-json": "^4.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "eslint-plugin-jest": "^25.2.4",
     "fetch-mock": "^9.11.0",
     "joi": "^17.4.2",
     "react-scripts": "4.0.3"
@@ -88,7 +90,7 @@
     "babel-plugin-polyfill-corejs2": "^0.2.2",
     "babel-plugin-polyfill-corejs3": "^0.2.2",
     "babel-plugin-polyfill-regenerator": "^0.2.2",
-    "eslint": "^8.2.0",
+    "eslint": "7.32.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "husky": "^6.0.0",
     "jest-axe": "^5.0.1",

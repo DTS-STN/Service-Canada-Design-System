@@ -1,28 +1,42 @@
 import PropTypes from "prop-types";
+import React from "react";
+import { DateModified } from "../DateModified/DateModified";
+// import { ReportAProblem } from "../ReportAProblem/ReportAProblem";
+import { ActionButton } from "../ActionButton/ActionButton";
 
 export function Footer(props) {
   return (
     <footer className="w-full">
-      <section className="flex flex-col pr-4 pl-4">
-        {props.isOptional && (
-          <div className="flex lg:justify-between lg:flex-row xxs:flex-col">
-            <div className="mb-2">{props.reportAProblemBtn}</div>
-            {/* Need to build the ShareThisPage Component, for now using an action button as placeholder */}
+      <section className="flex flex-col layout-container">
+        <div className="flex gap-2 lg:justify-between lg:flex-row xxs:flex-col">
+          {props.isOptionalCustom && <div>{props.CustomBtn}</div>}
+          {props.isOptionalReport && (
+            /**
+             * Changes to the need to be made to the reportAProblem component
+             * For now using an action button as placeholder
+             */
+            <div>{props.reportAProblemBtn}</div>
+          )}
+          {props.isOptionalShare && (
+            // Need to build the ShareThisPage Component, for now using an action button as placeholder
             <div>{props.shareThisPageBtn}</div>
-          </div>
-        )}
-        <div className="mb-6">{props.dateModified}</div>
+          )}
+        </div>
+        <DateModified />
       </section>
       <section
-        className={`w-full h-auto footerBackground bg-custom-blue-dark bg-no-repeat bg-clip-border md:bg-right-bottom xxs:bg-bottom ${props.landscapeBgImg}`}
+        className={`w-full h-auto footerBackground bg-custom-blue-dark bg-no-repeat bg-clip-border md:bg-right-bottom xxs:bg-bottom`}
+        style={{
+          backgroundImage: `url(${props.landscapeBgImg})`,
+        }}
       >
         <nav
           className="layout-container pt-6 pb-6"
           role="navigation"
-          aria-labelledby="footerNav1"
+          aria-labelledby="accessibleSectionHeader1"
         >
-          <h2 className="sr-only" id="footerNav1">
-            {props.footerNav1}
+          <h2 className="sr-only" id="accessibleSectionHeader1">
+            {props.accessibleSectionHeader12}
           </h2>
           <ul className="flex flex-col text-xs lg:grid lg:grid-cols-2 xl:grid xl:grid-cols-3 lg:gap-1">
             {" "}
@@ -46,10 +60,10 @@ export function Footer(props) {
           <nav
             className="mt-3.5 xl:mt-5"
             role="navigation"
-            aria-labelledby="footerNav2"
+            aria-labelledby="accessibleSectionHeader2"
           >
-            <h2 className="sr-only" id="footerNav2">
-              {props.footerNav2}
+            <h2 className="sr-only" id="accessibleSectionHeader2">
+              {props.accessibleSectionHeader}
             </h2>
             <ul className="flex flex-col md:grid md:grid-cols-2 xl:flex lg:flex-row">
               {props.brandLinks.map((value, index) => {
@@ -89,6 +103,43 @@ export function Footer(props) {
   );
 }
 
+Footer.defaultProps = {
+  landscapeBgImg:
+    "https://www.canada.ca/etc/designs/canada/wet-boew/assets/landscape.png",
+  isOptionalCustom: false,
+  isOptionalReport: false,
+  isOptionalShare: false,
+  /**
+   * Changes to the need to be made to the reportAProblem component
+   * For now using an action button as placeholder
+   */
+  // reportAProblemBtn: <ReportAProblem language="en" />,
+  reportAProblemBtn: (
+    <ActionButton
+      disabled
+      id="share"
+      text="Report A Problem"
+      className="xxs:w-full"
+    />
+  ),
+  shareThisPageBtn: (
+    <ActionButton
+      disabled
+      id="share"
+      text="Share this Page"
+      className="xxs:w-full"
+    />
+  ),
+  CustomBtn: (
+    <ActionButton
+      disabled
+      id="custom_btn"
+      text="Create Your Own Button"
+      className="xxs:w-full"
+    />
+  ),
+};
+
 Footer.propTypes = {
   /**
    * hyperlinks for top portion of footer
@@ -98,7 +149,12 @@ Footer.propTypes = {
       landscapeLink: PropTypes.string.isRequired,
       landscapeLinkText: PropTypes.string.isRequired,
     })
-  ),
+  ).isRequired,
+
+  /**
+   * background image for the footer
+   */
+  landscapeBgImg: PropTypes.string.isRequired,
 
   /**
    * links for bottom portion of footer
@@ -108,7 +164,7 @@ Footer.propTypes = {
       brandLink: PropTypes.string.isRequired,
       brandLinkText: PropTypes.string.isRequired,
     })
-  ),
+  ).isRequired,
 
   /**
    * url to canada.ca logo
@@ -131,14 +187,24 @@ Footer.propTypes = {
   topOfPageLink: PropTypes.object.isRequired,
 
   /**
-   * bool to toggle on and off optional components
+   * This header is to help screen readers identify the about government links
    */
-  isOptional: PropTypes.bool.isRequired,
+  accessibleSectionHeader1: PropTypes.string.isRequired,
 
   /**
-   * Displays the date modified
+   * This header is to help screen readers identify the about this site links
    */
-  dateModified: PropTypes.object,
+  accessibleSectionHeader2: PropTypes.string.isRequired,
+
+  /**
+   * bool to toggle on and off reportAProblemBtn
+   */
+  isOptionalReport: PropTypes.bool,
+
+  /**
+   * bool to toggle on and off shareThisPagebtn
+   */
+  isOptionalShare: PropTypes.bool,
 
   /**
    * btn to allow user to report an issue
@@ -147,6 +213,16 @@ Footer.propTypes = {
 
   /**
    * btn to allow users to share the current page with others
+   */
+  shareThisPageBtn: PropTypes.object,
+
+  /**
+   * bool to toggle on and off CustomButton
+   */
+  isOptionalCustom: PropTypes.bool,
+
+  /**
+   * custom button for anyone using the component to add their own functionality
    */
   shareThisPageBtn: PropTypes.object,
 };
