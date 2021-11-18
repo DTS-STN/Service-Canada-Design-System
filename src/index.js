@@ -13,10 +13,3 @@ export { default as LayoutContainer } from "./components/LayoutContainer/LayoutC
  * buttons
  */
 export { ActionButton } from "./components/ActionButton/ActionButton";
-
-/**
- * Changes to this component need to be made in future commits
- */
-// export { ReportAProblem } from "./components/ReportAProblem/ReportAProblem"
-
-export { Footer } from "./components/Footer/Footer";

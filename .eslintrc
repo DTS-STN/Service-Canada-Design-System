@@ -7,5 +7,9 @@
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": "2015"
+  },
+  // unneed rule causing errors with eslint/jest
+  "rules": {
+    "jest/valid-describe": "off"
   }
 }
