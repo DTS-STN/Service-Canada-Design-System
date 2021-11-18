@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import React from "react";
 
 export function DateModified(props) {
   // TeamCity build dates are received in the format yyyyMMdd

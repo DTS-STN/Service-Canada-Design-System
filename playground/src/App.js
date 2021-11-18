@@ -1,41 +1,83 @@
-import { LayoutContainer, ActionButton } from "decd-design-system";
+import { ActionButton, Footer } from "decd-design-system";
 import React from "react";
 
 function App() {
   return (
     <div className="App">
-      <LayoutContainer>
-        <h1>Application Components</h1>
-        <br />
-        <h2>Layout Container with a Paragraph Tag</h2>
-        <LayoutContainer>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
-          </p>
-        </LayoutContainer>
-        <br />
-        <br />
-        <h2>Action Button Primary</h2>
-        <ActionButton id="button-primary">Default Button</ActionButton>
-        <br />
-        <h2>Action Button Secondary</h2>
-        <ActionButton id="button-secondary" secondary>
-          Secondary Button
-        </ActionButton>
-        <br />
-        <h2>Action Button Tertiary</h2>
-        <ActionButton id="button-tertiary" tertiary>
-          Tertiary Button
-        </ActionButton>
-      </LayoutContainer>
+      <Footer
+        landscapeLinks={[
+          {
+            landscapeLink: "https://some-link-11.com",
+            landscapeLinkText: "some-link-9",
+          },
+          {
+            landscapeLink: "https://some-link-1.com",
+            landscapeLinkText: "some-link-8",
+          },
+          {
+            landscapeLink: "https://some-link-1.com",
+            landscapeLinkText: "some-link-7",
+          },
+          {
+            landscapeLink: "https://some-link-11.com",
+            landscapeLinkText: "some-link-9",
+          },
+          {
+            landscapeLink: "https://some-link-1.com",
+            landscapeLinkText: "some-link-8",
+          },
+          {
+            landscapeLink: "https://some-link-1.com",
+            landscapeLinkText: "some-link-7",
+          },
+          {
+            landscapeLink: "https://some-link-11.com",
+            landscapeLinkText: "some-link-9",
+          },
+          {
+            landscapeLink: "https://some-link-1.com",
+            landscapeLinkText: "some-link-8",
+          },
+          {
+            landscapeLink: "https://some-link-1.com",
+            landscapeLinkText: "some-link-7",
+          },
+        ]}
+        landscapeBgImg="https://www.canada.ca/etc/designs/canada/wet-boew/assets/landscape.png"
+        brandLinks={[
+          {
+            brandLink: "https://some-link-11.com",
+            brandLinkText: "some-link-11",
+          },
+          {
+            brandLink: "https://some-link-11.com",
+            brandLinkText: "some-link-22",
+          },
+        ]}
+        logoUrl="https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg"
+        logoAltText="Symbol of the Government of Canada"
+        topOfPageBtn={<ActionButton tertiary id="top-btn" text="Top of Page" />}
+        accessibleSectionHeader1="About Government"
+        accessibleSectionHeader2="About this site"
+        isOptionalReport={true}
+        reportAProblemBtn={
+          <ActionButton
+            disabled
+            id="report"
+            text="Report a problem or mistake on this page"
+            className="xxs:w-full"
+          />
+        }
+        isOptionalShare={true}
+        shareThisPageBtn={
+          <ActionButton
+            disabled
+            id="share"
+            text="Share this Page"
+            className="xxs:w-full"
+          />
+        }
+      />
     </div>
   );
 }
