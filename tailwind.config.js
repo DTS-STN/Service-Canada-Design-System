@@ -1,7 +1,7 @@
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
-  darkMode: false, // or 'media' or 'class'
+  presets: [require("./tailwind-bootstrap5.js")],
   theme: {
     fontFamily: {
       display: ["Lato"],
@@ -22,21 +22,10 @@ module.exports = {
       h1xl: ["45px", "54px"],
       h1xxl: ["70px", "84px"],
     },
-    screens: {
-      xxs: "280px",
-      xs: "325px",
-      sm: "450px",
-      md: "550px",
-      lg: "768px",
-      xl: "992px",
-      xxl: "1200px",
-      "v-xxs": { raw: "(min-height: 300px)" },
-    },
     extend: {
       backgroundImage: (theme) => ({
         "banner-img": "url('/public/bg-banner-v2.png')",
         "banner-img-mobile": "url('/public/bg-banner-mobile.png')",
-        //"footer-parliament-image": "url(../public/landscape.png)",
       }),
       colors: {
         "custom-blue": {
