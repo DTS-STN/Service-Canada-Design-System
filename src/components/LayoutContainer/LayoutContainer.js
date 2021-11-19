@@ -20,12 +20,12 @@ export default function LayoutContainer(props) {
 
 LayoutContainer.propTypes = {
   /**
-   * additional styles you want applied on the container
+   * Pass any additional styles you want applied on the container.
    */
   className: PropTypes.string,
 
   /**
-   * the child elements of this container
+   * Pass any string, element or component to render out within the layout container.
    */
   children: PropTypes.oneOfType([
     PropTypes.string,
