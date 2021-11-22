@@ -1,6 +1,8 @@
-// This is a tailwind preset that contains configurations for Bootstrap 5 breakpoints and max-container widths
+// This is a tailwind preset that contains configurations for Bootstrap 5 configurations
 // For more information on Bootstrap 5 breakpoints, containers & grids visit this links: https://getbootstrap.com/docs/5.0/layout/breakpoints/#available-breakpoints, https://getbootstrap.com/docs/5.0/layout/grid/#grid-options
 // For more information on tailwindcss presets visit this link: https://tailwindcss.com/docs/presets
+//
+// Note: This project does not contain the Bootstrap package so we do not have access to any bootstrap classes or configurations outside what is in this file.
 
 module.exports = {
   theme: {

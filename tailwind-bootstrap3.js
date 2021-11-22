@@ -1,6 +1,8 @@
-// This is a tailwind preset that contains configurations for Bootstrap 3 breakpoints and max-container widths
+// This is a tailwind preset that contains configurations for Bootstrap 3 configurations.
 // For more information on Bootstrap 3 visit this link: https://getbootstrap.com/docs/3.4/css/#grid-media-queries
 // For more information on tailwindcss presets visit this link: https://tailwindcss.com/docs/presets
+//
+// Note: This project does not contain the Bootstrap package so we do not have access to any bootstrap classes or configurations outside what is in this file.
 
 module.exports = {
   theme: {
