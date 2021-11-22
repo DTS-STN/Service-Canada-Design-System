@@ -65,6 +65,9 @@ module.exports = {
           "blue-lt": "#4FB7DC",
         },
       },
+      spacing: {
+        "30px": "30px",
+      },
       width: {
         "40px": "40px",
         "44px": "44px",
