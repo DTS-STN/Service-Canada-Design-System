@@ -10,23 +10,23 @@ html {
 
 @layer base {
   /* Font families */
-  h1,
+  /* h1, */
   h2,
   h3,
   h4,
   h5 {
-    @apply font-display font-semibold;
+    @apply font-header font-bold;
   }
   h6 {
-    @apply font-display;
+    @apply font-header;
   }
   p {
     @apply font-body;
   }
   /* Font sizes */
-  h1 {
+  /* h1 {
     @apply text-h1;
-  }
+  } */
   h2 {
     @apply text-h2;
   }
@@ -44,9 +44,9 @@ html {
     @apply text-base;
   }
   /*Focused*/
-  h1:focus {
+  /* h1:focus {
     @apply ring-1;
-  }
+  } */
 }
 
 @layer utilities {
@@ -86,7 +86,7 @@ html {
   }
 
   .textbuttonField > p {
-    @apply text-sm leading-normal font-normal font-body py-4;
+    @apply text-sm leading-normal font-regular font-body py-4;
   }
 
   .textbuttonField > h1,
