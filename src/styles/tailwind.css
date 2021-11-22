@@ -78,13 +78,6 @@ html {
     height: 5px;
   }
 
-  .circle-background {
-    border-radius: 50%;
-    width: 148px;
-    height: 148px;
-    background-color: #eeeeee;
-  }
-
   .textbuttonField > p {
     @apply text-sm leading-normal font-normal font-body py-4;
   }
