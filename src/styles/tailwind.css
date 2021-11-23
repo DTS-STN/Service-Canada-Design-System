@@ -50,7 +50,8 @@ html {
 }
 
 @layer utilities {
-  /*Bootstrap grids for default page layout*/
+  /* Bootstrap grids for default page layout using css grid utilities */
+  /* If support for older browsers or IE is needed, flex box will have to be used instead of css grid */
 
   .bootstrap5-grid {
     @apply grid grid-cols-12 gap-6;
