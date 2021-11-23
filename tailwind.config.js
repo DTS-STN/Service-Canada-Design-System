@@ -1,6 +1,9 @@
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
+  purge: {
+    content: ["./src/components/**/*.{js,ts,jsx,tsx}"],
+  },
   presets: [require("./tailwind-bootstrap5.js")],
   theme: {
     fontFamily: {
