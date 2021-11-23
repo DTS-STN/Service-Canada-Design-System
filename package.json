@@ -11,9 +11,11 @@
     "dist/**/*"
   ],
   "dependencies": {
+    "@rollup/plugin-json": "^4.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "eslint-plugin-jest": "^25.2.4",
     "fetch-mock": "^9.11.0",
     "joi": "^17.4.2",
     "react-scripts": "4.0.3"
