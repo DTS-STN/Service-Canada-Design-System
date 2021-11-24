@@ -4,7 +4,7 @@ module.exports = {
   purge: {
     content: ["./src/components/**/*.{js,ts,jsx,tsx}"],
   },
-  presets: [require("./tailwind-bootstrap5.js")],
+  presets: [require("./tailwind-bootstrap3.js")],
   theme: {
     fontFamily: {
       display: ["Lato"],
