@@ -15,33 +15,33 @@ html {
   h3,
   h4,
   h5 {
-    @apply font-header font-bold;
+    @apply heading5;
   }
   h6 {
-    @apply font-header;
+    @apply heading6;
   }
   p {
-    @apply font-body;
+    @apply body;
   }
   /* Font sizes */
   /* h1 {
     @apply text-h1;
   } */
   h2 {
-    @apply text-h2;
+    @apply heading2;
   }
   h3 {
-    @apply text-h3;
+    @apply heading3;
   }
   h4 {
-    @apply text-h4;
+    @apply heading4;
   }
   h5,
   p {
-    @apply text-p;
+    @apply body;
   }
   h6 {
-    @apply text-base;
+    @apply heading6;
   }
   /*Focused*/
   /* h1:focus {
@@ -86,7 +86,7 @@ html {
   }
 
   .textbuttonField > p {
-    @apply text-sm leading-normal font-regular font-body py-4;
+    @apply leading-normal body py-4;
   }
 
   .textbuttonField > h1,
@@ -131,7 +131,7 @@ html {
     }
 
     .textbuttonField > p {
-      @apply text-p;
+      @apply body;
     }
   }
 
