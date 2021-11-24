@@ -23,23 +23,23 @@ module.exports = {
       body: ["Noto sans"],
     },
     fontSize: {
-      mobileh1: ["34", "38"],
-      mobileh2: ["32", "36"],
-      mobileh3: ["24", "26"],
-      mobileh4: ["22", "24"],
-      mobileh5: ["20", "22"],
-      mobileh6: ["19", "21"],
-      mobilebody: ["20", "33"],
-      mobilebodybold: ["20", "33"],
+      mobileh1: ["34px", "38px"],
+      mobileh2: ["32px", "36px"],
+      mobileh3: ["24px", "26px"],
+      mobileh4: ["22px", "24px"],
+      mobileh5: ["20px", "22px"],
+      mobileh6: ["19px", "21px"],
+      mobilebody: ["20px", "33px"],
+      mobilebodybold: ["20px", "33px"],
 
-      browserh1: ["38", "42"],
-      browserh2: ["36", "40"],
-      browserh3: ["24", "26"],
-      browserh4: ["22", "24"],
-      browserh5: ["20", "22"],
-      browserh6: ["19", "21"],
-      browserbody: ["20", "33"],
-      browserbodybold: ["20", "33"],
+      browserh1: ["38px", "42px"],
+      browserh2: ["36px", "40px"],
+      browserh3: ["24px", "26px"],
+      browserh4: ["22px", "24px"],
+      browserh5: ["20px", "22px"],
+      browserh6: ["19px", "21px"],
+      browserbody: ["20px", "33px"],
+      browserbodybold: ["20px", "33px"],
 
       xxs: ["12px", "16px"],
       xs: ["14px", "16px"],
@@ -76,28 +76,6 @@ module.exports = {
         header: ["Lato"],
         body: ["Noto sans"],
       },
-      // typography: (theme) => ({
-      //   h1: {
-      //     css: {
-      //       fontSize: theme('fontSize.mobileh1'),
-      //       fontWeight: theme('fontWeight.bold'),
-      //       fontFamily: theme('fontFamily.header'),
-      //       '@media (min-width: 500px)': {
-      //         fontSize: 'fontSize.browserh1',
-      //       }
-      //     },
-      //   },
-      //   h2: {
-      //     css: {
-      //       fontSize: theme('fontSize.mobileh2'),
-      //       fontWeight: theme('fontWeight.bold'),
-      //       fontFamily: theme('fontFamily.header'),
-      //       '@media (min-width: 500px)': {
-      //         fontSize: 'fontSize.browserh2',
-      //       }
-      //     },
-      //   },
-      // }),
       backgroundImage: (theme) => ({
         "banner-img": "url('/public/bg-banner-v2.png')",
         "banner-img-mobile": "url('/public/bg-banner-mobile.png')",
@@ -247,73 +225,6 @@ module.exports = {
         });
       });
     }),
-    plugin(function ({ addBase, theme }) {
-      addBase({
-        h1: {
-          fontSize: theme("fontSize.mobileh1"),
-          fontWeight: theme("fontWeight.bold"),
-          fontFamily: theme("fontFamily.header"),
-          "@media (min-width: 500px)": {
-            fontSize: theme("fontSize.browserh1"),
-          },
-        },
-        h2: {
-          fontSize: theme("fontSize.mobileh2"),
-          fontWeight: theme("fontWeight.bold"),
-          fontFamily: theme("fontFamily.header"),
-          "@media (min-width: 500px)": {
-            fontSize: theme("fontSize.browserh2"),
-          },
-        },
-        h3: {
-          fontSize: theme("fontSize.mobileh3"),
-          fontWeight: theme("fontWeight.bold"),
-          fontFamily: theme("fontFamily.header"),
-          "@media (min-width: 500px)": {
-            fontSize: theme("fontSize.browserh3"),
-          },
-        },
-        h4: {
-          fontSize: theme("fontSize.mobileh4"),
-          fontWeight: theme("fontWeight.bold"),
-          fontFamily: theme("fontFamily.header"),
-          "@media (min-width: 500px)": {
-            fontSize: theme("fontSize.browserh4"),
-          },
-        },
-        h5: {
-          fontSize: theme("fontSize.mobileh5"),
-          fontWeight: theme("fontWeight.bold"),
-          fontFamily: theme("fontFamily.header"),
-          "@media (min-width: 500px)": {
-            fontSize: theme("fontSize.browserh5"),
-          },
-        },
-        h6: {
-          fontSize: theme("fontSize.mobileh6"),
-          fontWeight: theme("fontWeight.regular"),
-          fontFamily: theme("fontFamily.header"),
-          "@media (min-width: 500px)": {
-            fontSize: theme("fontSize.browserh6"),
-          },
-        },
-        body: {
-          fontSize: theme("fontSize.mobilebody"),
-          fontWeight: theme("fontWeight.regular"),
-          fontFamily: theme("fontFamily.body"),
-          "@media (min-width: 500px)": {
-            fontSize: theme("fontSize.browserbody"),
-          },
-        },
-        "body-emphasis": {
-          fontSize: theme("fontSize.mobilebodybold"),
-          fontWeight: theme("fontWeight.bold"),
-          fontFamily: theme("fontFamily.body"),
-          "@media (min-width: 500px)": {
-            fontSize: theme("fontSize.browserbodybold"),
-          },
-        },
-      });
-    }),
+    require("./typography-plugin"),
   ],
 };
