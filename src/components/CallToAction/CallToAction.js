@@ -8,7 +8,7 @@ export function CallToAction(props) {
   return (
     <aside>
       <div className="bg-circle-color text-white">
-        <div className="layout-container pb-10 pt-10 text-sm md:text-base">
+        <div className="pb-10 pt-10 text-sm md:text-base">
           <h2>{props.title}</h2>
           <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-24 gap-5">
             {props.description ? (

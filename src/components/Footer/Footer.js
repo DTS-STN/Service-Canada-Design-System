@@ -7,7 +7,7 @@ import { ActionButton } from "../ActionButton/ActionButton";
 export function Footer(props) {
   return (
     <footer className="w-full">
-      <section className="flex flex-col layout-container">
+      <section className="flex flex-col">
         <div className="flex gap-2 lg:justify-between lg:flex-row xxs:flex-col">
           {props.isOptionalCustom && <div>{props.CustomBtn}</div>}
           {props.isOptionalReport && (
@@ -31,7 +31,7 @@ export function Footer(props) {
         }}
       >
         <nav
-          className="layout-container pt-6 pb-6"
+          className="pt-6 pb-6"
           role="navigation"
           aria-labelledby="accessibleSectionHeader1"
         >
