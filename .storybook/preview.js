@@ -17,4 +17,12 @@ export const parameters = {
       order: ["Documentation", "Components", "In Development"],
     },
   },
+  controls: { expanded: true },
+  html: {
+    prettier: {
+      tabWidth: 4,
+      useTabs: false,
+      htmlWhitespaceSensitivity: "strict",
+    },
+  },
 };

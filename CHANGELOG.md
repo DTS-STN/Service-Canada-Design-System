@@ -14,6 +14,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 - Example Footer test/stories/react.js
 - Locked eslint version to 7.32.0 due to an error with jest
 
+### Changed
+
+- LayoutContainer component was updated to use Bootstrap5 configurations for breakpoints, max content widths and grids
+
 ## [v1.0.0] - 2021-06-15
 
 ### Added
