@@ -25,14 +25,14 @@ Primary.args = {
         <p className="body">Styles: Smaller Devices</p>
         <ul>
           <li>font-size: 34px</li>
-          <li>ling-height: 38px</li>
+          <li>line-height: 38px</li>
           <li>font-weight: 700</li>
           <li>border-bottom: 4px solid #af3c43</li>
         </ul>
         <p className="body">Styles: Desktop and Tablet</p>
         <ul>
           <li>font-size: 38px</li>
-          <li>ling-height: 42px</li>
+          <li>line-height: 42px</li>
           <li>font-weight: 700</li>
           <li>border-bottom: 4px solid #af3c43</li>
         </ul>
@@ -43,13 +43,13 @@ Primary.args = {
         <p className="body">Styles: Smaller Devices</p>
         <ul>
           <li>font-size: 32px</li>
-          <li>ling-height: 36px</li>
+          <li>line-height: 36px</li>
           <li>font-weight: 700</li>
         </ul>
         <p className="body">Styles: Desktop and Tablet</p>
         <ul>
           <li>font-size: 36px</li>
-          <li>ling-height: 40px</li>
+          <li>line-height: 40px</li>
           <li>font-weight: 700</li>
         </ul>
         <br />
@@ -59,7 +59,7 @@ Primary.args = {
         <p className="body">Styles: Smaller Devices/Desktop and Tablet</p>
         <ul>
           <li>font-size: 24px</li>
-          <li>ling-height: 26px</li>
+          <li>line-height: 26px</li>
           <li>font-weight: 700</li>
         </ul>
         <br />
@@ -69,7 +69,7 @@ Primary.args = {
         <p className="body">Styles: Smaller Devices/Desktop and Tablet</p>
         <ul>
           <li>font-size: 22px</li>
-          <li>ling-height: 24px</li>
+          <li>line-height: 24px</li>
           <li>font-weight: 700</li>
         </ul>
         <br />
@@ -79,7 +79,7 @@ Primary.args = {
         <p className="body">Styles: Smaller Devices/Desktop and Tablet</p>
         <ul>
           <li>font-size: 20px</li>
-          <li>ling-height: 22px</li>
+          <li>line-height: 22px</li>
           <li>font-weight: 700</li>
         </ul>
         <br />
@@ -89,7 +89,7 @@ Primary.args = {
         <p className="body">Styles: Smaller Devices/Desktop and Tablet</p>
         <ul>
           <li>font-size: 19px</li>
-          <li>ling-height: 21px</li>
+          <li>line-height: 21px</li>
           <li>font-weight: 400</li>
         </ul>
       </div>
@@ -103,7 +103,7 @@ Primary.args = {
         <p className="body">Styles: Smaller Devices/Desktop and Tablet</p>
         <ul>
           <li>font-size: 20px</li>
-          <li>ling-height: 33px</li>
+          <li>line-height: 33px</li>
           <li>font-weight: 400</li>
         </ul>
         <br />
@@ -115,7 +115,7 @@ Primary.args = {
         <p className="body">Styles: Smaller Devices/Desktop and Tablet</p>
         <ul>
           <li>font-size: 20px</li>
-          <li>ling-height: 33px</li>
+          <li>line-height: 33px</li>
           <li>font-weight: 700</li>
         </ul>
       </div>
