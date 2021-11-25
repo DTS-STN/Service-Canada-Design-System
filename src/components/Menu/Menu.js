@@ -20,7 +20,7 @@ export function Menu(props) {
   return (
     <nav
       title="Menu"
-      className="layout-container lg:justify-end lg:flex"
+      className="lg:justify-end lg:flex"
       data-cy="menu"
       role="navigation"
       aria-labelledby="mainSiteNav"
