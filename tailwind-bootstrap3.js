@@ -20,9 +20,9 @@ module.exports = {
       // padding replicates the outter gutter as well as max-widths from bootstrap to create max-content width
       padding: {
         DEFAULT: "15px",
-        sm: "15px",
+        sm: "24px",
         // => 720px max content
-        md: "15px",
+        md: "26px",
         // => 940px max content
         lg: "30px",
         // => 1140px max content
