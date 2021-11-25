@@ -11,7 +11,7 @@ const Template = (args) => <LayoutContainer {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   children: (
-    <h1>
+    <p>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industry's standard dummy text ever since the
       1500s, when an unknown printer took a galley of type and scrambled it to
@@ -21,6 +21,6 @@ Primary.args = {
       sheets containing Lorem Ipsum passages, and more recently with desktop
       publishing software like Aldus PageMaker including versions of Lorem
       Ipsum.
-    </h1>
+    </p>
   ),
 };
