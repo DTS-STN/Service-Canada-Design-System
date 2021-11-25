@@ -58,7 +58,19 @@ html {
   }
 
   .bootstrap3-grid {
-    @apply grid grid-cols-12 gap-30px;
+    @apply grid grid-cols-2 gap-30px;
+  }
+
+  @screen md {
+    .bootstrap3-grid {
+      @apply grid grid-cols-6 gap-30px;
+    }
+  }
+
+  @screen lg {
+    .bootstrap3-grid {
+      @apply grid grid-cols-12 gap-30px;
+    }
   }
 
   /* Text Button Field utilities */
