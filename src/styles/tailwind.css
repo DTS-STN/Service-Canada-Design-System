@@ -10,23 +10,9 @@ html {
 
 @layer base {
   /* Font families */
-  /* h1, */
-  h2,
-  h3,
-  h4,
-  h5 {
-    @apply heading5;
+  h1 {
+    @apply heading1;
   }
-  h6 {
-    @apply heading6;
-  }
-  p {
-    @apply body;
-  }
-  /* Font sizes */
-  /* h1 {
-    @apply text-h1;
-  } */
   h2 {
     @apply heading2;
   }
@@ -36,17 +22,15 @@ html {
   h4 {
     @apply heading4;
   }
-  h5,
-  p {
-    @apply body;
+  h5 {
+    @apply heading5;
   }
   h6 {
     @apply heading6;
   }
-  /*Focused*/
-  /* h1:focus {
-    @apply ring-1;
-  } */
+  p {
+    @apply body;
+  }
 }
 
 @layer utilities {
