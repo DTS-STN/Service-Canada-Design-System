@@ -7,11 +7,12 @@
 
 # testing
 /coverage
+/package
+*.tgz
 
 # production
 /build
 /dist
-
 
 # misc
 .DS_Store

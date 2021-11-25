@@ -3,20 +3,8 @@ const plugin = require("tailwindcss/plugin");
 module.exports = {
   purge: {
     content: ["./src/components/**/*.{js,ts,jsx,tsx}"],
-    options: {
-      safelist: [
-        "border-custom-blue-experiment-blue",
-        "border-gray-experiment",
-        "bg-custom-blue-experiment-blue",
-        "bg-gray-experiment",
-        "opacity-70",
-        "opacity-80",
-        "opacity-90",
-        "opacity-100",
-      ],
-    },
   },
-  darkMode: false, // or 'media' or 'class'
+  presets: [require("./tailwind-bootstrap3.js")],
   theme: {
     fontFamily: {
       header: ["Lato", "font-serif"],
@@ -60,7 +48,6 @@ module.exports = {
       backgroundImage: (theme) => ({
         "banner-img": "url('/public/bg-banner-v2.png')",
         "banner-img-mobile": "url('/public/bg-banner-mobile.png')",
-        //"footer-parliament-image": "url(../public/landscape.png)",
       }),
       colors: {
         "custom-blue": {
@@ -99,6 +86,9 @@ module.exports = {
           "blue-md": "#3d96c1",
           "blue-lt": "#4FB7DC",
         },
+      },
+      spacing: {
+        "30px": "30px",
       },
       width: {
         "40px": "40px",

@@ -1,3 +1,10 @@
+/**
+ *
+ * Rollup looks at this file to determine what it should include in the production bundle.
+ * Only import and export things in this file that are ready to be tested in a pre-release or released to production.
+ *
+ */
+
 import "./styles/tailwind.css";
 import "./styles/fonts.css";
 import "./styles/forms.css";

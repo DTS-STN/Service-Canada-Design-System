@@ -180,26 +180,6 @@ $ npm run lint
 | develop  | Culmination of feature branches                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Build and Deploy Storybooks                                       |
 | features | Created off of develop to work on new features locally that are intended for the next release. Each feature branch should be prefixed by the relevant Jira issue and component ID (if applicable), eg. DS-56-A003-Footer.</br></br> Feature branches should be merged into develop using a PR. Each PR should include an update to the CHANGELOG.md if necessary and have at least one person review it before it can be merged. Check out [these tips](https://github.com/DTS-STN/DECD-Design-System/wiki#code-review-helpful-tips) for giving productive and thoughtful feedback. | Build and Deploy Storybooks on PR                                 |
 
-### Playground ⛹🏽‍♀️⛹🏽‍♂️
-
-Sometimes it's helpful to see a component in an actual application being rendered in the browser. This project includes a create-react-app application with the decd-design-system package being installed via a symlink in the node modules thus simulating a client project. To run this project
-
-First run rollup in watch mode
-
-```bash
-$ npm run build-watch
-```
-
-This will rebuild the bundle everytime you make a change to the package code.
-
-You can then run the playground application in a separate shell.
-
-Starting from the root directory, run the following commands in the order shown (**Reminder:** npm install if it's your first time using the playground)
-
-```bash
-$ cd playground && npm run start
-```
-
 ### Building the Package 👷🏽‍♀️👷🏽
 
 This package uses babel and rollup to transpile and create production bundles which are generated in the `/dist` folder at the root level of the project. To build the production bundle at any time simply run the following command
@@ -210,13 +190,49 @@ $ npm run build
 
 Rollup looks at the following file [src/index.js](src/index.js) to determine what it should include in the production bundle... as such only import and export things in this file that you want to be included, otherwise do not touch this file.
 
-### Release Process
+### Testing Package Locally
+
+Sometimes it's helpful to test a component your working on in an actual application to test it's import or see it being rendered in the browser. There are a couple of ways you can test our package locally:
+
+1. Siumulating a client project in our code base:
+
+   This project includes a create-react-app application with the decd-design-system package being installed via a symlink in the node modules thus simulating a client project. To run this project
+
+   First run rollup in watch mode
+
+   ```bash
+   $ npm run build-watch
+   ```
+
+   This will rebuild the bundle everytime you make a change to the package code.
+
+   You can then run the playground application in a separate shell.
+
+   Starting from the root directory, run the following commands in the order shown (**Reminder:** npm install if it's your first time using the playground)
+
+   ```bash
+   $ cd playground && npm run start
+   ```
+
+2. Simulating a client project in another code base:
+
+   You can create a tarball file based on your local branch to simulate what the decd-design-system package would look like with your new code. To create a tarball file run the following command in the top most folder in your local branch
+
+   ```bash
+   $ npm pack
+   ```
+
+   This will create a dts-stn-decd-design-system-0.0.0.tgz file in your project.
+
+   Next follow steps 2 - 5 under [Testing a pre-release:](#testing-a-pre-release) to install the tarball file on another chosen application on your local and import individual components just as you would with an npm package.
+
+### Package Release Process
 
 A [pre-release](https://github.com/DTS-STN/DECD-Design-System/releases/tag/latest) is a development build created whenever new components or bug fixes are ready to be tested by other teams before they are released to production as a new version of our npm package. Pre-release assets (a tarball file) that can be used for testing are created every time there is a change to the release branch.
 
 A [release](https://github.com/DTS-STN/DECD-Design-System/packages/847413) is created whenever new components or bug fixes are ready to go to production. Releases should be completed by an member from the DECD Design System team. A new version of our npm package is created on every release.
 
-**Creating a pre-release:**
+#### **Creating a pre-release:**
 
 1. Update documentation:
 
@@ -230,7 +246,7 @@ A [release](https://github.com/DTS-STN/DECD-Design-System/packages/847413) is cr
 
 4. A release will be created with the tag ["latest"](https://github.com/DTS-STN/DECD-Design-System/releases/tag/latest) which will include a .tgz asset.
 
-**Testing a pre-release:**
+#### **Testing a pre-release:**
 
 To test the pre-release you will be downloading a tarball file onto your local machine to mimic an npm package. Once you download the tarball file, you can install it on your local application and import individual components just as you would with an npm package. Follow the steps below to test components using the pre-release:
 
