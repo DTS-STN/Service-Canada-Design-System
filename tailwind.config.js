@@ -19,8 +19,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      header: ["Lato"],
-      body: ["Noto sans"],
+      header: ["Lato", "font-serif"],
+      body: ["Noto sans", "font-mono"],
     },
     fontSize: {
       mobileh1: ["34px", "38px"],
@@ -57,11 +57,6 @@ module.exports = {
       "v-xxs": { raw: "(min-height: 300px)" },
     },
     extend: {
-      // can add back up fonts here
-      fontFamily: {
-        header: ["Lato"],
-        body: ["Noto sans"],
-      },
       backgroundImage: (theme) => ({
         "banner-img": "url('/public/bg-banner-v2.png')",
         "banner-img-mobile": "url('/public/bg-banner-mobile.png')",
@@ -185,6 +180,7 @@ module.exports = {
         "black-solid": ["2px solid #000", "1px"],
         "dark-goldenrod": ["2px solid #c78100"],
         "white-solid": ["2px solid #ffffff"],
+        "heading-solid": ["4px solid #af3c43"],
       },
     },
   },
