@@ -2,7 +2,10 @@ const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   purge: {
-    content: ["./src/components/**/*.{js,ts,jsx,tsx}"],
+    content: [
+      "./src/components/**/*.{js,ts,jsx,tsx}",
+      "./config-plugins/**/*.{js,ts,jsx,tsx}",
+    ],
   },
   presets: [require("./tailwind-bootstrap3.js")],
   theme: {
@@ -197,6 +200,6 @@ module.exports = {
         });
       });
     }),
-    require("./typography-plugin"),
+    require("./config-plugins/typography-plugin"),
   ],
 };
