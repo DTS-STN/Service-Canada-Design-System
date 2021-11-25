@@ -1,0 +1,26 @@
+<!-- Custom doc for LayoutContainer -->
+
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import * as stories from './LayoutContainer.stories.js';
+import { LayoutContainer } from './LayoutContainer';
+
+<Meta 
+    title="Components/LayoutContainer" 
+    component={LayoutContainer}
+/>
+
+# LayoutContainer 
+
+This utility container helps layout content across screen sizes according to our TailwindCSS implementation of Bootstrap 5 breakpoints and maximum container widths.
+
+You can use this container to wrap a page, section or component or you could simiply add the 'container' class to the top-most html element on your page, section or component.
+
+### Primary 
+
+<Canvas>
+    <Story story={stories.Primary}/>
+</Canvas>
+
+<a href="https://github.com/storybookjs/storybook/blob/5da733d1711503a4c134b2d728eb467bce7641d1/addons/docs/docs/recipes.md#csf-stories-with-mdx-docs">check out this link for more info on storybook mdx docs</a>
+<p>example of some other custom html/text</p>
+

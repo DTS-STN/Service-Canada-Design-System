@@ -1,15 +1,7 @@
+// link for more info: https://github.com/storybookjs/storybook/blob/5da733d1711503a4c134b2d728eb467bce7641d1/addons/docs/docs/recipes.md/
+
 import React from "react";
 import LayoutContainer from "./LayoutContainer";
-
-export default {
-  title: "Components/LayoutContainer",
-  component: LayoutContainer,
-  argTypes: {
-    children: {
-      control: { type: "text" },
-    },
-  },
-};
 
 const Template = (args) => <LayoutContainer {...args} />;
 
