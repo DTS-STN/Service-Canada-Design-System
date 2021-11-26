@@ -10,42 +10,26 @@ html {
 
 @layer base {
   /* Font families */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    @apply font-display font-semibold;
-  }
-  h6 {
-    @apply font-display;
-  }
-  p {
-    @apply font-body;
-  }
-  /* Font sizes */
   h1 {
-    @apply text-h1;
+    @apply heading1;
   }
   h2 {
-    @apply text-h2;
+    @apply heading2;
   }
   h3 {
-    @apply text-h3;
+    @apply heading3;
   }
   h4 {
-    @apply text-h4;
+    @apply heading4;
   }
-  h5,
-  p {
-    @apply text-p;
+  h5 {
+    @apply heading5;
   }
   h6 {
-    @apply text-base;
+    @apply heading6;
   }
-  /*Focused*/
-  h1:focus {
-    @apply ring-1;
+  p {
+    @apply body;
   }
 }
 
@@ -76,7 +60,7 @@ html {
   /* Text Button Field utilities */
 
   .textbuttonField > p {
-    @apply text-sm leading-normal font-normal font-body py-4;
+    @apply leading-normal body py-4;
   }
 
   .textbuttonField > h1,
