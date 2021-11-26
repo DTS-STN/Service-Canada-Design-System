@@ -6,7 +6,7 @@ const typography = plugin(function ({ addUtilities, theme }) {
       fontWeight: theme("fontWeight.bold"),
       fontFamily: theme("fontFamily.header"),
       borderBottom: theme("outline.heading-solid"),
-      '@media (min-width: theme("screens.md"))': {
+      '@media (min-width: theme("screens.sm"))': {
         fontSize: theme("fontSize.browserh1"),
       },
     },
@@ -14,7 +14,7 @@ const typography = plugin(function ({ addUtilities, theme }) {
       fontSize: theme("fontSize.mobileh2"),
       fontWeight: theme("fontWeight.bold"),
       fontFamily: theme("fontFamily.header"),
-      '@media (min-width: theme("screens.md"))': {
+      '@media (min-width: theme("screens.sm"))': {
         fontSize: theme("fontSize.browserh2"),
       },
     },
@@ -22,7 +22,7 @@ const typography = plugin(function ({ addUtilities, theme }) {
       fontSize: theme("fontSize.mobileh3"),
       fontWeight: theme("fontWeight.bold"),
       fontFamily: theme("fontFamily.header"),
-      '@media (min-width: theme("screens.md"))': {
+      '@media (min-width: theme("screens.sm"))': {
         fontSize: theme("fontSize.browserh3"),
       },
     },
@@ -30,7 +30,7 @@ const typography = plugin(function ({ addUtilities, theme }) {
       fontSize: theme("fontSize.mobileh4"),
       fontWeight: theme("fontWeight.bold"),
       fontFamily: theme("fontFamily.header"),
-      '@media (min-width: theme("screens.md"))': {
+      '@media (min-width: theme("screens.sm"))': {
         fontSize: theme("fontSize.browserh4"),
       },
     },
@@ -38,7 +38,7 @@ const typography = plugin(function ({ addUtilities, theme }) {
       fontSize: theme("fontSize.mobileh5"),
       fontWeight: theme("fontWeight.bold"),
       fontFamily: theme("fontFamily.header"),
-      '@media (min-width: theme("screens.md"))': {
+      '@media (min-width: theme("screens.sm"))': {
         fontSize: theme("fontSize.browserh5"),
       },
     },
@@ -46,7 +46,7 @@ const typography = plugin(function ({ addUtilities, theme }) {
       fontSize: theme("fontSize.mobileh6"),
       fontWeight: theme("fontWeight.regular"),
       fontFamily: theme("fontFamily.header"),
-      '@media (min-width: theme("screens.md"))': {
+      '@media (min-width: theme("screens.sm"))': {
         fontSize: theme("fontSize.browserh6"),
       },
     },
@@ -54,7 +54,7 @@ const typography = plugin(function ({ addUtilities, theme }) {
       fontSize: theme("fontSize.mobilebody"),
       fontWeight: theme("fontWeight.regular"),
       fontFamily: theme("fontFamily.body"),
-      '@media (min-width: $theme("screens.md"))': {
+      '@media (min-width: $theme("screens.sm"))': {
         fontSize: theme("fontSize.browserbody"),
       },
     },
@@ -62,7 +62,7 @@ const typography = plugin(function ({ addUtilities, theme }) {
       fontSize: theme("fontSize.mobilebodybold"),
       fontWeight: theme("fontWeight.bold"),
       fontFamily: theme("fontFamily.body"),
-      '@media (min-width: theme("screens.md"))': {
+      '@media (min-width: theme("screens.sm"))': {
         fontSize: theme("fontSize.browserbodybold"),
       },
     },

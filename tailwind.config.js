@@ -3,7 +3,8 @@ const plugin = require("tailwindcss/plugin");
 module.exports = {
   purge: {
     content: [
-      "./src/**/*.{js,ts,jsx,tsx}",
+      "./src/components/**/*.{js,ts,jsx,tsx}",
+      "./src/stories/**/*.{js,ts,jsx,tsx}",
       "./config-plugins/**/*.{js,ts,jsx,tsx}",
     ],
   },
@@ -35,17 +36,6 @@ module.exports = {
     fontWeight: {
       regular: 400,
       bold: 700,
-    },
-
-    screens: {
-      xxs: "280px",
-      xs: "325px",
-      sm: "450px",
-      md: "550px",
-      lg: "768px",
-      xl: "992px",
-      xxl: "1200px",
-      "v-xxs": { raw: "(min-height: 300px)" },
     },
     extend: {
       backgroundImage: (theme) => ({
