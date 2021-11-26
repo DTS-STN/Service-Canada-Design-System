@@ -2,28 +2,40 @@ const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   purge: {
-    content: ["./src/components/**/*.{js,ts,jsx,tsx}"],
+    content: [
+      "./src/components/**/*.{js,ts,jsx,tsx}",
+      "./src/stories/**/*.{js,ts,jsx,tsx}",
+      "./config-plugins/**/*.{js,ts,jsx,tsx}",
+    ],
   },
   presets: [require("./tailwind-bootstrap3.js")],
   theme: {
     fontFamily: {
-      display: ["Lato"],
-      body: ["Noto sans"],
+      header: ["Lato", "font-serif"],
+      body: ["Noto sans", "font-mono"],
     },
     fontSize: {
-      xxs: ["12px", "16px"],
-      xs: ["14px", "16px"],
-      sm: ["16px", "22px"],
-      base: ["18px", "28px"],
-      lg: ["20px", "32px"],
-      p: ["20px", "30px"],
-      h4: ["22px", "20px"],
-      h3: ["24px", "24.3px"],
-      h2: ["30px", "33.5px"],
-      h1: ["36px", "42px"],
-      h1l: ["38px", "42px"],
-      h1xl: ["45px", "54px"],
-      h1xxl: ["70px", "84px"],
+      mobileh1: ["34px", "38px"],
+      mobileh2: ["32px", "36px"],
+      mobileh3: ["24px", "26px"],
+      mobileh4: ["22px", "24px"],
+      mobileh5: ["20px", "22px"],
+      mobileh6: ["19px", "21px"],
+      mobilebody: ["20px", "33px"],
+      mobilebodybold: ["20px", "33px"],
+
+      browserh1: ["38px", "42px"],
+      browserh2: ["36px", "40px"],
+      browserh3: ["24px", "26px"],
+      browserh4: ["22px", "24px"],
+      browserh5: ["20px", "22px"],
+      browserh6: ["19px", "21px"],
+      browserbody: ["20px", "33px"],
+      browserbodybold: ["20px", "33px"],
+    },
+    fontWeight: {
+      regular: 400,
+      bold: 700,
     },
     extend: {
       backgroundImage: (theme) => ({
@@ -151,6 +163,7 @@ module.exports = {
         "black-solid": ["2px solid #000", "1px"],
         "dark-goldenrod": ["2px solid #c78100"],
         "white-solid": ["2px solid #ffffff"],
+        "heading-solid": ["4px solid #af3c43"],
       },
     },
   },
@@ -177,5 +190,6 @@ module.exports = {
         });
       });
     }),
+    require("./config-plugins/typography-plugin"),
   ],
 };

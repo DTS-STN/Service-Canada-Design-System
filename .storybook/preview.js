@@ -14,7 +14,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ["Documentation", "Components", "In Development"],
+      order: ["Documentation", "Styles", "Components", "In Development"],
     },
   },
   controls: { expanded: true },
