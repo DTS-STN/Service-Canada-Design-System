@@ -8,6 +8,7 @@ export default {
 
 const Template = (args) => <Colors {...args} />;
 
+// color docs
 export const Primary = Template.bind({});
 Primary.args = {
   children: (
