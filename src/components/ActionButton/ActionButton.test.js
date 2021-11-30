@@ -69,7 +69,7 @@ describe("Action Button", () => {
   //   });
   //   expect(mockFn.mock.calls.length).toBe(1);
   //   expect(global.window.location.pathname).toEqual("/");
-  // });
+  // })
 
   it("has no a11y violations", async () => {
     const { container } = render(<Default {...Default.args} />);

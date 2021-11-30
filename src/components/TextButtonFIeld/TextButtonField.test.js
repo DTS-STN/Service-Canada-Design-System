@@ -20,7 +20,7 @@ describe("TextButtonField", () => {
       Primary.args.buttonText
     );
     expect(screen.getByRole("button")).toHaveClass(
-      "bg-custom-blue-blue text-white border border-custom-blue-blue active:bg-custom-blue-dark hover:bg-custom-blue-light"
+      "py-2 px-4 bg-multi-blue-blue60g text-white border border-multi-blue-blue60g active:bg-multi-blue-blue60c hover:bg-multi-blue-blue60f"
     );
   });
 
@@ -36,7 +36,7 @@ describe("TextButtonField", () => {
       Secondary.args.buttonText
     );
     expect(screen.getByRole("button")).toHaveClass(
-      "bg-white text-custom-blue-blue border border-custom-blue-blue active:bg-gray-400 hover:bg-gray-200"
+      "py-2 px-4 bg-white text-multi-blue-blue60g border border-multi-blue-blue60g active:bg-multi-neutrals-grey85a hover:bg-multi-neutrals-grey40 "
     );
   });
 
