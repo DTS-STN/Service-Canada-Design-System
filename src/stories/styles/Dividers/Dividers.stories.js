@@ -18,7 +18,7 @@ Primary.args = {
         rows. Horizontal dividers are intended to be used in the direction of
         columns If used incorrectly may lend to unexpected styling renders
       </p>
-      <p className="heading2 p-4">Horizontal Dividers</p>
+      <p className="heading2">Horizontal Dividers</p>
       <p className="heading3 p-4">Regular</p>
       <div className="horizontal-regular m-4"></div>
       <div className="bg-gray-200 p-4 m-4">
@@ -57,7 +57,7 @@ Primary.args = {
         </ul>
       </div>
 
-      <p className="heading2 p-4">Vertical Dividers</p>
+      <p className="heading2">Vertical Dividers</p>
       <p className="heading3 p-4">Regular</p>
       <div className="flex flex-rows m-4">
         <div className="vertical-regular mr-4"></div>
