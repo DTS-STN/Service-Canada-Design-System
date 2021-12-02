@@ -20,3 +20,8 @@ export { default as LayoutContainer } from "./components/LayoutContainer/LayoutC
  * buttons
  */
 export { ActionButton } from "./components/ActionButton/ActionButton";
+
+/**
+ * Heading with text link
+ */
+export { Header } from "./components/Header/Header";

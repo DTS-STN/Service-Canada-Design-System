@@ -26,3 +26,4 @@ Initial release of the Design System Package
 
 - Layout component for cananda ca layout
 - Button component
+- Heading component
