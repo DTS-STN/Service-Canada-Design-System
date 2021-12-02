@@ -62,7 +62,7 @@ Primary.args = {
       <div className="flex flex-rows m-4">
         <div className="vertical-regular mr-4"></div>
         <div className="bg-gray-200 flex-grow p-4">
-          <p className="body-bold">class-name: regular-muted</p>
+          <p className="body-bold">class-name: vertical-regular</p>
           <p className="body">Styles:</p>
           <ul>
             <li>border-color: grey40</li>
