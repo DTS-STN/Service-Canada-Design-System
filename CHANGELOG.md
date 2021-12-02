@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 - Pre-release Github Workflow
 - Example Footer test/stories/react.js
 - Locked eslint version to 7.32.0 due to an error with jest
+- Documentation and styling for Dividers, Colors, Typography
 
 ### Changed
 
