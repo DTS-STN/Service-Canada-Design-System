@@ -18,9 +18,9 @@ Primary.args = {
         are specified for each individual set of styles. To see the difference
         adjust your screen size and the "Example Text" will change accordingly
       </p>
-      <p className="heading2 p-4">Headings</p>
+      <p className="heading2">Headings</p>
+      <div className="heading1 m-4">Example Text: Heading 1</div>
       <div className="bg-gray-200 p-4 m-4">
-        <div className="heading1">Example Text: Heading 1</div>
         <p className="body-bold">class-name: heading1</p>
         <p className="body">Styles: Smaller Devices</p>
         <ul>
@@ -36,9 +36,10 @@ Primary.args = {
           <li>font-weight: 700</li>
           <li>border-bottom: 4px solid #af3c43</li>
         </ul>
-        <br />
+      </div>
 
-        <div className="heading2">Example Text: Heading 2</div>
+      <div className="heading2 p-4">Example Text: Heading 2</div>
+      <div className="bg-gray-200 p-4 m-4">
         <p className="body-bold">class-name: heading2</p>
         <p className="body">Styles: Smaller Devices</p>
         <ul>
@@ -52,9 +53,10 @@ Primary.args = {
           <li>line-height: 40px</li>
           <li>font-weight: 700</li>
         </ul>
-        <br />
+      </div>
 
-        <div className="heading3">Example Text: Heading 3</div>
+      <div className="heading3 p-4">Example Text: Heading 3</div>
+      <div className="bg-gray-200 p-4 m-4">
         <p className="body-bold">class-name: heading3</p>
         <p className="body">Styles: Smaller Devices/Desktop and Tablet</p>
         <ul>
@@ -62,9 +64,10 @@ Primary.args = {
           <li>line-height: 26px</li>
           <li>font-weight: 700</li>
         </ul>
-        <br />
+      </div>
 
-        <div className="heading4">Example Text: Heading 4</div>
+      <div className="heading4 p-4">Example Text: Heading 4</div>
+      <div className="bg-gray-200 p-4 m-4">
         <p className="body-bold">class-name: heading4</p>
         <p className="body">Styles: Smaller Devices/Desktop and Tablet</p>
         <ul>
@@ -72,9 +75,10 @@ Primary.args = {
           <li>line-height: 24px</li>
           <li>font-weight: 700</li>
         </ul>
-        <br />
+      </div>
 
-        <div className="heading5">Example Text: Heading 5</div>
+      <div className="heading5 p-4">Example Text: Heading 5</div>
+      <div className="bg-gray-200 p-4 m-4">
         <p className="body-bold">class-name: heading5</p>
         <p className="body">Styles: Smaller Devices/Desktop and Tablet</p>
         <ul>
@@ -82,9 +86,10 @@ Primary.args = {
           <li>line-height: 22px</li>
           <li>font-weight: 700</li>
         </ul>
-        <br />
+      </div>
 
-        <div className="heading6">Example Text: Heading 6</div>
+      <div className="heading6 p-4">Example Text: Heading 6</div>
+      <div className="bg-gray-200 p-4 m-4">
         <p className="body-bold">class-name: heading6</p>
         <p className="body">Styles: Smaller Devices/Desktop and Tablet</p>
         <ul>
@@ -94,11 +99,11 @@ Primary.args = {
         </ul>
       </div>
 
-      <p className="heading2 p-4">Body</p>
+      <p className="heading2">Body</p>
+      <div className="body p-4">
+        Example Text: Body - Lorem Ipsum is simply dummy text.
+      </div>
       <div className="bg-gray-200 p-4 m-4">
-        <div className="body">
-          Example Text: Body - Lorem Ipsum is simply dummy text.
-        </div>
         <p className="body-bold">class-name: body</p>
         <p className="body">Styles: Smaller Devices/Desktop and Tablet</p>
         <ul>
@@ -106,11 +111,12 @@ Primary.args = {
           <li>line-height: 33px</li>
           <li>font-weight: 400</li>
         </ul>
-        <br />
+      </div>
 
-        <div className="body-bold">
-          Example Text: Body Bold - Lorem Ipsum is simply dummy text.
-        </div>
+      <div className="body-bold p-4">
+        Example Text: Body Bold - Lorem Ipsum is simply dummy text.
+      </div>
+      <div className="bg-gray-200 p-4 m-4">
         <p className="body-bold">class-name: body-bold</p>
         <p className="body">Styles: Smaller Devices/Desktop and Tablet</p>
         <ul>
