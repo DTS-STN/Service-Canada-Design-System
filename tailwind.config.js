@@ -14,8 +14,10 @@ module.exports = {
       fontFamily: {
         header: ["Lato", "font-serif"],
         body: ["Noto sans", "font-mono"],
+        display: ["Patua One", "cursive"],
       },
       fontSize: {
+        mobiledisplay: ["40px", "40px"],
         mobileh1: ["34px", "38px"],
         mobileh2: ["32px", "36px"],
         mobileh3: ["24px", "26px"],
@@ -25,6 +27,7 @@ module.exports = {
         mobilebody: ["20px", "33px"],
         mobilebodybold: ["20px", "33px"],
 
+        browserdisplay: ["60px", "60px"],
         browserh1: ["38px", "42px"],
         browserh2: ["36px", "40px"],
         browserh3: ["24px", "26px"],

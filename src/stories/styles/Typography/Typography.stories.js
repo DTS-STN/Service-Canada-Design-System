@@ -18,6 +18,25 @@ Primary.args = {
         are specified for each individual set of styles. To see the difference
         adjust your screen size and the "Example Text" will change accordingly
       </p>
+      <p className="heading2">Display</p>
+      <div className="display m-4">Example Text: Display</div>
+      <div className="bg-gray-200 p-4 m-4">
+        <p className="body-bold">class-name: display</p>
+        <p className="body">Styles: Smaller Devices</p>
+        <ul>
+          <li>font-size: 60px</li>
+          <li>line-height: 60px</li>
+          <li>font-weight: 400</li>
+          <li>color: grey100</li>
+        </ul>
+        <p className="body">Styles: Desktop and Tablet</p>
+        <ul>
+          <li>font-size: 40px</li>
+          <li>line-height: 40px</li>
+          <li>font-weight: 400</li>
+          <li>color: grey100</li>
+        </ul>
+      </div>
       <p className="heading2">Headings</p>
       <div className="heading1 m-4">Example Text: Heading 1</div>
       <div className="bg-gray-200 p-4 m-4">
@@ -27,6 +46,7 @@ Primary.args = {
           <li>font-size: 34px</li>
           <li>line-height: 38px</li>
           <li>font-weight: 700</li>
+          <li>color: grey100</li>
           <li>border-bottom: 4px solid #af3c43</li>
         </ul>
         <p className="body">Styles: Desktop and Tablet</p>
@@ -34,6 +54,7 @@ Primary.args = {
           <li>font-size: 38px</li>
           <li>line-height: 42px</li>
           <li>font-weight: 700</li>
+          <li>color: grey100</li>
           <li>border-bottom: 4px solid #af3c43</li>
         </ul>
       </div>
@@ -46,12 +67,14 @@ Primary.args = {
           <li>font-size: 32px</li>
           <li>line-height: 36px</li>
           <li>font-weight: 700</li>
+          <li>color: grey100</li>
         </ul>
         <p className="body">Styles: Desktop and Tablet</p>
         <ul>
           <li>font-size: 36px</li>
           <li>line-height: 40px</li>
           <li>font-weight: 700</li>
+          <li>color: grey100</li>
         </ul>
       </div>
 
@@ -63,6 +86,7 @@ Primary.args = {
           <li>font-size: 24px</li>
           <li>line-height: 26px</li>
           <li>font-weight: 700</li>
+          <li>color: grey100</li>
         </ul>
       </div>
 
@@ -74,6 +98,7 @@ Primary.args = {
           <li>font-size: 22px</li>
           <li>line-height: 24px</li>
           <li>font-weight: 700</li>
+          <li>color: grey100</li>
         </ul>
       </div>
 
@@ -85,6 +110,7 @@ Primary.args = {
           <li>font-size: 20px</li>
           <li>line-height: 22px</li>
           <li>font-weight: 700</li>
+          <li>color: grey100</li>
         </ul>
       </div>
 
@@ -96,6 +122,7 @@ Primary.args = {
           <li>font-size: 19px</li>
           <li>line-height: 21px</li>
           <li>font-weight: 400</li>
+          <li>color: grey100</li>
         </ul>
       </div>
 
@@ -110,6 +137,7 @@ Primary.args = {
           <li>font-size: 20px</li>
           <li>line-height: 33px</li>
           <li>font-weight: 400</li>
+          <li>color: grey100</li>
         </ul>
       </div>
 
@@ -123,6 +151,7 @@ Primary.args = {
           <li>font-size: 20px</li>
           <li>line-height: 33px</li>
           <li>font-weight: 700</li>
+          <li>color: grey100</li>
         </ul>
       </div>
     </>
