@@ -18,8 +18,8 @@ module.exports = {
       },
       fontSize: {
         mobiledisplay: ["40px", "40px"],
-        mobileh1: ["34px", "38px"],
-        mobileh2: ["32px", "36px"],
+        mobileh1: ["34px", "37px"],
+        mobileh2: ["32px", "35px"],
         mobileh3: ["24px", "26px"],
         mobileh4: ["22px", "24px"],
         mobileh5: ["20px", "22px"],
