@@ -1,14 +1,13 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-export function Header(props) {
-  const { headingLevel, title, fromLink, fromText } = props;
-  const Title = headingLevel;
+export function Heading(props) {
+  const { title, fromLink, fromText } = props;
 
   return (
     <>
-      <Title>{title}</Title>
-      {fromLink && fromLink && (
+      <h1>{title}</h1>
+      {fromLink && fromText && (
         <p className="gc-byline">
           <strong>From: </strong>
           <a href={fromLink}>{fromText}</a>
@@ -18,11 +17,7 @@ export function Header(props) {
   );
 }
 
-Header.propTypes = {
-  /**
-   * The value could be anyting between h1 to h6
-   */
-  headingLevel: PropTypes.string.isRequired,
+Heading.propTypes = {
   /**
    * The text / title that will be displayed as heading
    */
