@@ -224,7 +224,7 @@ module.exports = {
         "black-solid": ["2px solid #000", "1px"],
         "dark-goldenrod": ["2px solid #c78100"],
         "white-solid": ["2px solid #ffffff"],
-        "heading-solid": ["4px solid #af3c43"],
+        "heading-solid": ["1px solid #af3c43"],
       },
     },
   },
