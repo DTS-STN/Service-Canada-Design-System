@@ -3,6 +3,7 @@ const plugin = require("tailwindcss/plugin");
 module.exports = {
   purge: {
     content: [
+      "./src/assets/**/*.{js,ts,jsx,tsx}",
       "./src/components/**/*.{js,ts,jsx,tsx}",
       "./src/stories/**/*.{js,ts,jsx,tsx}",
       "./config-plugins/**/*.{js,ts,jsx,tsx}",
@@ -38,7 +39,7 @@ module.exports = {
         browserbodybold: ["20px", "33px"],
 
         btnsupertask: ["22px", "32px"],
-        btnother: ["16px", "23px"],
+        btnother: ["20px", "23px"],
       },
       fontWeight: {
         regular: 400,
@@ -241,6 +242,7 @@ module.exports = {
       backgroundColor: ["active", "hover", "focus"],
       textColor: ["visited"],
       margin: ["checked"],
+      textDecoration: ["active", "hover", "visited"],
     },
   },
   plugins: [
