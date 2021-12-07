@@ -6,6 +6,7 @@ import { act, fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { axe, toHaveNoViolations } from "jest-axe";
 import { Default, withFromLink } from "./Heading.stories";
+import { Heading } from "./Heading";
 
 expect.extend(toHaveNoViolations);
 
@@ -18,24 +19,20 @@ describe("Heading", () => {
     mockFn.mockRestore();
   });
   it("renders default", () => {
-    render(<Default {...Default.args} />);
-    expect(screen.getElementByTagName("h1")).toHaveTextContent(
+    render(<Heading {...Default.args} />);
+    expect(screen.getByText("Default Heading")).toHaveTextContent(
       Default.args.title
     );
   });
 
   it("renders with from link", () => {
-    render(<withFromLink {...withFromLink.args} />);
-    expect(screen.getElementByTagName("a")).toHaveAttribute("href");
-    expect(screen.getElementByTagName("a")).toHaveTextContent(
-      withFromLink.args.fromText
-    );
+    render(<Heading {...withFromLink.args} />);
+    expect(screen.getByText("Google")).toHaveAttribute("href");
   });
 
   it("has no a11y violations", async () => {
-    const { container } = render(<Default {...Default.args} />);
+    const { container } = render(<Heading {...Default.args} />);
     const results = await axe(container);
-
     expect(results).toHaveNoViolations();
   });
 });

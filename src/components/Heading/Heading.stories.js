@@ -12,10 +12,12 @@ export const withFromLink = Template.bind({});
 
 Default.args = {
   title: "Default Heading",
+  id: "withoutLink",
 };
 
 withFromLink.args = {
   title: "Heading with from link",
   fromLink: "https://www.google.com",
   fromText: "Google",
+  id: "withLink",
 };

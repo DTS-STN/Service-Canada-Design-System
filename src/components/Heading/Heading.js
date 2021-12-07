@@ -2,11 +2,11 @@ import PropTypes from "prop-types";
 import React from "react";
 
 export function Heading(props) {
-  const { title, fromLink, fromText } = props;
+  const { title, fromLink, fromText, id } = props;
 
   return (
     <>
-      <h1>{title}</h1>
+      <h1 id={id}>{title}</h1>
       {fromLink && fromText && (
         <p className="gc-byline">
           <strong>From: </strong>
@@ -34,6 +34,10 @@ Heading.propTypes = {
    * css overrides for button
    */
   className: PropTypes.string,
+  /**
+   * To identify the heading element
+   */
+  id: PropTypes.string.isRequired,
   /**
    * Test id for unit test
    */
