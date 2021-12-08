@@ -9,7 +9,8 @@ export function Button(props) {
       className={` btn-link focus:ring focus:ring-offset-4 `}
       onClick={props.onClick}
       id={props.id}
-      // disabled={props.disabled}
+      disabled={props.disabled}
+      role="button"
     >
       {props.icon && !props.iconEnd ? (
         <img
@@ -35,6 +36,7 @@ export function Button(props) {
       onClick={props.onClick}
       type={props.type}
       id={props.id}
+      disabled={props.disabled}
     >
       {props.icon && !props.iconEnd ? (
         <img
@@ -117,6 +119,11 @@ Button.propTypes = {
    * Callback for a click event on the button
    */
   onClick: PropTypes.func,
+
+  /**
+   * bool to disable a button
+   */
+  disabled: PropTypes.bool,
 
   /**
    * css overrides for button

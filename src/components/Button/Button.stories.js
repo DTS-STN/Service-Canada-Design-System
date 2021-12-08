@@ -48,6 +48,7 @@ Danger.args = {
   text: "Danger Button",
   style: "danger",
   danger: true,
+  disabled: true,
 };
 
 Link.args = {
