@@ -5,7 +5,13 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { axe, toHaveNoViolations } from "jest-axe";
-import { Primary, Secondary, Danger, Link, Supertask } from "./Button.stories";
+import {
+  Primary,
+  Secondary,
+  DangerDisabled,
+  Link,
+  Supertask,
+} from "./Button.stories";
 
 expect.extend(toHaveNoViolations);
 
@@ -36,8 +42,10 @@ describe("Button", () => {
   });
 
   it("renders danger", () => {
-    render(<Danger {...Danger.args} />);
-    expect(screen.getByRole("button")).toHaveTextContent(Danger.args.text);
+    render(<DangerDisabled {...DangerDisabled.args} />);
+    expect(screen.getByRole("button")).toHaveTextContent(
+      DangerDisabled.args.text
+    );
     expect(screen.getByRole("button")).toHaveClass("btn-danger");
   });
 
