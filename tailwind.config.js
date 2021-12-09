@@ -34,6 +34,7 @@ module.exports = {
         browserh4: ["22px", "24px"],
         browserh5: ["20px", "22px"],
         browserh6: ["19px", "21px"],
+        browserh7: ["14px", "23px"],
         browserbody: ["20px", "33px"],
         browserbodybold: ["20px", "33px"],
       },
@@ -222,6 +223,8 @@ module.exports = {
 
       lineHeight: {
         "30px": "30px",
+        "28px": "28px",
+        "23px": "23px",
       },
       outline: {
         "black-solid": ["2px solid #000", "1px"],
