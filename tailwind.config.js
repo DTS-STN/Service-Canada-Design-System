@@ -5,6 +5,7 @@ module.exports = {
     content: [
       "./src/components/**/*.{js,ts,jsx,tsx}",
       "./src/stories/**/*.{js,ts,jsx,tsx}",
+      "./src/assets/**/*.{js,ts,jsx,tsx}",
       "./config-plugins/**/*.{js,ts,jsx,tsx}",
     ],
   },
