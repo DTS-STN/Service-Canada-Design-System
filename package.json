@@ -38,7 +38,7 @@
     "eslint": "eslint src",
     "prepare": "husky install",
     "storybook-docs": "start-storybook --docs --no-manager-cache",
-    "storybook": "start-storybook -s ./public -p 6006",
+    "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "lint-staged": {
