@@ -7,4 +7,5 @@ module.exports = {
     "@storybook/addon-a11y",
     "@whitespace/storybook-addon-html",
   ],
+  staticDirs: ["../src/assets"],
 };
