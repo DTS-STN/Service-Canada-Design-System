@@ -1,6 +1,6 @@
 import { Image } from "./Image";
 import imageFile from "../../assets/image1.png";
-import imageFile2 from "../../assets/image2.jpg";
+import imageFile2 from "../../assets/image2.png";
 
 export default {
   title: "Components/Image",
