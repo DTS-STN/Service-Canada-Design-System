@@ -1,4 +1,6 @@
 import { Image } from "./Image";
+import imageFile from "../../assets/image1.png";
+import imageFile2 from "../../assets/image2.jpg";
 
 export default {
   title: "Components/Image",
@@ -13,11 +15,11 @@ export const Mobile = Template.bind({});
 Default.args = {
   id: "image",
   alt: "Image",
-  src: "/image1.png",
+  src: imageFile,
 };
 
 Mobile.args = {
   id: "image",
   alt: "Image",
-  src: "/image2.jpg",
+  src: imageFile2,
 };
