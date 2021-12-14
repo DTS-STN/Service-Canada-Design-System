@@ -8,42 +8,57 @@ export default {
 const Template = (args) => <Link {...args} />;
 
 export const Default = Template.bind({});
-export const FooterLink = Template.bind({});
-export const FooterLinkBottom = Template.bind({});
-export const InformationLink = Template.bind({});
-export const DownloadLink = Template.bind({});
+export const RegularLinkwithEmphasis = Template.bind({});
+export const FooterTopSmallLink = Template.bind({});
+export const FooterBottomSmallLink = Template.bind({});
+export const SmallLinkSemiBold = Template.bind({});
+export const BreadcrumbsLink = Template.bind({});
+export const MultiNavigationLink = Template.bind({});
 
 Default.args = {
   id: "link",
-  text: "Link",
+  text: "Regular Link",
   href: "/",
 };
 
-FooterLink.args = {
+RegularLinkwithEmphasis.args = {
   id: "link",
-  text: "Link",
+  text: "Regular link with Emphasis",
   href: "/",
-  isFooterLink: true,
+  linkStyle: "basicStyleWithEmphasis",
 };
 
-FooterLinkBottom.args = {
+FooterTopSmallLink.args = {
   id: "link",
-  text: "Link",
+  text: "Regular link with Emphasis",
   href: "/",
-  isFooterLink: true,
-  footerLinkPosition: "bottom",
+  linkStyle: "smfooterStyle",
 };
 
-InformationLink.args = {
+FooterBottomSmallLink.args = {
   id: "link",
-  text: "Link",
+  text: "Regular link with Emphasis",
   href: "/",
-  isInfo: true,
+  linkStyle: "smfooterStyleBottom",
 };
-// This will changed or removed when final version of design is completed
-DownloadLink.args = {
+
+SmallLinkSemiBold.args = {
   id: "link",
-  text: "Link",
+  text: "Regular link with Emphasis",
   href: "/",
-  isInfo: true,
+  linkStyle: "smfooterStyleBold",
+};
+
+BreadcrumbsLink.args = {
+  id: "link",
+  text: "Regular link with Emphasis",
+  href: "/",
+  linkStyle: "smBreadcrumbs",
+};
+
+MultiNavigationLink.args = {
+  id: "link",
+  text: "Regular link with Emphasis",
+  href: "/",
+  linkStyle: "smMultiNav",
 };
