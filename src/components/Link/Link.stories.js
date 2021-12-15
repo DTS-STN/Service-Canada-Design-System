@@ -30,35 +30,35 @@ RegularLinkwithEmphasis.args = {
 
 FooterTopSmallLink.args = {
   id: "link",
-  text: "Regular link with Emphasis",
+  text: "Link with small font in footer top section",
   href: "/",
   linkStyle: "smfooterStyle",
 };
 
 FooterBottomSmallLink.args = {
   id: "link",
-  text: "Regular link with Emphasis",
+  text: "Link with small font in footer bottom section",
   href: "/",
   linkStyle: "smfooterStyleBottom",
 };
 
 SmallLinkSemiBold.args = {
   id: "link",
-  text: "Regular link with Emphasis",
+  text: "Link with small font and semibold",
   href: "/",
   linkStyle: "smfooterStyleBold",
 };
 
 BreadcrumbsLink.args = {
   id: "link",
-  text: "Regular link with Emphasis",
+  text: "Breadcrumbs link",
   href: "/",
   linkStyle: "smBreadcrumbs",
 };
 
 MultiNavigationLink.args = {
   id: "link",
-  text: "Regular link with Emphasis",
+  text: "Navigation Link",
   href: "/",
   linkStyle: "smMultiNav",
 };
