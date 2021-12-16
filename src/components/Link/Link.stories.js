@@ -9,11 +9,10 @@ const Template = (args) => <Link {...args} />;
 
 export const Default = Template.bind({});
 export const RegularLinkwithEmphasis = Template.bind({});
-export const FooterTopSmallLink = Template.bind({});
-export const FooterBottomSmallLink = Template.bind({});
-export const SmallLinkSemiBold = Template.bind({});
+export const TitleLink = Template.bind({});
+export const FooterBlueLink = Template.bind({});
+export const FooterWhiteLink = Template.bind({});
 export const BreadcrumbsLink = Template.bind({});
-export const MultiNavigationLink = Template.bind({});
 
 Default.args = {
   id: "link",
@@ -28,37 +27,30 @@ RegularLinkwithEmphasis.args = {
   linkStyle: "basicStyleWithEmphasis",
 };
 
-FooterTopSmallLink.args = {
+TitleLink.args = {
   id: "link",
-  text: "Link with small font in footer top section",
+  text: "Title Link",
   href: "/",
-  linkStyle: "smfooterStyle",
+  linkStyle: "titleLink",
 };
 
-FooterBottomSmallLink.args = {
+FooterBlueLink.args = {
   id: "link",
-  text: "Link with small font in footer bottom section",
+  text: "Small link - Footer blue",
   href: "/",
-  linkStyle: "smfooterStyleBottom",
+  linkStyle: "smfooterBlue",
 };
 
-SmallLinkSemiBold.args = {
+FooterWhiteLink.args = {
   id: "link",
-  text: "Link with small font and semibold",
+  text: "Small link - Footer white",
   href: "/",
-  linkStyle: "smfooterStyleBold",
+  linkStyle: "smfooterWhite",
 };
 
 BreadcrumbsLink.args = {
   id: "link",
-  text: "Breadcrumbs link",
+  text: "Small link - Breadcrumbs & French toggle",
   href: "/",
   linkStyle: "smBreadcrumbs",
-};
-
-MultiNavigationLink.args = {
-  id: "link",
-  text: "Navigation Link",
-  href: "/",
-  linkStyle: "smMultiNav",
 };

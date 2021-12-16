@@ -10,25 +10,21 @@ export function Link(props) {
       basicStyle =
         "underline text-multi-blue-blue70b font-body text-browserh5 font-bold text-mobileh5 leading-33px hover:text-multi-blue-blue50b";
       break;
-    case "smfooterStyle":
+    case "titleLink":
       basicStyle =
-        "font-body bg-multi-blue-blue60g  leading-23px  text-browserh7 text-multi-neutrals-white hover:underline";
+        "text-multi-blue-blue70b font-header text-browserh5 leading-23px font-normal hover:text-multi-blue-blue50b";
       break;
-    case "smfooterStyleBottom":
+    case "smfooterBlue":
       basicStyle =
-        "text-multi-blue-blue70b font-body text-browserh7 leading-30px font-noraml hover:text-multi-blue-blue50b";
+        "text-multi-blue-blue70b font-body leading-20px text-browserh7 hover:underline";
       break;
-    case "smfooterStyleBold":
+    case "smfooterWhite":
       basicStyle =
-        "text-multi-blue-blue70b font-body text-browserh9  font-bold  leading-26px font-noraml hover:text-multi-blue-blue50b";
+        "text-multi-neutrals-white bg-multi-neutrals-grey100 font-body text-browserh7 leading-20px font-normal hover:text-multi-neutrals-white hover:underline";
       break;
     case "smBreadcrumbs":
       basicStyle =
-        "text-multi-blue-blue70b font-body text-browserh8  leading-23px font-noraml hover:text-multi-blue-blue50b";
-      break;
-    case "smMultiNav":
-      basicStyle =
-        "text-multi-blue-blue70b font-body text-browserhe leading-33px font-noraml hover:text-multi-blue-blue50b";
+        "text-multi-blue-blue70b font-body text-browserh8 leading-23px font-normal hover:text-multi-blue-blue50b";
       break;
     default:
       basicStyle =
@@ -54,17 +50,17 @@ export function Link(props) {
 
 Link.propTypes = {
   /**
-   * The text that the button will display
+   * The text that Text Link will display
    */
   text: PropTypes.string,
 
   /**
-   * Style link as a button when there's a href
+   * Style link as a Text Link when there's a href
    */
   href: PropTypes.string,
 
   /**
-   * Identify which button being clicked
+   * Identify which Text Link being clicked
    */
   id: PropTypes.string.isRequired,
 
@@ -73,7 +69,7 @@ Link.propTypes = {
    */
   lang: PropTypes.string,
   /**
-   * css overrides for button
+   * css overrides for Link
    */
   className: PropTypes.string,
   /**

@@ -5,11 +5,10 @@ import { axe, toHaveNoViolations } from "jest-axe";
 import {
   Default,
   RegularLinkwithEmphasis,
-  FooterBottomSmallLink,
-  FooterTopSmallLink,
-  SmallLinkSemiBold,
+  FooterWhiteLink,
+  FooterBlueLink,
+  TitleLink,
   BreadcrumbsLink,
-  MultiNavigationLink,
 } from "./Link.stories";
 import { Link } from "./Link";
 
@@ -43,57 +42,45 @@ describe("Link", () => {
     );
   });
 
-  it("renders link with small font in footer", () => {
-    render(<Link {...FooterTopSmallLink.args} />);
-    expect(
-      screen.getByText("Link with small font in footer top section")
-    ).toHaveTextContent(FooterTopSmallLink.args.text);
-    expect(
-      screen.getByText("Link with small font in footer top section")
-    ).toHaveClass(
-      "font-body bg-multi-blue-blue60g  leading-23px  text-browserh7 text-multi-neutrals-white hover:underline"
+  it("renders Title link", () => {
+    render(<Link {...TitleLink.args} />);
+    expect(screen.getByText("Title Link")).toHaveTextContent(
+      TitleLink.args.text
+    );
+    expect(screen.getByText("Title Link")).toHaveClass(
+      "text-multi-blue-blue70b font-header text-browserh5  leading-23px font-normal hover:text-multi-blue-blue50b"
     );
   });
 
-  it("renders link with small font in footer bottom section", () => {
-    render(<Link {...FooterBottomSmallLink.args} />);
-    expect(
-      screen.getByText("Link with small font in footer bottom section")
-    ).toHaveTextContent(FooterBottomSmallLink.args.text);
-    expect(
-      screen.getByText("Link with small font in footer bottom section")
-    ).toHaveClass(
-      "text-multi-blue-blue70b font-body text-browserh7 leading-30px font-noraml hover:text-multi-blue-blue50b"
+  it("renders Small link - Footer Blue", () => {
+    render(<Link {...FooterBlueLink.args} />);
+    expect(screen.getByText("Small link - Footer blue")).toHaveTextContent(
+      FooterBlueLink.args.text
+    );
+    expect(screen.getByText("Small link - Footer blue")).toHaveClass(
+      "text-multi-blue-blue70b font-body leading-20px text-browserh7 hover:underline"
     );
   });
 
-  it("renders link with small font in semit bold", () => {
-    render(<Link {...SmallLinkSemiBold.args} />);
-    expect(
-      screen.getByText("Link with small font and semibold")
-    ).toHaveTextContent(SmallLinkSemiBold.args.text);
-    expect(screen.getByText("Link with small font and semibold")).toHaveClass(
-      "text-multi-blue-blue70b font-body text-browserh9  font-bold  leading-26px font-noraml hover:text-multi-blue-blue50b"
+  it("renders Small link - Footer White", () => {
+    render(<Link {...FooterWhiteLink.args} />);
+    expect(screen.getByText("Small link - Footer white")).toHaveTextContent(
+      FooterWhiteLink.args.text
+    );
+    expect(screen.getByText("Small link - Footer white")).toHaveClass(
+      "text-multi-neutrals-white bg-multi-neutrals-grey100 font-body text-browserh7 leading-20px font-normal hover:text-multi-neutrals-white hover:underline"
     );
   });
 
   it("renders breadcrumb link", () => {
     render(<Link {...BreadcrumbsLink.args} />);
-    expect(screen.getByText("Breadcrumbs link")).toHaveTextContent(
-      BreadcrumbsLink.args.text
-    );
-    expect(screen.getByText("Breadcrumbs link")).toHaveClass(
-      "text-multi-blue-blue70b font-body text-browserh8  leading-23px font-noraml hover:text-multi-blue-blue50b"
-    );
-  });
-
-  it("renders navigation link", () => {
-    render(<Link {...MultiNavigationLink.args} />);
-    expect(screen.getByText("Navigation Link")).toHaveTextContent(
-      MultiNavigationLink.args.text
-    );
-    expect(screen.getByText("Navigation Link")).toHaveClass(
-      "text-multi-blue-blue70b font-body text-browserhe leading-33px font-noraml hover:text-multi-blue-blue50b"
+    expect(
+      screen.getByText("Small link - Breadcrumbs & French toggle")
+    ).toHaveTextContent(BreadcrumbsLink.args.text);
+    expect(
+      screen.getByText("Small link - Breadcrumbs & French toggle")
+    ).toHaveClass(
+      "text-multi-blue-blue70b font-body text-browserh8 leading-23px font-normal hover:text-multi-blue-blue50b"
     );
   });
   it("has no a11y violations", async () => {
