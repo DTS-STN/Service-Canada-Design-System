@@ -31,10 +31,7 @@ Image.propTypes = {
    * css overrides for image
    */
   className: PropTypes.string,
-  /**
-   * To identify the id of the element
-   */
-  id: PropTypes.string.isRequired,
+
   /**
    * Enables rounded corners for image
    */
