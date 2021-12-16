@@ -2,39 +2,43 @@ import PropTypes from "prop-types";
 import React from "react";
 
 export function Image(props) {
-  const { src, alt } = props;
+  const { src, alt, rounded } = props;
 
   return (
     <>
-      <img src={src} alt={alt} />
+      <img src={src} alt={alt} className={`marginAuto ${rounded}`} />
     </>
   );
 }
 
 Image.propTypes = {
   /**
-   * The text that the button will display
+   * The text that the image tag will display
    */
   id: PropTypes.string,
 
   /**
-   * Style link as a button when there's a href
+   * Alternate text will be displayed in place of an image.
    */
   alt: PropTypes.string,
 
   /**
-   * Identify which button being clicked
+   * Identify source of image
    */
   src: PropTypes.string.isRequired,
 
   /**
-   * css overrides for button
+   * css overrides for image
    */
   className: PropTypes.string,
   /**
-   * To identify the heading element
+   * To identify the id of the element
    */
   id: PropTypes.string.isRequired,
+  /**
+   * Enables rounded corners for image
+   */
+  rounded: PropTypes.string,
   /**
    * Test id for unit test
    */
