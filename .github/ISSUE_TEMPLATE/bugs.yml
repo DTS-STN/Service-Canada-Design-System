@@ -2,7 +2,7 @@ name: DECD Bug Report for tracking issues
 description: File a bug report
 title: "[Bug]: "
 labels: ["bug", "triage"]
-assignees: " "
+assignees: [" "]
 body:
   - type: markdown
     attributes:
