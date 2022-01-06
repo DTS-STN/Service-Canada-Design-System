@@ -1,17 +1,21 @@
+/**
+ * Note issues with using icon when importing this component to other components.
+ * Must be fixed before officially releasing this component.
+ */
 import PropTypes from "prop-types";
 import React from "react";
 
 /**
- * Button component
+ * Note this button component is currently in development and is should be used as a demo/test component
  */
 export function ActionButton(props) {
   //Styling for buttons and links
   const basicStyle =
     "rounded-sm focus:ring-1 focus:ring-black focus:ring-offset-2";
   const defaultStyle =
-    "py-2 px-4 bg-custom-blue-blue text-white border border-custom-blue-blue active:bg-custom-blue-dark hover:bg-custom-blue-light";
+    "py-2 px-4 bg-multi-blue-blue60g text-white border border-multi-blue-blue60g active:bg-multi-blue-blue60c hover:bg-multi-blue-blue60f";
   const secondaryStyle =
-    "py-2 px-4 bg-white text-custom-blue-blue border border-custom-blue-blue active:bg-gray-400 hover:bg-gray-200";
+    "py-2 px-4 bg-white text-multi-blue-blue60g border border-multi-blue-blue60g active:bg-multi-neutrals-grey85a hover:bg-multi-neutrals-grey40 ";
   const tertiaryStyle =
     "py-2 underline hover:text-canada-footer-hover-font-blue text-canada-footer-font";
   const disabledStyle =
@@ -35,18 +39,22 @@ export function ActionButton(props) {
     <a
       href={props.href}
       className={`${basicStyle}
-        ${
-          !props.secondary &&
-          !props.tertiary &&
-          !props.disabled &&
-          !props.custom
-            ? defaultStyle
-            : props.className
-        }
-        ${props.secondary && !props.disabled ? secondaryStyle : props.className}
-        ${props.tertiary && !props.disabled ? tertiaryStyle : props.className}
-        ${props.custom && !props.tertiary ? props.custom : ""}
-        ${props.disabled ? disabledStyle : props.className}`}
+          ${
+            !props.secondary &&
+            !props.tertiary &&
+            !props.disabled &&
+            !props.custom
+              ? defaultStyle
+              : props.className
+          }
+          ${
+            props.secondary && !props.disabled
+              ? secondaryStyle
+              : props.className
+          }
+          ${props.tertiary && !props.disabled ? tertiaryStyle : props.className}
+          ${props.custom && !props.tertiary ? props.custom : ""}
+          ${props.disabled ? disabledStyle : props.className}`}
       onClick={props.onClick}
       id={props.id}
       data-testid={props.dataTestId}
@@ -69,15 +77,18 @@ export function ActionButton(props) {
   ) : (
     <button
       className={`${basicStyle}
-      ${
-        !props.secondary && !props.tertiary && !props.disabled && !props.custom
-          ? defaultStyle
-          : props.className
-      }
-      ${props.secondary && !props.disabled ? secondaryStyle : props.className}
-      ${props.tertiary && !props.disabled ? tertiaryStyle : props.className}
-      ${props.custom && !props.tertiary ? props.custom : ""}
-      ${props.disabled ? disabledStyle : props.className}`}
+        ${
+          !props.secondary &&
+          !props.tertiary &&
+          !props.disabled &&
+          !props.custom
+            ? defaultStyle
+            : props.className
+        }
+        ${props.secondary && !props.disabled ? secondaryStyle : props.className}
+        ${props.tertiary && !props.disabled ? tertiaryStyle : props.className}
+        ${props.custom && !props.tertiary ? props.custom : ""}
+        ${props.disabled ? disabledStyle : props.className}`}
       onClick={props.onClick}
       type={props.type}
       id={props.id}

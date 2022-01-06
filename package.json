@@ -11,9 +11,11 @@
     "dist/**/*"
   ],
   "dependencies": {
+    "@rollup/plugin-json": "^4.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "eslint-plugin-jest": "^25.2.4",
     "fetch-mock": "^9.11.0",
     "joi": "^17.4.2",
     "react-scripts": "4.0.3"
@@ -33,9 +35,10 @@
     "test:unit": "jest --forceExit",
     "pre-commit": "lint-staged",
     "lint": "prettier --write \"*.{js,md}\" --write \".storybook/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"playground/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
+    "eslint": "eslint src",
     "prepare": "husky install",
     "storybook-docs": "start-storybook --docs --no-manager-cache",
-    "storybook": "start-storybook -s ./public -p 6006",
+    "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "lint-staged": {
@@ -50,12 +53,9 @@
     ],
     "*.{js,md}": [
       "prettier --write"
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
+    ],
+    "src/**/*.+(js|json|ts|tsx)": [
+      "eslint"
     ]
   },
   "browserslist": {
@@ -85,11 +85,15 @@
     "@storybook/react": "^6.3.7",
     "@tailwindcss/postcss7-compat": "^2.1.4",
     "@tailwindcss/typography": "^0.4.1",
+    "@whitespace/storybook-addon-html": "^5.0.0",
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.2.2",
     "babel-plugin-polyfill-corejs2": "^0.2.2",
     "babel-plugin-polyfill-corejs3": "^0.2.2",
     "babel-plugin-polyfill-regenerator": "^0.2.2",
+    "eslint": "7.32.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.27.1",
     "husky": "^6.0.0",
     "jest-axe": "^5.0.1",
     "lint-staged": "^11.0.0",

@@ -2,18 +2,30 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /**
- * This utility container helps layout content across screen sizes according to
- * the canada-ca design system guidelines https://design.canada.ca/styles/layouts.html
+ * This utility container helps to layout content across screen sizes according to
+ * our TailwindCSS implementation of Bootstrap 3 breakpoints, maximum container widths and grids.
  *
- * screen size 280px - full width, small margin applied
- * screen size 550px - max width 550px, padding removed
- * screen size 768px - max width 768px, margin left auto, margin right auto and padding applied
- * rest of the breakpoints - max width is the lower bound of the breakpoint
+ * You can use this container to wrap a page, section or component or you could simply add
+ * the 'container' and 'bootstrap3-grid' classes to the top-most html element on your page, section or component.
+ *
+ * Note:
+ *
+ * This project does not contain the Bootstrap package so we do not have access to Bootstrap classes.
+ * It simply mimics some bootstrap configurations using TailwindCSS preset files.
+ *
+ * For more information on Bootstrap 3 breakpoints, containers & grids visit this link:
+ * https://getbootstrap.com/docs/3.4/css/#grid-media-queries
+ *
+ *
+ * The Primary story demonstrates how you  can implement a 12 column grid layout using Tailwind Grid utilities.
+ *
  */
 export default function LayoutContainer(props) {
   return (
     <div
-      className={`layout-container ${props.className ? props.className : ""}`}
+      className={`container bootstrap3-grid ${
+        props.className ? props.className : ""
+      }`}
     >
       {props.children}
     </div>
@@ -22,12 +34,12 @@ export default function LayoutContainer(props) {
 
 LayoutContainer.propTypes = {
   /**
-   * additional styles you want applied on the container
+   * Pass any additional styles you want applied on the container.
    */
   className: PropTypes.string,
 
   /**
-   * the child elements of this container
+   * Pass any string, element or component to render out within the layout container.
    */
   children: PropTypes.oneOfType([
     PropTypes.string,

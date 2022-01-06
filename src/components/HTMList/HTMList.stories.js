@@ -1,7 +1,7 @@
 import { HTMList } from "./HTMList";
 
 export default {
-  title: "Components/Utility/HTMList",
+  title: "In Development/HTMList",
   component: HTMList,
 };
 
