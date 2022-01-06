@@ -25,3 +25,8 @@ export { ActionButton } from "./components/ActionButton/ActionButton";
  * Heading with text link
  */
 export { Heading } from "./components/Heading/Heading";
+
+/**
+ * Image
+ */
+export { Image } from "./components/Image/Image";
