@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
+import React from "react";
 import { useState } from "react";
 import { OptionalTextField } from "../OptionalTextField/OptionalTextField";
 import { Details } from "../Details/Details";
 import { ActionButton } from "../ActionButton/ActionButton";
 
-import EN from "../../translations/en";
-import FR from "../../translations/fr";
+import EN from "../../translations/en.json";
+import FR from "../../translations/fr.json";
 
 /**
  * Report a problem button to report technical issues on the page.

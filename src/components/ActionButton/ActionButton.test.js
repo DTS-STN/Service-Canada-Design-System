@@ -27,7 +27,7 @@ describe("Action Button", () => {
     render(<Default {...Default.args} />);
     expect(screen.getByRole("button")).toHaveTextContent(Default.args.text);
     expect(screen.getByRole("button")).toHaveClass(
-      "bg-custom-blue-blue text-white border border-custom-blue-blue active:bg-custom-blue-dark hover:bg-custom-blue-light"
+      "py-2 px-4 bg-multi-blue-blue60g text-white border border-multi-blue-blue60g active:bg-multi-blue-blue60c hover:bg-multi-blue-blue60f"
     );
   });
 
@@ -35,7 +35,7 @@ describe("Action Button", () => {
     render(<Secondary {...Secondary.args} />);
     expect(screen.getByRole("button")).toHaveTextContent(Secondary.args.text);
     expect(screen.getByRole("button")).toHaveClass(
-      "bg-white text-custom-blue-blue border border-custom-blue-blue active:bg-gray-400 hover:bg-gray-200"
+      "py-2 px-4 bg-white text-multi-blue-blue60g border border-multi-blue-blue60g active:bg-multi-neutrals-grey85a hover:bg-multi-neutrals-grey40 "
     );
   });
 
@@ -43,7 +43,7 @@ describe("Action Button", () => {
     render(<Tertiary {...Tertiary.args} />);
     expect(screen.getByRole("button")).toHaveTextContent(Tertiary.args.text);
     expect(screen.getByRole("button")).toHaveClass(
-      "underline hover:text-canada-footer-hover-font-blue text-canada-footer-font"
+      "py-2 underline hover:text-canada-footer-hover-font-blue text-canada-footer-font"
     );
   });
 
@@ -69,7 +69,7 @@ describe("Action Button", () => {
   //   });
   //   expect(mockFn.mock.calls.length).toBe(1);
   //   expect(global.window.location.pathname).toEqual("/");
-  // });
+  // })
 
   it("has no a11y violations", async () => {
     const { container } = render(<Default {...Default.args} />);
