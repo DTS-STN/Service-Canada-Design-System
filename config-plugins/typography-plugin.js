@@ -83,18 +83,6 @@ const typography = plugin(function ({ addUtilities, theme }) {
         fontSize: theme("fontSize.browserbodybold"),
       },
     },
-    // Do we need separate styling for the button fonts?
-    // Right now included in button styles
-    // ".btn-font-super": {
-    //   fontFamily: theme("fontFamily.header"),
-    //   fontWeight: theme("fontWeight.bold"),
-    //   fontSize: theme("fontSize.btnsupertask"),
-    // },
-    // ".btn-font-other": {
-    //   fontFamily: theme("fontFamily.header"),
-    //   fontWeight: theme("fontWeight.regular"),
-    //   fontSize: theme("fontSize.btnother"),
-    // },
   };
 
   addUtilities(newUtilities);
