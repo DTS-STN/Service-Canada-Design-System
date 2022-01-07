@@ -22,25 +22,25 @@ describe("Image", () => {
   });
   it("renders default image", () => {
     render(<Image {...Default.args} />);
-    expect(screen.getByAltText("Default Image")).toHaveClass("marginAuto");
+    expect(screen.getByAltText("Default Image"));
   });
 
   it("renders mobile image", () => {
     render(<Image {...Mobile.args} />);
-    expect(screen.getByAltText("Mobile Image")).toHaveClass("marginAuto");
+    expect(screen.getByAltText("Mobile Image"));
   });
 
   it("renders default image with rounded corner", () => {
     render(<Image {...DefaultWithRounded.args} />);
     expect(screen.getByAltText("Default Image with rounded")).toHaveClass(
-      "marginAuto rounded"
+      "rounded"
     );
   });
 
   it("renders mobile image with rounded", () => {
     render(<Image {...MobileWithRounded.args} />);
     expect(screen.getByAltText("Mobile Image with rounded")).toHaveClass(
-      "marginAuto rounded"
+      "rounded"
     );
   });
 });
