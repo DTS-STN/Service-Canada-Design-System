@@ -15,7 +15,7 @@ export function Button(props) {
     >
       {props.icon && !props.iconEnd ? (
         <Image
-          className="h-9 w-9 pr-2"
+          className="h-8 w-8 pr-2"
           src={props.icon}
           alt={props.iconAltText}
         />
@@ -24,7 +24,7 @@ export function Button(props) {
       {props.children}
       {props.icon && props.iconEnd ? (
         <Image
-          className="h-9 w-9 pl-2"
+          className="h-8 w-8 pl-2"
           src={props.icon}
           alt={props.iconAltText}
         />
@@ -40,7 +40,7 @@ export function Button(props) {
     >
       {props.icon && !props.iconEnd ? (
         <Image
-          className="h-9 w-9 pr-2"
+          className="h-8 w-8 pr-2"
           src={props.icon}
           alt={props.iconAltText}
         />
@@ -49,7 +49,7 @@ export function Button(props) {
       {props.children}
       {props.icon && props.iconEnd ? (
         <Image
-          className="h-9 w-9 pl-2"
+          className="h-8 w-8 pl-2"
           src={props.icon}
           alt={props.iconAltText}
         />
