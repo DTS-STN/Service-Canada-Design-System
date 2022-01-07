@@ -5,6 +5,8 @@ export default {
   component: Button,
 };
 
+import btnIcon from "../../assets/youtube.svg";
+
 const Template = (args) => <Button {...args} />;
 
 export const Supertask = Template.bind({});
@@ -24,7 +26,7 @@ SupertaskIcon.args = {
   id: "supertask_icon",
   style: "supertask",
   text: "Supertask button",
-  icon: "../../assets/youtube.svg",
+  icon: btnIcon,
   iconAltText: "icon",
   iconEnd: false,
 };
