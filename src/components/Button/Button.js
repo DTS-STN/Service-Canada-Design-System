@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
+import { Image } from "../Image/Image";
 
 export function Button(props) {
   const style = "btn-" + props.style;
@@ -13,8 +14,8 @@ export function Button(props) {
       role="button"
     >
       {props.icon && !props.iconEnd ? (
-        <img
-          className="inline mr-auto pr-2"
+        <Image
+          className="h-8 w-8 pr-2"
           src={props.icon}
           alt={props.iconAltText}
         />
@@ -22,9 +23,8 @@ export function Button(props) {
       {props.text}
       {props.children}
       {props.icon && props.iconEnd ? (
-        // Once image component is created it goes here to import icon
-        <img
-          className="inline ml-auto pl-2"
+        <Image
+          className="h-8 w-8 pl-2"
           src={props.icon}
           alt={props.iconAltText}
         />
@@ -39,8 +39,8 @@ export function Button(props) {
       disabled={props.disabled}
     >
       {props.icon && !props.iconEnd ? (
-        <img
-          className="mr-auto pr-2"
+        <Image
+          className="h-8 w-8 pr-2"
           src={props.icon}
           alt={props.iconAltText}
         />
@@ -48,9 +48,8 @@ export function Button(props) {
       {props.text}
       {props.children}
       {props.icon && props.iconEnd ? (
-        // Once image component is created it goes here to import icon
-        <img
-          className="ml-auto pl-2"
+        <Image
+          className="h-8 w-8 pl-2"
           src={props.icon}
           alt={props.iconAltText}
         />
