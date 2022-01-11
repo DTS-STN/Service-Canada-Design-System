@@ -8,3 +8,13 @@
     background-image: url("../assets/bg-banner-mobile.png");
   }
 }
+
+/* class to hide elements from visually but allow content to be read out by screen readers */
+.hide-element {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}

@@ -39,11 +39,9 @@ export function Button(props) {
       disabled={props.disabled}
     >
       {props.icon && !props.iconEnd ? (
-        <Image
-          className="h-8 w-8 pr-2"
-          src={props.icon}
-          alt={props.iconAltText}
-        />
+        <div className="grid place-items-center h-8 w-8">
+          <Image className="pr-2" src={props.icon} alt={props.iconAltText} />
+        </div>
       ) : undefined}
       {props.text}
       {props.children}

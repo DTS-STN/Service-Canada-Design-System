@@ -42,6 +42,9 @@ Secondary.args = {
   id: "secondary",
   text: "Secondary Button",
   style: "secondary",
+  icon: btnIcon,
+  iconAltText: "icon",
+  iconEnd: false,
   secondary: true,
 };
 
