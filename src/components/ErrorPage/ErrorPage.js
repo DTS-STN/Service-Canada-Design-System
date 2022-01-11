@@ -1,123 +1,89 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { Heading } from "../Heading/Heading";
-import { Button } from "../Button/Button";
 // Text Link component not implimented yet
 import EN from "../../translations/en";
 import FR from "../../translations/fr";
-import btnIcon from "../../assets/downArrow.svg";
-// import btnIcon from "../../assets/youtube.svg";
 
 export function ErrorPage(props) {
+  var language =
+    props.lang === "en" ? EN : props.lang === "fr" ? FR : { EN, FR };
   return (
     <>
-      {props.lang ? (
-        // English
-        <>
-          <Heading id="error_heading" title={EN.errorPageHeadingTitle} />
-          <div>
-            <p className="body mt-2">{EN.errorPageErrorText}</p>
-            <br />
-            <p className="error-next-text">{EN.errorPageNextText}</p>
-            <h2 className="hide-element">Whats Next Links</h2>
-            {props.errType === "404" ? (
-              <ul>
-                <li className="body pl-3">
-                  {EN.error404TextLink1}
-                  {/* replace with text link component in future */}
-                  <a href="/">{EN.error404TextLink1_2}</a>
-                </li>
-              </ul>
-            ) : null}
-            {props.errType === "500" ? (
-              <>
-                <ul>
-                  <li className="body pl-3">{EN.error500TextLink1}</li>
-                  <li className="body pl-3">
-                    {EN.error500TextLink2}
-                    {/* replace with text link component in future */}
-                    <a href="/">{EN.error500TextLink2_2}</a>
-                  </li>
-                </ul>
-                <br />
-                <br />
-                <Button
-                  icon={btnIcon}
-                  iconEnd={false}
-                  id="errBtnSecondary"
-                  text={EN.reportAProblem}
-                  style="secondary"
-                  secondary={true}
-                />
-              </>
-            ) : null}
-            <br />
-            <br />
-            <p className="error-type-text">
-              {EN.errorPageType} {props.errType}
-            </p>
-          </div>
-        </>
+      {props.lang === "en" || "fr" ? (
+        createPage(props, language)
       ) : (
-        // French
         <>
-          <Heading id="error_heading" title={FR.errorPageHeadingTitle} />
-          <div>
-            <p className="body mt-2">{FR.errorPageErrorText}</p>
-            <br />
-            <p className="error-next-text">{FR.errorPageNextText}</p>
-            <h2 className="hide-element">{FR.errorPageNextText} Links</h2>
-            {props.errType === "404" ? (
-              <ul>
-                <li className="body pl-3">
-                  {FR.error404TextLink1}
-                  {/* replace with text link component in future */}
-                  <a href="/">{FR.error404TextLink1_2}</a>
-                </li>
-              </ul>
-            ) : null}
-            {props.errType === "500" ? (
-              <>
-                <ul>
-                  <li className="body pl-3">{FR.error500TextLink1}</li>
-                  <li className="body pl-3">
-                    {FR.error500TextLink2}
-                    {/* replace with text link component in future */}
-                    <a href="/">{FR.error500TextLink2_2}</a>
-                  </li>
-                </ul>
-                <br />
-                <br />
-                <Button
-                  icon={btnIcon}
-                  iconEnd={false}
-                  id="errBtnSecondary"
-                  text={FR.reportAProblem}
-                  style="secondary"
-                  secondary={true}
-                />
-              </>
-            ) : null}
-            <br />
-            <br />
-            <p className="error-type-text">
-              {FR.errorPageType} {props.errType}
-            </p>
-          </div>
+          {createPage(props, language.EN)}
+          {createPage(props, language.FR)}
         </>
       )}
     </>
   );
 }
 
+function createPage(props, language) {
+  console.log(language);
+  const { isAuth, errType } = props;
+  var errorText =
+    errType === "404"
+      ? language.errorPageErrorText404
+      : errType === "500"
+      ? language.errorPageErrorText500
+      : language.errorPageErrorText503;
+  return (
+    <>
+      <Heading id="error_heading" title={language.errorPageHeadingTitle} />
+      <div>
+        <p className="body mt-2">{errorText}</p>
+        <br />
+        <p className="error-next-text">{language.errorPageNextText}</p>
+        <h2 className="hide-element">Whats Next Links</h2>
+        <ul>
+          {errType === "500" ? (
+            <li className="body pl-3">{language.error500TextLink}</li>
+          ) : errType === "503" ? (
+            <li className="body pl-3">{language.error503TextLink}</li>
+          ) : null}
+          {!isAuth ? (
+            <li className="body pl-3">
+              {language.errorTextLinkCommon}
+              {/* replace with text link component in future */}
+              <a href="/">{language.errorTextLinkCommon_2}</a>
+            </li>
+          ) : (
+            <li className="body pl-3">
+              {language.errorAuthTextLinkCommon}
+              {/* replace with text link component in future */}
+              <a href="/">{language.errorAuthTextLinkCommon_2}</a>
+            </li>
+          )}
+        </ul>
+        <br />
+        <br />
+        <p className="error-type-text">
+          {language.errorPageType} {errType}
+        </p>
+      </div>
+    </>
+  );
+}
+
 ErrorPage.propTypes = {
   /**
-   * If lang is true use english translations, if false use french translations
+   * Select the language for the page. If bi is selected
+   * bilingual version of error pages will be used
    */
-  lang: PropTypes.bool.isRequired,
+  lang: PropTypes.oneOf(["en", "fr", "bi"]).isRequired,
 
   /**
-   * If lang is true use english translations, if false use french translations
+   * Select the type of error page you want to use
    */
-  errType: PropTypes.oneOf(["404", "500"]).isRequired,
+  errType: PropTypes.oneOf(["404", "500", "503"]).isRequired,
+
+  /**
+   * To indicate if the user is authenticated or not
+   * Will display authenticated version of plays if user is authenticated
+   */
+  isAuth: PropTypes.bool.isRequired,
 };
