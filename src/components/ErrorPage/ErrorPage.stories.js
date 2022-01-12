@@ -8,73 +8,87 @@ export default {
 
 const Template = (args) => <ErrorPage {...args} />;
 
-export const enErrorPage404 = Template.bind({});
-export const enAuthErrorPage404 = Template.bind({});
-export const enErrorPage500 = Template.bind({});
-export const enAuthErrorPage500 = Template.bind({});
-export const enErrorPage503 = Template.bind({});
-export const enAuthErrorPage503 = Template.bind({});
-export const frErrorPage404 = Template.bind({});
-export const frErrorPage500 = Template.bind({});
-export const frErrorPage503 = Template.bind({});
-export const biErrorPage404 = Template.bind({});
+export const ENErrorPage404 = Template.bind({});
+export const ENAuthErrorPage404 = Template.bind({});
+export const ENErrorPage500 = Template.bind({});
+export const ENAuthErrorPage500 = Template.bind({});
+export const ENErrorPage503 = Template.bind({});
+export const ENAuthErrorPage503 = Template.bind({});
+export const FRErrorPage404 = Template.bind({});
+export const FRErrorPage500 = Template.bind({});
+export const FRErrorPage503 = Template.bind({});
+export const BIErrorPage404 = Template.bind({});
+export const BIErrorPage500 = Template.bind({});
+export const BIErrorPage503 = Template.bind({});
 
-enErrorPage404.args = {
+ENErrorPage404.args = {
   lang: "en",
   errType: "404",
   isAuth: false,
 };
 
-enAuthErrorPage404.args = {
+ENAuthErrorPage404.args = {
   lang: "en",
   errType: "404",
   isAuth: true,
 };
 
-enErrorPage500.args = {
+ENErrorPage500.args = {
   lang: "en",
   errType: "500",
   isAuth: false,
 };
 
-enAuthErrorPage500.args = {
+ENAuthErrorPage500.args = {
   lang: "en",
   errType: "500",
   isAuth: true,
 };
 
-enErrorPage503.args = {
+ENErrorPage503.args = {
   lang: "en",
   errType: "503",
   isAuth: false,
 };
 
-enAuthErrorPage503.args = {
+ENAuthErrorPage503.args = {
   lang: "en",
   errType: "503",
   isAuth: true,
 };
 
-frErrorPage404.args = {
+FRErrorPage404.args = {
   lang: "fr",
   errType: "404",
   isAuth: false,
 };
 
-frErrorPage500.args = {
+FRErrorPage500.args = {
   lang: "fr",
   errType: "500",
   isAuth: false,
 };
 
-frErrorPage503.args = {
+FRErrorPage503.args = {
   lang: "fr",
   errType: "503",
   isAuth: false,
 };
 
-biErrorPage404.args = {
+BIErrorPage404.args = {
   lang: "bi",
   errType: "404",
+  isAuth: false,
+};
+
+BIErrorPage500.args = {
+  lang: "bi",
+  errType: "500",
+  isAuth: false,
+};
+
+BIErrorPage503.args = {
+  lang: "bi",
+  errType: "503",
   isAuth: false,
 };
