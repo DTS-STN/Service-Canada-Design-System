@@ -35,21 +35,18 @@ Primary.args = {
   id: "primary",
   text: "Primary button",
   style: "primary",
-  primary: true,
 };
 
 Secondary.args = {
   id: "secondary",
   text: "Secondary Button",
   style: "secondary",
-  secondary: true,
 };
 
 DangerDisabled.args = {
   id: "danger",
   text: "Danger Button",
   style: "danger",
-  danger: true,
   disabled: true,
 };
 
