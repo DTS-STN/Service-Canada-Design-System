@@ -18,13 +18,13 @@ export const Link = Template.bind({});
 
 Supertask.args = {
   id: "supertask",
-  style: "supertask",
+  styling: "supertask",
   text: "Supertask button",
 };
 
 SupertaskIcon.args = {
   id: "supertask_icon",
-  style: "supertask",
+  styling: "supertask",
   text: "Supertask button",
   icon: btnIcon,
   iconAltText: "icon",
@@ -34,25 +34,25 @@ SupertaskIcon.args = {
 Primary.args = {
   id: "primary",
   text: "Primary button",
-  style: "primary",
+  styling: "primary",
 };
 
 Secondary.args = {
   id: "secondary",
   text: "Secondary Button",
-  style: "secondary",
+  styling: "secondary",
 };
 
 DangerDisabled.args = {
   id: "danger",
   text: "Danger Button",
-  style: "danger",
+  styling: "danger",
   disabled: true,
 };
 
 Link.args = {
   id: "link",
   text: "Link Button",
-  style: "link",
+  styling: "link",
   href: "/",
 };
