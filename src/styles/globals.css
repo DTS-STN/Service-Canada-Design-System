@@ -12,9 +12,9 @@
 /* class to hide elements from visually but allow content to be read out by screen readers */
 .hide-element {
   clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
+  height: 0px;
   margin: 0;
   overflow: hidden;
   position: absolute;
-  width: 1px;
+  width: 0px;
 }

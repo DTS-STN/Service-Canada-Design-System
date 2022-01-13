@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Heading } from "../Heading/Heading";
 // Text Link component not implimented yet
-import EN from "../../translations/en";
-import FR from "../../translations/fr";
+import EN from "../../translations/en.json";
+import FR from "../../translations/fr.json";
 
 export function ErrorPage(props) {
   const { isAuth, errType, lang } = props;
