@@ -2,11 +2,11 @@ import PropTypes from "prop-types";
 import React from "react";
 
 export function Image(props) {
-  const { src, alt, rounded } = props;
+  const { src, alt, rounded, className } = props;
 
   return (
     <>
-      <img src={src} alt={alt} className={`marginAuto ${rounded}`} />
+      <img src={src} alt={alt} className={`${className} ${rounded}`} />
     </>
   );
 }
