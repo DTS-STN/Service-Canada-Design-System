@@ -38,7 +38,7 @@ export function ErrorPage(props) {
               )}
               <br />
               <p className="error-next-text">{val.errorPageNextText}</p>
-              <h2 className="hide-element">Whats Next Links</h2>
+              <h2 className="sr-only">Whats Next Links</h2>
               <ul>
                 {errType === "500" ? (
                   <li key={index} className="body pl-3">
