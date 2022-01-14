@@ -12,6 +12,19 @@ export function ErrorPage(props) {
   if (lang === "bi") {
     biClassName = "grid gap-10 grid-cols-1 sm:grid-cols-2 sm:gap-6";
   }
+  var errorHeadingEN =
+    errType === "404"
+      ? EN.errorPageHeadingTitle404
+      : errType === "500"
+      ? EN.errorPageHeadingTitle500
+      : EN.errorPageHeadingTitle503;
+  var errorHeadingFR =
+    errType === "404"
+      ? FR.errorPageHeadingTitle404
+      : errType === "500"
+      ? FR.errorPageHeadingTitle500
+      : FR.errorPageHeadingTitle503;
+
   var errorTextEN =
     errType === "404"
       ? EN.errorPageErrorText404
@@ -29,7 +42,11 @@ export function ErrorPage(props) {
       {language.map((val, index) => {
         return (
           <div>
-            <Heading id={index} title={val.errorPageHeadingTitle} />
+            {val === EN ? (
+              <Heading id={index} title={errorHeadingEN} />
+            ) : (
+              <Heading id={index} title={errorHeadingFR} />
+            )}
             <div>
               {val === EN ? (
                 <p className="body mt-2">{errorTextEN}</p>

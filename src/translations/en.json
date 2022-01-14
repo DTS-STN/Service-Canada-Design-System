@@ -1,5 +1,7 @@
 {
-  "errorPageHeadingTitle": "We couldn’t find that web page",
+  "errorPageHeadingTitle404": "We couldn’t find that web page",
+  "errorPageHeadingTitle500": "We're having a problem with that page",
+  "errorPageHeadingTitle503": "This service is currently not available",
   "errorPageErrorText404": "We're sorry you ended up here. Sometimes a page gets moved or deleted, but hopefully we can help you find what you're looking for.",
   "errorPageErrorText500": "We expect the problem to be fixed shortly. It's not your computer or Internet connection but a problem with our website's server. We apologize for the inconvenience.",
   "errorPageErrorText503": "The web server that provides this service is currently overloaded, or may be temporarily down for maintenance. We apologize for the inconvenience. ",
