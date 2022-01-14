@@ -81,12 +81,18 @@ ErrorPage.propTypes = {
    * Select the language for the page. If bi is selected
    * bilingual version of error pages will be used
    */
-  lang: PropTypes.oneOf(["en", "fr", "bi"]).isRequired,
+  lang: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.oneOf(["en", "fr", "bi"]),
+  ]).isRequired,
 
   /**
    * Select the type of error page you want to use
    */
-  errType: PropTypes.oneOf(["404", "500", "503"]).isRequired,
+  errType: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.oneOf(["404", "500", "503"]),
+  ]).isRequired,
 
   /**
    * To indicate if the user is authenticated or not
