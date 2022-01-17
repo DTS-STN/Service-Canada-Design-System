@@ -265,5 +265,6 @@ module.exports = {
     require("./config-plugins/typography-plugin"),
     require("./config-plugins/divider-plugin"),
     require("./config-plugins/button-plugin"),
+    require("./config-plugins/errorpage-plugin"),
   ],
 };
