@@ -3,7 +3,7 @@ import React from "react";
 import { Image } from "../Image/Image";
 
 export function Button(props) {
-  const style = "btn-" + props.style;
+  const style = "btn-" + props.styling;
   return props.href ? (
     <a
       href={props.href}
@@ -58,7 +58,7 @@ export function Button(props) {
 
 Button.defaultProps = {
   id: "btn1",
-  style: "supertask",
+  styling: "supertask",
   text: "default",
 };
 
@@ -73,12 +73,9 @@ Button.propTypes = {
    * to their button. To apply the link style, the user must
    * also add a value to the href prop
    */
-  style: PropTypes.oneOf([
-    "supertask",
-    "primary",
-    "secondary",
-    "danger",
-    "link",
+  styling: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.oneOf(["supertask", "primary", "secondary", "danger", "link"]),
   ]).isRequired,
 
   /**
