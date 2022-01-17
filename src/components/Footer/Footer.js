@@ -94,6 +94,7 @@ export function Footer(props) {
                     styling="link"
                     href={props.btnLink}
                     icon={props.btnIcon}
+                    iconAltText="to the top button"
                     iconEnd
                   />
                 </div>
