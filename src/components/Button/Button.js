@@ -7,7 +7,7 @@ export function Button(props) {
   return props.href ? (
     <a
       href={props.href}
-      className={` btn-link focus:ring focus:ring-offset-4 `}
+      className={`flex flex-row btn-link focus:ring focus:ring-offset-4 `}
       onClick={props.onClick}
       id={props.id}
       disabled={props.disabled}

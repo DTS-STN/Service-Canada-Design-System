@@ -1,104 +1,114 @@
-import PropTypes from "prop-types";
+import PropTypes, { oneOf } from "prop-types";
 import React from "react";
-import { DateModified } from "../DateModified/DateModified";
-// import { ReportAProblem } from "../ReportAProblem/ReportAProblem";
-import { ActionButton } from "../ActionButton/ActionButton";
+import { Button } from "../Button/Button";
+import { Image } from "../Image/Image";
+// import text link component and use it for links in footer
+import EN from "../../translations/en.json";
+import FR from "../../translations/fr.json";
+// need to update to convert default props to FR when using lang=fr prop
+import logo from "../../assets/wmms-blk.svg";
+import upArrow from "../../assets/upArrow.svg";
 
 export function Footer(props) {
   return (
     <footer className="w-full">
-      <section className="flex flex-col">
-        <div className="flex gap-2 lg:justify-between lg:flex-row xxs:flex-col">
-          {props.isOptionalCustom && <div>{props.CustomBtn}</div>}
-          {props.isOptionalReport && (
-            /**
-             * Changes to the need to be made to the reportAProblem component
-             * For now using an action button as placeholder
-             */
-            <div>{props.reportAProblemBtn}</div>
-          )}
-          {props.isOptionalShare && (
-            // Need to build the ShareThisPage Component, for now using an action button as placeholder
-            <div>{props.shareThisPageBtn}</div>
-          )}
-        </div>
-        <DateModified />
-      </section>
-      <section
-        className={`w-full h-auto footerBackground bg-custom-blue-dark bg-no-repeat bg-clip-border md:bg-right-bottom xxs:bg-bottom`}
-        style={{
-          backgroundImage: `url(${props.landscapeBgImg})`,
-        }}
-      >
-        <nav
-          className="pt-6 pb-6"
-          role="navigation"
-          aria-labelledby="accessibleSectionHeader1"
-        >
-          <h2 className="sr-only" id="accessibleSectionHeader1">
-            {props.accessibleSectionHeader1}
-          </h2>
-          <ul className="flex flex-col text-xs lg:grid lg:grid-cols-2 xl:grid xl:grid-cols-3 lg:gap-1">
-            {" "}
-            {props.landscapeLinks.map((value, index) => {
-              return (
-                <li
-                  key={index}
-                  className="text-white w-64 md:w-56 lg:w-80 my-2.5 hover:underline"
-                >
-                  <a className="font-body" href={value.landscapeLink}>
-                    {value.landscapeLinkText}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </section>
-      <div className="w-full h-full bg-footer-background-color pb-4">
-        <section className="h-auto bg-footer-white pt-5 layout-container flex flex-col xl:flex xl:flex-row md:justify-between">
-          <nav
-            className="mt-3.5 xl:mt-5"
-            role="navigation"
-            aria-labelledby="accessibleSectionHeader2"
-          >
-            <h2 className="sr-only" id="accessibleSectionHeader2">
-              {props.accessibleSectionHeader2}
-            </h2>
-            <ul className="flex flex-col md:grid md:grid-cols-2 xl:flex lg:flex-row">
-              {props.brandLinks.map((value, index) => {
-                return (
-                  <li
-                    key={index}
-                    className={
-                      index === 0
-                        ? "lg:mb-4 mb-5 mr-2.5 list-inside list-disc xl:list-none text-xxs"
-                        : "lg:mb-4 mb-5 mr-2.5 list-inside list-disc text-xxs"
-                    }
-                  >
-                    <a
-                      className="text-xs font-body hover:text-canada-footer-hover-font-blue text-canada-footer-font"
-                      href={value.brandLink}
-                    >
-                      {value.brandLinkText}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-          <div>
-            <div className="mt-8 mb-2.5 float-left xl:invisible">
-              {props.topOfPageBtn}
-            </div>
-            <img
-              className="mb-2.5 mt-8 xl:mt-0 h-6 md:h-10 w-auto float-right"
-              src={props.logoUrl}
-              alt={props.logoAltText}
-            />
-          </div>
+      {props.lang === "bi" ? (
+        <section className={"w-full h-16 bg-multi-neutrals-grey5"}>
+          <Image
+            className="sm:pr-32 pr-4 mb-2.5 sm:mt-3 mt-5 h-6 float-right"
+            src={props.logoUrl}
+            alt={props.logoAltText}
+          />
         </section>
-      </div>
+      ) : (
+        <>
+          <section
+            className={`w-full h-auto landscape bg-no-repeat bg-clip-border sm:bg-right-bottom bg-bottom bg-multi-blue-blue70`}
+            style={{
+              backgroundImage: `url(${props.landscapeBgImg})`,
+            }}
+          >
+            <nav
+              className="sm:pl-20 sm:pr-20 pl-4 pr-4 pt-6 pb-6"
+              role="navigation"
+              aria-labelledby="accessibleSectionHeader1"
+            >
+              <h2 className="sr-only" id="accessibleSectionHeader1">
+                About Government
+              </h2>
+              <ul className="sm:grid sm:grid-cols-3 flex flex-col gap-1 text-xs">
+                {" "}
+                {props.landscapeLinks.map((value, index) => {
+                  return (
+                    <li
+                      key={index}
+                      className="text-white w-64 md:w-56 lg:w-80 my-2.5 hover:underline"
+                    >
+                      <a className="font-body" href={value.landscapeLink}>
+                        {/* text Link component will go here */}
+                        {value.landscapeLinkText}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+          </section>
+          <div className="w-full h-full pb-4">
+            <section className="h-auto bg-color-multi-neutrals-white pt-5 flex flex-col sm:flex-row justify-between">
+              <nav
+                className="sm:pl-16 mt-3.5 xl:mt-5"
+                role="navigation"
+                aria-labelledby="accessibleSectionHeader2"
+              >
+                <h2 className="sr-only" id="accessibleSectionHeader2">
+                  About this site
+                </h2>
+                <ul className="flex flex-col sm:flex sm:flex-row">
+                  {props.brandLinks.map((value, index) => {
+                    return (
+                      <li
+                        key={index}
+                        className={
+                          index === 0
+                            ? "pl-4 sm:mb-4 mb-5 list-inside list-disc sm:list-none text-xxs"
+                            : "pl-4 sm:mb-4 mb-5 list-inside list-disc text-xxs"
+                        }
+                      >
+                        <a
+                          className="pr-2.5 text-xs font-body"
+                          data-cy="social-media-link"
+                          href={value.brandLink}
+                        >
+                          {/* text Link component will go here */}
+                          {value.brandLinkText}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </nav>
+              <div>
+                <div className="mt-3 float-left sm:hidden">
+                  <Button
+                    id="top_btn"
+                    text="To the top"
+                    styling="link"
+                    href={props.btnLink}
+                    icon={upArrow}
+                    iconEnd
+                  />
+                </div>
+                <Image
+                  className="sm:pr-16 pr-4 mb-2.5 sm:mt-3 mt-5 h-6 float-right"
+                  src={props.logoUrl}
+                  alt={props.logoAltText}
+                />
+              </div>
+            </section>
+          </div>
+        </>
+      )}
     </footer>
   );
 }
@@ -106,41 +116,78 @@ export function Footer(props) {
 Footer.defaultProps = {
   landscapeBgImg:
     "https://www.canada.ca/etc/designs/canada/wet-boew/assets/landscape.png",
-  isOptionalCustom: false,
-  isOptionalReport: false,
-  isOptionalShare: false,
-  /**
-   * Changes to the need to be made to the reportAProblem component
-   * For now using an action button as placeholder
-   */
-  // reportAProblemBtn: <ReportAProblem language="en" />,
-  reportAProblemBtn: (
-    <ActionButton
-      disabled
-      id="share"
-      text="Report A Problem"
-      className="xxs:w-full"
-    />
-  ),
-  shareThisPageBtn: (
-    <ActionButton
-      disabled
-      id="share"
-      text="Share this Page"
-      className="xxs:w-full"
-    />
-  ),
-  CustomBtn: (
-    <ActionButton
-      disabled
-      id="custom_btn"
-      text="Create Your Own Button"
-      className="xxs:w-full"
-    />
-  ),
+  logoUrl: logo,
+  logoAltText: "Symbol of the Government of Canada",
+  landscapeLinks: [
+    {
+      landscapeLink: EN.landscapeLinks.link1link,
+      landscapeLinkText: EN.landscapeLinks.link1,
+    },
+    {
+      landscapeLink: EN.landscapeLinks.link2link,
+      landscapeLinkText: EN.landscapeLinks.link2,
+    },
+    {
+      landscapeLink: EN.landscapeLinks.link3link,
+      landscapeLinkText: EN.landscapeLinks.link3,
+    },
+    {
+      landscapeLink: EN.landscapeLinks.link4link,
+      landscapeLinkText: EN.landscapeLinks.link4,
+    },
+    {
+      landscapeLink: EN.landscapeLinks.link5link,
+      landscapeLinkText: EN.landscapeLinks.link5,
+    },
+    {
+      landscapeLink: EN.landscapeLinks.link6link,
+      landscapeLinkText: EN.landscapeLinks.link6,
+    },
+    {
+      landscapeLink: EN.landscapeLinks.link7link,
+      landscapeLinkText: EN.landscapeLinks.link7,
+    },
+    {
+      landscapeLink: EN.landscapeLinks.link8link,
+      landscapeLinkText: EN.landscapeLinks.link8,
+    },
+    {
+      landscapeLink: EN.landscapeLinks.link9link,
+      landscapeLinkText: EN.landscapeLinks.link9,
+    },
+  ],
+  brandLinks: [
+    {
+      brandLink: EN.brandLinks.link1link,
+      brandLinkText: EN.brandLinks.link1,
+    },
+    {
+      brandLink: EN.brandLinks.link2link,
+      brandLinkText: EN.brandLinks.link2,
+    },
+    {
+      brandLink: EN.brandLinks.link3link,
+      brandLinkText: EN.brandLinks.link3,
+    },
+    {
+      brandLink: EN.brandLinks.link4link,
+      brandLinkText: EN.brandLinks.link4,
+    },
+    {
+      brandLink: EN.brandLinks.link5link,
+      brandLinkText: EN.brandLinks.link5,
+    },
+  ],
 };
 
 Footer.propTypes = {
+  /**
+   * toggle between french and english defaults
+   * bi option will render the bilingual page
+   * footer
+   */
+  lang: PropTypes.oneOf(["en", "fr", "bi"]).isRequired,
+
   /**
    * hyperlinks for top portion of footer
    */
@@ -149,12 +196,12 @@ Footer.propTypes = {
       landscapeLink: PropTypes.string.isRequired,
       landscapeLinkText: PropTypes.string.isRequired,
     })
-  ).isRequired,
+  ),
 
   /**
    * background image for the footer
    */
-  landscapeBgImg: PropTypes.string.isRequired,
+  landscapeBgImg: PropTypes.string,
 
   /**
    * links for bottom portion of footer
@@ -164,65 +211,20 @@ Footer.propTypes = {
       brandLink: PropTypes.string.isRequired,
       brandLinkText: PropTypes.string.isRequired,
     })
-  ).isRequired,
+  ),
+
+  /**
+   * Add the path Link to the top of your page for the "to the Top" button in mobile
+   */
+  btnLink: PropTypes.string.isRequired,
 
   /**
    * url to canada.ca logo
    */
-  logoUrl: PropTypes.string.isRequired,
+  logoUrl: PropTypes.string,
 
   /**
    * alt text for the canada.ca logo for cases where image doesn't load
    */
-  logoAltText: PropTypes.string.isRequired,
-
-  /**
-   * btn to navigate user to the top of the given page
-   */
-  topOfPageBtn: PropTypes.object.isRequired,
-
-  /**
-   * link to the top of the given page
-   */
-  topOfPageLink: PropTypes.string.isRequired,
-
-  /**
-   * This header is to help screen readers identify the about government links
-   */
-  accessibleSectionHeader1: PropTypes.string.isRequired,
-
-  /**
-   * This header is to help screen readers identify the about this site links
-   */
-  accessibleSectionHeader2: PropTypes.string.isRequired,
-
-  /**
-   * bool to toggle on and off reportAProblemBtn
-   */
-  isOptionalReport: PropTypes.bool,
-
-  /**
-   * bool to toggle on and off shareThisPagebtn
-   */
-  isOptionalShare: PropTypes.bool,
-
-  /**
-   * btn to allow user to report an issue
-   */
-  reportAProblemBtn: PropTypes.object,
-
-  /**
-   * btn to allow users to share the current page with others
-   */
-  shareThisPageBtn: PropTypes.object,
-
-  /**
-   * bool to toggle on and off CustomButton
-   */
-  isOptionalCustom: PropTypes.bool,
-
-  /**
-   * custom button for anyone using the component to add their own functionality
-   */
-  CustomBtn: PropTypes.object,
+  logoAltText: PropTypes.string,
 };
