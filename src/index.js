@@ -35,3 +35,8 @@ export { Heading } from "./components/Heading/Heading";
  * Image
  */
 export { Image } from "./components/Image/Image";
+
+/**
+ * Footer
+ */
+export { Footer } from "./components/Footer/Footer";

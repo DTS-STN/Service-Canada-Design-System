@@ -1,13 +1,11 @@
-import PropTypes, { oneOf } from "prop-types";
+import PropTypes from "prop-types";
 import React from "react";
 import { Button } from "../Button/Button";
 import { Image } from "../Image/Image";
 // import text link component and use it for links in footer
 import EN from "../../translations/en.json";
-import FR from "../../translations/fr.json";
+// import FR from "../../translations/fr.json";
 // need to update to convert default props to FR when using lang=fr prop
-import logo from "../../assets/wmms-blk.svg";
-import upArrow from "../../assets/upArrow.svg";
 
 export function Footer(props) {
   return (
@@ -95,7 +93,7 @@ export function Footer(props) {
                     text="To the top"
                     styling="link"
                     href={props.btnLink}
-                    icon={upArrow}
+                    icon={props.btnIcon}
                     iconEnd
                   />
                 </div>
@@ -116,7 +114,8 @@ export function Footer(props) {
 Footer.defaultProps = {
   landscapeBgImg:
     "https://www.canada.ca/etc/designs/canada/wet-boew/assets/landscape.png",
-  logoUrl: logo,
+  logoUrl:
+    "https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg",
   logoAltText: "Symbol of the Government of Canada",
   landscapeLinks: [
     {
@@ -184,7 +183,10 @@ Footer.propTypes = {
   /**
    * toggle between french and english defaults
    * bi option will render the bilingual page
-   * footer
+   * footer. Defaults to english
+   *
+   * fr not implemented yet, must manually pass in all French props
+   * for the french links shown in the example
    */
   lang: PropTypes.oneOf(["en", "fr", "bi"]).isRequired,
 
@@ -219,12 +221,17 @@ Footer.propTypes = {
   btnLink: PropTypes.string.isRequired,
 
   /**
+   * button icon
+   */
+  btnIcon: PropTypes.string,
+
+  /**
    * url to canada.ca logo
    */
-  logoUrl: PropTypes.string,
+  logoUrl: PropTypes.string.isRequired,
 
   /**
    * alt text for the canada.ca logo for cases where image doesn't load
    */
-  logoAltText: PropTypes.string,
+  logoAltText: PropTypes.string.isRequired,
 };

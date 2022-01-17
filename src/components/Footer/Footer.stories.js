@@ -1,5 +1,7 @@
 import React from "react";
 import { Footer } from "./Footer";
+import logo from "../../assets/wmms-blk.svg";
+import upArrow from "../../assets/upArrow.svg";
 import FR from "../../translations/fr.json";
 
 export default {
@@ -19,6 +21,9 @@ export const EnFooter = Template.bind({});
 EnFooter.args = {
   btnLink: "/",
   lang: "en",
+  logoUrl: logo,
+  logoAltText: "Symbol of the Government of Canada",
+  btnIcon: upArrow,
 };
 
 export const FrFooter = Template.bind({});
@@ -85,4 +90,7 @@ FrFooter.args = {
       brandLinkText: FR.brandLinks.link5,
     },
   ],
+  logoUrl: logo,
+  logoAltText: "Symbol of the Government of Canada",
+  btnIcon: upArrow,
 };
