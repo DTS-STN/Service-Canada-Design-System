@@ -38,11 +38,11 @@ export function Footer(props) {
                 {props.landscapeLinks.map((value, index) => {
                   return (
                     <li
-                      key={index}
+                      key={value + index}
                       className="text-white w-64 md:w-56 lg:w-80 my-2.5 hover:underline"
                     >
                       <Link
-                        id={index}
+                        id={value + index}
                         href={value.landscapeLink}
                         text={value.landscapeLinkText}
                         linkStyle="smfooterWhite"

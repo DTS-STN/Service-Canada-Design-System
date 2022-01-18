@@ -2,7 +2,7 @@ import React from "react";
 import { axe, toHaveNoViolations } from "jest-axe";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import { BiPageFooter, EnFooter, FrFooter } from "../Footer/Footer.stories";
+import { ErrorPageFooter, FrFooter } from "../Footer/Footer.stories";
 
 expect.extend(toHaveNoViolations);
 
@@ -27,9 +27,9 @@ describe("Fr Footer Component", () => {
   });
 });
 
-describe("Bi Footer Component", () => {
-  it("Bilingual Page Footer has no a11y violations", async () => {
-    const { container } = render(<BiPageFooter {...BiPageFooter.args} />);
+describe("Error FooterComponent", () => {
+  it("Bilungual Page Footer has no a11y violations", async () => {
+    const { container } = render(<ErrorPageFooter {...ErrorPageFooter.args} />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
