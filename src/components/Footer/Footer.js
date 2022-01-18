@@ -182,13 +182,13 @@ Footer.defaultProps = {
 Footer.propTypes = {
   /**
    * toggle between french and english defaults
-   * bi option will render the bilingual page
-   * footer. Defaults to english
+   * error option will render the error page
+   * footer.
    *
    * fr not implemented yet, must manually pass in all French props
    * for the french links shown in the example
    */
-  lang: PropTypes.oneOf(["en", "fr", "bi"]).isRequired,
+  lang: PropTypes.oneOf(["en", "fr", "error"]).isRequired,
 
   /**
    * hyperlinks for top portion of footer

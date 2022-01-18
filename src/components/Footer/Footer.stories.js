@@ -14,7 +14,7 @@ const Template = (args) => <Footer {...args} />;
 export const BiPageFooter = Template.bind({});
 BiPageFooter.args = {
   btnLink: "/",
-  lang: "bi",
+  lang: "error",
 };
 
 export const EnFooter = Template.bind({});
