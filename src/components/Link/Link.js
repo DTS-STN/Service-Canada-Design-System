@@ -3,8 +3,7 @@ import React from "react";
 
 export function Link(props) {
   //Styling for links based on Figma Design
-  let basicStyle =
-    "underline text-multi-blue-blue70b font-body text-browserh5 text-mobileh5 leading-33px hover:text-multi-blue-blue50b";
+  let basicStyle = "";
   switch (props.linkStyle) {
     case "basicStyleWithEmphasis":
       basicStyle =
