@@ -1,8 +1,4 @@
-/* Developer Note: Ensure this does not interfere with any max widths or outter margin you already have */
-body {
-  margin: 0;
-}
-
+/* Developer note : This styles has to be refactored based on furter components */
 /* Developer Note: Replace with your max width wrappers */
 .max-width-wrapper {
   max-width: 1140px;

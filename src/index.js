@@ -40,3 +40,8 @@ export { Image } from "./components/Image/Image";
  * Error Page
  */
 export { ErrorPage } from "./components/ErrorPage/ErrorPage";
+
+/**
+ * Header Component
+ */
+export { Header } from "./components/Header/Header";
