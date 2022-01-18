@@ -2,14 +2,14 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Button } from "../Button/Button";
 import { Image } from "../Image/Image";
-// import text link component and use it for links in footer
+import { Link } from "../Link/Link";
 import EN from "../../translations/en.json";
 // need to update to convert default props to FR when using lang=fr prop
 
 export function Footer(props) {
   return (
     <footer className="w-full">
-      {props.lang === "bi" ? (
+      {props.lang === "error" ? (
         <section className={"w-full h-16 bg-multi-neutrals-grey5"}>
           <Image
             className="sm:pr-32 pr-4 mb-2.5 sm:mt-3 mt-5 h-6 float-right"
@@ -26,7 +26,7 @@ export function Footer(props) {
             }}
           >
             <nav
-              className="sm:pl-20 sm:pr-20 pl-4 pr-4 pt-6 pb-6"
+              className="sm:pl-6 sm:pr-6 md:pl-20 md:pr-20 pl-4 pr-4 pt-6 pb-6"
               role="navigation"
               aria-labelledby="accessibleSectionHeader1"
             >
@@ -41,10 +41,12 @@ export function Footer(props) {
                       key={index}
                       className="text-white w-64 md:w-56 lg:w-80 my-2.5 hover:underline"
                     >
-                      <a className="font-body" href={value.landscapeLink}>
-                        {/* text Link component will go here */}
-                        {value.landscapeLinkText}
-                      </a>
+                      <Link
+                        id={index}
+                        href={value.landscapeLink}
+                        text={value.landscapeLinkText}
+                        linkStyle="smfooterWhite"
+                      />
                     </li>
                   );
                 })}
@@ -52,9 +54,9 @@ export function Footer(props) {
             </nav>
           </section>
           <div className="w-full h-full pb-4">
-            <section className="h-auto bg-color-multi-neutrals-white pt-5 flex flex-col sm:flex-row justify-between">
+            <section className="h-auto bg-color-multi-neutrals-white pt-5 flex flex-col md:flex-row sm:flex-col justify-between">
               <nav
-                className="sm:pl-16 mt-3.5 xl:mt-5"
+                className="md:pl-16 sm:pl-2 mt-3.5 xl:mt-5"
                 role="navigation"
                 aria-labelledby="accessibleSectionHeader2"
               >
@@ -72,21 +74,19 @@ export function Footer(props) {
                             : "pl-4 sm:mb-4 mb-5 list-inside list-disc text-xxs"
                         }
                       >
-                        <a
-                          className="pr-2.5 text-xs font-body"
-                          data-cy="social-media-link"
+                        <Link
+                          id={index}
                           href={value.brandLink}
-                        >
-                          {/* text Link component will go here */}
-                          {value.brandLinkText}
-                        </a>
+                          text={value.brandLinkText}
+                          linkStyle="smfooterBlue"
+                        />
                       </li>
                     );
                   })}
                 </ul>
               </nav>
               <div>
-                <div className="mt-3 float-left sm:hidden">
+                <div className="mt-3 float-left md:hidden sm:hidden">
                   <Button
                     id="top_btn"
                     text="To the top"
@@ -98,7 +98,7 @@ export function Footer(props) {
                   />
                 </div>
                 <Image
-                  className="sm:pr-16 pr-4 mb-2.5 sm:mt-3 mt-5 h-6 float-right"
+                  className="sm:pr-16 pr-4 mb-2.5 sm:mt-6 md:mt-3 mt-5 h-6 float-right"
                   src={props.logoUrl}
                   alt={props.logoAltText}
                 />
