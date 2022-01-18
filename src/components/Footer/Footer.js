@@ -4,7 +4,6 @@ import { Button } from "../Button/Button";
 import { Image } from "../Image/Image";
 // import text link component and use it for links in footer
 import EN from "../../translations/en.json";
-// import FR from "../../translations/fr.json";
 // need to update to convert default props to FR when using lang=fr prop
 
 export function Footer(props) {
