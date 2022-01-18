@@ -11,8 +11,8 @@ export default {
 
 const Template = (args) => <Footer {...args} />;
 
-export const BiPageFooter = Template.bind({});
-BiPageFooter.args = {
+export const ErrorPageFooter = Template.bind({});
+ErrorPageFooter.args = {
   btnLink: "/",
   lang: "error",
 };
