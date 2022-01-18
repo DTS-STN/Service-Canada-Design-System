@@ -27,6 +27,11 @@ export { ActionButton } from "./components/ActionButton/ActionButton";
 export { Button } from "./components/Button/Button";
 
 /**
+ * Text Link Component
+ */
+export { Link } from "./components/Link/Link";
+
+/**
  * Heading with text link
  */
 export { Heading } from "./components/Heading/Heading";
