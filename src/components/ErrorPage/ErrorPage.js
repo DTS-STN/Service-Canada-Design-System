@@ -70,13 +70,17 @@ export function ErrorPage(props) {
                   <li key={index} className="body pl-3">
                     {val.errorTextLinkCommon}
                     {/* replace with text link component in future */}
-                    <a href="/">{val.errorTextLinkCommon_2}</a>
+                    <a href={val.errorTextLinkCommonLink}>
+                      {val.errorTextLinkCommon_2}
+                    </a>
                   </li>
                 ) : (
                   <li key={index} className="body pl-3">
                     {val.errorAuthTextLinkCommon}
                     {/* replace with text link component in future */}
-                    <a href="/">{val.errorAuthTextLinkCommon_2}</a>
+                    <a href={val.errorAuthTextLinkCommonLink}>
+                      {val.errorAuthTextLinkCommon_2}
+                    </a>
                   </li>
                 )}
               </ul>
@@ -92,6 +96,8 @@ export function ErrorPage(props) {
     </div>
   );
 }
+
+ErrorPage.defaultProps = {};
 
 ErrorPage.propTypes = {
   /**
@@ -116,4 +122,9 @@ ErrorPage.propTypes = {
    * Will display authenticated version of plays if user is authenticated
    */
   isAuth: PropTypes.bool.isRequired,
+
+  /**
+   * Service Canada Home Page Link
+   */
+  homePageLink: PropTypes.string,
 };
