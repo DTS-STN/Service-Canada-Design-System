@@ -13,47 +13,39 @@ import searchIcon from "../../assets/search-icon.svg";
 export function Header(props) {
   return (
     <div class="header">
-           {" "}
       <nav class="skip-nav">
-               {" "}
         <a class="hide-element skip-link" href="#main">
           Skip to main content
         </a>
-             {" "}
       </nav>
-           {" "}
+
       <header>
-               {" "}
         <div class="header-top max-width-wrapper">
-                   {" "}
-          <img class={props.className} src={props.logo} alt={props.altText} /> 
-                 {" "}
+          <img class={props.className} src={props.logo} alt={props.altText} />
+
           {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}
-                   {" "}
+
           <section class="language-select-section">
-                        <h2 class="hide-element">Language Selection</h2>       
-               {" "}
+            <h2 class="hide-element">Language Selection</h2>
+
             <a class="language-toggle" href="/fr.html" lang="fr">
-                            <span class="language-toggle-text">Français</span> 
-                         {" "}
+              <span class="language-toggle-text">Français</span>
+
               <abbr class="language-toggle-abbr" title="Français">
                 fr
               </abbr>
-                         {" "}
             </a>
-                     {" "}
           </section>
-                   {" "}
+
           {/* Developer Note: This will be moved as seperate component once search component is implemented */}
-                   {" "}
+
           <section class="search-section">
-                        <h2 class="hide-element">Search</h2>           {" "}
+            <h2 class="hide-element">Search</h2>
             <form class="search-form" role="search" name="search-box">
-                           {" "}
               <label class="hide-element search-label" for="search-input">
                 Search Service Canada
               </label>
-                           {" "}
+
               <input
                 value=""
                 id="search-input"
@@ -61,29 +53,22 @@ export function Header(props) {
                 type="search"
                 placeholder="Search Service Canada"
               />
-                           {" "}
+
               <button
                 class="search-button"
                 title="Search bar button"
                 type="submit"
               >
-                               {" "}
                 <img
                   class="search-icon"
                   src={searchIcon}
                   alt="Search Service Canada"
                 />
-                             {" "}
               </button>
-                         {" "}
             </form>
-                     {" "}
           </section>
-                 {" "}
         </div>
-             {" "}
       </header>
-         {" "}
     </div>
   );
 }
@@ -92,44 +77,30 @@ Header.propTypes = {
   /**
    * This will add a image / icon to the header.
    */
-  logo: PropTypes.string
+  logo: PropTypes.string,
   /**
    * The text that will display as alternate text for logo.
-   */,
-
-  altText: PropTypes.string
+   */ altText: PropTypes.string,
   /**
    * Lang attribute for links that do not match the language of the top level document
-   */,
-
-  lang: PropTypes.string
+   */ lang: PropTypes.string,
   /**
    * any other elements you want to add to the header
-   */,
-
-  children: PropTypes.oneOfType([
+   */ children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
-  ])
+  ]),
   /**
    * Test id for unit test
-   */,
-
-  dataTestId: PropTypes.string
+   */ dataTestId: PropTypes.string,
   /**
    * Test id for e2e test
-   */,
-
-  dataCy: PropTypes.string
+   */ dataCy: PropTypes.string,
   /**
    * Test id for e2e test
-   */,
-
-  dataCyHeader: PropTypes.string
+   */ dataCyHeader: PropTypes.string,
   /**
    * For tracking click events analytics
-   */,
-
-  analyticsTracking: PropTypes.bool,
+   */ analyticsTracking: PropTypes.bool,
 };
