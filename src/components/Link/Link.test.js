@@ -68,7 +68,7 @@ describe("Link", () => {
       FooterWhiteLink.args.text
     );
     expect(screen.getByText("Small link - Footer white")).toHaveClass(
-      "text-multi-neutrals-white bg-multi-neutrals-grey100 font-body text-browserh7 leading-20px font-normal hover:text-multi-neutrals-white hover:underline"
+      "text-multi-neutrals-white font-body text-browserh7 leading-20px font-normal hover:text-multi-neutrals-white hover:underline"
     );
   });
 

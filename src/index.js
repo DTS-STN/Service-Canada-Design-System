@@ -45,3 +45,8 @@ export { Image } from "./components/Image/Image";
  * Error Page
  */
 export { ErrorPage } from "./components/ErrorPage/ErrorPage";
+
+/**
+ * Footer
+ */
+export { Footer } from "./components/Footer/Footer";
