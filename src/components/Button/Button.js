@@ -7,7 +7,7 @@ export function Button(props) {
   return props.href ? (
     <a
       href={props.href}
-      className={` btn-link focus:ring focus:ring-offset-4 `}
+      className={`flex flex-row btn-link focus:ring focus:ring-offset-4 `}
       onClick={props.onClick}
       id={props.id}
       disabled={props.disabled}
@@ -39,11 +39,9 @@ export function Button(props) {
       disabled={props.disabled}
     >
       {props.icon && !props.iconEnd ? (
-        <Image
-          className="h-8 w-8 pr-2"
-          src={props.icon}
-          alt={props.iconAltText}
-        />
+        <div className="grid place-items-center h-8 w-8">
+          <Image className="pr-2" src={props.icon} alt={props.iconAltText} />
+        </div>
       ) : undefined}
       {props.text}
       {props.children}
@@ -93,7 +91,7 @@ Button.propTypes = {
   /**
    * Alt text for icon added to button
    */
-  iconAltText: PropTypes.string,
+  iconAltText: PropTypes.string.isRequired,
 
   /**
    * This is for placing an icon at the end of the component

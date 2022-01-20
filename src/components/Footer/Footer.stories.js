@@ -1,169 +1,96 @@
 import React from "react";
 import { Footer } from "./Footer";
-import { ActionButton } from "../ActionButton/ActionButton";
 import logo from "../../assets/wmms-blk.svg";
+import upArrow from "../../assets/upArrow.svg";
+import FR from "../../translations/fr.json";
 
 export default {
-  title: "In Development/Footer",
+  title: "Components/Footer",
   component: Footer,
 };
 
 const Template = (args) => <Footer {...args} />;
 
-export const Optional = Template.bind({});
-Optional.args = {
-  landscapeLinks: [
-    {
-      landscapeLink: "https://some-link-11.com",
-      landscapeLinkText: "some-link-9",
-    },
-    {
-      landscapeLink: "https://some-link-1.com",
-      landscapeLinkText: "some-link-8",
-    },
-    {
-      landscapeLink: "https://some-link-1.com",
-      landscapeLinkText: "some-link-7",
-    },
-    {
-      landscapeLink: "https://some-link-1.com",
-      landscapeLinkText: "some-link-6",
-    },
-    {
-      landscapeLink: "https://some-link-1.com",
-      landscapeLinkText: "some-link-5",
-    },
-    {
-      landscapeLink: "https://some-link-1.com",
-      landscapeLinkText: "some-link-1",
-    },
-    {
-      landscapeLink: "https://some-link-1.com",
-      landscapeLinkText: "some-link-2",
-    },
-    {
-      landscapeLink: "https://some-link-1.com",
-      landscapeLinkText: "some-link-3",
-    },
-    {
-      landscapeLink: "https://some-link-1.com",
-      landscapeLinkText: "some-link-4",
-    },
-  ],
-  landscapeBgImg:
-    "https://www.canada.ca/etc/designs/canada/wet-boew/assets/landscape.png",
-  brandLinks: [
-    {
-      brandLink: "https://some-link-11.com",
-      brandLinkText: "some-link-11",
-    },
-    {
-      brandLink: "https://some-link-11.com",
-      brandLinkText: "some-link-22",
-    },
-  ],
-  logoUrl: logo,
-  logoAltText: "Symbol of the Government of Canada",
-  // Action button doesn't work correctly with icons, need to fix action button code
-  topOfPageBtn: <ActionButton tertiary id="top-btn" text="Top of Page" />,
-  topOfPageLink: "",
-  // optional fields
-  isOptionalReport: true,
-
-  /**
-   * Need to make changes to, for now will use an action button as a placeholder
-   */
-  reportAProblemBtn: (
-    <ActionButton
-      disabled
-      id="report"
-      text="Report a problem or mistake on this page"
-      className="xxs:w-full"
-    />
-  ),
-  /* Need to build the ShareThisPage Component, for now will use an action button as a placeholder */
-  isOptionalShare: true,
-  shareThisPageBtn: (
-    <ActionButton
-      disabled
-      id="share"
-      text="Share this Page"
-      className="xxs:w-full"
-    />
-  ),
-  isOptionalCustom: false,
-  customBtn: (
-    <ActionButton
-      disabled
-      id="custom_btn"
-      text="Create Your Own Button"
-      className="xxs:w-full"
-    />
-  ),
-  // Accessibility Headings
-  accessibleSectionHeader1: "About Government",
-  accessibleSectionHeader2: "About this site",
+export const ErrorPageFooter = Template.bind({});
+ErrorPageFooter.args = {
+  btnLink: "/",
+  lang: "error",
 };
 
-export const Required = Template.bind({});
-Required.args = {
+export const EnFooter = Template.bind({});
+EnFooter.args = {
+  btnLink: "/",
+  lang: "en",
+  logoUrl: logo,
+  logoAltText: "Symbol of the Government of Canada",
+  btnIcon: upArrow,
+};
+
+export const FrFooter = Template.bind({});
+FrFooter.args = {
+  btnLink: "/",
+  lang: "fr",
   landscapeLinks: [
     {
-      landscapeLink: "https://some-link-11.com",
-      landscapeLinkText: "some-link-9",
+      landscapeLink: FR.landscapeLinks.link1link,
+      landscapeLinkText: FR.landscapeLinks.link1,
     },
     {
-      landscapeLink: "https://some-link-1.com",
-      landscapeLinkText: "some-link-8",
+      landscapeLink: FR.landscapeLinks.link2link,
+      landscapeLinkText: FR.landscapeLinks.link2,
     },
     {
-      landscapeLink: "https://some-link-1.com",
-      landscapeLinkText: "some-link-7",
+      landscapeLink: FR.landscapeLinks.link3link,
+      landscapeLinkText: FR.landscapeLinks.link3,
     },
     {
-      landscapeLink: "https://some-link-1.com",
-      landscapeLinkText: "some-link-6",
+      landscapeLink: FR.landscapeLinks.link4link,
+      landscapeLinkText: FR.landscapeLinks.link4,
     },
     {
-      landscapeLink: "https://some-link-1.com",
-      landscapeLinkText: "some-link-5",
+      landscapeLink: FR.landscapeLinks.link5link,
+      landscapeLinkText: FR.landscapeLinks.link5,
     },
     {
-      landscapeLink: "https://some-link-1.com",
-      landscapeLinkText: "some-link-1",
+      landscapeLink: FR.landscapeLinks.link6link,
+      landscapeLinkText: FR.landscapeLinks.link6,
     },
     {
-      landscapeLink: "https://some-link-1.com",
-      landscapeLinkText: "some-link-2",
+      landscapeLink: FR.landscapeLinks.link7link,
+      landscapeLinkText: FR.landscapeLinks.link7,
     },
     {
-      landscapeLink: "https://some-link-1.com",
-      landscapeLinkText: "some-link-3",
+      landscapeLink: FR.landscapeLinks.link8link,
+      landscapeLinkText: FR.landscapeLinks.link8,
     },
     {
-      landscapeLink: "https://some-link-1.com",
-      landscapeLinkText: "some-link-4",
+      landscapeLink: FR.landscapeLinks.link9link,
+      landscapeLinkText: FR.landscapeLinks.link9,
     },
   ],
-  landscapeBgImg:
-    "https://www.canada.ca/etc/designs/canada/wet-boew/assets/landscape.png",
   brandLinks: [
     {
-      brandLink: "https://some-link-11.com",
-      brandLinkText: "some-link-11",
+      brandLink: FR.brandLinks.link1link,
+      brandLinkText: FR.brandLinks.link1,
     },
     {
-      brandLink: "https://some-link-11.com",
-      brandLinkText: "some-link-22",
+      brandLink: FR.brandLinks.link2link,
+      brandLinkText: FR.brandLinks.link2,
+    },
+    {
+      brandLink: FR.brandLinks.link3link,
+      brandLinkText: FR.brandLinks.link3,
+    },
+    {
+      brandLink: FR.brandLinks.link4link,
+      brandLinkText: FR.brandLinks.link4,
+    },
+    {
+      brandLink: FR.brandLinks.link5link,
+      brandLinkText: FR.brandLinks.link5,
     },
   ],
   logoUrl: logo,
   logoAltText: "Symbol of the Government of Canada",
-  topOfPageBtn: <ActionButton tertiary id="top-btn" text="Top of Page" />,
-  topOfPageLink: "",
-  isOptionalReport: false,
-  isOptionalShare: false,
-  isOptionalCustom: false,
-  accessibleSectionHeader1: "About Government",
-  accessibleSectionHeader2: "About this site",
+  btnIcon: upArrow,
 };
