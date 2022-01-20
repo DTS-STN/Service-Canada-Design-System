@@ -1,7 +1,7 @@
 import { ActionButton } from "./ActionButton";
 
 export default {
-  title: "Components/Buttons/ActionButton",
+  title: "In Development/ActionButton",
   component: ActionButton,
 };
 
@@ -16,7 +16,7 @@ export const Link = Template.bind({});
 Default.args = {
   id: "default",
   className:
-    "bg-custom-blue-blue text-white border border-custom-blue-blue active:bg-custom-blue-dark hover:bg-custom-blue-light",
+    "py-2 px-4 bg-multi-blue-blue60g text-white border border-multi-blue-blue60g active:bg-multi-blue-blue60c hover:bg-multi-blue-blue60f",
   text: "Default button 🚀",
 };
 
@@ -24,7 +24,7 @@ Secondary.args = {
   id: "secondary",
   text: "Secondary button 🚀",
   className:
-    "bg-white text-custom-blue-blue border border-custom-blue-blue active:bg-gray-400 hover:bg-gray-200",
+    "py-2 px-4 bg-white text-multi-blue-blue60g border border-multi-blue-blue60g active:bg-multi-neutrals-grey85a hover:bg-multi-neutrals-grey40",
   secondary: true,
 };
 
@@ -32,14 +32,14 @@ Tertiary.args = {
   id: "tertiary",
   text: "Tertiary Button 🚀",
   className:
-    "underline hover:text-canada-footer-hover-font-blue text-canada-footer-font",
+    "py-2 underline hover:text-canada-footer-hover-font-blue text-canada-footer-font",
   tertiary: true,
 };
 
 Disabled.args = {
   id: "disabled",
   text: "Disabled Button 🚀",
-  className: "bg-gray-light text-gray-600 border border-gray-md",
+  className: "py-2 px-4 bg-gray-light text-gray-600 border border-gray-md",
   disabled: true,
 };
 

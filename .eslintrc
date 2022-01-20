@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "plugin:jsx-a11y/recommended"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": "2017"
+  },
+  // unneed rule causing errors with eslint/jest
+  "rules": {
+    "jest/valid-describe": "off",
+    "react/default-props-match-prop-types": [
+      0,
+      {
+        "allowRequiredDefaults": true
+      }
+    ]
+  }
+}

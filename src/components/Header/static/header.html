@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+
+    <!-- Developer Note: google fonts load these in at project level -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans:wght@400;700&family=Rubik:wght@500&display=swap" rel="stylesheet"> 
+
+    <!-- header css file -->
+    <link href="header.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <div class="header">
+    <nav class="skip-nav">
+      <!-- Developer Note: add id="main" to your main element to ensure skip nav link works -->
+      <!-- French Text: Passer au contenu principal -->
+      <a class="hide-element skip-link" href="#main">Skip to main content</a>
+    </nav>
+    <header>
+      <div class="header-top max-width-wrapper">
+        <img class="header-logo" src="../../../assets/sig-blk-en.svg" alt="Government of Canada">
+        <section class="language-select-section">
+          <!-- French Text: Sélection de la langue -->
+          <h2 class="hide-element">Language Selection</h2>
+          <!-- Developer Note: Change url & lang tag when on FR url -->
+          <a class="language-toggle" href="/fr.html" lang="fr">
+            <!-- English Text: English -->
+            <span class="language-toggle-text">Français</span>
+            <!-- English Text: title="English", en -->
+            <abbr class="language-toggle-abbr" title="Français">fr</abbr>
+          </a>  
+        </section>
+        <section class="search-section">
+          <!-- French Text: Recherche -->
+          <h2 class="hide-element">Search</h2>
+          <!-- Developer Note: functionality (ie. action and method) will need to be added to search form -->
+          <form
+            class="search-form"
+            role="search"
+            name="search-box"
+          >
+            <!-- French Text: Rechercher dans Service Canada -->
+            <label class="hide-element search-label" for="search-input">Search Service Canada</label>
+            <!-- French Text: placeholder="Rechercher dans Service Canada" -->
+            <input value="" id="search-input" class="search-input" type="search" placeholder="Search Service Canada"
+            />
+            <button
+              class="search-button"
+              title="Search bar button"
+              type="submit"
+            >
+              <!-- French Text: alt="Rechercher dans Service Canada" -->
+              <img class="search-icon" src="../../../assets/search-icon.svg" alt="Search Service Canada">
+            </button>
+          </form>
+        </section>
+      </div>
+      <section class="main-menu">
+        <div class="max-width-wrapper">
+          <nav class="main-menu-nav">
+            <h1 class="main-menu-heading">Service Canada</h1>
+            <h2 class="hide-element">Menu</h2>
+            <!-- Developer Note: Functionality will need to be added to this button to change aria-expanded on click/keydown. Ensure the aria-label matches functionality.
+                Styling has already been completed to change the color of the button and arrow and hide/show the main menu list based on the aria-expanded property. -->
+            <!-- French Text: aria-label="Appuyez sur la barre d'espacement pour ouvrir ou sur la touche d'échappement pour fermer le menu. Utilisez les flèches haut et bas pour choisir un élément de sous-menu. Appuyez sur la touche Entrée ou sur la flèche vers la droite pour le développer, ou sur la flèche vers la gauche ou la touche Échap pour le réduire. Utilisez les flèches haut et bas pour choisir un élément de ce niveau et la touche Entrée pour y accéder." -->
+            <button class="menu-button main-menu-button" type="button" aria-haspopup="true" aria-expanded="true" 
+              aria-label="Press the SPACEBAR to expand or the escape key to collapse this menu. Use the Up and Down arrow keys to choose a submenu item. Press the Enter or Right arrow key to expand it, or the Left arrow or Escape key to collapse it. Use the Up and Down arrow keys to choose an item on that level and the Enter key to access it."
+            >
+              <!-- French Text: Principal -->
+              <span class="hide-element">Main</span>
+              Menu
+              <!-- French Text: alt="Ouvrir le menu principal" -->
+              <img class="arrow-down-white" src="../../../assets/arrow-dwn-white.svg" alt="Open main menu">
+              <!-- French Text: alt="Fermer le menu principal" -->
+              <img class="arrow-down-blk" src="../../../assets/arrow-dwn-blk.svg" alt="Close main menu">
+            </button>
+            <ul class="main-menu-list" role="menu">
+              <li class="my-account-li" role="presentation">
+                <!-- Developer Note: Functionality will need to be added to all sub-menu-buttons to change aria-expanded on click/keydown.
+                  Styling has already been completed to change the arrow and hide/show the sub option menu based on the aria-expanded property. -->
+                <!-- Developer Note: ensure aria-controls match the correspondnig sub-menu id, if there is no sub-menu, please remove aria-controls -->
+                <a class="menu-button sub-menu-button" role="menuitem" aria-haspopup="true" aria-controls="gc-mnu-account" aria-expanded="false" href="#" >
+                  <!-- French Text: Mon dossier -->
+                  My Account
+                  <img class="arrow-down-blk" src="../../../assets/arrow-dwn-blk.svg" aria-hidden="true">
+                  <img class="arrow-up-blk" src="../../../assets/arrow-up-blk.svg" aria-hidden="true">
+                  <img class="arrow-down-white" src="../../../assets/arrow-dwn-white.svg" aria-hidden="true">
+                </a>
+                <!-- Developer Note: Use this button for when the user is not signed in -->
+                <!-- <a class="menu-button sub-menu-button" role="menuitem" aria-haspopup="false" href="#" > -->
+                  <!-- French Text: Se connecter -->
+                  <!-- Sign in -->
+                <!-- </a> -->
+              </li>
+              <li role="presentation">
+                <a class="menu-button sub-menu-button" role="menuitem" aria-haspopup="true" aria-controls="gc-mnu-services" aria-expanded="false" href="#" >
+                  Services
+                  <img class="arrow-down-blk" src="../../../assets/arrow-dwn-blk.svg" aria-hidden="true">
+                  <img class="arrow-up-blk" src="../../../assets/arrow-up-blk.svg" aria-hidden="true">
+                  <img class="arrow-down-white" src="../../../assets/arrow-dwn-white.svg" aria-hidden="true">
+                </a>
+                <div class="sub-option-wrapper">
+                  <ul class="sub-option-list max-width-wrapper" id="gc-mnu-services" role="menu">
+                    <li role="presentation">
+                      <a class="menu-button sub-option-button" role="menuitem" href="canada.ca">Sub-Option 1</a>
+                    </li>
+                    <li role="presentation">
+                      <a class="menu-button sub-option-button" role="menuitem" href="canada.ca">Sub-Option 2</a>
+                    </li>
+                    <li role="presentation">
+                      <a class="menu-button sub-option-button" role="menuitem" href="canada.ca">Sub-Option 3</a>
+                    </li>
+                    <li role="presentation">
+                      <a class="menu-button sub-option-button" role="menuitem" href="canada.ca">Sub-Option 4</a>
+                    </li>
+                    <li role="presentation">
+                      <a class="menu-button sub-option-button" role="menuitem" href="canada.ca">Sub-Option 5</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li role="presentation">
+                <a class="menu-button sub-menu-button" role="menuitem" aria-haspopup="true" aria-controls="gc-mnu-events" aria-expanded="false" href="#" >
+                  <!-- French Text: Événements de la vie -->
+                  Life events
+                  <img class="arrow-down-blk" src="../../../assets/arrow-dwn-blk.svg" aria-hidden="true">
+                  <img class="arrow-up-blk" src="../../../assets/arrow-up-blk.svg" aria-hidden="true">
+                  <img class="arrow-down-white" src="../../../assets/arrow-dwn-white.svg" aria-hidden="true">
+                </a>
+              </li>
+              <li role="presentation">
+                <a class="menu-button sub-menu-button" role="menuitem" aria-haspopup="true" aria-controls="gc-mnu-contact" aria-expanded="false" href="#" >
+                  <!-- French Text: Contactez-nous -->
+                  Contact us
+                  <img class="arrow-down-blk" src="../../../assets/arrow-dwn-blk.svg" aria-hidden="true">
+                  <img class="arrow-up-blk" src="../../../assets/arrow-up-blk.svg" aria-hidden="true">
+                  <img class="arrow-down-white" src="../../../assets/arrow-dwn-white.svg" aria-hidden="true">
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+    </header>
+  </div>
+</html>

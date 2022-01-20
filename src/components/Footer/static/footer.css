@@ -1,0 +1,222 @@
+.text-styles {
+  text-decoration: none;
+  color: #262626;
+}
+
+.list-styles {
+  list-style: none;
+}
+
+/* class to hide elements from visually but allow content to be read out by screen readers */
+.hide-element {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+
+/* Developer Note: Replace with your max width wrappers */
+.max-width-wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* Main container surrounding whole footer */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  padding: 0 12px 0 12px;
+}
+
+.date-modified dd {
+  display: inline;
+  margin: 0;
+}
+
+.date-modified dt {
+  display: inline-block;
+}
+
+.date-text {
+  font-family: Noto Sans, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.0025em;
+  color: #595959;
+}
+
+/* button styling */
+.btn {
+  border: 1.5px solid #26374a;
+  box-sizing: border-box;
+  border-radius: 6px;
+  background-color: white;
+  height: 44px;
+  width: 100%;
+  padding: 7px 0 9px 0;
+  text-align: center;
+}
+
+.btn-text {
+  font-family: Noto Sans, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0.0025em;
+  color: #262626;
+  padding-left: 28px;
+}
+
+.btn-icon {
+  position: relative;
+  float: right;
+  padding-top: 7px;
+  padding-right: 20px;
+}
+
+/* lines separating areas of the footer */
+.breakpoint {
+  border-bottom: 1px solid #d0d0d0;
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+}
+
+/* icon styling */
+.icon-heading-text {
+  font-family: Noto Sans, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.0025em;
+}
+
+.icon-group {
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* link styling */
+.link-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-text {
+  font-family: Noto Sans, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 40px;
+}
+
+.link-group {
+  padding-left: 0;
+}
+
+.spacer {
+  display: none;
+}
+
+/* switch icons from desktop to mobile */
+.logo {
+  display: none;
+}
+
+.logo-mobile {
+  max-width: 89px;
+  max-height: 24px;
+  margin-top: 24px;
+  margin-bottom: 30px;
+  display: flex;
+}
+
+/* Large screen */
+@media screen and (min-width: 1000px) {
+  /* main container for footer on larger screen */
+  .footer-container {
+    height: 434px;
+  }
+
+  /* don't display button on larger screens */
+  .btn {
+    display: none;
+  }
+
+  /* larger screens don't have break points */
+  .breakpoint {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  /* link styling */
+  .link-section {
+    justify-content: space-between;
+  }
+
+  .link-section li {
+    display: inline;
+  }
+
+  .link-text {
+    font-family: Noto Sans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 30px;
+  }
+
+  .spacer {
+    display: inline;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Styling for main footer sub sections */
+  .footer-bottom {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .footer-bottom-first {
+    width: 600px;
+  }
+
+  /* icon styling */
+  .icon-section {
+    max-width: 281px;
+    max-height: 71px;
+  }
+
+  .icon-heading-text {
+    line-height: 30px;
+    margin-bottom: 8px;
+  }
+
+  .icon-group {
+    margin-top: 8px;
+    margin-bottom: 0px;
+  }
+
+  /* 102-28 padding, bottom footer accounts for 28 */
+  .logo {
+    display: flex;
+    max-width: 168px;
+    max-height: 40px;
+    margin-left: auto;
+    padding-top: 60px;
+  }
+
+  .logo-mobile {
+    display: none;
+  }
+}

@@ -64,7 +64,7 @@ export const PhaseBanner = ({
       const data = {
         project: document.title,
         pageUrl: window.location.href,
-        ...formData,
+        ...formData
       };
       //Submit data to the api
       const response = await fetch(process.env.NEXT_PUBLIC_FEEDBACK_API, {
@@ -93,7 +93,7 @@ export const PhaseBanner = ({
   return (
     <>
       <div className="bg-circle-color">
-        <div className="block lg:flex py-4 layout-container">
+        <div className="block lg:flex py-4">
           <div className={`flex justify-between lg:block lg:w-max`}>
             <span
               className="font-body text-xs text-white border block w-max px-4 py-1 my-auto leading-6"
@@ -148,7 +148,7 @@ export const PhaseBanner = ({
         <div className="bg-custom-blue-blue" data-testid="feedbackDropdown">
           <div role="status">
             {submitted ? (
-              <div className="layout-container text-white flex justify-between">
+              <div className="text-white flex justify-between">
                 <span className="text-xs lg:text-sm font-body my-4">
                   {response === "ok" ? t.thankYouFeedback : ""}
                   {response === "error" ? t.sorryFeedback + " " : ""}
@@ -185,7 +185,7 @@ export const PhaseBanner = ({
           {submitted ? (
             ""
           ) : (
-            <div className="layout-container text-white pb-4">
+            <div className="text-white pb-4">
               <div className="flex justify-between pt-4">
                 <h2 className="text-h4 lg:text-h3 lg:text-sm font-display mt-2 mb-4 w-48 sm:w-auto">
                   {t.improveService}

@@ -10,83 +10,57 @@ html {
 
 @layer base {
   /* Font families */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    @apply font-display font-semibold;
-  }
-  h6 {
-    @apply font-display;
-  }
-  p {
-    @apply font-body;
-  }
-  /* Font sizes */
   h1 {
-    @apply text-h1;
+    @apply heading1;
   }
   h2 {
-    @apply text-h2;
+    @apply heading2;
   }
   h3 {
-    @apply text-h3;
+    @apply heading3;
   }
   h4 {
-    @apply text-h4;
+    @apply heading4;
   }
-  h5,
-  p {
-    @apply text-p;
+  h5 {
+    @apply heading5;
   }
   h6 {
-    @apply text-base;
+    @apply heading6;
   }
-  /*Focused*/
-  h1:focus {
-    @apply ring-1;
+  p {
+    @apply body;
   }
 }
 
 @layer utilities {
-  /*Default page layout*/
+  /* Bootstrap grids for default page layout using css grid utilities */
+  /* If support for older browsers or IE is needed, flex box will have to be used instead of css grid */
 
-  .blur {
-    filter: blur(1.5px);
+  .bootstrap5-grid {
+    @apply grid grid-cols-12 gap-6;
   }
 
-  .error404-link::before {
-    display: inline-block;
-    margin: 2px 5px;
-    content: " ";
-    border: 1px solid #000000;
-    background-color: #000000;
-    border-radius: 100%;
-    width: 4px;
-    height: 4px;
+  .bootstrap3-grid {
+    @apply grid grid-cols-2 gap-30px;
   }
 
-  .splash-link::after {
-    display: inline-block;
-    margin: 2px 5px;
-    content: " ";
-    border: 1px solid #284162;
-    background-color: #284162;
-    border-radius: 100%;
-    width: 5px;
-    height: 5px;
+  @screen sm {
+    .bootstrap3-grid {
+      @apply grid grid-cols-6 gap-30px;
+    }
   }
 
-  .circle-background {
-    border-radius: 50%;
-    width: 148px;
-    height: 148px;
-    background-color: #eeeeee;
+  @screen lg {
+    .bootstrap3-grid {
+      @apply grid grid-cols-12 gap-30px;
+    }
   }
+
+  /* Text Button Field utilities */
 
   .textbuttonField > p {
-    @apply text-sm leading-normal font-normal font-body py-4;
+    @apply leading-normal body py-4;
   }
 
   .textbuttonField > h1,
@@ -96,67 +70,5 @@ html {
   h5,
   h6 {
     @apply mb-4;
-  }
-
-  .border-outset {
-    border-style: outset;
-  }
-  .skip-main {
-    @apply absolute w-px h-px -left-96;
-  }
-
-  .skip-main:focus-within {
-    @apply absolute w-screen h-auto top-16 left-0 z-50 flex justify-center;
-  }
-
-  .layout-container {
-    @apply mx-6;
-  }
-
-  @screen xxs {
-    .layout-container {
-      @apply mx-4;
-    }
-  }
-
-  @screen xs {
-    .layout-container {
-      @apply px-0;
-    }
-  }
-
-  @screen md {
-    .layout-container {
-      @apply px-0;
-    }
-
-    .textbuttonField > p {
-      @apply text-p;
-    }
-  }
-
-  @screen lg {
-    .layout-container {
-      @apply container mx-auto px-6;
-    }
-
-    .circle-background {
-      width: 120px;
-      height: 120px;
-    }
-  }
-
-  @screen xl {
-    .circle-background {
-      width: 150px;
-      height: 150px;
-    }
-  }
-
-  @screen xxl {
-    .circle-background {
-      width: 218px;
-      height: 218px;
-    }
   }
 }

@@ -1,0 +1,348 @@
+/* Developer Note: Ensure this does not interfere with any max widths or outter margin you already have */
+body {
+  margin: 0;
+}
+
+/* Developer Note: Replace with your max width wrappers */
+.max-width-wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* class to hide elements from visually but allow content to be read out by screen readers */
+.hide-element {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+
+.header {
+  font-family: "Lato", sans-serif;
+}
+
+.skip-nav {
+  text-align: center;
+}
+
+.skip-link:focus {
+  clip: rect(auto, auto, auto, auto);
+  margin: inherit;
+  overflow: inherit;
+  position: absolute;
+  color: #fff;
+  background-color: #26374a;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 5px;
+  height: auto;
+  width: auto;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 5px;
+}
+
+.header-top {
+  padding: 18px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.header-logo {
+  width: 75%;
+  max-height: 19px;
+}
+
+.language-select-section {
+  width: 25%;
+  text-align: end;
+}
+
+.language-toggle {
+  font-size: 16px;
+  color: #333333;
+  text-decoration: none;
+}
+
+.language-toggle-text {
+  display: none;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+}
+
+.language-toggle-abbr {
+  font-family: "Rubik", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.search-section {
+  padding-top: 20px;
+  width: 100%;
+}
+
+.search-form {
+  display: flex;
+  height: 44px;
+}
+
+.search-input {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 15px;
+  line-height: 23px;
+  width: 100%;
+  border-radius: 6px 0 0 6px;
+  border: 1px solid #8c9095;
+  padding: 10.5px 8.5px;
+}
+
+.search-button {
+  padding: 13px 9px;
+  width: 35px;
+  background: #26374a;
+  border-radius: 0 6px 6px 0;
+  border: 1px solid #26374a;
+}
+
+.search-icon {
+  height: 17px;
+}
+
+.main-menu {
+  background: #26374a;
+}
+
+.main-menu-nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.main-menu-heading {
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 27px;
+  font-weight: 400;
+  padding: 16px 0 18px 20px;
+  margin: 0;
+}
+
+.menu-button {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  border: none;
+  text-decoration: none;
+}
+
+.main-menu-button {
+  background: #26374a;
+  color: #ffffff;
+  margin-right: 20px;
+}
+
+.main-menu-button:hover {
+  cursor: pointer;
+}
+
+.main-menu-button[aria-expanded="true"] {
+  background: #edf1f4;
+  color: #333333;
+  padding: 0 20px 0 13px;
+  margin: 0;
+}
+
+.arrow-down-white,
+.arrow-down-blk,
+.arrow-up-blk {
+  height: 12px;
+  padding-left: 6px;
+}
+
+.main-menu-button[aria-expanded="true"] .arrow-down-white {
+  display: none;
+}
+
+.main-menu-button[aria-expanded="false"] .arrow-down-blk {
+  display: none;
+}
+
+.main-menu-list {
+  background: #edf1f4;
+  padding: 6px 20px;
+  margin: 0;
+  width: 100%;
+}
+
+.main-menu-list li {
+  list-style: none;
+}
+
+.sub-menu-button {
+  color: #333333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 12px 0;
+}
+
+.sub-menu-button[aria-expanded="true"] .arrow-down-blk {
+  display: none;
+}
+
+.sub-menu-button[aria-expanded="false"] .arrow-up-blk,
+.sub-menu-button[aria-expanded="false"] + .sub-option-wrapper {
+  display: none;
+}
+
+.sub-option-list {
+  padding-left: 15px;
+}
+
+.sub-option-button {
+  color: #333333;
+  font-weight: 400;
+  padding: 12px 0;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Developer Note: small screen and down only (ie. mobile only) styling, replace with appropriate breakpoint  */
+@media screen and (max-width: 1000px) {
+  .main-menu-button[aria-expanded="false"] + .main-menu-list {
+    display: none;
+  }
+
+  .sub-menu-button .arrow-down-white {
+    display: none;
+  }
+}
+
+/* Developer Note: large screen & up styling, replace with appropriate breakpoint  */
+@media screen and (min-width: 1000px) {
+  .max-width-wrapper {
+    padding: 0 20px;
+  }
+
+  .header-top {
+    padding: 18px 20px;
+  }
+
+  .header-logo {
+    flex-grow: 2;
+    width: auto;
+    max-height: 27px;
+  }
+
+  .language-select-section {
+    order: 3;
+    width: auto;
+    padding-left: 33px;
+    align-self: center;
+  }
+
+  .language-toggle {
+    font-size: 18px;
+  }
+
+  .language-toggle-text {
+    display: inline;
+  }
+
+  .language-toggle-abbr {
+    display: none;
+  }
+
+  .search-section {
+    padding-top: 0;
+    max-width: 280px;
+  }
+
+  .main-menu {
+    position: relative;
+  }
+
+  .main-menu-nav {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  .main-menu-heading {
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 36px;
+    padding: 10px 115px 15px 0;
+    min-width: 207px;
+  }
+
+  .menu-button {
+    font-size: 20px;
+  }
+
+  .main-menu-button {
+    display: none;
+  }
+
+  .arrow-down-white,
+  .arrow-down-blk,
+  .arrow-up-blk {
+    padding-left: 8px;
+  }
+
+  .main-menu-list {
+    background: #26374a;
+    display: flex;
+    padding: 0;
+  }
+
+  .arrow-down-blk {
+    display: none;
+  }
+
+  .my-account-li {
+    order: 4;
+    margin-left: auto;
+  }
+
+  .sub-menu-button {
+    color: #ffffff;
+    padding: 20px 11px 18px 15px;
+    width: auto;
+    display: block;
+  }
+
+  .sub-menu-button[aria-expanded="true"] {
+    background: #edf1f4;
+    color: #333333;
+  }
+
+  .sub-menu-button[aria-expanded="true"] .arrow-down-white {
+    display: none;
+  }
+
+  .sub-option-wrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: #edf1f4;
+  }
+
+  .sub-option-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  .sub-option-button {
+    color: #333333;
+    padding: 24.5px 0;
+  }
+}
