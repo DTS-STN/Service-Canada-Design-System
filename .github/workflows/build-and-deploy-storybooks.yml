@@ -5,7 +5,7 @@ on:
     branches:
       - release
       - develop
-      - master
+      - main
 
 jobs:
   build-and-deploy:
