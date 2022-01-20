@@ -2,7 +2,7 @@ import React from "react";
 import { Menu } from "./Menu";
 
 export default {
-  title: "In Development/Menu",
+  title: "Components/Menu",
   component: Menu,
 };
 

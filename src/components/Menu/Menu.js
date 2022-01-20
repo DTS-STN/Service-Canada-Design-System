@@ -18,56 +18,125 @@ export function Menu(props) {
   }
 
   return (
-    <nav
-      title="Menu"
-      className="lg:justify-end lg:flex"
-      data-cy="menu"
-      role="navigation"
-      aria-labelledby="mainSiteNav"
-    >
-      <h3 className="sr-only" id="mainSiteNav">
-        Menu
-      </h3>
-      <button
-        id="menuButton"
-        onClick={onMenuClick}
-        className="text-h4 text-canada-footer-font focus:outline-none focus:ring-2 focus:ring-black mb-4 py-1"
-        aria-haspopup="true"
-        aria-expanded="false"
-        aria-controls="menuDropdown"
-        data-testid="menuButton"
+    <div className="headerNav">
+      <nav
+        title="Menu"
+        data-cy="menu"
+        role="navigation"
+        aria-labelledby="mainSiteNav"
       >
-        <span className="inline-block align-middle icon-menu" />
-        <span className="inline-block align-middle pl-3 font-body text-p leading-none">
-          {props.menuButtonTitle}
-        </span>
-      </button>
+        <h3 id="mainSiteNav" className="menuHeader">
+          Service Canada
+        </h3>
+        <button
+          id="menuButton"
+          onClick={onMenuClick}
+          className="text-h4 text-canada-footer-font focus:outline-none focus:ring-2 focus:ring-black mb-4 py-1"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="menuDropdown"
+          data-testid="menuButton"
+        >
+          <span className="inline-block align-middle icon-menu" />
+          <span className="inline-block align-middle pl-3 font-body text-p leading-none">
+            {props.menuButtonTitle}
+          </span>
+        </button>
 
-      <ul id="menuDropdown" className="menuDropdown" role="menu">
-        {props.items.map((item, key) => {
-          const exactURL = path === item.link; // it's exactly this url
-          const includesURL = path.includes(item.link); // it's a child of this url (eg, "/projects/app" includes "/projects")
+        <ul id="menuDropdown" className="menuDropdown" role="menu">
+          {props.items.map((item, key) => {
+            const exactURL = path === item.link; // it's exactly this url
+            const includesURL = path.includes(item.link); // it's a child of this url (eg, "/projects/app" includes "/projects")
 
-          return (
-            <li
-              key={key}
-              className={`py-3 lg:py-0 cursor-pointer text-custom-blue-projects-link `}
-              role="menuitem"
-              aria-current={exactURL ? "page" : null}
-            >
-              <a
-                href={item.link}
-                className={`font-body text-base ${
-                  includesURL ? "activePage" : "menuLink underline"
-                }`}
+            return (
+              <li
+                key={key}
+                className={`py-4 cursor-pointer text-custom-blue-projects-link `}
+                role="menuitem"
+                aria-current={exactURL ? "page" : null}
               >
-                {item.text}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
+                <a
+                  href={item.link}
+                  className={`font-body text-base ${includesURL ? "activePage" : "menuLink underline"
+                    }`}
+                >
+                  {item.text}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+        <ul className='menuDropdown menuRight' role="menu">
+          <li
+            key="1"
+            className={`py-4 cursor-pointer text-custom-blue-projects-link `}
+            role="menuitem"
+            aria-current="page"
+          >
+            <a
+              href={`#`}
+              className={`font-body text-base`}
+            >
+              My Benefits and Services
+            </a>
+            <ul className="subMenu">
+              <li
+                key="1"
+                className={`py-4 cursor-pointer text-custom-blue-projects-link `}
+                role="menuitem"
+                aria-current="page"
+              >
+                <a
+                  href={`#`}
+                  className={`font-body text-base`}
+                >
+                  My Benefits and Services
+                </a>
+              </li>
+              <li
+                key="1"
+                className={`py-4 cursor-pointer text-custom-blue-projects-link `}
+                role="menuitem"
+                aria-current="page"
+              >
+                <a
+                  href={`#`}
+                  className={`font-body text-base`}
+                >
+                  Account Settings
+                </a>
+              </li>
+              <li
+                key="1"
+                className={`py-4 cursor-pointer text-custom-blue-projects-link `}
+                role="menuitem"
+                aria-current="page"
+              >
+                <a
+                  href={`#`}
+                  className={`font-body text-base`}
+                >
+                  Switch to CRA My Account
+                </a>
+              </li>
+              <li
+                key="1"
+                className={`py-4 cursor-pointer text-custom-blue-projects-link `}
+                role="menuitem"
+                aria-current="page"
+              >
+                <a
+                  href={`#`}
+                  className={`font-body text-base`}
+                >
+                  Signout
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
   );
 }
 
