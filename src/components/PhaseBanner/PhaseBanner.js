@@ -64,7 +64,7 @@ export const PhaseBanner = ({
       const data = {
         project: document.title,
         pageUrl: window.location.href,
-        ...formData,
+        ...formData
       };
       //Submit data to the api
       const response = await fetch(process.env.NEXT_PUBLIC_FEEDBACK_API, {
