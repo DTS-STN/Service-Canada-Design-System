@@ -6,6 +6,10 @@
     "sourceType": "module",
     "ecmaVersion": "2017"
   },
+  "ignorePatterns": [
+    "en.json",
+    "fr.json"
+  ],
   // unneed rule causing errors with eslint/jest
   "rules": {
     "jest/valid-describe": "off",
