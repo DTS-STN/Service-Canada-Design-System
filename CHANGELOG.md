@@ -32,12 +32,3 @@ Initial release of the Design System Package
 
 - Layout component for cananda ca layout
 - Button component
-
-## [v1.0.3] - 2022-01-20
-
-### Added
-
-Initial release of the Design System Package
-
-- Footer component
-- ErrorPage component
