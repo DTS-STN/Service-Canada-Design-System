@@ -13,18 +13,19 @@ export const Primary = Template.bind({});
 Primary.args = {
   menuButtonTitle: "Menu",
   signUpText: "Sign up",
+  isAuthorized: true,
   items: [
     {
       link: "#",
-      text: "Link1",
+      text: "Services",
     },
     {
       link: "#",
-      text: "Link2",
+      text: "Life Events",
     },
     {
       link: "#",
-      text: "Link3",
+      text: "Contact us",
     },
   ],
 };

@@ -36,6 +36,9 @@ module.exports = {
         browserh4: ["22px", "24px"],
         browserh5: ["20px", "22px"],
         browserh6: ["19px", "21px"],
+        browserh7: ["14px", "20px"],
+        browserh8: ["16px", "23px"],
+        browserh9: ["17px", "26px"],
         browserbody: ["20px", "33px"],
         browserbodybold: ["20px", "33px"],
 
@@ -178,6 +181,7 @@ module.exports = {
       },
       inset: {
         "-2px": "-2px",
+        "60px": "60px",
       },
       zIndex: {
         1: "1",
@@ -227,6 +231,11 @@ module.exports = {
 
       lineHeight: {
         "30px": "30px",
+        "28px": "28px",
+        "23px": "23px",
+        "26px": "26px",
+        "33px": "33px",
+        "22px": "22px",
       },
       outline: {
         "black-solid": ["2px solid #000", "1px"],

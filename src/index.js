@@ -27,6 +27,11 @@ export { ActionButton } from "./components/ActionButton/ActionButton";
 export { Button } from "./components/Button/Button";
 
 /**
+ * Text Link Component
+ */
+export { Link } from "./components/Link/Link";
+
+/**
  * Heading with text link
  */
 export { Heading } from "./components/Heading/Heading";
@@ -45,3 +50,8 @@ export { ErrorPage } from "./components/ErrorPage/ErrorPage";
  * Header Component
  */
 export { Header } from "./components/Header/Header";
+
+/**
+ * Menu Component
+ */
+export { Menu } from "./components/Menu/Menu";

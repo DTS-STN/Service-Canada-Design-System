@@ -26,8 +26,8 @@
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
-  line-height: 120%;
-
+  line-height: 28.8px;
+  margin-bottom: 0;
   display: flex;
   align-items: center;
 
@@ -40,6 +40,7 @@ nav {
   align-items: center !important;
   justify-content: space-between;
   width: 100%;
+  padding: 0 1rem;
 }
 
 .menuDropdown {
@@ -76,3 +77,14 @@ nav {
     padding-left: 2rem;
   }
 }
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+  .menuDropdown.menuRight li .dropdown-menu {
+    display: none;
+  }
+  .menuDropdown.menuRight li:hover .dropdown-menu {
+    display: block;
+  }
+}
+/* ============ desktop view .end// ============ */
