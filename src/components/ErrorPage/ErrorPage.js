@@ -1,12 +1,21 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { Heading } from "../Heading/Heading";
-// Text Link component not implimented yet
+import { Link } from "../Link/Link";
 import EN from "../../translations/en.json";
 import FR from "../../translations/fr.json";
 
 export function ErrorPage(props) {
-  const { isAuth, errType, lang } = props;
+  const {
+    isAuth,
+    errType,
+    lang,
+    homePageLink,
+    accountPageLink,
+    homePageId,
+    accountPageId,
+    pageHeadingId,
+  } = props;
   var biClassName = "";
   var language = lang === "en" ? [EN] : lang === "fr" ? [FR] : [EN, FR];
   if (lang === "bi") {
@@ -43,9 +52,15 @@ export function ErrorPage(props) {
         return (
           <div>
             {val === EN ? (
-              <Heading id={index} title={errorHeadingEN} />
+              <Heading
+                id={errType + val + pageHeadingId + index}
+                title={errorHeadingEN}
+              />
             ) : (
-              <Heading id={index} title={errorHeadingFR} />
+              <Heading
+                id={errType + val + pageHeadingId + index}
+                title={errorHeadingFR}
+              />
             )}
             <div>
               {val === EN ? (
@@ -58,25 +73,37 @@ export function ErrorPage(props) {
               <h2 className="sr-only">Whats Next Links</h2>
               <ul>
                 {errType === "500" ? (
-                  <li key={index} className="body pl-3">
+                  <li key={errType + lang + index} className="body pl-3">
                     {val.error500TextLink}
                   </li>
                 ) : errType === "503" ? (
-                  <li key={index} className="body pl-3">
+                  <li key={errType + lang + index} className="body pl-3">
                     {val.error503TextLink}
                   </li>
                 ) : null}
                 {!isAuth ? (
-                  <li key={index} className="body pl-3">
+                  <li
+                    key={errType + lang + homePageId + index}
+                    className="body pl-3"
+                  >
                     {val.errorTextLinkCommon}
-                    {/* replace with text link component in future */}
-                    <a href="/">{val.errorTextLinkCommon_2}</a>
+                    <Link
+                      id={errType + lang + homePageId + index}
+                      href={homePageLink}
+                      text={val.errorTextLinkCommon_2}
+                    />
                   </li>
                 ) : (
-                  <li key={index} className="body pl-3">
+                  <li
+                    key={errType + lang + accountPageId}
+                    className="body pl-3"
+                  >
                     {val.errorAuthTextLinkCommon}
-                    {/* replace with text link component in future */}
-                    <a href="/">{val.errorAuthTextLinkCommon_2}</a>
+                    <Link
+                      id={errType + lang + accountPageId + index}
+                      href={accountPageLink}
+                      text={val.errorAuthTextLinkCommon_2}
+                    />
                   </li>
                 )}
               </ul>
@@ -92,6 +119,14 @@ export function ErrorPage(props) {
     </div>
   );
 }
+
+ErrorPage.defaultProps = {
+  accountPageLink: "/",
+  homePageLink: "/",
+  accountPageId: "accountPage",
+  homePageId: "homePage",
+  pageHeadingId: "pageHead",
+};
 
 ErrorPage.propTypes = {
   /**
@@ -113,7 +148,37 @@ ErrorPage.propTypes = {
 
   /**
    * To indicate if the user is authenticated or not
-   * Will display authenticated version of plays if user is authenticated
+   * Will display authenticated version of pages if user is authenticated
    */
   isAuth: PropTypes.bool.isRequired,
+
+  /**
+   * Add your path to the Service Canada Home Page (not authenticated user)
+   */
+  homePageLink: PropTypes.string,
+
+  /**
+   * Add your path Logged in users account dashboard (authenticated user)
+   */
+  accountPageLink: PropTypes.string,
+
+  /**
+   * id for home page. Error Type and Language initial
+   * will be added to make id unique. (Not Authenticated)
+   */
+  homePageId: PropTypes.string,
+
+  /**
+   * id for account dashboard text link. Error Type and
+   * Language initial will be added to make id unique.
+   * (Authenticated)
+   *
+   */
+  accountPageId: PropTypes.string,
+
+  /**
+   * id for heading. Error Type and Language initial
+   * will be added to make id unique.
+   */
+  pageHeadingId: PropTypes.string,
 };

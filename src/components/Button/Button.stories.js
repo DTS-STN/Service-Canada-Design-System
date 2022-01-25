@@ -20,6 +20,7 @@ Supertask.args = {
   id: "supertask",
   styling: "supertask",
   text: "Supertask button",
+  iconAltText: "supertask",
 };
 
 SupertaskIcon.args = {
@@ -34,6 +35,7 @@ SupertaskIcon.args = {
 Primary.args = {
   id: "primary",
   text: "Primary button",
+  iconAltText: "prime",
   styling: "primary",
 };
 
@@ -41,10 +43,10 @@ Secondary.args = {
   id: "secondary",
   text: "Secondary Button",
   icon: btnIcon,
-  iconAltText: "icon",
   iconEnd: false,
   secondary: true,
   styling: "secondary",
+  iconAltText: "secondary",
 };
 
 DangerDisabled.args = {
@@ -52,6 +54,7 @@ DangerDisabled.args = {
   text: "Danger Button",
   styling: "danger",
   disabled: true,
+  iconAltText: "disabled",
 };
 
 Link.args = {
@@ -59,4 +62,5 @@ Link.args = {
   text: "Link Button",
   styling: "link",
   href: "/",
+  iconAltText: "link",
 };

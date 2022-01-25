@@ -55,3 +55,7 @@ export { Header } from "./components/Header/Header";
  * Menu Component
  */
 export { Menu } from "./components/Menu/Menu";
+/**
+ * Footer Component
+ */
+export { Footer } from "./components/Footer/Footer";
