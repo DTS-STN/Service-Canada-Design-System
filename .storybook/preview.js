@@ -4,7 +4,20 @@ import "../src/styles/forms.css";
 import "../src/styles/menu.css";
 import "../src/styles/globals.css";
 import "../src/icomoon/style.css";
+import {
+  INITIAL_VIEWPORTS,
+  MINIMAL_VIEWPORTS,
+} from "@storybook/addon-viewport";
+
 export const parameters = {
+  viewport: {
+    viewports: {
+      ...INITIAL_VIEWPORTS,
+      ...MINIMAL_VIEWPORTS,
+    },
+    defaultViewport: "responsive",
+  },
+
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {

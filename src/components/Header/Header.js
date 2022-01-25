@@ -9,66 +9,105 @@ import PropTypes from "prop-types";
 import React from "react";
 import "./Header.css";
 import searchIcon from "../../assets/search-icon.svg";
+import { Menu } from "../Menu/Menu";
+import EN from "../../translations/en.json";
 
 export function Header(props) {
+  const menuItems = [
+    {
+      link: "#",
+      text: EN.menuItems1,
+    },
+    {
+      link: "#",
+      text: EN.menuItems2,
+    },
+    {
+      link: "#",
+      text: EN.menuItems3,
+    },
+  ];
   return (
-    <div class="header">
-      <nav class="skip-nav">
-        <a class="hide-element skip-link" href="#main">
-          Skip to main content
-        </a>
-      </nav>
-
+    <div className="header">
+      {" "}
+      <nav className="skip-nav">
+        {" "}
+        <a className="hide-element skip-link" href="#main">
+          Skip to main content{" "}
+        </a>{" "}
+      </nav>{" "}
       <header>
-        <div class="header-top max-width-wrapper">
-          <img class={props.className} src={props.logo} alt={props.altText} />
-
-          {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}
-
-          <section class="language-select-section">
-            <h2 class="hide-element">Language Selection</h2>
-
-            <a class="language-toggle" href="/fr.html" lang="fr">
-              <span class="language-toggle-text">Français</span>
-
-              <abbr class="language-toggle-abbr" title="Français">
-                fr
-              </abbr>
-            </a>
-          </section>
-
-          {/* Developer Note: This will be moved as seperate component once search component is implemented */}
-
-          <section class="search-section">
-            <h2 class="hide-element">Search</h2>
-            <form class="search-form" role="search" name="search-box">
-              <label class="hide-element search-label" for="search-input">
-                Search Service Canada
-              </label>
-
+        {" "}
+        <div className="flex flex-wrap justify-between items-center mx-auto">
+          {" "}
+          <a href="#" className={`flex ${props.className}`}>
+            <img src={props.logo} alt={props.altText} />{" "}
+          </a>{" "}
+          {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}{" "}
+          <section className="flex lg:hidden">
+            <h2 className="hide-element">Language Selection</h2>{" "}
+            <a className="language-toggle" href="/fr.html" lang="fr">
+              {" "}
+              <span className="language-toggle-text">Françaiss</span>{" "}
+              <abbr className="language-toggle-abbr" title="Français">
+                fr{" "}
+              </abbr>{" "}
+            </a>{" "}
+          </section>{" "}
+          {/* Developer Note: This will be moved as seperate component once search component is implemented */}{" "}
+          <section className="flex py-2">
+            <h2 className="hide-element">Search</h2>{" "}
+            <form className="search-form" role="search" name="search-box">
+              {" "}
+              <label
+                className="hide-element search-label"
+                htmlFor="search-input"
+              >
+                Search Service Canada{" "}
+              </label>{" "}
               <input
                 value=""
                 id="search-input"
-                class="search-input"
+                className="search-input"
                 type="search"
                 placeholder="Search Service Canada"
-              />
-
+              />{" "}
               <button
-                class="search-button"
+                className="search-button"
                 title="Search bar button"
                 type="submit"
               >
+                {" "}
                 <img
-                  class="search-icon"
+                  className="search-icon"
                   src={searchIcon}
                   alt="Search Service Canada"
-                />
-              </button>
-            </form>
+                />{" "}
+              </button>{" "}
+            </form>{" "}
+          </section>{" "}
+          {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}{" "}
+          <section className="flex pl-4 pr-8">
+            <h2 className="hide-element">Language Selection</h2>{" "}
+            <a className="language-toggle" href="/fr.html" lang="fr">
+              {" "}
+              <span className="language-toggle-text">Français</span>{" "}
+              <abbr className="language-toggle-abbr" title="Français">
+                fr{" "}
+              </abbr>{" "}
+            </a>{" "}
           </section>
-        </div>
-      </header>
+          {/* <section className='w-full relative'> */}{" "}
+          <Menu
+            menuHeaderTitle={EN.menuHeaderTitle}
+            menuButtonTitle={EN.menuButtonTitle}
+            isAuthenticated={true}
+            lang="en"
+            items={menuItems}
+          />
+          {/* </section> */}{" "}
+        </div>{" "}
+      </header>{" "}
     </div>
   );
 }

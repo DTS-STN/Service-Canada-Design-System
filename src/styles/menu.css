@@ -1,20 +1,13 @@
 @tailwind screens;
 
 .headerNav {
-  background: #26374a;
-  position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   display: flex;
 }
 .subMenu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: 20px 18px 20px 40px;
-  display: none;
   left: 0%;
   right: 0%;
   top: 21.28%;
@@ -28,19 +21,11 @@
   font-size: 24px;
   line-height: 28.8px;
   margin-bottom: 0;
-  display: flex;
-  align-items: center;
-
   color: #ffffff;
 }
 nav {
-  color: #ffffff;
   line-height: 28px;
-  display: flex;
-  align-items: center !important;
-  justify-content: space-between;
   width: 100%;
-  padding: 0 1rem;
 }
 
 .menuDropdown {
@@ -75,6 +60,9 @@ nav {
   .menuDropdown > li {
     display: inline-block;
     padding-left: 2rem;
+  }
+  .menuDropdown.menuRight > li {
+    padding-left: 0;
   }
 }
 

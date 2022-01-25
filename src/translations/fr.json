@@ -51,5 +51,15 @@
   "maximum2000": "Maximum de 2000 caractères",
   "confidential": "Vos commentaires sont confidentiels et anonymes.",
   "feedbackRequired": "Ce champ est obligatoire",
-  "breadCrumbsHref2": "https://alpha.service.canada.ca/fr/projects"
+  "breadCrumbsHref2": "https://alpha.service.canada.ca/fr/projects",
+  "menuHeaderTitle": "Service Canada",
+  "menuButtonTitle": "Menu",
+  "menuItems1": "Services",
+  "menuItems2": "Événements de la vie",
+  "menuItems3": "Contactez-nous",
+  "myAccountTitle": "Mon dossier Service Canada",
+  "myBenfitsAndServices": "Mes prestations et services",
+  "accountSettings": "Paramètres de mon dossier",
+  "CRAMyAccounts": "Passer au ARC Mon dossier",
+  "signOut": "Fermez la session"
 }
