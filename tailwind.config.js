@@ -12,6 +12,15 @@ module.exports = {
   },
   presets: [require("./tailwind-bootstrap3.js")],
   theme: {
+    borderWidth: {
+      DEFAULT: "1px",
+      0: "0",
+      2: "2px",
+      3: "3px",
+      4: "4px",
+      6: "6px",
+      8: "8px",
+    },
     extend: {
       fontFamily: {
         header: ["Lato", "font-serif"],
@@ -173,9 +182,13 @@ module.exports = {
         "44px": "44px",
         "46px": "46px",
         "100px": "100px",
+        "104px": "104px",
         "128px": "128px",
+        "160px": "160px",
         "187px": "187px",
         "250px": "250px",
+        "288px": "288px",
+        "320px": "320px",
         "400px": "400px",
         "500px": "500px",
       },
@@ -191,13 +204,20 @@ module.exports = {
         "6px": "6px",
         "8px": "8px",
         "12px": "12px",
+        "14px": "14px",
         "15px": "15px",
+        "16px": "16px",
+        "24px": "24px",
+        "28px": "28px",
+        "32px": "32px",
         "40px": "40px",
       },
       margin: {
+        "4px": "4px",
         "5px": "5px",
         "15px": "15px",
         "10px": "10px",
+        "12px": "12px",
         "20px": "20px",
         "4.5rem": "4.5rem",
       },
@@ -211,13 +231,18 @@ module.exports = {
       },
 
       minWidth: {
+        "26px": "26px",
+        "104px": "104px",
+        "290px": "290px",
         "300px": "300px",
       },
 
       minHeight: {
         "40px": "40px",
+        "104px": "104px",
         "200px": "200px",
         "250px": "250px",
+        "288px": "288px",
       },
 
       maxHeight: {
@@ -275,5 +300,6 @@ module.exports = {
     require("./config-plugins/button-plugin"),
     require("./config-plugins/footer-plugin"),
     require("./config-plugins/errorpage-plugin"),
+    require("./config-plugins/message-plugin"),
   ],
 };

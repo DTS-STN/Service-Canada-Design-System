@@ -50,3 +50,8 @@ export { ErrorPage } from "./components/ErrorPage/ErrorPage";
  * Footer
  */
 export { Footer } from "./components/Footer/Footer";
+
+/**
+ * Message
+ */
+export { Message } from "./components/Message/Message";
