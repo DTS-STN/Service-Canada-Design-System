@@ -122,7 +122,7 @@ export function Menu(props) {
 
                   <div
                     id="dropdownNavbar"
-                    className={`dropdown-menu lg:absolute z-10 top-60px text-base list-none bg-blue2 rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600`}
+                    className={`dropdown-menu lg:absolute z-10 top-60px text-base list-none bg-blue2 rounded divide-y divide-gray-100 dark:bg-gray-700 dark:divide-gray-600`}
                   >
                     <ul className="py-0" aria-labelledby="dropdownLargeButton">
                       <li>

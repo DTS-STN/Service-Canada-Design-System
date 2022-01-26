@@ -32,7 +32,7 @@ export function Header(props) {
       {" "}
       <nav className="skip-nav">
         {" "}
-        <a className="hide-element skip-link" href="#main">
+        <a className="sr-only skip-link" href="#main">
           Skip to main content{" "}
         </a>{" "}
       </nav>{" "}
@@ -44,8 +44,8 @@ export function Header(props) {
             <img src={props.logo} alt={props.altText} />{" "}
           </a>{" "}
           {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}{" "}
-          <section className="flex lg:hidden">
-            <h2 className="hide-element">Language Selection</h2>{" "}
+          <section className="flex lg:hidden md:hidden">
+            <h2 className="sr-only">Language Selection</h2>{" "}
             <a className="language-toggle" href="/fr.html" lang="fr">
               {" "}
               <span className="language-toggle-text">Françaiss</span>{" "}
@@ -55,14 +55,11 @@ export function Header(props) {
             </a>{" "}
           </section>{" "}
           {/* Developer Note: This will be moved as seperate component once search component is implemented */}{" "}
-          <section className="flex py-2">
-            <h2 className="hide-element">Search</h2>{" "}
+          <section className="w-full lg:flex lg:w-auto md:flex md:w-auto py-2">
+            <h2 className="sr-only">Search</h2>{" "}
             <form className="search-form" role="search" name="search-box">
               {" "}
-              <label
-                className="hide-element search-label"
-                htmlFor="search-input"
-              >
+              <label className="sr-only search-label" htmlFor="search-input">
                 Search Service Canada{" "}
               </label>{" "}
               <input
@@ -87,8 +84,8 @@ export function Header(props) {
             </form>{" "}
           </section>{" "}
           {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}{" "}
-          <section className="flex pl-4 pr-8">
-            <h2 className="hide-element">Language Selection</h2>{" "}
+          <section className="hidden lg:flex md:flex pl-4 pr-8">
+            <h2 className="sr-only">Language Selection</h2>{" "}
             <a className="language-toggle" href="/fr.html" lang="fr">
               {" "}
               <span className="language-toggle-text">Français</span>{" "}
@@ -125,7 +122,8 @@ Header.propTypes = {
    */ lang: PropTypes.string,
   /**
    * any other elements you want to add to the header
-   */ children: PropTypes.oneOfType([
+   */
+  children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),

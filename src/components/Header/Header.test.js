@@ -19,10 +19,9 @@ describe("Header", () => {
     mockFn.mockRestore();
   });
   it("renders default", () => {
-    render(<Header {...Default.args} />);
-    expect(screen.getByText("Government of Canada")).toHaveTextContent(
-      Default.args.altText
-    );
+    const renderComp = () => render(<Header {...Default.args} />);
+    const { getByAltText } = renderComp();
+    getByAltText(Default.args.altText);
   });
 
   it("has no a11y violations", async () => {
