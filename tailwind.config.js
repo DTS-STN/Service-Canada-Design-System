@@ -181,6 +181,7 @@ module.exports = {
       },
       inset: {
         "-2px": "-2px",
+        "60px": "60px",
       },
       zIndex: {
         1: "1",

@@ -12,6 +12,7 @@
   ],
   "dependencies": {
     "@rollup/plugin-json": "^4.1.0",
+    "@storybook/addon-docs": "^6.4.13",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -38,7 +39,7 @@
     "eslint": "eslint src",
     "prepare": "husky install",
     "storybook-docs": "start-storybook --docs --no-manager-cache",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6007",
     "build-storybook": "build-storybook"
   },
   "lint-staged": {
