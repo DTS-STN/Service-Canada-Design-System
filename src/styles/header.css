@@ -1,8 +1,3 @@
-/* Developer Note: Ensure this does not interfere with any max widths or outter margin you already have */
-body {
-  margin: 0;
-}
-
 /* Developer Note: Replace with your max width wrappers */
 .max-width-wrapper {
   max-width: 1140px;
@@ -56,11 +51,6 @@ body {
   max-height: 19px;
 }
 
-.language-select-section {
-  width: 25%;
-  text-align: end;
-}
-
 .language-toggle {
   font-size: 16px;
   color: #333333;
@@ -94,7 +84,6 @@ body {
   font-size: 15px;
   line-height: 23px;
   width: 100%;
-  border-radius: 6px 0 0 6px;
   border: 1px solid #8c9095;
   padding: 10.5px 8.5px;
 }
@@ -103,8 +92,11 @@ body {
   padding: 13px 9px;
   width: 35px;
   background: #26374a;
-  border-radius: 0 6px 6px 0;
   border: 1px solid #26374a;
+}
+
+.header .headerNav {
+  top: 5rem;
 }
 
 .search-icon {
@@ -221,6 +213,10 @@ body {
   .sub-menu-button .arrow-down-white {
     display: none;
   }
+
+  .header .headerNav {
+    top: 7rem;
+  }
 }
 
 /* Developer Note: large screen & up styling, replace with appropriate breakpoint  */
@@ -238,13 +234,13 @@ body {
     width: auto;
     max-height: 27px;
   }
-
+  /*
   .language-select-section {
-    order: 3;
+    order: 2;
     width: auto;
     padding-left: 33px;
     align-self: center;
-  }
+  } */
 
   .language-toggle {
     font-size: 18px;

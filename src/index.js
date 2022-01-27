@@ -9,6 +9,7 @@ import "./styles/tailwind.css";
 import "./styles/fonts.css";
 import "./styles/forms.css";
 import "./styles/menu.css";
+import "./styles/header.css";
 import "./icomoon/style.css";
 
 /**
@@ -47,7 +48,16 @@ export { Image } from "./components/Image/Image";
 export { ErrorPage } from "./components/ErrorPage/ErrorPage";
 
 /**
- * Footer
+ * Header Component
+ */
+export { Header } from "./components/Header/Header";
+
+/**
+ * Menu Component
+ */
+export { Menu } from "./components/Menu/Menu";
+/**
+ * Footer Component
  */
 export { Footer } from "./components/Footer/Footer";
 
