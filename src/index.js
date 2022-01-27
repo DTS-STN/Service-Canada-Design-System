@@ -9,6 +9,7 @@ import "./styles/tailwind.css";
 import "./styles/fonts.css";
 import "./styles/forms.css";
 import "./styles/menu.css";
+import "./styles/header.css";
 import "./icomoon/style.css";
 
 /**

@@ -7,9 +7,8 @@
  */
 import PropTypes from "prop-types";
 import React from "react";
-import "./Header.css";
-import searchIcon from "../../assets/search-icon.svg";
 import { Menu } from "../Menu/Menu";
+import { Image } from "../Image/Image";
 import EN from "../../translations/en.json";
 
 export function Header(props) {
@@ -29,72 +28,59 @@ export function Header(props) {
   ];
   return (
     <div className="header">
-      {" "}
-      <nav className="skip-nav">
-        {" "}
-        <a className="sr-only skip-link" href="#main">
-          Skip to main content{" "}
-        </a>{" "}
-      </nav>{" "}
       <header>
-        {" "}
         <div className="flex flex-wrap justify-between items-center mx-auto">
-          {" "}
           <a href="#" className={`flex ${props.className}`}>
-            <img src={props.logo} alt={props.altText} />{" "}
-          </a>{" "}
-          {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}{" "}
+            <Image src={props.logo} alt={props.altText} />
+          </a>
+          {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}
           <section className="flex lg:hidden md:hidden">
-            <h2 className="sr-only">Language Selection</h2>{" "}
+            <h2 className="sr-only">Language Selection</h2>
             <a className="language-toggle" href="/fr.html" lang="fr">
-              {" "}
-              <span className="language-toggle-text">Françaiss</span>{" "}
+              <span className="language-toggle-text">Françaiss</span>
               <abbr className="language-toggle-abbr" title="Français">
-                fr{" "}
-              </abbr>{" "}
-            </a>{" "}
-          </section>{" "}
-          {/* Developer Note: This will be moved as seperate component once search component is implemented */}{" "}
+                fr
+              </abbr>
+            </a>
+          </section>
+          {/* Developer Note: This will be moved as seperate component once search component is implemented */}
           <section className="w-full lg:flex lg:w-auto md:flex md:w-auto py-2">
-            <h2 className="sr-only">Search</h2>{" "}
+            <h2 className="sr-only">Search</h2>
             <form className="search-form" role="search" name="search-box">
-              {" "}
               <label className="sr-only search-label" htmlFor="search-input">
-                Search Service Canada{" "}
-              </label>{" "}
+                Search Service Canada
+              </label>
               <input
                 value=""
                 id="search-input"
                 className="search-input"
                 type="search"
                 placeholder="Search Service Canada"
-              />{" "}
+              />
               <button
                 className="search-button"
                 title="Search bar button"
                 type="submit"
               >
-                {" "}
-                <img
+                <Image
                   className="search-icon"
-                  src={searchIcon}
+                  src={props.searchIcon}
                   alt="Search Service Canada"
-                />{" "}
-              </button>{" "}
-            </form>{" "}
-          </section>{" "}
-          {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}{" "}
-          <section className="hidden lg:flex md:flex pl-4 pr-8">
-            <h2 className="sr-only">Language Selection</h2>{" "}
-            <a className="language-toggle" href="/fr.html" lang="fr">
-              {" "}
-              <span className="language-toggle-text">Français</span>{" "}
-              <abbr className="language-toggle-abbr" title="Français">
-                fr{" "}
-              </abbr>{" "}
-            </a>{" "}
+                />
+              </button>
+            </form>
           </section>
-          {/* <section className='w-full relative'> */}{" "}
+          {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}
+          <section className="hidden lg:flex md:flex pl-4 pr-8">
+            <h2 className="sr-only">Language Selection</h2>
+            <a className="language-toggle" href="/fr.html" lang="fr">
+              <span className="language-toggle-text">Français</span>
+              <abbr className="language-toggle-abbr" title="Français">
+                fr
+              </abbr>
+            </a>
+          </section>
+          {/* <section className='w-full relative'> */}
           <Menu
             menuHeaderTitle={EN.menuHeaderTitle}
             menuButtonTitle={EN.menuButtonTitle}
@@ -102,9 +88,9 @@ export function Header(props) {
             lang="en"
             items={menuItems}
           />
-          {/* </section> */}{" "}
-        </div>{" "}
-      </header>{" "}
+          {/* </section> */}
+        </div>
+      </header>
     </div>
   );
 }
@@ -120,6 +106,8 @@ Header.propTypes = {
   /**
    * Lang attribute for links that do not match the language of the top level document
    */ lang: PropTypes.string,
+  //Developer Notes will be moved to search Component later
+  searchIcon: PropTypes.string,
   /**
    * any other elements you want to add to the header
    */

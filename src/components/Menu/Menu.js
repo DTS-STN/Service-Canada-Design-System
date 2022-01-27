@@ -1,3 +1,4 @@
+import React from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import EN from "../../translations/en.json";
@@ -22,18 +23,6 @@ export function Menu(props) {
       : menuButton.setAttribute("aria-expanded", true);
   }
 
-  //Function for changing menu state
-  function onMenuClick() {
-    const menuButton = document.getElementById("menuButton");
-    const menuDropdown = document.getElementById("menuDropdown");
-    const menuDropdownSub = document.getElementById("menuDropdownSub");
-
-    menuDropdown.classList.toggle("active");
-    menuDropdownSub.classList.toggle("active");
-    menuButton.getAttribute("aria-expanded") === "true"
-      ? menuButton.setAttribute("aria-expanded", false)
-      : menuButton.setAttribute("aria-expanded", true);
-  }
   const subMenuClasses = props.isAuthenticated
     ? "menuDropdown menuRight hover:bg-multi-blue-blue2  lg:text-white text-gray-700 hover:text-multi-neutrals-grey100"
     : "menuDropdown menuRight lg:text-white text-gray-700";
