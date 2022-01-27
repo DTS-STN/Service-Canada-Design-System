@@ -60,3 +60,8 @@ export { Menu } from "./components/Menu/Menu";
  * Footer Component
  */
 export { Footer } from "./components/Footer/Footer";
+
+/**
+ * Message
+ */
+export { Message } from "./components/Message/Message";
