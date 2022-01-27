@@ -12,16 +12,16 @@ This library contains reusable components that are accessible and can be used ac
 
 The package is hosted in github packages. To use it simply install it as one of your dependencies
 
-First if you don't already have a personal access token;
+**Step 1:** if you don't already have a personal access token;
 
 - log into your github account
 - go to account settings -> developer settings -> personal access token
 - click on "Generate new token"
 - for the permissions, select atleast "read:packages"
 
-Once you've created your token, make sure to copy it for the next step
+Once you've created your personal access token, Copy/Save it somewhere for the next step
 
-Create a `.npmrc` file in the same directory as your `package.json` with the following content.
+**Step 2:** Create a `.npmrc` file in your root directory with the following content.
 
 ```text
 @dts-stn:registry=https://npm.pkg.github.com
@@ -30,7 +30,7 @@ Create a `.npmrc` file in the same directory as your `package.json` with the fol
 
 This specifies that any package scoped @dts-stn should come from the github npm registry (where this package is located).
 
-Then install the package using this command
+**Step 3:** Install the package using this command
 
 ```bash
 $ npm install --save @dts-stn/decd-design-system
@@ -45,11 +45,13 @@ Once you've installed the package remove the second line of text from the
 @dts-stn:registry=https://npm.pkg.github.com
 ```
 
-You can then import the components you wish to use anywhere in your project
+**Step 4:** You can now import the components you wish to use anywhere in your project
 
 ```js
 import { Component } from "@dts-stn/decd-design-system";
 ```
+
+**Important Note** To see available components please refer to our storybook page [DECD Design System Storybook](https://dts-stn.github.io/DECD-Design-System/main). Make sure to view the **Doc tab** of each component to see important information about how to use components and the props you can pass into them.
 
 ## Developing this Package 👨🏽‍💻👩🏽‍💻
 
