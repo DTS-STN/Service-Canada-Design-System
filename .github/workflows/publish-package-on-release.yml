@@ -29,14 +29,14 @@ jobs:
       - name: Build 🛠
         run: npm run build
 
-    #  # create the github release
-    #   - name: Release
-    #     uses: justincy/github-action-npm-release@2.0.2
-    #     id: release
+     # create the github release
+      - name: Release
+        uses: justincy/github-action-npm-release@2.0.2
+        id: release
 
-    #   - name: Print release output
-    #     if: ${{ steps.release.outputs.released == 'true' }}
-    #     run: echo Release ID ${{ steps.release.outputs.release_id }}
+      - name: Print release output
+        if: ${{ steps.release.outputs.released == 'true' }}
+        run: echo Release ID ${{ steps.release.outputs.release_id }}
 
       - name: add token to .npmrc file
         if: ${{ steps.release.outputs.released == 'true' }}
