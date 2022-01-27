@@ -3,9 +3,7 @@ on:
   pull_request:
   push:
     branches:
-      - release
-      - develop
-      - master
+      - main
 
 jobs:
   build-and-deploy:
@@ -39,23 +37,23 @@ jobs:
           FOLDER: storybook-static # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
 
-      - name: Find Comment
-        if: github.event_name == 'pull_request'
-        uses: peter-evans/find-comment@v1
-        id: fc
-        with:
-          issue-number: ${{ github.event.pull_request.number }}
-          comment-author: 'github-actions[bot]'
-          body-includes: |
-            Storybooks Link For Branch
-            https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ steps.extract_branch.outputs.branch }}
+      # - name: Find Comment
+      #   if: steps.extract_branch.outputs.branch != 'main'
+      #   uses: peter-evans/find-comment@v1
+      #   id: fc
+      #   with:
+      #     issue-number: ${{ github.event.pull_request.number }}
+      #     comment-author: 'github-actions[bot]'
+      #     body-includes: |
+      #       Storybooks Link For Branch
+      #       https://dts-stn.github.io/DECD-Design-System/${{ steps.extract_branch.outputs.branch }}
 
-      - name: Create or update comment # comment in pull request storybooks link
-        if: github.event_name == 'pull_request'
-        uses: peter-evans/create-or-update-comment@v1
-        with:
-          comment-id: ${{ steps.fc.outputs.comment-id }}
-          issue-number: ${{ github.event.pull_request.number }}
-          body: |
-            Storybooks Link For Branch
-            https://dts-stn.github.io/${{ github.event.pull_request.base.repo.name }}/${{ steps.extract_branch.outputs.branch }}
+      # - name: Create or update comment # comment in pull request storybooks link
+      #   if: steps.extract_branch.outputs.branch != 'main'
+      #   uses: peter-evans/create-or-update-comment@v1
+      #   with:
+      #     comment-id: ${{ steps.fc.outputs.comment-id }}
+      #     issue-number: ${{ github.event.pull_request.number }}
+      #     body: |
+      #       Storybooks Link For Branch
+      #       https://dts-stn.github.io/DECD-Design-System/${{ steps.extract_branch.outputs.branch }}

@@ -1,6 +1,6 @@
 {
   "name": "@dts-stn/decd-design-system",
-  "version": "1.0.0",
+  "version": "1.0.7",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "source": "src/index.js",
@@ -39,8 +39,12 @@
     "eslint": "eslint src",
     "prepare": "husky install",
     "storybook-docs": "start-storybook --docs --no-manager-cache",
-    "storybook": "start-storybook -p 6007",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,md,css}": [
@@ -105,9 +109,11 @@
     "react-dom": "^17.0.2",
     "rollup": "^1.32.1",
     "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-img": "^1.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^2.8.2",
     "rollup-plugin-uglify": "^6.0.4",
+    "standard-version": "^9.3.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.4"
   }
 }

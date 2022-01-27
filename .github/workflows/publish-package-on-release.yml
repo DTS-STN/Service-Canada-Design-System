@@ -2,7 +2,7 @@ name: Publish Package on Release
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   release:
@@ -30,19 +30,19 @@ jobs:
         run: npm run build
 
      # create the github release
-      - name: Release
-        uses: justincy/github-action-npm-release@2.0.2
-        id: release
+      # - name: Release
+      #   uses: justincy/github-action-npm-release@2.0.2
+      #   id: release
 
       - name: Print release output
         if: ${{ steps.release.outputs.released == 'true' }}
         run: echo Release ID ${{ steps.release.outputs.release_id }}
 
       - name: add token to .npmrc file
-        if: ${{ steps.release.outputs.released == 'true' }}
+        # if: ${{ steps.release.outputs.released == 'true' }}
         run: echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> .npmrc
 
       # Publish the package if the release is created
       - name: Publish the package
-        if: ${{ steps.release.outputs.released == 'true' }}
+        # if: ${{ steps.release.outputs.released == 'true' }}
         run: npm publish
