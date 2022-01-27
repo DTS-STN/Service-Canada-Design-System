@@ -18,13 +18,13 @@ describe("Header", () => {
     mockFn.mockRestore();
   });
   it("renders default", () => {
-    const renderComp = () => render(<Header {...Default.args} />);
+    const renderComp = () => render(<Default {...Default.args} />);
     const { getByAltText } = renderComp();
     getByAltText(Default.args.altText);
   });
 
   it("has no a11y violations", async () => {
-    const { container } = render(<Header {...Default.args} />);
+    const { container } = render(<Default {...Default.args} />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

@@ -52,7 +52,7 @@ export function Menu(props) {
         </div>
         <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto bg-multi-blue-blue2 lg:bg-multi-blue-blue70">
           <div className="lg:flex-grow lg:text-center">
-            <ul id="menuDropdown" className="menuDropdown" role="menu">
+            <ul id="menuDropdown" className="menuDropdown">
               {props.items.map((item, key) => {
                 const exactURL = path === item.link; // it's exactly this url
                 const includesURL = path.includes(item.link); // it's a child of this url (eg, "/projects/app" includes "/projects")
@@ -61,7 +61,6 @@ export function Menu(props) {
                   <li
                     key={key}
                     className={`py-4 px-4 cursor-pointer text-custom-blue-projects-link lg:text-white text-gray-700 `}
-                    role="menuitem"
                     aria-current={exactURL ? "page" : null}
                   >
                     <a
@@ -79,7 +78,7 @@ export function Menu(props) {
             </ul>
           </div>
           <div>
-            <ul id="menuDropdownSub" className={subMenuClasses} role="menu">
+            <ul id="menuDropdownSub" className={subMenuClasses}>
               {props.isAuthenticated ? (
                 <li className="py-4 px-6">
                   <button
@@ -159,7 +158,6 @@ export function Menu(props) {
                 <li
                   key="1"
                   className={`py-4 px-6 font-bold `}
-                  role="menuitem"
                   aria-current="page"
                 >
                   {props.lang === "fr" ? FR.myAccountTitle : EN.myAccountTitle}
