@@ -10,6 +10,8 @@ import React from "react";
 import { Menu } from "../Menu/Menu";
 import { Image } from "../Image/Image";
 import EN from "../../translations/en.json";
+import logoFile from "../../assets/wmms-blk.svg";
+import searchIcon from "../../assets/search-icon.svg";
 
 export function Header(props) {
   const menuItems = [
@@ -29,7 +31,7 @@ export function Header(props) {
   return (
     <div className="header">
       <header>
-        <div className="flex flex-wrap justify-between items-center mx-auto">
+        <div className="sm:container flex flex-wrap justify-between items-center mx-auto">
           <a href="#" className={`flex ${props.className}`}>
             <Image src={props.logo} alt={props.altText} />
           </a>
@@ -94,6 +96,13 @@ export function Header(props) {
     </div>
   );
 }
+
+Header.defaultProps = {
+  className: "header-logo",
+  logo: logoFile,
+  altText: "Government of Canada",
+  searchIcon: searchIcon,
+};
 
 Header.propTypes = {
   /**

@@ -28,7 +28,7 @@ export function Menu(props) {
     : "menuDropdown menuRight lg:text-white text-gray-700";
   return (
     <div className="headerNav bg-multi-blue-blue70 absolute">
-      <nav className="flex items-center justify-between flex-wrap w-full">
+      <nav className="sm:container flex items-center justify-between flex-wrap w-full">
         <div className="flex items-center flex-shrink-0 text-white mr-6 px-4">
           <h3 id="mainSiteNav" className="menuHeader">
             {props.menuHeaderTitle}
