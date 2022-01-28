@@ -55,7 +55,7 @@ export function Header(props) {
                 id="search-input"
                 className="search-input"
                 type="search"
-                placeholder="Search Service Canada"
+                placeholder="Search canada.ca"
               />
               <button
                 className="search-button"
