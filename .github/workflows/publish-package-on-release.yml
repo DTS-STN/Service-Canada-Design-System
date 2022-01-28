@@ -32,7 +32,7 @@ jobs:
      # create the github release
       - name: Release
         uses: justincy/github-action-npm-release@2.0.2
-        id: release
+        id: main
 
       - name: Print release output
         if: ${{ steps.release.outputs.released == 'true' }}
@@ -40,7 +40,7 @@ jobs:
 
       - name: add token to .npmrc file
         if: ${{ steps.release.outputs.released == 'true' }}
-        run: echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> .npmrc
+        run: echo "https://npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> .npmrc
 
       # Publish the package if the release is created
       - name: Publish the package

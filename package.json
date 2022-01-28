@@ -7,6 +7,9 @@
   "repository": {
     "url": "https://github.com/DTS-STN/DECD-Design-System"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "files": [
     "dist/**/*"
   ],
