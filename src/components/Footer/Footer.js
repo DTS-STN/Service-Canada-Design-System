@@ -117,66 +117,68 @@ export function Footer(props) {
 }
 
 Footer.defaultProps = {
-  landscapeBgImg: bg_img,
-  logoUrl: logo,
+  landscapeBgImg:
+    "https://www.canada.ca/etc/designs/canada/wet-boew/assets/landscape.png",
+  logoUrl:
+    "https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg",
   logoAltText: "Symbol of the Government of Canada",
   landscapeLinks: [
     {
-      landscapeLink: EN.landscapeLinks.link1link,
+      landscapeLink: "/",
       landscapeLinkText: EN.landscapeLinks.link1,
     },
     {
-      landscapeLink: EN.landscapeLinks.link2link,
+      landscapeLink: "/",
       landscapeLinkText: EN.landscapeLinks.link2,
     },
     {
-      landscapeLink: EN.landscapeLinks.link3link,
+      landscapeLink: "/",
       landscapeLinkText: EN.landscapeLinks.link3,
     },
     {
-      landscapeLink: EN.landscapeLinks.link4link,
+      landscapeLink: "/",
       landscapeLinkText: EN.landscapeLinks.link4,
     },
     {
-      landscapeLink: EN.landscapeLinks.link5link,
+      landscapeLink: "/",
       landscapeLinkText: EN.landscapeLinks.link5,
     },
     {
-      landscapeLink: EN.landscapeLinks.link6link,
+      landscapeLink: "/",
       landscapeLinkText: EN.landscapeLinks.link6,
     },
     {
-      landscapeLink: EN.landscapeLinks.link7link,
+      landscapeLink: "/",
       landscapeLinkText: EN.landscapeLinks.link7,
     },
     {
-      landscapeLink: EN.landscapeLinks.link8link,
+      landscapeLink: "/",
       landscapeLinkText: EN.landscapeLinks.link8,
     },
     {
-      landscapeLink: EN.landscapeLinks.link9link,
+      landscapeLink: "/",
       landscapeLinkText: EN.landscapeLinks.link9,
     },
   ],
   brandLinks: [
     {
-      brandLink: EN.brandLinks.link1link,
+      brandLink: "/",
       brandLinkText: EN.brandLinks.link1,
     },
     {
-      brandLink: EN.brandLinks.link2link,
+      brandLink: "/",
       brandLinkText: EN.brandLinks.link2,
     },
     {
-      brandLink: EN.brandLinks.link3link,
+      brandLink: "/",
       brandLinkText: EN.brandLinks.link3,
     },
     {
-      brandLink: EN.brandLinks.link4link,
+      brandLink: "/",
       brandLinkText: EN.brandLinks.link4,
     },
     {
-      brandLink: EN.brandLinks.link5link,
+      brandLink: "/",
       brandLinkText: EN.brandLinks.link5,
     },
   ],
@@ -184,23 +186,18 @@ Footer.defaultProps = {
 
 Footer.propTypes = {
   /**
-   * toggle between english defaults and
-   * error option will render the error page
-   * footer.
-   *
-   * french not implemented yet, must manually pass in all French props
-   * for the french links shown in the example
+   * If true will display the error page version of the footer component
    */
-  lang: PropTypes.oneOf(["en", "error"]).isRequired,
+  error: PropTypes.bool.isRequired,
 
   /**
-   * links for top portion of footer
+   * hyperlinks for top portion of footer
    */
   landscapeLinks: PropTypes.arrayOf(
     PropTypes.shape({
       landscapeLink: PropTypes.string.isRequired,
       landscapeLinkText: PropTypes.string.isRequired,
-    })
+    }).isRequired
   ),
 
   /**
@@ -216,7 +213,7 @@ Footer.propTypes = {
       brandLink: PropTypes.string.isRequired,
       brandLinkText: PropTypes.string.isRequired,
     })
-  ),
+  ).isRequired,
 
   /**
    * Add the path Link to the top of your page for the "to the Top" button in mobile
