@@ -11,7 +11,7 @@ import bg_img from "../../assets/footer_bg_img.svg";
 export function Footer(props) {
   return (
     <footer className="w-full">
-      {props.lang === "error" ? (
+      {props.error ? (
         <section className={"sm:container h-16 bg-multi-neutrals-grey5"}>
           <Image
             className="mb-2.5 sm:mt-3 mt-5 h-6 float-right"
@@ -117,10 +117,8 @@ export function Footer(props) {
 }
 
 Footer.defaultProps = {
-  landscapeBgImg:
-    "https://www.canada.ca/etc/designs/canada/wet-boew/assets/landscape.png",
-  logoUrl:
-    "https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg",
+  landscapeBgImg: bg_img,
+  logoUrl: logo,
   logoAltText: "Symbol of the Government of Canada",
   landscapeLinks: [
     {
