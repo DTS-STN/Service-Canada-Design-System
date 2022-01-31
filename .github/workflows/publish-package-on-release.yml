@@ -32,9 +32,9 @@ jobs:
         run: npm run build
 
      # create the github release
-      - name: Release
-        uses: justincy/github-action-npm-release@2.0.2
-        id: release
+      # - name: Release
+      #   uses: justincy/github-action-npm-release@2.0.2
+      #   id: release
 
       # - name: Print release output
       #   if: ${{ steps.release.outputs.released == 'true' }}
