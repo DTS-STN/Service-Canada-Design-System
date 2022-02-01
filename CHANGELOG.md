@@ -46,7 +46,13 @@ Initial release of the Design System Package
 
 ### Added
 
-Initial release of the Design System Package
-
 - Footer component
 - ErrorPage component
+
+## [v1.3.0] - 2022-01-20
+
+### Added
+
+- Message Component
+- Header Component
+- Menu Component
