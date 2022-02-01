@@ -5,58 +5,63 @@ import { Image } from "../Image/Image";
 import { Link } from "../Link/Link";
 import EN from "../../translations/en.json";
 // need to update to convert default props to FR when using lang=fr prop
+import logo from "../../assets/wmms-blk.svg";
+import bg_img from "../../assets/footer_bg_img.svg";
 
 export function Footer(props) {
   return (
     <footer className="w-full">
-      {props.lang === "error" ? (
-        <section className={"w-full h-16 bg-multi-neutrals-grey5"}>
+      {props.error ? (
+        <section className={"sm:container h-16 bg-multi-neutrals-grey5"}>
           <Image
-            className="sm:pr-32 pr-4 mb-2.5 sm:mt-3 mt-5 h-6 float-right"
+            className="mb-2.5 sm:mt-3 mt-5 h-6 float-right"
             src={props.logoUrl}
             alt={props.logoAltText}
           />
         </section>
       ) : (
         <>
-          <section
-            className={`w-full h-auto landscape bg-no-repeat bg-clip-border sm:bg-right-bottom bg-bottom bg-multi-blue-blue70`}
+          <div
+            className="bg-multi-blue-blue70 landscape bg-no-repeat bg-clip-border sm:bg-right-bottom bg-bottom"
             style={{
               backgroundImage: `url(${props.landscapeBgImg})`,
             }}
           >
-            <nav
-              className="sm:pl-6 sm:pr-6 md:pl-20 md:pr-20 pl-4 pr-4 pt-6 pb-6"
-              role="navigation"
-              aria-labelledby="accessibleSectionHeader1"
-            >
-              <h2 className="sr-only" id="accessibleSectionHeader1">
-                About Government
-              </h2>
-              <ul className="sm:grid sm:grid-cols-3 flex flex-col gap-1 text-xs">
-                {" "}
-                {props.landscapeLinks.map((value, index) => {
-                  return (
-                    <li
-                      key={value + index}
-                      className="text-white w-64 md:w-56 lg:w-80 my-2.5 hover:underline"
-                    >
-                      <Link
-                        id={value + index}
-                        href={value.landscapeLink}
-                        text={value.landscapeLinkText}
-                        linkStyle="smfooterWhite"
-                      />
-                    </li>
-                  );
-                })}
-              </ul>
-            </nav>
-          </section>
-          <div className="w-full h-full pb-4">
-            <section className="h-auto bg-color-multi-neutrals-white pt-5 flex flex-col md:flex-row sm:flex-col justify-between">
+            <section className={`sm:container`}>
               <nav
-                className="md:pl-16 sm:pl-2 mt-3.5 xl:mt-5"
+                className="pl-4 pr-4 pt-6 pb-6"
+                role="navigation"
+                aria-labelledby="accessibleSectionHeader1"
+              >
+                <h2 className="sr-only" id="accessibleSectionHeader1">
+                  About Government
+                </h2>
+                <ul className="sm:grid sm:grid-cols-3 flex flex-col gap-1 text-xs">
+                  {" "}
+                  {props.landscapeLinks.map((value, index) => {
+                    return (
+                      <li
+                        key={value + index}
+                        className="text-white w-64 md:w-56 lg:w-80 my-2.5 hover:underline"
+                      >
+                        <Link
+                          id={value + index}
+                          href={value.landscapeLink}
+                          text={value.landscapeLinkText}
+                          linkStyle="smfooterWhite"
+                          yt
+                        />
+                      </li>
+                    );
+                  })}
+                </ul>
+              </nav>
+            </section>
+          </div>
+          <div className="h-full pb-4 bg-color-multi-neutrals-white ">
+            <section className="sm:container h-auto pt-5 flex flex-col md:flex-row sm:flex-col justify-between">
+              <nav
+                className="mt-3.5 xl:mt-5"
                 role="navigation"
                 aria-labelledby="accessibleSectionHeader2"
               >
@@ -85,7 +90,7 @@ export function Footer(props) {
                   })}
                 </ul>
               </nav>
-              <div>
+              <div className=" ">
                 <div className="mt-3 float-left md:hidden sm:hidden">
                   <Button
                     id="top_btn"
@@ -98,7 +103,7 @@ export function Footer(props) {
                   />
                 </div>
                 <Image
-                  className="sm:pr-16 pr-4 mb-2.5 sm:mt-6 md:mt-3 mt-5 h-6 float-right"
+                  className="sm:h-40px h-25px mb-2.5 sm:mt-6 md:mt-3 mt-5 float-right"
                   src={props.logoUrl}
                   alt={props.logoAltText}
                 />
@@ -112,68 +117,66 @@ export function Footer(props) {
 }
 
 Footer.defaultProps = {
-  landscapeBgImg:
-    "https://www.canada.ca/etc/designs/canada/wet-boew/assets/landscape.png",
-  logoUrl:
-    "https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg",
+  landscapeBgImg: bg_img,
+  logoUrl: logo,
   logoAltText: "Symbol of the Government of Canada",
   landscapeLinks: [
     {
-      landscapeLink: EN.landscapeLinks.link1link,
+      landscapeLink: "/",
       landscapeLinkText: EN.landscapeLinks.link1,
     },
     {
-      landscapeLink: EN.landscapeLinks.link2link,
+      landscapeLink: "/",
       landscapeLinkText: EN.landscapeLinks.link2,
     },
     {
-      landscapeLink: EN.landscapeLinks.link3link,
+      landscapeLink: "/",
       landscapeLinkText: EN.landscapeLinks.link3,
     },
     {
-      landscapeLink: EN.landscapeLinks.link4link,
+      landscapeLink: "/",
       landscapeLinkText: EN.landscapeLinks.link4,
     },
     {
-      landscapeLink: EN.landscapeLinks.link5link,
+      landscapeLink: "/",
       landscapeLinkText: EN.landscapeLinks.link5,
     },
     {
-      landscapeLink: EN.landscapeLinks.link6link,
+      landscapeLink: "/",
       landscapeLinkText: EN.landscapeLinks.link6,
     },
     {
-      landscapeLink: EN.landscapeLinks.link7link,
+      landscapeLink: "/",
       landscapeLinkText: EN.landscapeLinks.link7,
     },
     {
-      landscapeLink: EN.landscapeLinks.link8link,
+      landscapeLink: "/",
       landscapeLinkText: EN.landscapeLinks.link8,
     },
     {
-      landscapeLink: EN.landscapeLinks.link9link,
+      landscapeLink: "/",
       landscapeLinkText: EN.landscapeLinks.link9,
     },
   ],
   brandLinks: [
     {
-      brandLink: EN.brandLinks.link1link,
+      brandLink: "/",
       brandLinkText: EN.brandLinks.link1,
     },
     {
-      brandLink: EN.brandLinks.link2link,
+      brandLink: "/",
       brandLinkText: EN.brandLinks.link2,
     },
     {
-      brandLink: EN.brandLinks.link3link,
+      brandLink: "/",
       brandLinkText: EN.brandLinks.link3,
     },
     {
-      brandLink: EN.brandLinks.link4link,
+      brandLink: "/",
       brandLinkText: EN.brandLinks.link4,
     },
     {
-      brandLink: EN.brandLinks.link5link,
+      brandLink: "/",
       brandLinkText: EN.brandLinks.link5,
     },
   ],
@@ -181,14 +184,9 @@ Footer.defaultProps = {
 
 Footer.propTypes = {
   /**
-   * toggle between french and english defaults
-   * error option will render the error page
-   * footer.
-   *
-   * fr not implemented yet, must manually pass in all French props
-   * for the french links shown in the example
+   * If true will display the error page version of the footer component
    */
-  lang: PropTypes.oneOf(["en", "fr", "error"]).isRequired,
+  error: PropTypes.bool.isRequired,
 
   /**
    * hyperlinks for top portion of footer
@@ -197,7 +195,7 @@ Footer.propTypes = {
     PropTypes.shape({
       landscapeLink: PropTypes.string.isRequired,
       landscapeLinkText: PropTypes.string.isRequired,
-    })
+    }).isRequired
   ),
 
   /**
@@ -213,7 +211,7 @@ Footer.propTypes = {
       brandLink: PropTypes.string.isRequired,
       brandLinkText: PropTypes.string.isRequired,
     })
-  ),
+  ).isRequired,
 
   /**
    * Add the path Link to the top of your page for the "to the Top" button in mobile

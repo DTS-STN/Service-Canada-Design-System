@@ -25,6 +25,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 - Button test cases/stories/html (react.js)
 - Image Component
 - Link Component
+- Message Component
+- Header Component
+- Menu Component
 
 ### Changed
 
@@ -43,7 +46,13 @@ Initial release of the Design System Package
 
 ### Added
 
-Initial release of the Design System Package
-
 - Footer component
 - ErrorPage component
+
+## [v1.3.0] - 2022-01-20
+
+### Added
+
+- Message Component
+- Header Component
+- Menu Component
