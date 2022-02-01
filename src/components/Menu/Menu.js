@@ -28,7 +28,7 @@ export function Menu(props) {
     : "menuDropdown menuRight lg:text-white text-gray-700";
   return (
     <div className="headerNav bg-multi-blue-blue70 absolute">
-      <nav className="flex items-center justify-between flex-wrap w-full">
+      <nav className="sm:container flex items-center justify-between flex-wrap w-full">
         <div className="flex items-center flex-shrink-0 text-white mr-6 px-4">
           <h3 id="mainSiteNav" className="menuHeader">
             {props.menuHeaderTitle}
@@ -89,7 +89,7 @@ export function Menu(props) {
                         ? setHeaderDropdownClass("block")
                         : setHeaderDropdownClass("hidden")
                     }
-                    className="flex font-bold justify-between items-center lg:py-0 md:py-4 sm:py-4 pr-4 lg:pl-3 w-full"
+                    className="flex font-bold font-body justify-between items-center lg:py-0 md:py-4 sm:py-4 pr-4 lg:pl-3 w-full"
                   >
                     {props.lang === "fr"
                       ? FR.myAccountTitle
@@ -116,7 +116,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="block py-2 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold "
+                          className="block py-2 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold font-body "
                         >
                           {props.lang === "fr"
                             ? FR.myBenfitsAndServices
@@ -126,7 +126,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="block py-2 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold "
+                          className="block py-2 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
                         >
                           {props.lang === "fr"
                             ? FR.accountSettings
@@ -136,7 +136,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="block py-2 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold"
+                          className="block py-2 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
                         >
                           {props.lang === "fr"
                             ? FR.CRAMyAccounts
@@ -146,7 +146,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="block py-2 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold"
+                          className="block py-2 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
                         >
                           {props.lang === "fr" ? FR.signOut : EN.signOut}
                         </a>
@@ -157,7 +157,7 @@ export function Menu(props) {
               ) : (
                 <li
                   key="1"
-                  className={`py-4 px-6 font-bold `}
+                  className={`py-4 px-6 font-bold font-body`}
                   aria-current="page"
                 >
                   {props.lang === "fr" ? FR.myAccountTitle : EN.myAccountTitle}

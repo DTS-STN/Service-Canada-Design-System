@@ -9,44 +9,37 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Menu } from "../Menu/Menu";
 import { Image } from "../Image/Image";
+import { Link } from "../Link/Link";
 import EN from "../../translations/en.json";
+import logoFile from "../../assets/wmms-blk.svg";
+import searchIcon from "../../assets/search-icon.svg";
 
 export function Header(props) {
-  const menuItems = [
-    {
-      link: "#",
-      text: EN.menuItems1,
-    },
-    {
-      link: "#",
-      text: EN.menuItems2,
-    },
-    {
-      link: "#",
-      text: EN.menuItems3,
-    },
-  ];
   return (
     <div className="header">
       <header>
-        <div className="flex flex-wrap justify-between items-center mx-auto">
+        <div className="sm:container flex flex-wrap justify-between items-center mx-auto">
           <a href="#" className={`flex ${props.className}`}>
             <Image src={props.logo} alt={props.altText} />
           </a>
           {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}
           <section className="flex lg:hidden md:hidden">
             <h2 className="sr-only">Language Selection</h2>
-            <a className="language-toggle" href="/fr.html" lang="fr">
-              <span className="language-toggle-text">Françaiss</span>
-              <abbr className="language-toggle-abbr" title="Français">
-                fr
-              </abbr>
-            </a>
+            <Link
+              className="language-toggle-text"
+              href="./fr.html"
+              id="langId"
+              text="Françaiss"
+            />
           </section>
           {/* Developer Note: This will be moved as seperate component once search component is implemented */}
-          <section className="w-full lg:flex lg:w-auto md:flex md:w-auto py-2">
+          <section className="w-full lg:flex lg:w-22.5 md:flex md:w-22.5 py-2">
             <h2 className="sr-only">Search</h2>
-            <form className="search-form" role="search" name="search-box">
+            <form
+              className="search-form w-full"
+              role="search"
+              name="search-box"
+            >
               <label className="sr-only search-label" htmlFor="search-input">
                 Search Service Canada
               </label>
@@ -73,27 +66,29 @@ export function Header(props) {
           {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}
           <section className="hidden lg:flex md:flex pl-4 pr-8">
             <h2 className="sr-only">Language Selection</h2>
-            <a className="language-toggle" href="/fr.html" lang="fr">
-              <span className="language-toggle-text">Français</span>
-              <abbr className="language-toggle-abbr" title="Français">
-                fr
-              </abbr>
-            </a>
+            <Link href="./fr.html" id="langId2" text="Françaiss" />
           </section>
-          {/* <section className='w-full relative'> */}
-          <Menu
-            menuHeaderTitle={EN.menuHeaderTitle}
-            menuButtonTitle={EN.menuButtonTitle}
-            isAuthenticated={true}
-            lang="en"
-            items={menuItems}
-          />
-          {/* </section> */}
+          {props.menuItems && (
+            <Menu
+              menuHeaderTitle={EN.menuHeaderTitle}
+              menuButtonTitle={EN.menuButtonTitle}
+              isAuthenticated={true}
+              lang="en"
+              items={props.menuItems}
+            />
+          )}
         </div>
       </header>
     </div>
   );
 }
+
+Header.defaultProps = {
+  className: "header-logo",
+  logo: logoFile,
+  altText: "Government of Canada",
+  searchIcon: searchIcon,
+};
 
 Header.propTypes = {
   /**
@@ -116,6 +111,18 @@ Header.propTypes = {
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
   ]),
+
+  /**
+   * Menu items
+   *
+   */
+  menuItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      link: PropTypes.string,
+      text: PropTypes.string,
+    })
+  ),
+
   /**
    * Test id for unit test
    */ dataTestId: PropTypes.string,
