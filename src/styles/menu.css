@@ -1,8 +1,35 @@
 @tailwind screens;
 
+.headerNav {
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+}
+.subMenu {
+  padding: 20px 18px 20px 40px;
+  left: 0%;
+  right: 0%;
+  top: 21.28%;
+  bottom: 0%;
+  background: #ebf2fc;
+}
+.menuHeader {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28.8px;
+  margin-bottom: 0;
+  color: #ffffff;
+}
+nav {
+  line-height: 28px;
+  width: 100%;
+}
+
 .menuDropdown {
   display: none;
-  background-color: white;
 }
 
 .menuLink:hover > a {
@@ -17,23 +44,35 @@
   display: block;
 }
 
-@screen lg {
+@screen md {
   #menuButton,
   #closeMenu {
     display: none;
   }
 
   .menuDropdown {
-    background: white;
     display: inline-block;
     position: static;
     min-width: fit-content;
     min-height: fit-content;
-    padding-bottom: 1rem;
   }
 
   .menuDropdown > li {
     display: inline-block;
     padding-left: 2rem;
   }
+  .menuDropdown.menuRight > li {
+    padding-left: 0;
+  }
 }
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+  .menuDropdown.menuRight li .dropdown-menu {
+    display: none;
+  }
+  .menuDropdown.menuRight li:hover .dropdown-menu {
+    display: block;
+  }
+}
+/* ============ desktop view .end// ============ */
