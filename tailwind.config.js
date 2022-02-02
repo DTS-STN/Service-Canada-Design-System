@@ -53,6 +53,13 @@ module.exports = {
 
         btnsupertask: ["22px", "32px"],
         btnother: ["20px", "23px"],
+
+        card_nonlink: ["22px", "28px"],
+        card_bodytext: ["20", "26px"],
+
+        caption_large: ["18px", "22px"],
+        caption_regular: ["16", "20px"],
+        caption_small: ["14px", "18px"],
       },
       fontWeight: {
         regular: 400,

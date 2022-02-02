@@ -52,7 +52,7 @@ EnFooter.args = {
     },
     {
       landscapeLink: "url to page",
-      landscapeLinkText: FR.landscapeLinks.link8,
+      landscapeLinkText: EN.landscapeLinks.link8,
     },
     {
       landscapeLink: "url to page",
