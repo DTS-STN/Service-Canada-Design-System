@@ -63,6 +63,7 @@ module.exports = {
       },
       fontWeight: {
         regular: 400,
+        medium: 500,
         bold: 700,
       },
       backgroundImage: (theme) => ({
@@ -197,6 +198,7 @@ module.exports = {
         "128px": "128px",
         "160px": "160px",
         "187px": "187px",
+        "200px": "200px",
         "250px": "250px",
         "288px": "288px",
         "320px": "320px",
@@ -219,6 +221,7 @@ module.exports = {
         "14px": "14px",
         "15px": "15px",
         "16px": "16px",
+        "20px": "20px",
         "24px": "24px",
         "28px": "28px",
         "32px": "32px",
@@ -227,10 +230,13 @@ module.exports = {
       margin: {
         "4px": "4px",
         "5px": "5px",
-        "15px": "15px",
+        "8px": "8px",
         "10px": "10px",
         "12px": "12px",
+        "15px": "15px",
+        "16px": "16px",
         "20px": "20px",
+        "24px": "24px",
         "4.5rem": "4.5rem",
       },
 
@@ -261,6 +267,7 @@ module.exports = {
       maxHeight: {
         "25px": "25px",
         "40px": "40px",
+        "200px": "200px",
       },
 
       boxShadow: {
@@ -315,5 +322,6 @@ module.exports = {
     require("./config-plugins/footer-plugin"),
     require("./config-plugins/errorpage-plugin"),
     require("./config-plugins/message-plugin"),
+    require("./config-plugins/cards-plugin"),
   ],
 };
