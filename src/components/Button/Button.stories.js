@@ -5,7 +5,7 @@ export default {
   component: Button,
 };
 
-import btnIcon from "../../assets/youtube.svg";
+import btnIcon from "../../assets/plus.svg";
 
 const Template = (args) => <Button {...args} />;
 
@@ -42,11 +42,9 @@ Primary.args = {
 Secondary.args = {
   id: "secondary",
   text: "Secondary Button",
-  icon: btnIcon,
   iconEnd: false,
   secondary: true,
   styling: "secondary",
-  iconAltText: "secondary",
 };
 
 DangerDisabled.args = {

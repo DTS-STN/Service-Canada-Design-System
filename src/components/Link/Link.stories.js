@@ -13,6 +13,7 @@ export const TitleLink = Template.bind({});
 export const FooterBlueLink = Template.bind({});
 export const FooterWhiteLink = Template.bind({});
 export const BreadcrumbsLink = Template.bind({});
+export const CardActionLink = Template.bind({});
 
 Default.args = {
   id: "link",
@@ -53,4 +54,11 @@ BreadcrumbsLink.args = {
   text: "Small link - Breadcrumbs & French toggle",
   href: "/",
   linkStyle: "smBreadcrumbs",
+};
+
+CardActionLink.args = {
+  id: "link",
+  text: "Card Action Link",
+  href: "/",
+  linkStyle: "cardActionLink",
 };

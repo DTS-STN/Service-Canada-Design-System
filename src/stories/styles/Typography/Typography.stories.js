@@ -154,6 +154,70 @@ Primary.args = {
           <li>color: grey100</li>
         </ul>
       </div>
+
+      <p className="heading2">Cards</p>
+      <div className="card-title-non-link p-4">
+        Example Text: Card Non Link - Lorem Ipsum is simply dummy text.
+      </div>
+      <div className="bg-gray-200 p-4 m-4">
+        <p className="body-bold">class-name: card-title-non-link</p>
+        <ul>
+          <li>font-size: 22px</li>
+          <li>line-height: 28px</li>
+          <li>font-weight: 700</li>
+          <li>color: grey100</li>
+        </ul>
+      </div>
+      <div className="card-body-text p-4">
+        Example Text: Card Body text - Lorem Ipsum is simply dummy text.
+      </div>
+      <div className="bg-gray-200 p-4 m-4">
+        <p className="body-bold">class-name: card-body-text</p>
+        <ul>
+          <li>font-size: 20px</li>
+          <li>line-height: 26px</li>
+          <li>font-weight: 700</li>
+          <li>color: grey90</li>
+        </ul>
+      </div>
+
+      <p className="heading2">Captions</p>
+      <div className="caption-large p-4">
+        Example Text: Caption Large - Lorem Ipsum is simply dummy text.
+      </div>
+      <div className="bg-gray-200 p-4 m-4">
+        <p className="body-bold">class-name: caption-large</p>
+        <ul>
+          <li>font-size: 18px</li>
+          <li>line-height: 22px</li>
+          <li>font-weight: 400</li>
+          <li>color: grey85a</li>
+        </ul>
+      </div>
+      <div className="caption-regular p-4">
+        Example Text: Caption Regular - Lorem Ipsum is simply dummy text.
+      </div>
+      <div className="bg-gray-200 p-4 m-4">
+        <p className="body-bold">class-name: caption-regular</p>
+        <ul>
+          <li>font-size: 16px</li>
+          <li>line-height: 20px</li>
+          <li>font-weight: 400</li>
+          <li>color: grey85a</li>
+        </ul>
+      </div>
+      <div className="caption-small p-4">
+        Example Text: Caption Small - Lorem Ipsum is simply dummy text.
+      </div>
+      <div className="bg-gray-200 p-4 m-4">
+        <p className="body-bold">class-name: caption-small</p>
+        <ul>
+          <li>font-size: 14x</li>
+          <li>line-height: 18px</li>
+          <li>font-weight: 400</li>
+          <li>color: grey85a</li>
+        </ul>
+      </div>
     </>
   ),
 };
