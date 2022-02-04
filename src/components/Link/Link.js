@@ -25,6 +25,10 @@ export function Link(props) {
       basicStyle =
         "text-multi-blue-blue70b font-body text-browserh8 leading-23px font-normal hover:text-multi-blue-blue50b";
       break;
+    case "cardActionLink":
+      basicStyle =
+        "text-multi-blue-blue70b font-body text-browserh5 underline leading-28px font-normal hover:text-multi-blue-blue50b";
+      break;
     default:
       basicStyle =
         "underline text-multi-blue-blue70b font-body text-browserh5 text-mobileh5 leading-33px hover:text-multi-blue-blue50b";

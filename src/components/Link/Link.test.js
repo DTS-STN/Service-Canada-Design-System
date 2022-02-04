@@ -8,6 +8,7 @@ import {
   FooterWhiteLink,
   FooterBlueLink,
   TitleLink,
+  CardActionLink,
   BreadcrumbsLink,
 } from "./Link.stories";
 import { Link } from "./Link";
@@ -49,6 +50,16 @@ describe("Link", () => {
     );
     expect(screen.getByText("Title Link")).toHaveClass(
       "text-multi-blue-blue70b font-header text-browserh5  leading-23px font-normal hover:text-multi-blue-blue50b"
+    );
+  });
+
+  it("renders Card Action link", () => {
+    render(<Link {...CardActionLink.args} />);
+    expect(screen.getByText("Card Action Link")).toHaveTextContent(
+      CardActionLink.args.text
+    );
+    expect(screen.getByText("Card Action Link")).toHaveClass(
+      "text-multi-blue-blue70b font-body text-browserh5 underline leading-28px font-normal hover:text-multi-blue-blue50b"
     );
   });
 
