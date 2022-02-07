@@ -213,6 +213,7 @@ module.exports = {
         1: "1",
       },
       padding: {
+        "0px": "0px",
         "4px": "4px",
         "5px": "5px",
         "6px": "6px",

@@ -1,3 +1,4 @@
+import { Props } from "@storybook/addon-docs";
 import PropTypes from "prop-types";
 import React from "react";
 import { Image } from "../Image/Image";
@@ -5,7 +6,7 @@ import { Link } from "../Link/Link";
 
 export function Cards(props) {
   const {
-    cardId,
+    id,
     titleProps,
     labelProps,
     secondaryText,
@@ -16,31 +17,54 @@ export function Cards(props) {
     secondLinkProps,
     hasLinkFirst,
     hasLinkSecond,
+    displayColumn,
   } = props;
+  let display = displayColumn ? "flex flex-col" : "grid grid-cols-2";
+  let link2Padding = displayColumn ? "mt-24px" : "mt-20px ";
   return (
     // remove width after, just for testing
-    <div
-      id={cardId}
-      className="rounded shadow-md flex flex-col py-20px px-24px"
-    >
-      <p className="card-title-non-link mb-8px">{titleProps.title}</p>
-      {/* Replace with Label Component */}
-      <p className="">Label Component</p>
-      <p className="caption-large">{secondaryText}</p>
-      {hasDivider ? <div className="horizontal-muted my-16px" /> : null}
-      <Image
-        className="mb-16px h-200px"
-        id={imageProps.id}
-        alt={imageProps.altText}
-        src={imageProps.imgPath}
-      />
-      <p className="mb-20px leading-tight card-body-text">{description}</p>
-      <div className="flex flex-col sm:flex-row">
+    <div id={id} className="rounded shadow-md flex flex-col">
+      <div className="pt-20px px-24px">
+        {titleProps.hasLink ? (
+          <Link
+            linkStyle="titleLink"
+            id="cardTitle"
+            text={titleProps.title}
+            href={titleProps.path}
+          />
+        ) : (
+          <p className="card-title-non-link">{titleProps.title}</p>
+        )}
+        {/* Replace with Label Component */}
+        {labelProps !== undefined ? <p className="">Label Component</p> : null}
+        {secondaryText !== undefined ? (
+          <p className="caption-large">{secondaryText}</p>
+        ) : null}
+        {hasDivider ? <div className="horizontal-muted my-16px" /> : null}
+      </div>
+      {imageProps !== undefined ? (
+        <>
+          <Image
+            className="h-200px"
+            id={imageProps.id}
+            alt={imageProps.altText}
+            src={imageProps.imgPath}
+          />
+          <p className="px-24px mt-20px leading-tight card-body-text">
+            {description}
+          </p>
+        </>
+      ) : (
+        <p className="px-24px mt-16px leading-tight card-body-text">
+          {description}
+        </p>
+      )}
+      <div className={`mb-20px px-24px ${display}`}>
         {/* update linkStyle when stlye is created */}
         {hasLinkFirst || !titleProps.hasLink ? (
-          <div className="mb-20px">
+          <div className="sm:mt-24px mt-20px">
             <Link
-              linkStyle="titleLink"
+              linkStyle="cardActionLink"
               id={firstLinkProps.id}
               text={firstLinkProps.name}
               href={firstLinkProps.path}
@@ -48,12 +72,14 @@ export function Cards(props) {
           </div>
         ) : null}
         {hasLinkSecond ? (
-          <Link
-            linkStyle="titleLink"
-            id={secondLinkProps.id}
-            text={secondLinkProps.name}
-            href={secondLinkProps.path}
-          />
+          <div className={link2Padding}>
+            <Link
+              linkStyle="cardActionLink"
+              id={secondLinkProps.id}
+              text={secondLinkProps.name}
+              href={secondLinkProps.path}
+            />
+          </div>
         ) : null}
       </div>
     </div>
@@ -64,7 +90,7 @@ Cards.propTypes = {
   /**
    * component id
    */
-  cardId: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 
   /**
    * Props for the cards title.
@@ -145,4 +171,10 @@ Cards.propTypes = {
    * Must also pass into secondLinkProps with its required props
    */
   hasLinkSecond: PropTypes.bool,
+
+  /**
+   * prop used to switch action links from rows display to
+   * col display. By default will display as rows
+   */
+  displayColumn: PropTypes.bool,
 };
