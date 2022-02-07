@@ -49,7 +49,7 @@ describe("Link", () => {
       TitleLink.args.text
     );
     expect(screen.getByText("Title Link")).toHaveClass(
-      "underline text-multi-blue-blue70b font-header text-browserh5  leading-23px font-regular hover:text-multi-blue-blue50b"
+      "underline text-multi-blue-blue70b font-header text-browserh5  leading-23px font-bold hover:text-multi-blue-blue50b"
     );
   });
 
