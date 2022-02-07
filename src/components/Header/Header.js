@@ -11,7 +11,7 @@ import { Menu } from "../Menu/Menu";
 import { Image } from "../Image/Image";
 import { Link } from "../Link/Link";
 import EN from "../../translations/en.json";
-import logoFile from "../../assets/wmms-blk.svg";
+import logoFile from "../../assets/Government of Canada signature.svg";
 import searchIcon from "../../assets/search-icon.svg";
 
 export function Header(props) {
@@ -29,7 +29,8 @@ export function Header(props) {
               className="language-toggle-text"
               href="./fr.html"
               id="langId"
-              text="Français"
+              text="Françaiss"
+              abbr="FR"
             />
           </section>
           {/* Developer Note: This will be moved as seperate component once search component is implemented */}
@@ -48,7 +49,7 @@ export function Header(props) {
                 id="search-input"
                 className="search-input"
                 type="search"
-                placeholder="Search canada.ca"
+                placeholder="Search Canada.ca"
               />
               <button
                 className="search-button"
@@ -66,7 +67,7 @@ export function Header(props) {
           {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}
           <section className="hidden lg:flex md:flex pl-4 pr-8">
             <h2 className="sr-only">Language Selection</h2>
-            <Link href="./fr.html" id="langId2" text="Français" />
+            <Link href="./fr.html" id="langId2" text="Françaiss" />
           </section>
           {props.menuItems && (
             <Menu
