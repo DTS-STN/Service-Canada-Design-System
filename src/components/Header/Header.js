@@ -29,7 +29,7 @@ export function Header(props) {
               className="language-toggle-text"
               href="./fr.html"
               id="langId"
-              text="Françaiss"
+              text="Français"
               abbr="FR"
             />
           </section>
@@ -42,7 +42,7 @@ export function Header(props) {
               name="search-box"
             >
               <label className="sr-only search-label" htmlFor="search-input">
-                Search Service Canada
+                Search Canada.ca
               </label>
               <input
                 value=""
@@ -67,7 +67,7 @@ export function Header(props) {
           {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}
           <section className="hidden lg:flex md:flex pl-4 pr-8">
             <h2 className="sr-only">Language Selection</h2>
-            <Link href="./fr.html" id="langId2" text="Françaiss" />
+            <Link href="./fr.html" id="langId2" text="Français" />
           </section>
           {props.menuItems && (
             <Menu

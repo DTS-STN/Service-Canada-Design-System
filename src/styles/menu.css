@@ -71,7 +71,7 @@ nav {
   .menuDropdown.menuRight li .dropdown-menu {
     display: none;
   }
-  .menuDropdown.menuRight li:hover .dropdown-menu {
+  .menuDropdown.menuRight li .dropdown-menu {
     display: block;
   }
 }

@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import EN from "../../translations/en.json";
 import FR from "../../translations/fr.json";
+import upArrow from "../../assets/upArrow.svg";
+import { Image } from "../Image/Image";
+
 /**
  * Menu component
  */
@@ -10,8 +13,14 @@ export function Menu(props) {
   const path = window.location.pathname;
 
   let [headerDropdownClass, setHeaderDropdownClass] = useState("hidden");
+  let [mobileMenu, setMobileMenu] = useState("hidden");
+
   //Function for changing menu state
   function onMenuClick() {
+    setHeaderDropdownClass(
+      headerDropdownClass === "hidden" ? "block" : "hidden"
+    );
+    setMobileMenu(mobileMenu === "hidden" ? "block" : "hidden");
     const menuButton = document.getElementById("menuButton");
     const menuDropdown = document.getElementById("menuDropdown");
     const menuDropdownSub = document.getElementById("menuDropdownSub");
@@ -24,7 +33,7 @@ export function Menu(props) {
   }
 
   const subMenuClasses = props.isAuthenticated
-    ? "menuDropdown menuRight hover:bg-multi-blue-blue2  lg:text-white text-gray-700 hover:text-multi-neutrals-grey100"
+    ? "menuDropdown menuRight"
     : "menuDropdown menuRight lg:text-white text-gray-700";
   return (
     <div className="headerNav bg-multi-blue-blue70 absolute">
@@ -47,7 +56,26 @@ export function Menu(props) {
             <span className="inline-block align-middle pl-3 font-body text-p leading-none">
               {props.menuButtonTitle}
             </span>
-            <span className="inline-block align-middle icon-cheveron-right transform90" />
+            {mobileMenu !== "hidden" ? (
+              <span className="inline-block align-middle">
+                <Image className="" src={upArrow} alt="down arrow" />
+              </span>
+            ) : (
+              <span className="inline-block align-middle">
+                <svg
+                  className="ml-1 w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
+              </span>
+            )}
           </button>
         </div>
         <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto bg-multi-blue-blue2 lg:bg-multi-blue-blue70">
@@ -78,7 +106,19 @@ export function Menu(props) {
             </ul>
           </div>
           <div>
-            <ul id="menuDropdownSub" className={subMenuClasses}>
+            <ul
+              id="menuDropdownSub"
+              className={`${
+                mobileMenu !== "hidden"
+                  ? "w-full block flex-grow lg:flex lg:items-center lg:w-auto bg-multi-blue-blue2 lg:bg-multi-blue-blue70"
+                  : subMenuClasses +
+                    `${
+                      headerDropdownClass === "hidden"
+                        ? " lg:text-white text-gray-700 "
+                        : " bg-multi-blue-blue2 text-multi-neutrals-grey100"
+                    }`
+              }`}
+            >
               {props.isAuthenticated ? (
                 <li className="py-4 px-6">
                   <button
@@ -94,22 +134,30 @@ export function Menu(props) {
                     {props.lang === "fr"
                       ? FR.myAccountTitle
                       : EN.myAccountTitle}
-                    <svg
-                      className="ml-1 w-4 h-4"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
+                    {headerDropdownClass !== "hidden" ? (
+                      <Image className="" src={upArrow} alt="down arrow" />
+                    ) : (
+                      <svg
+                        className="ml-1 w-4 h-4"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>
+                    )}
                   </button>
 
                   <div
                     id="dropdownNavbar"
+                    style={{
+                      display:
+                        headerDropdownClass === "hidden" ? "none" : "block",
+                    }}
                     className={`dropdown-menu lg:absolute z-10 top-60px text-base list-none bg-blue2 rounded divide-y divide-gray-100 dark:bg-gray-700 dark:divide-gray-600`}
                   >
                     <ul className="py-0" aria-labelledby="dropdownLargeButton">

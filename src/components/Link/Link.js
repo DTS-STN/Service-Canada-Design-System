@@ -46,7 +46,10 @@ export function Link(props) {
       disabled={props.disabled}
       lang={props.lang}
     >
-      {props.text}
+      <span class="language-toggle-text"> {props.text}</span>
+      <abbr class="language-toggle-abbr" title="Français">
+        {props.abbr}
+      </abbr>
     </a>
   );
 }
@@ -71,6 +74,11 @@ Link.propTypes = {
    * Lang attribute for links that do not match the language of the top level document
    */
   lang: PropTypes.string,
+  /**
+   * Abbreviation for text
+   */
+  abbr: PropTypes.string,
+
   /**
    * css overrides for Link
    */
