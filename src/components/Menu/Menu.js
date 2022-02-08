@@ -43,7 +43,13 @@ export function Menu(props) {
             {props.menuHeaderTitle}
           </h3>
         </div>
-        <div className="block lg:hidden pr-4 focus:bg-multi-blue-blue2 text-white border-l-2 border-white">
+        <div
+          className={`block lg:hidden pr-4 focus:bg-multi-blue-blue2 text-white border-l-2 border-white  ${
+            mobileMenu === "hidden"
+              ? ""
+              : " bg-multi-blue-blue2 text-multi-neutrals-grey100"
+          }`}
+        >
           <button
             id="menuButton"
             onClick={onMenuClick}
@@ -53,12 +59,12 @@ export function Menu(props) {
             aria-controls="menuDropdown"
             data-testid="menuButton"
           >
-            <span className="inline-block align-middle pl-3 font-body text-p leading-none">
+            <span className="inline-block font-bold align-middle pl-3 font-body text-p leading-none">
               {props.menuButtonTitle}
             </span>
             {mobileMenu !== "hidden" ? (
               <span className="inline-block align-middle">
-                <Image className="" src={upArrow} alt="down arrow" />
+                <Image className="px-2" src={upArrow} alt="down arrow" />
               </span>
             ) : (
               <span className="inline-block align-middle">
@@ -120,7 +126,7 @@ export function Menu(props) {
               }`}
             >
               {props.isAuthenticated ? (
-                <li className="py-4 px-6">
+                <li className="py-0 px-4 lg:py-4 lg:px-6">
                   <button
                     id="dropdownNavbarLink"
                     data-dropdown-toggle="dropdownNavbar"
@@ -129,13 +135,13 @@ export function Menu(props) {
                         ? setHeaderDropdownClass("block")
                         : setHeaderDropdownClass("hidden")
                     }
-                    className="flex font-bold font-body justify-between items-center lg:py-0 md:py-4 sm:py-4 pr-4 lg:pl-3 w-full"
+                    className="flex font-bold font-body justify-between items-center py-4 lg:py-0 md:py-4 sm:py-4 pr-4 lg:pl-3 w-full"
                   >
                     {props.lang === "fr"
                       ? FR.myAccountTitle
                       : EN.myAccountTitle}
                     {headerDropdownClass !== "hidden" ? (
-                      <Image className="" src={upArrow} alt="down arrow" />
+                      <Image className="px-2" src={upArrow} alt="up arrow" />
                     ) : (
                       <svg
                         className="ml-1 w-4 h-4"
@@ -164,7 +170,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="block py-2 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold font-body "
+                          className="block py-4 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold font-body "
                         >
                           {props.lang === "fr"
                             ? FR.myBenfitsAndServices
@@ -174,7 +180,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="block py-2 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
+                          className="block py-4 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
                         >
                           {props.lang === "fr"
                             ? FR.accountSettings
@@ -184,7 +190,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="block py-2 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
+                          className="block py-4 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
                         >
                           {props.lang === "fr"
                             ? FR.CRAMyAccounts
@@ -194,7 +200,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="block py-2 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
+                          className="block py-4 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
                         >
                           {props.lang === "fr" ? FR.signOut : EN.signOut}
                         </a>
