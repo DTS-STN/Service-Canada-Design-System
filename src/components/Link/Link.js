@@ -46,8 +46,9 @@ export function Link(props) {
       disabled={props.disabled}
       lang={props.lang}
     >
-      <span class="language-toggle-text"> {props.text}</span>
-      <abbr class="language-toggle-abbr" title="Français">
+      <span class={props.abbr ? "language-toggle-text" : ""}>{props.text}</span>
+      <abbr class="language-toggle-abbr" title={props.text}>
+        {" "}
         {props.abbr}
       </abbr>
     </a>
