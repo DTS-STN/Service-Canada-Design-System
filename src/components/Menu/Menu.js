@@ -47,19 +47,19 @@ export function Menu(props) {
   }
 
   const subMenuClasses = props.isAuthenticated
-    ? "menuDropdown menuRight  lg:text-white text-gray-700 lg:absolute sm:absolute md:w-full sm:w-full sm:left-0"
-    : "menuDropdown menuRight lg:text-white text-gray-700 lg:absolute sm:absolute md:w-full sm:w-full sm:left-0";
+    ? "menuDropdown menuRight  md:text-white text-gray-700  md:w-full sm:w-full sm:left-0"
+    : "menuDropdown menuRight md:text-white text-gray-700 md:w-full sm:w-full sm:left-0";
   return (
-    <div className="headerNav bg-multi-blue-blue70 absolute" ref={ref}>
-      <nav className="lg:container flex items-center justify-between flex-wrap w-full relative">
-        <div className="flex items-center flex-shrink-0 text-white mr-6 px-4">
-          <h3 id="mainSiteNav" className="menuHeader">
+    <div className="headerNav bg-multi-blue-blue70" ref={ref}>
+      <nav className="md:container flex items-center justify-between flex-wrap w-full relative">
+        <div className="flex items-center flex-shrink-0 text-white">
+          <h3 id="mainSiteNav" className="md:p-0 container menuHeader">
             {props.menuHeaderTitle}
           </h3>
         </div>
         <div
           id="menuButtonParent"
-          className="menuButtonParent block lg:hidden pr-4 focus:bg-multi-blue-blue2 text-white border-l-2 border-white"
+          className="menuButtonParent block md:hidden pr-4 focus:bg-multi-blue-blue2 text-white border-l-2 border-white"
         >
           <button
             id="menuButton"
@@ -70,7 +70,7 @@ export function Menu(props) {
             aria-controls="menuDropdown"
             data-testid="menuButton"
           >
-            <span className="inline-block align-middle pl-3 font-body text-p leading-none">
+            <span className="inline-block align-middle pl-3 font-body font-bold text-p leading-none">
               {props.menuButtonTitle}
             </span>
             <svg
@@ -95,8 +95,8 @@ export function Menu(props) {
             </svg>
           </button>
         </div>
-        <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto bg-multi-blue-blue2 lg:bg-multi-blue-blue70">
-          <div className="lg:flex-grow lg:text-center lg:flex hidden">
+        <div className="w-full block flex-grow md:flex md:items-center md:w-auto bg-multi-blue-blue2 md:bg-multi-blue-blue70">
+          <div className="md:flex-grow md:text-center md:flex hidden">
             <ul id="menuDropdown" className="menuDropdown w-full">
               {props.items.map((item, key) => {
                 const exactURL = path === item.link; // it's exactly this url
@@ -105,7 +105,7 @@ export function Menu(props) {
                 return (
                   <li
                     key={key}
-                    className={`py-4 px-4 inline-block cursor-pointer text-custom-blue-projects-link lg:text-white text-gray-700 `}
+                    className={`py-4 px-4 inline-block cursor-pointer text-custom-blue-projects-link md:text-white text-gray-700 `}
                     aria-current={exactURL ? "page" : null}
                   >
                     <a
@@ -131,7 +131,7 @@ export function Menu(props) {
                 return (
                   <li
                     key={key}
-                    className={`py-4 px-4 lg:hidden cursor-pointer text-custom-blue-projects-link lg:text-white text-gray-700 `}
+                    className={`py-4 px-4 md:hidden cursor-pointer text-custom-blue-projects-link md:text-white text-gray-700 `}
                     aria-current={exactURL ? "page" : null}
                   >
                     <a
@@ -149,7 +149,7 @@ export function Menu(props) {
               {props.isAuthenticated ? (
                 <li
                   id="buttonNav"
-                  className="py-4 px-4 lg:pl-0 lg:pr-0 buttonNav"
+                  className="py-4 px-4 md:pl-0 md:pr-0 buttonNav"
                 >
                   <button
                     id="dropdownNavbarLink"
@@ -161,7 +161,7 @@ export function Menu(props) {
                         ? setHeaderDropdownClass("block")
                         : setHeaderDropdownClass("hidden");
                     }}
-                    className="flex font-bold font-body justify-between items-center lg:py-0 md:py-4 md:pt-0 sm:py-4 sm:pt-0 pr-4 lg:pl-3 w-full"
+                    className="flex font-bold font-body justify-between items-center md:py-2px sm:py-4 sm:pt-0 pr-4 md:pl-3 w-full"
                   >
                     {props.lang === "fr"
                       ? FR.myAccountTitle
@@ -189,7 +189,7 @@ export function Menu(props) {
                   </button>
 
                   <div
-                    className={`dropdown-menu ${headerDropdownClass} lg:absolute z-10 top-60px text-base list-none bg-blue2 rounded divide-y divide-gray-100 dark:bg-gray-700 dark:divide-gray-600`}
+                    className={`dropdown-menu ${headerDropdownClass} md:absolute z-10 top-60px text-base list-none bg-blue2 rounded divide-y divide-gray-100 dark:bg-gray-700 dark:divide-gray-600`}
                   >
                     <ul
                       id="dropdownNavbar"
