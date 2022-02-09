@@ -1,54 +1,65 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
-import { useState } from "react";
 import EN from "../../translations/en.json";
 import FR from "../../translations/fr.json";
-import upArrow from "../../assets/upArrow.svg";
-import { Image } from "../Image/Image";
-
 /**
  * Menu component
  */
 export function Menu(props) {
+  const ref = useRef();
+  let [headerDropdownClass, setHeaderDropdownClass] = React.useState("hidden");
+  let [headerMobileDropdownClass, setHeaderMobileDropdownClass] =
+    React.useState(false);
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      // If the menu is open and the clicked target is not within the menu,
+      // then close the menu
+      if (
+        headerDropdownClass === "block" &&
+        ref.current &&
+        !ref.current.contains(e.target)
+      ) {
+        setHeaderDropdownClass("hidden");
+      }
+    };
+
+    document.addEventListener("mousedown", checkIfClickedOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", checkIfClickedOutside);
+    };
+  }, [headerDropdownClass]);
+
   const path = window.location.pathname;
-
-  let [headerDropdownClass, setHeaderDropdownClass] = useState("hidden");
-  let [mobileMenu, setMobileMenu] = useState("hidden");
-
   //Function for changing menu state
   function onMenuClick() {
-    setHeaderDropdownClass(
-      headerDropdownClass === "hidden" ? "block" : "hidden"
-    );
-    setMobileMenu(mobileMenu === "hidden" ? "block" : "hidden");
     const menuButton = document.getElementById("menuButton");
+    const menuButtonParent = document.getElementById("menuButtonParent");
     const menuDropdown = document.getElementById("menuDropdown");
     const menuDropdownSub = document.getElementById("menuDropdownSub");
-
+    setHeaderMobileDropdownClass(!headerMobileDropdownClass);
     menuDropdown.classList.toggle("active");
     menuDropdownSub.classList.toggle("active");
+    menuButtonParent.classList.toggle("active");
     menuButton.getAttribute("aria-expanded") === "true"
       ? menuButton.setAttribute("aria-expanded", false)
       : menuButton.setAttribute("aria-expanded", true);
   }
 
   const subMenuClasses = props.isAuthenticated
-    ? "menuDropdown menuRight"
-    : "menuDropdown menuRight lg:text-white text-gray-700";
+    ? "menuDropdown menuRight  lg:text-white text-gray-700 lg:absolute sm:absolute md:w-full sm:w-full sm:left-0"
+    : "menuDropdown menuRight lg:text-white text-gray-700 lg:absolute sm:absolute md:w-full sm:w-full sm:left-0";
   return (
-    <div className="headerNav bg-multi-blue-blue70 absolute">
-      <nav className="sm:container flex items-center justify-between flex-wrap w-full">
+    <div className="headerNav bg-multi-blue-blue70 absolute" ref={ref}>
+      <nav className="lg:container flex items-center justify-between flex-wrap w-full relative">
         <div className="flex items-center flex-shrink-0 text-white mr-6 px-4">
           <h3 id="mainSiteNav" className="menuHeader">
             {props.menuHeaderTitle}
           </h3>
         </div>
         <div
-          className={`block lg:hidden pr-4 focus:bg-multi-blue-blue2 text-white border-l-2 border-white  ${
-            mobileMenu === "hidden"
-              ? ""
-              : " bg-multi-blue-blue2 text-multi-neutrals-grey100"
-          }`}
+          id="menuButtonParent"
+          className="menuButtonParent block lg:hidden pr-4 focus:bg-multi-blue-blue2 text-white border-l-2 border-white"
         >
           <button
             id="menuButton"
@@ -59,34 +70,34 @@ export function Menu(props) {
             aria-controls="menuDropdown"
             data-testid="menuButton"
           >
-            <span className="inline-block font-bold align-middle pl-3 font-body text-p leading-none">
+            <span className="inline-block align-middle pl-3 font-body text-p leading-none">
               {props.menuButtonTitle}
             </span>
-            {mobileMenu !== "hidden" ? (
-              <span className="inline-block align-middle">
-                <Image className="px-2" src={upArrow} alt="down arrow" />
-              </span>
-            ) : (
-              <span className="inline-block align-middle">
-                <svg
-                  className="ml-1 w-4 h-4"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </span>
-            )}
+            <svg
+              className="ml-1 w-4 h-4 inline-block"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {!headerMobileDropdownClass ? (
+                <path
+                  fillRule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                ></path>
+              ) : (
+                <path
+                  fill-rule="evenodd"
+                  d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                  clip-rule="evenodd"
+                />
+              )}
+            </svg>
           </button>
         </div>
         <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto bg-multi-blue-blue2 lg:bg-multi-blue-blue70">
-          <div className="lg:flex-grow lg:text-center">
-            <ul id="menuDropdown" className="menuDropdown">
+          <div className="lg:flex-grow lg:text-center lg:flex hidden">
+            <ul id="menuDropdown" className="menuDropdown w-full">
               {props.items.map((item, key) => {
                 const exactURL = path === item.link; // it's exactly this url
                 const includesURL = path.includes(item.link); // it's a child of this url (eg, "/projects/app" includes "/projects")
@@ -94,7 +105,33 @@ export function Menu(props) {
                 return (
                   <li
                     key={key}
-                    className={`py-4 px-4 cursor-pointer text-custom-blue-projects-link lg:text-white text-gray-700 `}
+                    className={`py-4 px-4 inline-block cursor-pointer text-custom-blue-projects-link lg:text-white text-gray-700 `}
+                    aria-current={exactURL ? "page" : null}
+                  >
+                    <a
+                      href={item.link}
+                      className={`font-body font-bold leading-20px  ${
+                        includesURL ? "activePage" : "menuLink"
+                      }`}
+                      title={item.text}
+                    >
+                      {item.text}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <div>
+            <ul id="menuDropdownSub" className={subMenuClasses}>
+              {props.items.map((item, key) => {
+                const exactURL = path === item.link; // it's exactly this url
+                const includesURL = path.includes(item.link); // it's a child of this url (eg, "/projects/app" includes "/projects")
+
+                return (
+                  <li
+                    key={key}
+                    className={`py-4 px-4 lg:hidden cursor-pointer text-custom-blue-projects-link lg:text-white text-gray-700 `}
                     aria-current={exactURL ? "page" : null}
                   >
                     <a
@@ -109,68 +146,60 @@ export function Menu(props) {
                   </li>
                 );
               })}
-            </ul>
-          </div>
-          <div>
-            <ul
-              id="menuDropdownSub"
-              className={`${
-                mobileMenu !== "hidden"
-                  ? "w-full block flex-grow lg:flex lg:items-center lg:w-auto bg-multi-blue-blue2 lg:bg-multi-blue-blue70"
-                  : subMenuClasses +
-                    `${
-                      headerDropdownClass === "hidden"
-                        ? " lg:text-white text-gray-700 "
-                        : " bg-multi-blue-blue2 text-multi-neutrals-grey100"
-                    }`
-              }`}
-            >
               {props.isAuthenticated ? (
-                <li className="py-0 px-4 lg:py-4 lg:px-6">
+                <li
+                  id="buttonNav"
+                  className="py-4 px-4 lg:pl-0 lg:pr-0 buttonNav"
+                >
                   <button
                     id="dropdownNavbarLink"
                     data-dropdown-toggle="dropdownNavbar"
-                    onClick={() =>
-                      headerDropdownClass === "hidden"
+                    onClick={() => {
+                      const buttonNavId = document.getElementById("buttonNav");
+                      buttonNavId.classList.toggle("active");
+                      return headerDropdownClass === "hidden"
                         ? setHeaderDropdownClass("block")
-                        : setHeaderDropdownClass("hidden")
-                    }
-                    className="flex font-bold font-body justify-between items-center py-4 lg:py-0 md:py-4 sm:py-4 pr-4 lg:pl-3 w-full"
+                        : setHeaderDropdownClass("hidden");
+                    }}
+                    className="flex font-bold font-body justify-between items-center lg:py-0 md:py-4 md:pt-0 sm:py-4 sm:pt-0 pr-4 lg:pl-3 w-full"
                   >
                     {props.lang === "fr"
                       ? FR.myAccountTitle
                       : EN.myAccountTitle}
-                    {headerDropdownClass !== "hidden" ? (
-                      <Image className="px-2" src={upArrow} alt="up arrow" />
-                    ) : (
-                      <svg
-                        className="ml-1 w-4 h-4"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
+                    <svg
+                      className="ml-1 w-4 h-4"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      {headerDropdownClass === "hidden" ? (
                         <path
                           fillRule="evenodd"
                           d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                           clipRule="evenodd"
                         ></path>
-                      </svg>
-                    )}
+                      ) : (
+                        <path
+                          fill-rule="evenodd"
+                          d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                          clip-rule="evenodd"
+                        />
+                      )}
+                    </svg>
                   </button>
 
                   <div
-                    id="dropdownNavbar"
-                    style={{
-                      display:
-                        headerDropdownClass === "hidden" ? "none" : "block",
-                    }}
-                    className={`dropdown-menu lg:absolute z-10 top-60px text-base list-none bg-blue2 rounded divide-y divide-gray-100 dark:bg-gray-700 dark:divide-gray-600`}
+                    className={`dropdown-menu ${headerDropdownClass} lg:absolute z-10 top-60px text-base list-none bg-blue2 rounded divide-y divide-gray-100 dark:bg-gray-700 dark:divide-gray-600`}
                   >
-                    <ul className="py-0" aria-labelledby="dropdownLargeButton">
+                    <ul
+                      id="dropdownNavbar"
+                      className="py-0"
+                      aria-labelledby="dropdownLargeButton"
+                    >
                       <li>
                         <a
                           href="/"
-                          className="block py-4 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold font-body "
+                          className="block py-5 px-10 pr-4 text-gray-700 bg-multi-blue-blue2 font-bold font-body "
                         >
                           {props.lang === "fr"
                             ? FR.myBenefitsAndServices
@@ -180,7 +209,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="block py-4 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
+                          className="block py-5 px-10 pr-4 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
                         >
                           {props.lang === "fr"
                             ? FR.accountSettings
@@ -190,7 +219,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="block py-4 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
+                          className="block  py-5 px-10 pr-4 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
                         >
                           {props.lang === "fr"
                             ? FR.CRAMyAccounts
@@ -200,7 +229,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="block py-4 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
+                          className="block  py-5 px-10 pr-4 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
                         >
                           {props.lang === "fr" ? FR.signOut : EN.signOut}
                         </a>

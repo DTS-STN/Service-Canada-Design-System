@@ -25,13 +25,9 @@ export function Link(props) {
       basicStyle =
         "text-multi-blue-blue70b font-body text-browserh8 leading-23px font-normal hover:text-multi-blue-blue50b";
       break;
-    case "cardActionLink":
-      basicStyle =
-        "text-multi-blue-blue70b font-body text-browserh5 underline leading-28px font-normal hover:text-multi-blue-blue50b";
-      break;
     default:
       basicStyle =
-        "underline text-multi-blue-blue70b font-body text-browserh5 text-mobileh5 leading-33px hover:text-multi-blue-blue50b";
+        "lg:underline text-multi-blue-blue70b font-body text-browserh5 font-boldtext-mobileh5 leading-33px hover:text-multi-blue-blue50b";
       break;
   }
 
@@ -46,9 +42,12 @@ export function Link(props) {
       disabled={props.disabled}
       lang={props.lang}
     >
-      <span class={props.abbr ? "language-toggle-text" : ""}>{props.text}</span>
-      <abbr class="language-toggle-abbr" title={props.text}>
-        {" "}
+      {/* <!-- English Text: English --> */}
+      <span className={props.abbr ? "language-toggle-text" : ""}>
+        {props.text}
+      </span>
+      {/* <!-- English Text: title="English", en --> */}
+      <abbr className="language-toggle-abbr" title={props.text}>
         {props.abbr}
       </abbr>
     </a>
@@ -60,7 +59,10 @@ Link.propTypes = {
    * The text that Text Link will display
    */
   text: PropTypes.string,
-
+  /**
+   * Abbrivation for text
+   */
+  abbr: PropTypes.string,
   /**
    * Style link as a Text Link when there's a href
    */
@@ -75,11 +77,6 @@ Link.propTypes = {
    * Lang attribute for links that do not match the language of the top level document
    */
   lang: PropTypes.string,
-  /**
-   * Abbreviation for text
-   */
-  abbr: PropTypes.string,
-
   /**
    * css overrides for Link
    */

@@ -274,6 +274,7 @@ module.exports = {
         "26px": "26px",
         "33px": "33px",
         "22px": "22px",
+        "20px": "20px",
       },
       outline: {
         "black-solid": ["2px solid #000", "1px"],

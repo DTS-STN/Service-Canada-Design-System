@@ -48,7 +48,7 @@
 
 .header-logo {
   width: 75%;
-  max-height: 32px;
+  max-height: 19px;
 }
 
 .language-toggle {
@@ -66,7 +66,7 @@
 .language-toggle-abbr {
   font-family: "Rubik", sans-serif;
   text-transform: uppercase;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .search-section {
@@ -232,7 +232,7 @@
   .header-logo {
     flex-grow: 2;
     width: auto;
-    max-height: 32px;
+    max-height: 27px;
   }
   /*
   .language-select-section {
