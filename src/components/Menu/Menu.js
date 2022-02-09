@@ -173,8 +173,8 @@ export function Menu(props) {
                           className="block py-4 px-4 pr-16 text-gray-700 bg-multi-blue-blue2 font-bold font-body "
                         >
                           {props.lang === "fr"
-                            ? FR.myBenfitsAndServices
-                            : EN.myBenfitsAndServices}
+                            ? FR.myBenefitsAndServices
+                            : EN.myBenefitsAndServices}
                         </a>
                       </li>
                       <li>
