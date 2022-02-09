@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "../Link/Link";
 
 export function Language(props) {
-  const { id, onClick } = props;
+  const { id } = props;
 
   return (
     <>
