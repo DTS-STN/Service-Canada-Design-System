@@ -83,6 +83,38 @@ const typography = plugin(function ({ addUtilities, theme }) {
         fontSize: theme("fontSize.browserbodybold"),
       },
     },
+
+    ".card-title-non-link": {
+      fontSize: theme("fontSize.card_nonlink"),
+      fontWeight: theme("fontWeight.bold"),
+      fontFamily: theme("fontFamily.header"),
+      color: theme("colors.multi.neutrals.grey90"),
+    },
+    ".card-body-text": {
+      fontSize: theme("fontSize.card_bodytext"),
+      fontWeight: theme("fontWeight.bold"),
+      fontFamily: theme("fontFamily.body"),
+      color: theme("colors.multi.neutrals.grey100"),
+    },
+
+    ".caption-large": {
+      fontSize: theme("fontSize.caption_large"),
+      fontWeight: theme("fontWeight.regular"),
+      fontFamily: theme("fontFamily.body"),
+      color: theme("colors.multi.neutrals.grey85a"),
+    },
+    ".caption-regular": {
+      fontSize: theme("fontSize.caption_regular"),
+      fontWeight: theme("fontWeight.regular"),
+      fontFamily: theme("fontFamily.body"),
+      color: theme("colors.multi.neutrals.grey85a"),
+    },
+    ".caption-small": {
+      fontSize: theme("fontSize.caption_small"),
+      fontWeight: theme("fontWeight.regular"),
+      fontFamily: theme("fontFamily.body"),
+      color: theme("colors.multi.neutrals.grey85a"),
+    },
   };
 
   addUtilities(newUtilities);

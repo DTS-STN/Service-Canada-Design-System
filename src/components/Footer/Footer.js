@@ -12,7 +12,7 @@ export function Footer(props) {
   return (
     <footer className="w-full">
       {props.error ? (
-        <section className={"sm:container h-16 bg-multi-neutrals-grey5"}>
+        <section className={"container h-16 bg-multi-neutrals-grey5"}>
           <Image
             className="mb-2.5 sm:mt-3 mt-5 h-6 float-right"
             src={props.logoUrl}
@@ -27,9 +27,9 @@ export function Footer(props) {
               backgroundImage: `url(${props.landscapeBgImg})`,
             }}
           >
-            <section className={`sm:container`}>
+            <section className={`container`}>
               <nav
-                className="pl-4 pr-4 pt-6 pb-6"
+                className=" pt-6 pb-6"
                 role="navigation"
                 aria-labelledby="accessibleSectionHeader1"
               >
@@ -42,7 +42,7 @@ export function Footer(props) {
                     return (
                       <li
                         key={value + index}
-                        className="text-white w-64 md:w-56 lg:w-80 my-2.5 hover:underline"
+                        className="text-white w-64 sm:w-56 lg:w-80 my-2.5 hover:underline"
                       >
                         <Link
                           id={value + index}
@@ -59,7 +59,7 @@ export function Footer(props) {
             </section>
           </div>
           <div className="h-full pb-4 bg-color-multi-neutrals-white ">
-            <section className="sm:container h-auto pt-5 flex flex-col md:flex-row sm:flex-col justify-between">
+            <section className="container h-auto pt-5 flex flex-col md:flex-row justify-between">
               <nav
                 className="mt-3.5 xl:mt-5"
                 role="navigation"
@@ -75,8 +75,8 @@ export function Footer(props) {
                         key={index}
                         className={
                           index === 0
-                            ? "pl-4 sm:mb-4 mb-5 list-inside list-disc sm:list-none text-xxs"
-                            : "pl-4 sm:mb-4 mb-5 list-inside list-disc text-xxs"
+                            ? "pr-4 sm:mb-4 mb-5 list-inside list-disc sm:list-none text-xxs"
+                            : "pr-4 sm:mb-4 mb-5 list-inside list-disc text-xxs"
                         }
                       >
                         <Link
@@ -91,7 +91,7 @@ export function Footer(props) {
                 </ul>
               </nav>
               <div className=" ">
-                <div className="mt-3 float-left md:hidden sm:hidden">
+                <div className="mt-3 float-left sm:hidden">
                   <Button
                     id="top_btn"
                     text="To the top"

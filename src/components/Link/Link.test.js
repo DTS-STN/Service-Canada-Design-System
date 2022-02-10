@@ -8,6 +8,7 @@ import {
   FooterWhiteLink,
   FooterBlueLink,
   TitleLink,
+  CardActionLink,
   BreadcrumbsLink,
 } from "./Link.stories";
 import { Link } from "./Link";
@@ -27,8 +28,8 @@ describe("Link", () => {
     expect(screen.getByText("Regular Link")).toHaveTextContent(
       Default.args.text
     );
-    expect(screen.getByText("Regular Link")).toHaveClass(
-      "underline text-multi-blue-blue70b font-body text-browserh5 text-mobileh5 leading-33px hover:text-multi-blue-blue50b"
+    expect(screen.getByRole("link")).toHaveClass(
+      "lg:underline text-multi-blue-blue70b font-body text-browserh5 font-boldtext-mobileh5 leading-33px hover:text-multi-blue-blue50b"
     );
   });
 
@@ -37,7 +38,7 @@ describe("Link", () => {
     expect(screen.getByText("Regular link with Emphasis")).toHaveTextContent(
       RegularLinkwithEmphasis.args.text
     );
-    expect(screen.getByText("Regular link with Emphasis")).toHaveClass(
+    expect(screen.getByRole("link")).toHaveClass(
       "underline text-multi-blue-blue70b font-body text-browserh5 font-bold text-mobileh5 leading-33px hover:text-multi-blue-blue50b"
     );
   });
@@ -47,8 +48,18 @@ describe("Link", () => {
     expect(screen.getByText("Title Link")).toHaveTextContent(
       TitleLink.args.text
     );
-    expect(screen.getByText("Title Link")).toHaveClass(
-      "text-multi-blue-blue70b font-header text-browserh5  leading-23px font-normal hover:text-multi-blue-blue50b"
+    expect(screen.getByRole("link")).toHaveClass(
+      "text-multi-blue-blue70b font-header text-browserh5 leading-23px font-normal hover:text-multi-blue-blue50b"
+    );
+  });
+
+  it("renders Card Action link", () => {
+    render(<Link {...CardActionLink.args} />);
+    expect(screen.getByText("Card Action Link")).toHaveTextContent(
+      CardActionLink.args.text
+    );
+    expect(screen.getByRole("link")).toHaveClass(
+      "lg:underline text-multi-blue-blue70b font-body text-browserh5 font-boldtext-mobileh5 leading-33px hover:text-multi-blue-blue50b"
     );
   });
 
@@ -57,7 +68,7 @@ describe("Link", () => {
     expect(screen.getByText("Small link - Footer blue")).toHaveTextContent(
       FooterBlueLink.args.text
     );
-    expect(screen.getByText("Small link - Footer blue")).toHaveClass(
+    expect(screen.getByRole("link")).toHaveClass(
       "text-multi-blue-blue70b font-body leading-20px text-browserh7 hover:underline"
     );
   });
@@ -67,7 +78,7 @@ describe("Link", () => {
     expect(screen.getByText("Small link - Footer white")).toHaveTextContent(
       FooterWhiteLink.args.text
     );
-    expect(screen.getByText("Small link - Footer white")).toHaveClass(
+    expect(screen.getByRole("link")).toHaveClass(
       "text-multi-neutrals-white font-body text-browserh7 leading-20px font-normal hover:text-multi-neutrals-white hover:underline"
     );
   });
@@ -77,9 +88,7 @@ describe("Link", () => {
     expect(
       screen.getByText("Small link - Breadcrumbs & French toggle")
     ).toHaveTextContent(BreadcrumbsLink.args.text);
-    expect(
-      screen.getByText("Small link - Breadcrumbs & French toggle")
-    ).toHaveClass(
+    expect(screen.getByRole("link")).toHaveClass(
       "text-multi-blue-blue70b font-body text-browserh8 leading-23px font-normal hover:text-multi-blue-blue50b"
     );
   });

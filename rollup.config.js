@@ -16,7 +16,7 @@ export default {
   plugins: [
     json(),
     image({
-      limit: 10000,
+      limit: 30000,
     }),
     external(),
     babel({
