@@ -56,3 +56,9 @@ Initial release of the Design System Package
 - Message Component
 - Header Component
 - Menu Component
+
+## [v1.4.0] - 2022-01-20
+
+### Added
+
+- Card/Caption Typography
