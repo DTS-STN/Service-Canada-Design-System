@@ -60,6 +60,8 @@ module.exports = {
         caption_large: ["18px", "22px"],
         caption_regular: ["16", "20px"],
         caption_small: ["14px", "18px"],
+
+        header_menu_text: ["16px", "20px"],
       },
       fontWeight: {
         regular: 400,
@@ -211,6 +213,8 @@ module.exports = {
         1: "1",
       },
       padding: {
+        "1px": "1px",
+        "2px": "2px",
         "4px": "4px",
         "5px": "5px",
         "6px": "6px",
@@ -274,6 +278,7 @@ module.exports = {
         "26px": "26px",
         "33px": "33px",
         "22px": "22px",
+        "20px": "20px",
       },
       outline: {
         "black-solid": ["2px solid #000", "1px"],
