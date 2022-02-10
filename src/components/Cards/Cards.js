@@ -1,4 +1,3 @@
-import { Props } from "@storybook/addon-docs";
 import PropTypes from "prop-types";
 import React from "react";
 import { Image } from "../Image/Image";

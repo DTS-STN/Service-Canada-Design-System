@@ -60,6 +60,8 @@ module.exports = {
         caption_large: ["18px", "22px"],
         caption_regular: ["16", "20px"],
         caption_small: ["14px", "18px"],
+
+        label_font: ["15px", "21px"],
       },
       fontWeight: {
         regular: 400,
@@ -190,6 +192,7 @@ module.exports = {
       },
       height: {
         "25px": "25px",
+        "29px": "29px",
         "40px": "40px",
         "44px": "44px",
         "46px": "46px",
@@ -214,10 +217,12 @@ module.exports = {
       },
       padding: {
         "0px": "0px",
+        "3px": "3px",
         "4px": "4px",
         "5px": "5px",
         "6px": "6px",
         "8px": "8px",
+        "9px": "9px",
         "12px": "12px",
         "14px": "14px",
         "15px": "15px",
@@ -324,5 +329,6 @@ module.exports = {
     require("./config-plugins/errorpage-plugin"),
     require("./config-plugins/message-plugin"),
     require("./config-plugins/cards-plugin"),
+    require("./config-plugins/labels-plugin"),
   ],
 };
