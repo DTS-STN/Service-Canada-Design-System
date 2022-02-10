@@ -93,10 +93,13 @@ TwoLinkCol.args = {
   id: "basic card",
   titleProps: {
     hasLink: false,
-    title: "Card Title",
+    title: "Employment Insurance Improvements",
   },
-  secondaryText: "secondary Text",
-  hasDivider: true,
+  labelProps: {
+    id: "label danger",
+    text: "danger",
+    type: "danger",
+  },
   imageProps: {
     id: "card image",
     altText: "card image text",
@@ -125,6 +128,10 @@ TwoLink.args = {
     hasLink: true,
     title: "Employment Insurance Improvements",
     path: "/",
+  },
+  labelProps: {
+    id: "label default",
+    text: "default label",
   },
   secondaryText: "secondary Text",
   hasDivider: true,

@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Image } from "../Image/Image";
 import { Link } from "../Link/Link";
+import { Labels } from "../Labels/Labels";
 
 export function Cards(props) {
   const {
@@ -35,7 +36,15 @@ export function Cards(props) {
           <p className="card-title-non-link">{titleProps.title}</p>
         )}
         {/* Replace with Label Component */}
-        {labelProps !== undefined ? <p className="">Label Component</p> : null}
+        {labelProps !== undefined ? (
+          <div className="mb-4 mt-2">
+            <Labels
+              id={labelProps.id}
+              text={labelProps.text}
+              type={labelProps.type}
+            />
+          </div>
+        ) : null}
         {secondaryText !== undefined ? (
           <p className="caption-large">{secondaryText}</p>
         ) : null}
@@ -104,9 +113,17 @@ Cards.propTypes = {
   }).isRequired,
 
   /**
-   * label component needs to be created
+   * Props for the label component within the card
+   * id: id of the label component
+   * text: text that displays on the label component
+   * type: one of the following label types can be passed in;
+   * default, primary, danger, warning, info, success
    */
-  labelProps: PropTypes.string,
+  labelProps: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    type: PropTypes.string,
+  }).isRequired,
 
   /**
    * Card secondary text
