@@ -11,19 +11,23 @@ export function Link(props) {
       break;
     case "titleLink":
       basicStyle =
-        "text-multi-blue-blue70b font-header text-browserh5 leading-23px font-normal hover:text-multi-blue-blue50b";
+        "underline text-multi-blue-blue70b font-header text-browserh5 leading-23px font-bold hover:text-multi-blue-blue50b";
       break;
     case "smfooterBlue":
       basicStyle =
-        "text-multi-blue-blue70b font-body leading-20px text-browserh7 hover:underline";
+        "underline text-multi-blue-blue70b font-body leading-20px text-browserh7 hover:underline";
       break;
     case "smfooterWhite":
       basicStyle =
-        "text-multi-neutrals-white font-body text-browserh7 leading-20px font-normal hover:text-multi-neutrals-white hover:underline";
+        "text-multi-neutrals-white font-body text-browserh7 leading-20px font-regular hover:text-multi-neutrals-white hover:underline";
       break;
     case "smBreadcrumbs":
       basicStyle =
-        "text-multi-blue-blue70b font-body text-browserh8 leading-23px font-normal hover:text-multi-blue-blue50b";
+        "text-multi-blue-blue70b font-body text-browserh8 leading-23px font-regular hover:text-multi-blue-blue50b";
+      break;
+    case "cardActionLink":
+      basicStyle =
+        "text-multi-blue-blue70b font-body text-browserh5 underline leading-28px font-regular hover:text-multi-blue-blue50b";
       break;
     default:
       basicStyle =
