@@ -36,18 +36,20 @@ export function Cards(props) {
           <p className="card-title-non-link">{titleProps.title}</p>
         )}
         {/* Replace with Label Component */}
-        {labelProps !== undefined ? (
-          <div className="mb-4 mt-2">
-            <Labels
-              id={labelProps.id}
-              text={labelProps.text}
-              type={labelProps.type}
-            />
-          </div>
-        ) : null}
-        {secondaryText !== undefined ? (
-          <p className="caption-large">{secondaryText}</p>
-        ) : null}
+        <div className="mb-4">
+          {labelProps !== undefined ? (
+            <div className="mt-2">
+              <Labels
+                id={labelProps.id}
+                text={labelProps.text}
+                type={labelProps.type}
+              />
+            </div>
+          ) : null}
+          {secondaryText !== undefined ? (
+            <p className="caption-large">{secondaryText}</p>
+          ) : null}
+        </div>
         {hasDivider ? <div className="horizontal-muted my-16px" /> : null}
       </div>
       {imageProps !== undefined ? (
@@ -63,9 +65,7 @@ export function Cards(props) {
           </p>
         </>
       ) : (
-        <p className="px-24px mt-16px leading-tight card-body-text">
-          {description}
-        </p>
+        <p className="px-24px leading-tight card-body-text">{description}</p>
       )}
       <div className={`mb-20px px-24px ${display}`}>
         {/* update linkStyle when stlye is created */}

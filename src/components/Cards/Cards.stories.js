@@ -38,11 +38,24 @@ DefaultLink.args = {
   id: "basic card",
   titleProps: {
     hasLink: true,
-    title: "New to My Service Canada Account (MSCA) – Create account",
+    title: "Old Age Security (OAS)",
     path: "/",
   },
+  hasDivider: true,
   description:
-    "Create a My Service Canada Aaccount (MSCA) to access information related to your benefits.",
+    "Did you know that you may be eligible for the Old Age Security (OAS)?",
+  firstLinkProps: {
+    id: "firstLinkCards",
+    name: "Learn more about OAS",
+    path: "/",
+  },
+  secondLinkProps: {
+    id: "secondLinkCards",
+    name: "Check eligibility",
+    path: "/",
+  },
+  hasLinkFirst: true,
+  hasLinkSecond: true,
 };
 
 TitleLink.args = {
@@ -53,7 +66,6 @@ TitleLink.args = {
     path: "/",
   },
   secondaryText: "secondary Text",
-  hasDivider: true,
   imageProps: {
     id: "card image",
     altText: "card image text",
@@ -74,7 +86,6 @@ OneLink.args = {
     title: "Card Title",
   },
   secondaryText: "secondary Text",
-  hasDivider: true,
   imageProps: {
     id: "card image",
     altText: "card image text",
@@ -119,7 +130,6 @@ TwoLinkCol.args = {
   },
   hasLinkFirst: true,
   hasLinkSecond: true,
-  displayColumn: true,
 };
 
 TwoLink.args = {
@@ -134,7 +144,6 @@ TwoLink.args = {
     text: "default label",
   },
   secondaryText: "secondary Text",
-  hasDivider: true,
   imageProps: {
     id: "card image",
     altText: "card image text",
@@ -154,4 +163,5 @@ TwoLink.args = {
   },
   hasLinkFirst: true,
   hasLinkSecond: true,
+  displayColumn: true,
 };
