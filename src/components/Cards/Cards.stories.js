@@ -19,6 +19,7 @@ Default.args = {
   titleProps: {
     title: "Card Title",
   },
+  hasDivider: true,
   description:
     "Recent changes made to Employment Insurance in order to make it more flexible, inclusive and easier to access.",
   firstLinkProps: {
@@ -41,7 +42,6 @@ DefaultLink.args = {
     title: "Old Age Security (OAS)",
     path: "/",
   },
-  hasDivider: true,
   description:
     "Did you know that you may be eligible for the Old Age Security (OAS)?",
   firstLinkProps: {
@@ -163,5 +163,4 @@ TwoLink.args = {
   },
   hasLinkFirst: true,
   hasLinkSecond: true,
-  displayColumn: true,
 };
