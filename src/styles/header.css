@@ -342,3 +342,28 @@
     padding: 24.5px 0;
   }
 }
+
+@media (min-width: 992px) {
+  .language-toggle-abbr {
+    display: none !important;
+  }
+  .language-toggle-text {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  .language-toggle-abbr {
+    display: none !important;
+  }
+  .language-toggle-text {
+    display: block;
+  }
+}
+@media (max-width: 576px) {
+  .language-toggle-abbr {
+    display: block !important;
+  }
+  .language-toggle-text {
+    display: none !important;
+  }
+}
