@@ -161,7 +161,7 @@ export function Menu(props) {
                         ? setHeaderDropdownClass("block")
                         : setHeaderDropdownClass("hidden");
                     }}
-                    className="flex font-bold font-body justify-between items-center md:py-2px sm:py-4 sm:pt-0 pr-4 md:pl-3 w-full"
+                    className="flex font-bold font-body justify-between items-center md:py-2px py-4 sm:pt-0 pr-4 md:pl-3 w-full"
                   >
                     {props.lang === "fr"
                       ? FR.myAccountTitle
