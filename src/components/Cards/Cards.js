@@ -19,7 +19,7 @@ export function Cards(props) {
     hasLinkSecond,
     displayColumn,
   } = props;
-  let display = displayColumn ? "flex flex-col" : "grid grid-cols-2";
+  let display = "flex flex-col sm:grid sm:grid-cols-2";
   let link2Padding = displayColumn ? "mt-24px" : "mt-20px ";
   return (
     // remove width after, just for testing
@@ -33,7 +33,9 @@ export function Cards(props) {
             href={titleProps.path}
           />
         ) : (
-          <p className="card-title-non-link">{titleProps.title}</p>
+          <p className="card-title-non-link leading-tight">
+            {titleProps.title}
+          </p>
         )}
         {/* Replace with Label Component */}
         <div className="mb-4">
@@ -187,10 +189,4 @@ Cards.propTypes = {
    * Must also pass into secondLinkProps with its required props
    */
   hasLinkSecond: PropTypes.bool,
-
-  /**
-   * prop used to switch action links from rows display to
-   * col display. By default will display as rows
-   */
-  displayColumn: PropTypes.bool,
 };
