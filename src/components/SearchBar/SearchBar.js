@@ -20,7 +20,6 @@ export function SearchBar(props) {
       </label>
       <input
         onChange={props.onChange}
-        value=""
         id="search-input"
         className="search-input"
         type="search"
