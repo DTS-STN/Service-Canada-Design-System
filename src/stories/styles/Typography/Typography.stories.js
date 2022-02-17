@@ -176,7 +176,7 @@ Primary.args = {
         <ul>
           <li>font-size: 20px</li>
           <li>line-height: 26px</li>
-          <li>font-weight: 700</li>
+          <li>font-weight: 500</li>
           <li>color: grey90</li>
         </ul>
       </div>
@@ -190,7 +190,7 @@ Primary.args = {
         <ul>
           <li>font-size: 18px</li>
           <li>line-height: 22px</li>
-          <li>font-weight: 400</li>
+          <li>font-weight: 500</li>
           <li>color: grey85a</li>
         </ul>
       </div>
@@ -202,7 +202,7 @@ Primary.args = {
         <ul>
           <li>font-size: 16px</li>
           <li>line-height: 20px</li>
-          <li>font-weight: 400</li>
+          <li>font-weight: 500</li>
           <li>color: grey85a</li>
         </ul>
       </div>
@@ -214,7 +214,7 @@ Primary.args = {
         <ul>
           <li>font-size: 14x</li>
           <li>line-height: 18px</li>
-          <li>font-weight: 400</li>
+          <li>font-weight: 500</li>
           <li>color: grey85a</li>
         </ul>
       </div>
