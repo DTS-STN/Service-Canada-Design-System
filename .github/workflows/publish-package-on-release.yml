@@ -46,5 +46,3 @@ jobs:
       - name: Publish the package
         if: ${{ steps.release.outputs.released == 'true' }}
         run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.SECRET_NAME }}
