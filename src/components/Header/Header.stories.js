@@ -42,4 +42,8 @@ Default.args = {
       text: EN.menuItems3,
     },
   ],
+  searchProps: {
+    onChange: {},
+    onSubmit: {},
+  },
 };
