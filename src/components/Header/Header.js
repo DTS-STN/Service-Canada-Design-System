@@ -18,7 +18,7 @@ import { Language } from "../Language/Language";
 
 export function Header(props) {
   return (
-    <div className="header">
+    <div className="header" id={props.id}>
       <header>
         <div className="px-4 sm:container flex flex-wrap justify-between items-center mx-auto">
           <a href="#" className={`flex ${props.className}`}>
@@ -59,6 +59,10 @@ Header.defaultProps = {
 };
 
 Header.propTypes = {
+  /**
+   * Component ID
+   */
+  id: PropTypes.string,
   /**
    * This will add a image / icon to the header.
    */
