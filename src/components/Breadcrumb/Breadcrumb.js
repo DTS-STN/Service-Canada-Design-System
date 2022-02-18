@@ -1,21 +1,22 @@
 import PropTypes from "prop-types";
+import React from "react";
 
 /**
  *  Breadcrumb component
  */
 export function Breadcrumb(props) {
   return (
-    <nav aria-label="breadcrumbs" id={props.id}>
+    <nav className="pt-4 pb-4" aria-label="breadcrumbs" id={props.id}>
       <ul className="block text-custom-blue-dark leading-23px font-body">
         {props.items
           ? props.items.map((item, key) => {
               return (
                 <li
                   key={key}
-                  className="inline-block min-w-0 max-w-full truncate px-2"
+                  className={`inline-block truncate pl-2 max-w-250 w-100`}
                 >
                   {key !== 0 && (
-                    <span className="inline-block align-middle text-multi-blue-blue70b icon-cheveron-right mx-4" />
+                    <span className="inline-block align-middle text-multi-blue-blue70b icon-cheveron-right pr-2" />
                   )}
                   <a
                     href={item.link}

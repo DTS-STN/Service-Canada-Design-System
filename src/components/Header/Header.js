@@ -15,6 +15,7 @@ import searchIcon from "../../assets/search-icon.svg";
 // blah
 import { Search } from "../Search/search";
 import { Language } from "../Language/Language";
+import { Breadcrumb } from "../Breadcrumb/Breadcrumb";
 
 export function Header(props) {
   return (
@@ -47,6 +48,9 @@ export function Header(props) {
           />
         )}
       </header>
+      {props.breadCrumbItems && (
+        <Breadcrumb items={props.breadCrumbItems.items}></Breadcrumb>
+      )}
     </div>
   );
 }

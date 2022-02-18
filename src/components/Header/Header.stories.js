@@ -42,4 +42,14 @@ Default.args = {
       text: EN.menuItems3,
     },
   ],
+  breadCrumbItems: {
+    id: "breadcrumbID",
+    items: [
+      { text: "Canada.ca", link: "/" },
+      { text: "Link1", link: "/" },
+      { text: "Link2", link: "/" },
+      { text: "This is the longest breadcrumb link", link: "/" },
+      { text: "Link3", link: "/" },
+    ],
+  },
 };
