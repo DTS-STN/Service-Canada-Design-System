@@ -11,10 +11,7 @@ export function Breadcrumb(props) {
         {props.items
           ? props.items.map((item, key) => {
               return (
-                <li
-                  key={key}
-                  className={`inline-block truncate pl-2 max-w-250 w-100`}
-                >
+                <li key={key} className={`inline-block pl-2 w-100`}>
                   {key !== 0 && (
                     <span className="inline-block align-middle text-multi-blue-blue70b icon-cheveron-right pr-2" />
                   )}
@@ -46,7 +43,18 @@ Breadcrumb.propTypes = {
       /**
        * Text for the breadcrumb
        */
-      text: PropTypes.string,
+      text: (props, propName, componentName) => {
+        if (props[propName].length > 28) {
+          return new Error(
+            "Invalid prop `" +
+              propName +
+              "` supplied to" +
+              " `" +
+              componentName +
+              "` component is more that 28."
+          );
+        }
+      },
 
       /**
        * Link for the breadcrumb

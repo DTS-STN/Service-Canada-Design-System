@@ -48,7 +48,7 @@ Default.args = {
       { text: "Canada.ca", link: "/" },
       { text: "Link1", link: "/" },
       { text: "Link2", link: "/" },
-      { text: "This is the longest breadcrumb link", link: "/" },
+      { text: "Max length of breadcrumb 28", link: "/" },
       { text: "Link3", link: "/" },
     ],
   },
