@@ -17,11 +17,12 @@ jobs:
         uses: actions/setup-node@v2 # set up node 12 on the machine
         with:
           node-version: '12'
-          registry-url: "https://npm.pkg.github.com/"
 
       # install dependencies
       - name: Install 🔧
         run: npm install
+        env: 
+          NPM_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN }}
 
       # test components
       - name: Test 🧪
