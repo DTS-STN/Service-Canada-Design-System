@@ -17,10 +17,11 @@ jobs:
         uses: actions/setup-node@v2 # set up node 12 on the machine
         with:
           node-version: '12'
+          registry-url: 'https://registry.npmjs.org'
 
       # install dependencies
       - name: Install 🔧
-        run: npm install
+        run: npm ci
 
       # test components
       - name: Test 🧪
@@ -28,22 +29,8 @@ jobs:
         env:
           CI: true
 
-     # build package bundle
-      - name: Build 🛠
-        run: npm run build
-
-     # create the github release
-      - name: Release
-        uses: justincy/github-action-npm-release@2.0.2
-        id: release
-
-      - name: Print release output
-        if: ${{ steps.release.outputs.released == 'true' }}
-        run: echo Release ID ${{ steps.release.outputs.release_id }}
-
       # Publish the package
       - name: Publish the package
-        if: ${{ steps.release.outputs.released == 'true' }}
         run: npm publish --access public
         env: 
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN }}
