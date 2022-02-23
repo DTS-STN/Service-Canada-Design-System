@@ -12,7 +12,6 @@ import { Image } from "../Image/Image";
 import EN from "../../translations/en.json";
 import logoFile from "../../assets/sig-blk-en.svg";
 import searchIcon from "../../assets/search-icon.svg";
-// blah
 import { Search } from "../Search/search";
 import { Language } from "../Language/Language";
 
