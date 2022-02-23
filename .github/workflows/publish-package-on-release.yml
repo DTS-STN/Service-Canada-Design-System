@@ -21,8 +21,6 @@ jobs:
       # install dependencies
       - name: Install 🔧
         run: npm install
-        env: 
-          NPM_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN }}
 
       # test components
       - name: Test 🧪
@@ -46,4 +44,6 @@ jobs:
       # Publish the package
       - name: Publish the package
         if: ${{ steps.release.outputs.released == 'true' }}
-        run: npm publish
+        run: npm publish --access public
+        env: 
+          NPM_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN }}
