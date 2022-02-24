@@ -10,42 +10,17 @@ This library contains reusable components that are accessible and can be used ac
 
 ## Using this Package in Your Project 🤓
 
-The package is hosted in github packages. To use it simply install it as one of your dependencies
-
-**Step 1:** if you don't already have a personal access token;
-
-- log into your github account
-- go to account settings -> developer settings -> personal access token
-- click on "Generate new token"
-- for the permissions, select atleast "read:packages"
-
-Once you've created your personal access token, Copy/Save it somewhere for the next step
-
-**Step 2:** Create a `.npmrc` file in your root directory with the following content.
-
-```text
-@dts-stn:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken={YOUR_PERSONAL_ACCESS_TOKEN}
-```
+The package is hosted in npm public registry. To use it simply install it as one of your dependencies
 
 This specifies that any package scoped @dts-stn should come from the github npm registry (where this package is located).
 
-**Step 3:** Install the package using this command
+**Step 1:** Install the package using this command
 
 ```bash
 $ npm install --save @dts-stn/decd-design-system
 ```
 
-**Important Note** Do not commit your authToken to github. This token shouldn't be shared with others!
-
-Once you've installed the package remove the second line of text from the
-`.npmrc` file. Your file should now look like this;
-
-```text
-@dts-stn:registry=https://npm.pkg.github.com
-```
-
-**Step 4:** You can now import the components you wish to use anywhere in your project
+**Step 2:** You can now import the components you wish to use anywhere in your project
 
 ```js
 import { Component } from "@dts-stn/decd-design-system";

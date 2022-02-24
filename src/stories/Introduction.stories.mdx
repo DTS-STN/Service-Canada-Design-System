@@ -9,40 +9,15 @@ Here you will find a list of all the components in the design system and be able
 
 ## Using this Package in Your Project 🤓
 
-The package is hosted in github packages. To use it simply install it as one of your dependencies
+The package is hosted in npm public registry. To use it simply install it as one of your dependencies
 
-First if you don't already have a personal access token;
-
-- log into your github account
-- go to account settings -> developer settings -> personal access token
-- click on "Generate new token"
-- for the permissions, select atleast "read:packages"
-
-Once you've created your token, make sure to copy it for the next step
-
-Create a `.npmrc` file in the same directory as your `package.json` with the following content.
-
-```text
-@dts-stn:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken={YOUR_PERSONAL_ACCESS_TOKEN}
-```
-
-This specifies that any package scoped @dts-stn should come from the github npm registry (where this package is located).
-
-Then install the package using this command
+Install the package using this command
 
 ```bash
 $ npm install --save @dts-stn/decd-design-system
 ```
 
-**Important Note** Do not commit your authToken to github. This token shouldn't be shared with others!
 
-Once you've installed the package remove the second line of text from the
-`.npmrc` file. Your file should now look like this;
-
-```text
-@dts-stn:registry=https://npm.pkg.github.com
-```
 
 You can then import the components you wish to use anywhere in your project
 

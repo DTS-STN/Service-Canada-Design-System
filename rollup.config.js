@@ -1,7 +1,7 @@
 import babel from "@rollup/plugin-babel";
 import external from "rollup-plugin-peer-deps-external";
 import del from "rollup-plugin-delete";
-import { uglify } from "rollup-plugin-uglify";
+import { terser } from "rollup-plugin-terser";
 import postcss from "rollup-plugin-postcss";
 import pkg from "./package.json";
 import json from "@rollup/plugin-json";
@@ -33,7 +33,7 @@ export default {
         insertAt: "top",
       },
     }),
-    uglify(),
+    terser(),
   ],
   external: Object.keys(pkg.peerDependencies || {}),
 };
