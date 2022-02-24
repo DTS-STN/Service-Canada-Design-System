@@ -1,14 +1,12 @@
 {
   "name": "@dts-stn/decd-design-system",
-  "version": "1.4.0",
+  "version": "1.9.4",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "source": "src/index.js",
   "repository": {
-    "url": "https://github.com/DTS-STN/DECD-Design-System"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "type": "git",
+    "url": "git+https://github.com/DTS-STN/DECD-Design-System"
   },
   "files": [
     "dist/**/*"
