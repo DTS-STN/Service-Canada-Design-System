@@ -12,10 +12,15 @@ import { Image } from "../Image/Image";
 import EN from "../../translations/en.json";
 import logoFile from "../../assets/sig-blk-en.svg";
 import searchIcon from "../../assets/search-icon.svg";
-import { Search } from "../Search/search";
+import { SearchBar } from "../SearchBar/SearchBar";
 import { Language } from "../Language/Language";
+import { Breadcrumb } from "../Breadcrumb/Breadcrumb";
 
 export function Header(props) {
+  var onChange =
+    props.searchProps.onChange === undefined ? {} : props.searchProps.onChange;
+  var onSubmit =
+    props.searchProps.onSubmit === undefined ? {} : props.searchProps.onSubmit;
   return (
     <div className="header" id={props.id}>
       <header>
@@ -29,7 +34,11 @@ export function Header(props) {
           </section>
           {/* Developer Note: This will be moved as seperate component once search component is implemented */}
           <section className="w-full md:flex md:w-22.5 py-2">
-            <Search searchIcon={searchIcon} />
+            <SearchBar
+              searchIcon={props.searchIcon}
+              onChange={onChange}
+              onSubmit={onSubmit}
+            />
           </section>
           {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}
           <section className="hidden md:flex pl-4 pr-8">
@@ -46,6 +55,9 @@ export function Header(props) {
           />
         )}
       </header>
+      {props.breadCrumbItems && (
+        <Breadcrumb items={props.breadCrumbItems.items}></Breadcrumb>
+      )}
     </div>
   );
 }
@@ -55,6 +67,10 @@ Header.defaultProps = {
   logo: logoFile,
   altText: "Government of Canada",
   searchIcon: searchIcon,
+  searchProps: {
+    onChange: {},
+    onSubmit: {},
+  },
 };
 
 Header.propTypes = {
@@ -76,8 +92,17 @@ Header.propTypes = {
    */
   lang: PropTypes.string,
 
-  //Developer Notes will be moved to search Component later
+  /**
+   * Search Props:
+   * onChange: can add function for when typing in the search bar
+   * onSubmit: can add function for when submitting a search query
+   * searchIcon: Default already assigned, can be changed if needed
+   */
   searchIcon: PropTypes.string,
+  searchProps: PropTypes.shape({
+    onChange: PropTypes.func,
+    onSubmit: PropTypes.func,
+  }),
 
   /**
    * any other elements you want to add to the header

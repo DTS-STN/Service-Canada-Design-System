@@ -1,40 +1,51 @@
 import PropTypes from "prop-types";
+import React from "react";
+import { Image } from "../Image/Image";
+import searchIcon from "../../assets/search-icon.svg";
 
 /**
  *  Search bar component
  */
 export function SearchBar(props) {
+  const { searchIcon } = props;
   return (
     <form
-      className="w-full inline-flex h-9 lg:w-full xl:w-80 w-full border border-solid border-gray-light-100"
+      className="search-form w-full"
+      role="search"
+      name="search-box"
       onSubmit={props.onSubmit}
-      data-cy={props.dataCy}
     >
+      <label className="sr-only search-label" htmlFor="search-input">
+        Search Canada.ca
+      </label>
       <input
-        type="text"
-        placeholder={props.placeholder}
-        className="placeholder-text-gray text-text-gray font-body py-1 px-2 focus:outline-none w-full"
         onChange={props.onChange}
+        id="search-input"
+        className="search-input"
+        type="search"
+        placeholder="Search Canada.ca"
       />
 
-      <button
-        title="Search bar button"
-        type="submit"
-        className={
-          "bg-custom-blue-dark text-white text-center text-base rounded-none pt-0.5 h-full w-10 hover:bg-gray-dark active:bg-gray-dark focus:bg-gray-dark"
-        }
-      >
-        <span className="icon-search" />
+      <button className="search-button" title="Search bar button" type="submit">
+        <Image
+          className="search-icon"
+          src={searchIcon}
+          alt="Search Service Canada"
+        />
       </button>
     </form>
   );
 }
 
+SearchBar.defaultProps = {
+  searchIcon: searchIcon,
+};
+
 SearchBar.propTypes = {
   /**
-   * Placeholder for the search bar
+   * path to icon
    */
-  placeholder: PropTypes.string.isRequired,
+  searchIcon: PropTypes.string,
 
   /**
    * Action to do on input change
@@ -45,9 +56,4 @@ SearchBar.propTypes = {
    * Action to do on form submit
    */
   onSubmit: PropTypes.func,
-
-  /**
-   * Test id for cypress test
-   */
-  dataCy: PropTypes.string,
 };
