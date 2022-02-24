@@ -75,3 +75,9 @@ export { Cards } from "./components/Cards/Cards";
  * Labels
  */
 export { Labels } from "./components/Labels/Labels";
+
+/**
+ * Breadcrumb
+ */
+
+export { Breadcrumb } from "./components/Breadcrumb/Breadcrumb";
