@@ -22,8 +22,6 @@ jobs:
       # install dependencies
       - name: Install 🔧
         run: npm install
-        env: 
-          NPM_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN }}
 
       # test components
       - name: Test 🧪

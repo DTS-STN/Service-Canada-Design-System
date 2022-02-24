@@ -14,6 +14,7 @@ import logoFile from "../../assets/sig-blk-en.svg";
 import searchIcon from "../../assets/search-icon.svg";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { Language } from "../Language/Language";
+import { Breadcrumb } from "../Breadcrumb/Breadcrumb";
 
 export function Header(props) {
   var onChange =
@@ -54,6 +55,9 @@ export function Header(props) {
           />
         )}
       </header>
+      {props.breadCrumbItems && (
+        <Breadcrumb items={props.breadCrumbItems.items}></Breadcrumb>
+      )}
     </div>
   );
 }
