@@ -31,12 +31,11 @@
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
     "build-watch": "rollup -c -w",
-    "i-all": "npm i && cd playground && npm i",
-    "dev": "npm-run-all --parallel build-watch start-playground",
+    "i-all": "npm i",
     "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test",
     "test:unit": "jest --forceExit",
     "pre-commit": "lint-staged",
-    "lint": "prettier --write \"*.{js,md}\" --write \".storybook/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"playground/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint": "prettier --write \"*.{js,md}\" --write \".storybook/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
     "eslint": "eslint src",
     "prepare": "husky install",
     "storybook-docs": "start-storybook --docs --no-manager-cache",
@@ -52,9 +51,6 @@
       "prettier --write"
     ],
     ".storybook/**/*.{js,jsx,ts,tsx,json,md,css}": [
-      "prettier --write"
-    ],
-    "playground/**/*.{js,jsx,ts,tsx,json,md,css}": [
       "prettier --write"
     ],
     "*.{js,md}": [
