@@ -1,10 +1,13 @@
 import PropTypes from "prop-types";
+import { useState } from "react";
 import { ErrorLabel } from "../ErrorLabel/ErrorLabel";
 
 /**
  * text field component
  */
 export function TextField(props) {
+  const [displayHelpText, setHelpTextState] = useState(false);
+
   const ifControlledProps = !props.uncontrolled
     ? {
         value: props.value,
@@ -17,36 +20,46 @@ export function TextField(props) {
       }`}
     >
       <label
-        className={`block leading-tight text-sm lg:text-p font-body mb-5 ${
-          props.boldLabel ? "font-bold" : ""
-        }`}
+        className={`block leading-tight text-xl lg:text-p font-body font-bold mb-8px relative`}
         htmlFor={props.id}
       >
         {props.required ? (
-          <b className="text-error-border-red">*</b>
+          <b className="text-error-border-red text-multi-red-red50a">*</b>
         ) : undefined}{" "}
-        {props.label}{" "}
+        <b className="inline text-form-input-gray lg:text-xl">{props.label} </b>
         {props.required ? (
-          <b className="text-error-border-red">{`(${props.requiredText})`}</b>
+          <b className="text-error-border-red text-xl">{`(${props.requiredText})`}</b>
         ) : (
-          <p className="inline text-form-input-gray text-xs lg:text-sm">
-            {`(${props.optionalText})`}
+          <p className="inline text-form-input-gray text-xl lg:text-xl">
+            {`(${props.optionalText ? props.optionalText : "Optional"})`}
           </p>
         )}
+        {props.infoText && (
+          <span
+            className="infoText cursor-pointer"
+            aria-hidden="true"
+            role="button"
+            tabIndex={0}
+            onClick={() => setHelpTextState(true)}
+          ></span>
+        )}
       </label>
-      <p
-        id={props.describedby}
-        className="text-xs lg:text-sm mb-5 leading-30px"
-      >
-        {`(${props.doNotIncludeText})`}
-      </p>
-      {props.error ? <ErrorLabel message={props.error} /> : undefined}
+      {displayHelpText && (
+        <div
+          id={props.describedBy}
+          className="text-xl text-multi-neutrals-grey100 p-4px lg:text-sm bg-specific-cyan-cyan5 leading-33px border rounded border-specific-cyan-cyan50 mb-5px"
+        >
+          {`${props.infoText}`}
+        </div>
+      )}
       <input
-        className={`text-input font-body w-full lg:w-3/4 min-h-40px shadow-sm text-form-input-gray border-2 py-6px px-12px ${
-          props.error ? "border-error-border-red" : "border-black"
+        className={`text-input text-mobileh5 text-multi-neutrals-grey85a w-full min-h-44px rounded text-form-input-gray border py-5px px-14px ${
+          props.hasError
+            ? "border-specific-red-red50b"
+            : "border-multi-neutrals-grey85a focus:border-multi-blue-blue60f"
         } ${props.exclude ? "exclude" : ""}`}
         id={props.id}
-        aria-describedby={props.describedby}
+        aria-describedby={props.describedBy}
         name={props.name}
         placeholder={props.placeholder}
         type={props.type}
@@ -59,6 +72,20 @@ export function TextField(props) {
         data-testid={props.dataTestId}
         data-cy={props.dataCy}
       />
+      {props.hasError && (
+        <div className="alertWrapper mt-8px text-specific-red-red50b leading-tight flex">
+          <div className="block">
+            <span
+              className="iconContainer cursor-pointer mr-8 "
+              aria-hidden="true"
+              role="button"
+              tabIndex={0}
+              onClick={() => setHelpTextState(true)}
+            ></span>
+          </div>
+          <div className="errorText">{props.errorText}</div>
+        </div>
+      )}
     </div>
   );
 }
@@ -66,6 +93,7 @@ export function TextField(props) {
 TextField.defaultProps = {
   value: "",
   type: "text",
+  size: "",
 };
 
 TextField.propTypes = {
@@ -104,9 +132,9 @@ TextField.propTypes = {
   optionalText: PropTypes.string.isRequired,
 
   /**
-   * disclaimer text to not disclose any personal information
+   * Information text to not disclose any personal information
    */
-  doNotIncludeText: PropTypes.string.isRequired,
+  infoText: PropTypes.string.isRequired,
 
   /**
    * value of the text field
@@ -119,7 +147,7 @@ TextField.propTypes = {
   placeholder: PropTypes.string,
 
   /**
-   * the type of the input
+   * the type of the input. Supports Number, Password, Email
    */
   type: PropTypes.string,
 
@@ -174,7 +202,7 @@ TextField.propTypes = {
   exclude: PropTypes.bool,
 
   /**
-   * aria-describedby label id
+   * aria-describedBy label id
    */
-  describedby: PropTypes.string,
+  describedBy: PropTypes.string,
 };
