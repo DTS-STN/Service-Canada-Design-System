@@ -1,6 +1,6 @@
 {
   "name": "@dts-stn/decd-design-system",
-  "version": "1.9.4",
+  "version": "1.10.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "source": "src/index.js",
@@ -27,7 +27,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "build": "NODE_ENV=production rollup -c",
+    "build": "cross-env NODE_ENV=production rollup -c",
     "build-watch": "rollup -c -w",
     "i-all": "npm i",
     "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test",
@@ -92,6 +92,7 @@
     "babel-plugin-polyfill-corejs2": "^0.2.2",
     "babel-plugin-polyfill-corejs3": "^0.2.2",
     "babel-plugin-polyfill-regenerator": "^0.2.2",
+    "cross-env": "^7.0.3",
     "eslint": "7.32.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.27.1",
