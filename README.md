@@ -61,10 +61,9 @@ $ npm install
 
 ### Developing and Documenting Components 📝
 
-This project uses [storybook](https://storybook.js.org/) to document and provide a playground to visually see components in action while you are developing them. To run storybook, run the command below from the root directory
+This project uses [storybook](https://storybook.js.org/) to document and provide a place to visually see components in action while you are developing them. To run storybook, run the command below from the root directory
 
 ```bash
-# Start dev environment
 $ npm run storybook
 ```
 
@@ -182,14 +181,6 @@ Sometimes it's helpful to test a component your working on in an actual applicat
    ```
 
    This will rebuild the bundle everytime you make a change to the package code.
-
-   You can then run the playground application in a separate shell.
-
-   Starting from the root directory, run the following commands in the order shown (**Reminder:** npm install if it's your first time using the playground)
-
-   ```bash
-   $ cd playground && npm run start
-   ```
 
 2. Simulating a client project in another code base:
 
