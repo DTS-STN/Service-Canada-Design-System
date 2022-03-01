@@ -7,7 +7,7 @@ export function Button(props) {
   return props.href ? (
     <a
       href={props.href}
-      className={`flex flex-row btn-link focus:ring focus:ring-offset-4 `}
+      className={`flex flex-row btn-link focus:ring focus:ring-offset-4 ${props.className} `}
       onClick={props.onClick}
       id={props.id}
       disabled={props.disabled}
@@ -32,7 +32,7 @@ export function Button(props) {
     </a>
   ) : (
     <button
-      className={`flex flex-row ${style} focus:ring focus:ring-offset-4`}
+      className={`flex flex-row ${style} focus:ring focus:ring-offset-4 ${props.className} `}
       onClick={props.onClick}
       type={props.type}
       id={props.id}
