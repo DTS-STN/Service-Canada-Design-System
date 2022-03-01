@@ -73,9 +73,12 @@ Button.propTypes = {
    * to their button. To apply the link style, the user must
    * also add a value to the href prop
    */
-  styling: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.oneOf(["supertask", "primary", "secondary", "danger", "link"]),
+  styling: PropTypes.oneOf([
+    "supertask",
+    "primary",
+    "secondary",
+    "danger",
+    "link",
   ]).isRequired,
 
   /**
