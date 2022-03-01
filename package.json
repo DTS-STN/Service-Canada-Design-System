@@ -1,6 +1,6 @@
 {
   "name": "@dts-stn/decd-design-system",
-  "version": "1.10.0",
+  "version": "1.15.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "source": "src/index.js",
@@ -13,6 +13,7 @@
   ],
   "dependencies": {
     "@rollup/plugin-json": "^4.1.0",
+    "@storybook/addon-docs": "^6.4.13",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -31,11 +32,12 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production rollup -c",
     "build-watch": "rollup -c -w",
-    "i-all": "npm i",
+    "i-all": "npm i && cd playground && npm i",
+    "dev": "npm-run-all --parallel build-watch start-playground",
     "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test",
     "test:unit": "jest --forceExit",
     "pre-commit": "lint-staged",
-    "lint": "prettier --write \"*.{js,md}\" --write \".storybook/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint": "prettier --write \"*.{js,md}\" --write \".storybook/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"playground/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
     "eslint": "eslint src",
     "prepare": "husky install",
     "storybook-docs": "start-storybook --docs --no-manager-cache",
@@ -51,6 +53,9 @@
       "prettier --write"
     ],
     ".storybook/**/*.{js,jsx,ts,tsx,json,md,css}": [
+      "prettier --write"
+    ],
+    "playground/**/*.{js,jsx,ts,tsx,json,md,css}": [
       "prettier --write"
     ],
     "*.{js,md}": [
@@ -80,7 +85,6 @@
     "@rollup/plugin-babel": "^5.3.0",
     "@storybook/addon-a11y": "^6.4.19",
     "@storybook/addon-actions": "^6.4.19",
-    "@storybook/addon-docs": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-links": "^6.4.19",
     "@storybook/addon-postcss": "^2.0.0",
@@ -104,7 +108,6 @@
     "postcss": "^8.4.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "5.0.0",
     "rollup": "^2.67.3",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-img": "^1.1.0",
