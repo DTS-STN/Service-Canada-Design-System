@@ -237,7 +237,7 @@ To test the pre-release you will be downloading a tarball file onto your local m
 5.  When testing is completed, to ensure you are no longer using the pre-release version of the package, run the below command in your repo with the [current version of the npm package](https://github.com/DTS-STN/DECD-Design-System/packages/847413). This will uninstall the pre-relase .tgz file and reinstall the npm package back in your local project/application.
 
     ```bash
-    $ npm install @dts-stn/decd-design-system
+    $ npm install --save @dts-stn/decd-design-system
     ```
 
 **Creating a release:**
