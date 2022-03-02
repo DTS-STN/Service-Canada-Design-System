@@ -12,10 +12,6 @@ module.exports = {
   },
   presets: [require("./tailwind-bootstrap3.js")],
   theme: {
-    borderRadius: {
-      "4px": "4px",
-      "1px": "1px",
-    },
     borderWidth: {
       DEFAULT: "1px",
       0: "0",
