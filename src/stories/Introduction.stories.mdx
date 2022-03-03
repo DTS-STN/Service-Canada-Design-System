@@ -47,8 +47,26 @@ $ npm run test
 
 ### Documentation 📝
 
-This project uses storybooks to document and provide a place to visually see components in action. To run storybooks
+This project uses storybooks to document and provide a playground to visually see components in action. To run storybooks
 
 ```bash
 $ npm run storybook
+```
+
+### Playground ⛹🏽‍♀️⛹🏽‍♂️
+
+Sometimes it's helpful to see a component in an actual application being rendered in the browser. This project included a create-react-app application with the decd-design-system package being installed via a symlink in the node modules thus simulating a client project. To run this project
+
+First run rollup in watch mode
+
+```bash
+$ npm run build-watch
+```
+
+This will rebuild the bundle everytime you make a change to the package code.
+
+You can then run the playground application in a separate shell
+
+```bash
+$ cd playground && npm run start
 ```
