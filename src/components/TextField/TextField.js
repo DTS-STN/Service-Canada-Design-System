@@ -38,7 +38,7 @@ export function TextField(props) {
             aria-hidden="true"
             role="button"
             tabIndex={0}
-            onClick={() => setHelpTextState(true)}
+            onClick={() => setHelpTextState(!displayHelpText)}
           ></span>
         )}
       </label>
@@ -78,7 +78,7 @@ export function TextField(props) {
               aria-hidden="true"
               role="button"
               tabIndex={0}
-              onClick={() => setHelpTextState(true)}
+              onClick={() => setHelpTextState(!displayHelpText)}
             ></span>
           </div>
           <div className="errorText">{props.errorText}</div>
