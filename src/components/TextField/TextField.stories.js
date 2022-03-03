@@ -23,8 +23,8 @@ Primary.args = {
   name: "textField1",
   label: "I am a text field",
   dataTestId: "textbox-controlled",
-  requiredText: "Required",
-  placeholder: "Some placeholder text",
+  requiredText: "required",
+  placeholder: "",
 };
 
 export const OptionalWithInfoText = Template.bind({});
@@ -32,9 +32,9 @@ OptionalWithInfoText.args = {
   id: "textField1",
   name: "textField1",
   label: "I am a text field",
-  placeholder: "Some placeholder text",
+  placeholder: "",
   requiredText: "required",
-  optionalText: "Optional",
+  optionalText: "optional",
   dataTestId: "textbox-uncontrolled",
   infoText: "Help Text",
   uncontrolled: true,
@@ -45,9 +45,9 @@ RequiredWithError.args = {
   id: "textField1",
   name: "textField1",
   label: "I am a text field",
-  placeholder: "Some placeholder text",
+  placeholder: "",
   dataTestId: "textbox-bold",
-  requiredText: "Required",
+  requiredText: "required",
   required: true,
   infoText:
     "Password should be at least 6 characters long and include both numbers and letters.",

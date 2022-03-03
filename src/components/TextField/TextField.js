@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
-import { ErrorLabel } from "../ErrorLabel/ErrorLabel";
+import React, { useState } from "react";
 
 /**
  * text field component
@@ -20,18 +19,17 @@ export function TextField(props) {
       }`}
     >
       <label
-        className={`block leading-tight text-xl lg:text-p font-body font-bold mb-8px relative`}
+        className={`block leading-24px text-xl lg:text-p font-body mb-8px relative`}
         htmlFor={props.id}
       >
+        <b className="inline text-form-input-gray lg:text-xl font-bold ">
+          {props.label}{" "}
+        </b>
         {props.required ? (
-          <b className="text-error-border-red text-multi-red-red50a">*</b>
-        ) : undefined}{" "}
-        <b className="inline text-form-input-gray lg:text-xl">{props.label} </b>
-        {props.required ? (
-          <b className="text-error-border-red text-xl">{`(${props.requiredText})`}</b>
+          <span className="text-error-border-red text-xl font-medium">{`(${props.requiredText})`}</span>
         ) : (
-          <p className="inline text-form-input-gray text-xl lg:text-xl">
-            {`(${props.optionalText ? props.optionalText : "Optional"})`}
+          <p className="inline text-form-input-gray text-xl lg:text-xl font-medium">
+            {`(${props.optionalText ? props.optionalText : "optional"})`}
           </p>
         )}
         {props.infoText && (
@@ -47,13 +45,13 @@ export function TextField(props) {
       {displayHelpText && (
         <div
           id={props.describedBy}
-          className="text-xl text-multi-neutrals-grey100 p-4px lg:text-sm bg-specific-cyan-cyan5 leading-33px border rounded border-specific-cyan-cyan50 mb-5px"
+          className="rounded text-xl text-multi-neutrals-grey100 p-5px pl-14px pr-14px lg:text-sm bg-specific-cyan-cyan5 leading-33px border  border-specific-cyan-cyan50 mb-1.5"
         >
           {`${props.infoText}`}
         </div>
       )}
       <input
-        className={`text-input text-mobileh5 text-multi-neutrals-grey85a w-full min-h-44px rounded text-form-input-gray border py-5px px-14px ${
+        className={`rounded text-input text-mobileh5 text-multi-neutrals-grey100 w-full min-h-44px text-form-input-gray border py-5px px-14px ${
           props.hasError
             ? "border-specific-red-red50b"
             : "border-multi-neutrals-grey85a focus:border-multi-blue-blue60f"
@@ -73,7 +71,7 @@ export function TextField(props) {
         data-cy={props.dataCy}
       />
       {props.hasError && (
-        <div className="alertWrapper mt-8px text-specific-red-red50b leading-tight flex">
+        <div className="alertWrapper mt-1.5 text-specific-red-red50b leading-26px font-medium flex">
           <div className="block">
             <span
               className="iconContainer cursor-pointer mr-8 "

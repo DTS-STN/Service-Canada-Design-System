@@ -293,6 +293,7 @@ module.exports = {
         "33px": "33px",
         "22px": "22px",
         "20px": "20px",
+        "24px": "24px",
       },
       outline: {
         "black-solid": ["2px solid #000", "1px"],
