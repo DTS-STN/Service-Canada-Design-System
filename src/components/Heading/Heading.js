@@ -10,7 +10,7 @@ export function Heading(props) {
         {title}
       </h1>
       {fromLink && fromText && (
-        <p className="heading1">
+        <p className="">
           <strong>From: </strong>
           <a href={fromLink}>{fromText}</a>
         </p>

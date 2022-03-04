@@ -69,6 +69,7 @@ module.exports = {
         "banner-img-mobile": "url('/public/bg-banner-mobile.png')",
       }),
       colors: {
+        current: "currentColor",
         multi: {
           neutrals: {
             black: "#000000",
@@ -184,7 +185,6 @@ module.exports = {
         "400px": "400px",
         "500px": "500px",
         "7.5rem": "7.5rem",
-        22.5: "22.5rem",
       },
       height: {
         "25px": "25px",
@@ -208,9 +208,7 @@ module.exports = {
         "-2px": "-2px",
         "60px": "60px",
       },
-      zIndex: {
-        1: "1",
-      },
+      zIndex: {},
       padding: {
         "0px": "0px",
         "3px": "3px",
@@ -251,7 +249,6 @@ module.exports = {
         "600px": "600px",
         "750px": "750px",
         "5rem": "5rem",
-        250: "250px",
       },
 
       minWidth: {
