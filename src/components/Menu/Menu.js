@@ -147,10 +147,7 @@ export function Menu(props) {
                 );
               })}
               {props.isAuthenticated ? (
-                <li
-                  id="buttonNav"
-                  className="py-4 px-4 md:pl-0 md:pr-0 buttonNav"
-                >
+                <li id="buttonNav" className="py-4 md:pl-0 md:pr-0 buttonNav">
                   <button
                     id="dropdownNavbarLink"
                     data-dropdown-toggle="dropdownNavbar"
@@ -161,7 +158,7 @@ export function Menu(props) {
                         ? setHeaderDropdownClass("block")
                         : setHeaderDropdownClass("hidden");
                     }}
-                    className="flex font-bold font-body justify-between items-center md:py-2px py-4 sm:pt-0 pr-4 md:pl-3 w-full"
+                    className="flex font-bold font-body justify-between items-center md:py-2px py-4 pl-4 sm:pt-0 pr-4 md:pl-3 w-full"
                   >
                     {props.lang === "fr"
                       ? FR.myAccountTitle
@@ -199,7 +196,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="block py-5 px-10 pr-4 text-gray-700 bg-multi-blue-blue2 font-bold font-body "
+                          className="block py-5 pl-4 pr-42px text-gray-700 bg-multi-blue-blue2 font-bold font-body "
                         >
                           {props.lang === "fr"
                             ? FR.myBenefitsAndServices
@@ -209,7 +206,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="block py-5 px-10 pr-4 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
+                          className="block py-5 pl-4 pr-42px text-gray-700 bg-multi-blue-blue2 font-bold font-body"
                         >
                           {props.lang === "fr"
                             ? FR.accountSettings
@@ -219,7 +216,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="block  py-5 px-10 pr-4 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
+                          className="block  py-5 pl-4 pr-42px text-gray-700 bg-multi-blue-blue2 font-bold font-body"
                         >
                           {props.lang === "fr"
                             ? FR.CRAMyAccounts
@@ -229,7 +226,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="block  py-5 px-10 pr-4 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
+                          className="block  py-5 pl-4 pr-42px text-gray-700 bg-multi-blue-blue2 font-bold font-body"
                         >
                           {props.lang === "fr" ? FR.signOut : EN.signOut}
                         </a>

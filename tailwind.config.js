@@ -174,6 +174,7 @@ module.exports = {
       },
       spacing: {
         "30px": "30px",
+        "42px": "42px",
       },
       width: {
         "40px": "40px",
