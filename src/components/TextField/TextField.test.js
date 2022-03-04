@@ -1,10 +1,15 @@
 /**
  * @jest-environment jsdom
  */
+import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { axe, toHaveNoViolations } from "jest-axe";
-import { Primary, withInfoText, withError } from "./TextField.stories";
+import {
+  Primary,
+  OptionalWithInfoText,
+  RequiredWithError,
+} from "./TextField.stories";
 
 expect.extend(toHaveNoViolations);
 
@@ -26,7 +31,9 @@ describe("TextField", () => {
   });
 
   it("renders text field in with Info Text state", () => {
-    render(<withInfoText {...withInfoText.args} onChange={mockFn} />);
+    render(
+      <OptionalWithInfoText {...OptionalWithInfoText.args} onChange={mockFn} />
+    );
     const inputElem = screen.getByTestId("textbox-uncontrolled");
     fireEvent.change(inputElem, { target: { value: "hello" } });
     expect(inputElem.value).toEqual("hello");
@@ -35,9 +42,9 @@ describe("TextField", () => {
   });
 
   it("renders text field with with Error", () => {
-    render(<withError {...withError.args} />);
-    expect(screen.getByText(withError.args.label).classList).toContain(
-      "font-bold"
+    render(<RequiredWithError {...RequiredWithError.args} />);
+    expect(screen.getByText(RequiredWithError.args.label).classList).toContain(
+      "text-form-input-gray"
     );
   });
 
