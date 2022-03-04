@@ -1,15 +1,10 @@
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
-  purge: {
-    content: [
-      "./src/assets/**/*.{js,ts,jsx,tsx}",
-      "./src/components/**/*.{js,ts,jsx,tsx}",
-      "./src/stories/**/*.{js,ts,jsx,tsx}",
-      "./src/assets/**/*.{js,ts,jsx,tsx}",
-      "./config-plugins/**/*.{js,ts,jsx,tsx}",
-    ],
-  },
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./config-plugins/**/*.{js,ts,jsx,tsx}",
+  ],
   presets: [require("./tailwind-bootstrap3.js")],
   theme: {
     borderWidth: {
@@ -299,16 +294,6 @@ module.exports = {
         "white-solid": ["2px solid #ffffff"],
         "heading-solid": ["1px solid #af3c43"],
       },
-    },
-  },
-  variants: {
-    extend: {
-      ringOffsetWidth: ["active", "hover", "focus"],
-      ringColor: ["active", "hover", "focus"],
-      backgroundColor: ["active", "hover", "focus"],
-      textColor: ["visited"],
-      margin: ["checked"],
-      textDecoration: ["active", "hover", "visited"],
     },
   },
   plugins: [
