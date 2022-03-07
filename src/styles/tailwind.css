@@ -10,7 +10,7 @@ html {
 
 @layer base {
   /* Font families */
-  /* h1 {
+  h1 {
     @apply heading1;
   }
   h2 {
@@ -30,7 +30,7 @@ html {
   }
   p {
     @apply body;
-  } */
+  }
 }
 
 @layer utilities {

@@ -16,31 +16,31 @@ export function ErrorPage(props) {
     accountPageId,
     pageHeadingId,
   } = props;
-  var biClassName = "";
-  var language = lang === "en" ? [EN] : lang === "fr" ? [FR] : [EN, FR];
+  let biClassName = "";
+  let language = lang === "en" ? [EN] : lang === "fr" ? [FR] : [EN, FR];
   if (lang === "bi") {
     biClassName = "grid gap-10 grid-cols-1 sm:grid-cols-2 sm:gap-6";
   }
-  var errorHeadingEN =
+  let errorHeadingEN =
     errType === "404"
       ? EN.errorPageHeadingTitle404
       : errType === "500"
       ? EN.errorPageHeadingTitle500
       : EN.errorPageHeadingTitle503;
-  var errorHeadingFR =
+  let errorHeadingFR =
     errType === "404"
       ? FR.errorPageHeadingTitle404
       : errType === "500"
       ? FR.errorPageHeadingTitle500
       : FR.errorPageHeadingTitle503;
 
-  var errorTextEN =
+  let errorTextEN =
     errType === "404"
       ? EN.errorPageErrorText404
       : errType === "500"
       ? EN.errorPageErrorText500
       : EN.errorPageErrorText503;
-  var errorTextFR =
+  let errorTextFR =
     errType === "404"
       ? FR.errorPageErrorText404
       : errType === "500"
