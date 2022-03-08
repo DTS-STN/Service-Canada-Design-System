@@ -173,8 +173,11 @@ module.exports = {
         "color-grid": "repeat(auto-fill, minmax(180px, 1fr))",
       },
       spacing: {
+        "22px": "22px",
         "30px": "30px",
         "42px": "42px",
+        "38px": "38px",
+        "18px": "18px",
       },
       width: {
         "40px": "40px",
@@ -257,7 +260,7 @@ module.exports = {
         "600px": "600px",
         "750px": "750px",
         "5rem": "5rem",
-        250: "250px",
+        "250px": "250px",
       },
 
       minWidth: {
@@ -273,6 +276,7 @@ module.exports = {
         "200px": "200px",
         "250px": "250px",
         "288px": "288px",
+        "44px": "44px",
       },
 
       maxHeight: {
@@ -293,6 +297,7 @@ module.exports = {
         "33px": "33px",
         "22px": "22px",
         "20px": "20px",
+        "24px": "24px",
       },
       outline: {
         "black-solid": ["2px solid #000", "1px"],
