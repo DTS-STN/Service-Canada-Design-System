@@ -81,3 +81,8 @@ export { Labels } from "./components/Labels/Labels";
  */
 
 export { Breadcrumb } from "./components/Breadcrumb/Breadcrumb";
+
+/**
+ * Form Label
+ */
+export { FormLabel } from "./components/FormLabel/FormLabel";
