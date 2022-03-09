@@ -317,5 +317,6 @@ module.exports = {
     require("./config-plugins/message-plugin"),
     require("./config-plugins/cards-plugin"),
     require("./config-plugins/labels-plugin"),
+    require("./config-plugins/checkboxes-plugin"),
   ],
 };

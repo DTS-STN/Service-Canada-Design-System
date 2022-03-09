@@ -20,7 +20,7 @@
   position: absolute;
 }
 
-.checkbox-label.control-label::after {
+.checkbox-label::after {
   transform: rotate(-45deg);
   border: solid black;
   border-width: 0 0 5px 5px;
