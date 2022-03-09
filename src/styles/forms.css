@@ -94,3 +94,16 @@
   cursor: text;
   touch-action: manipulation;
 }
+
+.alertWrapper {
+  position: relative;
+}
+
+.alertWrapper .iconContainer::after {
+  content: "";
+  position: absolute;
+  height: 26px;
+  left: 0;
+  width: 26px;
+  background: url(\../assets/error.svg) right center;
+}

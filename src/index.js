@@ -81,3 +81,9 @@ export { Labels } from "./components/Labels/Labels";
  */
 
 export { Breadcrumb } from "./components/Breadcrumb/Breadcrumb";
+
+/**
+ * FormError
+ */
+
+export { FormError } from "./components/FormError/FormError";
