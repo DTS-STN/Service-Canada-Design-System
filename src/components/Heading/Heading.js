@@ -6,9 +6,11 @@ export function Heading(props) {
 
   return (
     <>
-      <h1 id={id}>{title}</h1>
+      <h1 className="heading1" id={id}>
+        {title}
+      </h1>
       {fromLink && fromText && (
-        <p className="gc-byline">
+        <p className="">
           <strong>From: </strong>
           <a href={fromLink}>{fromText}</a>
         </p>
