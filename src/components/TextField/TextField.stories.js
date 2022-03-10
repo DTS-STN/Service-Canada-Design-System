@@ -24,7 +24,6 @@ Primary.args = {
   label: "I am a text field",
   dataTestId: "textbox-controlled",
   requiredText: "required",
-  placeholder: "",
 };
 
 export const OptionalWithInfoText = Template.bind({});
@@ -52,7 +51,6 @@ RequiredWithError.args = {
   infoText:
     "Password should be at least 6 characters long and include both numbers and letters.",
   uncontrolled: true,
-  boldLabel: true,
   hasError: true,
   errorText: "Password must include numbers and letters.",
   type: "password",

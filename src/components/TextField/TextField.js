@@ -155,14 +155,14 @@ TextField.propTypes = {
   onChange: PropTypes.func,
 
   /**
-   * message to display if there is an error
+   * Check if filed has an error or not.
    */
-  error: PropTypes.string,
+  hasError: PropTypes.bool,
 
   /**
-   * if label should be bold
+   * message to display if there is an error
    */
-  boldLabel: PropTypes.bool,
+  errorText: PropTypes.string,
 
   /**
    * boolean flag to specify that this input should be uncontrolled by react
