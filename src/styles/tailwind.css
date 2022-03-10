@@ -10,27 +10,6 @@ html {
 
 @layer base {
   /* Font families */
-  h1 {
-    @apply heading1;
-  }
-  h2 {
-    @apply heading2;
-  }
-  h3 {
-    @apply heading3;
-  }
-  h4 {
-    @apply heading4;
-  }
-  h5 {
-    @apply heading5;
-  }
-  h6 {
-    @apply heading6;
-  }
-  p {
-    @apply body;
-  }
 }
 
 @layer utilities {

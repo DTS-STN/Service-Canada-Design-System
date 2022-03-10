@@ -47,8 +47,8 @@ export function Menu(props) {
   }
 
   const subMenuClasses = props.isAuthenticated
-    ? "menuDropdown menuRight  md:text-white text-gray-700  md:w-full sm:w-full sm:left-0"
-    : "menuDropdown menuRight md:text-white text-gray-700 md:w-full sm:w-full sm:left-0";
+    ? "menuDropdown menuRight  md:text-white text-gray-700  sm:w-full sm:left-0"
+    : "menuDropdown menuRight md:text-white text-gray-700 sm:w-full sm:left-0";
   return (
     <div className="headerNav bg-multi-blue-blue70" ref={ref}>
       <nav className="md:container flex items-center justify-between flex-wrap w-full relative">

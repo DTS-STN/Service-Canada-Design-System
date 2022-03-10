@@ -54,10 +54,12 @@ export function Header(props) {
             items={props.menuItems}
           />
         )}
+        {props.breadCrumbItems && (
+          <div className="container">
+            <Breadcrumb items={props.breadCrumbItems.items} />
+          </div>
+        )}
       </header>
-      {props.breadCrumbItems && (
-        <Breadcrumb items={props.breadCrumbItems.items}></Breadcrumb>
-      )}
     </div>
   );
 }
