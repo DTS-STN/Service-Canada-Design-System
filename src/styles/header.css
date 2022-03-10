@@ -231,7 +231,6 @@
 
   .header-logo {
     flex-grow: 2;
-    width: auto;
     max-height: 27px;
   }
   /*

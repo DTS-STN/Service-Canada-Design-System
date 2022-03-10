@@ -26,7 +26,6 @@ Default.parameters = {
 };
 
 Default.args = {
-  className: "header-logo",
   altText: "Government of Canada",
   menuItems: [
     {

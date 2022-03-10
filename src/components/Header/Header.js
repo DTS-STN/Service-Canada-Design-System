@@ -24,8 +24,8 @@ export function Header(props) {
   return (
     <div className="header" id={props.id}>
       <header>
-        <div className="px-4 sm:container flex flex-wrap justify-between items-center mx-auto">
-          <a href="#" className={`flex ${props.className}`}>
+        <div className="px-4 sm:container md:flex-nowrap md:flex-row flex flex-wrap justify-between items-center mx-auto">
+          <a href="#" className={`flex w-20px h-20px ${props.className}`}>
             <Image src={props.logo} alt={props.altText} />
           </a>
           {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}
@@ -33,7 +33,7 @@ export function Header(props) {
             <Language id="lang2" />
           </section>
           {/* Developer Note: This will be moved as seperate component once search component is implemented */}
-          <section className="w-full md:flex md:w-22.5 py-2">
+          <section className="w-full md:flex md:w-284px py-2">
             <SearchBar
               searchIcon={props.searchIcon}
               onChange={onChange}
