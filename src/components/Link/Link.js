@@ -31,7 +31,7 @@ export function Link(props) {
       break;
     default:
       basicStyle =
-        "lg:ds-underline ds-text-multi-blue-blue70b ds-font-body ds-text-browserh5 ds-font-boldtext-mobileh5 ds-leading-33px hover:ds-text-multi-blue-blue50b";
+        "lg:ds-underline ds-text-multi-blue-blue70b ds-font-body ds-text-browserh5 ds-font-bold ds-text-mobileh5 ds-leading-33px hover:ds-text-multi-blue-blue50b";
       break;
   }
 
