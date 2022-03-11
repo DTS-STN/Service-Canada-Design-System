@@ -3,13 +3,13 @@ import React from "react";
 
 export function Labels(props) {
   const { id, type, text } = props;
-  let style = "label-" + type;
+  let style = "ds-label-" + type;
   return (
     <div
       id={id}
       role="dialog"
       aria-label="label"
-      className={`inline border-l-4 ${style} px-9px pb-5px pt-3px label-font-style`}
+      className={`ds-inline ds-border-l-4 ${style} ds-px-9px ds-pb-5px ds-pt-3px ds-label-font-style`}
     >
       {text}
     </div>

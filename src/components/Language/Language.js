@@ -7,9 +7,9 @@ export function Language(props) {
 
   return (
     <>
-      <h2 className="sr-only">Language Selection</h2>
+      <h2 className="ds-sr-only">Language Selection</h2>
       <Link
-        className="language-toggle-text"
+        className="ds-language-toggle-text"
         href="./fr.html"
         id={id}
         text="Français"

@@ -7,7 +7,8 @@ import FR from "../../translations/fr.json";
  */
 export function Menu(props) {
   const ref = useRef();
-  let [headerDropdownClass, setHeaderDropdownClass] = React.useState("hidden");
+  let [headerDropdownClass, setHeaderDropdownClass] =
+    React.useState("ds-hidden");
   let [headerMobileDropdownClass, setHeaderMobileDropdownClass] =
     React.useState(false);
   useEffect(() => {
@@ -15,11 +16,11 @@ export function Menu(props) {
       // If the menu is open and the clicked target is not within the menu,
       // then close the menu
       if (
-        headerDropdownClass === "block" &&
+        headerDropdownClass === "ds-block" &&
         ref.current &&
         !ref.current.contains(e.target)
       ) {
-        setHeaderDropdownClass("hidden");
+        setHeaderDropdownClass("ds-hidden");
       }
     };
 
@@ -38,43 +39,43 @@ export function Menu(props) {
     const menuDropdown = document.getElementById("menuDropdown");
     const menuDropdownSub = document.getElementById("menuDropdownSub");
     setHeaderMobileDropdownClass(!headerMobileDropdownClass);
-    menuDropdown.classList.toggle("active");
-    menuDropdownSub.classList.toggle("active");
-    menuButtonParent.classList.toggle("active");
+    menuDropdown.classList.toggle("ds-active");
+    menuDropdownSub.classList.toggle("ds-active");
+    menuButtonParent.classList.toggle("ds-active");
     menuButton.getAttribute("aria-expanded") === "true"
       ? menuButton.setAttribute("aria-expanded", false)
       : menuButton.setAttribute("aria-expanded", true);
   }
 
   const subMenuClasses = props.isAuthenticated
-    ? "menuDropdown menuRight  md:text-white text-gray-700  md:w-full sm:w-full sm:left-0"
-    : "menuDropdown menuRight md:text-white text-gray-700 md:w-full sm:w-full sm:left-0";
+    ? "ds-menuDropdown ds-menuRight  md:ds-text-white ds-text-gray-700  sm:ds-w-full sm:ds-left-0"
+    : "ds-menuDropdown ds-menuRight md:ds-text-white ds-text-gray-700 sm:ds-w-full sm:ds-left-0";
   return (
-    <div className="headerNav bg-multi-blue-blue70" ref={ref}>
-      <nav className="md:container flex items-center justify-between flex-wrap w-full relative">
-        <div className="flex items-center flex-shrink-0 text-white">
-          <h3 id="mainSiteNav" className="md:p-0 container menuHeader">
+    <div className="ds-headerNav ds-bg-multi-blue-blue70" ref={ref}>
+      <nav className="md:ds-container ds-flex ds-items-center ds-justify-between ds-flex-wrap ds-w-full ds-relative">
+        <div className="ds-flex ds-items-center ds-flex-shrink-0 ds-text-white">
+          <h3 id="mainSiteNav" className="md:ds-p-0 ds-container ds-menuHeader">
             {props.menuHeaderTitle}
           </h3>
         </div>
         <div
           id="menuButtonParent"
-          className="menuButtonParent block md:hidden pr-4 focus:bg-multi-blue-blue2 text-white border-l-2 border-white"
+          className="ds-menuButtonParent ds-block md:ds-hidden ds-pr-4 focus:ds-bg-multi-blue-blue2 ds-text-white ds-border-l-2 ds-border-white"
         >
           <button
             id="menuButton"
             onClick={onMenuClick}
-            className="text-h4 text-canada-footer-font focus:outline-none py-4"
+            className="ds-text-h4 ds-text-canada-footer-font focus:ds-outline-none ds-py-4"
             aria-haspopup="true"
             aria-expanded="false"
             aria-controls="menuDropdown"
             data-testid="menuButton"
           >
-            <span className="inline-block align-middle pl-3 font-body font-bold text-p leading-none">
+            <span className="ds-inline-block ds-align-middle ds-pl-3 ds-font-body ds-font-bold ds-text-p ds-leading-none">
               {props.menuButtonTitle}
             </span>
             <svg
-              className="ml-1 w-4 h-4 inline-block"
+              className="ds-ml-1 ds-w-4 ds-h-4 ds-inline-block"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -95,9 +96,9 @@ export function Menu(props) {
             </svg>
           </button>
         </div>
-        <div className="w-full block flex-grow md:flex md:items-center md:w-auto bg-multi-blue-blue2 md:bg-multi-blue-blue70">
-          <div className="md:flex-grow md:text-center md:flex hidden">
-            <ul id="menuDropdown" className="menuDropdown w-full">
+        <div className="ds-w-full ds-block ds-flex-grow md:ds-flex md:ds-items-center md:ds-w-auto ds-bg-multi-blue-blue2 md:ds-bg-multi-blue-blue70">
+          <div className="md:ds-flex-grow md:ds-text-center md:ds-flex ds-hidden">
+            <ul id="menuDropdown" className="ds-menuDropdown ds-w-full">
               {props.items.map((item, key) => {
                 const exactURL = path === item.link; // it's exactly this url
                 const includesURL = path.includes(item.link); // it's a child of this url (eg, "/projects/app" includes "/projects")
@@ -105,13 +106,13 @@ export function Menu(props) {
                 return (
                   <li
                     key={key}
-                    className={`py-4 px-4 inline-block cursor-pointer text-custom-blue-projects-link md:text-white text-gray-700 `}
+                    className={`ds-py-4 ds-px-4 ds-inline-block ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 `}
                     aria-current={exactURL ? "page" : null}
                   >
                     <a
                       href={item.link}
-                      className={`font-body font-bold leading-20px  ${
-                        includesURL ? "activePage" : "menuLink"
+                      className={`ds-font-body ds-font-bold ds-leading-20px  ${
+                        includesURL ? "ds-activePage" : "ds-menuLink"
                       }`}
                       title={item.text}
                     >
@@ -131,13 +132,13 @@ export function Menu(props) {
                 return (
                   <li
                     key={key}
-                    className={`py-4 px-4 md:hidden cursor-pointer text-custom-blue-projects-link md:text-white text-gray-700 `}
+                    className={`ds-py-18px ds-px-18px md:ds-hidden ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 `}
                     aria-current={exactURL ? "page" : null}
                   >
                     <a
                       href={item.link}
-                      className={`font-body font-bold text-base  ${
-                        includesURL ? "activePage" : "menuLink"
+                      className={`ds-font-body ds-font-bold ds-text-base  ${
+                        includesURL ? "ds-activePage" : "ds-menuLink"
                       }`}
                       title={item.text}
                     >
@@ -149,30 +150,30 @@ export function Menu(props) {
               {props.isAuthenticated ? (
                 <li
                   id="buttonNav"
-                  className="py-4 px-4 md:pl-0 md:pr-0 buttonNav"
+                  className="ds-py-4 md:ds-pl-0 md:ds-pr-0 ds-buttonNav"
                 >
                   <button
                     id="dropdownNavbarLink"
                     data-dropdown-toggle="dropdownNavbar"
                     onClick={() => {
                       const buttonNavId = document.getElementById("buttonNav");
-                      buttonNavId.classList.toggle("active");
-                      return headerDropdownClass === "hidden"
-                        ? setHeaderDropdownClass("block")
-                        : setHeaderDropdownClass("hidden");
+                      buttonNavId.classList.toggle("ds-active");
+                      return headerDropdownClass === "ds-hidden"
+                        ? setHeaderDropdownClass("ds-block")
+                        : setHeaderDropdownClass("ds-hidden");
                     }}
-                    className="flex font-bold font-body justify-between items-center md:py-2px py-4 sm:pt-0 pr-4 md:pl-3 w-full"
+                    className="ds-flex ds-font-bold ds-font-body ds-justify-between ds-items-center md:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 ds-pr-4 md:ds-pl-3 ds-w-full"
                   >
                     {props.lang === "fr"
                       ? FR.myAccountTitle
                       : EN.myAccountTitle}
                     <svg
-                      className="ml-1 w-4 h-4"
+                      className="ds-ml-1 ds-w-4 ds-h-4"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      {headerDropdownClass === "hidden" ? (
+                      {headerDropdownClass === "ds-hidden" ? (
                         <path
                           fillRule="evenodd"
                           d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
@@ -189,17 +190,17 @@ export function Menu(props) {
                   </button>
 
                   <div
-                    className={`dropdown-menu ${headerDropdownClass} md:absolute z-10 top-60px text-base list-none bg-blue2 rounded divide-y divide-gray-100 dark:bg-gray-700 dark:divide-gray-600`}
+                    className={`ds-dropdown-menu ${headerDropdownClass} md:ds-absolute ds-z-10 ds-top-60px ds-text-base ds-list-none ds-bg-blue2 ds-rounded ds-divide-y ds-divide-gray-100 dark:ds-bg-gray-700 dark:ds-divide-gray-600`}
                   >
                     <ul
                       id="dropdownNavbar"
-                      className="py-0"
+                      className="ds-py-0"
                       aria-labelledby="dropdownLargeButton"
                     >
                       <li>
                         <a
                           href="/"
-                          className="block py-5 px-10 pr-4 text-gray-700 bg-multi-blue-blue2 font-bold font-body "
+                          className="ds-block ds-py-18px ds-pl-38px lg:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body "
                         >
                           {props.lang === "fr"
                             ? FR.myBenefitsAndServices
@@ -209,7 +210,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="block py-5 px-10 pr-4 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
+                          className="ds-block ds-py-18px ds-pl-38px lg:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
                           {props.lang === "fr"
                             ? FR.accountSettings
@@ -219,7 +220,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="block  py-5 px-10 pr-4 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
+                          className="ds-block ds-py-18px ds-pl-38px lg:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
                           {props.lang === "fr"
                             ? FR.CRAMyAccounts
@@ -229,7 +230,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="block  py-5 px-10 pr-4 text-gray-700 bg-multi-blue-blue2 font-bold font-body"
+                          className="ds-block ds-py-18px  ds-pl-38px lg:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
                           {props.lang === "fr" ? FR.signOut : EN.signOut}
                         </a>
@@ -240,7 +241,7 @@ export function Menu(props) {
               ) : (
                 <li
                   key="1"
-                  className={`py-4 px-6 font-bold font-body`}
+                  className={`ds-py-4 ds-px-6 ds-font-bold ds-font-body`}
                   aria-current="page"
                 >
                   {props.lang === "fr" ? FR.myAccountTitle : EN.myAccountTitle}

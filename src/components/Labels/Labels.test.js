@@ -19,7 +19,7 @@ describe("Labels", () => {
     render(<Labels {...Default.args} />);
     expect(screen.getByText("Label")).toHaveTextContent(Default.args.text);
     expect(screen.getByRole("dialog")).toHaveClass(
-      "inline border-l-4 px-9px pb-5px pt-3px label-font-style label-default"
+      "ds-inline ds-border-l-4 ds-px-9px ds-pb-5px ds-pt-3px ds-label-font-style ds-label-default"
     );
   });
 
@@ -27,7 +27,7 @@ describe("Labels", () => {
     render(<Labels {...Primary.args} />);
     expect(screen.getByText("Label")).toHaveTextContent(Primary.args.text);
     expect(screen.getByRole("dialog")).toHaveClass(
-      "inline border-l-4 px-9px pb-5px pt-3px label-font-style label-primary"
+      "ds-inline ds-border-l-4 ds-px-9px ds-pb-5px ds-pt-3px ds-label-font-style ds-label-primary"
     );
   });
 
@@ -35,7 +35,7 @@ describe("Labels", () => {
     render(<Labels {...Danger.args} />);
     expect(screen.getByText("Label")).toHaveTextContent(Danger.args.text);
     expect(screen.getByRole("dialog")).toHaveClass(
-      "inline border-l-4 px-9px pb-5px pt-3px label-font-style label-danger"
+      "ds-inline ds-border-l-4 ds-px-9px ds-pb-5px ds-pt-3px ds-label-font-style ds-label-danger"
     );
   });
 
@@ -43,7 +43,7 @@ describe("Labels", () => {
     render(<Labels {...Warning.args} />);
     expect(screen.getByText("Label")).toHaveTextContent(Warning.args.text);
     expect(screen.getByRole("dialog")).toHaveClass(
-      "inline border-l-4 px-9px pb-5px pt-3px label-font-style label-warning"
+      "ds-inline ds-border-l-4 ds-px-9px ds-pb-5px ds-pt-3px ds-label-font-style ds-label-warning"
     );
   });
 
@@ -51,7 +51,7 @@ describe("Labels", () => {
     render(<Labels {...Info.args} />);
     expect(screen.getByText("Label")).toHaveTextContent(Info.args.text);
     expect(screen.getByRole("dialog")).toHaveClass(
-      "inline border-l-4 px-9px pb-5px pt-3px label-font-style label-info"
+      "ds-inline ds-border-l-4 ds-px-9px ds-pb-5px ds-pt-3px ds-label-font-style ds-label-info"
     );
   });
 
@@ -59,7 +59,7 @@ describe("Labels", () => {
     render(<Labels {...Success.args} />);
     expect(screen.getByText("Label")).toHaveTextContent(Success.args.text);
     expect(screen.getByRole("dialog")).toHaveClass(
-      "inline border-l-4 px-9px pb-5px pt-3px label-font-style label-success"
+      "ds-inline ds-border-l-4 ds-px-9px ds-pb-5px ds-pt-3px ds-label-font-style ds-label-success"
     );
   });
 
