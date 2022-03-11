@@ -1,18 +1,18 @@
 @tailwind screens;
 
-.headerNav {
+.ds-headerNav {
   left: 0;
   top: 0;
   width: 100%;
   display: flex;
 }
 
-.buttonNav.active {
+.ds-buttonNav.active {
   background-color: #ebf2fc;
   color: rgba(55, 65, 81, var(--tw-text-opacity));
 }
 
-.menuButtonParent.active {
+.ds-menuButtonParent.active {
   background-color: #ebf2fc;
   color: rgba(55, 65, 81, var(--tw-text-opacity));
 }
@@ -25,7 +25,7 @@
   bottom: 0%;
   background: #ebf2fc;
 }
-.menuHeader {
+.ds-menuHeader {
   font-family: Lato;
   font-style: normal;
   font-weight: bold;
@@ -39,20 +39,20 @@ nav {
   width: 100%;
 }
 
-.menuDropdown {
+.ds-menuDropdown {
   display: none;
 }
 
-.menuDropdown.active {
+.ds-menuDropdown.active {
   background: #ebf2fc;
   color: #333333;
 }
 
-.menuLink:hover > a {
+.ds-menuLink:hover > a {
   color: #0a75c6;
 }
 
-.activePage > a {
+.ds-activePage > a {
   border-bottom: 4px solid #1d5b90;
 }
 
@@ -66,17 +66,17 @@ nav {
     display: none;
   }
 
-  .menuDropdown {
+  .ds-menuDropdown {
     display: inline-block;
     position: static;
     min-width: fit-content;
     min-height: fit-content;
   }
 
-  .menuDropdown > li {
+  .ds-menuDropdown > li {
     padding-left: 2rem;
   }
-  .menuDropdown.menuRight > li {
+  .ds-menuDropdown.menuRight > li {
     padding-left: 0;
   }
 }

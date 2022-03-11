@@ -16,22 +16,22 @@ html {
   /* Bootstrap grids for default page layout using css grid utilities */
   /* If support for older browsers or IE is needed, flex box will have to be used instead of css grid */
 
-  .bootstrap5-grid {
+  .ds-bootstrap5-grid {
     @apply ds-grid ds-grid-cols-12 ds-gap-6;
   }
 
-  .bootstrap3-grid {
+  .ds-bootstrap3-grid {
     @apply ds-grid ds-grid-cols-2 ds-gap-30px;
   }
 
   @screen sm {
-    .bootstrap3-grid {
+    .ds-bootstrap3-grid {
       @apply ds-grid ds-grid-cols-6 ds-gap-30px;
     }
   }
 
   @screen lg {
-    .bootstrap3-grid {
+    .ds-bootstrap3-grid {
       @apply ds-grid ds-grid-cols-12 ds-gap-30px;
     }
   }
