@@ -11,7 +11,6 @@ import { Menu } from "../Menu/Menu";
 import { Image } from "../Image/Image";
 import EN from "../../translations/en.json";
 import logoFile from "../../assets/sig-blk-en.svg";
-import searchIcon from "../../assets/search-icon.svg";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { Language } from "../Language/Language";
 import { Breadcrumb } from "../Breadcrumb/Breadcrumb";
@@ -22,26 +21,25 @@ export function Header(props) {
   var onSubmit =
     props.searchProps.onSubmit === undefined ? {} : props.searchProps.onSubmit;
   return (
-    <div className="header" id={props.id}>
+    <div className="ds-header" id={props.id}>
       <header>
-        <div className="px-4 sm:container md:flex-nowrap md:flex-row flex flex-wrap justify-between items-center mx-auto">
-          <a href="#" className={`flex w-20px h-20px ${props.className}`}>
+        <div className="ds-px-4 sm:ds-container md:ds-flex-nowrap md:ds-flex-row ds-flex ds-flex-wrap ds-justify-between ds-items-center ds-mx-auto">
+          <a
+            href="#"
+            className={`ds-flex ds-w-20px ds-h-20px ${props.className}`}
+          >
             <Image src={props.logo} alt={props.altText} />
           </a>
           {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}
-          <section className="flex md:hidden">
+          <section className="ds-flex md:ds-hidden">
             <Language id="lang2" />
           </section>
           {/* Developer Note: This will be moved as seperate component once search component is implemented */}
-          <section className="w-full md:flex md:w-284px py-2">
-            <SearchBar
-              searchIcon={props.searchIcon}
-              onChange={onChange}
-              onSubmit={onSubmit}
-            />
+          <section className="ds-w-full md:ds-flex md:ds-w-284px ds-py-2">
+            <SearchBar onChange={onChange} onSubmit={onSubmit} />
           </section>
           {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}
-          <section className="hidden md:flex pl-4 pr-8">
+          <section className="ds-hidden md:ds-flex ds-pl-4 ds-pr-8">
             <Language id="lang1" />
           </section>
         </div>
@@ -55,7 +53,7 @@ export function Header(props) {
           />
         )}
         {props.breadCrumbItems && (
-          <div className="container">
+          <div className="ds-container">
             <Breadcrumb items={props.breadCrumbItems.items} />
           </div>
         )}
@@ -68,7 +66,6 @@ Header.defaultProps = {
   className: "header-logo",
   logo: logoFile,
   altText: "Government of Canada",
-  searchIcon: searchIcon,
   searchProps: {
     onChange: {},
     onSubmit: {},
