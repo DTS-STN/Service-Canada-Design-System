@@ -25,18 +25,15 @@ export function SearchBar(props) {
         type="search"
         placeholder="Search Canada.ca"
       />
-
-      <button
-        className="ds-search-button"
-        title="Search bar button"
-        type="submit"
-      >
-        <Image
-          className="ds-search-icon"
-          src={searchIcon}
-          alt="Search Service Canada"
-        />
-      </button>
+      <div className="ds-search-button">
+        <button title="Search bar button" type="submit">
+          <Image
+            className="ds-search-icon"
+            src={searchIcon}
+            alt="Search Service Canada"
+          />
+        </button>
+      </div>
     </form>
   );
 }

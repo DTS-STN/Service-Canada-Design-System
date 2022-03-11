@@ -7,12 +7,12 @@
   display: flex;
 }
 
-.ds-buttonNav.active {
+.ds-buttonNav.ds-active {
   background-color: #ebf2fc;
   color: rgba(55, 65, 81, var(--tw-text-opacity));
 }
 
-.ds-menuButtonParent.active {
+.ds-menuButtonParent.ds-active {
   background-color: #ebf2fc;
   color: rgba(55, 65, 81, var(--tw-text-opacity));
 }
@@ -43,7 +43,7 @@ nav {
   display: none;
 }
 
-.ds-menuDropdown.active {
+.ds-menuDropdown.ds-active {
   background: #ebf2fc;
   color: #333333;
 }
@@ -56,7 +56,7 @@ nav {
   border-bottom: 4px solid #1d5b90;
 }
 
-.active {
+.ds-active {
   display: block;
 }
 
@@ -73,9 +73,9 @@ nav {
     min-height: fit-content;
   }
 
-  .ds-menuDropdown > li {
+  /* .ds-menuDropdown > li {
     padding-left: 2rem;
-  }
+  } */
   .ds-menuDropdown.menuRight > li {
     padding-left: 0;
   }
