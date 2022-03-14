@@ -7,12 +7,12 @@ export function FormError(props) {
   return (
     <div
       id={props.id}
-      className="alertWrapper mt-1.5 text-specific-red-red50b leading-26px font-medium font-body flex"
+      className="ds-alertWrapper ds-mt-1.5 ds-text-specific-red-red50b ds-leading-26px ds-font-medium ds-font-body ds-flex"
     >
-      <div className="block">
-        <span className="iconContainer mr-8 " aria-hidden="true"></span>
+      <div className="ds-block">
+        <span className="ds-iconContainer ds-mr-8" aria-hidden="true"></span>
       </div>
-      <div className="errorText text-xl">{props.errorMessage}</div>
+      <div className="ds-errorText text-xl">{props.errorMessage}</div>
     </div>
   );
 }

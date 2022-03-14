@@ -95,11 +95,11 @@
   touch-action: manipulation;
 }
 
-.alertWrapper {
+.ds-alertWrapper {
   position: relative;
 }
 
-.alertWrapper .iconContainer::after {
+.ds-alertWrapper .ds-iconContainer::after {
   content: "";
   position: absolute;
   height: 26px;
