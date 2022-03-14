@@ -12,7 +12,7 @@ export function FormError(props) {
       <div className="ds-block">
         <span className="ds-iconContainer ds-mr-8" aria-hidden="true"></span>
       </div>
-      <div className="ds-errorText text-xl">{props.errorMessage}</div>
+      <div className="ds-errorText ds-text-xl">{props.errorMessage}</div>
     </div>
   );
 }

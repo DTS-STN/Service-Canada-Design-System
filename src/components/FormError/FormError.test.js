@@ -22,7 +22,7 @@ describe("Form Error", () => {
     render(<Primary {...Primary.args} />);
     screen.getByText(Primary.args.errorMessage);
     expect(screen.getByText(Primary.args.errorMessage).classList).toContain(
-      "errorText"
+      "ds-errorText"
     );
   });
 
