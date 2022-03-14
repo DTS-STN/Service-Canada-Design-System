@@ -10,11 +10,11 @@ import bg_img from "../../assets/footer_bg_img.svg";
 
 export function Footer(props) {
   return (
-    <footer className="w-full">
+    <footer className="ds-w-full">
       {props.error ? (
-        <section className={"container h-16 bg-multi-neutrals-grey5"}>
+        <section className={"ds-container ds-h-16 ds-bg-multi-neutrals-grey5"}>
           <Image
-            className="mb-2.5 sm:mt-3 mt-5 h-6 float-right"
+            className="ds-mb-2.5 sm:ds-mt-3 ds-mt-5 ds-h-6 ds-float-right"
             src={props.logoUrl}
             alt={props.logoAltText}
           />
@@ -22,27 +22,27 @@ export function Footer(props) {
       ) : (
         <>
           <div
-            className="bg-multi-blue-blue70 landscape bg-no-repeat bg-clip-border sm:bg-right-bottom bg-bottom"
+            className="ds-bg-multi-blue-blue70 ds-landscape ds-bg-no-repeat bg-clip-border sm:ds-bg-right-bottom ds-bg-bottom"
             style={{
               backgroundImage: `url(${props.landscapeBgImg})`,
             }}
           >
-            <section className={`container`}>
+            <section className={`ds-container`}>
               <nav
-                className=" pt-6 pb-6"
+                className="ds-pt-6 ds-pb-6"
                 role="navigation"
                 aria-labelledby="accessibleSectionHeader1"
               >
-                <h2 className="sr-only" id="accessibleSectionHeader1">
+                <h2 className="ds-sr-only" id="accessibleSectionHeader1">
                   About Government
                 </h2>
-                <ul className="sm:grid sm:grid-cols-3 flex flex-col gap-1 text-xs">
+                <ul className="sm:ds-grid sm:ds-grid-cols-3 ds-flex ds-flex-col ds-gap-1 ds-text-xs">
                   {" "}
                   {props.landscapeLinks.map((value, index) => {
                     return (
                       <li
                         key={value + index}
-                        className="text-white w-64 sm:w-56 lg:w-80 my-2.5 hover:underline"
+                        className="ds-text-white ds-w-64 sm:ds-w-56 lg:ds-w-80 ds-my-2.5 hover:ds-underline"
                       >
                         <Link
                           id={value + index}
@@ -58,25 +58,25 @@ export function Footer(props) {
               </nav>
             </section>
           </div>
-          <div className="h-full pb-4 bg-color-multi-neutrals-white ">
-            <section className="container h-auto pt-5 flex flex-col md:flex-row justify-between">
+          <div className="ds-h-full ds-pb-4 ds-bg-color-multi-neutrals-white ">
+            <section className="ds-container ds-h-auto ds-pt-5 ds-flex ds-flex-col md:ds-flex-row ds-justify-between">
               <nav
-                className="mt-3.5 xl:mt-5"
+                className="ds-mt-3.5 xl:ds-mt-5"
                 role="navigation"
                 aria-labelledby="accessibleSectionHeader2"
               >
-                <h2 className="sr-only" id="accessibleSectionHeader2">
+                <h2 className="ds-sr-only" id="accessibleSectionHeader2">
                   About this site
                 </h2>
-                <ul className="flex flex-col sm:flex sm:flex-row">
+                <ul className="ds-flex ds-flex-col sm:ds-flex sm:ds-flex-row">
                   {props.brandLinks.map((value, index) => {
                     return (
                       <li
                         key={index}
                         className={
                           index === 0
-                            ? "pr-4 sm:mb-4 mb-5 list-inside list-disc sm:list-none text-xxs"
-                            : "pr-4 sm:mb-4 mb-5 list-inside list-disc text-xxs"
+                            ? "ds-pr-4 sm:ds-mb-4 ds-mb-5 ds-list-inside ds-list-disc sm:ds-list-none ds-text-xxs"
+                            : "ds-pr-4 sm:ds-mb-4 ds-mb-5 ds-list-inside ds-list-disc ds-text-xxs"
                         }
                       >
                         <Link
@@ -91,7 +91,7 @@ export function Footer(props) {
                 </ul>
               </nav>
               <div className=" ">
-                <div className="mt-3 float-left sm:hidden">
+                <div className="ds-mt-3 ds-float-left sm:ds-hidden">
                   <Button
                     id="top_btn"
                     text="To the top"
@@ -103,7 +103,7 @@ export function Footer(props) {
                   />
                 </div>
                 <Image
-                  className="sm:h-40px h-25px mb-2.5 sm:mt-6 md:mt-3 mt-5 float-right"
+                  className="sm:ds-h-40px ds-h-25px ds-mb-2.5 sm:ds-mt-6 md:ds-mt-3 ds-mt-5 ds-float-right"
                   src={props.logoUrl}
                   alt={props.logoAltText}
                 />

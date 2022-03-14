@@ -6,7 +6,7 @@ export function Image(props) {
 
   return (
     <>
-      <img src={src} alt={alt} className={`${className} ${rounded}`} />
+      <img src={src} alt={alt} className={`${className} ds-${rounded}`} />
     </>
   );
 }

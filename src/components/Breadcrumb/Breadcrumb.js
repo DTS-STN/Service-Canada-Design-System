@@ -6,20 +6,20 @@ import React from "react";
  */
 export function Breadcrumb(props) {
   return (
-    <nav className="pt-4 pb-4" aria-label="breadcrumbs" id={props.id}>
-      <ul className="block text-custom-blue-dark leading-23px font-body">
+    <nav className="ds-pt-4 ds-pb-4" aria-label="breadcrumbs" id={props.id}>
+      <ul className="ds-block ds-text-custom-blue-dark ds-leading-23px ds-font-body">
         {props.items
           ? props.items.map((item, key) => {
               return (
-                <li key={key} className={`inline-block pl-2 w-100`}>
+                <li key={key} className={`ds-inline-block ds-pl-2 ds-w-100`}>
                   <a
                     href={item.link}
-                    className="font-body hover:text-canada-footer-hover-font-blue text-multi-blue-blue70b underline"
+                    className="ds-font-body hover:ds-text-canada-footer-hover-font-blue ds-text-multi-blue-blue70b ds-underline"
                   >
                     {item.text}
                   </a>
                   {key < props.items.length - 1 && (
-                    <span className="inline-block align-middle text-multi-blue-blue70b icon-cheveron-right pl-2" />
+                    <span className="ds-inline-block ds-align-middle ds-text-multi-blue-blue70b ds-icon-cheveron-right ds-pl-2" />
                   )}
                 </li>
               );

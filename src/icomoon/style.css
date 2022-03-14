@@ -10,8 +10,8 @@
   font-display: block;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
+[class^="ds-icon-"],
+[class*="ds-icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "icomoon" !important;
   speak: never;
@@ -30,7 +30,7 @@
   content: "\e902";
   color: #d3080c;
 }
-.icon-cheveron-right:before {
+.ds-icon-cheveron-right:before {
   content: "\e901";
 }
 .icon-menu:before {

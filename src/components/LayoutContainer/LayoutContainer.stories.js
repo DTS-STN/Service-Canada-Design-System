@@ -16,40 +16,40 @@ const Template = (args) => <LayoutContainer {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   children: [
-    <div className="bg-gray-100 text-center h-40" key="key1">
+    <div className="ds-bg-gray-100 ds-text-center ds-h-40" key="key1">
       1
     </div>,
-    <div className="bg-gray-100 text-center" key="key2">
+    <div className="ds-bg-gray-100 ds-text-center" key="key2">
       2
     </div>,
-    <div className="bg-gray-100 text-center" key="key3">
+    <div className="ds-bg-gray-100 ds-text-center" key="key3">
       3
     </div>,
-    <div className="bg-gray-100 text-center" key="key4">
+    <div className="ds-bg-gray-100 ds-text-center" key="key4">
       4
     </div>,
-    <div className="bg-gray-100 text-center" key="key5">
+    <div className="ds-bg-gray-100 ds-text-center" key="key5">
       5
     </div>,
-    <div className="bg-gray-100 text-center" key="key6">
+    <div className="ds-bg-gray-100 ds-text-center" key="key6">
       6
     </div>,
-    <div className="bg-gray-100 text-center" key="key7">
+    <div className="ds-bg-gray-100 ds-text-center" key="key7">
       7
     </div>,
-    <div className="bg-gray-100 text-center" key="key8">
+    <div className="ds-bg-gray-100 ds-text-center" key="key8">
       8
     </div>,
-    <div className="bg-gray-100 text-center" key="key9">
+    <div className="ds-bg-gray-100 ds-text-center" key="key9">
       9
     </div>,
-    <div className="bg-gray-100 text-center" key="key10">
+    <div className="ds-bg-gray-100 ds-text-center" key="key10">
       10
     </div>,
-    <div className="bg-gray-100 text-center" key="key11">
+    <div className="ds-bg-gray-100 ds-text-center" key="key11">
       11
     </div>,
-    <div className="bg-gray-100 text-center" key="key12">
+    <div className="ds-bg-gray-100 ds-text-center" key="key12">
       12
     </div>,
   ],
@@ -58,7 +58,7 @@ Primary.args = {
 export const Secondary = Template.bind({});
 Secondary.args = {
   children: (
-    <p className="col-span-12">
+    <p className="ds-col-span-12">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industry's standard dummy text ever since the
       1500s, when an unknown printer took a galley of type and scrambled it to
