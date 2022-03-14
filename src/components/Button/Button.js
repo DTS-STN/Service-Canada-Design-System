@@ -3,11 +3,11 @@ import React from "react";
 import { Image } from "../Image/Image";
 
 export function Button(props) {
-  const style = "btn-" + props.styling;
+  const style = "ds-btn-" + props.styling;
   return props.href ? (
     <a
       href={props.href}
-      className={`flex flex-row btn-link focus:ring focus:ring-offset-4 ${props.className} `}
+      className={`ds-flex ds-flex-row ds-btn-link focus:ds-ring focus:ds-ring-offset-4 ${props.className} `}
       onClick={props.onClick}
       id={props.id}
       disabled={props.disabled}
@@ -15,7 +15,7 @@ export function Button(props) {
     >
       {props.icon && !props.iconEnd ? (
         <Image
-          className="h-8 w-8 pr-2"
+          className="ds-h-8 ds-w-8 ds-pr-2"
           src={props.icon}
           alt={props.iconAltText}
         />
@@ -24,7 +24,7 @@ export function Button(props) {
       {props.children}
       {props.icon && props.iconEnd ? (
         <Image
-          className="h-8 w-8 pl-2"
+          className="ds-h-8 ds-w-8 ds-pl-2"
           src={props.icon}
           alt={props.iconAltText}
         />
@@ -32,22 +32,22 @@ export function Button(props) {
     </a>
   ) : (
     <button
-      className={`flex flex-row ${style} focus:ring focus:ring-offset-4 ${props.className} `}
+      className={`ds-flex ds-flex-row ${style} focus:ds-ring focus:ds-ring-offset-4 ${props.className} `}
       onClick={props.onClick}
       type={props.type}
       id={props.id}
       disabled={props.disabled}
     >
       {props.icon && !props.iconEnd ? (
-        <div className="grid place-items-center h-8 w-8">
-          <Image className="pr-2" src={props.icon} alt={props.iconAltText} />
+        <div className="ds-grid ds-place-items-center ds-h-8 ds-w-8">
+          <Image className="ds-pr-2" src={props.icon} alt={props.iconAltText} />
         </div>
       ) : undefined}
       {props.text}
       {props.children}
       {props.icon && props.iconEnd ? (
         <Image
-          className="h-8 w-8 pl-2"
+          className="ds-h-8 ds-w-8 ds-pl-2"
           src={props.icon}
           alt={props.iconAltText}
         />

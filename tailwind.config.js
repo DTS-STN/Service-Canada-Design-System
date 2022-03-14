@@ -1,6 +1,7 @@
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
+  prefix: "ds-",
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
     "./config-plugins/**/*.{js,ts,jsx,tsx}",
@@ -185,6 +186,7 @@ module.exports = {
         "138px": "138px",
         "160px": "160px",
         "168px": "168px",
+        "284px": "284px",
         "300px": "300px",
         "400px": "400px",
         "500px": "500px",
@@ -253,6 +255,7 @@ module.exports = {
         "600px": "600px",
         "750px": "750px",
         "5rem": "5rem",
+        "250px": "250px",
       },
 
       minWidth: {
@@ -323,5 +326,6 @@ module.exports = {
     require("./config-plugins/message-plugin"),
     require("./config-plugins/cards-plugin"),
     require("./config-plugins/labels-plugin"),
+    require("./config-plugins/search-plugin"),
   ],
 };

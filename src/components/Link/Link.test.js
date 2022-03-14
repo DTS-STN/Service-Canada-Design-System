@@ -29,7 +29,7 @@ describe("Link", () => {
       Default.args.text
     );
     expect(screen.getByRole("link")).toHaveClass(
-      "lg:underline text-multi-blue-blue70b font-body text-browserh5 font-boldtext-mobileh5 leading-33px hover:text-multi-blue-blue50b"
+      "ds-underline ds-text-multi-blue-blue70b ds-font-body ds-text-browserh5 ds-leading-33px hover:ds-text-multi-blue-blue50b"
     );
   });
 
@@ -39,7 +39,7 @@ describe("Link", () => {
       RegularLinkwithEmphasis.args.text
     );
     expect(screen.getByRole("link")).toHaveClass(
-      "underline text-multi-blue-blue70b font-body text-browserh5 font-bold text-mobileh5 leading-33px hover:text-multi-blue-blue50b"
+      "ds-underline ds-text-multi-blue-blue70b ds-font-body ds-text-browserh5 ds-font-bold ds-text-mobileh5 ds-leading-33px hover:ds-text-multi-blue-blue50b"
     );
   });
 
@@ -49,7 +49,7 @@ describe("Link", () => {
       TitleLink.args.text
     );
     expect(screen.getByRole("link")).toHaveClass(
-      "underline text-multi-blue-blue70b font-header text-browserh5  leading-23px font-bold hover:text-multi-blue-blue50b"
+      "ds-underline ds-text-multi-blue-blue70b ds-font-header ds-text-browserh5  ds-leading-23px ds-font-bold hover:ds-text-multi-blue-blue50b"
     );
   });
 
@@ -59,7 +59,7 @@ describe("Link", () => {
       CardActionLink.args.text
     );
     expect(screen.getByRole("link")).toHaveClass(
-      "text-multi-blue-blue70b font-body text-browserh5 underline leading-28px font-regular hover:text-multi-blue-blue50b"
+      "ds-text-multi-blue-blue70b ds-font-body ds-text-browserh5 ds-underline ds-leading-28px ds-font-regular hover:ds-text-multi-blue-blue50b"
     );
   });
 
@@ -69,7 +69,7 @@ describe("Link", () => {
       FooterBlueLink.args.text
     );
     expect(screen.getByRole("link")).toHaveClass(
-      "underline text-multi-blue-blue70b font-body leading-20px text-browserh7 hover:underline"
+      "ds-underline ds-text-multi-blue-blue70b ds-font-body ds-leading-20px ds-text-browserh7 hover:ds-underline"
     );
   });
 
@@ -79,7 +79,7 @@ describe("Link", () => {
       FooterWhiteLink.args.text
     );
     expect(screen.getByRole("link")).toHaveClass(
-      "text-multi-neutrals-white font-body text-browserh7 leading-20px font-regular hover:text-multi-neutrals-white hover:underline"
+      "ds-text-multi-neutrals-white ds-font-body ds-text-browserh7 ds-leading-20px ds-font-regular hover:ds-text-multi-neutrals-white hover:ds-underline"
     );
   });
 
@@ -89,7 +89,7 @@ describe("Link", () => {
       screen.getByText("Small link - Breadcrumbs & French toggle")
     ).toHaveTextContent(BreadcrumbsLink.args.text);
     expect(screen.getByRole("link")).toHaveClass(
-      "text-multi-blue-blue70b font-body text-browserh8 leading-23px font-regular hover:text-multi-blue-blue50b"
+      "ds-text-multi-blue-blue70b ds-font-body ds-text-browserh8 ds-leading-23px ds-font-regular hover:ds-text-multi-blue-blue50b"
     );
   });
   it("has no a11y violations", async () => {
