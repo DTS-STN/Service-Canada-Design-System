@@ -29,14 +29,14 @@ describe("Form Label", () => {
 
   it("renders Default With Info label", () => {
     render(<FormLabel {...DefaultWithInfo.args} />);
-    expect(screen.getByText("Label")).toHaveTextContent(
+    expect(screen.getByText("Required Label")).toHaveTextContent(
       DefaultWithInfo.args.label
     );
   });
 
   it("renders warning label", () => {
     render(<FormLabel {...RequiredWithInfo.args} />);
-    expect(screen.getByText("Label")).toHaveTextContent(
+    expect(screen.getByText("Required Label")).toHaveTextContent(
       RequiredWithInfo.args.label
     );
   });

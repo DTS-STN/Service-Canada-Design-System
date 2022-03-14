@@ -6,22 +6,22 @@ export function FormLabel(props) {
   return (
     <>
       <label
-        className={`block leading-24px text-xl lg:text-p font-body mb-8px relative`}
+        className={`ds-block ds-leading-24px ds-text-xl lg:ds-text-p ds-font-body ds-mb-8px ds-relative`}
         htmlFor={props.id}
       >
-        <b className="inline text-form-input-gray lg:text-xl font-bold ">
+        <b className="ds-inline ds-text-form-input-gray lg:ds-text-xl ds-font-bold ">
           {props.label}{" "}
         </b>
         {props.required ? (
-          <span className="text-error-border-red text-xl font-medium">{`(${props.requiredText})`}</span>
+          <span className="ds-text-error-border-red ds-text-xl ds-font-medium">{`(${props.requiredText})`}</span>
         ) : (
-          <p className="inline text-form-input-gray text-xl lg:text-xl font-medium">
+          <p className="ds-inline ds-text-form-input-gray ds-text-xl lg:ds-text-xl ds-font-medium">
             {`(${props.optionalText})`}
           </p>
         )}
         {props.infoText && (
           <span
-            className="infoText cursor-pointer"
+            className="ds-infoText ds-cursor-pointer"
             aria-hidden="true"
             role="button"
             tabIndex={0}
@@ -32,7 +32,7 @@ export function FormLabel(props) {
       {displayHelpText && (
         <div
           id={props.describedBy}
-          className="rounded font-body text-xl text-multi-neutrals-grey100 p-5px pl-14px pr-14px bg-specific-cyan-cyan5 leading-33px border  border-specific-cyan-cyan50 mb-1.5"
+          className="ds-rounded ds-font-body ds-text-xl ds-text-multi-neutrals-grey100 ds-p-5px ds-pl-14px ds-pr-14px ds-bg-specific-cyan-cyan5 ds-leading-33px ds-border  ds-border-specific-cyan-cyan50 ds-mb-1.5"
         >
           {`${props.infoText}`}
         </div>

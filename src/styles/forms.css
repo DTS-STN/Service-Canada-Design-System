@@ -95,7 +95,7 @@
   touch-action: manipulation;
 }
 
-.infoText::after {
+.ds-infoText::after {
   margin-left: 8px;
   content: "";
   position: absolute;
@@ -104,11 +104,11 @@
   background: url(\../assets/info_img.svg) right center;
 }
 
-.alertWrapper {
+.ds-alertWrapper {
   position: relative;
 }
 
-.alertWrapper .iconContainer::after {
+.ds-alertWrapper .ds-iconContainer::after {
   content: "";
   position: absolute;
   height: 26px;
@@ -118,7 +118,7 @@
 }
 
 @media (max-width: 768px) {
-  .infoText::after {
+  .ds-infoText::after {
     content: "";
     position: absolute;
     right: 0;
