@@ -7,7 +7,7 @@ export default {
   decorators: [
     (Story) => (
       <div className="w-full flex items-center flex-col">
-        <div className="w-96">
+        <div className="w-100">
           <Story />
         </div>
       </div>
