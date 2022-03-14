@@ -32,7 +32,7 @@ export function FormLabel(props) {
       {displayHelpText && (
         <div
           id={props.describedBy}
-          className="rounded text-xl text-multi-neutrals-grey100 p-5px pl-14px pr-14px lg:text-sm bg-specific-cyan-cyan5 leading-33px border  border-specific-cyan-cyan50 mb-1.5"
+          className="rounded font-body text-xl text-multi-neutrals-grey100 p-5px pl-14px pr-14px bg-specific-cyan-cyan5 leading-33px border  border-specific-cyan-cyan50 mb-1.5"
         >
           {`${props.infoText}`}
         </div>
@@ -76,7 +76,7 @@ FormLabel.propTypes = {
   /**
    * Information text to not disclose any personal information
    */
-  infoText: PropTypes.string.isRequired,
+  infoText: PropTypes.string,
 
   /**
    * Unit test selector
