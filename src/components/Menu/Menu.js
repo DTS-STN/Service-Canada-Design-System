@@ -7,13 +7,13 @@ import FR from "../../translations/fr.json";
  */
 export function Menu(props) {
   const ref = useRef();
-  const [menuDisplayed, setMenuDisplayed] = React.useState(true);
-  const [buttonNavEnabled, setButtonNavEnabled] = React.useState(true);
+  const [menuDisplayed, setMenuDisplayed] = React.useState(false);
+  const [buttonNavEnabled, setButtonNavEnabled] = React.useState(false);
 
   let [headerDropdownClass, setHeaderDropdownClass] =
-    React.useState("ds-block");
+    React.useState("ds-hidden");
   let [headerMobileDropdownClass, setHeaderMobileDropdownClass] =
-    React.useState(true);
+    React.useState(false);
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
       // If the menu is open and the clicked target is not within the menu,
@@ -27,22 +27,22 @@ export function Menu(props) {
       }
     };
 
-    // document.addEventListener("mousedown", checkIfClickedOutside);
+    document.addEventListener("mousedown", checkIfClickedOutside);
 
     return () => {
-      // document.removeEventListener("mousedown", checkIfClickedOutside);
+      document.removeEventListener("mousedown", checkIfClickedOutside);
     };
   }, [headerDropdownClass]);
 
   //Function for changing menu state
   function onMenuClick(e) {
     e.preventDefault();
-    // const menuButtonParent = document.getElementById("menuButtonParent");
-    // const menuDropdownSub = document.getElementById("menuDropdownSub");
+    const menuButtonParent = document.getElementById("menuButtonParent");
+    const menuDropdownSub = document.getElementById("menuDropdownSub");
     setHeaderMobileDropdownClass(!headerMobileDropdownClass);
     setButtonNavEnabled(!buttonNavEnabled);
-    // menuDropdownSub.classList.toggle("ds-active");
-    // menuButtonParent.classList.toggle("ds-active");
+    menuDropdownSub.classList.toggle("ds-active");
+    menuButtonParent.classList.toggle("ds-active");
     setMenuDisplayed(!menuDisplayed);
   }
   let path = "";
@@ -60,7 +60,7 @@ export function Menu(props) {
         </div>
         <div
           id="menuButtonParent"
-          className="ds-active ds-menuButtonParent ds-block md:ds-hidden ds-pr-4 focus:ds-bg-multi-blue-blue2 ds-text-white ds-border-l-2 ds-border-white"
+          className="ds-menuButtonParent ds-block md:ds-hidden ds-pr-4 focus:ds-bg-multi-blue-blue2 ds-text-white ds-border-l-2 ds-border-white"
         >
           <button
             id="menuButton"
@@ -130,7 +130,7 @@ export function Menu(props) {
           <div>
             <ul
               id="menuDropdownSub"
-              className="ds-active ds-menuDropdown ds-menuRight md:ds-text-white ds-text-gray-700 sm:ds-w-full sm:ds-left-0"
+              className="ds-menuDropdown ds-menuRight md:ds-text-white ds-text-gray-700 sm:ds-w-full sm:ds-left-0"
             >
               {props.items.map((item, key) => {
                 const exactURL = path === item.link; // it's exactly this url
@@ -139,6 +139,7 @@ export function Menu(props) {
                   <li
                     key={"menuSubItem" + key}
                     className={`ds-py-18px ds-px-18px md:ds-hidden ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 `}
+                    aria-current={exactURL ? "page" : null}
                   >
                     <a
                       href={item.link}
@@ -156,17 +157,17 @@ export function Menu(props) {
               {props.isAuthenticated ? (
                 <li
                   id="buttonNav"
-                  className="ds-active ds-py-4 md:ds-pl-0 md:ds-pr-0 ds-buttonNav"
+                  className="ds-py-4 md:ds-pl-0 md:ds-pr-0 ds-buttonNav"
                 >
                   <button
                     id="dropdownNavbarLink"
                     data-dropdown-toggle="dropdownNavbar"
                     onClick={() => {
-                      // const buttonNavId = document.getElementById("buttonNav");
-                      // buttonNavId.classList.toggle("ds-active");
-                      // return headerDropdownClass === "ds-hidden"
-                      //   ? setHeaderDropdownClass("ds-block")
-                      //   : setHeaderDropdownClass("ds-hidden");
+                      const buttonNavId = document.getElementById("buttonNav");
+                      buttonNavId.classList.toggle("ds-active");
+                      return headerDropdownClass === "ds-hidden"
+                        ? setHeaderDropdownClass("ds-block")
+                        : setHeaderDropdownClass("ds-hidden");
                     }}
                     className="ds-flex ds-font-bold ds-font-body ds-justify-between ds-items-center md:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 ds-pr-4 md:ds-pl-3 ds-w-full"
                   >
