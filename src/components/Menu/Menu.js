@@ -47,9 +47,6 @@ export function Menu(props) {
       : menuButton.setAttribute("aria-expanded", true);
   }
 
-  const subMenuClasses = props.isAuthenticated
-    ? "ds-menuDropdown ds-menuRight  md:ds-text-white ds-text-gray-700  sm:ds-w-full sm:ds-left-0"
-    : "ds-menuDropdown ds-menuRight md:ds-text-white ds-text-gray-700 sm:ds-w-full sm:ds-left-0";
   return (
     <div className="ds-headerNav ds-bg-multi-blue-blue70" ref={ref}>
       <nav className="md:ds-container ds-flex ds-items-center ds-justify-between ds-flex-wrap ds-w-full ds-relative">
@@ -124,7 +121,10 @@ export function Menu(props) {
             </ul>
           </div>
           <div>
-            <ul id="menuDropdownSub" className={subMenuClasses}>
+            <ul
+              id="menuDropdownSub"
+              className="ds-menuDropdown ds-menuRight md:ds-text-white ds-text-gray-700 sm:ds-w-full sm:ds-left-0"
+            >
               {props.items.map((item, key) => {
                 const exactURL = path === item.link; // it's exactly this url
                 const includesURL = path.includes(item.link); // it's a child of this url (eg, "/projects/app" includes "/projects")
