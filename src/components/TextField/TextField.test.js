@@ -44,7 +44,7 @@ describe("TextField", () => {
   it("renders text field with with Error", () => {
     render(<RequiredWithError {...RequiredWithError.args} />);
     expect(screen.getByText(RequiredWithError.args.label).classList).toContain(
-      "text-form-input-gray"
+      "ds-text-form-input-gray"
     );
   });
 
