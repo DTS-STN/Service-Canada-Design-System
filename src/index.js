@@ -87,3 +87,8 @@ export { Breadcrumb } from "./components/Breadcrumb/Breadcrumb";
  */
 
 export { TextField } from "./components/TextField/TextField";
+
+/**
+ * Form Label
+ */
+export { FormLabel } from "./components/FormLabel/FormLabel";

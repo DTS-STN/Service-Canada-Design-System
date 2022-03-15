@@ -10,57 +10,36 @@ html {
 
 @layer base {
   /* Font families */
-  h1 {
-    @apply heading1;
-  }
-  h2 {
-    @apply heading2;
-  }
-  h3 {
-    @apply heading3;
-  }
-  h4 {
-    @apply heading4;
-  }
-  h5 {
-    @apply heading5;
-  }
-  h6 {
-    @apply heading6;
-  }
-  p {
-    @apply body;
-  }
 }
 
 @layer utilities {
   /* Bootstrap grids for default page layout using css grid utilities */
   /* If support for older browsers or IE is needed, flex box will have to be used instead of css grid */
 
-  .bootstrap5-grid {
-    @apply grid grid-cols-12 gap-6;
+  .ds-bootstrap5-grid {
+    @apply ds-grid ds-grid-cols-12 ds-gap-6;
   }
 
-  .bootstrap3-grid {
-    @apply grid grid-cols-2 gap-30px;
+  .ds-bootstrap3-grid {
+    @apply ds-grid ds-grid-cols-2 ds-gap-30px;
   }
 
   @screen sm {
-    .bootstrap3-grid {
-      @apply grid grid-cols-6 gap-30px;
+    .ds-bootstrap3-grid {
+      @apply ds-grid ds-grid-cols-6 ds-gap-30px;
     }
   }
 
   @screen lg {
-    .bootstrap3-grid {
-      @apply grid grid-cols-12 gap-30px;
+    .ds-bootstrap3-grid {
+      @apply ds-grid ds-grid-cols-12 ds-gap-30px;
     }
   }
 
   /* Text Button Field utilities */
 
   .textbuttonField > p {
-    @apply leading-normal body py-4;
+    @apply ds-leading-normal ds-body ds-py-4;
   }
 
   .textbuttonField > h1,
@@ -69,6 +48,6 @@ html {
   h4,
   h5,
   h6 {
-    @apply mb-4;
+    @apply ds-mb-4;
   }
 }

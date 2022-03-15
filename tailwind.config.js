@@ -1,6 +1,7 @@
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
+  prefix: "ds-",
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
     "./config-plugins/**/*.{js,ts,jsx,tsx}",
@@ -169,7 +170,11 @@ module.exports = {
         "color-grid": "repeat(auto-fill, minmax(180px, 1fr))",
       },
       spacing: {
+        "22px": "22px",
         "30px": "30px",
+        "42px": "42px",
+        "38px": "38px",
+        "18px": "18px",
       },
       width: {
         "40px": "40px",
@@ -181,6 +186,7 @@ module.exports = {
         "138px": "138px",
         "160px": "160px",
         "168px": "168px",
+        "284px": "284px",
         "300px": "300px",
         "400px": "400px",
         "500px": "500px",
@@ -320,5 +326,6 @@ module.exports = {
     require("./config-plugins/message-plugin"),
     require("./config-plugins/cards-plugin"),
     require("./config-plugins/labels-plugin"),
+    require("./config-plugins/search-plugin"),
   ],
 };
