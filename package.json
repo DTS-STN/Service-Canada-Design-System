@@ -1,6 +1,6 @@
 {
   "name": "@dts-stn/decd-design-system",
-  "version": "1.20.0",
+  "version": "1.22.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "source": "src/index.js",
@@ -19,8 +19,9 @@
     "eslint-plugin-jest": "^25.2.4",
     "fetch-mock": "^9.11.0",
     "husky": "^6.0.0",
+    "joi": "^17.4.2",
     "prettier": "^2.2.1",
-    "joi": "^17.4.2"
+    "user": "0.0.0"
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
