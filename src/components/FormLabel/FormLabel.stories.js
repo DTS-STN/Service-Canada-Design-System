@@ -4,8 +4,8 @@ export default {
   component: FormLabel,
   decorators: [
     (Story) => (
-      <div className="w-full flex items-center flex-col">
-        <div className="w-96">
+      <div className="ds-w-full flex ds-items-center ds-flex-col">
+        <div className="ds-w-96">
           <Story />
         </div>
       </div>

@@ -31,6 +31,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 - Cards Component
 - Labels Component
 - Breadcrumb Component
+- FormError Component
 - Form Label Component
 
 ### Changed
