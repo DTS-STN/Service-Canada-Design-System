@@ -88,6 +88,12 @@ export { Breadcrumb } from "./components/Breadcrumb/Breadcrumb";
 
 export { TextField } from "./components/TextField/TextField";
 
+/*
+ * FormError
+ */
+
+export { FormError } from "./components/FormError/FormError";
+
 /**
  * Form Label
  */

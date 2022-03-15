@@ -6,8 +6,8 @@ export default {
   component: TextField,
   decorators: [
     (Story) => (
-      <div className="w-full flex justify-center">
-        <div className="w-96">
+      <div className="ds-w-full ds-flex ds-justify-center">
+        <div className="ds-w-96">
           <Story />
         </div>
       </div>
@@ -49,7 +49,7 @@ RequiredWithError.args = {
   requiredText: "required",
   required: true,
   infoText:
-    "Password should be at least 6 characters long and include both numbers and letters.",
+    "Password should be at least six characters long and include both numbers and letters.",
   uncontrolled: true,
   hasError: true,
   errorText: "Password must include numbers and letters.",
