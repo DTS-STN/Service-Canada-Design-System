@@ -7,10 +7,13 @@ import FR from "../../translations/fr.json";
  */
 export function Menu(props) {
   const ref = useRef();
+  const [menuDisplayed, setMenuDisplayed] = React.useState(true);
+  const [buttonNavEnabled, setButtonNavEnabled] = React.useState(true);
+
   let [headerDropdownClass, setHeaderDropdownClass] =
     React.useState("ds-hidden");
   let [headerMobileDropdownClass, setHeaderMobileDropdownClass] =
-    React.useState(false);
+    React.useState(true);
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
       // If the menu is open and the clicked target is not within the menu,
@@ -24,27 +27,24 @@ export function Menu(props) {
       }
     };
 
-    document.addEventListener("mousedown", checkIfClickedOutside);
+    // document.addEventListener("mousedown", checkIfClickedOutside);
 
     return () => {
-      document.removeEventListener("mousedown", checkIfClickedOutside);
+      // document.removeEventListener("mousedown", checkIfClickedOutside);
     };
   }, [headerDropdownClass]);
 
-  const path = window.location.pathname;
+  // const path = window.location.pathname;
   //Function for changing menu state
-  function onMenuClick() {
-    const menuButton = document.getElementById("menuButton");
-    const menuButtonParent = document.getElementById("menuButtonParent");
-    const menuDropdown = document.getElementById("menuDropdown");
-    const menuDropdownSub = document.getElementById("menuDropdownSub");
+  function onMenuClick(e) {
+    e.preventDefault();
+    // const menuButtonParent = document.getElementById("menuButtonParent");
+    // const menuDropdownSub = document.getElementById("menuDropdownSub");
     setHeaderMobileDropdownClass(!headerMobileDropdownClass);
-    menuDropdown.classList.toggle("ds-active");
-    menuDropdownSub.classList.toggle("ds-active");
-    menuButtonParent.classList.toggle("ds-active");
-    menuButton.getAttribute("aria-expanded") === "true"
-      ? menuButton.setAttribute("aria-expanded", false)
-      : menuButton.setAttribute("aria-expanded", true);
+    setButtonNavEnabled(!buttonNavEnabled);
+    // menuDropdownSub.classList.toggle("ds-active");
+    // menuButtonParent.classList.toggle("ds-active");
+    setMenuDisplayed(!menuDisplayed);
   }
 
   return (
@@ -57,14 +57,14 @@ export function Menu(props) {
         </div>
         <div
           id="menuButtonParent"
-          className="ds-menuButtonParent ds-block md:ds-hidden ds-pr-4 focus:ds-bg-multi-blue-blue2 ds-text-white ds-border-l-2 ds-border-white"
+          className="ds-active ds-menuButtonParent ds-block md:ds-hidden ds-pr-4 focus:ds-bg-multi-blue-blue2 ds-text-white ds-border-l-2 ds-border-white"
         >
           <button
             id="menuButton"
             onClick={onMenuClick}
             className="ds-text-h4 ds-text-canada-footer-font focus:ds-outline-none ds-py-4"
             aria-haspopup="true"
-            aria-expanded="false"
+            aria-expanded={menuDisplayed}
             aria-controls="menuDropdown"
             data-testid="menuButton"
           >
@@ -95,7 +95,12 @@ export function Menu(props) {
         </div>
         <div className="ds-w-full ds-block ds-flex-grow md:ds-flex md:ds-items-center md:ds-w-auto ds-bg-multi-blue-blue2 md:ds-bg-multi-blue-blue70">
           <div className="md:ds-flex-grow md:ds-text-center md:ds-flex ds-hidden">
-            <ul id="menuDropdown" className="ds-menuDropdown ds-w-full">
+            <ul
+              id="menuDropdown"
+              className={`${
+                buttonNavEnabled && "active"
+              } ds-menuDropdown ds-w-full`}
+            >
               {props.items.map((item, key) => {
                 const exactURL = path === item.link; // it's exactly this url
                 const includesURL = path.includes(item.link); // it's a child of this url (eg, "/projects/app" includes "/projects")
@@ -123,23 +128,18 @@ export function Menu(props) {
           <div>
             <ul
               id="menuDropdownSub"
-              className="ds-menuDropdown ds-menuRight md:ds-text-white ds-text-gray-700 sm:ds-w-full sm:ds-left-0"
+              className="ds-active ds-menuDropdown ds-menuRight md:ds-text-white ds-text-gray-700 sm:ds-w-full sm:ds-left-0"
             >
               {props.items.map((item, key) => {
-                const exactURL = path === item.link; // it's exactly this url
-                const includesURL = path.includes(item.link); // it's a child of this url (eg, "/projects/app" includes "/projects")
-
                 return (
                   <li
                     key={key}
                     className={`ds-py-18px ds-px-18px md:ds-hidden ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 `}
-                    aria-current={exactURL ? "page" : null}
                   >
                     <a
                       href={item.link}
-                      className={`ds-font-body ds-font-bold ds-text-base  ${
-                        includesURL ? "ds-activePage" : "ds-menuLink"
-                      }`}
+                      className={`ds-font-body ds-font-bold ds-text-base ds-activePage
+                        `}
                       title={item.text}
                     >
                       {item.text}
@@ -150,17 +150,17 @@ export function Menu(props) {
               {props.isAuthenticated ? (
                 <li
                   id="buttonNav"
-                  className="ds-py-4 md:ds-pl-0 md:ds-pr-0 ds-buttonNav"
+                  className="ds-active ds-py-4 md:ds-pl-0 md:ds-pr-0 ds-buttonNav"
                 >
                   <button
                     id="dropdownNavbarLink"
                     data-dropdown-toggle="dropdownNavbar"
                     onClick={() => {
-                      const buttonNavId = document.getElementById("buttonNav");
-                      buttonNavId.classList.toggle("ds-active");
-                      return headerDropdownClass === "ds-hidden"
-                        ? setHeaderDropdownClass("ds-block")
-                        : setHeaderDropdownClass("ds-hidden");
+                      // const buttonNavId = document.getElementById("buttonNav");
+                      // buttonNavId.classList.toggle("ds-active");
+                      // return headerDropdownClass === "ds-hidden"
+                      //   ? setHeaderDropdownClass("ds-block")
+                      //   : setHeaderDropdownClass("ds-hidden");
                     }}
                     className="ds-flex ds-font-bold ds-font-body ds-justify-between ds-items-center md:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 ds-pr-4 md:ds-pl-3 ds-w-full"
                   >
@@ -190,7 +190,7 @@ export function Menu(props) {
                   </button>
 
                   <div
-                    className={`ds-dropdown-menu ${headerDropdownClass} md:ds-absolute ds-z-10 ds-top-60px ds-text-base ds-list-none ds-bg-blue2 ds-rounded ds-divide-y ds-divide-gray-100 dark:ds-bg-gray-700 dark:ds-divide-gray-600`}
+                    className={`ds-active ds-dropdown-menu ${headerDropdownClass} md:ds-absolute ds-z-10 ds-top-60px ds-text-base ds-list-none ds-bg-blue2 ds-rounded ds-divide-y ds-divide-gray-100 dark:ds-bg-gray-700 dark:ds-divide-gray-600`}
                   >
                     <ul
                       id="dropdownNavbar"
