@@ -11,7 +11,7 @@ export function Menu(props) {
   const [buttonNavEnabled, setButtonNavEnabled] = React.useState(true);
 
   let [headerDropdownClass, setHeaderDropdownClass] =
-    React.useState("ds-hidden");
+    React.useState("ds-block");
   let [headerMobileDropdownClass, setHeaderMobileDropdownClass] =
     React.useState(true);
   useEffect(() => {
@@ -34,7 +34,6 @@ export function Menu(props) {
     };
   }, [headerDropdownClass]);
 
-  // const path = window.location.pathname;
   //Function for changing menu state
   function onMenuClick(e) {
     e.preventDefault();
@@ -45,6 +44,10 @@ export function Menu(props) {
     // menuDropdownSub.classList.toggle("ds-active");
     // menuButtonParent.classList.toggle("ds-active");
     setMenuDisplayed(!menuDisplayed);
+  }
+  let path = "";
+  if (typeof window !== "undefined") {
+    path = window.location.pathname;
   }
 
   return (
@@ -103,11 +106,10 @@ export function Menu(props) {
             >
               {props.items.map((item, key) => {
                 const exactURL = path === item.link; // it's exactly this url
-                const includesURL = path.includes(item.link); // it's a child of this url (eg, "/projects/app" includes "/projects")
-
+                const includesURL = path ? path.includes(item.link) : false; // it's a child of this url (eg, "/projects/app" includes "/projects")
                 return (
                   <li
-                    key={key}
+                    key={"menuitem" + key}
                     className={`ds-py-4 ds-px-4 ds-inline-block ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 `}
                     aria-current={exactURL ? "page" : null}
                   >
@@ -131,14 +133,18 @@ export function Menu(props) {
               className="ds-active ds-menuDropdown ds-menuRight md:ds-text-white ds-text-gray-700 sm:ds-w-full sm:ds-left-0"
             >
               {props.items.map((item, key) => {
+                const exactURL = path === item.link; // it's exactly this url
+                const includesURL = path ? path.includes(item.link) : false; // it's a child of this url (eg, "/projects/app" includes "/projects")
                 return (
                   <li
-                    key={key}
+                    key={"menuSubItem" + key}
                     className={`ds-py-18px ds-px-18px md:ds-hidden ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 `}
                   >
                     <a
                       href={item.link}
-                      className={`ds-font-body ds-font-bold ds-text-base ds-activePage
+                      className={`ds-font-body ds-font-bold ds-text-base ${
+                        includesURL ? "ds-activePage" : "ds-menuLink"
+                      }
                         `}
                       title={item.text}
                     >
@@ -190,7 +196,7 @@ export function Menu(props) {
                   </button>
 
                   <div
-                    className={`ds-active ds-dropdown-menu ${headerDropdownClass} md:ds-absolute ds-z-10 ds-top-60px ds-text-base ds-list-none ds-bg-blue2 ds-rounded ds-divide-y ds-divide-gray-100 dark:ds-bg-gray-700 dark:ds-divide-gray-600`}
+                    className={`ds-dropdown-menu ${headerDropdownClass} md:ds-absolute ds-z-10 ds-top-60px ds-text-base ds-list-none ds-bg-blue2 ds-rounded ds-divide-y ds-divide-gray-100 dark:ds-bg-gray-700 dark:ds-divide-gray-600`}
                   >
                     <ul
                       id="dropdownNavbar"
@@ -240,7 +246,6 @@ export function Menu(props) {
                 </li>
               ) : (
                 <li
-                  key="1"
                   className={`ds-py-4 ds-px-6 ds-font-bold ds-font-body`}
                   aria-current="page"
                 >
