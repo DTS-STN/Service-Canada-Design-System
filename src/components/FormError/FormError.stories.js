@@ -6,8 +6,8 @@ export default {
   component: FormError,
   decorators: [
     (Story) => (
-      <div className="w-full flex items-center flex-col">
-        <div className="w-100">
+      <div className="ds-w-full ds-flex ds-items-center ds-flex-col">
+        <div className="ds-w-100">
           <Story />
         </div>
       </div>

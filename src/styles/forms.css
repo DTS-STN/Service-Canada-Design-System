@@ -100,29 +100,12 @@
   position: absolute;
   height: 26px;
   width: 26px;
-  background: url(\../assets/info_img.svg) right center;
 }
 
 .ds-alertWrapper {
   position: relative;
 }
 
-.ds-alertWrapper .ds-iconContainer::after {
-  content: "";
-  position: absolute;
-  height: 26px;
-  left: 0;
-  width: 26px;
-  background: url(\../assets/error.svg) right center;
-}
-
-@media (max-width: 768px) {
-  .ds-infoText::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    height: 26px;
-    width: 26px;
-    background: url(\../assets/info_img.svg) right center;
-  }
+.text-input.border-specific-red-red50b:focus {
+  box-shadow: 0px 0px 6px #d3080c;
 }
