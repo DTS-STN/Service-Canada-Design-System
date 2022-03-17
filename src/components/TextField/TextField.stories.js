@@ -24,18 +24,19 @@ Primary.args = {
   label: "I am a text field",
   dataTestId: "textbox-controlled",
   requiredText: "required",
+  uncontrolled: true,
 };
 
 export const OptionalWithInfoText = Template.bind({});
 OptionalWithInfoText.args = {
   id: "textField1",
   name: "textField1",
-  label: "I am a text field",
   placeholder: "",
+  label: "I am a text field",
   requiredText: "required",
   optionalText: "optional",
-  dataTestId: "textbox-uncontrolled",
   infoText: "Help Text",
+  dataTestId: "textbox-uncontrolled",
   uncontrolled: true,
 };
 
