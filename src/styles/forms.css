@@ -61,7 +61,7 @@
   box-shadow: 0px 0px 6px rgba(14, 98, 201, 0.6);
 }
 
-.text-input:focus {
+.ds-text-input:focus {
   border-width: 1px;
   box-shadow: 0px 0px 6px rgba(14, 98, 201, 0.6);
   outline: 0;
@@ -106,6 +106,6 @@
   position: relative;
 }
 
-.text-input.border-specific-red-red50b:focus {
+.ds-text-input.ds-border-specific-red-red50b:focus {
   box-shadow: 0px 0px 6px #d3080c;
 }

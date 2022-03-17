@@ -32,7 +32,7 @@ export function TextField(props) {
         className={`ds-rounded ds-text-input ds-text-mobileh5 ds-text-multi-neutrals-grey100 ds-w-full ds-min-h-44px ds-text-form-input-gray ds-border ds-py-5px ds-px-14px ${
           props.hasError
             ? "ds-border-specific-red-red50b"
-            : "ds-border-multi-neutrals-grey85a ds-focus:border-multi-blue-blue60f"
+            : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f"
         } ${props.exclude ? "exclude" : ""}`}
         id={props.id}
         aria-describedby={props.describedBy}
