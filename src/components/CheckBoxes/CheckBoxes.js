@@ -10,40 +10,6 @@ export function CheckBoxes(props) {
   const [checked, setCheckState] = useState(false);
   let display = checked === true ? "ds-visible" : "ds-hidden";
   return (
-    // // <div
-    // //   className={`block leading-tight relative pl-40px h-46px clear-left${props.className ? " " + props.className : " mb-4"
-    // //     }`}
-    // // >
-    //     {/* <input
-    //     className="control-input w-40px h-40px absolute left-0 m-0 opacity-0"
-    //     id={props.id}
-    //     name={props.name}
-    //     value={props.value}
-    //     type="checkbox"
-    //     onChange={(e) =>
-    //       props.onChange(
-    //         props.checked ? !e.currentTarget.checked : props.checked,
-    //         props.name,
-    //         props.value
-    //       )
-    //     }
-    //     required={props.required}
-    //     onClick={() => setCheckState(!checked)}
-    //     checked={checked}
-    //   />
-    //   <label
-    //     className={`checkbox-label control-label inline-block pt-4px pb-5px px-15px leading-tight ${props.error ? "" : undefined
-    //       }`}
-    //     htmlFor={props.id}
-    //   >
-    //     {props.showRequiredLabel ? (
-    //       <b className="">*</b>
-    //     ) : undefined}
-    //     {props.label}
-    //     {props.showRequiredLabel ? (
-    //       <b className="">{props.requiredLabel}</b>
-    //     ) : undefined}
-    //   </label> */}
     <div className="ds-relative ds-w-44px ds-h-44px ds-justify-items-center">
       <label>
         <input
@@ -53,7 +19,7 @@ export function CheckBoxes(props) {
           onClick={() => setCheckState(!checked)}
           type="checkbox"
           className={`ds-absolute ds-appearance-none ds-checkbox_style ${
-            !props.hasError
+            props.hasError
               ? "ds-border-specific-red-red50b"
               : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f focus:ds-shadow-sm focus:ds-shadow-multi-blue-blue60f "
           }`}
@@ -73,6 +39,7 @@ CheckBoxes.defaultProps = {
   checked: false,
   value: "true",
   showRequiredLabel: true,
+  hasError: false,
   onChange: () => {},
 };
 

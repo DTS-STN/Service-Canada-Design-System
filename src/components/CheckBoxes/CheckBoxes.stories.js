@@ -4,15 +4,6 @@ import { CheckBoxes } from "./CheckBoxes";
 export default {
   title: "Components/CheckBoxes",
   component: CheckBoxes,
-  decorators: [
-    (Story) => (
-      <div className="w-full flex justify-center">
-        <div className="w-96">
-          <Story />
-        </div>
-      </div>
-    ),
-  ],
 };
 
 const Template = (args) => <CheckBoxes {...args} />;
@@ -26,7 +17,7 @@ Default.args = {
 };
 
 export const ErrorCheckBox = Template.bind({});
-Default.args = {
+ErrorCheckBox.args = {
   id: "checkbox 1",
   name: "ChexBox1",
   value: "IsChecked",

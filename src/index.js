@@ -92,3 +92,8 @@ export { FormError } from "./components/FormError/FormError";
  * Form Label
  */
 export { FormLabel } from "./components/FormLabel/FormLabel";
+
+/**
+ * Check box
+ */
+export { CheckBoxes } from "./components/CheckBoxes/CheckBoxes";
