@@ -13,7 +13,7 @@ export function TextField(props) {
     : {};
   return (
     <div
-      className={`ds-block leading-tight${
+      className={`ds-block ds-leading-tight ${
         props.className ? " " + props.className : "ds-mb-10px"
       }`}
     >
@@ -25,28 +25,24 @@ export function TextField(props) {
           requiredText={props.requiredText}
           optionalText={props.optionalText}
           infoText={props.infoText}
-          describedBy={props.describedBy}
         />
       )}
       <input
         className={`ds-rounded ds-text-input ds-text-mobileh5 ds-text-multi-neutrals-grey100 ds-w-full ds-min-h-44px ds-text-form-input-gray ds-border ds-py-5px ds-px-14px ${
           props.hasError
             ? "ds-border-specific-red-red50b"
-            : "ds-border-multi-neutrals-grey85a ds-focus:border-multi-blue-blue60f"
-        } ${props.exclude ? "exclude" : ""}`}
+            : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f"
+        }`}
         id={props.id}
-        aria-describedby={props.describedBy}
         name={props.name}
         placeholder={props.placeholder}
         type={props.type}
         min={props.min}
         max={props.max}
-        step={props.step}
         required={props.required}
-        onChange={(e) => props.onChange(e.currentTarget.value)}
+        onChange={props.onChange}
         {...ifControlledProps}
         data-testid={props.dataTestId}
-        data-cy={props.dataCy}
       />
       {props.hasError && <FormError errorMessage={props.errorText} />}
     </div>
@@ -116,27 +112,7 @@ TextField.propTypes = {
   max: PropTypes.number,
 
   /**
-   * the legal number of intervals
-   */
-  step: PropTypes.number,
-
-  /**
    * unit test selector
    */
   dataTestId: PropTypes.string,
-
-  /**
-   * cypress tests selector
-   */
-  dataCy: PropTypes.string,
-
-  /**
-   * Exclude option for adding exclude class to the textfield
-   */
-  exclude: PropTypes.bool,
-
-  /**
-   * aria-describedBy label id
-   */
-  describedBy: PropTypes.string,
 };
