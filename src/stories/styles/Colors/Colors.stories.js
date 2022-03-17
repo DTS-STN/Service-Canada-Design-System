@@ -13,13 +13,13 @@ export const Primary = Template.bind({});
 Primary.args = {
   children: (
     <>
-      <p className="text-browserh1 font-bold pb-4">Colors</p>
-      <p className="heading2 p-4">Multi Use Colors</p>
-      <p className="heading3 p-4">Neutrals</p>
-      <ul className="grid grid-cols-color-grid gap-1 text-xs">
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-black"></span>
-          <span className="leading-none">
+      <p className="ds-text-browserh1 ds-font-bold ds-pb-4">Colors</p>
+      <p className="ds-heading2 ds-p-4">Multi Use Colors</p>
+      <p className="ds-heading3 ds-p-4">Neutrals</p>
+      <ul className="ds-grid ds-grid-cols-color-grid ds-gap-1 ds-text-xs">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-black"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: black</li>
               <br />
@@ -29,9 +29,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-grey100"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-grey100"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: grey100</li>
               <br />
@@ -41,9 +41,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-grey90"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-grey90"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: grey90</li>
               <br />
@@ -53,9 +53,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-grey90a"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-grey90a"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: grey90a</li>
               <br />
@@ -65,9 +65,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-grey85"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-grey85"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: grey85</li>
               <br />
@@ -77,9 +77,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-grey85a"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-grey85a"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: grey85a</li>
               <br />
@@ -89,9 +89,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-grey70"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-grey70"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: grey70</li>
               <br />
@@ -102,9 +102,9 @@ Primary.args = {
           </span>
         </li>
 
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-grey70a"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-grey70a"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: grey70a</li>
               <br />
@@ -114,9 +114,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-grey60"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-grey60"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: grey60</li>
               <br />
@@ -126,9 +126,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-grey50"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-grey50"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: grey50</li>
               <br />
@@ -139,9 +139,9 @@ Primary.args = {
           </span>
         </li>
 
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-grey50a"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-grey50a"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: grey50a</li>
               <br />
@@ -151,9 +151,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-grey50b"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-grey50b"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: grey50b</li>
               <br />
@@ -163,9 +163,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-grey40"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-grey40"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: grey40</li>
               <br />
@@ -176,9 +176,9 @@ Primary.args = {
           </span>
         </li>
 
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-grey40a"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-grey40a"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: grey40a</li>
               <br />
@@ -188,9 +188,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-grey40b"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-grey40b"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: grey40b</li>
               <br />
@@ -201,9 +201,9 @@ Primary.args = {
           </span>
         </li>
 
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-grey40c"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-grey40c"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: grey40c</li>
               <br />
@@ -213,9 +213,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-grey40d"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-grey40d"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: grey40d</li>
               <br />
@@ -225,9 +225,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-grey30"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-grey30"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: grey30</li>
               <br />
@@ -238,9 +238,9 @@ Primary.args = {
           </span>
         </li>
 
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-grey30a"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-grey30a"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: grey30a</li>
               <br />
@@ -250,9 +250,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-grey5"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-grey5"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: grey5</li>
               <br />
@@ -262,9 +262,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-neutrals-white"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-neutrals-white"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: white</li>
               <br />
@@ -275,11 +275,11 @@ Primary.args = {
           </span>
         </li>
       </ul>
-      <p className="heading3 p-4">Blue</p>
-      <ul className="grid grid-cols-color-grid gap-1 text-xs">
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue90"></span>
-          <span className="leading-none">
+      <p className="ds-heading3 ds-p-4">Blue</p>
+      <ul className="ds-grid ds-grid-cols-color-grid ds-gap-1 ds-text-xs">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue90"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue90</li>
               <br />
@@ -289,9 +289,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue70"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue70"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue70</li>
               <br />
@@ -301,9 +301,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue70a"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue70a"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue70a</li>
               <br />
@@ -314,9 +314,9 @@ Primary.args = {
           </span>
         </li>
 
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue70b"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue70b"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue70b</li>
               <br />
@@ -326,9 +326,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue65"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue65"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue65</li>
               <br />
@@ -338,9 +338,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue65a"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue65a"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue65a</li>
               <br />
@@ -351,9 +351,9 @@ Primary.args = {
           </span>
         </li>
 
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue60a"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue60a"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue60a</li>
               <br />
@@ -363,9 +363,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue60b"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue60b"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue60b</li>
               <br />
@@ -375,9 +375,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue60c"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue60c"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue60c</li>
               <br />
@@ -388,9 +388,9 @@ Primary.args = {
           </span>
         </li>
 
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue60d"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue60d"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue60d</li>
               <br />
@@ -400,9 +400,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue60e"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue60e"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue60e</li>
               <br />
@@ -412,9 +412,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue60f"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue60f"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue60f</li>
               <br />
@@ -424,9 +424,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue60g"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue60g"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue60g</li>
               <br />
@@ -436,9 +436,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue50a"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue50a"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue50a</li>
               <br />
@@ -448,9 +448,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue50b"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue50b"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue50b</li>
               <br />
@@ -460,9 +460,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue30"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue30"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue30</li>
               <br />
@@ -472,9 +472,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue15"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue15"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue15</li>
               <br />
@@ -484,9 +484,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue5"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue5"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue5</li>
               <br />
@@ -496,9 +496,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue2"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue2"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue2</li>
               <br />
@@ -509,9 +509,9 @@ Primary.args = {
           </span>
         </li>
 
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-blue-blue1"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-blue-blue1"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: blue1</li>
               <br />
@@ -523,11 +523,11 @@ Primary.args = {
         </li>
       </ul>
 
-      <p className="heading3 p-4">Red</p>
-      <ul className="grid grid-cols-color-grid gap-1 text-xs">
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-red-red50a"></span>
-          <span className="leading-none">
+      <p className="ds-heading3 ds-p-4">Red</p>
+      <ul className="ds-grid ds-grid-cols-color-grid ds-gap-1 ds-text-xs">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-red-red50a"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: red50a</li>
               <br />
@@ -537,9 +537,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-red-red30"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-red-red30"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: red30</li>
               <br />
@@ -549,9 +549,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-red-red15"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-red-red15"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: red15</li>
               <br />
@@ -561,9 +561,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-red-red5"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-red-red5"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: red5</li>
               <br />
@@ -573,9 +573,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-red-red1"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-red-red1"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: red1</li>
               <br />
@@ -586,11 +586,11 @@ Primary.args = {
           </span>
         </li>
       </ul>
-      <p className="heading3 p-4">Green</p>
-      <ul className="grid grid-cols-color-grid gap-1 text-xs">
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-green-green30"></span>
-          <span className="leading-none">
+      <p className="ds-heading3 ds-p-4">Green</p>
+      <ul className="ds-grid ds-grid-cols-color-grid ds-gap-1 ds-text-xs">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-green-green30"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: green30</li>
               <br />
@@ -600,9 +600,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-green-green15"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-green-green15"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: green15</li>
               <br />
@@ -612,9 +612,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-multi-green-green0"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-multi-green-green0"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: green0</li>
               <br />
@@ -625,12 +625,12 @@ Primary.args = {
           </span>
         </li>
       </ul>
-      <p className="heading2 p-4">Specific Use Colors</p>
-      <p className="heading3 p-4">Red</p>
-      <ul className="grid grid-cols-color-grid gap-1 text-xs">
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-red-red100"></span>
-          <span className="leading-none">
+      <p className="ds-heading2 ds-p-4">Specific Use Colors</p>
+      <p className="ds-heading3 ds-p-4">Red</p>
+      <ul className="ds-grid ds-grid-cols-color-grid ds-gap-1 ds-text-xs">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-red-red100"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: red100</li>
               <br />
@@ -640,9 +640,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-red-red100a"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-red-red100a"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: red100a</li>
               <br />
@@ -652,9 +652,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-red-red90"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-red-red90"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: red90</li>
               <br />
@@ -664,9 +664,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-red-red90a"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-red-red90a"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: red90a</li>
               <br />
@@ -676,9 +676,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-red-red70"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-red-red70"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: red70</li>
               <br />
@@ -688,9 +688,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-red-red50"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-red-red50"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: red50</li>
               <br />
@@ -700,9 +700,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-red-red50b"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-red-red50b"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: red50b</li>
               <br />
@@ -712,9 +712,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-red-red2"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-red-red2"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: red2</li>
               <br />
@@ -725,11 +725,11 @@ Primary.args = {
           </span>
         </li>
       </ul>
-      <p className="heading3 p-4">Green</p>
-      <ul className="grid grid-cols-color-grid gap-1 text-xs">
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-green-green90"></span>
-          <span className="leading-none">
+      <p className="ds-heading3 ds-p-4">Green</p>
+      <ul className="ds-grid ds-grid-cols-color-grid ds-gap-1 ds-text-xs">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-green-green90"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: green90</li>
               <br />
@@ -739,9 +739,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-green-green90a"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-green-green90a"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: green90a</li>
               <br />
@@ -751,9 +751,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-green-green70"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-green-green70"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: green70</li>
               <br />
@@ -763,9 +763,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-green-green70a"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-green-green70a"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: green70a</li>
               <br />
@@ -775,9 +775,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-green-green50"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-green-green50"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: green50</li>
               <br />
@@ -787,9 +787,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-green-green50a"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-green-green50a"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: green50a</li>
               <br />
@@ -799,9 +799,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-green-green50b"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-green-green50b"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: green50b</li>
               <br />
@@ -811,9 +811,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-green-green5"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-green-green5"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: green5</li>
               <br />
@@ -824,11 +824,11 @@ Primary.args = {
           </span>
         </li>
       </ul>
-      <p className="heading3 p-4">Orange</p>
-      <ul className="grid grid-cols-color-grid gap-1 text-xs">
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-orange-orange50"></span>
-          <span className="leading-none">
+      <p className="ds-heading3 ds-p-4">Orange</p>
+      <ul className="ds-grid ds-grid-cols-color-grid ds-gap-1 ds-text-xs">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-orange-orange50"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: orange50</li>
               <br />
@@ -838,9 +838,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-orange-orange5"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-orange-orange5"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: orange5</li>
               <br />
@@ -851,11 +851,11 @@ Primary.args = {
           </span>
         </li>
       </ul>
-      <p className="heading3 p-4">Cyan</p>
-      <ul className="grid grid-cols-color-grid gap-1 text-xs">
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-cyan-cyan50"></span>
-          <span className="leading-none">
+      <p className="ds-heading3 ds-p-4">Cyan</p>
+      <ul className="ds-grid ds-grid-cols-color-grid ds-gap-1 ds-text-xs">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-cyan-cyan50"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: cyan50</li>
               <br />
@@ -865,9 +865,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-cyan-cyan10"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-cyan-cyan10"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: cyan10</li>
               <br />
@@ -877,9 +877,9 @@ Primary.args = {
             </ul>
           </span>
         </li>
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-cyan-cyan5"></span>
-          <span className="leading-none">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-cyan-cyan5"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: cyan5</li>
               <br />
@@ -890,11 +890,11 @@ Primary.args = {
           </span>
         </li>
       </ul>
-      <p className="heading3 p-4">Purple</p>
-      <ul className="grid grid-cols-color-grid gap-1 text-xs">
-        <li className="flex-auto p-1 mr-1 mb-1 min-w-5em max-w-14em border-solid border-2 rounded-md">
-          <span className="block h-16 mb-4 border rounded-md bg-specific-purple-purple50"></span>
-          <span className="leading-none">
+      <p className="ds-heading3 ds-p-4">Purple</p>
+      <ul className="ds-grid ds-grid-cols-color-grid ds-gap-1 ds-text-xs">
+        <li className="ds-flex-auto ds-p-1 ds-mr-1 ds-mb-1 ds-min-w-5em ds-max-w-14em ds-border-solid ds-border-2 ds-rounded-md">
+          <span className="ds-block ds-h-16 ds-mb-4 ds-border ds-rounded-md ds-bg-specific-purple-purple50"></span>
+          <span className="ds-leading-none">
             <ul>
               <li>color: purple50</li>
               <br />

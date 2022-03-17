@@ -23,7 +23,7 @@ import PropTypes from "prop-types";
 export default function LayoutContainer(props) {
   return (
     <div
-      className={`container bootstrap3-grid ${
+      className={`ds-container ds-bootstrap3-grid ${
         props.className ? props.className : ""
       }`}
     >

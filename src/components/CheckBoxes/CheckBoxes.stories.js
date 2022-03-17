@@ -24,3 +24,12 @@ Default.args = {
   value: "IsChecked",
   label: "checkbox",
 };
+
+export const ErrorCheckBox = Template.bind({});
+Default.args = {
+  id: "checkbox 1",
+  name: "ChexBox1",
+  value: "IsChecked",
+  label: "checkbox",
+  hasError: true,
+};

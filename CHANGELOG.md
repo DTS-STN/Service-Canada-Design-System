@@ -31,6 +31,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 - Cards Component
 - Labels Component
 - Breadcrumb Component
+- FormError Component
+- Form Label Component
 
 ### Changed
 
@@ -71,3 +73,9 @@ Initial release of the Design System Package
 ### Added
 
 - Updated tailwind to version 3
+
+## [v1.20.0] - 2022-01-20
+
+### Added
+
+- Updated code base with "ds-" prefix

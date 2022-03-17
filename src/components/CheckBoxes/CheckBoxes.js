@@ -8,6 +8,7 @@ import checkMark from "../../assets/check_mark.svg";
  */
 export function CheckBoxes(props) {
   const [checked, setCheckState] = useState(false);
+  let display = checked === true ? "ds-visible" : "ds-hidden";
   return (
     // // <div
     // //   className={`block leading-tight relative pl-40px h-46px clear-left${props.className ? " " + props.className : " mb-4"
@@ -43,17 +44,23 @@ export function CheckBoxes(props) {
     //       <b className="">{props.requiredLabel}</b>
     //     ) : undefined}
     //   </label> */}
-    <div className="flex flex-col justifiy-center items-center">
+    <div className="ds-relative ds-w-44px ds-h-44px ds-justify-items-center">
       <label>
         <input
           id={props.id}
           name={props.name}
           value={props.value}
+          onClick={() => setCheckState(!checked)}
           type="checkbox"
-          className="relative appearance-none checkbox_style accent-white"
+          className={`ds-absolute ds-appearance-none ds-checkbox_style ${
+            !props.hasError
+              ? "ds-border-specific-red-red50b"
+              : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f focus:ds-shadow-sm focus:ds-shadow-multi-blue-blue60f "
+          }`}
+          onChange={props.onChange}
         />
         <Image
-          className="absolute h-8 w-8 text-opacity-0"
+          className={`ds-absolute ds-h-8 ds-w-8 ds-left-1.5 ds-bottom-1.5 ${display}`}
           src={checkMark}
           alt="checkMark"
         />
@@ -66,6 +73,7 @@ CheckBoxes.defaultProps = {
   checked: false,
   value: "true",
   showRequiredLabel: true,
+  onChange: () => {},
 };
 
 CheckBoxes.propTypes = {
@@ -101,7 +109,7 @@ CheckBoxes.propTypes = {
   /**
    * whether or not there is an error
    */
-  error: PropTypes.bool,
+  hasError: PropTypes.bool,
 
   /**
    * whether or not the field is required
