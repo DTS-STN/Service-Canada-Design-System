@@ -51,7 +51,7 @@ module.exports = {
         btnother: ["20px", "23px"],
 
         card_nonlink: ["22px", "28px"],
-        card_bodytext: ["20", "26px"],
+        card_bodytext: ["20px", "26px"],
 
         caption_large: ["18px", "22px"],
         caption_regular: ["16", "20px"],
@@ -225,6 +225,7 @@ module.exports = {
         "6px": "6px",
         "8px": "8px",
         "9px": "9px",
+        "10px": "10px",
         "12px": "12px",
         "14px": "14px",
         "15px": "15px",
