@@ -6,6 +6,7 @@ import { CheckBoxes } from "../CheckBoxes/CheckBoxes";
 
 export function CheckBoxForm(props) {
   const { id, onSubmit, formErrorProps, formLabelProps, checkBoxList } = props;
+  let size = checkBoxList.length;
 
   return (
     <form id={id} onSubmit={onSubmit}>
@@ -15,8 +16,14 @@ export function CheckBoxForm(props) {
         infoText={formLabelProps.infoText}
       />
       {checkBoxList.map((value, index) => {
+        let style =
+          index === size - 1 ? "ds-pb-8px" : "md:ds-pb-8px ds-pb-24px";
         return (
-          <div className={index === 0 ? "ds-pt-6px ds-pb-8px" : "ds-pb-8px"}>
+          <div
+            className={
+              index === 0 ? "ds-pt-6px md:ds-pb-8px ds-pb-24px" : style
+            }
+          >
             <CheckBoxes
               id={value.id}
               name={value.name}
@@ -31,6 +38,10 @@ export function CheckBoxForm(props) {
     </form>
   );
 }
+
+CheckBoxForm.defaultProps = {
+  onSubmit: () => {},
+};
 
 CheckBoxForm.propTypes = {
   /**
