@@ -92,3 +92,8 @@ export { FormError } from "./components/FormError/FormError";
  * Form Label
  */
 export { FormLabel } from "./components/FormLabel/FormLabel";
+
+/**
+ * Form RadioButton
+ */
+export { FormRadioButton } from "./components/FormRadioButton/FormRadioButton";

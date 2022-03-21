@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import React from "react";
 
 /**
  * FormError is used to display the inline error messages of form inputs
