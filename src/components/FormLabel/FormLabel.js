@@ -1,32 +1,36 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
+import { Image } from "../Image/Image";
+import infoImage from "../../assets/info_img.svg";
 
 export function FormLabel(props) {
   const [displayHelpText, setHelpTextState] = useState(false);
   return (
     <>
       <label
-        className={`ds-block ds-leading-24px ds-text-xl lg:ds-text-p ds-font-body ds-mb-8px ds-relative`}
+        className={`ds-flex ds-items-center ds-leading-24px ds-text-xl lg:ds-text-p ds-font-body ds-mb-8px ds-relative`}
         htmlFor={props.id}
       >
-        <b className="ds-inline ds-text-form-input-gray lg:ds-text-xl ds-font-bold ">
+        <div className="ds-inline ds-text-form-input-gray lg:ds-text-xl ds-font-bold ">
           {props.label}{" "}
-        </b>
+        </div>
         {props.required ? (
-          <span className="ds-text-error-border-red ds-text-xl ds-font-medium">{`(${props.requiredText})`}</span>
+          <div className="ds-text-error-border-red ds-text-xl ds-font-medium">{`(${props.requiredText})`}</div>
         ) : (
-          <p className="ds-inline ds-text-form-input-gray ds-text-xl lg:ds-text-xl ds-font-medium">
+          <div className="ds-inline ds-text-form-input-gray ds-text-xl lg:ds-text-xl ds-font-medium">
             {`(${props.optionalText})`}
-          </p>
+          </div>
         )}
         {props.infoText && (
-          <span
-            className="ds-infoText ds-cursor-pointer"
+          <div
+            className="ds-infoText ds-cursor-pointer ds-pl-8px"
             aria-hidden="true"
             role="button"
             tabIndex={0}
             onClick={() => setHelpTextState(!displayHelpText)}
-          ></span>
+          >
+            <Image src={infoImage} alt="Click on to show info" />
+          </div>
         )}
       </label>
       {displayHelpText && (
