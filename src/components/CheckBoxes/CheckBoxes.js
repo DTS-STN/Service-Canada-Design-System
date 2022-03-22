@@ -21,7 +21,7 @@ export function CheckBoxes(props) {
             type="checkbox"
             className={`ds-absolute ds-appearance-none ds-checkbox_style 
             ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f 
-            focus:ds-shadow-sm focus:ds-shadow-multi-blue-blue60f`}
+            ds-check-shadow`}
             onChange={props.onChange}
           />
           <Image
