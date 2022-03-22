@@ -19,11 +19,9 @@ export function CheckBoxes(props) {
             value={props.value}
             onClick={() => setCheckState(!checked)}
             type="checkbox"
-            className={`ds-absolute ds-appearance-none ds-checkbox_style ${
-              props.hasError
-                ? "ds-border-specific-red-red50b"
-                : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f focus:ds-shadow-sm focus:ds-shadow-multi-blue-blue60f "
-            }`}
+            className={`ds-absolute ds-appearance-none ds-checkbox_style 
+            ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f 
+            focus:ds-shadow-sm focus:ds-shadow-multi-blue-blue60f`}
             onChange={props.onChange}
           />
           <Image
@@ -46,7 +44,6 @@ CheckBoxes.defaultProps = {
   checked: false,
   value: "true",
   showRequiredLabel: true,
-  hasError: false,
   onChange: () => {},
 };
 
@@ -79,11 +76,6 @@ CheckBoxes.propTypes = {
    * the label for the checkbox
    */
   label: PropTypes.string.isRequired,
-
-  /**
-   * whether or not there is an error
-   */
-  hasError: PropTypes.bool,
 
   /**
    * callback to handle change in checked state, takes three arguments, the checked state, the name and the value

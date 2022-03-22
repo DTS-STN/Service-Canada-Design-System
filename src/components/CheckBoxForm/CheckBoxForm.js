@@ -21,7 +21,7 @@ export function CheckBoxForm(props) {
         return (
           <div
             className={
-              index === 0 ? "ds-pt-6px md:ds-pb-8px ds-pb-24px" : style
+              index === 0 ? " md:ds-pt-2px md:ds-pb-8px ds-pb-24px" : style
             }
           >
             <CheckBoxes
@@ -34,7 +34,9 @@ export function CheckBoxForm(props) {
           </div>
         );
       })}
-      <FormError errorMessage={formErrorProps.errorMessage} />
+      {formErrorProps.hasError ? (
+        <FormError errorMessage={formErrorProps.errorMessage} />
+      ) : null}
     </form>
   );
 }
@@ -75,6 +77,7 @@ CheckBoxForm.propTypes = {
   formErrorProps: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
+      hasError: PropTypes.bool,
       errorMessage: PropTypes.string,
     })
   ),

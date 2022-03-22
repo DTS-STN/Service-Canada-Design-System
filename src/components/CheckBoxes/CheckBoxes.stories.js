@@ -16,11 +16,11 @@ Default.args = {
   label: "Option 1",
 };
 
-export const ErrorCheckBox = Template.bind({});
-ErrorCheckBox.args = {
-  id: "checkbox 1",
-  name: "ChexBox1",
-  value: "IsChecked",
-  label: "Option 1",
-  hasError: true,
-};
+// export const ErrorCheckBox = Template.bind({});
+// ErrorCheckBox.args = {
+//   id: "checkbox 1",
+//   name: "ChexBox1",
+//   value: "IsChecked",
+//   label: "Option 1",
+//   hasError: true,
+// };

@@ -2,15 +2,15 @@ import { FormLabel } from "./FormLabel";
 export default {
   title: "Components/FormLabel",
   component: FormLabel,
-  decorators: [
-    (Story) => (
-      <div className="ds-w-full flex ds-items-center ds-flex-col">
-        <div className="ds-w-96">
-          <Story />
-        </div>
-      </div>
-    ),
-  ],
+  // decorators: [
+  //   (Story) => (
+  //     <div className="ds-w-full flex ds-items-center ds-flex-col">
+  //       <div className="ds-w-96">
+  //         <Story />
+  //       </div>
+  //     </div>
+  //   ),
+  // ],
 };
 
 const Template = (args) => <FormLabel {...args} />;
