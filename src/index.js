@@ -83,6 +83,12 @@ export { Labels } from "./components/Labels/Labels";
 export { Breadcrumb } from "./components/Breadcrumb/Breadcrumb";
 
 /**
+ *Text Input Field
+ */
+
+export { TextField } from "./components/TextField/TextField";
+
+/*
  * FormError
  */
 

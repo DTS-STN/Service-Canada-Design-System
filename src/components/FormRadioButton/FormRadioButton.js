@@ -29,13 +29,13 @@ export function FormRadioButton(props) {
             className="ds-hidden"
             value={value}
             onChange={(e) => {
-              props.onChange(value, e);
+              console.log("Will be replaced with the onchange event", e);
             }}
-            data-testid={props.dataTestId}
+            data-testid={`${id}-${props.dataTestId}`}
             data-cy={props.dataCy}
             checked={checked}
           />
-          <span class="ds-relative ds-label ds-block ds-mr-3.5 ds-w-44px ds-h-44px ds-border-1.5 ds-border-solid ds-border-multi-neutrals-grey85a ds-rounded-full ds-float-left after:ds-absolute"></span>
+          <span class="ds-relative ds-label ds-block ds-mr-3.5 ds-w-44px ds-h-44px ds-border-2 ds-border-solid ds-border-multi-neutrals-grey85a ds-rounded-full ds-float-left after:ds-absolute"></span>
           {label}
         </label>
       ))}

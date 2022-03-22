@@ -43,23 +43,23 @@ Primary.args = {
   id: "radio-button-1",
   name: "radio_button_1",
   options: optionsList,
-  dataTestId: "primary",
+  dataTestId: "primary-radio-1",
 };
 
 withLabelHelpText.args = {
   id: "radio-button-2",
   name: "radio_button_2",
   options: optionsList,
-  dataTestId: "primary",
+  dataTestId: "primary-radio-2",
   label: "I am a text field",
   infoText: "Help Text",
 };
 
 withLabelAndError.args = {
-  id: "radio-button-2",
-  name: "radio_button_2",
+  id: "radio-button-3",
+  name: "radio_button_3",
   options: optionsList,
-  dataTestId: "primary",
+  dataTestId: "primary-radio-3",
   label: "I am a text field",
   infoText: "Help Text",
   hasError: true,

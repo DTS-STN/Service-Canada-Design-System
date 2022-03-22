@@ -31,8 +31,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 - Cards Component
 - Labels Component
 - Breadcrumb Component
+- Text Input Field
 - FormError Component
 - Form Label Component
+- Form RadioButton Component
 
 ### Changed
 

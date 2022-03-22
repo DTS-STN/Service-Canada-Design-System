@@ -16,7 +16,7 @@ module.exports = {
       4: "4px",
       6: "6px",
       8: "8px",
-      1.5: "1.5px",
+      2: "2px",
     },
     extend: {
       fontFamily: {
