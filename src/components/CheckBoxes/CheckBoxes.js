@@ -4,7 +4,7 @@ import { Image } from "../Image/Image";
 import checkMark from "../../assets/check_mark.svg";
 
 /**
- * check box component for forms
+ * check box component for forms okay
  */
 export function CheckBoxes(props) {
   const [checked, setCheckState] = useState(false);
