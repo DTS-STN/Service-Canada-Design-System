@@ -27,21 +27,38 @@ export function AccordionForm(props) {
   );
 
   const [cardsOpenState, setCardsOpenState] = React.useState(() => {
-    return CardStates(cards);
+    return generateCardOpenStates(cards);
   });
 
   const [dirtyCards, setDirtyCards] = React.useState([]);
 
   React.useEffect(() => {
-    setCardsOpenState(CardStates(cards));
+    setCardsOpenState(generateCardOpenStates(cards));
   }, [cards]);
 
-  React.useEffect(() => {}, [cardsOpenState]);
+  React.useEffect(() => {
+    const openCardsEntries = Object.entries(cardsOpenState);
+    setDirtyCards((currentDirtyCards) => {
+      console.log("current dirty", currentDirtyCards);
+      const updatedDirtyCards = [...currentDirtyCards];
+      openCardsEntries.forEach(([cardId, isCardOpen]) => {
+        console.log(cardId, "card open value", isCardOpen);
+        if (isCardOpen && !currentDirtyCards.includes(cardId)) {
+          updatedDirtyCards.push(cardId);
+        }
+      });
+      return updatedDirtyCards;
+    });
+  }, [cardsOpenState]);
 
   return (
     <form className="AccordionForm" noValidate id={id}>
-      {cards.map((card, index) => {
-        console.log(index + 1);
+      {cards.map((card, index, cardsArr) => {
+        const isLastCard = !cardsArr[index + 1];
+        const isNextFillableCard = cardsOpenState[card.id];
+        const hasAlreadyBeenFilled = dirtyCards.includes(card.id);
+        const isOpen = isNextFillableCard || hasAlreadyBeenFilled;
+
         return (
           <div
             className="ds-bg-multi-blue-blue5 ds-p-12px ds-rounded "
@@ -50,6 +67,7 @@ export function AccordionForm(props) {
               marginBottom: "5px",
               paddingBottom: "5px",
             }}
+            key={`accordion-form-card-${card.id}`}
           >
             {/* Number for the given card */}
             <div className="cardNumber ds-flex ds-flex-row ds-pb-12px">
@@ -61,23 +79,26 @@ export function AccordionForm(props) {
               {/* Content contained on the given card */}
               <div className="cardContent ds-pl-14px ">
                 <p className="ds-heading3 ds-pt-5px">{card.title}</p>
-                section: {card.id} <br />
-                open: {cardsOpenState[card.id] ? "true" : "false"}
-                <br />
-                valid: {card.isValid ? "true" : "false"}
-                {cardsOpenState[card.id] ||
-                  (dirtyCards.includes(card.id) && (
-                    <>
-                      {card.children}
-                      <div className="ds-pt-12px">
+                {isOpen && (
+                  <>
+                    <pre>
+                      section: {card.id} <br />
+                      open: {isOpen ? "true" : "false"}
+                      <br />
+                      valid: {card.isValid ? "true" : "false"}
+                    </pre>
+                    {card.children}
+                    <div className="ds-pt-12px">
+                      {!isLastCard && (
                         <Button
                           text={`Next Step: ${card.buttonLabel}`}
                           styling="primary"
                           onClick={sectionNextClick(card.id)}
                         />
-                      </div>
-                    </>
-                  ))}
+                      )}
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -87,7 +108,7 @@ export function AccordionForm(props) {
   );
 }
 
-const CardStates = (cards) => {
+const generateCardOpenStates = (cards) => {
   const cardsObj = {};
   let firstInvalidCardId;
   cards.forEach((card) => {
