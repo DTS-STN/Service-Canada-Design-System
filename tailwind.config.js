@@ -1,15 +1,11 @@
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
-  purge: {
-    content: [
-      "./src/assets/**/*.{js,ts,jsx,tsx}",
-      "./src/components/**/*.{js,ts,jsx,tsx}",
-      "./src/stories/**/*.{js,ts,jsx,tsx}",
-      "./src/assets/**/*.{js,ts,jsx,tsx}",
-      "./config-plugins/**/*.{js,ts,jsx,tsx}",
-    ],
-  },
+  prefix: "ds-",
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./config-plugins/**/*.{js,ts,jsx,tsx}",
+  ],
   presets: [require("./tailwind-bootstrap3.js")],
   theme: {
     borderWidth: {
@@ -74,6 +70,7 @@ module.exports = {
         "banner-img-mobile": "url('/public/bg-banner-mobile.png')",
       }),
       colors: {
+        current: "currentColor",
         multi: {
           neutrals: {
             black: "#000000",
@@ -189,11 +186,11 @@ module.exports = {
         "138px": "138px",
         "160px": "160px",
         "168px": "168px",
+        "284px": "284px",
         "300px": "300px",
         "400px": "400px",
         "500px": "500px",
         "7.5rem": "7.5rem",
-        22.5: "22.5rem",
       },
       height: {
         "25px": "25px",
@@ -217,9 +214,7 @@ module.exports = {
         "-2px": "-2px",
         "60px": "60px",
       },
-      zIndex: {
-        1: "1",
-      },
+      zIndex: {},
       padding: {
         "0px": "0px",
         "3px": "3px",
@@ -307,16 +302,6 @@ module.exports = {
       },
     },
   },
-  variants: {
-    extend: {
-      ringOffsetWidth: ["active", "hover", "focus"],
-      ringColor: ["active", "hover", "focus"],
-      backgroundColor: ["active", "hover", "focus"],
-      textColor: ["visited"],
-      margin: ["checked"],
-      textDecoration: ["active", "hover", "visited"],
-    },
-  },
   plugins: [
     require("@tailwindcss/typography"),
     plugin(function ({ addVariant, e }) {
@@ -341,5 +326,6 @@ module.exports = {
     require("./config-plugins/message-plugin"),
     require("./config-plugins/cards-plugin"),
     require("./config-plugins/labels-plugin"),
+    require("./config-plugins/search-plugin"),
   ],
 };

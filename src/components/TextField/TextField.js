@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
-import { ErrorLabel } from "../ErrorLabel/ErrorLabel";
-
+import React from "react";
+import { FormError } from "../FormError/FormError";
+import { FormLabel } from "../FormLabel/FormLabel";
 /**
  * text field component
  */
@@ -12,53 +13,38 @@ export function TextField(props) {
     : {};
   return (
     <div
-      className={`block leading-tight${
-        props.className ? " " + props.className : " mb-10px"
+      className={`ds-block ds-leading-tight ${
+        props.className ? " " + props.className : "ds-mb-10px"
       }`}
     >
-      <label
-        className={`block leading-tight text-sm lg:text-p font-body mb-5 ${
-          props.boldLabel ? "font-bold" : ""
-        }`}
-        htmlFor={props.id}
-      >
-        {props.required ? (
-          <b className="text-error-border-red">*</b>
-        ) : undefined}{" "}
-        {props.label}{" "}
-        {props.required ? (
-          <b className="text-error-border-red">{`(${props.requiredText})`}</b>
-        ) : (
-          <p className="inline text-form-input-gray text-xs lg:text-sm">
-            {`(${props.optionalText})`}
-          </p>
-        )}
-      </label>
-      <p
-        id={props.describedby}
-        className="text-xs lg:text-sm mb-5 leading-30px"
-      >
-        {`(${props.doNotIncludeText})`}
-      </p>
-      {props.error ? <ErrorLabel message={props.error} /> : undefined}
+      {props.label && (
+        <FormLabel
+          id={props.id}
+          label={props.label}
+          required={props.required}
+          requiredText={props.requiredText}
+          optionalText={props.optionalText}
+          infoText={props.infoText}
+        />
+      )}
       <input
-        className={`text-input font-body w-full lg:w-3/4 min-h-40px shadow-sm text-form-input-gray border-2 py-6px px-12px ${
-          props.error ? "border-error-border-red" : "border-black"
-        } ${props.exclude ? "exclude" : ""}`}
+        className={`ds-rounded ds-text-input ds-text-mobileh5 ds-text-multi-neutrals-grey100 ds-w-full ds-min-h-44px ds-text-form-input-gray ds-border ds-py-5px ds-px-14px ${
+          props.hasError
+            ? "ds-border-specific-red-red50b"
+            : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f"
+        }`}
         id={props.id}
-        aria-describedby={props.describedby}
         name={props.name}
         placeholder={props.placeholder}
         type={props.type}
         min={props.min}
         max={props.max}
-        step={props.step}
         required={props.required}
-        onChange={(e) => props.onChange(e.currentTarget.value)}
+        onChange={props.onChange}
         {...ifControlledProps}
         data-testid={props.dataTestId}
-        data-cy={props.dataCy}
       />
+      {props.hasError && <FormError errorMessage={props.errorText} />}
     </div>
   );
 }
@@ -66,6 +52,7 @@ export function TextField(props) {
 TextField.defaultProps = {
   value: "",
   type: "text",
+  size: "",
 };
 
 TextField.propTypes = {
@@ -85,30 +72,6 @@ TextField.propTypes = {
   name: PropTypes.string.isRequired,
 
   /**
-   * the label of the text field
-   */
-  label: PropTypes.string.isRequired,
-
-  /**
-   * whether ot not the field is required
-   */
-  required: PropTypes.bool,
-  /**
-   * the text to show after the label in parenthesis if the field is required
-   */
-  requiredText: PropTypes.string.isRequired,
-
-  /**
-   * the text to show after the label in parenthesis if the field is optional
-   */
-  optionalText: PropTypes.string.isRequired,
-
-  /**
-   * disclaimer text to not disclose any personal information
-   */
-  doNotIncludeText: PropTypes.string.isRequired,
-
-  /**
    * value of the text field
    */
   value: PropTypes.string,
@@ -119,7 +82,7 @@ TextField.propTypes = {
   placeholder: PropTypes.string,
 
   /**
-   * the type of the input
+   * the type of the input. Supports Number, Password, Email
    */
   type: PropTypes.string,
 
@@ -129,14 +92,9 @@ TextField.propTypes = {
   onChange: PropTypes.func,
 
   /**
-   * message to display if there is an error
+   * Check if filed has an error or not.
    */
-  error: PropTypes.string,
-
-  /**
-   * if label should be bold
-   */
-  boldLabel: PropTypes.bool,
+  hasError: PropTypes.bool,
 
   /**
    * boolean flag to specify that this input should be uncontrolled by react
@@ -154,27 +112,7 @@ TextField.propTypes = {
   max: PropTypes.number,
 
   /**
-   * the legal number of intervals
-   */
-  step: PropTypes.number,
-
-  /**
    * unit test selector
    */
   dataTestId: PropTypes.string,
-
-  /**
-   * cypress tests selector
-   */
-  dataCy: PropTypes.string,
-
-  /**
-   * Exclude option for adding exclude class to the textfield
-   */
-  exclude: PropTypes.bool,
-
-  /**
-   * aria-describedby label id
-   */
-  describedby: PropTypes.string,
 };
