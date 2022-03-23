@@ -22,7 +22,6 @@ export function AccordionForm(props) {
       if (!card.isValid && !firstInvalidCardId) {
         firstInvalidCardId = card.id;
         console.log(cardsObj[card.id]);
-        cardsObj[firstInvalidCardId] = true;
       }
     });
 
@@ -30,6 +29,7 @@ export function AccordionForm(props) {
 
     // up until here, all invalid ones are false and all valid are true
     // open up the first invalid one that's found so the user can enter data
+    cardsObj[firstInvalidCardId] = true;
 
     return cardsObj;
   });
@@ -47,11 +47,11 @@ export function AccordionForm(props) {
             }}
           >
             {/* Heading for the given card */}
-            <div className="cardHeading flex flex-row">
-              <div className="rounded-full w-10 h-10 bg-multi-neutrals-grey5">
+            <div className="cardHeading ds-flex ds-flex-row">
+              <div className="ds-relative ds-rounded-full ds-w-10 ds-h-10 ds-bg-multi-neutrals-grey5">
                 <p>{index + 1}</p>
               </div>
-              <p>{card.title}</p>
+              <p className="ds-heading3">{card.title}</p>
             </div>
             {/* Content contained on the given card */}
             <div className="cardContent">
