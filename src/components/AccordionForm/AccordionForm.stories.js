@@ -15,7 +15,28 @@ Default.args = {
   cards: [
     {
       id: "step1",
+      title: "CARD 1",
       isValid: true,
+      children: [
+        <div>
+          <input
+            type="text"
+            style={{
+              border: "1px solid black",
+            }}
+            onChange={() => {
+              console.log("test");
+            }}
+          />
+        </div>,
+      ],
+      buttonLabel: "next",
+      // ref: React.useRef(null)
+    },
+    {
+      id: "step2",
+      title: "CARD 2",
+      isValid: false,
       children: [
         <div>
           <input
@@ -30,7 +51,8 @@ Default.args = {
       // ref: React.useRef(null)
     },
     {
-      id: "step2",
+      id: "step3",
+      title: "CARD 3",
       isValid: false,
       children: [
         <div>
