@@ -4,6 +4,7 @@
  */
 import PropTypes from "prop-types";
 import React from "react";
+import { Button } from "../Button/Button";
 
 export function AccordionForm(props) {
   const { cards, id } = props;
@@ -11,7 +12,7 @@ export function AccordionForm(props) {
   const sectionNextClick = React.useCallback((e) => {
     e.preventDefault();
     curIndex += 1;
-    // setCardsOpenState(cardsOpenState[cards[curIndex].id])
+    setCardsOpenState(cardsOpenState[cards[curIndex].id]);
   }, []);
 
   const [cardsOpenState, setCardsOpenState] = React.useState(() => {
@@ -40,34 +41,41 @@ export function AccordionForm(props) {
         console.log(index + 1);
         return (
           <div
+            className="ds-bg-multi-blue-blue5 ds-p-12px ds-rounded "
             style={{
-              borderBottom: "1px solid black",
+              border: "1px solid black",
               marginBottom: "5px",
               paddingBottom: "5px",
             }}
           >
-            {/* Heading for the given card */}
-            <div className="cardHeading ds-flex ds-flex-row">
-              <div className="ds-relative ds-rounded-full ds-w-10 ds-h-10 ds-bg-multi-neutrals-grey5">
-                <p>{index + 1}</p>
+            {/* Number for the given card */}
+            <div className="cardNumber ds-flex ds-flex-row ds-pb-12px">
+              <div className="ds-relative ds-rounded-full ds-w-12 ds-h-12 ds-bg-multi-blue-blue65">
+                <p className="ds-absolute ds-left-3.5 ds-bottom-2 ds-text-multi-neutrals-white ds-text-mobileh2">
+                  {index + 1}
+                </p>
               </div>
-              <p className="ds-heading3">{card.title}</p>
+              {/* Content contained on the given card */}
+              <div className="cardContent ds-pl-14px ">
+                <p className="ds-heading3 ds-pt-5px">{card.title}</p>
+                section: {card.id} <br />
+                open: {cardsOpenState[card.id] ? "true" : "false"}
+                <br />
+                valid: {card.isValid ? "true" : "false"}
+                {cardsOpenState[card.id] && (
+                  <>
+                    {card.children}
+                    <div className="ds-pt-12px">
+                      <Button
+                        text={`Next Step: ${card.buttonLabel}`}
+                        styling="primary"
+                        onClick={sectionNextClick}
+                      />
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
-            {/* Content contained on the given card */}
-            <div className="cardContent">
-              section: {card.id} <br />
-              open: {cardsOpenState[card.id] ? "true" : "false"}
-              <br />
-              valid: {card.isValid ? "true" : "false"}
-            </div>
-            {cardsOpenState[card.id] && (
-              <>
-                {card.children}
-                <button onClick={sectionNextClick} type="button">
-                  {card.buttonLabel}
-                </button>
-              </>
-            )}
           </div>
         );
       })}
