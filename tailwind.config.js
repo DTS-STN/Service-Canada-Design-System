@@ -179,6 +179,7 @@ module.exports = {
       width: {
         "40px": "40px",
         "44px": "44px",
+        "48px": "48px",
         "68px": "68px",
         "80px": "80px",
         "100px": "100px",
@@ -198,6 +199,7 @@ module.exports = {
         "40px": "40px",
         "44px": "44px",
         "46px": "46px",
+        "48px": "48px",
         "100px": "100px",
         "104px": "104px",
         "128px": "128px",
@@ -232,6 +234,7 @@ module.exports = {
         "20px": "20px",
         "24px": "24px",
         "28px": "28px",
+        "30px": "30px",
         "32px": "32px",
         "40px": "40px",
       },
@@ -327,5 +330,6 @@ module.exports = {
     require("./config-plugins/cards-plugin"),
     require("./config-plugins/labels-plugin"),
     require("./config-plugins/search-plugin"),
+    require("./config-plugins/accordion-plugin"),
   ],
 };

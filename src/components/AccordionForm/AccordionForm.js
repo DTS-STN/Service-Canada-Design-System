@@ -61,26 +61,28 @@ export function AccordionForm(props) {
 
         return (
           <div
-            className="ds-bg-multi-blue-blue5 ds-p-12px ds-rounded "
+            className="ds-bg-multi-blue-blue1 ds-px-20px ds-py-18px ds-rounded ds-my-16px"
             style={{
-              border: "1px solid black",
+              border: "1px solid #295376",
               marginBottom: "5px",
               paddingBottom: "5px",
             }}
             key={`accordion-form-card-${card.id}`}
           >
             {/* Number for the given card */}
-            <div className="cardNumber ds-flex ds-flex-row ds-pb-12px">
-              <div className="ds-relative ds-rounded-full ds-w-12 ds-h-12 ds-bg-multi-blue-blue65">
-                <p className="ds-absolute ds-left-3.5 ds-bottom-2 ds-text-multi-neutrals-white ds-text-mobileh2">
+            <div className="cardNumber ds-flex sm:ds-flex-row ds-flex-col ds-pb-12px">
+              <div className="ds-relative ds-rounded-full ds-w-48px ds-h-48px ds-bg-multi-blue-blue60d">
+                <p className="ds-absolute ds-left-3.5 ds-bottom-0.5 ds-accordion-num">
                   {index + 1}
                 </p>
               </div>
               {/* Content contained on the given card */}
               <div className="cardContent ds-pl-14px ">
-                <p className="ds-heading3 ds-pt-5px">{card.title}</p>
-                {isOpen && (
+                {isOpen ? (
                   <>
+                    <p className="ds-accordion-header ds-pb-30px">
+                      {card.title}
+                    </p>
                     <pre>
                       section: {card.id} <br />
                       open: {isOpen ? "true" : "false"}
@@ -88,7 +90,7 @@ export function AccordionForm(props) {
                       valid: {card.isValid ? "true" : "false"}
                     </pre>
                     {card.children}
-                    <div className="ds-pt-12px">
+                    <div className="ds-pt-32px">
                       {!isLastCard && (
                         <Button
                           text={`Next Step: ${card.buttonLabel}`}
@@ -98,6 +100,8 @@ export function AccordionForm(props) {
                       )}
                     </div>
                   </>
+                ) : (
+                  <p className="ds-accordion-header">{card.title}</p>
                 )}
               </div>
             </div>

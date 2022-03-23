@@ -15,7 +15,7 @@ Default.args = {
   cards: [
     {
       id: "step1",
-      title: "CARD 1",
+      title: "Age",
       isValid: false,
       children: [
         <div>
@@ -30,11 +30,11 @@ Default.args = {
           />
         </div>,
       ],
-      buttonLabel: "next",
+      buttonLabel: "Income",
     },
     {
       id: "step2",
-      title: "CARD 2",
+      title: "Income",
       isValid: false,
       children: [
         <div>
@@ -46,12 +46,12 @@ Default.args = {
           />
         </div>,
       ],
-      buttonLabel: "next",
+      buttonLabel: "Residency",
       // ref: React.useRef(null)
     },
     {
       id: "step3",
-      title: "CARD 3",
+      title: "Residency",
       isValid: false,
       children: [
         <div>
@@ -63,7 +63,26 @@ Default.args = {
           />
         </div>,
       ],
-      buttonLabel: "next",
+      buttonLabel: "Marital Status",
+      // ref: React.useRef(null)
+    },
+
+    {
+      id: "step4",
+      title: "Marital Status",
+      isValid: false,
+      children: [
+        <div>
+          <input
+            type="text"
+            style={{
+              border: "1px solid black",
+            }}
+          />
+          <p>random text</p>
+        </div>,
+      ],
+      buttonLabel: "Next",
       // ref: React.useRef(null)
     },
   ],

@@ -1,0 +1,23 @@
+const plugin = require("tailwindcss/plugin");
+const accordion = plugin(function ({ addUtilities, theme }) {
+  const newUtilities = {
+    // default
+    ".accordion-header": {
+      fontSize: theme("fontSize.mobileh2"),
+      fontWeight: theme("fontWeight.bold"),
+      fontFamily: theme("fontFamily.header"),
+      color: theme("colors.multi.neutrals.black"),
+    },
+    ".accordion-num": {
+      fontSize: theme("fontSize.mobileh2"),
+      fontWeight: theme("fontWeight.bold"),
+      fontFamily: theme("fontFamily.header"),
+      color: theme("colors.multi.neutrals.white"),
+    },
+    // background colors
+    // colors.multi.neutrals.white
+    // colors.multi.neutrals.grey5
+  };
+  addUtilities(newUtilities);
+});
+module.exports = accordion;
