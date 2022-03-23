@@ -16,7 +16,7 @@ Default.args = {
     {
       id: "step1",
       title: "CARD 1",
-      isValid: true,
+      isValid: false,
       children: [
         <div>
           <input

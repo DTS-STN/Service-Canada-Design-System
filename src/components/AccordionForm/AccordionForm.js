@@ -8,32 +8,35 @@ import { Button } from "../Button/Button";
 
 export function AccordionForm(props) {
   const { cards, id } = props;
-  let curIndex = 0;
-  const sectionNextClick = React.useCallback((e) => {
-    e.preventDefault();
-    curIndex += 1;
-    setCardsOpenState(cardsOpenState[cards[curIndex].id]);
-  }, []);
+  const sectionNextClick = React.useCallback(
+    (cardId) => {
+      return (e) => {
+        e.preventDefault();
+        const curIndex = cards.findIndex(({ id }) => {
+          return id == cardId;
+        });
+        if (cards[curIndex + 1]) {
+          const nextCard = cards[curIndex + 1].id;
+          setDirtyCards((curDirtyCards) => {
+            return [...curDirtyCards, nextCard];
+          });
+        }
+      };
+    },
+    [cards]
+  );
 
   const [cardsOpenState, setCardsOpenState] = React.useState(() => {
-    const cardsObj = {};
-    let firstInvalidCardId;
-    cards.forEach((card) => {
-      cardsObj[card.id] = card.isValid;
-      if (!card.isValid && !firstInvalidCardId) {
-        firstInvalidCardId = card.id;
-        console.log(cardsObj[card.id]);
-      }
-    });
-
-    console.log("first invalid card id", firstInvalidCardId);
-
-    // up until here, all invalid ones are false and all valid are true
-    // open up the first invalid one that's found so the user can enter data
-    cardsObj[firstInvalidCardId] = true;
-
-    return cardsObj;
+    return CardStates(cards);
   });
+
+  const [dirtyCards, setDirtyCards] = React.useState([]);
+
+  React.useEffect(() => {
+    setCardsOpenState(CardStates(cards));
+  }, [cards]);
+
+  React.useEffect(() => {}, [cardsOpenState]);
 
   return (
     <form className="AccordionForm" noValidate id={id}>
@@ -62,18 +65,19 @@ export function AccordionForm(props) {
                 open: {cardsOpenState[card.id] ? "true" : "false"}
                 <br />
                 valid: {card.isValid ? "true" : "false"}
-                {cardsOpenState[card.id] && (
-                  <>
-                    {card.children}
-                    <div className="ds-pt-12px">
-                      <Button
-                        text={`Next Step: ${card.buttonLabel}`}
-                        styling="primary"
-                        onClick={sectionNextClick}
-                      />
-                    </div>
-                  </>
-                )}
+                {cardsOpenState[card.id] ||
+                  (dirtyCards.includes(card.id) && (
+                    <>
+                      {card.children}
+                      <div className="ds-pt-12px">
+                        <Button
+                          text={`Next Step: ${card.buttonLabel}`}
+                          styling="primary"
+                          onClick={sectionNextClick(card.id)}
+                        />
+                      </div>
+                    </>
+                  ))}
               </div>
             </div>
           </div>
@@ -82,6 +86,25 @@ export function AccordionForm(props) {
     </form>
   );
 }
+
+const CardStates = (cards) => {
+  const cardsObj = {};
+  let firstInvalidCardId;
+  cards.forEach((card) => {
+    cardsObj[card.id] = card.isValid;
+    if (!card.isValid && !firstInvalidCardId) {
+      firstInvalidCardId = card.id;
+      console.log(cardsObj[card.id]);
+    }
+  });
+
+  console.log("first invalid card id", firstInvalidCardId);
+
+  // up until here, all invalid ones are false and all valid are true
+  // open up the first invalid one that's found so the user can enter data
+  cardsObj[firstInvalidCardId] = true;
+  return cardsObj;
+};
 
 AccordionForm.propTypes = {
   id: PropTypes.string,
