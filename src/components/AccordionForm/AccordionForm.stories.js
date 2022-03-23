@@ -31,7 +31,6 @@ Default.args = {
         </div>,
       ],
       buttonLabel: "next",
-      // ref: React.useRef(null)
     },
     {
       id: "step2",
