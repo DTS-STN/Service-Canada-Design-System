@@ -107,8 +107,8 @@ export function AccordionForm(props) {
                         <Button
                           text={`Next Step: ${card.buttonLabel}`}
                           styling="primary"
-                          onClick={sectionNextClick(card.id)}
-                          onChange={card.buttonOnChange}
+                          onClick={card.buttonOnChange}
+                          type="submit"
                         />
                       )}
                     </div>
