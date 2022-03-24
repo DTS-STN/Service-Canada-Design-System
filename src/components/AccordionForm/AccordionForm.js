@@ -61,7 +61,7 @@ export function AccordionForm(props) {
 
         return (
           <div
-            className="ds-bg-multi-blue-blue1 ds-px-20px ds-py-18px ds-rounded ds-my-16px"
+            className="ds-bg-multi-blue-blue1 ds-px-24px ds-py-18px ds-rounded ds-my-16px"
             style={{
               border: "1px solid #295376",
               marginBottom: "5px",
@@ -70,19 +70,25 @@ export function AccordionForm(props) {
             key={`accordion-form-card-${card.id}`}
           >
             {/* Number for the given card */}
-            <div className="cardNumber ds-flex sm:ds-flex-row ds-flex-col ds-pb-12px">
-              <div className="ds-relative ds-rounded-full ds-w-48px ds-h-48px ds-bg-multi-blue-blue60d">
-                <p className="ds-absolute ds-left-3.5 ds-bottom-0.5 ds-accordion-num">
-                  {index + 1}
-                </p>
+            <div className="ds-flex-col ds-pb-12px">
+              <div className="cardNumber ds-flex ds-flex-row">
+                <div className="ds-relative ds-rounded-full ds-w-48px ds-h-48px ds-bg-multi-blue-blue60d">
+                  <p className="ds-absolute ds-left-3.5 ds-bottom-0.5 ds-accordion-num">
+                    {index + 1}
+                  </p>
+                </div>
+                {isOpen ? (
+                  <p className="ds-accordion-header ds-pl-14px ds-pb-18px">
+                    {card.title}
+                  </p>
+                ) : (
+                  <p className="ds-accordion-header ds-pl-14px">{card.title}</p>
+                )}
               </div>
               {/* Content contained on the given card */}
-              <div className="cardContent ds-pl-14px ">
-                {isOpen ? (
+              <div className="cardContent sm:ds-pl-60px">
+                {isOpen && (
                   <>
-                    <p className="ds-accordion-header ds-pb-30px">
-                      {card.title}
-                    </p>
                     <pre>
                       section: {card.id} <br />
                       open: {isOpen ? "true" : "false"}
@@ -91,17 +97,22 @@ export function AccordionForm(props) {
                     </pre>
                     {card.children}
                     <div className="ds-pt-32px">
-                      {!isLastCard && (
+                      {!isLastCard ? (
                         <Button
                           text={`Next Step: ${card.buttonLabel}`}
                           styling="primary"
                           onClick={sectionNextClick(card.id)}
                         />
+                      ) : (
+                        <Button
+                          text={`Next Step: ${card.buttonLabel}`}
+                          styling="primary"
+                          onClick={sectionNextClick(card.id)}
+                          onChange={card.buttonOnChange}
+                        />
                       )}
                     </div>
                   </>
-                ) : (
-                  <p className="ds-accordion-header">{card.title}</p>
                 )}
               </div>
             </div>
@@ -145,6 +156,7 @@ AccordionForm.propTypes = {
         PropTypes.arrayOf(PropTypes.element),
       ]),
       buttonLabel: PropTypes.string,
+      buttonOnChange: PropTypes.func,
     })
   ),
 };

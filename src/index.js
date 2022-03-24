@@ -98,3 +98,8 @@ export { FormError } from "./components/FormError/FormError";
  * Form Label
  */
 export { FormLabel } from "./components/FormLabel/FormLabel";
+
+/**
+ * Accordion
+ */
+export { AccordionForm } from "./components/AccordionForm/AccordionForm";

@@ -28,6 +28,7 @@ Default.args = {
               console.log("test");
             }}
           />
+          <p>Random text for testing purposes. Test test testest testing</p>
         </div>,
       ],
       buttonLabel: "Income",
@@ -44,10 +45,10 @@ Default.args = {
               border: "1px solid black",
             }}
           />
+          <input type="checkbox" id="myCheck" onclick="myFunction()"></input>
         </div>,
       ],
       buttonLabel: "Residency",
-      // ref: React.useRef(null)
     },
     {
       id: "step3",
@@ -61,10 +62,10 @@ Default.args = {
               border: "1px solid black",
             }}
           />
+          <input type="checkbox" id="myCheck" onclick="myFunction()"></input>
         </div>,
       ],
       buttonLabel: "Marital Status",
-      // ref: React.useRef(null)
     },
 
     {
@@ -83,7 +84,6 @@ Default.args = {
         </div>,
       ],
       buttonLabel: "Next",
-      // ref: React.useRef(null)
     },
   ],
 };
