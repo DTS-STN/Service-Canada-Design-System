@@ -29,6 +29,7 @@
     "lint": "prettier --write \"*.{js,md}\" --write \".storybook/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
     "eslint": "eslint src",
     "prepare": "husky install",
+    "prepack": "npm run build",
     "storybook-docs": "start-storybook --docs --no-manager-cache",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
