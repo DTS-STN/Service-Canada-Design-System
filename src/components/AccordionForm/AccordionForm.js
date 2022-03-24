@@ -57,7 +57,8 @@ export function AccordionForm(props) {
       const isNextFillableCard = cardsOpenState[card.id];
       const hasAlreadyBeenFilled = dirtyCards.includes(card.id);
       const isOpen = isNextFillableCard || hasAlreadyBeenFilled;
-      const nextCardIsOpen = dirtyCards.includes(cardsArr[index + 1].id);
+      const nextCardIsOpen =
+        !isLastCard && dirtyCards.includes(cardsArr[index + 1].id);
       console.log("NEXT CARD IS OPEN", nextCardIsOpen);
 
       return (
