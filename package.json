@@ -21,7 +21,7 @@
     "build": "cross-env NODE_ENV=production rollup -c",
     "build-watch": "rollup -c -w",
     "i-all": "npm i",
-    "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test",
+    "test": "cross-env SKIP_PREFLIGHT_CHECK=true react-scripts test",
     "test:unit": "jest --forceExit",
     "pre-commit": "lint-staged",
     "lint": "prettier --write \"*.{js,md}\" --write \".storybook/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
