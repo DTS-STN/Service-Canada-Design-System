@@ -7,34 +7,33 @@ import React from "react";
 import { Button } from "../Button/Button";
 
 export function AccordionForm(props) {
-  const { cards, id } = props;
-  const sectionNextClick = React.useCallback(
-    (cardId) => {
-      return (e) => {
-        e.preventDefault();
-        const curIndex = cards.findIndex(({ id }) => {
-          return id == cardId;
+  const { cards, id, cardsValid } = props;
+  const sectionNextClick = React.useCallback((cardId) => {
+    return (e) => {
+      console.log("CaRD ID", cardId);
+      e.preventDefault();
+      const curIndex = cards.findIndex(({ id }) => {
+        return id == cardId;
+      });
+      if (cards[curIndex + 1]) {
+        const nextCard = cards[curIndex + 1].id;
+        console.log("NEXT", nextCard);
+        setDirtyCards((curDirtyCards) => {
+          return [...curDirtyCards, nextCard];
         });
-        if (cards[curIndex + 1]) {
-          const nextCard = cards[curIndex + 1].id;
-          setDirtyCards((curDirtyCards) => {
-            return [...curDirtyCards, nextCard];
-          });
-        }
-      };
-    },
-    [cards]
-  );
+      }
+    };
+  }, []);
 
   const [cardsOpenState, setCardsOpenState] = React.useState(() => {
-    return generateCardOpenStates(cards);
+    return generateCardOpenStates(cardsValid);
   });
 
   const [dirtyCards, setDirtyCards] = React.useState([]);
 
   React.useEffect(() => {
-    setCardsOpenState(generateCardOpenStates(cards));
-  }, [cards]);
+    setCardsOpenState(generateCardOpenStates(cardsValid));
+  }, [cardsValid]);
 
   React.useEffect(() => {
     const openCardsEntries = Object.entries(cardsOpenState);
@@ -51,86 +50,94 @@ export function AccordionForm(props) {
     });
   }, [cardsOpenState]);
 
-  return (
-    <form className="AccordionForm" noValidate id={id}>
-      {cards.map((card, index, cardsArr) => {
-        const isLastCard = !cardsArr[index + 1];
-        const isNextFillableCard = cardsOpenState[card.id];
-        const hasAlreadyBeenFilled = dirtyCards.includes(card.id);
-        const isOpen = isNextFillableCard || hasAlreadyBeenFilled;
+  const cardRenders = React.useMemo(() => {
+    return cards.map((card, index, cardsArr) => {
+      const isValid = !!cardsValid[card.id].isValid;
+      const isLastCard = !cardsArr[index + 1];
+      const isNextFillableCard = cardsOpenState[card.id];
+      const hasAlreadyBeenFilled = dirtyCards.includes(card.id);
+      const isOpen = isNextFillableCard || hasAlreadyBeenFilled;
+      const nextCardIsOpen = dirtyCards.includes(cardsArr[index + 1].id);
+      console.log("NEXT CARD IS OPEN", nextCardIsOpen);
 
-        return (
-          <div
-            className="ds-bg-multi-blue-blue1 ds-px-24px ds-py-18px ds-rounded ds-my-16px"
-            style={{
-              border: "1px solid #295376",
-              marginBottom: "5px",
-              paddingBottom: "5px",
-            }}
-            key={`accordion-form-card-${card.id}`}
-          >
-            {/* Number for the given card */}
-            <div className="ds-flex-col ds-pb-12px">
-              <div className="cardNumber ds-flex ds-flex-row">
-                <div className="ds-relative ds-rounded-full ds-w-48px ds-h-48px ds-bg-multi-blue-blue60d">
-                  <p className="ds-absolute ds-left-3.5 ds-bottom-0.5 ds-accordion-num">
-                    {index + 1}
-                  </p>
-                </div>
-                {isOpen ? (
-                  <p className="ds-accordion-header ds-pl-14px ds-pb-18px">
-                    {card.title}
-                  </p>
-                ) : (
-                  <p className="ds-accordion-header ds-pl-14px">{card.title}</p>
-                )}
+      return (
+        <div
+          className="ds-bg-multi-blue-blue1 ds-px-24px ds-py-18px ds-rounded ds-my-16px"
+          style={{
+            border: "1px solid #295376",
+            marginBottom: "5px",
+            paddingBottom: "5px",
+          }}
+          key={`accordion-form-card-${card.id}`}
+        >
+          {/* Number for the given card */}
+          <div className="ds-flex-col ds-pb-12px">
+            <div className="cardNumber ds-flex ds-flex-row">
+              <div className="ds-relative ds-rounded-full ds-w-48px ds-h-48px ds-bg-multi-blue-blue60d">
+                <p className="ds-absolute ds-left-3.5 ds-bottom-0.5 ds-accordion-num">
+                  {index + 1}
+                </p>
               </div>
-              {/* Content contained on the given card */}
-              <div className="cardContent sm:ds-pl-60px">
-                {isOpen && (
-                  <>
-                    <pre>
-                      section: {card.id} <br />
-                      open: {isOpen ? "true" : "false"}
-                      <br />
-                      valid: {card.isValid ? "true" : "false"}
-                    </pre>
-                    {card.children}
-                    <div className="ds-pt-32px">
-                      {!isLastCard ? (
-                        <Button
-                          text={`Next Step: ${card.buttonLabel}`}
-                          styling="primary"
-                          onClick={sectionNextClick(card.id)}
-                        />
-                      ) : (
-                        <Button
-                          text={`Next Step: ${card.buttonLabel}`}
-                          styling="primary"
-                          onClick={card.buttonOnChange}
-                          type="submit"
-                        />
-                      )}
-                    </div>
-                  </>
-                )}
-              </div>
+              {isOpen ? (
+                <p className="ds-accordion-header ds-pl-14px ds-pb-18px">
+                  {card.title}
+                </p>
+              ) : (
+                <p className="ds-accordion-header ds-pl-14px">{card.title}</p>
+              )}
+            </div>
+            {/* Content contained on the given card */}
+            <div className="cardContent sm:ds-pl-60px">
+              {isOpen && (
+                <>
+                  <pre>
+                    section: {card.id} <br />
+                    open: {isOpen ? "true" : "false"}
+                    <br />
+                    valid: {isValid ? "true" : "false"}
+                  </pre>
+                  {card.children}
+                  <div className="ds-pt-32px">
+                    {!isLastCard ? (
+                      <Button
+                        text={`Next Step: ${card.buttonLabel}`}
+                        styling="primary"
+                        onClick={sectionNextClick(card.id)}
+                        disabled={nextCardIsOpen}
+                      />
+                    ) : (
+                      <Button
+                        text={`Next Step: ${card.buttonLabel}`}
+                        styling="primary"
+                        onClick={card.buttonOnChange}
+                        type="submit"
+                      />
+                    )}
+                  </div>
+                </>
+              )}
             </div>
           </div>
-        );
-      })}
+        </div>
+      );
+    });
+  }, [dirtyCards]);
+
+  return (
+    <form className="AccordionForm" noValidate id={id}>
+      {cardRenders}
     </form>
   );
 }
 
-const generateCardOpenStates = (cards) => {
+const generateCardOpenStates = (cardsValid) => {
   const cardsObj = {};
   let firstInvalidCardId;
-  cards.forEach((card) => {
-    cardsObj[card.id] = card.isValid;
-    if (!card.isValid && !firstInvalidCardId) {
-      firstInvalidCardId = card.id;
-      console.log(cardsObj[card.id]);
+  Object.entries(cardsValid).forEach(([cardId, cardState]) => {
+    cardsObj[cardId] = cardState.isValid;
+    if (!cardState.isValid && !firstInvalidCardId) {
+      firstInvalidCardId = cardId;
+      console.log(cardsObj[cardId]);
     }
   });
 
@@ -148,7 +155,6 @@ AccordionForm.propTypes = {
     PropTypes.shape({
       id: PropTypes.string,
       title: PropTypes.string,
-      isValid: PropTypes.bool,
       // ref: PropTypes.any,
       children: PropTypes.oneOfType([
         PropTypes.string,
@@ -159,4 +165,5 @@ AccordionForm.propTypes = {
       buttonOnChange: PropTypes.func,
     })
   ),
+  cardsValid: PropTypes.objectOf(PropTypes.any),
 };

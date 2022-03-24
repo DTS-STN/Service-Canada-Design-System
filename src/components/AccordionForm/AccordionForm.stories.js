@@ -6,17 +6,36 @@ export default {
   component: AccordionForm,
 };
 
-const Template = (args) => <AccordionForm {...args} />;
-
-export const Default = Template.bind({});
-
-Default.args = {
-  id: "testing",
-  cards: [
+const Template = (args) => {
+  const [cardsValid, setCardsValid] = React.useState({
+    step1: {},
+    step2: {},
+    step3: {},
+    step4: {},
+  });
+  const onInputChange = React.useCallback((sectionId) => {
+    return (e) => {
+      console.log(e.target.value);
+      // if (e.target.value === 'valid') {
+      //   setCardsValid((currentCardsData) => {
+      //     const updatedCardsData = { ...currentCardsData }
+      //     updatedCardsData[sectionId].isValid = true
+      //     return updatedCardsData
+      //   })
+      // } else {
+      //   setCardsValid((currentCardsData) => {
+      //     const updatedCardsData = { ...currentCardsData }
+      //     updatedCardsData[sectionId].isValid = false
+      //     return updatedCardsData
+      //   })
+      // }
+    };
+  }, []);
+  const cards = [
     {
       id: "step1",
       title: "Age",
-      isValid: false,
+      buttonLabel: "Income",
       children: [
         <div>
           <input
@@ -24,19 +43,15 @@ Default.args = {
             style={{
               border: "1px solid black",
             }}
-            onChange={() => {
-              console.log("test");
-            }}
+            onChange={onInputChange("step1")}
           />
           <p>Random text for testing purposes. Test test testest testing</p>
         </div>,
       ],
-      buttonLabel: "Income",
     },
     {
       id: "step2",
       title: "Income",
-      isValid: false,
       children: [
         <div>
           <input
@@ -44,6 +59,7 @@ Default.args = {
             style={{
               border: "1px solid black",
             }}
+            onChange={onInputChange("step2")}
           />
           <input type="checkbox" id="myCheck" onclick="myFunction()"></input>
         </div>,
@@ -53,7 +69,6 @@ Default.args = {
     {
       id: "step3",
       title: "Residency",
-      isValid: false,
       children: [
         <div>
           <input
@@ -61,6 +76,7 @@ Default.args = {
             style={{
               border: "1px solid black",
             }}
+            onChange={onInputChange("step3")}
           />
           <input type="checkbox" id="myCheck" onclick="myFunction()"></input>
         </div>,
@@ -71,7 +87,6 @@ Default.args = {
     {
       id: "step4",
       title: "Marital Status",
-      isValid: false,
       children: [
         <div>
           <input
@@ -79,11 +94,17 @@ Default.args = {
             style={{
               border: "1px solid black",
             }}
+            onChange={onInputChange("step4")}
           />
           <p>random text</p>
         </div>,
       ],
       buttonLabel: "Next",
     },
-  ],
+  ];
+  return <AccordionForm id="testing" cards={cards} cardsValid={cardsValid} />;
 };
+
+export const Default = Template.bind({});
+
+Default.args = {};
