@@ -10,7 +10,7 @@ export function CheckBoxes(props) {
   const [checked, setCheckState] = useState(false);
   let display = checked === true ? "ds-visible" : "ds-hidden";
   const validationClass = props.hasError
-    ? "ds-border-specific-red-red50b"
+    ? "ds-border-specific-red-red50b focus:ds-border-multi-blue-blue60f focus:ds-shadow-text-input"
     : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f focus:ds-shadow-text-input";
   return (
     <div className="ds-flex ds-flex-row">
