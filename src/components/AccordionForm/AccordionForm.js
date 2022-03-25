@@ -10,17 +10,17 @@ export function AccordionForm(props) {
   const { cards, id, cardsValid } = props;
   const sectionNextClick = React.useCallback((cardId) => {
     return (e) => {
-      console.log("CaRD ID", cardId);
       e.preventDefault();
-      const curIndex = cards.findIndex(({ id }) => {
-        return id == cardId;
-      });
-      if (cards[curIndex + 1]) {
-        const nextCard = cards[curIndex + 1].id;
-        console.log("NEXT", nextCard);
-        setDirtyCards((curDirtyCards) => {
-          return [...curDirtyCards, nextCard];
+      if (cardsValid[cardId].isValid) {
+        const curIndex = cards.findIndex(({ id }) => {
+          return id == cardId;
         });
+        if (cards[curIndex + 1]) {
+          const nextCard = cards[curIndex + 1].id;
+          setDirtyCards((curDirtyCards) => {
+            return [...curDirtyCards, nextCard];
+          });
+        }
       }
     };
   }, []);
@@ -31,9 +31,9 @@ export function AccordionForm(props) {
 
   const [dirtyCards, setDirtyCards] = React.useState([]);
 
-  React.useEffect(() => {
-    setCardsOpenState(generateCardOpenStates(cardsValid));
-  }, [cardsValid]);
+  // React.useEffect(() => {
+  //   setCardsOpenState(generateCardOpenStates(cardsValid));
+  // }, [cardsValid]);
 
   React.useEffect(() => {
     const openCardsEntries = Object.entries(cardsOpenState);
@@ -124,7 +124,7 @@ export function AccordionForm(props) {
         </div>
       );
     });
-  }, [dirtyCards]);
+  }, [dirtyCards, cardsValid]);
 
   return (
     <form className="AccordionForm" noValidate id={id}>
@@ -153,10 +153,10 @@ const generateCardOpenStates = (cardsValid) => {
 
 AccordionForm.defaultProps = {
   cardsValid: {
-    step1: false,
-    step2: false,
-    step3: false,
-    step4: false,
+    step1: { isValid: false },
+    step2: { isValid: false },
+    step3: { isValid: false },
+    step4: { isValid: false },
   },
 };
 

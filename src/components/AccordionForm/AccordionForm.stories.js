@@ -8,28 +8,28 @@ export default {
 
 const Template = () => {
   const [cardsValid, setCardsValid] = React.useState({
-    step1: false,
-    step2: false,
-    step3: false,
-    step4: false,
+    step1: { isValid: false },
+    step2: { isValid: false },
+    step3: { isValid: false },
+    step4: { isValid: false },
   });
+
   const onInputChange = React.useCallback((sectionId) => {
     return (e) => {
-      console.log("undefined here");
       console.log(e.target.value);
-      // if (e.target.value === 'valid') {
-      //   setCardsValid((currentCardsData) => {
-      //     const updatedCardsData = { ...currentCardsData }
-      //     updatedCardsData[sectionId].isValid = true
-      //     return updatedCardsData
-      //   })
-      // } else {
-      //   setCardsValid((currentCardsData) => {
-      //     const updatedCardsData = { ...currentCardsData }
-      //     updatedCardsData[sectionId].isValid = false
-      //     return updatedCardsData
-      //   })
-      // }
+      if (e.target.value === "valid") {
+        setCardsValid((currentCardsData) => {
+          const updatedCardsData = { ...currentCardsData };
+          updatedCardsData[sectionId].isValid = true;
+          return updatedCardsData;
+        });
+      } else {
+        setCardsValid((currentCardsData) => {
+          const updatedCardsData = { ...currentCardsData };
+          updatedCardsData[sectionId].isValid = false;
+          return updatedCardsData;
+        });
+      }
     };
   }, []);
   const cards = [

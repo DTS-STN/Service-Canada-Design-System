@@ -1,6 +1,6 @@
 {
   "name": "@dts-stn/decd-design-system",
-  "version": "1.24.0",
+  "version": "1.26.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "source": "src/index.js",
@@ -76,6 +76,7 @@
   "devDependencies": {
     "@babel/cli": "^7.14.5",
     "@babel/core": "^7.14.5",
+    "@babel/eslint-parser": "^7.17.0",
     "@babel/preset-env": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
     "@rollup/plugin-babel": "^5.3.0",
