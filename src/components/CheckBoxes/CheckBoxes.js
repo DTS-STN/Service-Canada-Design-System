@@ -4,11 +4,14 @@ import { Image } from "../Image/Image";
 import checkMark from "../../assets/check_mark.svg";
 
 /**
- * check box component for forms
+ * check box component for forms okay
  */
 export function CheckBoxes(props) {
   const [checked, setCheckState] = useState(false);
   let display = checked === true ? "ds-visible" : "ds-hidden";
+  const validationClass = props.hasError
+    ? "ds-border-specific-red-red50b"
+    : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f focus:ds-shadow-text-input";
   return (
     <div className="ds-flex ds-flex-row">
       <div className="ds-relative ds-w-44px ds-h-44px ds-justify-items-center">
@@ -19,9 +22,9 @@ export function CheckBoxes(props) {
             value={props.value}
             onClick={() => setCheckState(!checked)}
             type="checkbox"
-            className={`ds-absolute ds-appearance-none ds-checkbox_style 
-            ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f 
-            ds-check-shadow`}
+            className={`ds-absolute ds-appearance-none ds-checkbox_style ds-outline-none
+            ${validationClass}
+            `}
             onChange={props.onChange}
           />
           <Image

@@ -283,6 +283,7 @@ module.exports = {
 
       boxShadow: {
         "experiment-shadow": "0px 2px 8px rgba(0, 0, 0, 0.25)",
+        "text-input": "0px 0px 6px rgba(14, 98, 201, 0.6)",
       },
 
       lineHeight: {

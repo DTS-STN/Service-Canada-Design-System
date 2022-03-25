@@ -14,10 +14,10 @@ export function CheckBoxForm(props) {
         label={formLabelProps.label}
         required={formLabelProps.required}
         infoText={formLabelProps.infoText}
+        helpText={formLabelProps.helpText}
       />
       {checkBoxList.map((value, index) => {
-        let style =
-          index === size - 1 ? "ds-pb-8px" : "md:ds-pb-8px ds-pb-24px";
+        let style = index === size - 1 ? "ds-pb-0" : "md:ds-pb-8px ds-pb-24px";
         return (
           <div
             className={
@@ -29,7 +29,7 @@ export function CheckBoxForm(props) {
               name={value.name}
               value={value.value}
               label={value.label}
-              hasError={value.hasError}
+              hasError={formErrorProps.hasError}
             />
           </div>
         );

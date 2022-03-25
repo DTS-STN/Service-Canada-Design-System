@@ -15,6 +15,9 @@ const checkboxes = plugin(function ({ addUtilities, theme }) {
         "--tw-ring-color": theme("colors.multi.blue.blue60f"),
       },
     },
+    "input[type='checkbox']:checked": {
+      borderColor: theme("colors.multi.blue.blue60f"),
+    },
   };
 
   addUtilities(newUtilities);
