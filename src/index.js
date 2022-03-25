@@ -11,6 +11,7 @@ import "./styles/forms.css";
 import "./styles/menu.css";
 import "./styles/header.css";
 import "./icomoon/style.css";
+import "./components/CheckBoxes/checkbox.css";
 
 /**
  * layout components and navigational page elements
@@ -98,3 +99,8 @@ export { FormError } from "./components/FormError/FormError";
  * Form Label
  */
 export { FormLabel } from "./components/FormLabel/FormLabel";
+
+/**
+ * Check box
+ */
+export { CheckBoxes } from "./components/CheckBoxes/CheckBoxes";
