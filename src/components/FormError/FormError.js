@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { useState } from "react";
+import React from "react";
 import { Image } from "../Image/Image";
 import errorImage from "../../assets/error.svg";
 /**
