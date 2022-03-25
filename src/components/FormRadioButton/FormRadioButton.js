@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
-import React from "react";
 import { FormError } from "../FormError/FormError";
 import { FormLabel } from "../FormLabel/FormLabel";
 
 export function FormRadioButton(props) {
+  const validationClass = props.hasError
+    ? "ds-border-specific-red-red50b"
+    : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f focus:ds-shadow-text-input";
   return (
     <>
       {props.label && (
@@ -15,6 +17,7 @@ export function FormRadioButton(props) {
           optionalText={props.optionalText}
           infoText={props.infoText}
           describedBy={props.describedBy}
+          helpText={props.helpText}
         />
       )}
       {props.options.map(({ id, label, checked, value }, index) => (
@@ -28,14 +31,21 @@ export function FormRadioButton(props) {
             id={id}
             className="ds-hidden"
             value={value}
+            tabIndex={0}
             onChange={(e) => {
-              console.log("Will be replaced with the onchange event", e);
+              props.onChange(value, e);
             }}
             data-testid={`${id}-${props.dataTestId}`}
             data-cy={props.dataCy}
             checked={checked}
+            defaultChecked={false}
           />
-          <span class="ds-relative ds-label ds-block ds-mr-3.5 ds-w-44px ds-h-44px ds-border-2 ds-border-solid ds-border-multi-neutrals-grey85a ds-rounded-full ds-float-left after:ds-absolute"></span>
+          <span
+            class={`ds-relative ds-label ds-block ds-mr-3.5 ds-w-44px ds-h-44px ds-border-1.5 ds-border-solid ${validationClass} ds-rounded-full ds-float-left after:ds-absolute ds-outline-0`}
+            role="checkbox"
+            aria-checked="false"
+            tabIndex={0}
+          ></span>
           {label}
         </label>
       ))}

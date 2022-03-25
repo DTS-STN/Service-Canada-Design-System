@@ -25,24 +25,29 @@ export function TextField(props) {
           requiredText={props.requiredText}
           optionalText={props.optionalText}
           infoText={props.infoText}
+          describedBy={props.describedBy}
+          helpText={props.helpText}
         />
       )}
       <input
-        className={`ds-rounded ds-text-input ds-text-mobileh5 ds-text-multi-neutrals-grey100 ds-w-full ds-min-h-44px ds-text-form-input-gray ds-border ds-py-5px ds-px-14px ${
+        className={`ds-rounded ds-outline-0 ds-text-input ds-text-mobileh5 ds-text-multi-neutrals-grey100 ds-w-full ds-min-h-44px ds-text-form-input-gray ds-border-1.5 ds-py-5px ds-px-14px ${
           props.hasError
             ? "ds-border-specific-red-red50b"
             : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f"
-        }`}
+        } ${props.exclude ? "exclude" : ""}`}
         id={props.id}
+        aria-describedby={props.describedBy}
         name={props.name}
         placeholder={props.placeholder}
         type={props.type}
         min={props.min}
         max={props.max}
+        step={props.step}
         required={props.required}
-        onChange={props.onChange}
+        onChange={(e) => props.onChange(e.currentTarget.value)}
         {...ifControlledProps}
         data-testid={props.dataTestId}
+        data-cy={props.dataCy}
       />
       {props.hasError && <FormError errorMessage={props.errorText} />}
     </div>
@@ -53,7 +58,6 @@ TextField.defaultProps = {
   value: "",
   type: "text",
   size: "",
-  uncontrolled: false,
 };
 
 TextField.propTypes = {
@@ -113,7 +117,27 @@ TextField.propTypes = {
   max: PropTypes.number,
 
   /**
+   * the legal number of intervals
+   */
+  step: PropTypes.number,
+
+  /**
    * unit test selector
    */
   dataTestId: PropTypes.string,
+
+  /**
+   * cypress tests selector
+   */
+  dataCy: PropTypes.string,
+
+  /**
+   * Exclude option for adding exclude class to the textfield
+   */
+  exclude: PropTypes.bool,
+
+  /**
+   * aria-describedBy label id
+   */
+  describedBy: PropTypes.string,
 };

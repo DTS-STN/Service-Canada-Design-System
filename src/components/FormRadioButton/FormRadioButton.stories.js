@@ -15,6 +15,10 @@ export default {
   ],
 };
 
+const onChange = () => {
+  console.log("------------Hola! Change event triggered-------------");
+};
+
 const Template = (args) => <FormRadioButton {...args} />;
 
 export const Primary = Template.bind({});
@@ -44,6 +48,7 @@ Primary.args = {
   name: "radio_button_1",
   options: optionsList,
   dataTestId: "primary-radio-1",
+  onChange: onChange,
 };
 
 withLabelHelpText.args = {
@@ -53,6 +58,8 @@ withLabelHelpText.args = {
   dataTestId: "primary-radio-2",
   label: "I am a text field",
   infoText: "Help Text",
+  helpText:
+    "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
 };
 
 withLabelAndError.args = {
@@ -66,4 +73,6 @@ withLabelAndError.args = {
   errorText: "You must choose one of the options from above list",
   requiredText: "required",
   required: true,
+  helpText:
+    "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
 };

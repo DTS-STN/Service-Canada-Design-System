@@ -104,7 +104,7 @@
 }
 
 input[type="radio"]:checked + .ds-label {
-  border-color: #6f6f6f;
+  border-color: #0e62c9;
 }
 input[type="radio"]:checked + .ds-label:after {
   transform: scale(1);
