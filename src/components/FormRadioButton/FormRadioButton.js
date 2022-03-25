@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
+import React from "react";
 import { FormError } from "../FormError/FormError";
 import { FormLabel } from "../FormLabel/FormLabel";
 
 export function FormRadioButton(props) {
   const validationClass = props.hasError
-    ? "ds-border-specific-red-red50b"
+    ? "ds-border-specific-red-red50b focus:ds-border-multi-blue-blue60f focus:ds-shadow-text-input"
     : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f focus:ds-shadow-text-input";
   return (
     <>
