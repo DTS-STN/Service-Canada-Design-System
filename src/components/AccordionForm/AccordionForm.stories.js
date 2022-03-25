@@ -6,15 +6,16 @@ export default {
   component: AccordionForm,
 };
 
-const Template = (args) => {
+const Template = () => {
   const [cardsValid, setCardsValid] = React.useState({
-    step1: {},
-    step2: {},
-    step3: {},
-    step4: {},
+    step1: false,
+    step2: false,
+    step3: false,
+    step4: false,
   });
   const onInputChange = React.useCallback((sectionId) => {
     return (e) => {
+      console.log("undefined here");
       console.log(e.target.value);
       // if (e.target.value === 'valid') {
       //   setCardsValid((currentCardsData) => {
@@ -61,7 +62,6 @@ const Template = (args) => {
             }}
             onChange={onInputChange("step2")}
           />
-          <input type="checkbox" id="myCheck" onclick="myFunction()"></input>
         </div>,
       ],
       buttonLabel: "Residency",
@@ -78,7 +78,6 @@ const Template = (args) => {
             }}
             onChange={onInputChange("step3")}
           />
-          <input type="checkbox" id="myCheck" onclick="myFunction()"></input>
         </div>,
       ],
       buttonLabel: "Marital Status",

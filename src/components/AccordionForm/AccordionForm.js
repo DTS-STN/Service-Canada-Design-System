@@ -103,6 +103,7 @@ export function AccordionForm(props) {
                       <Button
                         text={`Next Step: ${card.buttonLabel}`}
                         styling="primary"
+                        iconAltText="icon"
                         onClick={sectionNextClick(card.id)}
                         disabled={nextCardIsOpen}
                       />
@@ -110,6 +111,7 @@ export function AccordionForm(props) {
                       <Button
                         text={`Next Step: ${card.buttonLabel}`}
                         styling="primary"
+                        iconAltText="icon"
                         onClick={card.buttonOnChange}
                         type="submit"
                       />
@@ -141,13 +143,21 @@ const generateCardOpenStates = (cardsValid) => {
       console.log(cardsObj[cardId]);
     }
   });
-
   console.log("first invalid card id", firstInvalidCardId);
 
   // up until here, all invalid ones are false and all valid are true
   // open up the first invalid one that's found so the user can enter data
   cardsObj[firstInvalidCardId] = true;
   return cardsObj;
+};
+
+AccordionForm.defaultProps = {
+  cardsValid: {
+    step1: false,
+    step2: false,
+    step3: false,
+    step4: false,
+  },
 };
 
 AccordionForm.propTypes = {
