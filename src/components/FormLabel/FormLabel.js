@@ -8,22 +8,24 @@ export function FormLabel(props) {
   return (
     <>
       <label
-        className={`ds-flex ds-items-center ds-leading-24px ds-text-xl lg:ds-text-p ds-font-body ds-mb-8px ds-relative`}
+        className={`ds-flex ds-text-multi-neutrals-grey100 ds-items-center ds-leading-24px ds-text-xl lg:ds-text-p ds-font-body ds-mb-8px ds-relative`}
         htmlFor={props.id}
       >
         <div className="ds-inline ds-text-form-input-gray lg:ds-text-xl ds-font-bold ">
           {props.label}{" "}
         </div>
         {props.required ? (
-          <div className="ds-text-error-border-red ds-text-xl ds-font-medium">{`(${props.requiredText})`}</div>
+          <div className="ds-text-error-border-red ds-text-xl ds-font-medium">
+            &nbsp;{`(${props.requiredText})`}
+          </div>
         ) : (
           <div className="ds-inline ds-text-form-input-gray ds-text-xl lg:ds-text-xl ds-font-medium">
-            {`(${props.optionalText})`}
+            &nbsp;{`(${props.optionalText})`}
           </div>
         )}
         {props.infoText && (
           <div
-            className="ds-infoText ds-cursor-pointer ds-pl-8px"
+            className="ds-infoText ds-cursor-pointer ds-ml-auto md:ds-ml-0 ds-pl-8px"
             aria-hidden="true"
             role="button"
             tabIndex={0}
@@ -36,11 +38,14 @@ export function FormLabel(props) {
       {displayHelpText && (
         <div
           id={props.describedBy}
-          className="ds-rounded ds-font-body ds-text-xl ds-text-multi-neutrals-grey100 ds-p-5px ds-pl-14px ds-pr-14px ds-bg-specific-cyan-cyan5 ds-leading-33px ds-border  ds-border-specific-cyan-cyan50 ds-mb-1.5"
+          className="ds-inline-block ds-rounded ds-font-body ds-text-xl ds-text-multi-neutrals-grey100 ds-p-5px ds-pl-14px ds-pr-14px ds-bg-specific-cyan-cyan5 ds-leading-33px ds-border  ds-border-specific-cyan-cyan50 ds-mb-1.5"
         >
           {`${props.infoText}`}
         </div>
       )}
+      <div className="ds-font-body ds-text-lg ds-leading-22px ds-font-medium  ds-text-multi-neutrals-grey90a ds-mb-3 ds-tracking-tight ds-text-justify">
+        {props.helpText}
+      </div>
     </>
   );
 }
@@ -81,6 +86,11 @@ FormLabel.propTypes = {
    * Information text to not disclose any personal information
    */
   infoText: PropTypes.string,
+
+  /**
+   * Help text provide primary information
+   */
+  helpText: PropTypes.string,
 
   /**
    * Unit test selector

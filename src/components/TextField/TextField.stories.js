@@ -24,19 +24,22 @@ Primary.args = {
   label: "I am a text field",
   dataTestId: "textbox-controlled",
   requiredText: "required",
-  uncontrolled: true,
+  helpText:
+    "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
 };
 
 export const OptionalWithInfoText = Template.bind({});
 OptionalWithInfoText.args = {
   id: "textField1",
   name: "textField1",
-  placeholder: "",
   label: "I am a text field",
+  placeholder: "",
   requiredText: "required",
   optionalText: "optional",
-  infoText: "Help Text",
   dataTestId: "textbox-uncontrolled",
+  infoText: "Help Text",
+  helpText:
+    "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
   uncontrolled: true,
 };
 
@@ -55,4 +58,6 @@ RequiredWithError.args = {
   hasError: true,
   errorText: "Password must include numbers and letters.",
   type: "password",
+  helpText:
+    "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
 };

@@ -9,17 +9,13 @@
   height: 40px;
 }
 
-.radio-field-label.control-label::before {
-  border-radius: 50%;
-}
-
 .control-label::after {
   content: "";
   box-sizing: border-box;
   position: absolute;
 }
 
-.checkbox-label.control-label::after {
+.checkbox-label::after {
   transform: rotate(-45deg);
   border: solid black;
   border-width: 0 0 5px 5px;
@@ -32,26 +28,11 @@
   height: 13px;
 }
 
-.radio-field-label.control-label::after {
-  border: solid black;
-  border-radius: 50%;
-  opacity: 0;
-  top: 5px;
-  left: 5px;
-  width: 30px;
-  height: 30px;
-  background: black;
-}
-
 .control-label {
   touch-action: manipulation;
 }
 
 .control-input:checked + .control-label::after {
-  opacity: 1;
-}
-
-.radio-field:checked + .control-label::after {
   opacity: 1;
 }
 
@@ -65,12 +46,6 @@
   border-width: 1px;
   box-shadow: 0px 0px 6px rgba(14, 98, 201, 0.6);
   outline: 0;
-}
-
-.radio-button:checked + .radio-button-label {
-  background-color: #004986;
-  color: white;
-  font-weight: bold;
 }
 
 .select-field::-webkit-calendar-picker-indicator {
@@ -108,4 +83,37 @@
 
 .ds-text-input.ds-border-specific-red-red50b:focus {
   box-shadow: 0px 0px 6px #d3080c;
+}
+
+.ds-radio .ds-label {
+  -webkit-tap-highlight-color: transparent;
+}
+.ds-radio .ds-label:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background: #6f6f6f;
+  transform: scale(0);
+  transition: all 0.2s ease;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+input[type="radio"]:checked + .ds-label {
+  border-color: #0e62c9;
+}
+input[type="radio"]:checked + .ds-label:after {
+  transform: scale(1);
+  transition: all 0.2s cubic-bezier(0.35, 0.9, 0.4, 0.9);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .ds-infoText::after {
+    margin-left: auto !important;
+  }
 }

@@ -1,0 +1,4 @@
+.ds-check-shadow:focus {
+  border-width: 2px;
+  box-shadow: 5px 5px 5px 5px #0e62c9;
+}

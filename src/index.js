@@ -11,6 +11,7 @@ import "./styles/forms.css";
 import "./styles/menu.css";
 import "./styles/header.css";
 import "./icomoon/style.css";
+import "./components/CheckBoxes/checkbox.css";
 
 /**
  * layout components and navigational page elements
@@ -103,3 +104,18 @@ export { FormLabel } from "./components/FormLabel/FormLabel";
  * Accordion
  */
 export { AccordionForm } from "./components/AccordionForm/AccordionForm";
+
+/*
+ * Form RadioButton
+ */
+export { FormRadioButton } from "./components/FormRadioButton/FormRadioButton";
+
+/*
+ * Check box
+ */
+export { CheckBoxes } from "./components/CheckBoxes/CheckBoxes";
+
+/*
+ * Check box
+ */
+export { CheckBoxForm } from "./components/CheckBoxForm/CheckBoxForm";
