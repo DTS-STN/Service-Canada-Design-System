@@ -29,6 +29,7 @@ export function CheckBoxForm(props) {
               value={value.value}
               label={value.label}
               hasError={formErrorProps.hasError}
+              onChange={value.onChange}
             />
           </div>
         );
