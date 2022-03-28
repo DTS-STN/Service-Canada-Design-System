@@ -7,7 +7,6 @@ import { CheckBoxes } from "../CheckBoxes/CheckBoxes";
 export function CheckBoxForm(props) {
   const { id, onSubmit, formErrorProps, formLabelProps, checkBoxList } = props;
   let size = checkBoxList.length;
-
   return (
     <form id={id} onSubmit={onSubmit}>
       <FormLabel
@@ -68,6 +67,7 @@ CheckBoxForm.propTypes = {
       value: PropTypes.string,
       label: PropTypes.string,
       hasError: PropTypes.bool,
+      onChange: PropTypes.func,
     })
   ).isRequired,
 
@@ -88,6 +88,7 @@ CheckBoxForm.propTypes = {
       label: PropTypes.string,
       required: PropTypes.bool,
       infoText: PropTypes.string,
+      helpText: PropTypes.string,
     })
   ),
 };

@@ -109,3 +109,8 @@ export { FormRadioButton } from "./components/FormRadioButton/FormRadioButton";
  * Check box
  */
 export { CheckBoxes } from "./components/CheckBoxes/CheckBoxes";
+
+/*
+ * Check box
+ */
+export { CheckBoxForm } from "./components/CheckBoxForm/CheckBoxForm";
