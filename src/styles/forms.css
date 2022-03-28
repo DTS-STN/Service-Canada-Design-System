@@ -102,10 +102,10 @@
   opacity: 0.08;
   pointer-events: none;
 }
-
+/* 
 input[type="radio"]:checked + .ds-label {
   border-color: #0e62c9;
-}
+} */
 input[type="radio"]:checked + .ds-label:after {
   transform: scale(1);
   transition: all 0.2s cubic-bezier(0.35, 0.9, 0.4, 0.9);
