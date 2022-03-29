@@ -101,7 +101,7 @@ const Template = () => {
       buttonLabel: "Next",
     },
   ];
-  return <AccordionForm id="testing" cards={cards} cardsValid={cardsValid} />;
+  return <AccordionForm id="testing" cards={cards} cardsState={cardsValid} />;
 };
 
 export const Default = Template.bind({});
