@@ -7,13 +7,12 @@ import React from "react";
 import { Button } from "../Button/Button";
 
 export function AccordionForm(props) {
-  const { cards, id, cardsValid } = props;
+  const { cards, id, cardsState } = props;
   const cardsRefs = cards.map(() => React.useRef(null));
-
   const sectionNextClick = React.useCallback((cardId, index) => {
     return (e) => {
       e.preventDefault();
-      if (cardsValid[cardId].isValid) {
+      if (cardsState[cardId].isValid) {
         const curIndex = cards.findIndex(({ id }) => {
           return id == cardId;
         });
@@ -35,15 +34,11 @@ export function AccordionForm(props) {
     };
   }, []);
 
-  const [cardsOpenState, setCardsOpenState] = React.useState(() => {
-    return generateCardOpenStates(cardsValid);
+  const [cardsOpenState] = React.useState(() => {
+    return generateCardOpenStates(cardsState);
   });
 
   const [dirtyCards, setDirtyCards] = React.useState([]);
-
-  // React.useEffect(() => {
-  //   setCardsOpenState(generateCardOpenStates(cardsValid));
-  // }, [cardsValid]);
 
   React.useEffect(() => {
     const openCardsEntries = Object.entries(cardsOpenState);
@@ -135,7 +130,7 @@ export function AccordionForm(props) {
         </div>
       );
     });
-  }, [dirtyCards, cardsValid]);
+  }, [dirtyCards, cardsState]);
 
   return (
     <form className="AccordionForm" noValidate id={id}>
@@ -144,10 +139,10 @@ export function AccordionForm(props) {
   );
 }
 
-const generateCardOpenStates = (cardsValid) => {
+const generateCardOpenStates = (cardsState) => {
   const cardsObj = {};
   let firstInvalidCardId;
-  Object.entries(cardsValid).forEach(([cardId, cardState]) => {
+  Object.entries(cardsState).forEach(([cardId, cardState]) => {
     cardsObj[cardId] = cardState.isValid;
     if (!cardState.isValid && !firstInvalidCardId) {
       firstInvalidCardId = cardId;
@@ -193,5 +188,5 @@ AccordionForm.propTypes = {
   /**
    * prop used to help validate each card before opening the next card
    * */
-  cardsValid: PropTypes.objectOf(PropTypes.any),
+  cardsState: PropTypes.objectOf(PropTypes.any),
 };
