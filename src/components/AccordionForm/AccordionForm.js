@@ -92,12 +92,12 @@ export function AccordionForm(props) {
             <div className="cardContent sm:ds-pl-60px">
               {isOpen && (
                 <>
-                  <pre>
+                  {/* <pre>
                     section: {card.id} <br />
                     open: {isOpen ? "true" : "false"}
                     <br />
                     valid: {isValid ? "true" : "false"}
-                  </pre>
+                  </pre> */}
                   {card.children}
                   <div className="ds-pt-32px">
                     {!isLastCard ? (
