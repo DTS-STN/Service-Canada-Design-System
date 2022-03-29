@@ -8,7 +8,9 @@ import { Button } from "../Button/Button";
 
 export function AccordionForm(props) {
   const { cards, id, cardsValid } = props;
-  const sectionNextClick = React.useCallback((cardId) => {
+  const cardsRefs = cards.map(() => React.useRef(null));
+
+  const sectionNextClick = React.useCallback((cardId, index) => {
     return (e) => {
       e.preventDefault();
       if (cardsValid[cardId].isValid) {
@@ -18,8 +20,16 @@ export function AccordionForm(props) {
         if (cards[curIndex + 1]) {
           const nextCard = cards[curIndex + 1].id;
           setDirtyCards((curDirtyCards) => {
-            return [...curDirtyCards, nextCard];
+            return !curDirtyCards.includes(nextCard)
+              ? [...curDirtyCards, nextCard]
+              : curDirtyCards;
           });
+          if (cardsRefs[index + 1].current)
+            window.scrollTo({
+              top: cardsRefs[index + 1].current.offsetTop,
+              left: 0,
+              behavior: "smooth",
+            });
         }
       }
     };
@@ -50,28 +60,27 @@ export function AccordionForm(props) {
 
   const cardRenders = React.useMemo(() => {
     return cards.map((card, index, cardsArr) => {
-      const isValid = !!cardsValid[card.id].isValid;
       const isLastCard = !cardsArr[index + 1];
       const isNextFillableCard = cardsOpenState[card.id];
       const hasAlreadyBeenFilled = dirtyCards.includes(card.id);
       const isOpen = isNextFillableCard || hasAlreadyBeenFilled;
       const nextCardIsOpen =
         !isLastCard && dirtyCards.includes(cardsArr[index + 1].id);
-      const cardRef = React.useRef(null);
+      const nextCardRef = cardsRefs[index + 1];
       return (
         <div
           id={card.id}
           className={`${
             nextCardIsOpen
-              ? "ds-border ds-border-solid ds-border-multi-neutrals-grey85a ds-bg-multi-neutrals-grey5 ds-px-24px ds-py-18px ds-rounded ds-my-16px scroll-smooth"
-              : "ds-border ds-border-solid ds-border-multi-blue-blue60d ds-bg-multi-blue-blue1 ds-px-24px ds-py-18px ds-rounded ds-my-16px scroll-smooth"
+              ? "ds-border ds-border-solid ds-border-multi-neutrals-grey85a ds-bg-multi-neutrals-grey5 ds-px-24px ds-py-18px ds-rounded ds-my-16px"
+              : "ds-border ds-border-solid ds-border-multi-blue-blue60d ds-bg-multi-blue-blue1 ds-px-24px ds-py-18px ds-rounded ds-my-16px"
           } `}
           style={{
             marginBottom: "5px",
             paddingBottom: "5px",
           }}
           key={`accordion-form-card-${card.id}`}
-          ref={cardRef}
+          ref={cardsRefs[index]}
         >
           {/* Number for the given card */}
           <div className="ds-flex-col ds-pb-12px">
@@ -106,7 +115,7 @@ export function AccordionForm(props) {
                         text={`Next Step: ${card.buttonLabel}`}
                         styling="primary"
                         iconAltText="icon"
-                        onClick={sectionNextClick(card.id)}
+                        onClick={sectionNextClick(card.id, index)}
                         disabled={nextCardIsOpen}
                       />
                     ) : (
