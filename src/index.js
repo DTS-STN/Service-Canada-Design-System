@@ -114,3 +114,8 @@ export { CheckBoxes } from "./components/CheckBoxes/CheckBoxes";
  * Check box
  */
 export { CheckBoxForm } from "./components/CheckBoxForm/CheckBoxForm";
+
+/*
+ * FormMultiTextField
+ */
+export { FormMultiTextField } from "./components/FormMultiTextField/FormMultiTextField";
