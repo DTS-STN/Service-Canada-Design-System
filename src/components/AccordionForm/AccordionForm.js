@@ -38,10 +38,8 @@ export function AccordionForm(props) {
   React.useEffect(() => {
     const openCardsEntries = Object.entries(cardsOpenState);
     setDirtyCards((currentDirtyCards) => {
-      console.log("current dirty", currentDirtyCards);
       const updatedDirtyCards = [...currentDirtyCards];
       openCardsEntries.forEach(([cardId, isCardOpen]) => {
-        console.log(cardId, "card open value", isCardOpen);
         if (isCardOpen && !currentDirtyCards.includes(cardId)) {
           updatedDirtyCards.push(cardId);
         }
@@ -59,13 +57,16 @@ export function AccordionForm(props) {
       const isOpen = isNextFillableCard || hasAlreadyBeenFilled;
       const nextCardIsOpen =
         !isLastCard && dirtyCards.includes(cardsArr[index + 1].id);
-      console.log("NEXT CARD IS OPEN", nextCardIsOpen);
 
       return (
         <div
-          className="ds-bg-multi-blue-blue1 ds-px-24px ds-py-18px ds-rounded ds-my-16px"
+          id={card.id}
+          className={`${
+            nextCardIsOpen
+              ? "ds-border ds-border-solid ds-border-multi-neutrals-grey85a ds-bg-multi-neutrals-grey5 ds-px-24px ds-py-18px ds-rounded ds-my-16px scroll-smooth"
+              : "ds-border ds-border-solid ds-border-multi-blue-blue60d ds-bg-multi-blue-blue1 ds-px-24px ds-py-18px ds-rounded ds-my-16px scroll-smooth"
+          } `}
           style={{
-            border: "1px solid #295376",
             marginBottom: "5px",
             paddingBottom: "5px",
           }}
@@ -143,8 +144,6 @@ const generateCardOpenStates = (cardsValid) => {
       console.log(cardsObj[cardId]);
     }
   });
-  console.log("first invalid card id", firstInvalidCardId);
-
   // up until here, all invalid ones are false and all valid are true
   // open up the first invalid one that's found so the user can enter data
   cardsObj[firstInvalidCardId] = true;
@@ -152,21 +151,25 @@ const generateCardOpenStates = (cardsValid) => {
 };
 
 AccordionForm.defaultProps = {
-  cardsValid: {
-    step1: { isValid: false },
-    step2: { isValid: false },
-    step3: { isValid: false },
-    step4: { isValid: false },
-  },
+  cards: [
+    {
+      custom: "",
+    },
+  ],
 };
 
 AccordionForm.propTypes = {
+  /**
+   * component id
+   */
   id: PropTypes.string,
+  /**
+   *  props for each card passed into accordion
+   * */
   cards: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
       title: PropTypes.string,
-      // ref: PropTypes.any,
       children: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.element,
@@ -174,7 +177,11 @@ AccordionForm.propTypes = {
       ]),
       buttonLabel: PropTypes.string,
       buttonOnChange: PropTypes.func,
+      custom: PropTypes.string,
     })
   ),
+  /**
+   * prop used to help validate each card before opening the next card
+   * */
   cardsValid: PropTypes.objectOf(PropTypes.any),
 };
