@@ -61,7 +61,6 @@ export function AccordionForm(props) {
       const isOpen = isNextFillableCard || hasAlreadyBeenFilled;
       const nextCardIsOpen =
         !isLastCard && dirtyCards.includes(cardsArr[index + 1].id);
-      const nextCardRef = cardsRefs[index + 1];
       return (
         <div
           id={card.id}
@@ -155,14 +154,6 @@ const generateCardOpenStates = (cardsState) => {
   return cardsObj;
 };
 
-AccordionForm.defaultProps = {
-  cards: [
-    {
-      custom: "",
-    },
-  ],
-};
-
 AccordionForm.propTypes = {
   /**
    * component id
@@ -182,7 +173,6 @@ AccordionForm.propTypes = {
       ]),
       buttonLabel: PropTypes.string,
       buttonOnChange: PropTypes.func,
-      custom: PropTypes.string,
     })
   ),
   /**
