@@ -43,7 +43,7 @@ export function FormLabel(props) {
           {`${props.infoText}`}
         </div>
       )}
-      <div className="ds-font-body ds-text-lg ds-leading-22px ds-font-medium  ds-text-multi-neutrals-grey90a ds-mb-3 ds-tracking-tight ds-text-justify">
+      <div className="ds-font-body ds-text-lg ds-leading-22px ds-font-medium  ds-text-multi-neutrals-grey90a ds-mb-3 ds-tracking-tight">
         {props.helpText}
       </div>
     </>
