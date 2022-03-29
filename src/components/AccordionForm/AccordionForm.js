@@ -57,7 +57,7 @@ export function AccordionForm(props) {
       const isOpen = isNextFillableCard || hasAlreadyBeenFilled;
       const nextCardIsOpen =
         !isLastCard && dirtyCards.includes(cardsArr[index + 1].id);
-
+      const cardRef = React.useRef(null);
       return (
         <div
           id={card.id}
@@ -71,6 +71,7 @@ export function AccordionForm(props) {
             paddingBottom: "5px",
           }}
           key={`accordion-form-card-${card.id}`}
+          ref={cardRef}
         >
           {/* Number for the given card */}
           <div className="ds-flex-col ds-pb-12px">
