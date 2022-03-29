@@ -64,11 +64,13 @@ export function AccordionForm(props) {
       return (
         <div
           id={card.id}
-          className={`${
+          className={
             nextCardIsOpen
               ? "ds-border ds-border-solid ds-border-multi-neutrals-grey85a ds-bg-multi-neutrals-grey5 ds-px-24px ds-py-18px ds-rounded ds-my-16px"
-              : "ds-border ds-border-solid ds-border-multi-blue-blue60d ds-bg-multi-blue-blue1 ds-px-24px ds-py-18px ds-rounded ds-my-16px"
-          } `}
+              : isOpen
+              ? "ds-border ds-border-solid ds-border-multi-blue-blue60d ds-bg-multi-blue-blue1 ds-px-24px ds-py-18px ds-rounded ds-my-16px"
+              : "ds-border ds-border-solid ds-text-multi-neutrals-grey85a ds-border-multi-neutrals-grey85a ds-bg-multi-neutrals-white ds-px-24px ds-py-18px ds-rounded ds-my-16px"
+          }
           style={{
             marginBottom: "5px",
             paddingBottom: "5px",
