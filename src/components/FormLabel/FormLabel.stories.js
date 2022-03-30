@@ -4,7 +4,7 @@ export default {
   component: FormLabel,
   decorators: [
     (Story) => (
-      <div className="ds-w-full flex ds-items-center ds-flex-col">
+      <div className="ds-w-full ds-flex ds-items-center ds-flex-col">
         <div className="ds-w-96">
           <Story />
         </div>
@@ -44,4 +44,6 @@ RequiredWithInfo.args = {
   required: true,
   infoText:
     "Required label style with information icon. You can hide by clicking on icon again.",
+  helpText:
+    "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
 };
