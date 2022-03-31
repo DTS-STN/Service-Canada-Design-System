@@ -11,7 +11,7 @@ export function Breadcrumb(props) {
         {props.items
           ? props.items.map((item, key) => {
               return (
-                <li key={key} className={`ds-inline-block ds-pl-2 ds-w-100`}>
+                <li key={key} className={`ds-inline-block ds-w-100`}>
                   <a
                     href={item.link}
                     className="ds-font-body hover:ds-text-canada-footer-hover-font-blue ds-text-multi-blue-blue70b ds-underline"
@@ -19,7 +19,7 @@ export function Breadcrumb(props) {
                     {item.text}
                   </a>
                   {key < props.items.length - 1 && (
-                    <span className="ds-inline-block ds-align-middle ds-text-multi-blue-blue70b ds-icon-cheveron-right ds-pl-2" />
+                    <span className="ds-inline-block ds-align-middle ds-text-multi-blue-blue70b ds-icon-cheveron-right ds-pr-2 ds-pl-2" />
                   )}
                 </li>
               );
