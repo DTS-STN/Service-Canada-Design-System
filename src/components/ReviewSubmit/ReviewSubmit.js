@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Heading } from "../Heading/Heading";
 import { Button } from "../Button/Button";
+import { Link } from "../Link/Link";
 
 export function ReviewSubmit(props) {
   const {
@@ -17,10 +18,44 @@ export function ReviewSubmit(props) {
       <Heading id="withoutLink" title="Please review your information" />
       <section className="ds-required_info">
         <p className="ds-heading2">Required Info</p>
+        {required_results.map((option, index) => {
+          return (
+            <>
+              <p className="">{option.label}</p>
+              <div className="ds-flex ds-flex-row">
+                <p className="">{option.value}</p>
+                <Button
+                  iconAltText="link"
+                  id={option.label + index}
+                  onClick={() => {}}
+                  styling="link"
+                  text="Link Button"
+                />
+              </div>
+            </>
+          );
+        })}
       </section>
       <div className="ds-horizontal-regular"></div>
       <section className="ds-optional_info">
         <p className="ds-heading2">Optional Info</p>
+        {optional_results.map((option, index) => {
+          return (
+            <>
+              <p className="">{option.label}</p>
+              <div className="ds-flex ds-flex-row">
+                <p className="">{option.value}</p>
+                <Button
+                  iconAltText="link"
+                  id={option.label + index}
+                  onClick={() => {}}
+                  styling="link"
+                  text="Link Button"
+                />
+              </div>
+            </>
+          );
+        })}
       </section>
       <div className="ds-flex ds-flex-row ">
         <Button
@@ -51,12 +86,22 @@ ReviewSubmit.propTypes = {
   /**
    * object containing results for any required information to display on the page
    */
-  required_results: PropTypes.objectOf(PropTypes.any),
+  required_results: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
+    }).isRequired
+  ),
 
   /**
    * object containing results for any optional information to display on the page
    */
-  optional_results: PropTypes.objectOf(PropTypes.any),
+  optional_results: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
+    }).isRequired
+  ),
 
   /**
    * Back button props
