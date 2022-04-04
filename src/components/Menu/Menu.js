@@ -169,7 +169,7 @@ export function Menu(props) {
                         ? setHeaderDropdownClass("ds-block")
                         : setHeaderDropdownClass("ds-hidden");
                     }}
-                    className="ds-flex ds-font-bold ds-font-body ds-justify-between ds-items-center md:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 ds-pr-4 md:ds-pl-3 ds-w-full"
+                    className="ds-flex ds-whitespace-nowrap ds-font-bold ds-font-body ds-justify-between ds-items-center md:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 ds-pr-4 md:ds-pl-3 ds-w-full"
                   >
                     {props.lang === "fr"
                       ? FR.myAccountTitle
@@ -207,7 +207,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="ds-block ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body "
+                          className="ds-block ds-whitespace-nowrap ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body "
                         >
                           {props.lang === "fr"
                             ? FR.myBenefitsAndServices
@@ -217,7 +217,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="ds-block ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          className="ds-block ds-whitespace-nowrap ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
                           {props.lang === "fr"
                             ? FR.accountSettings
@@ -227,7 +227,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="ds-block ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          className="ds-block ds-whitespace-nowrap ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
                           {props.lang === "fr"
                             ? FR.CRAMyAccounts
@@ -237,7 +237,7 @@ export function Menu(props) {
                       <li>
                         <a
                           href="/"
-                          className="ds-block ds-py-18px  ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          className="ds-block ds-whitespace-nowrap ds-py-18px  ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
                           {props.lang === "fr" ? FR.signOut : EN.signOut}
                         </a>

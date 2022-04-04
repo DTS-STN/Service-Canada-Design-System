@@ -83,14 +83,17 @@
   font-family: "Noto Sans", sans-serif;
   font-size: 15px;
   line-height: 23px;
-  width: 100%;
+  width: 322px;
+  height: 35px;
   border: 1px solid #8c9095;
-  padding: 10.5px 8.5px;
+  padding: 6px 12px !important;
+  outline: none;
 }
 
 .ds-search-button {
-  padding: 13px 9px;
+  padding: 6px !important;
   width: 35px;
+  height: 35px;
   background: #26374a;
   border: 1px solid #26374a;
 }
