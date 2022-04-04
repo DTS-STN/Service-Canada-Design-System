@@ -35,5 +35,13 @@ export default {
     }),
     terser(),
   ],
-  external: Object.keys(pkg.peerDependencies || {}),
+  // anything "external" will not be included into the generated bundle
+  // https://rollupjs.org/guide/en/#warning-treating-module-as-external-dependency
+  external: [
+    // regular dependencies should not be included as they will be automatically installed by the consuming application
+    ...Object.keys(pkg.dependencies || {}),
+    // peer dependencies should not be included as they are expected to be provided by the consuming application
+    // https://nodejs.org/es/blog/npm/peer-dependencies/#the-solution-peer-dependencies
+    ...Object.keys(pkg.peerDependencies || {}),
+  ],
 };

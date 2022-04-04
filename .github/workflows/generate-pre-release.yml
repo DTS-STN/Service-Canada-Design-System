@@ -24,12 +24,8 @@ jobs:
         run: npm run test
         env:
           CI: true
-
-     # build package bundle
-      - name: Build 🛠
-        run: npm run build
      
-     # create a tarball from the package
+     # run build and create a tarball from the package
       - name: Create Tarball
         run: npm pack
         
