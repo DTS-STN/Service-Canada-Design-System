@@ -4,15 +4,15 @@ import { FormRadioButton } from "./FormRadioButton";
 export default {
   title: "Components/FormRadioButton",
   component: FormRadioButton,
-  decorators: [
-    (Story) => (
-      <div className="ds-w-full ds-flex ds-items-center ds-flex-col">
-        <div className="ds-w-100">
-          <Story />
-        </div>
-      </div>
-    ),
-  ],
+  // decorators: [
+  //   (Story) => (
+  //     <div className="ds-w-full ds-flex ds-items-center ds-flex-col">
+  //       <div className="ds-w-100">
+  //         <Story />
+  //       </div>
+  //     </div>
+  //   ),
+  // ],
 };
 
 const onChange = () => {
