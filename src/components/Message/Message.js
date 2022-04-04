@@ -25,27 +25,27 @@ export function Message(props) {
       : success_img;
   let alert_color =
     type === "warning"
-      ? "warning_color"
+      ? "ds-warning_color"
       : type === "danger"
-      ? "danger_color"
+      ? "ds-danger_color"
       : type === "info"
-      ? "info_color"
-      : "success_color";
+      ? "ds-info_color"
+      : "ds-success_color";
 
   return (
     <div
       id={id}
-      className={`relative ${type} min-w-290px sm:py-28px sm:px-24px py-16px px-16px`}
+      className={`ds-relative ds-${type} ds-min-w-290px sm:ds-py-28px sm:ds-px-24px ds-py-16px ds-px-16px`}
     >
-      <div className="absolute top-10 sm:left-3.5 left-1.5 bg-multi-neutrals-white py-4px">
+      <div className="ds-absolute ds-top-10 sm:ds-left-3.5 ds-left-1.5 ds-bg-multi-neutrals-white ds-py-4px">
         {/* change back to image component once fixed */}
         <img id={alert_icon_id} src={alert_type} alt={alert_icon_alt_text} />
       </div>
       <div
-        className={`overflow-auto border-l-6 ${alert_color} sm:pl-24px pl-16px`}
+        className={`ds-overflow-auto ds-border-l-6 ${alert_color} sm:ds-pl-24px ds-pl-16px`}
       >
-        <p className="heading3">{message_heading}</p>
-        <p className="body">{message_body}</p>
+        <p className="ds-heading3">{message_heading}</p>
+        <p className="ds-body">{message_body}</p>
       </div>
     </div>
   );
