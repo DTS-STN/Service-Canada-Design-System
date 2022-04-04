@@ -42,7 +42,7 @@ export function FormRadioButton(props) {
             defaultChecked={false}
           />
           <span
-            class={`ds-relative ds-label ds-block ds-mr-3.5 ds-w-43px ds-h-43px ds-border-1.5 ds-border-solid ${validationClass} ds-rounded-full ds-float-left after:ds-absolute ds-outline-0`}
+            class={`ds-relative ds-label ds-block ds-mr-3.5 ds-min-w-43px ds-w-43px ds-h-43px ds-border-1.5 ds-border-solid ${validationClass} ds-rounded-full ds-float-left after:ds-absolute ds-outline-0`}
             role="checkbox"
             aria-checked="false"
             tabIndex={0}

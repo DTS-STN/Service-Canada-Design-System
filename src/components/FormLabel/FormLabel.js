@@ -11,7 +11,7 @@ export function FormLabel(props) {
         className={`ds-flex ds-text-multi-neutrals-grey100 ds-items-center ds-leading-24px ds-text-xl lg:ds-text-p ds-font-body ds-mb-8px ds-relative`}
         htmlFor={props.id}
       >
-        <div className="ds-inline ds-text-form-input-gray lg:ds-text-xl ds-font-bold ">
+        <div className="ds-inline ds-text-form-input-gray lg:ds-text-xl ds-whitespace-nowrap ds-font-bold ">
           {props.label}{" "}
         </div>
         {props.required ? (
@@ -43,7 +43,7 @@ export function FormLabel(props) {
           {`${props.infoText}`}
         </div>
       )}
-      <div className="ds-font-body ds-text-lg ds-leading-22px ds-font-medium  ds-text-multi-neutrals-grey90a ds-mb-3 ds-tracking-tight ds-text-justify">
+      <div className="ds-font-body ds-text-lg ds-leading-22px ds-font-medium  ds-text-multi-neutrals-grey90a ds-mb-3">
         {props.helpText}
       </div>
     </>
