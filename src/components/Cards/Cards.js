@@ -19,12 +19,12 @@ export function Cards(props) {
     hasLinkSecond,
     displayColumn,
   } = props;
-  let display = "flex flex-col sm:grid sm:grid-cols-2";
-  let link2Padding = displayColumn ? "mt-24px" : "mt-20px ";
+  let display = "ds-flex ds-flex-col sm:ds-grid sm:ds-grid-cols-2";
+  let link2Padding = displayColumn ? "ds-mt-24px" : "ds-mt-20px ";
   return (
     // remove width after, just for testing
-    <div id={id} className="rounded shadow-md flex flex-col">
-      <div className="pt-20px px-24px">
+    <div id={id} className="ds-rounded ds-shadow-md ds-flex ds-flex-col">
+      <div className="ds-pt-20px ds-px-24px">
         {titleProps.hasLink ? (
           <Link
             linkStyle="titleLink"
@@ -33,14 +33,14 @@ export function Cards(props) {
             href={titleProps.path}
           />
         ) : (
-          <p className="card-title-non-link leading-tight">
+          <p className="ds-card-title-non-link ds-leading-tight">
             {titleProps.title}
           </p>
         )}
         {/* Replace with Label Component */}
-        <div className="mb-4">
+        <div className="ds-mb-4">
           {labelProps !== undefined ? (
-            <div className="mt-2">
+            <div className="ds-mt-2">
               <Labels
                 id={labelProps.id}
                 text={labelProps.text}
@@ -49,30 +49,32 @@ export function Cards(props) {
             </div>
           ) : null}
           {secondaryText !== undefined ? (
-            <p className="caption-large">{secondaryText}</p>
+            <p className="ds-caption-large">{secondaryText}</p>
           ) : null}
         </div>
-        {hasDivider ? <div className="horizontal-muted my-16px" /> : null}
+        {hasDivider ? <div className="ds-horizontal-muted ds-my-16px" /> : null}
       </div>
       {imageProps !== undefined ? (
         <>
           <Image
-            className="h-200px"
+            className="ds-h-200px"
             id={imageProps.id}
             alt={imageProps.altText}
             src={imageProps.imgPath}
           />
-          <p className="px-24px mt-20px leading-tight card-body-text">
+          <p className="ds-px-24px ds-mt-20px ds-leading-tight ds-card-body-text">
             {description}
           </p>
         </>
       ) : (
-        <p className="px-24px leading-tight card-body-text">{description}</p>
+        <p className="ds-px-24px ds-leading-tight ds-card-body-text">
+          {description}
+        </p>
       )}
-      <div className={`mb-20px px-24px ${display}`}>
+      <div className={`ds-mb-20px ds-px-24px ${display}`}>
         {/* update linkStyle when stlye is created */}
         {hasLinkFirst || !titleProps.hasLink ? (
-          <div className="sm:mt-24px mt-20px">
+          <div className="sm:ds-mt-24px ds-mt-20px">
             <Link
               linkStyle="cardActionLink"
               id={firstLinkProps.id}

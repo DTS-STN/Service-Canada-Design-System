@@ -10,29 +10,30 @@ export function SearchBar(props) {
   const { searchIcon } = props;
   return (
     <form
-      className="search-form w-full"
+      className="ds-w-full ds-flex ds-justify-end ds-items-center"
       role="search"
       name="search-box"
       onSubmit={props.onSubmit}
     >
-      <label className="sr-only search-label" htmlFor="search-input">
+      <label className="ds-sr-only ds-search-label" htmlFor="search-input">
         Search Canada.ca
       </label>
       <input
         onChange={props.onChange}
         id="search-input"
-        className="search-input"
+        className="ds-search-input"
         type="search"
         placeholder="Search Canada.ca"
       />
-
-      <button className="search-button" title="Search bar button" type="submit">
-        <Image
-          className="search-icon"
-          src={searchIcon}
-          alt="Search Service Canada"
-        />
-      </button>
+      <div className="ds-search-button">
+        <button title="Search bar button" type="submit">
+          <Image
+            className="ds-search-icon"
+            src={searchIcon}
+            alt="Search Service Canada"
+          />
+        </button>
+      </div>
     </form>
   );
 }

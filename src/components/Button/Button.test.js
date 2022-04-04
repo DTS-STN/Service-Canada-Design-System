@@ -26,19 +26,19 @@ describe("Button", () => {
   it("renders supertask", () => {
     render(<Supertask {...Supertask.args} />);
     expect(screen.getByRole("button")).toHaveTextContent(Supertask.args.text);
-    expect(screen.getByRole("button")).toHaveClass("btn-supertask");
+    expect(screen.getByRole("button")).toHaveClass("ds-btn-supertask");
   });
 
   it("renders primary", () => {
     render(<Primary {...Primary.args} />);
     expect(screen.getByRole("button")).toHaveTextContent(Primary.args.text);
-    expect(screen.getByRole("button")).toHaveClass("btn-primary");
+    expect(screen.getByRole("button")).toHaveClass("ds-btn-primary");
   });
 
   it("renders secondary", () => {
     render(<Secondary {...Secondary.args} />);
     expect(screen.getByRole("button")).toHaveTextContent(Secondary.args.text);
-    expect(screen.getByRole("button")).toHaveClass("btn-secondary");
+    expect(screen.getByRole("button")).toHaveClass("ds-btn-secondary");
   });
 
   it("renders danger", () => {
@@ -46,14 +46,14 @@ describe("Button", () => {
     expect(screen.getByRole("button")).toHaveTextContent(
       DangerDisabled.args.text
     );
-    expect(screen.getByRole("button")).toHaveClass("btn-danger");
+    expect(screen.getByRole("button")).toHaveClass("ds-btn-danger");
   });
 
   it("renders link styles as button", () => {
     render(<Link {...Link.args} />);
     expect(screen.getByRole("button")).toHaveTextContent(Link.args.text);
     expect(screen.getByRole("button")).toHaveAttribute("href");
-    expect(screen.getByRole("button")).toHaveClass("btn-link");
+    expect(screen.getByRole("button")).toHaveClass("ds-btn-link");
   });
 
   it("has no a11y violations", async () => {

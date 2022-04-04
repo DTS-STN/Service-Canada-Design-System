@@ -31,6 +31,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 - Cards Component
 - Labels Component
 - Breadcrumb Component
+- Text Input Field
+- FormError Component
+- Form Label Component
+- Form RadioButton Component
+- Checkboxes Component
 
 ### Changed
 
@@ -65,3 +70,23 @@ Initial release of the Design System Package
 ### Added
 
 - Card/Caption Typography
+
+## [v1.18.0] - 2022-01-20
+
+### Added
+
+- Updated tailwind to version 3
+
+## [v1.20.0] - 2022-01-20
+
+### Added
+
+- Updated code base with "ds-" prefix
+
+## [v1.22.0] - 2022-01-20
+
+### Added
+
+- Checkbox component
+- Form Error Component
+- Form Label Component

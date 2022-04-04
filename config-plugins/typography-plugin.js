@@ -92,9 +92,9 @@ const typography = plugin(function ({ addUtilities, theme }) {
     },
     ".card-body-text": {
       fontSize: theme("fontSize.card_bodytext"),
-      fontWeight: theme("fontWeight.medium"),
+      fontWeight: theme("fontWeight.regular"),
       fontFamily: theme("fontFamily.body"),
-      color: theme("colors.multi.neutrals.grey90"),
+      color: theme("colors.multi.neutrals.grey100"),
     },
 
     ".caption-large": {

@@ -33,14 +33,14 @@ describe("Image", () => {
   it("renders default image with rounded corner", () => {
     render(<Image {...DefaultWithRounded.args} />);
     expect(screen.getByAltText("Default Image with rounded")).toHaveClass(
-      "rounded"
+      "ds-rounded"
     );
   });
 
   it("renders mobile image with rounded", () => {
     render(<Image {...MobileWithRounded.args} />);
     expect(screen.getByAltText("Mobile Image with rounded")).toHaveClass(
-      "rounded"
+      "ds-rounded"
     );
   });
 });

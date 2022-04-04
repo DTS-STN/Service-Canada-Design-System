@@ -1,15 +1,11 @@
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
-  purge: {
-    content: [
-      "./src/assets/**/*.{js,ts,jsx,tsx}",
-      "./src/components/**/*.{js,ts,jsx,tsx}",
-      "./src/stories/**/*.{js,ts,jsx,tsx}",
-      "./src/assets/**/*.{js,ts,jsx,tsx}",
-      "./config-plugins/**/*.{js,ts,jsx,tsx}",
-    ],
-  },
+  prefix: "ds-",
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./config-plugins/**/*.{js,ts,jsx,tsx}",
+  ],
   presets: [require("./tailwind-bootstrap3.js")],
   theme: {
     borderWidth: {
@@ -20,6 +16,7 @@ module.exports = {
       4: "4px",
       6: "6px",
       8: "8px",
+      1.5: "1.5px",
     },
     extend: {
       fontFamily: {
@@ -55,7 +52,7 @@ module.exports = {
         btnother: ["20px", "23px"],
 
         card_nonlink: ["22px", "28px"],
-        card_bodytext: ["20", "26px"],
+        card_bodytext: ["20px", "26px"],
 
         caption_large: ["18px", "22px"],
         caption_regular: ["16", "20px"],
@@ -74,6 +71,7 @@ module.exports = {
         "banner-img-mobile": "url('/public/bg-banner-mobile.png')",
       }),
       colors: {
+        current: "currentColor",
         multi: {
           neutrals: {
             black: "#000000",
@@ -181,7 +179,11 @@ module.exports = {
       },
       width: {
         "40px": "40px",
+        "43px": "43px",
         "44px": "44px",
+        "48px": "48px",
+        "46px": "46px",
+        "50px": "50px",
         "68px": "68px",
         "80px": "80px",
         "100px": "100px",
@@ -189,18 +191,22 @@ module.exports = {
         "138px": "138px",
         "160px": "160px",
         "168px": "168px",
+        "284px": "284px",
         "300px": "300px",
         "400px": "400px",
         "500px": "500px",
         "7.5rem": "7.5rem",
-        22.5: "22.5rem",
+        "332px": "332px",
       },
       height: {
         "25px": "25px",
         "29px": "29px",
         "40px": "40px",
+        "43px": "43px",
         "44px": "44px",
         "46px": "46px",
+        "48px": "48px",
+        "50px": "50px",
         "100px": "100px",
         "104px": "104px",
         "128px": "128px",
@@ -217,9 +223,7 @@ module.exports = {
         "-2px": "-2px",
         "60px": "60px",
       },
-      zIndex: {
-        1: "1",
-      },
+      zIndex: {},
       padding: {
         "0px": "0px",
         "3px": "3px",
@@ -230,15 +234,19 @@ module.exports = {
         "6px": "6px",
         "8px": "8px",
         "9px": "9px",
+        "10px": "10px",
         "12px": "12px",
         "14px": "14px",
         "15px": "15px",
         "16px": "16px",
+        "18px": "18px",
         "20px": "20px",
         "24px": "24px",
         "28px": "28px",
+        "30px": "30px",
         "32px": "32px",
         "40px": "40px",
+        "60px": "60px",
       },
       margin: {
         "4px": "4px",
@@ -268,6 +276,7 @@ module.exports = {
         "104px": "104px",
         "290px": "290px",
         "300px": "300px",
+        "43px": "43px",
       },
 
       minHeight: {
@@ -287,6 +296,7 @@ module.exports = {
 
       boxShadow: {
         "experiment-shadow": "0px 2px 8px rgba(0, 0, 0, 0.25)",
+        "text-input": "0px 0px 6px rgba(14, 98, 201, 0.6)",
       },
 
       lineHeight: {
@@ -305,16 +315,6 @@ module.exports = {
         "white-solid": ["2px solid #ffffff"],
         "heading-solid": ["1px solid #af3c43"],
       },
-    },
-  },
-  variants: {
-    extend: {
-      ringOffsetWidth: ["active", "hover", "focus"],
-      ringColor: ["active", "hover", "focus"],
-      backgroundColor: ["active", "hover", "focus"],
-      textColor: ["visited"],
-      margin: ["checked"],
-      textDecoration: ["active", "hover", "visited"],
     },
   },
   plugins: [
@@ -341,5 +341,8 @@ module.exports = {
     require("./config-plugins/message-plugin"),
     require("./config-plugins/cards-plugin"),
     require("./config-plugins/labels-plugin"),
+    require("./config-plugins/checkboxes-plugin"),
+    require("./config-plugins/search-plugin"),
+    require("./config-plugins/accordion-plugin"),
   ],
 };

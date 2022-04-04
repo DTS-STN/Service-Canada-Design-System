@@ -16,31 +16,32 @@ export function ErrorPage(props) {
     accountPageId,
     pageHeadingId,
   } = props;
-  var biClassName = "";
-  var language = lang === "en" ? [EN] : lang === "fr" ? [FR] : [EN, FR];
+  let biClassName = "";
+  let language = lang === "en" ? [EN] : lang === "fr" ? [FR] : [EN, FR];
   if (lang === "bi") {
-    biClassName = "grid gap-10 grid-cols-1 sm:grid-cols-2 sm:gap-6";
+    biClassName =
+      "ds-grid ds-gap-10 ds-grid-cols-1 sm:ds-grid-cols-2 sm:ds-gap-6";
   }
-  var errorHeadingEN =
+  let errorHeadingEN =
     errType === "404"
       ? EN.errorPageHeadingTitle404
       : errType === "500"
       ? EN.errorPageHeadingTitle500
       : EN.errorPageHeadingTitle503;
-  var errorHeadingFR =
+  let errorHeadingFR =
     errType === "404"
       ? FR.errorPageHeadingTitle404
       : errType === "500"
       ? FR.errorPageHeadingTitle500
       : FR.errorPageHeadingTitle503;
 
-  var errorTextEN =
+  let errorTextEN =
     errType === "404"
       ? EN.errorPageErrorText404
       : errType === "500"
       ? EN.errorPageErrorText500
       : EN.errorPageErrorText503;
-  var errorTextFR =
+  let errorTextFR =
     errType === "404"
       ? FR.errorPageErrorText404
       : errType === "500"
@@ -64,27 +65,27 @@ export function ErrorPage(props) {
             )}
             <div>
               {val === EN ? (
-                <p className="body mt-2">{errorTextEN}</p>
+                <p className="ds-body ds-mt-2">{errorTextEN}</p>
               ) : (
-                <p className="body mt-2">{errorTextFR}</p>
+                <p className="ds-body ds-mt-2">{errorTextFR}</p>
               )}
               <br />
-              <p className="error-next-text">{val.errorPageNextText}</p>
-              <h2 className="sr-only">Whats Next Links</h2>
+              <p className="ds-error-next-text">{val.errorPageNextText}</p>
+              <h2 className="ds-sr-only">Whats Next Links</h2>
               <ul>
                 {errType === "500" ? (
-                  <li key={errType + lang + index} className="body pl-3">
+                  <li key={errType + lang + index} className="ds-body ds-pl-3">
                     {val.error500TextLink}
                   </li>
                 ) : errType === "503" ? (
-                  <li key={errType + lang + index} className="body pl-3">
+                  <li key={errType + lang + index} className="ds-body ds-pl-3">
                     {val.error503TextLink}
                   </li>
                 ) : null}
                 {!isAuth ? (
                   <li
                     key={errType + lang + homePageId + index}
-                    className="body pl-3"
+                    className="ds-body ds-pl-3"
                   >
                     {val.errorTextLinkCommon}
                     <Link
@@ -96,7 +97,7 @@ export function ErrorPage(props) {
                 ) : (
                   <li
                     key={errType + lang + accountPageId}
-                    className="body pl-3"
+                    className="ds-body ds-pl-3"
                   >
                     {val.errorAuthTextLinkCommon}
                     <Link
@@ -109,7 +110,7 @@ export function ErrorPage(props) {
               </ul>
               <br />
               <br />
-              <p className="error-type-text">
+              <p className="ds-error-type-text">
                 {val.errorPageType} {errType}
               </p>
             </div>
