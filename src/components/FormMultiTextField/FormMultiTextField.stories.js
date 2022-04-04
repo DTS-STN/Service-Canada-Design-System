@@ -28,7 +28,7 @@ Primary.args = {
   doNotIncludeText: "disclaimer",
   placeholder: "",
   size: "medium",
-  value: "h",
+  value: "",
   helpText:
     "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
 };
