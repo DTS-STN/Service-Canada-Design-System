@@ -6,6 +6,7 @@
     "sourceType": "module",
     "ecmaVersion": "2017"
   },
+  "parser": "@babel/eslint-parser",
   "ignorePatterns": [
     "en.json",
     "fr.json"

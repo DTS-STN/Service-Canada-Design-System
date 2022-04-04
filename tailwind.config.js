@@ -16,6 +16,7 @@ module.exports = {
       4: "4px",
       6: "6px",
       8: "8px",
+      1.5: "1.5px",
     },
     extend: {
       fontFamily: {
@@ -51,7 +52,7 @@ module.exports = {
         btnother: ["20px", "23px"],
 
         card_nonlink: ["22px", "28px"],
-        card_bodytext: ["20", "26px"],
+        card_bodytext: ["20px", "26px"],
 
         caption_large: ["18px", "22px"],
         caption_regular: ["16", "20px"],
@@ -178,7 +179,11 @@ module.exports = {
       },
       width: {
         "40px": "40px",
+        "43px": "43px",
         "44px": "44px",
+        "48px": "48px",
+        "46px": "46px",
+        "50px": "50px",
         "68px": "68px",
         "80px": "80px",
         "100px": "100px",
@@ -191,13 +196,17 @@ module.exports = {
         "400px": "400px",
         "500px": "500px",
         "7.5rem": "7.5rem",
+        "332px": "332px",
       },
       height: {
         "25px": "25px",
         "29px": "29px",
         "40px": "40px",
+        "43px": "43px",
         "44px": "44px",
         "46px": "46px",
+        "48px": "48px",
+        "50px": "50px",
         "100px": "100px",
         "104px": "104px",
         "128px": "128px",
@@ -225,15 +234,19 @@ module.exports = {
         "6px": "6px",
         "8px": "8px",
         "9px": "9px",
+        "10px": "10px",
         "12px": "12px",
         "14px": "14px",
         "15px": "15px",
         "16px": "16px",
+        "18px": "18px",
         "20px": "20px",
         "24px": "24px",
         "28px": "28px",
+        "30px": "30px",
         "32px": "32px",
         "40px": "40px",
+        "60px": "60px",
       },
       margin: {
         "4px": "4px",
@@ -263,6 +276,7 @@ module.exports = {
         "104px": "104px",
         "290px": "290px",
         "300px": "300px",
+        "43px": "43px",
       },
 
       minHeight: {
@@ -282,6 +296,7 @@ module.exports = {
 
       boxShadow: {
         "experiment-shadow": "0px 2px 8px rgba(0, 0, 0, 0.25)",
+        "text-input": "0px 0px 6px rgba(14, 98, 201, 0.6)",
       },
 
       lineHeight: {
@@ -326,6 +341,8 @@ module.exports = {
     require("./config-plugins/message-plugin"),
     require("./config-plugins/cards-plugin"),
     require("./config-plugins/labels-plugin"),
+    require("./config-plugins/checkboxes-plugin"),
     require("./config-plugins/search-plugin"),
+    require("./config-plugins/accordion-plugin"),
   ],
 };

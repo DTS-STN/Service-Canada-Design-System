@@ -2,12 +2,12 @@ import React from "react";
 import { TextField } from "./TextField";
 
 export default {
-  title: "In Development/TextField",
+  title: "Components/TextField",
   component: TextField,
   decorators: [
     (Story) => (
-      <div className="w-full flex justify-center">
-        <div className="w-96">
+      <div className="ds-w-full ds-flex ds-justify-center">
+        <div className="ds-w-96">
           <Story />
         </div>
       </div>
@@ -24,34 +24,40 @@ Primary.args = {
   label: "I am a text field",
   dataTestId: "textbox-controlled",
   requiredText: "required",
-  optionalText: "optional",
-  doNotIncludeText: "disclaimer",
-  placeholder: "Some placeholder text",
+  helpText:
+    "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
 };
 
-export const UnControlled = Template.bind({});
-UnControlled.args = {
+export const OptionalWithInfoText = Template.bind({});
+OptionalWithInfoText.args = {
   id: "textField1",
   name: "textField1",
   label: "I am a text field",
-  placeholder: "Some placeholder text",
+  placeholder: "",
   requiredText: "required",
   optionalText: "optional",
-  doNotIncludeText: "disclaimer",
   dataTestId: "textbox-uncontrolled",
+  infoText: "Help Text",
+  helpText:
+    "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
   uncontrolled: true,
 };
 
-export const BoldLabel = Template.bind({});
-BoldLabel.args = {
+export const RequiredWithError = Template.bind({});
+RequiredWithError.args = {
   id: "textField1",
   name: "textField1",
   label: "I am a text field",
-  placeholder: "Some placeholder text",
+  placeholder: "",
   dataTestId: "textbox-bold",
   requiredText: "required",
-  optionalText: "optional",
-  doNotIncludeText: "disclaimer",
+  required: true,
+  infoText:
+    "Password should be at least six characters long and include both numbers and letters.",
   uncontrolled: true,
-  boldLabel: true,
+  hasError: true,
+  errorText: "Password must include numbers and letters.",
+  type: "password",
+  helpText:
+    "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
 };

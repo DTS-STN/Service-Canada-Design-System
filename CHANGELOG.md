@@ -31,8 +31,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 - Cards Component
 - Labels Component
 - Breadcrumb Component
+- Text Input Field
 - FormError Component
 - Form Label Component
+- Form RadioButton Component
+- Checkboxes Component
 
 ### Changed
 
@@ -79,3 +82,11 @@ Initial release of the Design System Package
 ### Added
 
 - Updated code base with "ds-" prefix
+
+## [v1.22.0] - 2022-01-20
+
+### Added
+
+- Checkbox component
+- Form Error Component
+- Form Label Component
