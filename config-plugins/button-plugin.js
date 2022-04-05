@@ -104,8 +104,7 @@ const button = plugin(function ({ addUtilities, theme }) {
         "text-decoration": "underline",
       },
     },
-
-    ".btn-link-review": {
+    ".btn-review": {
       fontFamily: theme("fontFamily.header"),
       fontWeight: theme("fontWeight.regular"),
       fontSize: theme("fontSize.btnother"),

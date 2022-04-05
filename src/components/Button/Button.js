@@ -79,7 +79,8 @@ Button.propTypes = {
     "secondary",
     "danger",
     "link",
-  ]).isRequired,
+    "none",
+  ]),
 
   /**
    * The text that the button will display

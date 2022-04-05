@@ -1,3 +1,4 @@
+import React from "react";
 import { ReviewSubmit } from "./ReviewSubmit";
 import { Button } from "../Button/Button";
 
@@ -47,7 +48,8 @@ const Template = () => {
               iconAltText="link"
               id={option.label + index}
               onClick={option.onClick}
-              styling="link-review"
+              styling="none"
+              className="ds-btn-review"
               text="Edit"
             />
           </div>
@@ -67,7 +69,8 @@ const Template = () => {
               iconAltText="link"
               id={option.label + index}
               onClick={option.onClick}
-              styling="link-review"
+              styling="none"
+              className="ds-btn-review"
               text="Edit"
             />
           </div>
