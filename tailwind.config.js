@@ -181,6 +181,7 @@ module.exports = {
         "40px": "40px",
         "43px": "43px",
         "44px": "44px",
+        "48px": "48px",
         "46px": "46px",
         "50px": "50px",
         "68px": "68px",
@@ -195,6 +196,7 @@ module.exports = {
         "400px": "400px",
         "500px": "500px",
         "7.5rem": "7.5rem",
+        "332px": "332px",
       },
       height: {
         "25px": "25px",
@@ -203,6 +205,7 @@ module.exports = {
         "43px": "43px",
         "44px": "44px",
         "46px": "46px",
+        "48px": "48px",
         "50px": "50px",
         "100px": "100px",
         "104px": "104px",
@@ -236,12 +239,15 @@ module.exports = {
         "14px": "14px",
         "15px": "15px",
         "16px": "16px",
+        "18px": "18px",
         "20px": "20px",
         "24px": "24px",
         "28px": "28px",
+        "30px": "30px",
         "32px": "32px",
         "38px": "38px",
         "40px": "40px",
+        "60px": "60px",
       },
       margin: {
         "4px": "4px",
@@ -271,6 +277,7 @@ module.exports = {
         "104px": "104px",
         "290px": "290px",
         "300px": "300px",
+        "43px": "43px",
       },
 
       minHeight: {
@@ -337,5 +344,6 @@ module.exports = {
     require("./config-plugins/labels-plugin"),
     require("./config-plugins/checkboxes-plugin"),
     require("./config-plugins/search-plugin"),
+    require("./config-plugins/accordion-plugin"),
   ],
 };
