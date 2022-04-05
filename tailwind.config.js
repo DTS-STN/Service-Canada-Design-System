@@ -240,6 +240,7 @@ module.exports = {
         "24px": "24px",
         "28px": "28px",
         "32px": "32px",
+        "38px": "38px",
         "40px": "40px",
       },
       margin: {

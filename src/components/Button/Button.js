@@ -94,7 +94,7 @@ Button.propTypes = {
   /**
    * Alt text for icon added to button
    */
-  iconAltText: PropTypes.string.isRequired,
+  iconAltText: PropTypes.string,
 
   /**
    * This is for placing an icon at the end of the component
