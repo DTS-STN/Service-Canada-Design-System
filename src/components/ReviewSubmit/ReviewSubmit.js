@@ -8,8 +8,8 @@ export function ReviewSubmit(props) {
     id,
     required_children,
     optional_children,
-    back_btn_props,
-    submit_btn_props,
+    back_btn_onClick,
+    submit_btn_onSubmit,
   } = props;
 
   return (
@@ -34,7 +34,7 @@ export function ReviewSubmit(props) {
         <div className="md:ds-pr-38px">
           <Button
             id="review_back_btn"
-            onClick={back_btn_props.onClick}
+            onClick={back_btn_onClick}
             styling="secondary"
             text="Back"
           />
@@ -43,7 +43,7 @@ export function ReviewSubmit(props) {
           <Button
             id="review_submit_btn"
             iconAltText="prime"
-            onSubmit={submit_btn_props.onSubmit}
+            onSubmit={submit_btn_onSubmit}
             styling="primary"
             type="submit"
             text="Submit"
@@ -75,14 +75,10 @@ ReviewSubmit.propTypes = {
   /**
    * Back button props
    */
-  back_btn_props: PropTypes.shape({
-    onClick: PropTypes.func,
-  }),
+  back_btn_onClick: PropTypes.func.isRequired,
 
   /**
    * Submit button props
    */
-  submit_btn_props: PropTypes.shape({
-    onSubmit: PropTypes.func,
-  }),
+  submit_btn_onSubmit: PropTypes.func.isRequired,
 };

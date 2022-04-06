@@ -7,6 +7,12 @@ export default {
   component: ReviewSubmit,
 };
 
+const Template2 = (args) => <ReviewSubmit {...args} />;
+export const Default = Template2.bind({
+  back_btn_onClick: () => {},
+  submit_btn_onSubmit: () => {},
+});
+
 const Template = () => {
   const required_results = [
     { label: "Email address", value: "sam_smith@gmail.com" },
@@ -79,24 +85,16 @@ const Template = () => {
     );
   });
 
-  const back_btn_props = {
-    onClick: () => {},
-  };
-  const submit_btn_props = {
-    onSubmit: () => {},
-  };
-
   return (
     <ReviewSubmit
       id="testingReview"
       required_children={required_children}
       optional_children={optional_children}
-      back_btn_props={back_btn_props}
-      submit_btn_props={submit_btn_props}
+      back_btn_onClick={() => {}}
+      submit_btn_onSubmit={() => {}}
     />
   );
 };
 
-export const Default = Template.bind({});
-
-Default.args = {};
+export const ExampleChildren = Template.bind({});
+ExampleChildren.args = {};
