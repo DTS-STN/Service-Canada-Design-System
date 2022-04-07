@@ -21,7 +21,7 @@ const Template = () => {
     <div>
       <CheckBoxes
         id="checkbox1"
-        label="Option 1"
+        label="Not sure what my annual net income is"
         name="ChexBox1"
         onChange={() => {
           setErrorState(!errorState);
@@ -31,12 +31,17 @@ const Template = () => {
       {errorState ? (
         <div className="ds-mt-34px">
           <Message
-            alert_icon_alt_text="danger icon"
-            alert_icon_id="danger icon"
-            id="danger"
-            message_body="Find out about new support for Canadians during the COVID-19 pandemic and how Service Canada’s services are affectedFind out about new support for Canadians during the COVID-19 pandemic and how Service Canada’s services are affected"
-            message_heading="COVID-19 New services and service changes"
-            type="danger"
+            alert_icon_alt_text="warning icon"
+            alert_icon_id="warning icon"
+            id="warning"
+            message_body="If you don’t know your net income, you will still be 
+            able to view your eligibility results. To get more 
+            accurate results, you can find your net income on 
+            line 23600 of your T1 tax form. You can find 
+            instructions on how to access these tax 
+            documents here. "
+            message_heading="Not sure what your annual net income is?"
+            type="warning"
           />
         </div>
       ) : null}
