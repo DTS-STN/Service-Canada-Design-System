@@ -4,15 +4,15 @@ import { TextField } from "./TextField";
 export default {
   title: "Components/TextField",
   component: TextField,
-  decorators: [
-    (Story) => (
-      <div className="ds-w-full ds-flex ds-justify-center">
-        <div className="ds-w-96">
-          <Story />
-        </div>
-      </div>
-    ),
-  ],
+  // decorators: [
+  //   (Story) => (
+  //     <div className="ds-w-full ds-flex ds-justify-center">
+  //       <div className="ds-w-96">
+  //         <Story />
+  //       </div>
+  //     </div>
+  //   ),
+  // ],
 };
 
 const Template = (args) => <TextField {...args} />;
@@ -33,7 +33,6 @@ OptionalWithInfoText.args = {
   id: "textField1",
   name: "textField1",
   label: "I am a text field",
-  placeholder: "",
   requiredText: "required",
   optionalText: "optional",
   dataTestId: "textbox-uncontrolled",
@@ -48,7 +47,6 @@ RequiredWithError.args = {
   id: "textField1",
   name: "textField1",
   label: "I am a text field",
-  placeholder: "",
   dataTestId: "textbox-bold",
   requiredText: "required",
   required: true,

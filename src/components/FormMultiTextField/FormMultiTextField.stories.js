@@ -4,15 +4,15 @@ import { FormMultiTextField } from "./FormMultiTextField";
 export default {
   title: "Components/FormMultiTextField",
   component: FormMultiTextField,
-  decorators: [
-    (Story) => (
-      <div className="ds-w-full  ds-flex ds-justify-center">
-        <div className="ds-w-96">
-          <Story />
-        </div>
-      </div>
-    ),
-  ],
+  // decorators: [
+  //   (Story) => (
+  //     <div className="ds-w-full  ds-flex ds-justify-center">
+  //       <div className="ds-w-96">
+  //         <Story />
+  //       </div>
+  //     </div>
+  //   ),
+  // ],
 };
 
 const Template = (args) => <FormMultiTextField i {...args} />;
