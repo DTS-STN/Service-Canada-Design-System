@@ -119,3 +119,5 @@ export { CheckBoxForm } from "./components/CheckBoxForm/CheckBoxForm";
  * FormMultiTextField
  */
 export { FormMultiTextField } from "./components/FormMultiTextField/FormMultiTextField";
+
+export { ReviewSubmit } from "./components/ReviewSubmit/ReviewSubmit";
