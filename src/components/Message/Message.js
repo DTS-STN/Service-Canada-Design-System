@@ -25,12 +25,12 @@ export function Message(props) {
       : success_img;
   let alert_color =
     type === "warning"
-      ? "ds-warning_color"
+      ? "ds-warning-color"
       : type === "danger"
-      ? "ds-danger_color"
+      ? "ds-danger-color"
       : type === "info"
-      ? "ds-info_color"
-      : "ds-success_color";
+      ? "ds-info-color"
+      : "ds-success-color";
 
   return (
     <div
@@ -60,7 +60,7 @@ Message.propTypes = {
   /**
    * alert type
    */
-  type: PropTypes.oneOf(["danger", "warning", "info", "success"]).isRequired,
+  type: PropTypes.oneOf(["warning", "info", "success", "danger"]).isRequired,
 
   /**
    * id for the alert icon

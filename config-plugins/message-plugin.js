@@ -26,16 +26,16 @@ const message = plugin(function ({ addUtilities, theme }) {
       borderWidth: "3px",
     },
 
-    ".success_color": {
+    ".success-color": {
       borderColor: theme("colors.specific.green.green50a"),
     },
-    ".danger_color": {
+    ".danger-color": {
       borderColor: theme("colors.specific.red.red50b"),
     },
-    ".warning_color": {
+    ".warning-color": {
       borderColor: theme("colors.specific.orange.orange50"),
     },
-    ".info_color": {
+    ".info-color": {
       borderColor: theme("colors.specific.cyan.cyan50"),
     },
   };
