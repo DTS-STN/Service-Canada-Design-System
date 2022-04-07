@@ -28,7 +28,13 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ["Documentation", "Styles", "Components", "In Development"],
+      order: [
+        "Documentation",
+        "Styles",
+        "Components",
+        "Story Examples",
+        "In Development",
+      ],
     },
   },
   controls: { expanded: true },

@@ -5,7 +5,7 @@ import { Message } from "../Message/Message";
 import React from "react";
 
 export default {
-  title: "Components/CallOut",
+  title: "Story Examples/Consequential CallOut",
   parameters: {
     viewMode: "docs",
     previewTabs: {
