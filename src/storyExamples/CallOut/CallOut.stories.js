@@ -20,7 +20,7 @@ const Template = () => {
   const exampleCode = [
     <div>
       <CheckBoxes
-        id="checkbox 1"
+        id="checkbox1"
         label="Option 1"
         name="ChexBox1"
         onChange={() => {
@@ -58,7 +58,7 @@ const Template2 = () => {
       <CheckBoxForm
         checkBoxList={[
           {
-            id: "checkbox 1",
+            id: "checkbox1",
             label: "Option 1",
             name: "ChexBox1",
             value: "IsChecked",
@@ -67,7 +67,7 @@ const Template2 = () => {
             },
           },
           {
-            id: "checkbox 2",
+            id: "checkbox2",
             label: "Option 2",
             name: "ChexBox2",
             value: "IsChecked",
