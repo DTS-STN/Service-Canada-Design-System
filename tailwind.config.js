@@ -259,6 +259,7 @@ module.exports = {
         "16px": "16px",
         "20px": "20px",
         "24px": "24px",
+        "34px": "34px",
         "4.5rem": "4.5rem",
       },
 
