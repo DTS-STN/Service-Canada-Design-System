@@ -1,7 +1,7 @@
 import { CallOut } from "./CallOut";
-import { CheckBoxes } from "../CheckBoxes/CheckBoxes";
-import { CheckBoxForm } from "../CheckBoxForm/CheckBoxForm";
-import { Message } from "../Message/Message";
+import { CheckBoxes } from "../../components/CheckBoxes/CheckBoxes";
+import { CheckBoxForm } from "../../components/CheckBoxForm/CheckBoxForm";
+import { Message } from "../../components/Message/Message";
 import React from "react";
 
 export default {
