@@ -12,11 +12,7 @@ export function TextField(props) {
       }
     : {};
   return (
-    <div
-      className={`ds-block ds-leading-tight ${
-        props.className ? " " + props.className : "ds-mb-10px"
-      }`}
-    >
+    <div className={`ds-block ds-leading-tight ds-mb-10px`}>
       {props.label && (
         <FormLabel
           id={props.id}
@@ -30,7 +26,9 @@ export function TextField(props) {
         />
       )}
       <input
-        className={`ds-rounded ds-outline-0 ds-text-input ds-text-mobileh5 ds-text-multi-neutrals-grey100 ds-w-full ds-min-h-44px ds-text-form-input-gray ds-border-1.5 ds-py-5px ds-px-14px ${
+        className={`${
+          props.className
+        } ds-rounded ds-outline-0 ds-text-input ds-text-mobileh5 ds-text-multi-neutrals-grey100 ds-w-full ds-min-h-44px ds-text-form-input-gray ds-border-1.5 ds-py-5px ds-px-14px ${
           props.hasError
             ? "ds-border-specific-red-red50b"
             : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f"
@@ -47,7 +45,6 @@ export function TextField(props) {
         onChange={(e) => props.onChange(e.currentTarget.value)}
         {...ifControlledProps}
         data-testid={props.dataTestId}
-        data-cy={props.dataCy}
       />
       {props.hasError && <FormError errorMessage={props.errorText} />}
     </div>
@@ -75,6 +72,22 @@ TextField.propTypes = {
    * the name of the text field
    */
   name: PropTypes.string.isRequired,
+
+  /**
+   * The textfield label
+   */
+  label: PropTypes.string.isRequired,
+
+  /**
+   * The text which fills in the parenthesis, next to the label
+   */
+  requiredText: PropTypes.string,
+
+  /**
+   * The text directly below the label text, used to give more information
+   * inregards to the given input
+   */
+  helpText: PropTypes.string,
 
   /**
    * value of the text field
@@ -125,11 +138,6 @@ TextField.propTypes = {
    * unit test selector
    */
   dataTestId: PropTypes.string,
-
-  /**
-   * cypress tests selector
-   */
-  dataCy: PropTypes.string,
 
   /**
    * Exclude option for adding exclude class to the textfield

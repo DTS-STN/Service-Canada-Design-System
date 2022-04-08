@@ -38,6 +38,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 - Checkboxes Component
 - Review and Submit Template
 - FormMultiTextField Component
+- Consequential Call Out Examples
+- Exposed After Pattern Examples
 
 ### Changed
 
