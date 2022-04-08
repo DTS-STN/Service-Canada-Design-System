@@ -44,7 +44,7 @@ const Template = () => {
             infoText="Help Text"
             label="I am a text field"
             name="textField1"
-            className="ds-w-165px"
+            className="ds-max-w-165px"
             onChange={(value) => {
               onInputChange("step1", value);
             }}
@@ -67,7 +67,7 @@ const Template = () => {
             infoText="Help Text"
             label="I am a text field"
             name="textField1"
-            className="ds-w-165px"
+            className="ds-max-w-165px"
             onChange={(value) => {
               onInputChange("step2", value);
             }}
@@ -91,7 +91,7 @@ const Template = () => {
             infoText="Help Text"
             label="I am a text field"
             name="textField1"
-            className="ds-w-165px"
+            className="ds-max-w-165px"
             onChange={(value) => {
               onInputChange("step3", value);
             }}
@@ -116,7 +116,7 @@ const Template = () => {
             infoText="Help Text"
             label="I am a text field"
             name="textField1"
-            className="ds-w-165px"
+            className="ds-max-w-165px"
             onChange={(value) => {
               onInputChange("step4", value);
             }}
