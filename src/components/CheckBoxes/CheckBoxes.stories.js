@@ -10,7 +10,7 @@ const Template = (args) => <CheckBoxes {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  id: "checkbox 1",
+  id: "checkbox1",
   name: "ChexBox1",
   value: "IsChecked",
   label: "Option 1",
