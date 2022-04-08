@@ -37,7 +37,6 @@ export function FormRadioButton(props) {
               props.onChange(value, e);
             }}
             data-testid={`${id}-${props.dataTestId}`}
-            data-cy={props.dataCy}
             checked={checked}
             defaultChecked={false}
           />
@@ -101,9 +100,4 @@ FormRadioButton.propTypes = {
    * unit test selector
    */
   dataTestId: PropTypes.string,
-
-  /**
-   * cypress test selector
-   */
-  dataCy: PropTypes.string,
 };
