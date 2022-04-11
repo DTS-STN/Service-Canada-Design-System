@@ -79,7 +79,8 @@ Button.propTypes = {
     "secondary",
     "danger",
     "link",
-  ]).isRequired,
+    "none",
+  ]),
 
   /**
    * The text that the button will display
@@ -94,7 +95,7 @@ Button.propTypes = {
   /**
    * Alt text for icon added to button
    */
-  iconAltText: PropTypes.string.isRequired,
+  iconAltText: PropTypes.string,
 
   /**
    * This is for placing an icon at the end of the component

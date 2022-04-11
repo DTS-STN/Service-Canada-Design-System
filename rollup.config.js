@@ -6,6 +6,7 @@ import postcss from "rollup-plugin-postcss";
 import pkg from "./package.json";
 import json from "@rollup/plugin-json";
 import image from "rollup-plugin-img";
+import url from "postcss-url";
 
 export default {
   input: pkg.source,
@@ -24,6 +25,11 @@ export default {
     }),
     del({ targets: ["dist/*"] }),
     postcss({
+      plugins: [
+        url({
+          url: "inline",
+        }),
+      ],
       config: {
         path: "./postcss.config.js",
       },

@@ -25,7 +25,7 @@ export function Header(props) {
     <div className="ds-header" id={props.id}>
       <header>
         <div className="ds-px-4 sm:ds-container md:ds-flex-nowrap md:ds-flex-row ds-flex ds-flex-wrap ds-justify-between ds-items-center ds-mx-auto">
-          <a href="#" className={`${props.className}`}>
+          <a href="#" className={`${props.className} ds-mb-8px`}>
             <Image
               src={props.lng === "fr" ? { logoFilefr } : props.logo}
               alt={props.altText}

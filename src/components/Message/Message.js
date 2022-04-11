@@ -25,17 +25,26 @@ export function Message(props) {
       : success_img;
   let alert_color =
     type === "warning"
-      ? "ds-warning_color"
+      ? "ds-warning-color"
       : type === "danger"
-      ? "ds-danger_color"
+      ? "ds-danger-color"
       : type === "info"
-      ? "ds-info_color"
-      : "ds-success_color";
+      ? "ds-info-color"
+      : "ds-success-color";
+
+  let style_type =
+    type === "warning"
+      ? "ds-border-specific-orange-orange50 ds-rounded ds-border-solid ds-border-3"
+      : type === "danger"
+      ? "ds-border-specific-red-red50b ds-rounded ds-border-solid ds-border-3"
+      : type === "info"
+      ? "ds-border-specific-cyan-cyan50 ds-rounded ds-border-solid ds-border-3"
+      : "ds-border-specific-green-green50a ds-rounded ds-border-solid ds-border-3";
 
   return (
     <div
       id={id}
-      className={`ds-relative ds-${type} ds-min-w-290px sm:ds-py-28px sm:ds-px-24px ds-py-16px ds-px-16px`}
+      className={`ds-relative ${style_type} ds-min-w-290px sm:ds-py-28px sm:ds-px-24px ds-py-16px ds-px-16px`}
     >
       <div className="ds-absolute ds-top-10 sm:ds-left-3.5 ds-left-1.5 ds-bg-multi-neutrals-white ds-py-4px">
         {/* change back to image component once fixed */}
@@ -60,7 +69,7 @@ Message.propTypes = {
   /**
    * alert type
    */
-  type: PropTypes.oneOf(["danger", "warning", "info", "success"]).isRequired,
+  type: PropTypes.oneOf(["warning", "info", "success", "danger"]).isRequired,
 
   /**
    * id for the alert icon
