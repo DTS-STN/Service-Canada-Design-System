@@ -104,6 +104,28 @@ const button = plugin(function ({ addUtilities, theme }) {
         "text-decoration": "underline",
       },
     },
+    ".btn-review": {
+      fontFamily: theme("fontFamily.header"),
+      fontWeight: theme("fontWeight.regular"),
+      fontSize: theme("fontSize.btnother"),
+      backgroundColor: theme("colors.multi.neutrals.white"),
+      color: theme("colors.multi.blue.blue60c"),
+      borderRadius: "4px",
+      "text-decoration": "underline",
+      "&:hover": {
+        color: theme("colors.multi.blue.blue50b"),
+      },
+      "&:active": {
+        color: theme("colors.multi.blue.blue50b"),
+      },
+      "&:focus": {
+        "--tw-ring-color": theme("colors.multi.blue.blue60f"),
+        color: theme("colors.multi.blue.blue60g"),
+      },
+      "&:visited": {
+        color: theme("colors.specific.purple.purple50"),
+      },
+    },
   };
   addUtilities(newUtilities);
 });

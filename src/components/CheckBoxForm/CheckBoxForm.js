@@ -75,21 +75,20 @@ CheckBoxForm.propTypes = {
   /**
    * Form Error Props
    */
-  formErrorProps: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      hasError: PropTypes.bool,
-      errorMessage: PropTypes.string,
-    })
-  ),
+  formErrorProps: PropTypes.shape({
+    id: PropTypes.string,
+    hasError: PropTypes.bool,
+    errorMessage: PropTypes.string,
+  }),
 
-  formLabelProps: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      label: PropTypes.string,
-      required: PropTypes.bool,
-      infoText: PropTypes.string,
-      helpText: PropTypes.string,
-    })
-  ),
+  /**
+   * Form Label Props
+   */
+  formLabelProps: PropTypes.shape({
+    id: PropTypes.string,
+    label: PropTypes.string,
+    required: PropTypes.bool,
+    infoText: PropTypes.string,
+    helpText: PropTypes.string,
+  }),
 };

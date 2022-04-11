@@ -1,12 +1,12 @@
 import React from "react";
-import { TextField } from "./TextField";
+import { FormMultiTextField } from "./FormMultiTextField";
 
 export default {
-  title: "Components/TextField",
-  component: TextField,
+  title: "Components/FormMultiTextField",
+  component: FormMultiTextField,
   // decorators: [
   //   (Story) => (
-  //     <div className="ds-w-full ds-flex ds-justify-center">
+  //     <div className="ds-w-full  ds-flex ds-justify-center">
   //       <div className="ds-w-96">
   //         <Story />
   //       </div>
@@ -15,47 +15,52 @@ export default {
   // ],
 };
 
-const Template = (args) => <TextField {...args} />;
+const Template = (args) => <FormMultiTextField i {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  id: "textField1",
-  name: "textField1",
-  label: "I am a text field",
-  dataTestId: "textbox-controlled",
+  id: "multiTextField1",
+  name: "multiTextField1",
+  label: "Multi Text Field",
+  dataTestId: "multitext-one",
   requiredText: "required",
+  optionalText: "optional",
+  doNotIncludeText: "disclaimer",
+  placeholder: "",
+  size: "medium",
+  value: "",
   helpText:
     "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
 };
 
-export const OptionalWithInfoText = Template.bind({});
-OptionalWithInfoText.args = {
-  id: "textField1",
-  name: "textField1",
-  label: "I am a text field",
+export const WithInfo = Template.bind({});
+WithInfo.args = {
+  id: "multiTextField2",
+  name: "multiTextField2",
+  label: "Multi Text Field",
+  dataTestId: "multitext-two",
   requiredText: "required",
   optionalText: "optional",
-  dataTestId: "textbox-uncontrolled",
+  placeholder: "",
   infoText: "Help Text",
   helpText:
     "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
-  uncontrolled: true,
 };
 
-export const RequiredWithError = Template.bind({});
-RequiredWithError.args = {
-  id: "textField1",
-  name: "textField1",
-  label: "I am a text field",
-  dataTestId: "textbox-bold",
+export const withError = Template.bind({});
+withError.args = {
+  id: "multiTextField3",
+  name: "multiTextField3",
+  label: "Multi Text Field",
+  dataTestId: "multitext-three",
   requiredText: "required",
+  optionalText: "optional",
   required: true,
+  placeholder: "",
   infoText:
     "Password should be at least six characters long and include both numbers and letters.",
-  uncontrolled: true,
   hasError: true,
   errorText: "Password must include numbers and letters.",
-  type: "password",
   helpText:
     "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
 };

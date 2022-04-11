@@ -25,31 +25,31 @@ WithError.args = {
   },
   checkBoxList: [
     {
-      id: "checkbox 1",
+      id: "checkbox1",
       name: "ChexBox1",
       value: "IsChecked",
       label: "Option 1",
     },
     {
-      id: "checkbox 2",
+      id: "checkbox2",
       name: "ChexBox2",
       value: "IsChecked",
       label: "Option 2",
     },
     {
-      id: "checkbox 3",
+      id: "checkbox3",
       name: "ChexBox3",
       value: "IsChecked",
       label: "Option 3",
     },
     {
-      id: "checkbox 4",
+      id: "checkbox4",
       name: "ChexBox4",
       value: "IsChecked",
       label: "Option 4",
     },
     {
-      id: "checkbox 5",
+      id: "checkbox5",
       name: "ChexBox5",
       value: "IsChecked",
       label: "Option 5",
@@ -76,31 +76,31 @@ NoError.args = {
   },
   checkBoxList: [
     {
-      id: "checkbox 1",
+      id: "checkbox1",
       name: "ChexBox1",
       value: "IsChecked",
       label: "Option 1",
     },
     {
-      id: "checkbox 2",
+      id: "checkbox2",
       name: "ChexBox2",
       value: "IsChecked",
       label: "Option 2",
     },
     {
-      id: "checkbox 3",
+      id: "checkbox3",
       name: "ChexBox3",
       value: "IsChecked",
       label: "Option 3",
     },
     {
-      id: "checkbox 4",
+      id: "checkbox4",
       name: "ChexBox4",
       value: "IsChecked",
       label: "Option 4",
     },
     {
-      id: "checkbox 5",
+      id: "checkbox5",
       name: "ChexBox5",
       value: "IsChecked",
       label: "Option 5",

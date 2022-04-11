@@ -36,6 +36,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 - Form Label Component
 - Form RadioButton Component
 - Checkboxes Component
+- Review and Submit Template
+- FormMultiTextField Component
+- Consequential Call Out Examples
+- Exposed After Pattern Examples
 
 ### Changed
 
@@ -90,3 +94,17 @@ Initial release of the Design System Package
 - Checkbox component
 - Form Error Component
 - Form Label Component
+
+## [v1.24.0] - 2022-01-20
+
+### Added
+
+- Review and Submit template
+
+## [v1.25.0] - 2022-01-20
+
+### Added
+
+- FormMultiTextField Component
+- Consequential Call Out Examples
+- Exposed After Pattern Examples

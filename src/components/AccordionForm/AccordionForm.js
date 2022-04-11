@@ -6,6 +6,12 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Button } from "../Button/Button";
 
+/**
+ * Accordion Component. The following example shows how you may populate the accordion
+ * with your wanted material. Click the 'Show code' option, located in the bottom right of the
+ * canvas below, to see the coding example used to create the given example.
+ */
+
 export function AccordionForm(props) {
   const { cards, id, cardsState } = props;
   const cardsRefs = cards.map(() => React.useRef(null));
@@ -82,7 +88,10 @@ export function AccordionForm(props) {
           <div className="ds-flex-col ds-pb-12px">
             <div className="cardNumber ds-flex ds-flex-row">
               <div className="ds-relative ds-rounded-full ds-w-48px ds-h-48px ds-bg-multi-blue-blue60d">
-                <p className="ds-absolute ds-left-3.5 ds-bottom-0.5 ds-accordion-num">
+                <p
+                  className="ds-absolute ds-left-3.5 ds-bottom-0.5 ds-accordion-num"
+                  style={{ lineHeight: "48px" }}
+                >
                   {index + 1}
                 </p>
               </div>
@@ -156,13 +165,37 @@ const generateCardOpenStates = (cardsState) => {
   return cardsObj;
 };
 
+AccordionForm.defaultProps = {
+  id: "defaultAccordion",
+  cards: {
+    id: "card1",
+    title: "card1",
+    children: <>default</>,
+    buttonLabel: "card1 button",
+    buttonOnChange: () => {},
+  },
+  cardState: {
+    step1: { isValid: false },
+  },
+};
+
 AccordionForm.propTypes = {
   /**
    * component id
    */
   id: PropTypes.string,
   /**
-   *  props for each card passed into accordion
+   *  card props:
+   *
+   *  id: id of the given card
+   *
+   *  title: heading of the given card
+   *
+   *  children: code passed in to fill the given card.
+   *
+   *  buttonLabel: text on the given cards button
+   *
+   *  buttonOnChange: onChange function added to given cards button
    * */
   cards: PropTypes.arrayOf(
     PropTypes.shape({

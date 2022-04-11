@@ -11,18 +11,18 @@ export function FormLabel(props) {
         className={`ds-flex ds-text-multi-neutrals-grey100 ds-items-center ds-leading-24px ds-text-xl lg:ds-text-p ds-font-body ds-mb-8px ds-relative`}
         htmlFor={props.id}
       >
-        <div className="ds-inline ds-text-form-input-gray lg:ds-text-xl ds-whitespace-nowrap ds-font-bold ">
+        <div className="ds-inline ds-text-form-input-gray lg:ds-text-xl ds-font-bold ">
           {props.label}{" "}
+          {props.required ? (
+            <p className="ds-inline ds-text-error-border-red ds-text-xl ds-font-medium">
+              &nbsp;{`(${props.requiredText})`}
+            </p>
+          ) : (
+            <p className="ds-inline ds-text-form-input-gray ds-text-xl lg:ds-text-xl ds-font-medium">
+              &nbsp;{`(${props.optionalText})`}
+            </p>
+          )}
         </div>
-        {props.required ? (
-          <div className="ds-text-error-border-red ds-text-xl ds-font-medium">
-            &nbsp;{`(${props.requiredText})`}
-          </div>
-        ) : (
-          <div className="ds-inline ds-text-form-input-gray ds-text-xl lg:ds-text-xl ds-font-medium">
-            &nbsp;{`(${props.optionalText})`}
-          </div>
-        )}
         {props.infoText && (
           <div
             className="ds-infoText ds-cursor-pointer ds-ml-auto md:ds-ml-0 ds-pl-8px"
@@ -96,11 +96,6 @@ FormLabel.propTypes = {
    * Unit test selector
    */
   dataTestId: PropTypes.string,
-
-  /**
-   * cypress tests selector
-   */
-  dataCy: PropTypes.string,
 
   /**
    * Exclude option for adding exclude class to the textfield

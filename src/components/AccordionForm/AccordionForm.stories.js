@@ -1,5 +1,6 @@
 import React from "react";
 import { AccordionForm } from "./AccordionForm";
+import { TextField } from "../TextField/TextField";
 
 export default {
   title: "Components/AccordionForm",
@@ -14,24 +15,21 @@ const Template = () => {
     step4: { isValid: false },
   });
 
-  const onInputChange = React.useCallback((sectionId) => {
-    return (e) => {
-      console.log(e.target.value);
-      if (e.target.value === "valid") {
-        setCardsValid((currentCardsData) => {
-          const updatedCardsData = { ...currentCardsData };
-          updatedCardsData[sectionId].isValid = true;
-          return updatedCardsData;
-        });
-      } else {
-        setCardsValid((currentCardsData) => {
-          const updatedCardsData = { ...currentCardsData };
-          updatedCardsData[sectionId].isValid = false;
-          return updatedCardsData;
-        });
-      }
-    };
-  }, []);
+  const onInputChange = (id, value) => {
+    if (value === "valid") {
+      setCardsValid((currentCardsData) => {
+        const updatedCardsData = { ...currentCardsData };
+        updatedCardsData[id].isValid = true;
+        return updatedCardsData;
+      });
+    } else {
+      setCardsValid((currentCardsData) => {
+        const updatedCardsData = { ...currentCardsData };
+        updatedCardsData[id].isValid = false;
+        return updatedCardsData;
+      });
+    }
+  };
   const cards = [
     {
       id: "step1",
@@ -39,14 +37,21 @@ const Template = () => {
       buttonLabel: "Income",
       children: [
         <div>
-          <input
-            type="text"
-            style={{
-              border: "1px solid black",
+          <TextField
+            dataTestId="textbox-uncontrolled"
+            helpText="Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences"
+            id="textField1"
+            infoText="Help Text"
+            label="I am a text field"
+            name="textField1"
+            className="ds-max-w-165px"
+            onChange={(value) => {
+              onInputChange("step1", value);
             }}
-            onChange={onInputChange("step1")}
+            optionalText="optional"
+            requiredText="required"
+            uncontrolled
           />
-          <p>Random text for testing purposes. Test test testest testing</p>
         </div>,
       ],
     },
@@ -55,12 +60,20 @@ const Template = () => {
       title: "Income",
       children: [
         <div>
-          <input
-            type="text"
-            style={{
-              border: "1px solid black",
+          <TextField
+            dataTestId="textbox-uncontrolled"
+            helpText="Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences"
+            id="textField1"
+            infoText="Help Text"
+            label="I am a text field"
+            name="textField1"
+            className="ds-max-w-165px"
+            onChange={(value) => {
+              onInputChange("step2", value);
             }}
-            onChange={onInputChange("step2")}
+            optionalText="optional"
+            requiredText="required"
+            uncontrolled
           />
         </div>,
       ],
@@ -71,12 +84,20 @@ const Template = () => {
       title: "Residency",
       children: [
         <div>
-          <input
-            type="text"
-            style={{
-              border: "1px solid black",
+          <TextField
+            dataTestId="textbox-uncontrolled"
+            helpText="Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences"
+            id="textField1"
+            infoText="Help Text"
+            label="I am a text field"
+            name="textField1"
+            className="ds-max-w-165px"
+            onChange={(value) => {
+              onInputChange("step3", value);
             }}
-            onChange={onInputChange("step3")}
+            optionalText="optional"
+            requiredText="required"
+            uncontrolled
           />
         </div>,
       ],
@@ -88,14 +109,21 @@ const Template = () => {
       title: "Marital Status",
       children: [
         <div>
-          <input
-            type="text"
-            style={{
-              border: "1px solid black",
+          <TextField
+            dataTestId="textbox-uncontrolled"
+            helpText="Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences"
+            id="textField1"
+            infoText="Help Text"
+            label="I am a text field"
+            name="textField1"
+            className="ds-max-w-165px"
+            onChange={(value) => {
+              onInputChange("step4", value);
             }}
-            onChange={onInputChange("step4")}
+            optionalText="optional"
+            requiredText="required"
+            uncontrolled
           />
-          <p>random text</p>
         </div>,
       ],
       buttonLabel: "Next",

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { CheckBox } from "../CheckBox/CheckBox";
-import { TextField } from "../TextField/TextField";
+import { TextField } from "../../components/TextField/TextField";
 import { MultiTextField } from "../MultiTextField/MultiTextField";
 import { RadioField } from "../RadioField/RadioField";
 import PropTypes from "prop-types";
