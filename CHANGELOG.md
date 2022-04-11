@@ -100,3 +100,11 @@ Initial release of the Design System Package
 ### Added
 
 - Review and Submit template
+
+## [v1.25.0] - 2022-01-20
+
+### Added
+
+- FormMultiTextField Component
+- Consequential Call Out Examples
+- Exposed After Pattern Examples
