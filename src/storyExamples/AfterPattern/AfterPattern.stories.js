@@ -55,7 +55,7 @@ const Template = () => {
             helpText="If you are not sure of the exact number, you may enter an estimate. 
             You will still be able to view your eligibility results. "
             name="textField1"
-            className="ds-w-165px"
+            className="ds-max-w-165px"
             onChange={() => {}}
             requiredText="required"
             uncontrolled
