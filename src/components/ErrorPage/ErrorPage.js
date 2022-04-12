@@ -48,7 +48,7 @@ export function ErrorPage(props) {
       ? FR.errorPageErrorText500
       : FR.errorPageErrorText503;
   return (
-    <div className={biClassName}>
+    <div className={`${biClassName} ds-container`}>
       {language.map((val, index) => {
         return (
           <div>
