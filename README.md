@@ -171,27 +171,7 @@ Rollup looks at the following file [src/index.js](src/index.js) to determine wha
 
 Sometimes it's helpful to test a component your working on in an actual application to test it's import or see it being rendered in the browser. There are a couple of ways you can test our package locally:
 
-1. Siumulating a client project in our code base:
-
-   This project includes a create-react-app application with the decd-design-system package being installed via a symlink in the node modules thus simulating a client project. To run this project
-
-   First run rollup in watch mode
-
-   ```bash
-   $ npm run build-watch
-   ```
-
-   This will rebuild the bundle everytime you make a change to the package code.
-
-   You can then run the playground application in a separate shell.
-
-   Starting from the root directory, run the following commands in the order shown (**Reminder:** npm install if it's your first time using the playground)
-
-   ```bash
-   $ cd playground && npm run start
-   ```
-
-2. Simulating a client project in another code base:
+1. Simulating a client project in another code base:
 
    You can create a tarball file based on your local branch to simulate what the decd-design-system package would look like with your new code. To create a tarball file run the following command in the top most folder in your local branch
 
