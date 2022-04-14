@@ -27,11 +27,11 @@ export const usePagination = ({
       return range(1, totalPageCount);
     }
 
-    const leftSiblingIndex = Math.max(currentPage - siblingCount, 1);
-    const rightSiblingIndex = Math.min(
-      currentPage + siblingCount,
-      totalPageCount
-    );
+    // const leftSiblingIndex = Math.max(currentPage - siblingCount, 1);
+    // const rightSiblingIndex = Math.min(
+    //   currentPage + siblingCount,
+    //   totalPageCount
+    // );
 
     /*
       We do not want to show dots if there is only one position left 
