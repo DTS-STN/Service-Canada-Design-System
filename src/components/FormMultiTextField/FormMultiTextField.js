@@ -126,10 +126,6 @@ FormMultiTextField.propTypes = {
    * unit test selector
    */
   dataTestId: PropTypes.string,
-  /**
-   * cypress selector
-   */
-  dataCy: PropTypes.string,
 
   /**
    * aria-describedby label id
