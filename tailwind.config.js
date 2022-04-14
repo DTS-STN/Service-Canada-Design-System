@@ -348,5 +348,6 @@ module.exports = {
     require("./config-plugins/checkboxes-plugin"),
     require("./config-plugins/search-plugin"),
     require("./config-plugins/accordion-plugin"),
+    require("./config-plugins/pagination-plugin"),
   ],
 };
