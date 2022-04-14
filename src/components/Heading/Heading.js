@@ -6,7 +6,7 @@ export function Heading(props) {
 
   return (
     <>
-      <h1 className="ds-heading1" id={id}>
+      <h1 className="ds-heading1 ds-leading-normal" id={id}>
         {title}
       </h1>
       {fromLink && fromText && (
