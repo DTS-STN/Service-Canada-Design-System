@@ -10,6 +10,9 @@ const pagination = plugin(function ({ addUtilities, theme }) {
       borderColor: theme("colors.multi.neutrals.grey40a"),
       borderWidth: "1px",
       padding: "8px 16px",
+      "&:hover": {
+        backgroundColor: theme("colors.multi.neutrals.grey50a"),
+      },
       // width: "44px",
       // height: "50px",
     },
@@ -33,6 +36,9 @@ const pagination = plugin(function ({ addUtilities, theme }) {
       borderColor: theme("colors.multi.neutrals.grey40a"),
       borderWidth: "1px",
       padding: "8px 16px",
+      "&:hover": {
+        backgroundColor: theme("colors.multi.neutrals.grey50a"),
+      },
     },
   };
 
