@@ -2,11 +2,11 @@ import PropTypes from "prop-types";
 import React from "react";
 
 export function Heading(props) {
-  const { title, fromLink, fromText, id } = props;
+  const { title, fromLink, fromText, id, className } = props;
 
   return (
     <>
-      <h1 className="ds-heading1" id={id}>
+      <h1 className={`ds-heading1 ${className}`} id={id}>
         {title}
       </h1>
       {fromLink && fromText && (
