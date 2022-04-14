@@ -30,7 +30,7 @@ export function Pagination(props) {
   let lastPage = paginationRange[paginationRange.length - 1];
   return (
     <div className="ds-inline-flex ds-p-4px">
-      <ul className={"ds-list-none ds-flex"}>
+      <ul className={"ds-list-none ds-flex ds-flex-wrap"}>
         {currentPage !== 1 ? (
           <li
             className={"ds-pagination_prev_next ds-rounded-l"}
@@ -47,7 +47,6 @@ export function Pagination(props) {
             </div>
           </li>
         ) : null}
-
         {paginationRange.map((pageNumber) => {
           // The dots "hiding" pages that aren't displayed
           if (pageNumber === DOTS) {

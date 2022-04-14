@@ -44,28 +44,37 @@ export const usePagination = ({
     const firstPageIndex = 1;
     const lastPageIndex = totalPageCount;
 
-    if (!shouldShowLeftDots && shouldShowRightDots) {
-      let leftItemCount = 3 + 2 * siblingCount;
-      let leftRange = range(1, leftItemCount);
+    // if (!shouldShowLeftDots && shouldShowRightDots) {
+    //   let leftItemCount = 3 + 2 * siblingCount;
+    //   let leftRange = range(1, leftItemCount);
 
-      return [...leftRange, DOTS, totalPageCount];
-    }
+    //   return [...leftRange, DOTS, totalPageCount];
+    // }
 
-    if (shouldShowLeftDots && !shouldShowRightDots) {
-      let rightItemCount = 3 + 2 * siblingCount;
-      let rightRange = range(
-        totalPageCount - rightItemCount + 1,
-        totalPageCount
-      );
-      return [firstPageIndex, DOTS, ...rightRange];
-    }
+    // if (shouldShowLeftDots && !shouldShowRightDots) {
+    //   let rightItemCount = 3 + 2 * siblingCount;
+    //   let rightRange = range(
+    //     totalPageCount - rightItemCount + 1,
+    //     totalPageCount
+    //   );
+    //   return [firstPageIndex, DOTS, ...rightRange];
+    // }
 
-    if (shouldShowLeftDots && shouldShowRightDots) {
-      let middleRange = range(leftSiblingIndex, rightSiblingIndex);
-      return [firstPageIndex, DOTS, ...middleRange, DOTS, lastPageIndex];
-      // let middleRange = range(currentPage, currentPage + 10);
-      // return [...middleRange]
-    }
+    let lowerIndex = currentPage - 2 > 1 ? currentPage - 2 : firstPageIndex;
+    let upperIndex =
+      currentPage + 2 < lastPageIndex ? currentPage + 2 : lastPageIndex;
+    let middleRange = range(lowerIndex, upperIndex);
+    return [...middleRange];
+    // if (shouldShowLeftDots && shouldShowRightDots) {
+    //   let middleRange = range(leftSiblingIndex, rightSiblingIndex);
+    //   return [firstPageIndex, DOTS, ...middleRange, DOTS, lastPageIndex];
+    // }
+    // if (shouldShowLeftDots && shouldShowRightDots) {
+    //   let lowerIndex = currentPage - 2 > 1 ? currentPage - 2 : firstPageIndex
+    //   let upperIndex = currentPage + 2 < lastPageIndex ? currentPage + 2 : lastPageIndex
+    //   let middleRange = range(lowerIndex, upperIndex);
+    //   return [...middleRange]
+    // }
   }, [totalCount, pageSize, siblingCount, currentPage]);
 
   return paginationRange;
