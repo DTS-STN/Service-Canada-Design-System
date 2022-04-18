@@ -8,12 +8,13 @@ import nextArrow from "../../assets/pagination_prev_arrow.svg";
 
 export function Pagination(props) {
   let siblingCount = 1;
-  const { onPageChange, totalCount, currentPage, pageSize } = props;
+  const { onPageChange, totalCount, currentPage, pageSize, browser } = props;
   const paginationRange = usePagination({
     currentPage,
     totalCount,
     siblingCount,
     pageSize,
+    browser,
   });
   if (currentPage === 0 || paginationRange.length < 2) {
     return null;
@@ -33,6 +34,7 @@ export function Pagination(props) {
       <ul className={"ds-list-none ds-flex ds-flex-wrap"}>
         {currentPage !== 1 ? (
           <li
+            key={1}
             className={"ds-pagination_prev_next ds-rounded-l"}
             onClick={onPrevious}
             onKeyUp={onPrevious}
@@ -62,10 +64,11 @@ export function Pagination(props) {
             }
             return (
               <li
+                key={pageNumber + 1}
                 className={`ds-pagination_cur_style ${borderStyle}`}
                 onClick={() => onPageChange(pageNumber)}
                 onKeyUp={() => onPageChange(pageNumber)}
-                tabindex={pageNumber}
+                // tabindex={pageNumber}
               >
                 {pageNumber}
               </li>
@@ -74,10 +77,11 @@ export function Pagination(props) {
           // Other Page numbers being displayed styling
           return (
             <li
+              key={pageNumber + 1}
               className={"ds-pagination_btn_style"}
               onClick={() => onPageChange(pageNumber)}
               onKeyUp={() => onPageChange(pageNumber)}
-              tabindex={pageNumber}
+              // tabindex={pageNumber}
             >
               {pageNumber}
             </li>
@@ -85,6 +89,7 @@ export function Pagination(props) {
         })}
         {currentPage !== lastPage ? (
           <li
+            key={lastPage + 1}
             className={"ds-pagination_prev_next ds-rounded-r"}
             onClick={onNext}
             onKeyUp={onNext}
@@ -104,6 +109,9 @@ export function Pagination(props) {
   );
 }
 
+Pagination.defaultProps = {
+  screenSize: "mobile",
+};
 Pagination.propTypes = {
   /**
    * component id
@@ -115,4 +123,8 @@ Pagination.propTypes = {
   currentPage: PropTypes.number,
   pageSize: PropTypes.number,
   className: PropTypes.string,
+  /**
+   * prop to switch from mobile display to browser display (by default will display mobile pagination)
+   */
+  browser: PropTypes.bool,
 };
