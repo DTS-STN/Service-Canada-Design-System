@@ -61,12 +61,23 @@ export const usePagination = ({
     //   return [firstPageIndex, DOTS, ...rightRange];
     // }
 
+    // let lowerIndex = currentPage - 1 > 1 ? currentPage - 1 : firstPageIndex;
+    // let upperIndex =
+    //   currentPage + 1 < lastPageIndex ? currentPage + 1 : lastPageIndex;
+    // let middleRange = range(lowerIndex, upperIndex);
+    // return [...middleRange];
+
     if (browser) {
-      let lowerIndex = currentPage - 4 > 1 ? currentPage - 4 : firstPageIndex;
-      let upperIndex =
-        currentPage + 4 < lastPageIndex ? currentPage + 4 : lastPageIndex;
-      let middleRange = range(lowerIndex, upperIndex);
-      return [...middleRange];
+      if (currentPage < 10) {
+        let result = range(1, 10);
+        return [...result];
+      } else {
+        let start = Math.floor(currentPage / 10);
+        start = start * 10;
+        let end = start + 10 < lastPageIndex ? start + 10 : lastPageIndex;
+        let result = range(start, end);
+        return [...result];
+      }
     } else {
       let lowerIndex = currentPage - 1 > 1 ? currentPage - 1 : firstPageIndex;
       let upperIndex =
