@@ -12,6 +12,7 @@ const typography = plugin(function ({ addUtilities, theme }) {
     },
     ".heading1": {
       fontSize: theme("fontSize.mobileh1"),
+      lineHeight: theme("lineHeight.header"),
       fontWeight: theme("fontWeight.bold"),
       fontFamily: theme("fontFamily.header"),
       color: theme("colors.multi.neutrals.grey100"),
