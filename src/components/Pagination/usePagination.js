@@ -61,12 +61,6 @@ export const usePagination = ({
     //   return [firstPageIndex, DOTS, ...rightRange];
     // }
 
-    // let lowerIndex = currentPage - 1 > 1 ? currentPage - 1 : firstPageIndex;
-    // let upperIndex =
-    //   currentPage + 1 < lastPageIndex ? currentPage + 1 : lastPageIndex;
-    // let middleRange = range(lowerIndex, upperIndex);
-    // return [...middleRange];
-
     if (browser) {
       if (currentPage < 10) {
         let result = range(1, 10);

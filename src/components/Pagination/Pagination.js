@@ -118,13 +118,33 @@ Pagination.propTypes = {
    */
   id: PropTypes.string,
 
+  /**
+   * function used when changing between pages
+   */
   onPageChange: PropTypes.func,
-  totalCount: PropTypes.number,
-  currentPage: PropTypes.number,
+
+  /**
+   * The amount of data, which each page will display
+   */
   pageSize: PropTypes.number,
-  className: PropTypes.string,
+
+  /**
+   * The total amount of data that is going to be displayed between all pages
+   */
+  totalCount: PropTypes.number,
+
+  /**
+   * currentPage defaults to page 1
+   */
+  currentPage: PropTypes.number,
+
   /**
    * prop to switch from mobile display to browser display (by default will display mobile pagination)
    */
   browser: PropTypes.bool,
+
+  /**
+   * Used to add custom styling to pagination component
+   */
+  className: PropTypes.string,
 };
