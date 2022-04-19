@@ -39,7 +39,7 @@ export function Pagination(props) {
             onClick={onPrevious}
             onKeyUp={onPrevious}
           >
-            <div className="ds-flex ds-flex-row">
+            <div role="button" className="ds-flex ds-flex-row">
               <Image
                 alt="Previous Arrow"
                 id="pagination-prev-arrow"
@@ -70,7 +70,7 @@ export function Pagination(props) {
                 onKeyUp={() => onPageChange(pageNumber)}
                 // tabindex={pageNumber}
               >
-                {pageNumber}
+                <div role="button">{pageNumber}</div>
               </li>
             );
           }
@@ -83,7 +83,7 @@ export function Pagination(props) {
               onKeyUp={() => onPageChange(pageNumber)}
               // tabindex={pageNumber}
             >
-              {pageNumber}
+              <div role="button">{pageNumber}</div>
             </li>
           );
         })}
@@ -94,7 +94,7 @@ export function Pagination(props) {
             onClick={onNext}
             onKeyUp={onNext}
           >
-            <div className="ds-flex ds-flex-row">
+            <div role="button" className="ds-flex ds-flex-row">
               <p className="ds-pr-10px">Next Page</p>
               <Image
                 alt="Next Arrow"
