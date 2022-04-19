@@ -1,10 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-/**
- * Note issues with using icon when importing this component to other components.
- * Must be fixed before officially releasing this component.
- */
 import PropTypes from "prop-types";
 import React from "react";
 import { Menu } from "../Menu/Menu";

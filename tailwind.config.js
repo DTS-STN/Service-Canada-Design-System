@@ -312,6 +312,7 @@ module.exports = {
         "22px": "22px",
         "20px": "20px",
         "24px": "24px",
+        "header": "1.5em"
       },
       outline: {
         "black-solid": ["2px solid #000", "1px"],
@@ -348,5 +349,6 @@ module.exports = {
     require("./config-plugins/checkboxes-plugin"),
     require("./config-plugins/search-plugin"),
     require("./config-plugins/accordion-plugin"),
+    require("./config-plugins/pagination-plugin"),
   ],
 };

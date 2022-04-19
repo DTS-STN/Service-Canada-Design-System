@@ -124,3 +124,8 @@ export { FormMultiTextField } from "./components/FormMultiTextField/FormMultiTex
  * Review and Submit
  */
 export { ReviewSubmit } from "./components/ReviewSubmit/ReviewSubmit";
+
+/*
+ * Pagination
+ */
+export { Pagination } from "./components/Pagination/Pagination";
