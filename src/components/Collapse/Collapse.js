@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { Link } from "../Link/Link";
 
 export function Collapse(props) {
   const { id, title, Children } = props;
