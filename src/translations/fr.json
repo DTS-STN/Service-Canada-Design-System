@@ -92,8 +92,9 @@
   "menuItems2": "Événements de la vie",
   "menuItems3": "Contactez-nous",
   "myAccountTitle": "Mon dossier Service Canada",
-  "myBenefitsAndServices": "Mes prestations et services",
-  "accountSettings": "Paramètres de mon dossier",
-  "CRAMyAccounts": "Passer au ARC Mon dossier",
-  "signOut": "Fermez la session"
+  "myDashboard": "Tableau de bord",
+  "mySecurity": "Paramètres de sécurité",
+  "myProfile": "Gérer votre profil",
+  "myCRA": "Passer au ARC Mon dossier",
+  "mySignOut": "Fermez la session"
 }

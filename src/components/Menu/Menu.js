@@ -1,11 +1,24 @@
 import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
+import { Button } from "../Button/Button";
 import EN from "../../translations/en.json";
 import FR from "../../translations/fr.json";
 /**
  * Menu component
  */
 export function Menu(props) {
+  const {
+    onSignOut,
+    menuHeaderTitle,
+    menuButtonTitle,
+    isAuthenticated,
+    lang,
+    dashboardPath,
+    signOutPath,
+    craPath,
+    securityPath,
+    profilePath,
+  } = props;
   const ref = useRef();
   const [menuDisplayed, setMenuDisplayed] = React.useState(false);
   const [buttonNavEnabled, setButtonNavEnabled] = React.useState(false);
@@ -45,17 +58,13 @@ export function Menu(props) {
     menuButtonParent.classList.toggle("ds-active");
     setMenuDisplayed(!menuDisplayed);
   }
-  let path = "";
-  if (typeof window !== "undefined") {
-    path = window.location.pathname;
-  }
 
   return (
     <div className="ds-headerNav ds-bg-multi-blue-blue70" ref={ref}>
       <nav className="md:ds-container ds-flex ds-items-center ds-justify-between ds-flex-wrap ds-w-full ds-relative">
         <div className="ds-flex ds-items-center ds-flex-shrink-0 ds-text-white">
           <h3 id="mainSiteNav" className="md:ds-p-0 ds-container ds-menuHeader">
-            {props.menuHeaderTitle}
+            {lang === "fr" ? FR.menuHeaderTitle : EN.menuHeaderTitle}
           </h3>
         </div>
         <div
@@ -72,7 +81,7 @@ export function Menu(props) {
             data-testid="menuButton"
           >
             <span className="ds-inline-block ds-align-middle ds-pl-3 ds-font-body ds-font-bold ds-text-p ds-leading-none">
-              {props.menuButtonTitle}
+              {lang === "fr" ? FR.menuButtonTitle : EN.menuButtonTitle}
             </span>
             <svg
               className="ds-ml-1 ds-w-4 ds-h-4 ds-inline-block"
@@ -97,64 +106,13 @@ export function Menu(props) {
           </button>
         </div>
         <div className="ds-w-full ds-block ds-flex-grow md:ds-flex md:ds-items-center md:ds-w-auto ds-bg-multi-blue-blue2 md:ds-bg-multi-blue-blue70">
-          <div className="md:ds-flex-grow md:ds-text-center md:ds-flex ds-hidden">
-            <ul
-              id="menuDropdown"
-              className={`${
-                buttonNavEnabled && "active"
-              } ds-menuDropdown ds-w-full`}
-            >
-              {props.items.map((item, key) => {
-                const exactURL = path === item.link; // it's exactly this url
-                const includesURL = path ? path.includes(item.link) : false; // it's a child of this url (eg, "/projects/app" includes "/projects")
-                return (
-                  <li
-                    key={"menuitem" + key}
-                    className={`ds-py-4 ds-px-4 ds-inline-block ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 `}
-                    aria-current={exactURL ? "page" : null}
-                  >
-                    <a
-                      href={item.link}
-                      className={`ds-font-body ds-font-bold ds-leading-20px  ${
-                        includesURL ? "ds-activePage" : "ds-menuLink"
-                      }`}
-                      title={item.text}
-                    >
-                      {item.text}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+          <div className="md:ds-flex-grow md:ds-text-center md:ds-flex"></div>
           <div>
             <ul
               id="menuDropdownSub"
               className="ds-menuDropdown ds-menuRight md:ds-text-white ds-text-gray-700 sm:ds-w-full sm:ds-left-0"
             >
-              {props.items.map((item, key) => {
-                const exactURL = path === item.link; // it's exactly this url
-                const includesURL = path ? path.includes(item.link) : false; // it's a child of this url (eg, "/projects/app" includes "/projects")
-                return (
-                  <li
-                    key={"menuSubItem" + key}
-                    className={`ds-py-18px ds-px-18px md:ds-hidden ds-cursor-pointer ds-text-custom-blue-projects-link md:ds-text-white ds-text-gray-700 `}
-                    aria-current={exactURL ? "page" : null}
-                  >
-                    <a
-                      href={item.link}
-                      className={`ds-font-body ds-font-bold ds-text-base ${
-                        includesURL ? "ds-activePage" : "ds-menuLink"
-                      }
-                        `}
-                      title={item.text}
-                    >
-                      {item.text}
-                    </a>
-                  </li>
-                );
-              })}
-              {props.isAuthenticated ? (
+              {isAuthenticated ? (
                 <li
                   id="buttonNav"
                   className="ds-py-4 md:ds-pl-0 md:ds-pr-0 ds-buttonNav"
@@ -171,9 +129,7 @@ export function Menu(props) {
                     }}
                     className="ds-flex ds-whitespace-nowrap ds-font-bold ds-font-body ds-justify-between ds-items-center md:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 ds-pr-4 md:ds-pl-3 ds-w-full"
                   >
-                    {props.lang === "fr"
-                      ? FR.myAccountTitle
-                      : EN.myAccountTitle}
+                    {lang === "fr" ? FR.myAccountTitle : EN.myAccountTitle}
                     <svg
                       className="ds-ml-1 ds-w-4 ds-h-4"
                       fill="currentColor"
@@ -206,40 +162,43 @@ export function Menu(props) {
                     >
                       <li>
                         <a
-                          href="/"
+                          href={dashboardPath}
                           className="ds-block ds-whitespace-nowrap ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body "
                         >
-                          {props.lang === "fr"
-                            ? FR.myBenefitsAndServices
-                            : EN.myBenefitsAndServices}
+                          {lang === "fr" ? FR.myDashboard : EN.myDashboard}
                         </a>
                       </li>
                       <li>
                         <a
-                          href="/"
+                          href={securityPath}
                           className="ds-block ds-whitespace-nowrap ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
-                          {props.lang === "fr"
-                            ? FR.accountSettings
-                            : EN.accountSettings}
+                          {lang === "fr" ? FR.mySecurity : EN.mySecurity}
                         </a>
                       </li>
                       <li>
                         <a
-                          href="/"
+                          href={profilePath}
                           className="ds-block ds-whitespace-nowrap ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
-                          {props.lang === "fr"
-                            ? FR.CRAMyAccounts
-                            : EN.CRAMyAccounts}
+                          {lang === "fr" ? FR.myProfile : EN.myProfile}
                         </a>
                       </li>
                       <li>
                         <a
-                          href="/"
+                          href={craPath}
+                          className="ds-block ds-whitespace-nowrap ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                        >
+                          {lang === "fr" ? FR.myCRA : EN.myCRA}
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href={signOutPath}
+                          onClick={onSignOut}
                           className="ds-block ds-whitespace-nowrap ds-py-18px  ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
-                          {props.lang === "fr" ? FR.signOut : EN.signOut}
+                          {lang === "fr" ? FR.mySignOut : EN.mySignOut}
                         </a>
                       </li>
                     </ul>
@@ -250,49 +209,74 @@ export function Menu(props) {
                   className={`ds-py-4 ds-px-6 ds-font-bold ds-font-body`}
                   aria-current="page"
                 >
-                  {props.lang === "fr" ? FR.myAccountTitle : EN.myAccountTitle}
+                  {lang === "fr" ? FR.myAccountTitle : EN.myAccountTitle}
                 </li>
               )}
             </ul>
           </div>
+        </div>
+        <div className="md:ds-pl-22px md:ds-block ds-hidden">
+          <Button
+            id="secondary"
+            onClick={onSignOut}
+            secondary
+            styling="secondary"
+            text={lang === "fr" ? FR.mySignOut : EN.mySignOut}
+          />
         </div>
       </nav>
     </div>
   );
 }
 
+Menu.defaultProps = {
+  lang: "en",
+  onSignOut: () => {},
+  signOutPath: "/",
+  dashboardPath: "/",
+  securityPath: "/",
+  profilePath: "/",
+  craPath: "/",
+};
+
 Menu.propTypes = {
   /**
    * Language code.
    */
   lang: PropTypes.string.isRequired,
-  /**
-   * Menu Header title
-   */
-  menuHeaderTitle: PropTypes.string.isRequired,
 
   /**
-   * Menu title for small screens
-   */
-  menuButtonTitle: PropTypes.string.isRequired,
-
-  /**
-   * Is Authenticated
+   * bool to switch between authenticated and non authenticated menus
    */
   isAuthenticated: PropTypes.bool.isRequired,
+
   /**
-   * Array of Items for the menu
+   * On change function used for the signout button on the browser screen
    */
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      /**
-       * Text for the menu
-       */
-      text: PropTypes.string,
-      /**
-       * Link for the menu
-       */
-      link: PropTypes.string,
-    })
-  ).isRequired,
+  onSignOut: PropTypes.func,
+
+  /**
+   * href path, which the signout button will redirect to
+   */
+  signOutPath: PropTypes.string,
+
+  /**
+   * href path, which redirects to the dashboard page
+   */
+  dashboardPath: PropTypes.string,
+
+  /**
+   * href path, which redirects to the security settings page
+   */
+  securityPath: PropTypes.string,
+
+  /**
+   * href path, which redirects to the profile page
+   */
+  profilePath: PropTypes.string,
+
+  /**
+   * href path, which redirects to the users CRA account page
+   */
+  craPath: PropTypes.string,
 };
