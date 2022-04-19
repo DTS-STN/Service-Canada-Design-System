@@ -23,11 +23,9 @@ export function Button(props) {
       {props.text}
       {props.children}
       {props.icon && props.iconEnd ? (
-        <Image
-          className="ds-h-8 ds-w-8 ds-pl-2"
-          src={props.icon}
-          alt={props.iconAltText}
-        />
+        <div className="ds-grid ds-place-items-center ds-h-8 ds-w-8">
+          <Image className="ds-pl-2" src={props.icon} alt={props.iconAltText} />
+        </div>
       ) : undefined}
     </a>
   ) : (
@@ -46,11 +44,9 @@ export function Button(props) {
       {props.text}
       {props.children}
       {props.icon && props.iconEnd ? (
-        <Image
-          className="ds-h-8 ds-w-8 ds-pl-2"
-          src={props.icon}
-          alt={props.iconAltText}
-        />
+        <div className="ds-grid ds-place-items-center ds-h-8 ds-w-8">
+          <Image className="ds-pl-2" src={props.icon} alt={props.iconAltText} />
+        </div>
       ) : undefined}
     </button>
   );
