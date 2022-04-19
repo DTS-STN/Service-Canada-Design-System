@@ -8,7 +8,15 @@ import nextArrow from "../../assets/pagination_prev_arrow.svg";
 
 export function Pagination(props) {
   let siblingCount = 1;
-  const { onPageChange, totalCount, currentPage, pageSize, browser } = props;
+  const {
+    onPageChange,
+    totalCount,
+    currentPage,
+    pageSize,
+    browser,
+    nextText,
+    previousText,
+  } = props;
   const paginationRange = usePagination({
     currentPage,
     totalCount,
@@ -45,7 +53,7 @@ export function Pagination(props) {
                 id="pagination-prev-arrow"
                 src={prevArrow}
               />
-              <p className="ds-pl-10px">Previous Page</p>
+              <p className="ds-pl-10px">{previousText}</p>
             </div>
           </li>
         ) : null}
@@ -95,7 +103,7 @@ export function Pagination(props) {
             onKeyUp={onNext}
           >
             <div role="button" className="ds-flex ds-flex-row">
-              <p className="ds-pr-10px">Next Page</p>
+              <p className="ds-pr-10px">{nextText}</p>
               <Image
                 alt="Next Arrow"
                 id="pagination-next-arrow"
@@ -111,6 +119,8 @@ export function Pagination(props) {
 
 Pagination.defaultProps = {
   screenSize: "mobile",
+  nextText: "Next Page",
+  previousText: "Previous Page",
 };
 Pagination.propTypes = {
   /**
@@ -147,4 +157,14 @@ Pagination.propTypes = {
    * Used to add custom styling to pagination component
    */
   className: PropTypes.string,
+
+  /**
+   * Next Button text
+   */
+  nextText: PropTypes.string,
+
+  /**
+   * Previous Button text
+   */
+  previousText: PropTypes.string,
 };
