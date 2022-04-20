@@ -27,15 +27,13 @@ English.args = {
     onChange: () => {},
     onSubmit: () => {},
   },
-  breadCrumbItems: {
-    items: [
-      { text: "Canada.ca", link: "/" },
-      { text: "Link1", link: "/" },
-      { text: "Link2", link: "/" },
-      { text: "Max length of breadcrumb 28", link: "/" },
-      { text: "Link3", link: "/" },
-    ],
-  },
+  breadCrumbItems: [
+    { text: "Canada.ca", link: "/" },
+    { text: "Link1", link: "/" },
+    { text: "Link2", link: "/" },
+    { text: "Max length of breadcrumb 28", link: "/" },
+    { text: "Link3", link: "/" },
+  ],
 };
 
 French.args = {
@@ -55,13 +53,11 @@ French.args = {
     onChange: () => {},
     onSubmit: () => {},
   },
-  breadCrumbItems: {
-    items: [
-      { text: "Canada.ca", link: "/" },
-      { text: "Link1", link: "/" },
-      { text: "Link2", link: "/" },
-      { text: "Max length of breadcrumb 28", link: "/" },
-      { text: "Link3", link: "/" },
-    ],
-  },
+  breadCrumbItems: [
+    { text: "Canada.ca", link: "/" },
+    { text: "Link1", link: "/" },
+    { text: "Link2", link: "/" },
+    { text: "Max length of breadcrumb 28", link: "/" },
+    { text: "Link3", link: "/" },
+  ],
 };

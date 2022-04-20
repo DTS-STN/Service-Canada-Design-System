@@ -63,7 +63,7 @@ export function Header(props) {
         )}
         {breadCrumbItems && (
           <div className="ds-container">
-            <Breadcrumb items={breadCrumbItems.items} />
+            <Breadcrumb items={breadCrumbItems} />
           </div>
         )}
       </header>
@@ -156,12 +156,12 @@ Header.propTypes = {
    *
    * items: set of object in breadcrumb list, give text and link for object
    */
-  breadCrumbItems: PropTypes.shape({
-    items: PropTypes.shape({
+  breadCrumbItems: PropTypes.arrayOf(
+    PropTypes.shape({
       text: PropTypes.string,
       link: PropTypes.string,
-    }),
-  }),
+    })
+  ),
 
   /**
    * Test id for unit test

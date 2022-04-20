@@ -67,7 +67,7 @@ export function Menu(props) {
         </div>
         <div
           id="menuButtonParent"
-          className="ds-menuButtonParent ds-block md:ds-hidden ds-pr-4 focus:ds-bg-multi-blue-blue2 ds-text-white ds-border-l-2 ds-border-white"
+          className="ds-menuButtonParent ds-block md:ds-hidden md:ds-pr-16px ds-pr-10px focus:ds-bg-multi-blue-blue2 ds-text-white ds-border-l-2 ds-border-white"
         >
           <button
             id="menuButton"
@@ -112,6 +112,7 @@ export function Menu(props) {
             >
               {isAuthenticated ? (
                 <li
+                  key={"authList"}
                   id="buttonNav"
                   className="md:ds-pb-4 ds-pt-4 md:ds-pl-0 md:ds-pr-0 ds-buttonNav"
                 >
@@ -125,7 +126,7 @@ export function Menu(props) {
                         ? setHeaderDropdownClass("ds-block")
                         : setHeaderDropdownClass("ds-hidden");
                     }}
-                    className="ds-flex ds-whitespace-nowrap ds-font-bold ds-font-body ds-justify-between ds-items-center md:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 ds-pr-4 md:ds-pl-3 ds-w-full"
+                    className="ds-flex ds-whitespace-nowrap ds-font-bold ds-font-body ds-justify-between ds-items-center md:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 md:ds-pr-16px ds-pr-10px md:ds-pl-3 ds-w-full"
                   >
                     {lang === "fr" ? FR.myAccountTitle : EN.myAccountTitle}
                     <svg
@@ -158,7 +159,7 @@ export function Menu(props) {
                       className="ds-py-0"
                       aria-labelledby="dropdownLargeButton"
                     >
-                      <li>
+                      <li key={"dashKey"}>
                         <a
                           href={dashboardPath}
                           className="ds-block ds-whitespace-nowrap ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body "
@@ -166,7 +167,7 @@ export function Menu(props) {
                           {lang === "fr" ? FR.myDashboard : EN.myDashboard}
                         </a>
                       </li>
-                      <li>
+                      <li key={"securityKey"}>
                         <a
                           href={securityPath}
                           className="ds-block ds-whitespace-nowrap ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
@@ -174,7 +175,7 @@ export function Menu(props) {
                           {lang === "fr" ? FR.mySecurity : EN.mySecurity}
                         </a>
                       </li>
-                      <li>
+                      <li key={"profileKey"}>
                         <a
                           href={profilePath}
                           className="ds-block ds-whitespace-nowrap ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
@@ -182,7 +183,7 @@ export function Menu(props) {
                           {lang === "fr" ? FR.myProfile : EN.myProfile}
                         </a>
                       </li>
-                      <li>
+                      <li key={"craKey"}>
                         <a
                           href={craPath}
                           className="ds-block ds-whitespace-nowrap ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
@@ -190,7 +191,7 @@ export function Menu(props) {
                           {lang === "fr" ? FR.myCRA : EN.myCRA}
                         </a>
                       </li>
-                      <li>
+                      <li key={"outKey"}>
                         <a
                           href={signOutPath}
                           onClick={onSignOut}
@@ -204,6 +205,7 @@ export function Menu(props) {
                 </li>
               ) : (
                 <li
+                  key={"titleKey"}
                   className={`ds-py-4 ds-px-6 ds-font-bold ds-font-body`}
                   aria-current="page"
                 >

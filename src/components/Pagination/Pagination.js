@@ -59,9 +59,9 @@ export function Pagination(props) {
         ) : null}
         {paginationRange.map((pageNumber) => {
           // The dots "hiding" pages that aren't displayed
-          if (pageNumber === DOTS) {
-            return <li className="ds-pagination_btn_style">&#8230;</li>;
-          }
+          // if (pageNumber === DOTS) {
+          //   return <li className="ds-pagination_btn_style">&#8230;</li>;
+          // }
           // The current page styling
           if (pageNumber === currentPage) {
             let borderStyle = "";

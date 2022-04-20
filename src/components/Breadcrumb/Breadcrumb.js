@@ -11,7 +11,7 @@ export function Breadcrumb(props) {
         {props.items
           ? props.items.map((item, key) => {
               return (
-                <li key={key} className={`ds-inline-block ds-w-100`}>
+                <li key={key * key} className={`ds-inline-block ds-w-100`}>
                   <a
                     href={item.link}
                     className="ds-font-body hover:ds-text-canada-footer-hover-font-blue ds-text-multi-blue-blue70b ds-underline"
@@ -35,6 +35,7 @@ Breadcrumb.propTypes = {
    * Component ID
    */
   id: PropTypes.string,
+
   /**
    * Array of Items for the breadcrumb
    */
@@ -62,19 +63,14 @@ Breadcrumb.propTypes = {
       link: PropTypes.string,
     })
   ),
+
   /**
    * Test id for unit test
    */
   dataTestId: PropTypes.string,
-  /**
-   * Test id for e2e test
-   */
-  dataCy: PropTypes.string,
-  /**
-   * Test id for e2e test
-   */
-  dataCyHeader: PropTypes.string,
+
   /**
    * For tracking click events analytics
-   */ analyticsTracking: PropTypes.bool,
+   */
+  analyticsTracking: PropTypes.bool,
 };
