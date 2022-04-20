@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import PropTypes from "prop-types";
 import React from "react";
-import { usePagination, DOTS } from "./usePagination";
+import { usePagination } from "./usePagination";
+// import { DOTS } from "./usePagination";
 import { Image } from "../Image/Image";
 import prevArrow from "../../assets/pagination_next_arrow.svg";
 import nextArrow from "../../assets/pagination_prev_arrow.svg";
