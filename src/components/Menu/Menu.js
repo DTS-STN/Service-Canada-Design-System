@@ -9,8 +9,6 @@ import FR from "../../translations/fr.json";
 export function Menu(props) {
   const {
     onSignOut,
-    menuHeaderTitle,
-    menuButtonTitle,
     isAuthenticated,
     lang,
     dashboardPath,

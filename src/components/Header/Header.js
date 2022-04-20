@@ -49,7 +49,7 @@ export function Header(props) {
             <Language id="lang1" lang={lang} path={linkPath} />
           </section>
         </div>
-        {menuProps && (
+        {!menuProps.hasNoMenu && (
           <Menu
             craPath={menuProps.craPath}
             dashboardPath={menuProps.dashboardPath}
@@ -76,6 +76,17 @@ Header.defaultProps = {
   searchProps: {
     onChange: () => {},
     onSubmit: () => {},
+  },
+  menuProps: {
+    lang: "en",
+    onSignOut: () => {},
+    isAuthenticated: true,
+    signOutPath: "/",
+    dashboardPath: "/",
+    securityPath: "/",
+    profilePath: "/",
+    craPath: "/",
+    hasNoMenu: false,
   },
 };
 
@@ -137,6 +148,7 @@ Header.propTypes = {
     profilePath: PropTypes.string,
     securityPath: PropTypes.string,
     signOutPath: PropTypes.string,
+    hasNoMenu: PropTypes.bool,
   }),
 
   /**

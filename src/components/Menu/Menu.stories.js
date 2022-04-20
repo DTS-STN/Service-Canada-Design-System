@@ -6,7 +6,7 @@ export default {
   component: Menu,
 };
 
-const Template = (args) => <Menu {...args}></Menu>;
+const Template = (args) => <Menu {...args} />;
 
 export const AuthenticatedEN = Template.bind({});
 export const AuthenticatedFR = Template.bind({});
