@@ -5,53 +5,65 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Menu } from "../Menu/Menu";
 import { Image } from "../Image/Image";
-import EN from "../../translations/en.json";
 import logoFile from "../../assets/sig-blk-en.svg";
-import logoFilefr from "../../assets/sig-blk-fr.svg";
+// import logoFilefr from "../../assets/sig-blk-fr.svg";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { Language } from "../Language/Language";
 import { Breadcrumb } from "../Breadcrumb/Breadcrumb";
 
 export function Header(props) {
-  var onChange =
-    props.searchProps.onChange === undefined ? {} : props.searchProps.onChange;
-  var onSubmit =
-    props.searchProps.onSubmit === undefined ? {} : props.searchProps.onSubmit;
+  const {
+    id,
+    lang,
+    linkPath,
+    altText,
+    searchProps,
+    menuProps,
+    breadCrumbItems,
+  } = props;
+
   return (
-    <div className="ds-header" id={props.id}>
+    <div className="ds-header" id={id}>
       <header>
         <div className="ds-px-4 sm:ds-container md:ds-flex-nowrap md:ds-flex-row ds-flex ds-flex-wrap ds-justify-between ds-items-center ds-mx-auto">
-          <a href="#" className={`${props.className} ds-mb-8px`}>
+          <a href="#" className={`header-logo ds-mb-8px`}>
             <Image
-              src={props.lng === "fr" ? { logoFilefr } : props.logo}
-              alt={props.altText}
+              // src={lang === "fr" ? { logoFilefr } : logoFile}
+              src={logoFile}
+              alt={altText}
             />
           </a>
           {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}
           <section className="ds-flex md:ds-hidden">
-            <Language id="lang2" />
+            <Language id="lang2" lang={lang} path={linkPath} />
           </section>
           {/* Developer Note: This will be moved as seperate component once search component is implemented */}
           <section className="ds-w-full md:ds-flex md:ds-w-332px ds-py-2">
-            <SearchBar onChange={onChange} onSubmit={onSubmit} />
+            <SearchBar
+              onChange={searchProps.onChange}
+              onSubmit={searchProps.onSubmit}
+            />
           </section>
           {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}
           <section className="ds-hidden md:ds-flex ds-pl-4 ds-pr-8 md:ds-pr-0">
-            <Language id="lang1" />
+            <Language id="lang1" lang={lang} path={linkPath} />
           </section>
         </div>
-        {props.menuItems && (
+        {!menuProps.hasNoMenu && (
           <Menu
-            menuHeaderTitle={EN.menuHeaderTitle}
-            menuButtonTitle={EN.menuButtonTitle}
-            isAuthenticated={true}
-            lang="en"
-            items={props.menuItems}
+            craPath={menuProps.craPath}
+            dashboardPath={menuProps.dashboardPath}
+            profilePath={menuProps.profilePath}
+            securityPath={menuProps.securityPath}
+            signOutPath={menuProps.signOutPath}
+            lang={lang}
+            isAuthenticated={menuProps.isAuthenticated}
+            onSignOut={menuProps.onSignOut}
           />
         )}
-        {props.breadCrumbItems && (
+        {breadCrumbItems && (
           <div className="ds-container">
-            <Breadcrumb items={props.breadCrumbItems.items} />
+            <Breadcrumb items={breadCrumbItems} />
           </div>
         )}
       </header>
@@ -60,12 +72,21 @@ export function Header(props) {
 }
 
 Header.defaultProps = {
-  className: "header-logo",
-  logo: logoFile,
   altText: "Government of Canada",
   searchProps: {
-    onChange: {},
-    onSubmit: {},
+    onChange: () => {},
+    onSubmit: () => {},
+  },
+  menuProps: {
+    lang: "en",
+    onSignOut: () => {},
+    isAuthenticated: true,
+    signOutPath: "/",
+    dashboardPath: "/",
+    securityPath: "/",
+    profilePath: "/",
+    craPath: "/",
+    hasNoMenu: false,
   },
 };
 
@@ -74,62 +95,81 @@ Header.propTypes = {
    * Component ID
    */
   id: PropTypes.string,
+
   /**
-   * This will add a image / icon to the header.
+   * Switch between english and french header
    */
-  logo: PropTypes.string,
+  lang: PropTypes.string.isRequired,
+
   /**
    * The text that will display as alternate text for logo.
    */
   altText: PropTypes.string,
 
   /**
-   * Lang attribute for links that do not match the language of the top level document
+   * Language toggle path
    */
-  lang: PropTypes.string,
+  linkPath: PropTypes.string,
 
   /**
    * Search Props:
+   *
    * onChange: can add function for when typing in the search bar
+   *
    * onSubmit: can add function for when submitting a search query
-   * searchIcon: Default already assigned, can be changed if needed
    */
-  searchIcon: PropTypes.string,
   searchProps: PropTypes.shape({
     onChange: PropTypes.func,
     onSubmit: PropTypes.func,
   }),
 
   /**
-   * any other elements you want to add to the header
-   */
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-    PropTypes.arrayOf(PropTypes.element),
-  ]),
-
-  /**
    * Menu items
    *
+   * craPath: href path, which redirects to the users CRA account page
+   *
+   * profilePath: href path, which redirects to the profile page
+   *
+   * securityPath: href path, which redirects to the security settings page
+   *
+   * dashboardPath: href path, which redirects to the dashboard page
+   *
+   * signOutPath: href path, which the signout button will redirect to
+   *
+   * onSignOut: On change function used for the signout button on the browser screen
+   *
+   * isAuthenticated: bool to switch between authenticated and non authenticated menus
    */
-  menuItems: PropTypes.arrayOf(
+  menuProps: PropTypes.shape({
+    craPath: PropTypes.string,
+    dashboardPath: PropTypes.string,
+    isAuthenticated: PropTypes.bool,
+    onSignOut: PropTypes.func,
+    profilePath: PropTypes.string,
+    securityPath: PropTypes.string,
+    signOutPath: PropTypes.string,
+    hasNoMenu: PropTypes.bool,
+  }),
+
+  /**
+   * Breadcrumb items
+   *
+   * items: set of object in breadcrumb list, give text and link for object
+   */
+  breadCrumbItems: PropTypes.arrayOf(
     PropTypes.shape({
-      link: PropTypes.string,
       text: PropTypes.string,
+      link: PropTypes.string,
     })
   ),
 
   /**
    * Test id for unit test
-   */ dataTestId: PropTypes.string,
-  /**
-   * Test id for e2e test
-   */ dataCy: PropTypes.string,
-  /**
-   * Test id for e2e test
-   */ dataCyHeader: PropTypes.string,
+   */
+  dataTestId: PropTypes.string,
+
   /**
    * For tracking click events analytics
-   */ analyticsTracking: PropTypes.bool,
+   */
+  analyticsTracking: PropTypes.bool,
 };

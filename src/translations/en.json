@@ -92,8 +92,9 @@
   "menuItems2": "Life events",
   "menuItems3": "Contact us",
   "myAccountTitle": "My Service Canada Account",
-  "myBenefitsAndServices": "My Benefits and Services",
-  "accountSettings": "Account settings",
-  "CRAMyAccounts": "Switch to CRA My Account",
-  "signOut": "Sign Out"
+  "myDashboard": "Dashboard",
+  "mySecurity": "Security Settings",
+  "myProfile": "Manage Profile",
+  "myCRA": "Switch to CRA My Account",
+  "mySignOut": "Sign out"
 }
