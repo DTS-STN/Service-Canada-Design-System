@@ -113,7 +113,7 @@ export function Menu(props) {
               {isAuthenticated ? (
                 <li
                   id="buttonNav"
-                  className="ds-py-4 md:ds-pl-0 md:ds-pr-0 ds-buttonNav"
+                  className="md:ds-pb-4 ds-pt-4 md:ds-pl-0 md:ds-pr-0 ds-buttonNav"
                 >
                   <button
                     id="dropdownNavbarLink"
