@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 export function Collapse(props) {
-  const { id, title, Children } = props;
+  const { id, title, children } = props;
   return (
     <details
       key={id}
@@ -12,11 +12,13 @@ export function Collapse(props) {
     >
       <summary
         key={`summary-${id}`}
-        className="ds-text-multi-blue-blue60d hover:hover:ds-text-multi-blue-blue50b hover:ds-underline ds-border ds-border-multi-neutrals-grey40  ds-rounded ds-px-15px ds-py-5px ds-cursor-pointer ds-select-none ds-outline-none"
+        className="ds-text-multi-blue-blue60d hover:hover:ds-text-multi-blue-blue50b hover:ds-underline ds-border ds-border-multi-neutrals-grey40 ds-rounded ds-px-15px ds-py-5px ds-cursor-pointer ds-select-none ds-outline-none"
       >
         {title}
       </summary>
-      {Children}
+      <div className="ds-border ds-border-multi-neutrals-grey40 ds-rounded-b ds-px-18px ds-py-5px ds-cursor-pointer ds-select-none ds-outline-none">
+        {children}
+      </div>
     </details>
   );
 }

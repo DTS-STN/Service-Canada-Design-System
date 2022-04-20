@@ -13,7 +13,7 @@ export const Default = Template.bind({});
 Default.args = {
   id: "defaultCollapse1",
   title: "How is this made?",
-  Children: [
+  children: [
     <p key="content-key">
       If the child shares their time about equally between the parents, then
       both parents are considered to have <strong>shared custody</strong> of
