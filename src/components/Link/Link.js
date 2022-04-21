@@ -45,6 +45,7 @@ export function Link(props) {
       data-cy-button={props.dataCyButton}
       disabled={props.disabled}
       lang={props.lang}
+      target={props.target}
     >
       {/* <!-- English Text: English --> */}
       <span className={props.abbr ? "ds-language-toggle-text" : ""}>
@@ -57,6 +58,10 @@ export function Link(props) {
     </a>
   );
 }
+
+Link.defaultProps = {
+  target: "_self"
+};
 
 Link.propTypes = {
   /**
@@ -71,6 +76,10 @@ Link.propTypes = {
    * Style link as a Text Link when there's a href
    */
   href: PropTypes.string,
+  /**
+   * Target attribute to tell the browser where the linked document should be loaded. 
+   */
+  target: PropTypes.string,
 
   /**
    * Identify which Text Link being clicked
