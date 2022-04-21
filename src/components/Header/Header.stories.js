@@ -1,5 +1,4 @@
 import { Header } from "./Header";
-import EN from "../../translations/en.json";
 
 export default {
   title: "Components/Header",
@@ -8,52 +7,57 @@ export default {
 
 const Template = (args) => <Header {...args} />;
 
-export const Default = Template.bind({});
-Default.parameters = {
-  viewport: {
-    viewports: {
-      desktop: {
-        name: "Desktop",
-        styles: {
-          width: "1200px",
-          height: "800px",
-        },
-        type: "desktop",
-      },
-    },
-    defaultViewport: "desktop",
+export const English = Template.bind({});
+export const French = Template.bind({});
+
+English.args = {
+  id: "header",
+  lang: "en",
+  altText: "Government of Canada",
+  menuProps: {
+    craPath: "/examplePath",
+    dashboardPath: "/examplePath",
+    isAuthenticated: true,
+    onSignOut: () => {},
+    profilePath: "/examplePath",
+    securityPath: "/examplePath",
+    signOutPath: "/examplePath",
   },
+  searchProps: {
+    onChange: () => {},
+    onSubmit: () => {},
+  },
+  breadCrumbItems: [
+    { text: "Canada.ca", link: "/" },
+    { text: "Link1", link: "/" },
+    { text: "Link2", link: "/" },
+    { text: "Max length of breadcrumb 28", link: "/" },
+    { text: "Link3", link: "/" },
+  ],
 };
 
-Default.args = {
+French.args = {
+  id: "header",
+  lang: "fr",
   altText: "Government of Canada",
-  menuItems: [
-    {
-      link: "#",
-      text: EN.menuItems1,
-    },
-    {
-      link: "#",
-      text: EN.menuItems2,
-    },
-    {
-      link: "#",
-      text: EN.menuItems3,
-    },
-  ],
-
+  menuProps: {
+    craPath: "/examplePath",
+    dashboardPath: "/examplePath",
+    isAuthenticated: true,
+    onSignOut: () => {},
+    profilePath: "/examplePath",
+    securityPath: "/examplePath",
+    signOutPath: "/examplePath",
+  },
   searchProps: {
-    onChange: {},
-    onSubmit: {},
+    onChange: () => {},
+    onSubmit: () => {},
   },
-  breadCrumbItems: {
-    id: "breadcrumbID",
-    items: [
-      { text: "Canada.ca", link: "/" },
-      { text: "Link1", link: "/" },
-      { text: "Link2", link: "/" },
-      { text: "Max length of breadcrumb 28", link: "/" },
-      { text: "Link3", link: "/" },
-    ],
-  },
+  breadCrumbItems: [
+    { text: "Canada.ca", link: "/" },
+    { text: "Link1", link: "/" },
+    { text: "Link2", link: "/" },
+    { text: "Max length of breadcrumb 28", link: "/" },
+    { text: "Link3", link: "/" },
+  ],
 };

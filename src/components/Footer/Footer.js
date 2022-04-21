@@ -7,6 +7,7 @@ import EN from "../../translations/en.json";
 // need to update to convert default props to FR when using lang=fr prop
 import logo from "../../assets/wmms-blk.svg";
 import bg_img from "../../assets/footer_bg_img.svg";
+import upArrow from "../../assets/upArrow.svg";
 
 export function Footer(props) {
   return (
@@ -97,7 +98,7 @@ export function Footer(props) {
                     text="To the top"
                     styling="link"
                     href={props.btnLink}
-                    icon={props.btnIcon}
+                    icon={upArrow}
                     iconAltText="to the top button"
                     iconEnd
                   />
@@ -186,7 +187,7 @@ Footer.propTypes = {
   /**
    * If true will display the error page version of the footer component
    */
-  error: PropTypes.bool.isRequired,
+  error: PropTypes.bool,
 
   /**
    * hyperlinks for top portion of footer
