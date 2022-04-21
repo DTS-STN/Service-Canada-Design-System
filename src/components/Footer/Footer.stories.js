@@ -12,12 +12,6 @@ export default {
 
 const Template = (args) => <Footer {...args} />;
 
-export const ErrorPageFooter = Template.bind({});
-ErrorPageFooter.args = {
-  btnLink: "/",
-  error: true,
-};
-
 export const EnFooter = Template.bind({});
 EnFooter.args = {
   btnLink: "/",
@@ -152,4 +146,10 @@ FrFooter.args = {
   logoUrl: logo,
   logoAltText: "Symbol of the Government of Canada",
   btnIcon: upArrow,
+};
+
+export const ErrorPageFooter = Template.bind({});
+ErrorPageFooter.args = {
+  btnLink: "/",
+  error: true,
 };

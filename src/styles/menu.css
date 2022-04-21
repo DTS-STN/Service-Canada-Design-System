@@ -81,11 +81,11 @@ nav {
   }
 }
 
-@media (max-width: 320px) {
+/* @media (max-width: 320px) {
   #menuButtonParent {
-    padding-right: 0 !important;
+    padding-right: 12px !important;
   }
-}
+} */
 @media (max-width: 768px) {
   #menuDropdownSub li,
   #menuButtonParent,

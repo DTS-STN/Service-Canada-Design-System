@@ -187,7 +187,7 @@ Footer.propTypes = {
   /**
    * If true will display the error page version of the footer component
    */
-  error: PropTypes.bool.isRequired,
+  error: PropTypes.bool,
 
   /**
    * hyperlinks for top portion of footer
