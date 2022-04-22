@@ -59,9 +59,9 @@ export function Menu(props) {
 
   return (
     <div className="ds-headerNav ds-bg-multi-blue-blue70" ref={ref}>
-      <nav className="md:ds-container ds-flex ds-items-center ds-justify-between ds-flex-wrap ds-w-full ds-relative">
+      <nav className="sm:ds-container ds-flex ds-items-center ds-justify-between ds-flex-wrap ds-w-full ds-relative">
         <div className="ds-flex ds-items-center ds-flex-shrink-0 ds-text-white">
-          <h3 id="mainSiteNav" className="md:ds-p-0 ds-container ds-menuHeader">
+          <h3 id="mainSiteNav" className="sm:ds-p-0 ds-container ds-menuHeader">
             {lang === "fr" ? FR.menuHeaderTitle : EN.menuHeaderTitle}
           </h3>
         </div>
