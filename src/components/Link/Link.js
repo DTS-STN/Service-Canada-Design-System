@@ -98,14 +98,7 @@ Link.propTypes = {
    * Test id for unit test
    */
   dataTestId: PropTypes.string,
-  /**
-   * Test id for e2e test
-   */
-  dataCy: PropTypes.string,
-  /**
-   * Test id for e2e test
-   */
-  dataCyLink: PropTypes.string,
+
   /**
    * For tracking on click of forms for analytics
    */
