@@ -3,6 +3,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import PropTypes from "prop-types";
 import React from "react";
+import { TopNav } from "../TopNav/TopNav";
 import { Menu } from "../Menu/Menu";
 import { Image } from "../Image/Image";
 import logoFile from "../../assets/sig-blk-en.svg";
@@ -24,6 +25,14 @@ export function Header(props) {
 
   return (
     <div className="ds-header" id={id}>
+      <TopNav
+        lang={lang}
+        skipToMainPath={topnavProps.skipToMainPath}
+        skipToAboutPath={topnavProps.skipToAboutPath}
+        switchToBasicPath={topnavProps.switchToBasicPath}
+        displayAlternateLink={topnavProps.displayAlternateLink}
+      />
+
       <header>
         <div className="ds-px-4 sm:ds-container md:ds-flex-nowrap md:ds-flex-row ds-flex ds-flex-wrap ds-justify-between ds-items-center ds-mx-auto">
           <a href="#" className={`header-logo ds-mb-8px`}>
@@ -88,6 +97,13 @@ Header.defaultProps = {
     craPath: "/",
     hasNoMenu: false,
   },
+  topnavProps: {
+    lang: "en",
+    skipToMainPath: "#wb-cont",
+    skipToAboutPath: "#wb-info",
+    switchToBasicPath: "basic-en.html",
+    displayAlternateLink: false,
+  },
 };
 
 Header.propTypes = {
@@ -149,6 +165,24 @@ Header.propTypes = {
     securityPath: PropTypes.string,
     signOutPath: PropTypes.string,
     hasNoMenu: PropTypes.bool,
+  }),
+
+  /**
+   * TopNav items
+   *
+   * skipToMainPath: href anchor, which navigates to the H1 of the page
+   *
+   * skipToAboutPath: href anchor, which navigates to the Footer Id
+   *
+   * switchToBasicPath: href path, which redirects to the alternate HTML only page
+   *
+   * displayAlternateLink: Bool to display or not the alternate page link
+   */
+  topnavProps: PropTypes.shape({
+    skipToMainPath: PropTypes.string.isRequired,
+    skipToAboutPath: PropTypes.skipToAboutPath.isRequired,
+    switchToBasicPath: PropTypes.switchToBasicPath,
+    displayAlternateLink: PropTypes.bool.isRequired,
   }),
 
   /**

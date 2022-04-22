@@ -96,5 +96,8 @@
   "mySecurity": "Paramètres de sécurité",
   "myProfile": "Gérer votre profil",
   "myCRA": "Passer au ARC Mon dossier",
-  "mySignOut": "Fermez la session"
+  "mySignOut": "Fermez la session",
+  "skipToMain": "Passer au contenu principal",
+  "skipToAbout": "Passer à « Au sujet du gouvernement »",
+  "switchToBasic": "Passer à la version HTML simplifiée"
 }

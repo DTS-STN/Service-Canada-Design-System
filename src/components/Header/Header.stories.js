@@ -23,6 +23,12 @@ English.args = {
     securityPath: "/examplePath",
     signOutPath: "/examplePath",
   },
+  topnavProps: {
+    skipToMainPath: "#wb-cont",
+    skipToAboutPath: "#wb-info",
+    switchToBasicPath: "/basic-en.html",
+    displayAlternateLink: false,
+  },
   searchProps: {
     onChange: () => {},
     onSubmit: () => {},
@@ -48,6 +54,12 @@ French.args = {
     profilePath: "/examplePath",
     securityPath: "/examplePath",
     signOutPath: "/examplePath",
+  },
+  topnavProps: {
+    skipToMainPath: "#wb-cont",
+    skipToAboutPath: "#wb-info",
+    switchToBasicPath: "/basic-fr.html",
+    displayAlternateLink: false,
   },
   searchProps: {
     onChange: () => {},
