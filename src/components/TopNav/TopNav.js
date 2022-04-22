@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import EN from "../../translations/en.json";
 import FR from "../../translations/fr.json";
 /**
- * Menu component
+ * TopNav component
  */
-export function Menu(props) {
+export function TopNav(props) {
   const {
     lang,
     skipToMainPath,
@@ -17,18 +17,18 @@ export function Menu(props) {
     <>
       {/* Top navigation accessible only when using a keyboard to navigate the page */}
       <nav>
-        <ul id="applicationTitle" className="z-10">
-          <li className="left-0 top-2 absolute text-center box-border w-full -z-50 focus-within:z-50 ">
+        <ul id="TopNavLinks" className="ds-z-10">
+          <li className="ds-left-0 ds-top-2 ds-absolute ds-text-center ds-box-border ds-w-full -ds-z-50 focus-within:ds-z-50 ">
             <a
-              className="ds-bg-multi-blue-blue70 font-bold p-1 text-white"
+              className="focus:ds-bg-multi-blue-blue70 ds-font-bold ds-p-1 ds-text-white"
               href={skipToMainPath}
             >
               {lang === "fr" ? FR.skipToMain : EN.skipToMain}
             </a>
           </li>
-          <li className="left-0 top-2 absolute text-center box-border w-full -z-50 focus-within:z-50 ">
+          <li className="ds-left-0 ds-top-2 ds-absolute ds-text-center ds-box-border ds-w-full -ds-z-50 focus-within:ds-z-50 ">
             <a
-              className="ds-bg-multi-blue-blue70 font-bold p-1 text-white"
+              className="focus:ds-bg-multi-blue-blue70 ds-font-bold ds-p-1 ds-text-white"
               href={skipToAboutPath}
             >
               {lang === "fr" ? FR.skipToAbout : EN.skipToAbout}
@@ -36,9 +36,9 @@ export function Menu(props) {
           </li>
 
           {displayAlternateLink ? (
-            <li className="left-0 top-2 absolute text-center box-border w-full -z-50 focus-within:z-50 ">
+            <li className="ds-left-0 ds-top-2 ds-absolute ds-text-center ds-box-border ds-w-full -ds-z-50 focus-within:ds-z-50 ">
               <a
-                className="ds-bg-multi-blue-blue70 font-bold p-1 text-white"
+                className="focus:ds-bg-multi-blue-blue70 ds-font-bold ds-p-1 ds-text-white"
                 href={switchToBasicPath}
                 rel="alternate"
               >
@@ -54,7 +54,7 @@ export function Menu(props) {
   );
 }
 
-Menu.defaultProps = {
+TopNav.defaultProps = {
   lang: "en",
   displayAlternateLink: false,
   skipToMainPath: "/",
@@ -62,7 +62,7 @@ Menu.defaultProps = {
   switchToBasicPath: "/",
 };
 
-Menu.propTypes = {
+TopNav.propTypes = {
   /**
    * Language code.
    */
