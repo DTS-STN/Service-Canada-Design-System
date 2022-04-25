@@ -35,6 +35,8 @@ export function Menu(props) {
         !ref.current.contains(e.target)
       ) {
         setHeaderDropdownClass("ds-hidden");
+        const buttonNavDown = document.getElementById("buttonNav");
+        buttonNavDown.classList.toggle("ds-active");
       }
     };
 
@@ -54,6 +56,7 @@ export function Menu(props) {
     setButtonNavEnabled(!buttonNavEnabled);
     menuDropdownSub.classList.toggle("ds-active");
     menuButtonParent.classList.toggle("ds-active");
+
     setMenuDisplayed(!menuDisplayed);
   }
 
@@ -114,7 +117,7 @@ export function Menu(props) {
                 <li
                   key={"authList"}
                   id="buttonNav"
-                  className="md:ds-pb-4 ds-pt-4 md:ds-pl-0 md:ds-pr-0 ds-buttonNav"
+                  className={`md:ds-pb-4 ds-pt-4 md:ds-pl-0 md:ds-pr-0 ds-buttonNav`}
                 >
                   <button
                     id="dropdownNavbarLink"
