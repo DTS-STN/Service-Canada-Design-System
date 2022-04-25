@@ -129,3 +129,8 @@ export { ReviewSubmit } from "./components/ReviewSubmit/ReviewSubmit";
  * Pagination
  */
 export { Pagination } from "./components/Pagination/Pagination";
+
+/*
+ * Expand and Collapse
+ */
+export { Collapse } from "./components/Collapse/Collapse";

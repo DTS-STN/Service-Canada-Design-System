@@ -194,6 +194,7 @@ module.exports = {
         "168px": "168px",
         "284px": "284px",
         "300px": "300px",
+        "360px": "360px",
         "400px": "400px",
         "500px": "500px",
         "7.5rem": "7.5rem",
@@ -211,6 +212,7 @@ module.exports = {
         "100px": "100px",
         "104px": "104px",
         "128px": "128px",
+        "140px": "140px",
         "160px": "160px",
         "187px": "187px",
         "200px": "200px",
@@ -312,7 +314,7 @@ module.exports = {
         "22px": "22px",
         "20px": "20px",
         "24px": "24px",
-        "header": "1.5em"
+        header: "1.5em",
       },
       outline: {
         "black-solid": ["2px solid #000", "1px"],
@@ -350,5 +352,6 @@ module.exports = {
     require("./config-plugins/search-plugin"),
     require("./config-plugins/accordion-plugin"),
     require("./config-plugins/pagination-plugin"),
+    require("./config-plugins/download-plugin"),
   ],
 };
