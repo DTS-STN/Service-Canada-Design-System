@@ -21,6 +21,7 @@ export function Header(props) {
     searchProps,
     menuProps,
     breadCrumbItems,
+    topnavProps,
   } = props;
 
   return (
@@ -179,10 +180,10 @@ Header.propTypes = {
    * displayAlternateLink: Bool to display or not the alternate page link
    */
   topnavProps: PropTypes.shape({
-    skipToMainPath: PropTypes.string.isRequired,
-    skipToAboutPath: PropTypes.skipToAboutPath.isRequired,
-    switchToBasicPath: PropTypes.switchToBasicPath,
-    displayAlternateLink: PropTypes.bool.isRequired,
+    skipToMainPath: PropTypes.string,
+    skipToAboutPath: PropTypes.string,
+    switchToBasicPath: PropTypes.string,
+    displayAlternateLink: PropTypes.bool,
   }),
 
   /**
