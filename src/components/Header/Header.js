@@ -33,7 +33,6 @@ export function Header(props) {
         switchToBasicPath={topnavProps.switchToBasicPath}
         displayAlternateLink={topnavProps.displayAlternateLink}
       />
-
       <header>
         <div className="ds-px-4 sm:ds-container md:ds-flex-nowrap md:ds-flex-row ds-flex ds-flex-wrap ds-justify-between ds-items-center ds-mx-auto">
           <a href="#" className={`header-logo ds-mb-8px`}>

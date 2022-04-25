@@ -16,7 +16,7 @@ export function TopNav(props) {
   return (
     <>
       {/* Top navigation accessible only when using a keyboard to navigate the page */}
-      <nav>
+      <nav role="navigation" aria-label="topNavigation">
         <ul id="TopNavLinks" className="ds-z-10">
           <li className="ds-left-0 ds-top-2 ds-absolute ds-text-center ds-box-border ds-w-full -ds-z-50 focus-within:ds-z-50 ">
             <a
