@@ -193,6 +193,7 @@ module.exports = {
         "165px": "165px",
         "168px": "168px",
         "206px": "206px",
+        "276px": "276px",
         "284px": "284px",
         "300px": "300px",
         "360px": "360px",
@@ -281,6 +282,7 @@ module.exports = {
         "750px": "750px",
         "5rem": "5rem",
         "250px": "250px",
+        "276px": "276px",
       },
 
       minWidth: {

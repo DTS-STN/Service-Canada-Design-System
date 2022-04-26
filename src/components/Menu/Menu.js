@@ -155,7 +155,7 @@ export function Menu(props) {
                         ? setHeaderDropdownClass("ds-block")
                         : setHeaderDropdownClass("ds-hidden");
                     }}
-                    className="ds-hidden md:ds-flex ds-whitespace-nowrap ds-font-bold ds-font-body ds-justify-between ds-items-center md:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 md:ds-pr-16px ds-pr-10px md:ds-pl-18px ds-w-full"
+                    className="md:ds-w-276px ds-hidden md:ds-flex ds-whitespace-nowrap ds-font-bold ds-font-body ds-justify-between ds-items-center md:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 md:ds-pr-16px ds-pr-10px md:ds-pl-18px ds-w-full"
                   >
                     {lang === "fr" ? FR.myAccountTitle : EN.myAccountTitle}
                     <svg
@@ -191,7 +191,7 @@ export function Menu(props) {
                       <li key={"dashKey"}>
                         <a
                           href={dashboardPath}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px md:ds-pl-18px ds-pl-14px md:ds-pr-168px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body "
+                          className="ds-block ds-whitespace-nowrap ds-py-18px md:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body "
                         >
                           {lang === "fr" ? FR.myDashboard : EN.myDashboard}
                         </a>
@@ -199,7 +199,7 @@ export function Menu(props) {
                       <li key={"securityKey"}>
                         <a
                           href={securityPath}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px md:ds-pl-18px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          className="ds-block ds-whitespace-nowrap ds-py-18px md:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
                           {lang === "fr" ? FR.mySecurity : EN.mySecurity}
                         </a>
@@ -207,7 +207,7 @@ export function Menu(props) {
                       <li key={"profileKey"}>
                         <a
                           href={profilePath}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px md:ds-pl-18px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          className="ds-block ds-whitespace-nowrap ds-py-18px md:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
                           {lang === "fr" ? FR.myProfile : EN.myProfile}
                         </a>
@@ -216,7 +216,7 @@ export function Menu(props) {
                         <a
                           href={signOutPath}
                           onClick={onSignOut}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px md:ds-pl-18px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          className="ds-block ds-whitespace-nowrap ds-py-18px md:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
                           {lang === "fr" ? FR.mySignOut : EN.mySignOut}
                         </a>
