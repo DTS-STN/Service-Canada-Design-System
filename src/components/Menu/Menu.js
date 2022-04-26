@@ -17,7 +17,7 @@ export function Menu(props) {
     profilePath,
   } = props;
   const ref = useRef();
-  // const [menuDisplayed, setMenuDisplayed] = React.useState(false);
+  const [menuDisplayed, setMenuDisplayed] = React.useState(false);
 
   let [headerDropdownClass, setHeaderDropdownClass] =
     React.useState("ds-hidden");
@@ -61,7 +61,7 @@ export function Menu(props) {
     const menuButtonParent = document.getElementById("menuButtonParent");
     const menuDropdownSub = document.getElementById("menuDropdownSub");
     const menuButton = document.getElementById("menuButton");
-    // setMenuDisplayed(!menuDisplayed)
+    setMenuDisplayed(!menuDisplayed);
     setHeaderMobileDropdownClass(!headerMobileDropdownClass);
     menuDropdownSub.classList.toggle("ds-active");
     menuButtonParent.classList.toggle("ds-active");
@@ -88,7 +88,7 @@ export function Menu(props) {
             onClick={onMenuClick}
             className="ds-text-h4 ds-text-canada-footer-font focus:ds-outline-none ds-py-4"
             aria-haspopup="true"
-            // aria-expanded={menuDisplayed}
+            aria-expanded={menuDisplayed}
             aria-controls="menuDropdown"
             data-testid="menuButton"
           >
