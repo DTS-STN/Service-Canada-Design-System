@@ -17,6 +17,7 @@ export function Header(props) {
     id,
     lang,
     linkPath,
+    logoLink,
     altText,
     searchProps,
     menuProps,
@@ -34,29 +35,28 @@ export function Header(props) {
         displayAlternateLink={topnavProps.displayAlternateLink}
       />
       <header>
-        <div className="ds-px-4 sm:ds-container md:ds-flex-nowrap md:ds-flex-row ds-flex ds-flex-wrap ds-justify-between ds-items-center ds-mx-auto">
-          <a href="#" className={`header-logo ds-mb-8px`}>
-            <Image
-              // src={lang === "fr" ? { logoFilefr } : logoFile}
-              src={logoFile}
-              alt={altText}
-            />
-          </a>
-          {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}
-          <section className="ds-flex md:ds-hidden">
-            <Language id="lang2" lang={lang} path={linkPath} />
-          </section>
-          {/* Developer Note: This will be moved as seperate component once search component is implemented */}
-          <section className="ds-w-full md:ds-flex md:ds-w-332px ds-py-2">
+        <div className="ds-container ds-flex ds-flex-col sm:ds-flex-row md:ds-pb-14px">
+          <div className="ds-flex ds-flex-row sm:ds-pt-12px">
+            <a href={logoLink} className={`header-logo ds-pt-6px`}>
+              <Image
+                className="md:ds-max-w-360px md:ds-max-h-34px ds-max-w-206px ds-max-h-19px"
+                src={logoFile}
+                alt={altText}
+              />
+            </a>
+            <div className="sm:ds-hidden ds-ml-auto ds-pb-10px">
+              <Language id="lang2" lang={lang} path={linkPath} />
+            </div>
+          </div>
+          <div className="sm:ds-ml-auto ds-w-full md:ds-flex md:ds-w-332px ds-pb-20px ds-pt-10px sm:ds-pr-14px md:ds-pt-20px md:ds-pb-10px">
             <SearchBar
               onChange={searchProps.onChange}
               onSubmit={searchProps.onSubmit}
             />
-          </section>
-          {/* Developer Note: This will be moved as seperate component once language translater component is implemented */}
-          <section className="ds-hidden md:ds-flex ds-pl-4 ds-pr-8 md:ds-pr-0">
+          </div>
+          <div className="ds-hidden sm:ds-flex sm:ds-pt-10px md:ds-pt-18px">
             <Language id="lang1" lang={lang} path={linkPath} />
-          </section>
+          </div>
         </div>
         {!menuProps.hasNoMenu && (
           <Menu
@@ -82,6 +82,7 @@ export function Header(props) {
 
 Header.defaultProps = {
   altText: "Government of Canada",
+  logoLink: "/",
   searchProps: {
     onChange: () => {},
     onSubmit: () => {},
@@ -123,9 +124,14 @@ Header.propTypes = {
   altText: PropTypes.string,
 
   /**
-   * Language toggle path
+   * Language toggle redirection link
    */
   linkPath: PropTypes.string,
+
+  /**
+   * Canada.ca Logo redirection link
+   */
+  logoLink: PropTypes.string,
 
   /**
    * Search Props:
@@ -142,8 +148,6 @@ Header.propTypes = {
   /**
    * Menu items
    *
-   * craPath: href path, which redirects to the users CRA account page
-   *
    * profilePath: href path, which redirects to the profile page
    *
    * securityPath: href path, which redirects to the security settings page
@@ -157,7 +161,6 @@ Header.propTypes = {
    * isAuthenticated: bool to switch between authenticated and non authenticated menus
    */
   menuProps: PropTypes.shape({
-    craPath: PropTypes.string,
     dashboardPath: PropTypes.string,
     isAuthenticated: PropTypes.bool,
     onSignOut: PropTypes.func,

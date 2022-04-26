@@ -13,33 +13,41 @@ export function Menu(props) {
     lang,
     dashboardPath,
     signOutPath,
-    craPath,
     securityPath,
     profilePath,
   } = props;
   const ref = useRef();
-  const [menuDisplayed, setMenuDisplayed] = React.useState(false);
-  const [buttonNavEnabled, setButtonNavEnabled] = React.useState(false);
+  // const [menuDisplayed, setMenuDisplayed] = React.useState(false);
 
   let [headerDropdownClass, setHeaderDropdownClass] =
     React.useState("ds-hidden");
+
+  // too flip icon when menu is opened
   let [headerMobileDropdownClass, setHeaderMobileDropdownClass] =
     React.useState(false);
+
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
-      // If the menu is open and the clicked target is not within the menu,
-      // then close the menu
       if (
         headerDropdownClass === "ds-block" &&
         ref.current &&
         !ref.current.contains(e.target)
       ) {
-        setHeaderDropdownClass("ds-hidden");
+        if (headerMobileDropdownClass === true) {
+          const menuButtonParent = document.getElementById("menuButtonParent");
+          menuButtonParent.classList.toggle("ds-active");
+          const menuDropdownSub = document.getElementById("menuDropdownSub");
+          menuDropdownSub.classList.toggle("ds-active");
+          setHeaderMobileDropdownClass(!headerMobileDropdownClass);
+          const buttonNavDown = document.getElementById("buttonNav");
+          buttonNavDown.classList.toggle("ds-active");
+          setHeaderDropdownClass("ds-hidden");
+        }
         const buttonNavDown = document.getElementById("buttonNav");
         buttonNavDown.classList.toggle("ds-active");
+        setHeaderDropdownClass("ds-hidden");
       }
     };
-
     document.addEventListener("mousedown", checkIfClickedOutside);
 
     return () => {
@@ -52,12 +60,15 @@ export function Menu(props) {
     e.preventDefault();
     const menuButtonParent = document.getElementById("menuButtonParent");
     const menuDropdownSub = document.getElementById("menuDropdownSub");
+    const menuButton = document.getElementById("menuButton");
+    // setMenuDisplayed(!menuDisplayed)
     setHeaderMobileDropdownClass(!headerMobileDropdownClass);
-    setButtonNavEnabled(!buttonNavEnabled);
     menuDropdownSub.classList.toggle("ds-active");
     menuButtonParent.classList.toggle("ds-active");
-
-    setMenuDisplayed(!menuDisplayed);
+    menuButton.classList.toggle("ds-active");
+    headerDropdownClass === "ds-hidden"
+      ? setHeaderDropdownClass("ds-block")
+      : setHeaderDropdownClass("ds-hidden");
   }
 
   return (
@@ -77,7 +88,7 @@ export function Menu(props) {
             onClick={onMenuClick}
             className="ds-text-h4 ds-text-canada-footer-font focus:ds-outline-none ds-py-4"
             aria-haspopup="true"
-            aria-expanded={menuDisplayed}
+            // aria-expanded={menuDisplayed}
             aria-controls="menuDropdown"
             data-testid="menuButton"
           >
@@ -111,7 +122,7 @@ export function Menu(props) {
           <div>
             <ul
               id="menuDropdownSub"
-              className="ds-menuDropdown ds-menuRight md:ds-text-white ds-text-gray-700 sm:ds-w-full sm:ds-left-0"
+              className="ds-menuDropdown ds-menuRight md:ds-text-white ds-text-gray-700"
             >
               {isAuthenticated ? (
                 <li
@@ -124,12 +135,27 @@ export function Menu(props) {
                     data-dropdown-toggle="dropdownNavbar"
                     onClick={() => {
                       const buttonNavId = document.getElementById("buttonNav");
+                      if (headerMobileDropdownClass === true) {
+                        const menuButtonParent =
+                          document.getElementById("menuButtonParent");
+                        menuButtonParent.classList.toggle("ds-active");
+                        const menuDropdownSub =
+                          document.getElementById("menuDropdownSub");
+                        menuDropdownSub.classList.toggle("ds-active");
+                        setHeaderMobileDropdownClass(
+                          !headerMobileDropdownClass
+                        );
+                        const buttonNavDown =
+                          document.getElementById("buttonNav");
+                        buttonNavDown.classList.toggle("ds-active");
+                        setHeaderDropdownClass("ds-hidden");
+                      }
                       buttonNavId.classList.toggle("ds-active");
                       return headerDropdownClass === "ds-hidden"
                         ? setHeaderDropdownClass("ds-block")
                         : setHeaderDropdownClass("ds-hidden");
                     }}
-                    className="ds-flex ds-whitespace-nowrap ds-font-bold ds-font-body ds-justify-between ds-items-center md:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 md:ds-pr-16px ds-pr-10px md:ds-pl-3 ds-w-full"
+                    className="ds-hidden md:ds-flex ds-whitespace-nowrap ds-font-bold ds-font-body ds-justify-between ds-items-center md:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 md:ds-pr-16px ds-pr-10px md:ds-pl-18px ds-w-full"
                   >
                     {lang === "fr" ? FR.myAccountTitle : EN.myAccountTitle}
                     <svg
@@ -159,13 +185,13 @@ export function Menu(props) {
                   >
                     <ul
                       id="dropdownNavbar"
-                      className="ds-py-0"
+                      className=""
                       aria-labelledby="dropdownLargeButton"
                     >
                       <li key={"dashKey"}>
                         <a
                           href={dashboardPath}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body "
+                          className="ds-block ds-whitespace-nowrap ds-py-18px md:ds-pl-18px ds-pl-14px md:ds-pr-168px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body "
                         >
                           {lang === "fr" ? FR.myDashboard : EN.myDashboard}
                         </a>
@@ -173,7 +199,7 @@ export function Menu(props) {
                       <li key={"securityKey"}>
                         <a
                           href={securityPath}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          className="ds-block ds-whitespace-nowrap ds-py-18px md:ds-pl-18px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
                           {lang === "fr" ? FR.mySecurity : EN.mySecurity}
                         </a>
@@ -181,24 +207,16 @@ export function Menu(props) {
                       <li key={"profileKey"}>
                         <a
                           href={profilePath}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          className="ds-block ds-whitespace-nowrap ds-py-18px md:ds-pl-18px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
                           {lang === "fr" ? FR.myProfile : EN.myProfile}
-                        </a>
-                      </li>
-                      <li key={"craKey"}>
-                        <a
-                          href={craPath}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
-                        >
-                          {lang === "fr" ? FR.myCRA : EN.myCRA}
                         </a>
                       </li>
                       <li key={"outKey"}>
                         <a
                           href={signOutPath}
                           onClick={onSignOut}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px  ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          className="ds-block ds-whitespace-nowrap ds-py-18px md:ds-pl-18px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
                           {lang === "fr" ? FR.mySignOut : EN.mySignOut}
                         </a>
@@ -277,9 +295,4 @@ Menu.propTypes = {
    * href path, which redirects to the profile page
    */
   profilePath: PropTypes.string,
-
-  /**
-   * href path, which redirects to the users CRA account page
-   */
-  craPath: PropTypes.string,
 };

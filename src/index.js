@@ -134,3 +134,10 @@ export { Pagination } from "./components/Pagination/Pagination";
  * Expand and Collapse
  */
 export { Collapse } from "./components/Collapse/Collapse";
+
+/*
+ * Download
+ */
+export { Download } from "./components/Download/Download";
+
+export { TopNav } from "./components/TopNav/TopNav";
