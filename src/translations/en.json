@@ -96,5 +96,8 @@
   "mySecurity": "Security Settings",
   "myProfile": "Manage Profile",
   "myCRA": "Switch to CRA My Account",
-  "mySignOut": "Sign out"
+  "mySignOut": "Sign out",
+  "skipToMain": "Skip to main content",
+  "skipToAbout": "Skip to 'About government'",
+  "switchToBasic": "Switch to basic HTML version"
 }

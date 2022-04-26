@@ -192,14 +192,18 @@ module.exports = {
         "160px": "160px",
         "165px": "165px",
         "168px": "168px",
+        "206px": "206px",
+        "276px": "276px",
         "284px": "284px",
         "300px": "300px",
+        "360px": "360px",
         "400px": "400px",
         "500px": "500px",
         "7.5rem": "7.5rem",
         "332px": "332px",
       },
       height: {
+        "19px": "19px",
         "25px": "25px",
         "29px": "29px",
         "40px": "40px",
@@ -211,6 +215,7 @@ module.exports = {
         "100px": "100px",
         "104px": "104px",
         "128px": "128px",
+        "140px": "140px",
         "160px": "160px",
         "187px": "187px",
         "200px": "200px",
@@ -249,6 +254,7 @@ module.exports = {
         "38px": "38px",
         "40px": "40px",
         "60px": "60px",
+        "168px": "168px",
       },
       margin: {
         "4px": "4px",
@@ -267,12 +273,16 @@ module.exports = {
       maxWidth: {
         "165px": "165px",
         "168px": "168px",
+        "206px": "206px",
+        "264px": "264px",
         "350px": "350px",
+        "360px": "360px",
         "450px": "450px",
         "600px": "600px",
         "750px": "750px",
         "5rem": "5rem",
         "250px": "250px",
+        "276px": "276px",
       },
 
       minWidth: {
@@ -293,7 +303,9 @@ module.exports = {
       },
 
       maxHeight: {
+        "19px": "19px",
         "25px": "25px",
+        "34px": "34px",
         "40px": "40px",
         "200px": "200px",
       },
@@ -312,7 +324,7 @@ module.exports = {
         "22px": "22px",
         "20px": "20px",
         "24px": "24px",
-        "header": "1.5em"
+        header: "1.5em",
       },
       outline: {
         "black-solid": ["2px solid #000", "1px"],
@@ -350,5 +362,6 @@ module.exports = {
     require("./config-plugins/search-plugin"),
     require("./config-plugins/accordion-plugin"),
     require("./config-plugins/pagination-plugin"),
+    require("./config-plugins/download-plugin"),
   ],
 };
