@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import React from "react";
 import EN from "../../translations/en.json";
 import FR from "../../translations/fr.json";
 /**

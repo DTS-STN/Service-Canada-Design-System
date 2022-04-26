@@ -15,7 +15,6 @@ English.args = {
   lang: "en",
   altText: "Government of Canada",
   menuProps: {
-    craPath: "/examplePath",
     dashboardPath: "/examplePath",
     isAuthenticated: true,
     onSignOut: () => {},
@@ -47,7 +46,6 @@ French.args = {
   lang: "fr",
   altText: "Government of Canada",
   menuProps: {
-    craPath: "/examplePath",
     dashboardPath: "/examplePath",
     isAuthenticated: true,
     onSignOut: () => {},
