@@ -40,12 +40,4 @@ Image.propTypes = {
    * Test id for unit test
    */
   dataTestId: PropTypes.string,
-  /**
-   * Test id for e2e test
-   */
-  dataCy: PropTypes.string,
-  /**
-   * Test id for e2e test
-   */
-  dataCyHeading: PropTypes.string,
 };

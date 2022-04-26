@@ -15,13 +15,18 @@ English.args = {
   lang: "en",
   altText: "Government of Canada",
   menuProps: {
-    craPath: "/examplePath",
     dashboardPath: "/examplePath",
     isAuthenticated: true,
     onSignOut: () => {},
     profilePath: "/examplePath",
     securityPath: "/examplePath",
     signOutPath: "/examplePath",
+  },
+  topnavProps: {
+    skipToMainPath: "#wb-cont",
+    skipToAboutPath: "#wb-info",
+    switchToBasicPath: "/basic-en.html",
+    displayAlternateLink: false,
   },
   searchProps: {
     onChange: () => {},
@@ -41,13 +46,18 @@ French.args = {
   lang: "fr",
   altText: "Government of Canada",
   menuProps: {
-    craPath: "/examplePath",
     dashboardPath: "/examplePath",
     isAuthenticated: true,
     onSignOut: () => {},
     profilePath: "/examplePath",
     securityPath: "/examplePath",
     signOutPath: "/examplePath",
+  },
+  topnavProps: {
+    skipToMainPath: "#wb-cont",
+    skipToAboutPath: "#wb-info",
+    switchToBasicPath: "/basic-fr.html",
+    displayAlternateLink: false,
   },
   searchProps: {
     onChange: () => {},
