@@ -41,6 +41,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 - Consequential Call Out Examples
 - Exposed After Pattern Examples
 - Pagination Component
+- Download File Component
+- TopNav Component
+- Header Update
+- Layout Container Update
 
 ### Changed
 
@@ -109,3 +113,12 @@ Initial release of the Design System Package
 - FormMultiTextField Component
 - Consequential Call Out Examples
 - Exposed After Pattern Examples
+
+## [v1.30.0] - 2022-01-20
+
+### Added
+
+- Download File Component
+- TopNav Component
+- Header Update
+- Layout Container Update

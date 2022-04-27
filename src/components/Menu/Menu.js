@@ -81,7 +81,7 @@ export function Menu(props) {
         </div>
         <div
           id="menuButtonParent"
-          className="ds-menuButtonParent ds-block md:ds-hidden md:ds-pr-16px ds-pr-10px focus:ds-bg-multi-blue-blue2 ds-text-white ds-border-l-2 ds-border-white"
+          className="ds-menuButtonParent ds-block sm:ds-hidden sm:ds-pr-16px ds-pr-10px focus:ds-bg-multi-blue-blue2 ds-text-white ds-border-l-2 ds-border-white"
         >
           <button
             id="menuButton"
@@ -117,18 +117,18 @@ export function Menu(props) {
             </svg>
           </button>
         </div>
-        <div className="ds-w-full ds-block ds-flex-grow md:ds-flex md:ds-items-center md:ds-w-auto ds-bg-multi-blue-blue2 md:ds-bg-multi-blue-blue70">
-          <div className="md:ds-flex-grow md:ds-text-center md:ds-flex"></div>
+        <div className="ds-w-full ds-block ds-flex-grow sm:ds-flex sm:ds-items-center sm:ds-w-auto ds-bg-multi-blue-blue2 sm:ds-bg-multi-blue-blue70">
+          <div className="sm:ds-flex-grow sm:ds-text-center sm:ds-flex"></div>
           <div>
             <ul
               id="menuDropdownSub"
-              className="ds-menuDropdown ds-menuRight md:ds-text-white ds-text-gray-700"
+              className="ds-menuDropdown ds-menuRight sm:ds-text-white ds-text-gray-700"
             >
               {isAuthenticated ? (
                 <li
                   key={"authList"}
                   id="buttonNav"
-                  className={`md:ds-pb-4 ds-pt-4 md:ds-pl-0 md:ds-pr-0 ds-buttonNav`}
+                  className={`sm:ds-pb-4 ds-pt-4 sm:ds-pl-0 sm:ds-pr-0 ds-buttonNav`}
                 >
                   <button
                     id="dropdownNavbarLink"
@@ -155,7 +155,7 @@ export function Menu(props) {
                         ? setHeaderDropdownClass("ds-block")
                         : setHeaderDropdownClass("ds-hidden");
                     }}
-                    className="md:ds-w-276px ds-hidden md:ds-flex ds-whitespace-nowrap ds-font-bold ds-font-body ds-justify-between ds-items-center md:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 md:ds-pr-16px ds-pr-10px md:ds-pl-18px ds-w-full"
+                    className="sm:ds-w-276px ds-hidden sm:ds-flex ds-whitespace-nowrap ds-font-bold ds-font-body ds-justify-between ds-items-center sm:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 sm:ds-pr-16px ds-pr-10px sm:ds-pl-18px ds-w-full"
                   >
                     {lang === "fr" ? FR.myAccountTitle : EN.myAccountTitle}
                     <svg
@@ -181,7 +181,7 @@ export function Menu(props) {
                   </button>
 
                   <div
-                    className={`ds-dropdown-menu ${headerDropdownClass} md:ds-absolute ds-z-10 ds-top-60px ds-text-base ds-list-none ds-bg-blue2 ds-rounded ds-divide-y ds-divide-gray-100 dark:ds-bg-gray-700 dark:ds-divide-gray-600`}
+                    className={`ds-dropdown-menu ${headerDropdownClass} sm:ds-absolute ds-z-10 ds-top-60px ds-text-base ds-list-none ds-bg-blue2 ds-rounded ds-divide-y ds-divide-gray-100 dark:ds-bg-gray-700 dark:ds-divide-gray-600`}
                   >
                     <ul
                       id="dropdownNavbar"
@@ -191,7 +191,7 @@ export function Menu(props) {
                       <li key={"dashKey"}>
                         <a
                           href={dashboardPath}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px md:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body "
+                          className="ds-block ds-whitespace-nowrap ds-py-18px sm:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body "
                         >
                           {lang === "fr" ? FR.myDashboard : EN.myDashboard}
                         </a>
@@ -199,7 +199,7 @@ export function Menu(props) {
                       <li key={"securityKey"}>
                         <a
                           href={securityPath}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px md:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          className="ds-block ds-whitespace-nowrap ds-py-18px sm:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
                           {lang === "fr" ? FR.mySecurity : EN.mySecurity}
                         </a>
@@ -207,7 +207,7 @@ export function Menu(props) {
                       <li key={"profileKey"}>
                         <a
                           href={profilePath}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px md:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          className="ds-block ds-whitespace-nowrap ds-py-18px sm:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
                           {lang === "fr" ? FR.myProfile : EN.myProfile}
                         </a>
@@ -216,7 +216,7 @@ export function Menu(props) {
                         <a
                           href={signOutPath}
                           onClick={onSignOut}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px md:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          className="ds-block ds-whitespace-nowrap ds-py-18px sm:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
                           {lang === "fr" ? FR.mySignOut : EN.mySignOut}
                         </a>
@@ -236,7 +236,7 @@ export function Menu(props) {
             </ul>
           </div>
         </div>
-        <div className="md:ds-pl-22px md:ds-block ds-hidden">
+        <div className="sm:ds-pl-22px sm:ds-block ds-hidden">
           <Button
             id="secondary"
             onClick={onSignOut}
