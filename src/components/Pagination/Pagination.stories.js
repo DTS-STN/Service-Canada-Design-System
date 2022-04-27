@@ -19,15 +19,6 @@ const Template = () => {
 
   return (
     <>
-      <div className="flex flex-row">
-        <Pagination
-          className="pagination-bar"
-          currentPage={currentPage}
-          totalCount={data.length}
-          pageSize={PageSize}
-          onPageChange={(page) => setCurrentPage(page)}
-        />
-      </div>
       <table>
         <thead>
           <tr>
@@ -52,6 +43,15 @@ const Template = () => {
           })}
         </tbody>
       </table>
+      <div className="flex flex-row">
+        <Pagination
+          className="pagination-bar"
+          currentPage={currentPage}
+          totalCount={data.length}
+          pageSize={PageSize}
+          onPageChange={(page) => setCurrentPage(page)}
+        />
+      </div>
     </>
   );
 };
@@ -72,16 +72,6 @@ const Template2 = () => {
 
   return (
     <>
-      <div className="flex flex-row">
-        <Pagination
-          className="pagination-bar"
-          currentPage={currentPage}
-          totalCount={data.length}
-          pageSize={PageSize}
-          onPageChange={(page) => setCurrentPage(page)}
-          browser
-        />
-      </div>
       <table>
         <thead>
           <tr>
@@ -106,6 +96,16 @@ const Template2 = () => {
           })}
         </tbody>
       </table>
+      <div className="flex flex-row">
+        <Pagination
+          className="pagination-bar"
+          currentPage={currentPage}
+          totalCount={data.length}
+          pageSize={PageSize}
+          onPageChange={(page) => setCurrentPage(page)}
+          browser
+        />
+      </div>
     </>
   );
 };

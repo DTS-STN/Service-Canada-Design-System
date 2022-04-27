@@ -60,7 +60,7 @@ nav {
   display: block;
 }
 
-@screen md {
+@screen sm {
   #menuButton,
   #closeMenu {
     display: none;

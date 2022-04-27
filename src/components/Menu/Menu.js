@@ -13,31 +13,41 @@ export function Menu(props) {
     lang,
     dashboardPath,
     signOutPath,
-    craPath,
     securityPath,
     profilePath,
   } = props;
   const ref = useRef();
   const [menuDisplayed, setMenuDisplayed] = React.useState(false);
-  const [buttonNavEnabled, setButtonNavEnabled] = React.useState(false);
 
   let [headerDropdownClass, setHeaderDropdownClass] =
     React.useState("ds-hidden");
+
+  // too flip icon when menu is opened
   let [headerMobileDropdownClass, setHeaderMobileDropdownClass] =
     React.useState(false);
+
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
-      // If the menu is open and the clicked target is not within the menu,
-      // then close the menu
       if (
         headerDropdownClass === "ds-block" &&
         ref.current &&
         !ref.current.contains(e.target)
       ) {
+        if (headerMobileDropdownClass === true) {
+          const menuButtonParent = document.getElementById("menuButtonParent");
+          menuButtonParent.classList.toggle("ds-active");
+          const menuDropdownSub = document.getElementById("menuDropdownSub");
+          menuDropdownSub.classList.toggle("ds-active");
+          setHeaderMobileDropdownClass(!headerMobileDropdownClass);
+          const buttonNavDown = document.getElementById("buttonNav");
+          buttonNavDown.classList.toggle("ds-active");
+          setHeaderDropdownClass("ds-hidden");
+        }
+        const buttonNavDown = document.getElementById("buttonNav");
+        buttonNavDown.classList.toggle("ds-active");
         setHeaderDropdownClass("ds-hidden");
       }
     };
-
     document.addEventListener("mousedown", checkIfClickedOutside);
 
     return () => {
@@ -50,24 +60,28 @@ export function Menu(props) {
     e.preventDefault();
     const menuButtonParent = document.getElementById("menuButtonParent");
     const menuDropdownSub = document.getElementById("menuDropdownSub");
+    const menuButton = document.getElementById("menuButton");
+    setMenuDisplayed(!menuDisplayed);
     setHeaderMobileDropdownClass(!headerMobileDropdownClass);
-    setButtonNavEnabled(!buttonNavEnabled);
     menuDropdownSub.classList.toggle("ds-active");
     menuButtonParent.classList.toggle("ds-active");
-    setMenuDisplayed(!menuDisplayed);
+    menuButton.classList.toggle("ds-active");
+    headerDropdownClass === "ds-hidden"
+      ? setHeaderDropdownClass("ds-block")
+      : setHeaderDropdownClass("ds-hidden");
   }
 
   return (
     <div className="ds-headerNav ds-bg-multi-blue-blue70" ref={ref}>
-      <nav className="md:ds-container ds-flex ds-items-center ds-justify-between ds-flex-wrap ds-w-full ds-relative">
+      <nav className="sm:ds-container ds-flex ds-items-center ds-justify-between ds-flex-wrap ds-w-full ds-relative">
         <div className="ds-flex ds-items-center ds-flex-shrink-0 ds-text-white">
-          <h3 id="mainSiteNav" className="md:ds-p-0 ds-container ds-menuHeader">
+          <h3 id="mainSiteNav" className="sm:ds-p-0 ds-container ds-menuHeader">
             {lang === "fr" ? FR.menuHeaderTitle : EN.menuHeaderTitle}
           </h3>
         </div>
         <div
           id="menuButtonParent"
-          className="ds-menuButtonParent ds-block md:ds-hidden md:ds-pr-16px ds-pr-10px focus:ds-bg-multi-blue-blue2 ds-text-white ds-border-l-2 ds-border-white"
+          className="ds-menuButtonParent ds-block sm:ds-hidden sm:ds-pr-16px ds-pr-10px focus:ds-bg-multi-blue-blue2 ds-text-white ds-border-l-2 ds-border-white"
         >
           <button
             id="menuButton"
@@ -103,30 +117,45 @@ export function Menu(props) {
             </svg>
           </button>
         </div>
-        <div className="ds-w-full ds-block ds-flex-grow md:ds-flex md:ds-items-center md:ds-w-auto ds-bg-multi-blue-blue2 md:ds-bg-multi-blue-blue70">
-          <div className="md:ds-flex-grow md:ds-text-center md:ds-flex"></div>
+        <div className="ds-w-full ds-block ds-flex-grow sm:ds-flex sm:ds-items-center sm:ds-w-auto ds-bg-multi-blue-blue2 sm:ds-bg-multi-blue-blue70">
+          <div className="sm:ds-flex-grow sm:ds-text-center sm:ds-flex"></div>
           <div>
             <ul
               id="menuDropdownSub"
-              className="ds-menuDropdown ds-menuRight md:ds-text-white ds-text-gray-700 sm:ds-w-full sm:ds-left-0"
+              className="ds-menuDropdown ds-menuRight sm:ds-text-white ds-text-gray-700"
             >
               {isAuthenticated ? (
                 <li
                   key={"authList"}
                   id="buttonNav"
-                  className="md:ds-pb-4 ds-pt-4 md:ds-pl-0 md:ds-pr-0 ds-buttonNav"
+                  className={`sm:ds-pb-4 ds-pt-4 sm:ds-pl-0 sm:ds-pr-0 ds-buttonNav`}
                 >
                   <button
                     id="dropdownNavbarLink"
                     data-dropdown-toggle="dropdownNavbar"
                     onClick={() => {
                       const buttonNavId = document.getElementById("buttonNav");
+                      if (headerMobileDropdownClass === true) {
+                        const menuButtonParent =
+                          document.getElementById("menuButtonParent");
+                        menuButtonParent.classList.toggle("ds-active");
+                        const menuDropdownSub =
+                          document.getElementById("menuDropdownSub");
+                        menuDropdownSub.classList.toggle("ds-active");
+                        setHeaderMobileDropdownClass(
+                          !headerMobileDropdownClass
+                        );
+                        const buttonNavDown =
+                          document.getElementById("buttonNav");
+                        buttonNavDown.classList.toggle("ds-active");
+                        setHeaderDropdownClass("ds-hidden");
+                      }
                       buttonNavId.classList.toggle("ds-active");
                       return headerDropdownClass === "ds-hidden"
                         ? setHeaderDropdownClass("ds-block")
                         : setHeaderDropdownClass("ds-hidden");
                     }}
-                    className="ds-flex ds-whitespace-nowrap ds-font-bold ds-font-body ds-justify-between ds-items-center md:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 md:ds-pr-16px ds-pr-10px md:ds-pl-3 ds-w-full"
+                    className="sm:ds-w-276px ds-hidden sm:ds-flex ds-whitespace-nowrap ds-font-bold ds-font-body ds-justify-between ds-items-center sm:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 sm:ds-pr-16px ds-pr-10px sm:ds-pl-18px ds-w-full"
                   >
                     {lang === "fr" ? FR.myAccountTitle : EN.myAccountTitle}
                     <svg
@@ -152,17 +181,17 @@ export function Menu(props) {
                   </button>
 
                   <div
-                    className={`ds-dropdown-menu ${headerDropdownClass} md:ds-absolute ds-z-10 ds-top-60px ds-text-base ds-list-none ds-bg-blue2 ds-rounded ds-divide-y ds-divide-gray-100 dark:ds-bg-gray-700 dark:ds-divide-gray-600`}
+                    className={`ds-dropdown-menu ${headerDropdownClass} sm:ds-absolute ds-z-10 ds-top-60px ds-text-base ds-list-none ds-bg-blue2 ds-rounded ds-divide-y ds-divide-gray-100 dark:ds-bg-gray-700 dark:ds-divide-gray-600`}
                   >
                     <ul
                       id="dropdownNavbar"
-                      className="ds-py-0"
+                      className=""
                       aria-labelledby="dropdownLargeButton"
                     >
                       <li key={"dashKey"}>
                         <a
                           href={dashboardPath}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body "
+                          className="ds-block ds-whitespace-nowrap ds-py-18px sm:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body "
                         >
                           {lang === "fr" ? FR.myDashboard : EN.myDashboard}
                         </a>
@@ -170,7 +199,7 @@ export function Menu(props) {
                       <li key={"securityKey"}>
                         <a
                           href={securityPath}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          className="ds-block ds-whitespace-nowrap ds-py-18px sm:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
                           {lang === "fr" ? FR.mySecurity : EN.mySecurity}
                         </a>
@@ -178,24 +207,16 @@ export function Menu(props) {
                       <li key={"profileKey"}>
                         <a
                           href={profilePath}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          className="ds-block ds-whitespace-nowrap ds-py-18px sm:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
                           {lang === "fr" ? FR.myProfile : EN.myProfile}
-                        </a>
-                      </li>
-                      <li key={"craKey"}>
-                        <a
-                          href={craPath}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
-                        >
-                          {lang === "fr" ? FR.myCRA : EN.myCRA}
                         </a>
                       </li>
                       <li key={"outKey"}>
                         <a
                           href={signOutPath}
                           onClick={onSignOut}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px  ds-pl-38px md:ds-pl-4 ds-pr-42px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
+                          className="ds-block ds-whitespace-nowrap ds-py-18px sm:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
                         >
                           {lang === "fr" ? FR.mySignOut : EN.mySignOut}
                         </a>
@@ -215,7 +236,7 @@ export function Menu(props) {
             </ul>
           </div>
         </div>
-        <div className="md:ds-pl-22px md:ds-block ds-hidden">
+        <div className="sm:ds-pl-22px sm:ds-block ds-hidden">
           <Button
             id="secondary"
             onClick={onSignOut}
@@ -274,9 +295,4 @@ Menu.propTypes = {
    * href path, which redirects to the profile page
    */
   profilePath: PropTypes.string,
-
-  /**
-   * href path, which redirects to the users CRA account page
-   */
-  craPath: PropTypes.string,
 };
