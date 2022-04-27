@@ -17,20 +17,31 @@ import PropTypes from "prop-types";
  * https://getbootstrap.com/docs/3.4/css/#grid-media-queries
  *
  *
- * The Primary story demonstrates how you  can implement a 12 column grid layout using Tailwind Grid utilities.
+ * The Default story demonstrates the default of the layout container, having your content automatically span all 12 columns.
+ *
+ * The CustomSpan Story shows how to span your content over specific columns of the 12 grid layout
  *
  */
 export default function LayoutContainer(props) {
+  const { spanDefault } = props;
   return (
     <div
       className={`ds-container ds-bootstrap3-grid ${
         props.className ? props.className : ""
       }`}
     >
-      {props.children}
+      {spanDefault ? (
+        <div className={`ds-col-span-12`}>{props.children}</div>
+      ) : (
+        props.children
+      )}
     </div>
   );
 }
+
+LayoutContainer.defaultProps = {
+  spanDefault: true,
+};
 
 LayoutContainer.propTypes = {
   /**
@@ -46,4 +57,11 @@ LayoutContainer.propTypes = {
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
   ]),
+
+  /**
+   * Defaults to true. This prop is used to automatically span all 12 columns.
+   * If False, the user must specify the columns they want their content to span.
+   * Refer to "show code" toggle of the CustomSpan example to see an application of this.
+   */
+  spanDefault: PropTypes.bool,
 };

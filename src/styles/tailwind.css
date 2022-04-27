@@ -21,18 +21,18 @@ html {
   }
 
   .ds-bootstrap3-grid {
-    @apply ds-grid ds-grid-cols-2 ds-gap-30px;
+    @apply ds-grid ds-grid-cols-2 ds-gap-30px ds-col-span-12;
   }
 
   @screen sm {
     .ds-bootstrap3-grid {
-      @apply ds-grid ds-grid-cols-6 ds-gap-30px;
+      @apply ds-grid ds-grid-cols-6 ds-col-span-6 ds-gap-30px;
     }
   }
 
   @screen lg {
     .ds-bootstrap3-grid {
-      @apply ds-grid ds-grid-cols-12 ds-gap-30px;
+      @apply ds-grid ds-grid-cols-12 ds-col-span-12 ds-gap-30px;
     }
   }
 
