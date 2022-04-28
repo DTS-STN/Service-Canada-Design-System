@@ -3,21 +3,88 @@ import React from "react";
 import { Button } from "../Button/Button";
 import { Image } from "../Image/Image";
 import { Link } from "../Link/Link";
-import EN from "../../translations/en.json";
-// need to update to convert default props to FR when using lang=fr prop
+import { ENlandscapeLinks } from "../../translations/en.json";
+import { ENbrandLinks } from "../../translations/en.json";
+import { FRlandscapeLinks } from "../../translations/fr.json";
+import { FRbrandLinks } from "../../translations/fr.json";
 import logo from "../../assets/wmms-blk.svg";
 import bg_img from "../../assets/footer_bg_img.svg";
 import upArrow from "../../assets/upArrow.svg";
 
 export function Footer(props) {
+  const { error, lang, btnLink } = props;
+  let langBrand =
+    lang === "en" ? ENbrandLinks : lang === "fr" ? FRbrandLinks : [];
+  let langLand =
+    lang === "en" ? ENlandscapeLinks : lang === "fr" ? FRlandscapeLinks : [];
+  const landscapeLinks = [
+    {
+      landscapeLink: langLand.link1link,
+      landscapeLinkText: langLand.link1,
+    },
+    {
+      landscapeLink: langLand.link2link,
+      landscapeLinkText: langLand.link2,
+    },
+    {
+      landscapeLink: langLand.link3link,
+      landscapeLinkText: langLand.link3,
+    },
+    {
+      landscapeLink: langLand.link4link,
+      landscapeLinkText: langLand.link4,
+    },
+    {
+      landscapeLink: langLand.link5link,
+      landscapeLinkText: langLand.link5,
+    },
+    {
+      landscapeLink: langLand.link6link,
+      landscapeLinkText: langLand.link6,
+    },
+    {
+      landscapeLink: langLand.link7link,
+      landscapeLinkText: langLand.link7,
+    },
+    {
+      landscapeLink: langLand.link8link,
+      landscapeLinkText: langLand.link8,
+    },
+    {
+      landscapeLink: langLand.link9link,
+      landscapeLinkText: langLand.link9,
+    },
+  ];
+  const brandLinks = [
+    {
+      brandLink: langBrand.link1link,
+      brandLinkText: langBrand.link1,
+    },
+    {
+      brandLink: langBrand.link2link,
+      brandLinkText: langBrand.link2,
+    },
+    {
+      brandLink: langBrand.link3link,
+      brandLinkText: langBrand.link3,
+    },
+    {
+      brandLink: langBrand.link4link,
+      brandLinkText: langBrand.link4,
+    },
+    {
+      brandLink: langBrand.link5link,
+      brandLinkText: langBrand.link5,
+    },
+  ];
   return (
     <footer className="ds-w-full">
-      {props.error ? (
+      {error ? (
         <section className={"ds-container ds-h-16 ds-bg-multi-neutrals-grey5"}>
           <Image
             className="ds-mb-2.5 sm:ds-mt-3 ds-mt-5 ds-h-6 ds-float-right"
-            src={props.logoUrl}
-            alt={props.logoAltText}
+            src={logo}
+            alt="Symbol of the Government of Canada"
           />
         </section>
       ) : (
@@ -25,7 +92,7 @@ export function Footer(props) {
           <div
             className="ds-bg-multi-blue-blue70 ds-landscape ds-bg-no-repeat bg-clip-border sm:ds-bg-right-bottom ds-bg-bottom"
             style={{
-              backgroundImage: `url(${props.landscapeBgImg})`,
+              backgroundImage: `url(${bg_img})`,
             }}
           >
             <section className={`ds-container`}>
@@ -39,7 +106,7 @@ export function Footer(props) {
                 </h2>
                 <ul className="sm:ds-grid sm:ds-grid-cols-3 ds-flex ds-flex-col ds-gap-1 ds-text-xs">
                   {" "}
-                  {props.landscapeLinks.map((value, index) => {
+                  {landscapeLinks.map((value, index) => {
                     return (
                       <li
                         key={value + index}
@@ -70,7 +137,7 @@ export function Footer(props) {
                   About this site
                 </h2>
                 <ul className="ds-flex ds-flex-col sm:ds-flex sm:ds-flex-row">
-                  {props.brandLinks.map((value, index) => {
+                  {brandLinks.map((value, index) => {
                     return (
                       <li
                         key={index}
@@ -97,7 +164,7 @@ export function Footer(props) {
                     id="top_btn"
                     text="To the top"
                     styling="link"
-                    href={props.btnLink}
+                    href={btnLink}
                     icon={upArrow}
                     iconAltText="to the top button"
                     iconEnd
@@ -105,8 +172,8 @@ export function Footer(props) {
                 </div>
                 <Image
                   className="sm:ds-h-40px ds-h-25px ds-mb-2.5 sm:ds-mt-6 md:ds-mt-3 ds-mt-5 ds-float-right"
-                  src={props.logoUrl}
-                  alt={props.logoAltText}
+                  src={logo}
+                  alt="Symbol of the Government of Canada"
                 />
               </div>
             </section>
@@ -118,71 +185,9 @@ export function Footer(props) {
 }
 
 Footer.defaultProps = {
-  landscapeBgImg: bg_img,
-  logoUrl: logo,
-  logoAltText: "Symbol of the Government of Canada",
-  landscapeLinks: [
-    {
-      landscapeLink: "/",
-      landscapeLinkText: EN.landscapeLinks.link1,
-    },
-    {
-      landscapeLink: "/",
-      landscapeLinkText: EN.landscapeLinks.link2,
-    },
-    {
-      landscapeLink: "/",
-      landscapeLinkText: EN.landscapeLinks.link3,
-    },
-    {
-      landscapeLink: "/",
-      landscapeLinkText: EN.landscapeLinks.link4,
-    },
-    {
-      landscapeLink: "/",
-      landscapeLinkText: EN.landscapeLinks.link5,
-    },
-    {
-      landscapeLink: "/",
-      landscapeLinkText: EN.landscapeLinks.link6,
-    },
-    {
-      landscapeLink: "/",
-      landscapeLinkText: EN.landscapeLinks.link7,
-    },
-    {
-      landscapeLink: "/",
-      landscapeLinkText: EN.landscapeLinks.link8,
-    },
-    {
-      landscapeLink: "/",
-      landscapeLinkText: EN.landscapeLinks.link9,
-    },
-  ],
-  brandLinks: [
-    {
-      brandLink: "/",
-      brandLinkText: EN.brandLinks.link1,
-    },
-    {
-      brandLink: "/",
-      brandLinkText: EN.brandLinks.link2,
-    },
-    {
-      brandLink: "/",
-      brandLinkText: EN.brandLinks.link3,
-    },
-    {
-      brandLink: "/",
-      brandLinkText: EN.brandLinks.link4,
-    },
-    {
-      brandLink: "/",
-      brandLinkText: EN.brandLinks.link5,
-    },
-  ],
+  lang: "en",
+  btnLink: "/",
 };
-
 Footer.propTypes = {
   /**
    * If true will display the error page version of the footer component
@@ -190,47 +195,12 @@ Footer.propTypes = {
   error: PropTypes.bool,
 
   /**
-   * hyperlinks for top portion of footer
+   * Switch between english and french header. Pass in "en" or "fr"
    */
-  landscapeLinks: PropTypes.arrayOf(
-    PropTypes.shape({
-      landscapeLink: PropTypes.string.isRequired,
-      landscapeLinkText: PropTypes.string.isRequired,
-    }).isRequired
-  ),
-
-  /**
-   * background image for the footer
-   */
-  landscapeBgImg: PropTypes.string,
-
-  /**
-   * links for bottom portion of footer
-   */
-  brandLinks: PropTypes.arrayOf(
-    PropTypes.shape({
-      brandLink: PropTypes.string.isRequired,
-      brandLinkText: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+  lang: PropTypes.oneOf(["en", "fr"]),
 
   /**
    * Add the path Link to the top of your page for the "to the Top" button in mobile
    */
   btnLink: PropTypes.string.isRequired,
-
-  /**
-   * button icon
-   */
-  btnIcon: PropTypes.string,
-
-  /**
-   * url to canada.ca logo
-   */
-  logoUrl: PropTypes.string.isRequired,
-
-  /**
-   * alt text for the canada.ca logo for cases where image doesn't load
-   */
-  logoAltText: PropTypes.string.isRequired,
 };

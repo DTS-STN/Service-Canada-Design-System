@@ -114,7 +114,7 @@ Header.propTypes = {
   id: PropTypes.string,
 
   /**
-   * Switch between english and french header
+   * Switch between english and french header. Pass in "en" or "fr"
    */
   lang: PropTypes.string.isRequired,
 
