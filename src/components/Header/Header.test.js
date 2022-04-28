@@ -5,7 +5,7 @@ import React from "react";
 import { act, fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { axe, toHaveNoViolations } from "jest-axe";
-import { English } from "./Header.stories";
+import { EnglishAuth } from "./Header.stories";
 
 expect.extend(toHaveNoViolations);
 
@@ -18,13 +18,13 @@ describe("Header", () => {
     mockFn.mockRestore();
   });
   it("renders English", () => {
-    const renderComp = () => render(<English {...English.args} />);
+    const renderComp = () => render(<EnglishAuth {...EnglishAuth.args} />);
     const { getByAltText } = renderComp();
-    getByAltText(English.args.altText);
+    getByAltText(EnglishAuth.args.altText);
   });
 
   it("has no a11y violations", async () => {
-    const { container } = render(<English {...English.args} />);
+    const { container } = render(<EnglishAuth {...EnglishAuth.args} />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

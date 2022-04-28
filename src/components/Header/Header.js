@@ -16,6 +16,7 @@ export function Header(props) {
   const {
     id,
     lang,
+    isAuthenticated,
     linkPath,
     logoLink,
     altText,
@@ -48,15 +49,23 @@ export function Header(props) {
               <Language id="lang2" lang={lang} path={linkPath} />
             </div>
           </div>
-          <div className="sm:ds-ml-auto ds-w-full md:ds-flex md:ds-w-332px ds-pb-20px ds-pt-10px sm:ds-pr-14px md:ds-pt-20px md:ds-pb-10px">
-            <SearchBar
-              onChange={searchProps.onChange}
-              onSubmit={searchProps.onSubmit}
-            />
-          </div>
-          <div className="ds-hidden sm:ds-flex sm:ds-pt-10px md:ds-pt-18px">
-            <Language id="lang1" lang={lang} path={linkPath} />
-          </div>
+          {!isAuthenticated ? (
+            <>
+              <div className="sm:ds-ml-auto ds-w-full md:ds-flex md:ds-w-332px ds-pb-20px ds-pt-10px sm:ds-pr-14px md:ds-pt-20px md:ds-pb-10px">
+                <SearchBar
+                  onChange={searchProps.onChange}
+                  onSubmit={searchProps.onSubmit}
+                />
+              </div>
+              <div className="ds-hidden sm:ds-flex sm:ds-pt-10px md:ds-pt-18px">
+                <Language id="lang1" lang={lang} path={linkPath} />
+              </div>
+            </>
+          ) : (
+            <div className="ds-pb-10px sm:ds-pb-14px md:ds-pb-0 ds-hidden sm:ds-ml-auto sm:ds-flex sm:ds-pt-10px md:ds-pt-18px">
+              <Language id="lang1" lang={lang} path={linkPath} />
+            </div>
+          )}
         </div>
         {!menuProps.hasNoMenu && (
           <Menu
@@ -66,7 +75,7 @@ export function Header(props) {
             securityPath={menuProps.securityPath}
             signOutPath={menuProps.signOutPath}
             lang={lang}
-            isAuthenticated={menuProps.isAuthenticated}
+            isAuthenticated={isAuthenticated}
             onSignOut={menuProps.onSignOut}
           />
         )}
@@ -114,7 +123,7 @@ Header.propTypes = {
   id: PropTypes.string,
 
   /**
-   * Switch between english and french header
+   * Switch between english and french header. Pass in "en" or "fr"
    */
   lang: PropTypes.string.isRequired,
 
@@ -132,6 +141,11 @@ Header.propTypes = {
    * Canada.ca Logo redirection link
    */
   logoLink: PropTypes.string,
+
+  /**
+   * isAuthenticated: bool to switch between authenticated and non authenticated menus
+   **/
+  isAuthenticated: PropTypes.bool,
 
   /**
    * Search Props:
@@ -158,11 +172,9 @@ Header.propTypes = {
    *
    * onSignOut: On change function used for the signout button on the browser screen
    *
-   * isAuthenticated: bool to switch between authenticated and non authenticated menus
    */
   menuProps: PropTypes.shape({
     dashboardPath: PropTypes.string,
-    isAuthenticated: PropTypes.bool,
     onSignOut: PropTypes.func,
     profilePath: PropTypes.string,
     securityPath: PropTypes.string,
