@@ -17,11 +17,6 @@ describe("Header", () => {
   afterEach(() => {
     mockFn.mockRestore();
   });
-  it("renders English", () => {
-    const renderComp = () => render(<EnglishAuth {...EnglishAuth.args} />);
-    const { getByAltText } = renderComp();
-    getByAltText(EnglishAuth.args.altText);
-  });
 
   it("has no a11y violations", async () => {
     const { container } = render(<EnglishAuth {...EnglishAuth.args} />);
