@@ -1,5 +1,5 @@
 {
-  "landscapeLinks": {
+  "ENlandscapeLinks": {
     "link1": "Contact us",
     "link2": "News",
     "link3": "Prime Minister",
@@ -19,7 +19,7 @@
     "link8link": "https://www.canada.ca/en/transparency/reporting.html",
     "link9link": "https://open.canada.ca/en"
   },
-  "brandLinks": {
+  "ENbrandLinks": {
     "link1": "Social media",
     "link2": "Mobile applications",
     "link3": "About Canada.ca",

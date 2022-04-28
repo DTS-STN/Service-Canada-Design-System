@@ -1,5 +1,5 @@
 {
-  "landscapeLinks": {
+  "FRlandscapeLinks": {
     "link1": "Contactez-nous",
     "link4": "Ministères et organismes",
     "link7": "Fonction publique et force militaire",
@@ -19,7 +19,7 @@
     "link6link": "https://www.canada.ca/fr/government/system.html",
     "link9link": "https://open.canada.ca/fr"
   },
-  "brandLinks": {
+  "FRbrandLinks": {
     "link1": "Médias sociaux",
     "link2": "Applications mobiles",
     "link3": "À propos de Canada.ca",

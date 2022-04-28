@@ -7,7 +7,6 @@ import { TopNav } from "../TopNav/TopNav";
 import { Menu } from "../Menu/Menu";
 import { Image } from "../Image/Image";
 import logoFile from "../../assets/sig-blk-en.svg";
-// import logoFilefr from "../../assets/sig-blk-fr.svg";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { Language } from "../Language/Language";
 import { Breadcrumb } from "../Breadcrumb/Breadcrumb";
@@ -16,9 +15,8 @@ export function Header(props) {
   const {
     id,
     lang,
+    isAuthenticated,
     linkPath,
-    logoLink,
-    altText,
     searchProps,
     menuProps,
     breadCrumbItems,
@@ -37,26 +35,34 @@ export function Header(props) {
       <header>
         <div className="ds-container ds-flex ds-flex-col sm:ds-flex-row md:ds-pb-14px">
           <div className="ds-flex ds-flex-row sm:ds-pt-12px">
-            <a href={logoLink} className={`header-logo ds-pt-6px`}>
+            <div className={`header-logo ds-pt-6px`}>
               <Image
                 className="md:ds-max-w-360px md:ds-max-h-34px ds-max-w-206px ds-max-h-19px"
                 src={logoFile}
-                alt={altText}
+                alt="Government of Canada"
               />
-            </a>
+            </div>
             <div className="sm:ds-hidden ds-ml-auto ds-pb-10px">
               <Language id="lang2" lang={lang} path={linkPath} />
             </div>
           </div>
-          <div className="sm:ds-ml-auto ds-w-full md:ds-flex md:ds-w-332px ds-pb-20px ds-pt-10px sm:ds-pr-14px md:ds-pt-20px md:ds-pb-10px">
-            <SearchBar
-              onChange={searchProps.onChange}
-              onSubmit={searchProps.onSubmit}
-            />
-          </div>
-          <div className="ds-hidden sm:ds-flex sm:ds-pt-10px md:ds-pt-18px">
-            <Language id="lang1" lang={lang} path={linkPath} />
-          </div>
+          {!isAuthenticated ? (
+            <>
+              <div className="sm:ds-ml-auto ds-w-full md:ds-flex md:ds-w-332px ds-pb-20px ds-pt-10px sm:ds-pr-14px md:ds-pt-20px md:ds-pb-10px">
+                <SearchBar
+                  onChange={searchProps.onChange}
+                  onSubmit={searchProps.onSubmit}
+                />
+              </div>
+              <div className="ds-hidden sm:ds-flex sm:ds-pt-10px md:ds-pt-18px">
+                <Language id="lang1" lang={lang} path={linkPath} />
+              </div>
+            </>
+          ) : (
+            <div className="ds-pb-10px sm:ds-pb-14px md:ds-pb-0 ds-hidden sm:ds-ml-auto sm:ds-flex sm:ds-pt-10px md:ds-pt-18px">
+              <Language id="lang1" lang={lang} path={linkPath} />
+            </div>
+          )}
         </div>
         {!menuProps.hasNoMenu && (
           <Menu
@@ -66,7 +72,7 @@ export function Header(props) {
             securityPath={menuProps.securityPath}
             signOutPath={menuProps.signOutPath}
             lang={lang}
-            isAuthenticated={menuProps.isAuthenticated}
+            isAuthenticated={isAuthenticated}
             onSignOut={menuProps.onSignOut}
           />
         )}
@@ -81,14 +87,12 @@ export function Header(props) {
 }
 
 Header.defaultProps = {
-  altText: "Government of Canada",
-  logoLink: "/",
+  lang: "en",
   searchProps: {
     onChange: () => {},
     onSubmit: () => {},
   },
   menuProps: {
-    lang: "en",
     onSignOut: () => {},
     isAuthenticated: true,
     signOutPath: "/",
@@ -99,7 +103,6 @@ Header.defaultProps = {
     hasNoMenu: false,
   },
   topnavProps: {
-    lang: "en",
     skipToMainPath: "#wb-cont",
     skipToAboutPath: "#wb-info",
     switchToBasicPath: "basic-en.html",
@@ -114,14 +117,9 @@ Header.propTypes = {
   id: PropTypes.string,
 
   /**
-   * Switch between english and french header
+   * Switch between english and french header. Pass in "en" or "fr"
    */
   lang: PropTypes.string.isRequired,
-
-  /**
-   * The text that will display as alternate text for logo.
-   */
-  altText: PropTypes.string,
 
   /**
    * Language toggle redirection link
@@ -129,9 +127,9 @@ Header.propTypes = {
   linkPath: PropTypes.string,
 
   /**
-   * Canada.ca Logo redirection link
-   */
-  logoLink: PropTypes.string,
+   * isAuthenticated: bool to switch between authenticated and non authenticated menus
+   **/
+  isAuthenticated: PropTypes.bool,
 
   /**
    * Search Props:
@@ -158,11 +156,9 @@ Header.propTypes = {
    *
    * onSignOut: On change function used for the signout button on the browser screen
    *
-   * isAuthenticated: bool to switch between authenticated and non authenticated menus
    */
   menuProps: PropTypes.shape({
     dashboardPath: PropTypes.string,
-    isAuthenticated: PropTypes.bool,
     onSignOut: PropTypes.func,
     profilePath: PropTypes.string,
     securityPath: PropTypes.string,

@@ -31,7 +31,7 @@ export const CustomSpan = Template.bind({});
 CustomSpan.args = {
   spanDefault: false,
   children: [
-    <div className="ds-col-span-6">
+    <div className="lg:ds-col-span-6 sm:ds-col-span-3 ds-col-span-1">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industry's standard dummy text ever since the
       1500s, when an unknown printer took a galley of type and scrambled it to
@@ -39,7 +39,7 @@ CustomSpan.args = {
       also the leap into electronic typesetting, remaining essentially
       unchanged.
     </div>,
-    <div className="ds-col-span-6">
+    <div className="lg:ds-col-span-6 sm:ds-col-span-3 ds-col-span-1">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industry's standard dummy text ever since the
       1500s, when an unknown printer took a galley of type and scrambled it to
@@ -47,7 +47,7 @@ CustomSpan.args = {
       also the leap into electronic typesetting, remaining essentially
       unchanged.
     </div>,
-    <div className="ds-col-span-12">
+    <div className="lg:ds-col-span-12 sm:ds-col-span-6 ds-col-span-2">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industry's standard dummy text ever since the
       1500s, when an unknown printer took a galley of type and scrambled it to
