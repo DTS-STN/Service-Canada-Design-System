@@ -19,7 +19,13 @@ import PropTypes from "prop-types";
  *
  * The Default story demonstrates the default of the layout container, having your content automatically span all 12 columns.
  *
- * The CustomSpan Story shows how to span your content over specific columns of the 12 grid layout
+ * The CustomSpan Story shows how to span your content over specific columns of the 12,6,2 grid layout
+ *
+ * lg+ screen uses 12 grid layout
+ *
+ * sm+ screen uses 6 grid layout
+ *
+ * regular mobile screen uses 2 grid layout
  *
  */
 export default function LayoutContainer(props) {
@@ -31,7 +37,9 @@ export default function LayoutContainer(props) {
       }`}
     >
       {spanDefault ? (
-        <div className={`ds-col-span-12`}>{props.children}</div>
+        <div className={`ds-col-span-2 sm:ds-col-span-6 lg:ds-col-span-12`}>
+          {props.children}
+        </div>
       ) : (
         props.children
       )}

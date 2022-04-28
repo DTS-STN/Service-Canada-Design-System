@@ -7,16 +7,69 @@ export default {
 
 const Template = (args) => <Header {...args} />;
 
-export const English = Template.bind({});
-export const French = Template.bind({});
+export const EnglishAuth = Template.bind({});
+export const FrenchAuth = Template.bind({});
+export const EnglishNonAuth = Template.bind({});
+export const FrenchNonAuth = Template.bind({});
 
-English.args = {
+EnglishAuth.args = {
   id: "header",
   lang: "en",
-  altText: "Government of Canada",
+  isAuthenticated: true,
   menuProps: {
     dashboardPath: "/examplePath",
-    isAuthenticated: true,
+    onSignOut: () => {},
+    profilePath: "/examplePath",
+    securityPath: "/examplePath",
+    signOutPath: "/examplePath",
+  },
+  topnavProps: {
+    skipToMainPath: "#wb-cont",
+    skipToAboutPath: "#wb-info",
+    switchToBasicPath: "/basic-en.html",
+    displayAlternateLink: false,
+  },
+  breadCrumbItems: [
+    { text: "Canada.ca", link: "/" },
+    { text: "Link1", link: "/" },
+    { text: "Link2", link: "/" },
+    { text: "Max length of breadcrumb 28", link: "/" },
+    { text: "Link3", link: "/" },
+  ],
+};
+
+FrenchAuth.args = {
+  id: "header",
+  lang: "fr",
+  isAuthenticated: true,
+  menuProps: {
+    dashboardPath: "/examplePath",
+    onSignOut: () => {},
+    profilePath: "/examplePath",
+    securityPath: "/examplePath",
+    signOutPath: "/examplePath",
+  },
+  topnavProps: {
+    skipToMainPath: "#wb-cont",
+    skipToAboutPath: "#wb-info",
+    switchToBasicPath: "/basic-fr.html",
+    displayAlternateLink: false,
+  },
+  breadCrumbItems: [
+    { text: "Canada.ca", link: "/" },
+    { text: "Link1", link: "/" },
+    { text: "Link2", link: "/" },
+    { text: "Max length of breadcrumb 28", link: "/" },
+    { text: "Link3", link: "/" },
+  ],
+};
+
+EnglishNonAuth.args = {
+  id: "header",
+  lang: "en",
+  isAuthenticated: false,
+  menuProps: {
+    dashboardPath: "/examplePath",
     onSignOut: () => {},
     profilePath: "/examplePath",
     securityPath: "/examplePath",
@@ -41,13 +94,12 @@ English.args = {
   ],
 };
 
-French.args = {
+FrenchNonAuth.args = {
   id: "header",
   lang: "fr",
-  altText: "Government of Canada",
+  isAuthenticated: false,
   menuProps: {
     dashboardPath: "/examplePath",
-    isAuthenticated: true,
     onSignOut: () => {},
     profilePath: "/examplePath",
     securityPath: "/examplePath",
