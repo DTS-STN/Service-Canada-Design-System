@@ -12,7 +12,7 @@ import bg_img from "../../assets/footer_bg_img.svg";
 import upArrow from "../../assets/upArrow.svg";
 
 export function Footer(props) {
-  const { error, lang, btnLink } = props;
+  const { error, lang, btnLink, id } = props;
   let langBrand =
     lang === "en" ? ENbrandLinks : lang === "fr" ? FRbrandLinks : [];
   let langLand =
@@ -78,7 +78,7 @@ export function Footer(props) {
     },
   ];
   return (
-    <footer className="ds-w-full">
+    <footer id={id} className="ds-w-full">
       {error ? (
         <section className={"ds-container ds-h-16 ds-bg-multi-neutrals-grey5"}>
           <Image
@@ -186,9 +186,13 @@ export function Footer(props) {
 
 Footer.defaultProps = {
   lang: "en",
-  btnLink: "/",
 };
 Footer.propTypes = {
+  /**
+   * id of this component
+   */
+  id: PropTypes.string.isRequired,
+
   /**
    * If true will display the error page version of the footer component
    */

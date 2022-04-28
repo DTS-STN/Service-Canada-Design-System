@@ -15,7 +15,6 @@ export const FrenchNonAuth = Template.bind({});
 EnglishAuth.args = {
   id: "header",
   lang: "en",
-  altText: "Government of Canada",
   isAuthenticated: true,
   menuProps: {
     dashboardPath: "/examplePath",
@@ -30,10 +29,6 @@ EnglishAuth.args = {
     switchToBasicPath: "/basic-en.html",
     displayAlternateLink: false,
   },
-  searchProps: {
-    onChange: () => {},
-    onSubmit: () => {},
-  },
   breadCrumbItems: [
     { text: "Canada.ca", link: "/" },
     { text: "Link1", link: "/" },
@@ -46,7 +41,6 @@ EnglishAuth.args = {
 FrenchAuth.args = {
   id: "header",
   lang: "fr",
-  altText: "Government of Canada",
   isAuthenticated: true,
   menuProps: {
     dashboardPath: "/examplePath",
@@ -61,10 +55,6 @@ FrenchAuth.args = {
     switchToBasicPath: "/basic-fr.html",
     displayAlternateLink: false,
   },
-  searchProps: {
-    onChange: () => {},
-    onSubmit: () => {},
-  },
   breadCrumbItems: [
     { text: "Canada.ca", link: "/" },
     { text: "Link1", link: "/" },
@@ -77,7 +67,6 @@ FrenchAuth.args = {
 EnglishNonAuth.args = {
   id: "header",
   lang: "en",
-  altText: "Government of Canada",
   isAuthenticated: false,
   menuProps: {
     dashboardPath: "/examplePath",
@@ -108,7 +97,6 @@ EnglishNonAuth.args = {
 FrenchNonAuth.args = {
   id: "header",
   lang: "fr",
-  altText: "Government of Canada",
   isAuthenticated: false,
   menuProps: {
     dashboardPath: "/examplePath",
