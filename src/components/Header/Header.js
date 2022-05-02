@@ -7,6 +7,7 @@ import { TopNav } from "../TopNav/TopNav";
 import { Menu } from "../Menu/Menu";
 import { Image } from "../Image/Image";
 import logoFile from "../../assets/sig-blk-en.svg";
+import logoFileFR from "../../assets/sig-blk-fr.svg";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { Language } from "../Language/Language";
 import { Breadcrumb } from "../Breadcrumb/Breadcrumb";
@@ -38,7 +39,7 @@ export function Header(props) {
             <div className={`header-logo ds-pt-6px`}>
               <Image
                 className="md:ds-max-w-360px md:ds-max-h-34px ds-max-w-206px ds-max-h-19px"
-                src={logoFile}
+                src={lang === "en" ? logoFile : logoFileFR}
                 alt="Government of Canada"
               />
             </div>
