@@ -13,7 +13,7 @@ export function ReviewSubmit(props) {
   } = props;
 
   return (
-    <form id={id}>
+    <div id={id}>
       <div className="ds-leading-tight">
         <Heading id="withoutLink" title="Please review your information" />
       </div>
@@ -50,7 +50,7 @@ export function ReviewSubmit(props) {
           />
         </div>
       </div>
-    </form>
+    </div>
   );
 }
 
