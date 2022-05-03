@@ -141,3 +141,8 @@ export { Collapse } from "./components/Collapse/Collapse";
 export { Download } from "./components/Download/Download";
 
 export { TopNav } from "./components/TopNav/TopNav";
+
+/**
+ * Contributors Component
+ */
+export { Contributors } from "./components/Contributors/Contributors";
