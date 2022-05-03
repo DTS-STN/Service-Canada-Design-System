@@ -146,3 +146,7 @@ export { TopNav } from "./components/TopNav/TopNav";
  * Date Modified component
  */
 export { Date } from "./components/Date/Date";
+/**
+ * Contributors Component
+ */
+export { Contributors } from "./components/Contributors/Contributors";
