@@ -1,15 +1,14 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-export function DateModified(props) {
+export function Date(props) {
+  const { id, label, date } = props;
   // TeamCity build dates are received in the format yyyyMMdd
-  const dateFormatted = props.date
-    ? props.date.replace(/^(.{4})(.{2})/gm, "$1-$2-")
-    : "NA";
+  const dateFormatted = date ? date.replace(/^(.{4})(.{2})/gm, "$1-$2-") : "NA";
   return (
-    <dl className="mt-8 py-2 font-body font-normal text-sm">
-      <dt className="inline">{props.label}</dt>
-      <dd className="inline">
+    <dl id={id} className="ds-mt-8 ds-py-2 ds-font-body">
+      <dt className="ds-inline">{label}</dt>
+      <dd className="ds-inline">
         {dateFormatted === "NA" ? (
           <time>{` ${dateFormatted}`}</time>
         ) : (
@@ -20,18 +19,21 @@ export function DateModified(props) {
   );
 }
 
-DateModified.defaultProps = {
+Date.defaultProps = {
   label: "Date Modified: ",
 };
 
-DateModified.propTypes = {
+Date.propTypes = {
+  /**
+   * component id
+   */
+  id: PropTypes.string,
+
   /**
    * Text to show before date, defaults to "Date Modified: "
    */
   label: PropTypes.string,
 
-  /**
-   *  Date string in format yyyyMMdd
-   * */
+  // Date string in format yyyyMMdd
   date: PropTypes.string,
 };
