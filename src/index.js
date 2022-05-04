@@ -142,6 +142,10 @@ export { Download } from "./components/Download/Download";
 
 export { TopNav } from "./components/TopNav/TopNav";
 
+/*
+ * Date Modified component
+ */
+export { Date } from "./components/Date/Date";
 /**
  * Contributors Component
  */
