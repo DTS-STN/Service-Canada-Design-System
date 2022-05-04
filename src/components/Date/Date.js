@@ -34,6 +34,8 @@ Date.propTypes = {
    */
   label: PropTypes.string,
 
-  // Date string in format yyyyMMdd
+  /**
+   * Date string in format yyyyMMdd
+   */
   date: PropTypes.string,
 };
