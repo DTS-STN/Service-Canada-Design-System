@@ -39,15 +39,23 @@ const Template = () => {
   const required_children = required_results.map((option, index) => {
     return (
       <div className="ds-mb-24px">
-        <p className="ds-body">{option.label}</p>
+        <label for={`label${index}`}>
+          <p className="ds-body">{option.label}</p>
+        </label>
         <div className="ds-grid ds-grid-cols-2 md:ds-flex">
-          <p className="ds-body-bold">{option.value}</p>
+          <input
+            id={`label${index}`}
+            name={`label${index}`}
+            className="ds-body-bold"
+            value={option.value}
+          />
           <div className="md:ds-pl-12px ds-justify-self-end">
             <Button
-              iconAltText="edit button"
+              iconAltText="link"
               id={option.label + index}
-              onClick={() => {}}
+              onClick={option.onClick}
               styling="none"
+              type="button"
               className="ds-btn-review"
               text="Edit"
             />
@@ -60,15 +68,23 @@ const Template = () => {
   const optional_children = optional_results.map((option, index) => {
     return (
       <div className="ds-mb-24px">
-        <p className="ds-body">{option.label}</p>
+        <label for={`label${index}`}>
+          <p className="ds-body">{option.label}</p>
+        </label>
         <div className="ds-grid ds-grid-cols-2 md:ds-flex">
-          <p className="ds-body-bold">{option.value}</p>
+          <input
+            id={`label${index}`}
+            name={`label${index}`}
+            className="ds-body-bold"
+            value={option.value}
+          />
           <div className="md:ds-pl-12px ds-justify-self-end">
             <Button
               iconAltText="link"
               id={option.label + index}
               onClick={option.onClick}
               styling="none"
+              type="button"
               className="ds-btn-review"
               text="Edit"
             />
@@ -84,7 +100,6 @@ const Template = () => {
       required_children={required_children}
       optional_children={optional_children}
       back_btn_onClick={() => {}}
-      submit_btn_onSubmit={() => {}}
     />
   );
 };

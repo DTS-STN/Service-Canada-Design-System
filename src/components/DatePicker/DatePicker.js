@@ -4,10 +4,11 @@ import React from "react";
 import { Button } from "../Button/Button";
 
 export function DatePicker(props) {
-  const { id, method, action, startMin, startMax, endMin, endMax } = props;
+  const { id, startMin, startMax, endMin, endMax } = props;
 
   return (
-    <form id={id} method={method} action={action}>
+    <>
+      {/* <form id={id} method={method} action={action}> */}
       <div>
         <label for="startdate">
           Start Date
@@ -60,13 +61,13 @@ export function DatePicker(props) {
           text="Submit"
         />
       </div>
-    </form>
+    </>
   );
 }
 
 DatePicker.defaultProps = {
-  method: "get",
-  action: "/",
+  // method: "get",
+  // action: "#",
 };
 
 DatePicker.propTypes = {
@@ -75,15 +76,15 @@ DatePicker.propTypes = {
    */
   id: PropTypes.string,
 
-  /**
-   * form method
-   */
-  method: PropTypes.string,
+  // /**
+  //  * form method
+  //  */
+  // method: PropTypes.string,
 
-  /**
-   * form action
-   */
-  action: PropTypes.string,
+  // /**
+  //  * form action
+  //  */
+  // action: PropTypes.string,
 
   /**
    * Start day min
