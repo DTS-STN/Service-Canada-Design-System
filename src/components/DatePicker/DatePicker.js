@@ -9,7 +9,7 @@ export function DatePicker(props) {
   return (
     <>
       {/* <form id={id} method={method} action={action}> */}
-      <div>
+      <div id={id}>
         <label for="startdate">
           Start Date
           <span class="datepicker-format">
