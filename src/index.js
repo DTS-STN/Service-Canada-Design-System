@@ -4,6 +4,7 @@
  * Only import and export things in this file that are ready to be tested in a pre-release or released to production.
  *
  */
+import "react-app-polyfill/ie11";
 
 import "./styles/tailwind.css";
 import "./styles/fonts.css";
