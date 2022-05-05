@@ -51,7 +51,7 @@ export function DatePicker(props) {
           max={endMax}
         />
       </div>
-      <div className="ds-pt-10px">
+      {/* <div className="ds-pt-10px">
         <Button
           id="review_submit_btn"
           iconAltText="prime"
@@ -60,7 +60,7 @@ export function DatePicker(props) {
           value="Submit"
           text="Submit"
         />
-      </div>
+      </div> */}
     </>
   );
 }
