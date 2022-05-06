@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { Image } from "../Image/Image";
@@ -15,9 +16,9 @@ export function CheckBoxes(props) {
     ? "ds-border-specific-red-red50b focus:ds-border-multi-blue-blue60f focus:ds-shadow-text-input"
     : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f focus:ds-shadow-text-input";
   return (
-    <div className="ds-flex ds-flex-row">
+    <label className="ds-flex ds-flex-row">
       <div className="ds-relative ds-w-44px ds-h-44px ds-justify-items-center">
-        <label>
+        <>
           <input
             id={id}
             name={name}
@@ -34,12 +35,12 @@ export function CheckBoxes(props) {
             src={checkMark}
             alt="checkMark"
           />
-        </label>
+        </>
       </div>
       <div className="ds-flex">
         <p className="ds-pl-10px ds-self-center ds-card-body-text">{label}</p>
       </div>
-    </div>
+    </label>
   );
 }
 
