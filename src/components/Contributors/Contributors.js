@@ -6,7 +6,7 @@ export function Contributors(props) {
   const { id, contributorList } = props;
 
   return (
-    <div id={id}>
+    <section id={id}>
       <p className="ds-heading2">Contributors</p>
       <ul className="ds-pl-22px ds-ml-14px">
         {contributorList.map((option, index) => {
@@ -27,7 +27,7 @@ export function Contributors(props) {
           );
         })}
       </ul>
-    </div>
+    </section>
   );
 }
 
