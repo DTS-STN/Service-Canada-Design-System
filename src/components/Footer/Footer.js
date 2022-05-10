@@ -199,7 +199,7 @@ Footer.propTypes = {
   error: PropTypes.bool,
 
   /**
-   * Switch between english and french header. Pass in "en" or "fr"
+   * Switch between english and french footer. Pass in "en" or "fr"
    */
   lang: PropTypes.oneOf(["en", "fr"]),
 
