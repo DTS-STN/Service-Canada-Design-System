@@ -151,3 +151,8 @@ export { Date } from "./components/Date/Date";
  * Contributors Component
  */
 export { Contributors } from "./components/Contributors/Contributors";
+
+/**
+ * Contributors Component
+ */
+export { TableContent } from "./components/TableContents/TableContent";
