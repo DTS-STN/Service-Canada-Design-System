@@ -23,7 +23,8 @@ export function FormRadioButton(props) {
       )}
       {props.options.map(({ id, label, checked, value }, index) => (
         <label
-          for={id}
+          htmlFor={id}
+          key={id + index}
           className={`ds-radio ds-relative ds-flex ds-items-center ds-cursor-pointer ds-font-body ds-text-xl ds-leading-26px ds-text-multi-neutrals-grey100 ds-mb-8px`}
         >
           <input
@@ -41,8 +42,9 @@ export function FormRadioButton(props) {
             defaultChecked={false}
           />
           <span
-            class={`ds-relative ds-label ds-block ds-mr-3.5 ds-min-w-43px ds-w-43px ds-h-43px ds-border-1.5 ds-border-solid ${validationClass} ds-rounded-full ds-float-left after:ds-absolute ds-outline-0`}
-            role="checkbox"
+            role="radio"
+            aria-label={props.name}
+            className={`ds-relative ds-label ds-block ds-mr-3.5 ds-min-w-43px ds-w-43px ds-h-43px ds-border-1.5 ds-border-solid ${validationClass} ds-rounded-full ds-float-left after:ds-absolute ds-outline-0`}
             aria-checked="false"
             tabIndex={0}
           ></span>
@@ -56,6 +58,7 @@ export function FormRadioButton(props) {
 
 FormRadioButton.defaultProps = {
   checked: false,
+  dataTestId: "primary-radio",
 };
 
 FormRadioButton.propTypes = {

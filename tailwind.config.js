@@ -34,6 +34,7 @@ module.exports = {
         mobileh6: ["19px", "21px"],
         mobilebody: ["20px", "33px"],
         mobilebodybold: ["20px", "33px"],
+        datepicker: ["15px", "24px"],
 
         browserdisplay: ["60px", "60px"],
         browserh1: ["38px", "42px"],
@@ -263,9 +264,11 @@ module.exports = {
         "8px": "8px",
         "10px": "10px",
         "12px": "12px",
+        "14px": "14px",
         "15px": "15px",
         "16px": "16px",
         "20px": "20px",
+        "22px": "22px",
         "24px": "24px",
         "34px": "34px",
         "4.5rem": "4.5rem",
@@ -333,6 +336,9 @@ module.exports = {
         "white-solid": ["2px solid #ffffff"],
         "heading-solid": ["1px solid #af3c43"],
       },
+      textUnderlineOffset: {
+        3.1: "3.1px",
+      },
     },
   },
   plugins: [
@@ -364,5 +370,6 @@ module.exports = {
     require("./config-plugins/accordion-plugin"),
     require("./config-plugins/pagination-plugin"),
     require("./config-plugins/download-plugin"),
+    require("./config-plugins/datepicker-plugin"),
   ],
 };

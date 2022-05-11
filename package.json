@@ -1,6 +1,6 @@
 {
   "name": "@dts-stn/decd-design-system",
-  "version": "1.32.0",
+  "version": "1.34.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "source": "src/index.js",
@@ -14,6 +14,7 @@
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
+    "react-app-polyfill": "^3.0.0",
     "react-dom": "^17.0.2",
     "user": "^0.0.0"
   },

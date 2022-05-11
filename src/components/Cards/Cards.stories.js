@@ -23,13 +23,11 @@ Default.args = {
   description:
     "Recent changes made to Employment Insurance in order to make it more flexible, inclusive and easier to access.",
   firstLinkProps: {
-    id: "firstLinkCards",
     name: "link 1",
     path: "/",
   },
   hasLinkFirst: true,
   secondLinkProps: {
-    id: "firstLinkCards",
     name: "link 1",
     path: "/",
   },
@@ -45,12 +43,10 @@ DefaultLink.args = {
   description:
     "Did you know that you may be eligible for the Old Age Security (OAS)?",
   firstLinkProps: {
-    id: "firstLinkCards",
     name: "Learn more about OAS",
     path: "/",
   },
   secondLinkProps: {
-    id: "secondLinkCards",
     name: "Check eligibility",
     path: "/",
   },
@@ -67,14 +63,12 @@ TitleLink.args = {
   },
   secondaryText: "secondary Text",
   imageProps: {
-    id: "card image",
     altText: "card image text",
     imgPath: img,
   },
   description:
     "Recent changes made to Employment Insurance in order to make it more flexible, inclusive and easier to access.",
   firstLinkProps: {
-    id: "firstLinkCards",
     name: "link 1",
     path: "/",
   },
@@ -87,14 +81,12 @@ OneLink.args = {
   },
   secondaryText: "secondary Text",
   imageProps: {
-    id: "card image",
     altText: "card image text",
     imgPath: img,
   },
   description:
     "Recent changes made to Employment Insurance in order to make it more flexible, inclusive and easier to access.",
   firstLinkProps: {
-    id: "firstLinkCards",
     name: "link 1",
     path: "/",
   },
@@ -107,24 +99,20 @@ TwoLinkCol.args = {
     title: "Employment Insurance Improvements",
   },
   labelProps: {
-    id: "label danger",
     text: "danger",
     type: "danger",
   },
   imageProps: {
-    id: "card image",
     altText: "card image text",
     imgPath: img,
   },
   description:
     "Recent changes made to Employment Insurance in order to make it more flexible, inclusive and easier to access.",
   firstLinkProps: {
-    id: "firstLinkCards",
     name: "link 1",
     path: "/",
   },
   secondLinkProps: {
-    id: "secondLinkCards",
     name: "link 2",
     path: "/",
   },
@@ -140,24 +128,20 @@ TwoLink.args = {
     path: "/",
   },
   labelProps: {
-    id: "label default",
     text: "default label",
   },
   secondaryText: "secondary Text",
   imageProps: {
-    id: "card image",
     altText: "card image text",
     imgPath: img,
   },
   description:
     "Recent changes made to Employment Insurance in order to make it more flexible, inclusive and easier to access.",
   firstLinkProps: {
-    id: "firstLinkCards",
     name: "Learn more about GIS",
     path: "/",
   },
   secondLinkProps: {
-    id: "secondLinkCards",
     name: "Check eligibility",
     path: "/",
   },
