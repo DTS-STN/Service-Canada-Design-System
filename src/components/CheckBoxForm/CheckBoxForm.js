@@ -19,6 +19,7 @@ export function CheckBoxForm(props) {
         let style = index === size - 1 ? "ds-pb-0" : "md:ds-pb-8px ds-pb-24px";
         return (
           <div
+            key={index}
             className={
               index === 0 ? " md:ds-pt-2px md:ds-pb-8px ds-pb-24px" : style
             }
