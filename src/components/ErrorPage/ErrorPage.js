@@ -51,69 +51,55 @@ export function ErrorPage(props) {
     <div className={`${biClassName} ds-container`}>
       {language.map((val, index) => {
         return (
-          <div>
-            {val === EN ? (
-              <Heading
-                id={errType + val + pageHeadingId + index}
-                title={errorHeadingEN}
-              />
-            ) : (
-              <Heading
-                id={errType + val + pageHeadingId + index}
-                title={errorHeadingFR}
-              />
-            )}
-            <div>
-              {val === EN ? (
-                <p className="ds-body ds-mt-2">{errorTextEN}</p>
-              ) : (
-                <p className="ds-body ds-mt-2">{errorTextFR}</p>
-              )}
-              <br />
-              <p className="ds-error-next-text">{val.errorPageNextText}</p>
-              <h2 className="ds-sr-only">Whats Next Links</h2>
-              <ul>
-                {errType === "500" ? (
-                  <li key={errType + lang + index} className="ds-body ds-pl-3">
-                    {val.error500TextLink}
-                  </li>
-                ) : errType === "503" ? (
-                  <li key={errType + lang + index} className="ds-body ds-pl-3">
-                    {val.error503TextLink}
-                  </li>
-                ) : null}
-                {!isAuth ? (
-                  <li
-                    key={errType + lang + homePageId + index}
-                    className="ds-body ds-pl-3"
-                  >
-                    {val.errorTextLinkCommon}
-                    <Link
-                      id={errType + lang + homePageId + index}
-                      href={homePageLink}
-                      text={val.errorTextLinkCommon_2}
-                    />
-                  </li>
-                ) : (
-                  <li
-                    key={errType + lang + accountPageId}
-                    className="ds-body ds-pl-3"
-                  >
-                    {val.errorAuthTextLinkCommon}
-                    <Link
-                      id={errType + lang + accountPageId + index}
-                      href={accountPageLink}
-                      text={val.errorAuthTextLinkCommon_2}
-                    />
-                  </li>
-                )}
-              </ul>
-              <br />
-              <br />
-              <p className="ds-error-type-text">
-                {val.errorPageType} {errType}
-              </p>
-            </div>
+          <div key={(val + index).toString()}>
+            <Heading
+              id={pageHeadingId}
+              title={val === EN ? errorHeadingEN : errorHeadingFR}
+            />
+            <p className="ds-body ds-mt-2">
+              {val === EN ? errorTextEN : errorTextFR}
+            </p>
+            <br />
+            <p className="ds-error-next-text">{val.errorPageNextText}</p>
+            <h2 className="ds-sr-only">Whats Next Links</h2>
+            <ul id="errorTypes">
+              <li
+                key={"errorLink1" + index.toString()}
+                className={errType === "404" ? "ds-hidden" : "ds-body ds-pl-3"}
+              >
+                {errType === "500"
+                  ? val.error500TextLink
+                  : errType === "503"
+                  ? val.error503TextLink
+                  : null}
+              </li>
+              <li
+                key={"errorLink2" + index.toString()}
+                className="ds-body ds-pl-3"
+              >
+                {!isAuth
+                  ? val.errorTextLinkCommon
+                  : val.errorAuthTextLinkCommon}
+                <Link
+                  id={
+                    !isAuth
+                      ? errType + lang + homePageId
+                      : errType + lang + accountPageId
+                  }
+                  href={!isAuth ? homePageLink : accountPageLink}
+                  text={
+                    !isAuth
+                      ? val.errorTextLinkCommon_2
+                      : val.errorAuthTextLinkCommon_2
+                  }
+                />
+              </li>
+            </ul>
+            <br />
+            <br />
+            <p className="ds-error-type-text">
+              {val.errorPageType} {errType}
+            </p>
           </div>
         );
       })}
