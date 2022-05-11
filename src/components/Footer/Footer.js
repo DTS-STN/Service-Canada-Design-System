@@ -148,7 +148,7 @@ export function Footer(props) {
                         }
                       >
                         <Link
-                          id={index}
+                          id={"footerLink" + index}
                           href={value.brandLink}
                           text={value.brandLinkText}
                           linkStyle="smfooterBlue"

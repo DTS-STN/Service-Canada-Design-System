@@ -59,6 +59,7 @@ export function ReviewSubmit(props) {
 ReviewSubmit.defaultProps = {
   method: "get",
   action: "#",
+  back_btn_onClick: () => {},
 };
 
 ReviewSubmit.propTypes = {
@@ -98,5 +99,5 @@ ReviewSubmit.propTypes = {
   /**
    * Back button props
    */
-  back_btn_onClick: PropTypes.func.isRequired,
+  back_btn_onClick: PropTypes.func,
 };

@@ -4,15 +4,6 @@ import { FormRadioButton } from "./FormRadioButton";
 export default {
   title: "Components/FormRadioButton",
   component: FormRadioButton,
-  // decorators: [
-  //   (Story) => (
-  //     <div className="ds-w-full ds-flex ds-items-center ds-flex-col">
-  //       <div className="ds-w-100">
-  //         <Story />
-  //       </div>
-  //     </div>
-  //   ),
-  // ],
 };
 
 const onChange = () => {
@@ -47,7 +38,6 @@ Primary.args = {
   id: "radio-button-1",
   name: "radio_button_1",
   options: optionsList,
-  dataTestId: "primary-radio-1",
   onChange: onChange,
 };
 
@@ -55,7 +45,6 @@ withLabelHelpText.args = {
   id: "radio-button-2",
   name: "radio_button_2",
   options: optionsList,
-  dataTestId: "primary-radio-2",
   label: "I am a text field",
   infoText: "Help Text",
   helpText:
@@ -66,7 +55,6 @@ withLabelAndError.args = {
   id: "radio-button-3",
   name: "radio_button_3",
   options: optionsList,
-  dataTestId: "primary-radio-3",
   label: "I am a text field",
   infoText: "Help Text",
   hasError: true,

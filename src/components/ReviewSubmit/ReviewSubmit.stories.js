@@ -8,9 +8,7 @@ export default {
 };
 
 const Template2 = (args) => <ReviewSubmit {...args} />;
-export const Default = Template2.bind({
-  back_btn_onClick: () => {},
-});
+export const Default = Template2.bind({});
 
 const Template = () => {
   const required_results = [
@@ -105,7 +103,6 @@ const Template = () => {
       id="testingReview"
       required_children={required_children}
       optional_children={optional_children}
-      back_btn_onClick={() => {}}
     />
   );
 };
