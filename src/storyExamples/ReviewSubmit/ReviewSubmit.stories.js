@@ -1,14 +1,11 @@
 import React from "react";
-import { ReviewSubmit } from "./ReviewSubmit";
-import { Button } from "../Button/Button";
+import { ReviewSubmit } from "../../components/ReviewSubmit/ReviewSubmit";
+import { Button } from "../../components/Button/Button";
 
 export default {
-  title: "Components/ReviewSubmit",
+  title: "Story Examples/ReviewSubmit",
   component: ReviewSubmit,
 };
-
-const Template2 = (args) => <ReviewSubmit {...args} />;
-export const Default = Template2.bind({});
 
 const Template = () => {
   const required_results = [
@@ -16,7 +13,6 @@ const Template = () => {
     { label: "Preferred language", value: "English" },
     { label: "Year of birth", value: "1973" },
   ];
-
   const optional_results = [
     { label: "What province or territory do you live in?", value: "Ontario" },
     {
@@ -103,6 +99,7 @@ const Template = () => {
       id="testingReview"
       required_children={required_children}
       optional_children={optional_children}
+      back_btn_onClick={() => {}}
     />
   );
 };

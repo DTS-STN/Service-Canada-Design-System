@@ -4,6 +4,7 @@
  * Only import and export things in this file that are ready to be tested in a pre-release or released to production.
  *
  */
+import "react-app-polyfill/ie11";
 
 import "./styles/tailwind.css";
 import "./styles/fonts.css";
@@ -141,3 +142,17 @@ export { Collapse } from "./components/Collapse/Collapse";
 export { Download } from "./components/Download/Download";
 
 export { TopNav } from "./components/TopNav/TopNav";
+
+/*
+ * Date Modified component
+ */
+export { Date } from "./components/Date/Date";
+/**
+ * Contributors Component
+ */
+export { Contributors } from "./components/Contributors/Contributors";
+
+/**
+ * Contributors Component
+ */
+export { TableContent } from "./components/TableContent/TableContent";

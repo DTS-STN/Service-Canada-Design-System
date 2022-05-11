@@ -4,7 +4,28 @@ import { Image } from "../Image/Image";
 
 export function Button(props) {
   const style = "ds-btn-" + props.styling;
-  return props.href ? (
+  return props.href === "no ref" ? (
+    <button
+      className={`ds-flex ds-flex-row ${style} focus:ds-ring focus:ds-ring-offset-4 ${props.className} `}
+      onClick={props.onClick}
+      type={props.type}
+      id={props.id}
+      disabled={props.disabled}
+    >
+      {props.icon && !props.iconEnd ? (
+        <div className="ds-grid ds-place-items-center ds-h-8 ds-w-8">
+          <Image className="ds-pr-2" src={props.icon} alt={props.iconAltText} />
+        </div>
+      ) : undefined}
+      {props.text}
+      {props.children}
+      {props.icon && props.iconEnd ? (
+        <div className="ds-grid ds-place-items-center ds-h-8 ds-w-8">
+          <Image className="ds-pl-2" src={props.icon} alt={props.iconAltText} />
+        </div>
+      ) : undefined}
+    </button>
+  ) : (
     <a
       href={props.href}
       className={`ds-flex ds-flex-row ds-btn-link focus:ds-ring focus:ds-ring-offset-4 ${props.className} `}
@@ -28,27 +49,6 @@ export function Button(props) {
         </div>
       ) : undefined}
     </a>
-  ) : (
-    <button
-      className={`ds-flex ds-flex-row ${style} focus:ds-ring focus:ds-ring-offset-4 ${props.className} `}
-      onClick={props.onClick}
-      type={props.type}
-      id={props.id}
-      disabled={props.disabled}
-    >
-      {props.icon && !props.iconEnd ? (
-        <div className="ds-grid ds-place-items-center ds-h-8 ds-w-8">
-          <Image className="ds-pr-2" src={props.icon} alt={props.iconAltText} />
-        </div>
-      ) : undefined}
-      {props.text}
-      {props.children}
-      {props.icon && props.iconEnd ? (
-        <div className="ds-grid ds-place-items-center ds-h-8 ds-w-8">
-          <Image className="ds-pl-2" src={props.icon} alt={props.iconAltText} />
-        </div>
-      ) : undefined}
-    </button>
   );
 }
 
@@ -56,6 +56,7 @@ Button.defaultProps = {
   id: "btn1",
   styling: "supertask",
   text: "default",
+  href: "no ref",
 };
 
 Button.propTypes = {
@@ -107,7 +108,7 @@ Button.propTypes = {
   /**
    * the type of the button
    */
-  type: PropTypes.oneOf(["submit", "reset"]),
+  type: PropTypes.oneOf(["submit", "reset", "button"]),
 
   /**
    * Callback for a click event on the button

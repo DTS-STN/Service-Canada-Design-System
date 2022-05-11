@@ -9,11 +9,12 @@ export function ReviewSubmit(props) {
     required_children,
     optional_children,
     back_btn_onClick,
-    submit_btn_onSubmit,
+    method,
+    action,
   } = props;
 
   return (
-    <form id={id}>
+    <form id={id} method={method} action={action}>
       <div className="ds-leading-tight">
         <Heading id="withoutLink" title="Please review your information" />
       </div>
@@ -36,6 +37,7 @@ export function ReviewSubmit(props) {
             id="review_back_btn"
             onClick={back_btn_onClick}
             styling="secondary"
+            type="button"
             text="Back"
           />
         </div>
@@ -43,9 +45,9 @@ export function ReviewSubmit(props) {
           <Button
             id="review_submit_btn"
             iconAltText="prime"
-            onSubmit={submit_btn_onSubmit}
             styling="primary"
             type="submit"
+            value="Submit"
             text="Submit"
           />
         </div>
@@ -54,18 +56,40 @@ export function ReviewSubmit(props) {
   );
 }
 
+ReviewSubmit.defaultProps = {
+  method: "get",
+  action: "#",
+  back_btn_onClick: () => {},
+};
+
 ReviewSubmit.propTypes = {
   /**
    * component id
    */
   id: PropTypes.string,
 
+  /**
+   * form method
+   */
+  method: PropTypes.string,
+
+  /**
+   * form action
+   */
+  action: PropTypes.string,
+
+  /**
+   * required children props
+   */
   required_children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
   ]),
 
+  /**
+   * optional children props
+   */
   optional_children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
@@ -75,10 +99,5 @@ ReviewSubmit.propTypes = {
   /**
    * Back button props
    */
-  back_btn_onClick: PropTypes.func.isRequired,
-
-  /**
-   * Submit button props
-   */
-  submit_btn_onSubmit: PropTypes.func.isRequired,
+  back_btn_onClick: PropTypes.func,
 };
