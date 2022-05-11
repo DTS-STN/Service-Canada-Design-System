@@ -148,7 +148,7 @@ export function Footer(props) {
                         }
                       >
                         <Link
-                          id={index}
+                          id={"footerLink" + index}
                           href={value.brandLink}
                           text={value.brandLinkText}
                           linkStyle="smfooterBlue"
@@ -199,7 +199,7 @@ Footer.propTypes = {
   error: PropTypes.bool,
 
   /**
-   * Switch between english and french header. Pass in "en" or "fr"
+   * Switch between english and french footer. Pass in "en" or "fr"
    */
   lang: PropTypes.oneOf(["en", "fr"]),
 

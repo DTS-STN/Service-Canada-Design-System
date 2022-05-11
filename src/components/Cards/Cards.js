@@ -28,7 +28,7 @@ export function Cards(props) {
         {titleProps.hasLink ? (
           <Link
             linkStyle="titleLink"
-            id="cardTitle"
+            id={id + "cardTitle"}
             text={titleProps.title}
             href={titleProps.path}
           />
@@ -42,7 +42,7 @@ export function Cards(props) {
           {labelProps !== undefined ? (
             <div className="ds-mt-2">
               <Labels
-                id={labelProps.id}
+                id={id + "cardLabel"}
                 text={labelProps.text}
                 type={labelProps.type}
               />
@@ -58,7 +58,7 @@ export function Cards(props) {
         <>
           <Image
             className="ds-h-200px"
-            id={imageProps.id}
+            id={id + "cardImage"}
             alt={imageProps.altText}
             src={imageProps.imgPath}
           />
@@ -77,7 +77,7 @@ export function Cards(props) {
           <div className="sm:ds-mt-24px ds-mt-20px">
             <Link
               linkStyle="cardActionLink"
-              id={firstLinkProps.id}
+              id={id + "firstLink"}
               text={firstLinkProps.name}
               href={firstLinkProps.path}
             />
@@ -87,7 +87,7 @@ export function Cards(props) {
           <div className={link2Padding}>
             <Link
               linkStyle="cardActionLink"
-              id={secondLinkProps.id}
+              id={id + "secondLink"}
               text={secondLinkProps.name}
               href={secondLinkProps.path}
             />
@@ -111,8 +111,8 @@ Cards.propTypes = {
    * path: path which the title link directs the user to (if hasLink is true)
    */
   titleProps: PropTypes.shape({
-    hasLink: PropTypes.bool.isRequired,
-    title: PropTypes.string.isRequired,
+    hasLink: PropTypes.bool,
+    title: PropTypes.string,
     path: PropTypes.string,
   }).isRequired,
 
@@ -124,8 +124,7 @@ Cards.propTypes = {
    * default, primary, danger, warning, info, success
    */
   labelProps: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
+    text: PropTypes.string,
     type: PropTypes.string,
   }).isRequired,
 
@@ -146,9 +145,9 @@ Cards.propTypes = {
    * imgPath: path to the image that should be displayed
    */
   imageProps: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    altText: PropTypes.string.isRequired,
-    imgPath: PropTypes.string.isRequired,
+    id: PropTypes.string,
+    altText: PropTypes.string,
+    imgPath: PropTypes.string,
   }),
 
   /**
@@ -163,9 +162,8 @@ Cards.propTypes = {
    * path: path which the link directs the user to
    */
   firstLinkProps: PropTypes.shape({
-    id: PropTypes.shape.isRequired,
-    name: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired,
+    name: PropTypes.string,
+    path: PropTypes.string,
   }),
 
   /**
@@ -181,9 +179,8 @@ Cards.propTypes = {
    * path: path which the link directs the user to
    */
   secondLinkProps: PropTypes.shape({
-    id: PropTypes.shape.isRequired,
-    name: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired,
+    name: PropTypes.string,
+    path: PropTypes.string,
   }),
 
   /**

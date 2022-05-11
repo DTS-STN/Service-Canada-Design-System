@@ -5,10 +5,10 @@ import { FormError } from "../FormError/FormError";
 import { CheckBoxes } from "../CheckBoxes/CheckBoxes";
 
 export function CheckBoxForm(props) {
-  const { id, onSubmit, formErrorProps, formLabelProps, checkBoxList } = props;
+  const { id, formErrorProps, formLabelProps, checkBoxList } = props;
   let size = checkBoxList.length;
   return (
-    <form id={id} onSubmit={onSubmit}>
+    <div id={id}>
       <FormLabel
         label={formLabelProps.label}
         required={formLabelProps.required}
@@ -19,6 +19,7 @@ export function CheckBoxForm(props) {
         let style = index === size - 1 ? "ds-pb-0" : "md:ds-pb-8px ds-pb-24px";
         return (
           <div
+            key={index}
             className={
               index === 0 ? " md:ds-pt-2px md:ds-pb-8px ds-pb-24px" : style
             }
@@ -37,24 +38,17 @@ export function CheckBoxForm(props) {
       {formErrorProps.hasError ? (
         <FormError errorMessage={formErrorProps.errorMessage} />
       ) : null}
-    </form>
+    </div>
   );
 }
 
-CheckBoxForm.defaultProps = {
-  onSubmit: () => {},
-};
+CheckBoxForm.defaultProps = {};
 
 CheckBoxForm.propTypes = {
   /**
    * component id
    */
   id: PropTypes.string.isRequired,
-
-  /**
-   * function to control what happens when form is submitted
-   */
-  onSubmit: PropTypes.func,
 
   /**
    * Each object represents it's own checkbox field.

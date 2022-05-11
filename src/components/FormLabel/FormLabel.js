@@ -24,15 +24,12 @@ export function FormLabel(props) {
           )}
         </div>
         {props.infoText && (
-          <div
+          <button
             className="ds-infoText ds-cursor-pointer ds-ml-auto md:ds-ml-0 ds-pl-8px"
-            aria-hidden="true"
-            role="button"
-            tabIndex={0}
             onClick={() => setHelpTextState(!displayHelpText)}
           >
-            <Image src={infoImage} alt="Click on to show info" />
-          </div>
+            <Image tabIndex={-1} src={infoImage} alt="Click on to show info" />
+          </button>
         )}
       </label>
       {displayHelpText && (
