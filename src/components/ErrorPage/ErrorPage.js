@@ -6,16 +6,7 @@ import EN from "../../translations/en.json";
 import FR from "../../translations/fr.json";
 
 export function ErrorPage(props) {
-  const {
-    isAuth,
-    errType,
-    lang,
-    homePageLink,
-    accountPageLink,
-    homePageId,
-    accountPageId,
-    pageHeadingId,
-  } = props;
+  const { isAuth, errType, lang, homePageLink, accountPageLink } = props;
   let biClassName = "";
   let language = lang === "en" ? [EN] : lang === "fr" ? [FR] : [EN, FR];
   if (lang === "bi") {
@@ -53,7 +44,7 @@ export function ErrorPage(props) {
         return (
           <div key={(val + index).toString()}>
             <Heading
-              id={pageHeadingId}
+              id={"pageHead" + index + errType}
               title={val === EN ? errorHeadingEN : errorHeadingFR}
             />
             <p className="ds-body ds-mt-2">
@@ -62,7 +53,7 @@ export function ErrorPage(props) {
             <br />
             <p className="ds-error-next-text">{val.errorPageNextText}</p>
             <h2 className="ds-sr-only">Whats Next Links</h2>
-            <ul id="errorTypes">
+            <ul id={"errorTypes" + index + errType}>
               <li
                 key={"errorLink1" + index.toString()}
                 className={errType === "404" ? "ds-hidden" : "ds-body ds-pl-3"}
@@ -83,8 +74,8 @@ export function ErrorPage(props) {
                 <Link
                   id={
                     !isAuth
-                      ? errType + lang + homePageId
-                      : errType + lang + accountPageId
+                      ? "homePage" + errType + lang + index
+                      : "accountPage" + errType + lang + index
                   }
                   href={!isAuth ? homePageLink : accountPageLink}
                   text={
@@ -110,9 +101,6 @@ export function ErrorPage(props) {
 ErrorPage.defaultProps = {
   accountPageLink: "/",
   homePageLink: "/",
-  accountPageId: "accountPage",
-  homePageId: "homePage",
-  pageHeadingId: "pageHead",
 };
 
 ErrorPage.propTypes = {
@@ -148,24 +136,4 @@ ErrorPage.propTypes = {
    * Add your path Logged in users account dashboard (authenticated user)
    */
   accountPageLink: PropTypes.string,
-
-  /**
-   * id for home page. Error Type and Language initial
-   * will be added to make id unique. (Not Authenticated)
-   */
-  homePageId: PropTypes.string,
-
-  /**
-   * id for account dashboard text link. Error Type and
-   * Language initial will be added to make id unique.
-   * (Authenticated)
-   *
-   */
-  accountPageId: PropTypes.string,
-
-  /**
-   * id for heading. Error Type and Language initial
-   * will be added to make id unique.
-   */
-  pageHeadingId: PropTypes.string,
 };
