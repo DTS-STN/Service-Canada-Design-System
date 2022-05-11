@@ -42,7 +42,7 @@ TableContent.propTypes = {
   /**
    * list of sections in table of contents
    */
-  contributorList: PropTypes.arrayOf(
+  sectionList: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
       link: PropTypes.string,

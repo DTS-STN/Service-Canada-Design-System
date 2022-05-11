@@ -155,4 +155,4 @@ export { Contributors } from "./components/Contributors/Contributors";
 /**
  * Contributors Component
  */
-export { TableContent } from "./components/TableContents/TableContent";
+export { TableContent } from "./components/TableContent/TableContent";
