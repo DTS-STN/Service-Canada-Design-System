@@ -81,7 +81,7 @@ export function AccordionForm(props) {
             marginBottom: "5px",
             paddingBottom: "5px",
           }}
-          key={`accordion-form-card-${card.id}`}
+          key={`accordion-form-card-${card.id}${index}`}
           ref={cardsRefs[index]}
         >
           {/* Number for the given card */}
