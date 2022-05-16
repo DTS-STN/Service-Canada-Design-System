@@ -47,6 +47,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 - Layout Container Update
 - Date Modified Component
 - Contributors Component
+- Tabel of Content Component
+- More Information Component
 
 ### Changed
 
@@ -124,3 +126,10 @@ Initial release of the Design System Package
 - TopNav Component
 - Header Update
 - Layout Container Update
+
+## [v1.34.0] - 2022-01-20
+
+### Added
+
+- Contributor Component
+- Date Modified Component
