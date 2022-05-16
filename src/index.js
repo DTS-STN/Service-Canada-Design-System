@@ -153,6 +153,11 @@ export { Date } from "./components/Date/Date";
 export { Contributors } from "./components/Contributors/Contributors";
 
 /**
- * Contributors Component
+ * Table of Content Component
  */
 export { TableContent } from "./components/TableContent/TableContent";
+
+/**
+ * Contributors Component
+ */
+export { MoreInfo } from "./components/MoreInfo/MoreInfo";

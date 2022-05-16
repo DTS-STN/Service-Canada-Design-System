@@ -32,6 +32,7 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           TARGET_FOLDER: ${{ steps.extract_branch.outputs.branch }}
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: storybook-static # The folder the action should deploy.
