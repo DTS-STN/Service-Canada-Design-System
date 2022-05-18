@@ -72,15 +72,11 @@ export function AccordionForm(props) {
           id={card.id}
           className={
             nextCardIsOpen
-              ? "ds-border ds-border-solid ds-border-multi-neutrals-grey85a ds-bg-multi-neutrals-grey5 ds-px-24px ds-py-18px ds-rounded ds-my-16px"
+              ? "ds-border ds-border-solid ds-border-multi-neutrals-grey85a ds-bg-multi-neutrals-grey5 ds-px-24px ds-py-18px ds-rounded ds-my-16px ds-mb-5px ds-pb-5px "
               : isOpen
-              ? "ds-border ds-border-solid ds-border-multi-blue-blue60d ds-bg-multi-blue-blue1 ds-px-24px ds-py-18px ds-rounded ds-my-16px"
-              : "ds-border ds-border-solid ds-text-multi-neutrals-grey85a ds-border-multi-neutrals-grey85a ds-bg-multi-neutrals-white ds-px-24px ds-py-18px ds-rounded ds-my-16px"
+              ? "ds-border ds-border-solid ds-border-multi-blue-blue60d ds-bg-multi-blue-blue1 ds-px-24px ds-py-18px ds-rounded ds-my-16px ds-mb-5px ds-pb-5px "
+              : "ds-border ds-border-solid ds-text-multi-neutrals-grey85a ds-border-multi-neutrals-grey85a ds-bg-multi-neutrals-white  ds-rounded ds-px-24px ds-py-18px ds-my-16px ds-mb-5px ds-pb-5px "
           }
-          style={{
-            marginBottom: "5px",
-            paddingBottom: "5px",
-          }}
           key={`accordion-form-card-${card.id}${index}`}
           ref={cardsRefs[index]}
         >
@@ -88,10 +84,7 @@ export function AccordionForm(props) {
           <div className="ds-flex-col ds-pb-12px">
             <div className="cardNumber ds-flex ds-flex-row">
               <div className="ds-relative ds-rounded-full ds-w-48px ds-h-48px ds-bg-multi-blue-blue60d">
-                <p
-                  className="ds-absolute ds-left-3.5 ds-bottom-0.5 ds-accordion-num"
-                  style={{ lineHeight: "48px" }}
-                >
+                <p className="ds-leading-48px ds-absolute ds-left-3.5 ds-bottom-0.5 ds-accordion-num">
                   {index + 1}
                 </p>
               </div>

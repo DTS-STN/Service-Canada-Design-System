@@ -299,6 +299,7 @@ module.exports = {
 
       minHeight: {
         "40px": "40px",
+        "76px": "76px",
         "104px": "104px",
         "200px": "200px",
         "250px": "250px",
@@ -320,6 +321,7 @@ module.exports = {
       },
 
       lineHeight: {
+        "48px": "48px",
         "30px": "30px",
         "28px": "28px",
         "23px": "23px",
