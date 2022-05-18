@@ -59,7 +59,7 @@ export function AccordionForm(props) {
     });
   }, [cardsOpenState]);
 
-  const cardRenders = React.useMemo(() => {
+  const cardRenders = () => {
     return cards.map((card, index, cardsArr) => {
       const isLastCard = !cardsArr[index + 1];
       const isNextFillableCard = cardsOpenState[card.id];
@@ -140,11 +140,11 @@ export function AccordionForm(props) {
         </div>
       );
     });
-  }, [dirtyCards, cardsState]);
+  };
 
   return (
     <form className="AccordionForm" noValidate id={id}>
-      {cardRenders}
+      {cardRenders()}
     </form>
   );
 }
