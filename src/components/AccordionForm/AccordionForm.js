@@ -117,7 +117,7 @@ export function AccordionForm(props) {
                   <div className="ds-pt-32px">
                     {!isLastCard ? (
                       <Button
-                        text={`Next Step: ${card.buttonLabel}`}
+                        text={card.buttonLabel}
                         styling="primary"
                         iconAltText="icon"
                         onClick={sectionNextClick(card.id, index)}
@@ -125,7 +125,7 @@ export function AccordionForm(props) {
                       />
                     ) : (
                       <Button
-                        text={`Next Step: ${card.buttonLabel}`}
+                        text={card.buttonLabel}
                         styling="primary"
                         iconAltText="icon"
                         onClick={card.buttonOnChange}
