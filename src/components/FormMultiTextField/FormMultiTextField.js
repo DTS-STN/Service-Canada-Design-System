@@ -50,7 +50,7 @@ export function FormMultiTextField(props) {
         />
       )}
       <textarea
-        className={`${sizeOfField} ${props.className} ds-text-input ds-leading-33px ds-rounded ds-outline-0  ds-text-mobileh5 ds-text-multi-neutrals-grey100  ds-text-form-input-gray ds-border ds-py-5px ds-px-14px ${validationClass}`}
+        className={`ds-min-h-76px ds-resize-none ${sizeOfField} ${props.className} ds-text-input ds-leading-33px ds-rounded ds-outline-0  ds-text-mobileh5 ds-text-multi-neutrals-grey100  ds-text-form-input-gray ds-border ds-py-5px ds-px-14px ${validationClass}`}
         id={props.id}
         name={props.name}
         placeholder={props.placeholder}
@@ -61,10 +61,6 @@ export function FormMultiTextField(props) {
         data-cy={props.dataCy}
         aria-describedby={props.describedby}
         ref={textareaRef}
-        style={{
-          minHeight: MIN_TEXTAREA_HEIGHT,
-          resize: "none",
-        }}
       >
         {props.value}
       </textarea>

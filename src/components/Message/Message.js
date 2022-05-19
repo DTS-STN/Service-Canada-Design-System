@@ -54,7 +54,7 @@ export function Message(props) {
         className={`ds-overflow-auto ds-border-l-6 ${alert_color} sm:ds-pl-24px ds-pl-16px`}
       >
         <p className="ds-heading3">{message_heading}</p>
-        <p className="ds-body">{message_body}</p>
+        <div className="ds-body">{message_body}</div>
       </div>
     </div>
   );
@@ -89,5 +89,9 @@ Message.propTypes = {
   /**
    * body text
    */
-  message_body: PropTypes.string.isRequired,
+  message_body: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]).isRequired,
 };
