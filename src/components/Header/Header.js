@@ -89,6 +89,7 @@ export function Header(props) {
 
 Header.defaultProps = {
   lang: "en",
+  isAuthenticated: true,
   searchProps: {
     onChange: () => {},
     onSubmit: () => {},
