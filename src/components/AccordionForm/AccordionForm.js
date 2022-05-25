@@ -122,7 +122,6 @@ export function AccordionForm(props) {
                         styling="primary"
                         iconAltText="icon"
                         onClick={card.buttonOnChange}
-                        type="submit"
                       />
                     )}
                   </div>
