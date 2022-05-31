@@ -1,9 +1,19 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { Collapse } from "../Collapse/Collapse";
+import { Collapse } from "../../Collapse/Collapse";
 
-export function Media(props) {
-  const { id, video, title, poster, type, transcript, description } = props;
+export function VideoPlayer(props) {
+  const {
+    id,
+    lang,
+    video,
+    title,
+    poster,
+    type,
+    transcript,
+    description,
+    trackProps,
+  } = props;
 
   return (
     <>
@@ -12,37 +22,51 @@ export function Media(props) {
           className="ds-border ds-border-solid ds-border-multi-neutrals-grey85a"
           poster={poster}
           title={title}
-          preload="auto"
           controls
+          width="100%"
+          height="auto"
         >
           <source type={type} src={video} />
           <track
-            src="#inline-captions"
+            src={trackProps.src}
             kind="captions"
-            data-type="text/html"
-            srclang="en"
-            label="English"
+            data-type={trackProps.dataType}
+            srcLang={lang === "en" ? "en" : "fr"}
+            label={lang === "en" ? "English" : "French"}
           />
         </video>
-        <figcaption className="ds-pt-10px">
-          <Collapse
-            id="defaultCollapse1"
-            title="Looking for a Job - HTML5 Transcript/Captions"
-          >
-            {transcript}
-          </Collapse>
-        </figcaption>
-        <figcaption className="ds-pt-6px ds-body">{description}</figcaption>
+        {transcript ? (
+          <>
+            <figcaption className="">
+              <Collapse
+                id="defaultCollapse1"
+                title="Looking for a Job - HTML5 Transcript/Captions"
+              >
+                {transcript}
+              </Collapse>
+            </figcaption>
+          </>
+        ) : null}
+        {description ? (
+          <>
+            <figcaption className="ds-body">{description}</figcaption>
+          </>
+        ) : null}
       </figure>
     </>
   );
 }
 
-Media.propTypes = {
+VideoPlayer.propTypes = {
   /**
    * component id
    */
   id: PropTypes.string,
+
+  /**
+   * language toggle
+   */
+  lang: PropTypes.oneOf(["en", "fr"]),
 
   /**
    * path to video source
@@ -81,4 +105,12 @@ Media.propTypes = {
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
   ]),
+
+  /**
+   * track props (captions)
+   */
+  trackProps: PropTypes.shape({
+    src: PropTypes.string,
+    dataType: PropTypes.string,
+  }),
 };

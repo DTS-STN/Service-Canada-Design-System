@@ -161,3 +161,18 @@ export { TableContent } from "./components/TableContent/TableContent";
  * Contributors Component
  */
 export { MoreInfo } from "./components/MoreInfo/MoreInfo";
+
+/**
+ * Contributors Component
+ */
+export { AudioPlayer } from "./components/Media/AudioPlayer/AudioPlayer";
+
+/**
+ * Contributors Component
+ */
+export { VideoPlayer } from "./components/Media/VideoPlayer/VideoPlayer";
+
+/**
+ * Contributors Component
+ */
+export { YoutubePlayer } from "./components/Media/YoutubePlayer/YoutubePlayer";
