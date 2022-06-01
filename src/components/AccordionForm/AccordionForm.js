@@ -15,30 +15,33 @@ import { Button } from "../Button/Button";
 export function AccordionForm(props) {
   const { cards, id, cardsState } = props;
   const cardsRefs = cards.map(() => React.useRef(null));
-  const sectionNextClick = React.useCallback((cardId, index) => {
-    return (e) => {
-      e.preventDefault();
-      if (cardsState[cardId].isValid) {
-        const curIndex = cards.findIndex(({ id }) => {
-          return id == cardId;
-        });
-        if (cards[curIndex + 1]) {
-          const nextCard = cards[curIndex + 1].id;
-          setDirtyCards((curDirtyCards) => {
-            return !curDirtyCards.includes(nextCard)
-              ? [...curDirtyCards, nextCard]
-              : curDirtyCards;
+  const sectionNextClick = React.useCallback(
+    (cardId, index) => {
+      return (e) => {
+        e.preventDefault();
+        if (cardsState[cardId].isValid) {
+          const curIndex = cards.findIndex(({ id }) => {
+            return id === cardId;
           });
-          if (cardsRefs[index + 1].current)
-            window.scrollTo({
-              top: cardsRefs[index + 1].current.offsetTop,
-              left: 0,
-              behavior: "smooth",
+          if (cards[curIndex + 1]) {
+            const nextCard = cards[curIndex + 1].id;
+            setDirtyCards((curDirtyCards) => {
+              return !curDirtyCards.includes(nextCard)
+                ? [...curDirtyCards, nextCard]
+                : curDirtyCards;
             });
+            if (cardsRefs[index + 1].current)
+              window.scrollTo({
+                top: cardsRefs[index + 1].current.offsetTop,
+                left: 0,
+                behavior: "smooth",
+              });
+          }
         }
-      }
-    };
-  }, []);
+      };
+    },
+    [cardsState]
+  );
 
   const [cardsOpenState] = React.useState(() => {
     return generateCardOpenStates(cardsState);
@@ -122,7 +125,6 @@ export function AccordionForm(props) {
                         styling="primary"
                         iconAltText="icon"
                         onClick={card.buttonOnChange}
-                        type="submit"
                       />
                     )}
                   </div>
@@ -149,7 +151,6 @@ const generateCardOpenStates = (cardsState) => {
     cardsObj[cardId] = cardState.isValid;
     if (!cardState.isValid && !firstInvalidCardId) {
       firstInvalidCardId = cardId;
-      console.log(cardsObj[cardId]);
     }
   });
   // up until here, all invalid ones are false and all valid are true
