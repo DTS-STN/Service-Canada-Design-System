@@ -10,10 +10,9 @@ export const Youtube = Template.bind({});
 
 Youtube.args = {
   id: "youtube",
-  lang: "en",
   title: "Suspect",
   type: "video/youtube",
-  video: "https://www.youtube.com/watch?v=9znKJqnFuuY&t=2s",
+  videoURL: "https://www.youtube.com/embed/LLg-UsTr7us",
   description: [
     <div key={1}>
       <p>
@@ -25,8 +24,4 @@ Youtube.args = {
       </p>
     </div>,
   ],
-  trackProps: {
-    src: "cpts-lg-fr.html",
-    dataType: "text/html",
-  },
 };

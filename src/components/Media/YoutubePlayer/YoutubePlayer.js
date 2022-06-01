@@ -2,36 +2,23 @@ import PropTypes from "prop-types";
 import React from "react";
 
 export function YoutubePlayer(props) {
-  const { id, video, title, poster, type, description, trackProps, lang } =
-    props;
-
+  const { id, videoURL, title, description } = props;
   return (
-    <>
+    <div className="ds-relative ds-w-full ds-pt-56.25%">
       <figure id={id}>
-        <video
-          className="ds-border ds-border-solid ds-border-multi-neutrals-grey85a"
-          poster={poster}
+        <iframe
+          allow="fullscreen"
+          className="ds-absolute ds-top-0 ds-left-0 ds-w-full ds-h-full"
+          src={videoURL}
           title={title}
-          controls
-          width="100%"
-          height="auto"
-        >
-          <source type={type} src={video} />
-          <track
-            src={trackProps.src}
-            kind="captions"
-            data-type={trackProps.dataType}
-            srcLang={lang === "en" ? "en" : "fr"}
-            label={lang === "en" ? "English" : "French"}
-          />
-        </video>
+        />
         {description ? (
-          <>
+          <div className="ds-absolute">
             <figcaption className="ds-body">{description}</figcaption>
-          </>
+          </div>
         ) : null}
       </figure>
-    </>
+    </div>
   );
 }
 
@@ -42,29 +29,16 @@ YoutubePlayer.propTypes = {
   id: PropTypes.string,
 
   /**
-   * language toggle
+   * The url of the given Youtube video. You must change the URL
+   * replacing the "watch?v=" with "embed/". Check storybook example
+   * for example code
    */
-  lang: PropTypes.oneOf(["en", "fr"]),
-
-  /**
-   * path to video source
-   */
-  video: PropTypes.string,
+  videoURL: PropTypes.string,
 
   /**
    * title of the given video
    */
   title: PropTypes.string,
-
-  /**
-   * path to video poster image
-   */
-  poster: PropTypes.string,
-
-  /**
-   * type of video being uploaded
-   */
-  type: PropTypes.string,
 
   /**
    * Description of the given video
@@ -74,12 +48,4 @@ YoutubePlayer.propTypes = {
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
   ]),
-
-  /**
-   * track props (captions)
-   */
-  trackProps: PropTypes.shape({
-    src: PropTypes.string,
-    dataType: PropTypes.string,
-  }),
 };
