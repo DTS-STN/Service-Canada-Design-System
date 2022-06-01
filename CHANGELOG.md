@@ -49,6 +49,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 - Contributors Component
 - Tabel of Content Component
 - More Information Component
+- What Component
+- Related Component
 
 ### Changed
 
