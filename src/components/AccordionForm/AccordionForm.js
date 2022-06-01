@@ -21,7 +21,7 @@ export function AccordionForm(props) {
         e.preventDefault();
         if (cardsState[cardId].isValid) {
           const curIndex = cards.findIndex(({ id }) => {
-            return id == cardId;
+            return id === cardId;
           });
           if (cards[curIndex + 1]) {
             const nextCard = cards[curIndex + 1].id;
