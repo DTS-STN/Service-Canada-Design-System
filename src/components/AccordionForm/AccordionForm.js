@@ -151,7 +151,6 @@ const generateCardOpenStates = (cardsState) => {
     cardsObj[cardId] = cardState.isValid;
     if (!cardState.isValid && !firstInvalidCardId) {
       firstInvalidCardId = cardId;
-      console.log(cardsObj[cardId]);
     }
   });
   // up until here, all invalid ones are false and all valid are true
