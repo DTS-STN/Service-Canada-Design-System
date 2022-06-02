@@ -10,7 +10,7 @@ This library contains reusable components that are accessible and can be used ac
 
 ## Using this Package in Your Project 🤓
 
-The package is hosted in [npm public registry]([https://dts-stn.github.io/DECD-Design-System/main](https://www.npmjs.com/package/@dts-stn/decd-design-system)). To use it simply install it as one of your dependencies
+The package is hosted in [npm public registry](https://www.npmjs.com/package/@dts-stn/decd-design-system). To use it simply install it as one of your dependencies
 
 This specifies that any package scoped @dts-stn should come from the github npm registry (where this package is located).
 
