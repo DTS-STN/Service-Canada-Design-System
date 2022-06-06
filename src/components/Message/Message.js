@@ -14,6 +14,7 @@ export function Message(props) {
     type,
     alert_icon_id,
     alert_icon_alt_text,
+    asHtml,
   } = props;
   let alert_type =
     type === "warning"
@@ -53,8 +54,22 @@ export function Message(props) {
       <div
         className={`ds-overflow-auto ds-border-l-6 ${alert_color} sm:ds-pl-24px ds-pl-16px`}
       >
-        <p className="ds-heading3">{message_heading}</p>
-        <div className="ds-body">{message_body}</div>
+        {asHtml ? (
+          <p
+            className="ds-heading3"
+            dangerouslySetInnerHTML={{ __html: message_heading }}
+          />
+        ) : (
+          <p className="ds-heading3">{message_heading}</p>
+        )}
+        {asHtml ? (
+          <div
+            className="ds-body"
+            dangerouslySetInnerHTML={{ __html: message_body }}
+          />
+        ) : (
+          <div className="ds-body">{message_body}</div>
+        )}
       </div>
     </div>
   );
@@ -94,4 +109,9 @@ Message.propTypes = {
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
+
+  /**
+   * HTML toggle. Determines if text is parsed as plain text or HTML.
+   */
+  asHtml: PropTypes.bool,
 };
