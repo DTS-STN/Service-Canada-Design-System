@@ -13,6 +13,7 @@ export const FrenchAuth = Template.bind({});
 EnglishAuth.args = {
   id: "header",
   lang: "en",
+  useParentContainer: true,
   // isAuthenticated: true,
   menuProps: {
     dashboardPath: "/examplePath",
