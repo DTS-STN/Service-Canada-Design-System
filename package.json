@@ -1,12 +1,15 @@
 {
   "name": "@dts-stn/decd-design-system",
-  "version": "1.36.0",
+  "version": "1.38.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "source": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DTS-STN/DECD-Design-System"
+  },
+  "resolutions": {
+    "webpack": "5.41.1"
   },
   "files": [
     "dist/**/*"
@@ -108,7 +111,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
-    "rollup": "^2.67.3",
+    "rollup": "~2.75.4",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-img": "^1.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
