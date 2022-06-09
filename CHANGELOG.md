@@ -135,3 +135,12 @@ Initial release of the Design System Package
 
 - Contributor Component
 - Date Modified Component
+
+## [v1.37.0] - 2022-06-02
+
+### Added
+
+- Tabel of Content Component
+- More Information Component
+- What Component
+- Related Component

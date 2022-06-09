@@ -22,7 +22,10 @@ export function Header(props) {
     menuProps,
     breadCrumbItems,
     topnavProps,
+    useParentContainer,
   } = props;
+
+  const containerClass = useParentContainer ? "" : "ds-container";
 
   return (
     <div className="ds-header" id={id}>
@@ -34,7 +37,9 @@ export function Header(props) {
         displayAlternateLink={topnavProps.displayAlternateLink}
       />
       <header>
-        <div className="ds-container ds-flex ds-flex-col sm:ds-flex-row md:ds-pb-14px">
+        <div
+          className={`${containerClass} ds-flex ds-flex-col sm:ds-flex-row md:ds-pb-14px`}
+        >
           <div className="ds-flex ds-flex-row sm:ds-pt-12px">
             <div className={`header-logo ds-pt-6px`}>
               <Image
@@ -78,7 +83,7 @@ export function Header(props) {
           />
         )}
         {breadCrumbItems && (
-          <div className="ds-container">
+          <div className={containerClass}>
             <Breadcrumb items={breadCrumbItems} />
           </div>
         )}
@@ -90,6 +95,7 @@ export function Header(props) {
 Header.defaultProps = {
   lang: "en",
   isAuthenticated: true,
+  useParentContainer: false,
   searchProps: {
     onChange: () => {},
     onSubmit: () => {},
@@ -134,6 +140,11 @@ Header.propTypes = {
   isAuthenticated: PropTypes.bool,
 
   /**
+   * useParentContainer: bool to choose whether to use the partent container or header's container
+   **/
+  useParentContainer: PropTypes.bool,
+
+  /**
    * Search Props:
    *
    * onChange: can add function for when typing in the search bar
@@ -166,6 +177,7 @@ Header.propTypes = {
     securityPath: PropTypes.string,
     signOutPath: PropTypes.string,
     hasNoMenu: PropTypes.bool,
+    useParentContainer: PropTypes.bool,
   }),
 
   /**
