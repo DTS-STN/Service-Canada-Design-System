@@ -8,6 +8,9 @@
     "type": "git",
     "url": "git+https://github.com/DTS-STN/DECD-Design-System"
   },
+  "resolutions": {
+    "webpack": "5.41.1"
+  },
   "files": [
     "dist/**/*"
   ],
