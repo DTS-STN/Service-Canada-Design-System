@@ -179,6 +179,7 @@ module.exports = {
         "18px": "18px",
       },
       width: {
+        "25px": "25px",
         "40px": "40px",
         "43px": "43px",
         "44px": "44px",
@@ -205,8 +206,10 @@ module.exports = {
       },
       height: {
         "19px": "19px",
+        "20px": "20px",
         "25px": "25px",
         "29px": "29px",
+        "30px": "30px",
         "40px": "40px",
         "43px": "43px",
         "44px": "44px",
@@ -259,6 +262,7 @@ module.exports = {
         "40px": "40px",
         "44px": "44px",
         "60px": "60px",
+        "97px": "97px",
         "168px": "168px",
         "56.25%": "56.25%",
       },

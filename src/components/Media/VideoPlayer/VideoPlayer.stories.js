@@ -38,7 +38,7 @@ English.args = {
     </div>,
   ],
   trackProps: {
-    src: "#inline-captions",
+    src: "",
     dataType: "text/html",
   },
 };
@@ -57,7 +57,7 @@ French.args = {
     </p>,
   ],
   trackProps: {
-    src: "cpts-lg-fr.html",
+    src: "",
     dataType: "text/html",
   },
 };

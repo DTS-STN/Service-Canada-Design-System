@@ -12,7 +12,7 @@ Youtube.args = {
   id: "youtube",
   title: "Suspect",
   type: "video/youtube",
-  videoURL: "https://www.youtube.com/embed/LLg-UsTr7us",
+  videoURL: "https://www.youtube.com/watch?v=LLg-UsTr7us",
   description: [
     <div key={1}>
       <p>
@@ -24,4 +24,9 @@ Youtube.args = {
       </p>
     </div>,
   ],
+  trackProps: {
+    src: "#inline-captions",
+    srcLang: "en",
+    kind: "captions",
+  },
 };
