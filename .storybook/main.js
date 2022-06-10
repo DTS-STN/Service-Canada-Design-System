@@ -8,4 +8,7 @@ module.exports = {
     "@whitespace/storybook-addon-html",
   ],
   staticDirs: ["../src/assets"],
+  core: {
+    builder: "webpack5",
+  },
 };
