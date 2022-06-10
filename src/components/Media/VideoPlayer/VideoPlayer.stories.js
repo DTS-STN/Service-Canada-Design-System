@@ -1,4 +1,7 @@
 import { VideoPlayer } from "./VideoPlayer";
+// import exampleVideo from "../examples/video.mp4"
+// import exampleCaps from "../examples/video.vtt"
+
 export default {
   title: "Components/Media/VideoPlayer",
   component: VideoPlayer,
