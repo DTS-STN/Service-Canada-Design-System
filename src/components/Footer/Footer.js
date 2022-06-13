@@ -12,7 +12,7 @@ import bg_img from "../../assets/footer_bg_img.svg";
 import upArrow from "../../assets/upArrow.svg";
 
 export function Footer(props) {
-  const { error, lang, btnLink, id } = props;
+  const { error, lang, btnLink, id, containerClass } = props;
   let langBrand =
     lang === "en" ? ENbrandLinks : lang === "fr" ? FRbrandLinks : [];
   let langLand =
@@ -77,10 +77,13 @@ export function Footer(props) {
       brandLinkText: langBrand.link5,
     },
   ];
+
+  const container = containerClass || "ds-container";
+
   return (
     <footer id={id} className="ds-w-full">
       {error ? (
-        <section className={"ds-container ds-h-16 ds-bg-multi-neutrals-grey5"}>
+        <section className={`${container} ds-h-16 ds-bg-multi-neutrals-grey5`}>
           <Image
             className="ds-mb-2.5 sm:ds-mt-3 ds-mt-5 ds-h-6 ds-float-right"
             src={logo}
@@ -95,7 +98,7 @@ export function Footer(props) {
               backgroundImage: `url(${bg_img})`,
             }}
           >
-            <section className={`ds-container`}>
+            <section className={container}>
               <nav
                 className="ds-pt-6 ds-pb-6"
                 role="navigation"
@@ -127,7 +130,9 @@ export function Footer(props) {
             </section>
           </div>
           <div className="ds-h-full ds-pb-4 ds-bg-color-multi-neutrals-white ">
-            <section className="ds-container ds-h-auto ds-pt-5 ds-flex ds-flex-col md:ds-flex-row ds-justify-between">
+            <section
+              className={`${container} ds-h-auto ds-pt-5 ds-flex ds-flex-col md:ds-flex-row ds-justify-between`}
+            >
               <nav
                 className="ds-mt-3.5 xl:ds-mt-5"
                 role="navigation"
@@ -207,4 +212,10 @@ Footer.propTypes = {
    * Add the path Link to the top of your page for the "to the Top" button in mobile
    */
   btnLink: PropTypes.string.isRequired,
+
+  /**
+   * containerClass: Customized container class name. If pass a existing class name, then 'ds-container' will be
+   * replaced by the passed in class name.
+   **/
+  containerClass: PropTypes.string,
 };

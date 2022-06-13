@@ -144,3 +144,5 @@ Initial release of the Design System Package
 - More Information Component
 - What Component
 - Related Component
+
+## [v1.38.0] - 2022-06-02
