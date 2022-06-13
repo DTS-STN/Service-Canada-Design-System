@@ -88,18 +88,6 @@ export function YoutubePlayer(props) {
       <div id={id} className="ds-relative ds-w-full ds-pt-56.25% ">
         <ReactPlayer
           ref={playerRef}
-          config={{
-            file: {
-              tracks: [
-                {
-                  kind: trackProps.kind,
-                  src: trackProps.src,
-                  srcLang: trackProps.srcLang,
-                  default: true,
-                },
-              ],
-            },
-          }}
           className="ds-absolute ds-top-0 ds-left-0"
           url={videoURL}
           playing={pausePlay}
@@ -128,7 +116,27 @@ export function YoutubePlayer(props) {
             });
           }}
           onEnded={handleEnd}
-        />
+          config={{
+            file: {
+              tracks: [
+                {
+                  kind: trackProps.kind,
+                  src: trackProps.src,
+                  srcLang: trackProps.srcLang,
+                  default: true,
+                  // mode: "showing"
+                },
+              ],
+            },
+          }}
+        >
+          {/* <track
+            src={trackProps.src}
+            kind="captions"
+            srcLang="en"
+            label="English"
+          /> */}
+        </ReactPlayer>
         <div className="ds-absolute ds-w-full ds-bg-multi-neutrals-grey100">
           {/* top controls */}
           <section className="ds-p-8px">

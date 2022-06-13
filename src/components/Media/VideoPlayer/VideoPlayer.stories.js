@@ -1,6 +1,6 @@
 import { VideoPlayer } from "./VideoPlayer";
-// import exampleVideo from "../examples/video.mp4"
-// import exampleCaps from "../examples/video.vtt"
+import exampleVideo from "../examples/video.mp4";
+import exampleCaps from "file-loader!../examples/video.vtt";
 
 export default {
   title: "Components/Media/VideoPlayer",
@@ -11,6 +11,19 @@ const Template = (args) => <VideoPlayer {...args} />;
 
 export const English = Template.bind({});
 export const French = Template.bind({});
+export const captions = Template.bind({});
+
+captions.args = {
+  id: "media",
+  lang: "en",
+  video: exampleVideo,
+  title: "job something",
+  poster: "demo/video1-en.jpg",
+  type: "video/mp4",
+  trackProps: {
+    src: exampleCaps,
+  },
+};
 
 English.args = {
   id: "media",
@@ -18,7 +31,6 @@ English.args = {
   video: "https://wet-boew.github.io/wet-boew-attachments/videos/video1-en.mp4",
   title: "job something",
   poster: "demo/video1-en.jpg",
-  type: "video/mp4",
   transcript: [
     <div key={1}>
       <p>
@@ -42,7 +54,6 @@ English.args = {
   ],
   trackProps: {
     src: "",
-    dataType: "text/html",
   },
 };
 
@@ -53,7 +64,6 @@ French.args = {
     "https://wet-boew.github.io/wet-boew-attachments/videos/video1-fr.webm",
   title: "Trouver un emploi",
   poster: "demo/video1-fr.jpg",
-  type: "video/webm",
   description: [
     <p>
       Trouver un emploi (<a href="cpts-lg-fr.html">Transcription</a>)
@@ -61,6 +71,5 @@ French.args = {
   ],
   trackProps: {
     src: "",
-    dataType: "text/html",
   },
 };

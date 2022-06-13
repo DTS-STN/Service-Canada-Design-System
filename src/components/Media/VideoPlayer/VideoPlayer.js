@@ -9,12 +9,11 @@ export function VideoPlayer(props) {
     video,
     title,
     poster,
-    type,
     transcript,
     description,
     trackProps,
   } = props;
-
+  // .substr(trackProps.src.length - 4) === ".vtt" ? "file-loader!" + trackProps.src : trackProps.src
   return (
     <>
       <figure id={id}>
@@ -26,11 +25,10 @@ export function VideoPlayer(props) {
           width="100%"
           height="auto"
         >
-          <source type={type} src={video} />
+          <source src={video} />
           <track
             src={trackProps.src}
             kind="captions"
-            data-type={trackProps.dataType}
             srcLang={lang === "en" ? "en" : "fr"}
             label={lang === "en" ? "English" : "French"}
           />
@@ -84,11 +82,6 @@ VideoPlayer.propTypes = {
   poster: PropTypes.string,
 
   /**
-   * type of video being uploaded
-   */
-  type: PropTypes.string,
-
-  /**
    * transript for the given video. code passed in to fill the expanded area.
    */
   transcript: PropTypes.oneOfType([
@@ -108,9 +101,10 @@ VideoPlayer.propTypes = {
 
   /**
    * track props (captions)
+   * src: if using a .vtt file add 'file-loader!' infront of file path
+   * so .vtt can be loaded correctly.
    */
   trackProps: PropTypes.shape({
     src: PropTypes.string,
-    dataType: PropTypes.string,
   }),
 };
