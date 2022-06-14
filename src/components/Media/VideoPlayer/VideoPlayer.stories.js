@@ -17,7 +17,7 @@ captions.args = {
   id: "media",
   lang: "en",
   video: exampleVideo,
-  title: "job something",
+  title: "job somethings",
   poster: "demo/video1-en.jpg",
   type: "video/mp4",
   trackProps: {

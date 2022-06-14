@@ -99,3 +99,17 @@ input[type="range"]:focus::-ms-fill-upper {
   filter: invert(95%) sepia(99%) saturate(17%) hue-rotate(249deg)
     brightness(104%) contrast(100%);
 }
+
+progress::-webkit-progress-value {
+  background: #2572b4;
+  border-radius: 16px;
+}
+progress::-moz-progress-bar {
+  background: #2572b4;
+  border-radius: 16px;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #ffffff;
+  border-radius: 16px;
+}

@@ -142,7 +142,7 @@ export function YoutubePlayer(props) {
           <section className="ds-p-8px">
             <progress
               id="vidProgressBar"
-              className="ds-w-full ds-h-20px ds-border-2 ds-rounded-2xl ds-border-multi-neutrals-white ds-bg-multi-neutrals-white"
+              className="ds-w-full ds-h-10px ds-border-2 ds-rounded-2xl ds-border-multi-neutrals-white ds-bg-multi-neutrals-white"
               tabIndex="0"
               aria-live="off"
               max="100"
@@ -153,7 +153,7 @@ export function YoutubePlayer(props) {
           {/* bottom controls */}
           <section className="ds-pb-20px ds-pt-10px ds-flex ds-flex-row">
             {/* pause play controls */}
-            <button onClick={handlePausePlay} className="ds-pl-20px ds-pr-20px">
+            <button onClick={handlePausePlay} className="ds-pl-20px ds-pr-10px">
               <Image
                 alt="Default Image"
                 id="image"
@@ -163,7 +163,7 @@ export function YoutubePlayer(props) {
             </button>
 
             {/* volume controls */}
-            <button onClick={handleMute} className="ds-pl-20px ds-pr-20px">
+            <button onClick={handleMute} className="ds-pl-10px ds-pr-10px">
               <Image
                 alt="Default Image"
                 id="image"
@@ -171,7 +171,7 @@ export function YoutubePlayer(props) {
                 src={mute === true ? volumeNoneImage : volumeImage}
               />
             </button>
-            <div className="ds-pl-20px ds-pr-20px">
+            <div className="ds-pl-10px ds-pr-10px">
               <p id="wb-auto-2-md-vlm-lbl" className="ds-hidden">
                 Volume
               </p>
@@ -190,7 +190,7 @@ export function YoutubePlayer(props) {
               />
             </div>
 
-            <div className="ds-pl-20px">
+            <div className="ds-pl-10px">
               <div className="ds-text-multi-neutrals-white ds-flex">
                 <p className="">
                   <span className="ds-hidden">Current position:</span>
