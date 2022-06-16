@@ -26,12 +26,12 @@ input[type="range"]::-ms-track {
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: 1px solid #000000;
-  height: 36px;
-  width: 16px;
+  height: 26px;
+  width: 12px;
   border-radius: 3px;
   background: #ffffff;
   cursor: pointer;
-  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  margin-top: -10px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
 }
 
@@ -39,8 +39,8 @@ input[type="range"]::-webkit-slider-thumb {
 input[type="range"]::-moz-range-thumb {
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   border: 1px solid #000000;
-  height: 36px;
-  width: 16px;
+  height: 26px;
+  width: 12px;
   border-radius: 3px;
   background: #ffffff;
   cursor: pointer;
@@ -50,8 +50,8 @@ input[type="range"]::-moz-range-thumb {
 input[type="range"]::-ms-thumb {
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   border: 1px solid #000000;
-  height: 36px;
-  width: 16px;
+  height: 26px;
+  width: 12px;
   border-radius: 3px;
   background: #ffffff;
   cursor: pointer;
@@ -83,7 +83,7 @@ input[type="range"]::-ms-track {
   cursor: pointer;
   background: transparent;
   border-color: transparent;
-  border-width: 16px 0;
+  border-width: 12px 0;
   color: transparent;
 }
 
@@ -102,14 +102,21 @@ input[type="range"]:focus::-ms-fill-upper {
 
 progress::-webkit-progress-value {
   background: #2572b4;
-  border-radius: 16px;
+  border-radius: 12px;
 }
 progress::-moz-progress-bar {
   background: #2572b4;
-  border-radius: 16px;
+  border-radius: 12px;
 }
 
 progress[value]::-webkit-progress-bar {
   background-color: #ffffff;
-  border-radius: 16px;
+  border-radius: 12px;
+}
+
+.menuPos {
+  position: absolute;
+  bottom: 100px;
+  right: 50px;
+  border: 1px solid grey;
 }

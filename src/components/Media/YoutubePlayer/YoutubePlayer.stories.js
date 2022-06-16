@@ -1,5 +1,4 @@
 import { YoutubePlayer } from "./YoutubePlayer";
-import exampleCaps from "file-loader!../examples/video.vtt";
 
 export default {
   title: "Components/Media/YoutubePlayer",
@@ -26,9 +25,4 @@ Youtube.args = {
       </p>
     </div>,
   ],
-  trackProps: {
-    src: exampleCaps,
-    srcLang: "en",
-    kind: "subtitles",
-  },
 };

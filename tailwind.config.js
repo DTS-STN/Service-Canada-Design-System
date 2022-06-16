@@ -179,6 +179,8 @@ module.exports = {
         "18px": "18px",
       },
       width: {
+        "22px": "22px",
+        "23px": "23px",
         "25px": "25px",
         "40px": "40px",
         "43px": "43px",
@@ -207,6 +209,8 @@ module.exports = {
       height: {
         "19px": "19px",
         "20px": "20px",
+        "22px": "22px",
+        "23px": "23px",
         "25px": "25px",
         "29px": "29px",
         "30px": "30px",

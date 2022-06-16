@@ -9,11 +9,17 @@ import volumeImage from "../../../assets/volume.svg";
 import volumeNoneImage from "../../../assets/volumeNone.svg";
 import captionIcon from "../../../assets/caption.svg";
 import captionClosedIcon from "../../../assets/captionClosed.svg";
+import rewindIcon from "../../../assets/backward-fast-solid.svg";
+import fastForwardIcon from "../../../assets/forward-fast.svg";
+import expandIcon from "../../../assets/expand-solid.svg";
+import collapseIcon from "../../../assets/compress-solid.svg";
+import gaugeIcon from "../../../assets/gauge-solid.svg";
+import screenfull from "screenfull";
 import { Image } from "../../Image/Image";
 import "./styles.css";
 
 export function YoutubePlayer(props) {
-  const { id, videoURL, trackProps, description } = props;
+  const { id, videoURL, description } = props;
   const [state, setState] = React.useState({
     pausePlay: false,
     mute: false,
@@ -23,6 +29,9 @@ export function YoutubePlayer(props) {
     curTimeDisplay: "00:00:00",
     totalTimeDisplay: "00:00:00",
     totalTime: 0,
+    screen: false,
+    speed: 1.0,
+    speedViewState: false,
   });
   const {
     pausePlay,
@@ -33,8 +42,12 @@ export function YoutubePlayer(props) {
     totalTime,
     curTimeDisplay,
     totalTimeDisplay,
+    screen,
+    speed,
+    speedViewState,
   } = state;
   const playerRef = React.useRef(null);
+  const [reducer, forceUpdate] = React.useReducer((x) => x + 1, 0);
 
   // pausing and playing the video
   const handlePausePlay = () => {
@@ -53,9 +66,11 @@ export function YoutubePlayer(props) {
     });
   };
 
-  // muting and unmuting the video
+  // turn captions on and off
   const handleCaption = () => {
-    setState({ ...state, caption: !state.caption });
+    // setState({ ...state, caption: !state.caption });
+    forceUpdate(reducer);
+    // console.log(playerRef.current.getInternalPlayer().setOption('captions', 'reload', true))
   };
 
   // current video time
@@ -83,61 +98,110 @@ export function YoutubePlayer(props) {
     setState({ ...state, pausePlay: false });
   };
 
+  // handle expanding and collapsing screen
+  const handleScreen = () => {
+    screenfull.toggle();
+  };
+  screenfull.onchange(() => {
+    setState({ ...state, screen: !state.screen });
+  });
+
+  // handle expanding and collapsing screen
+  const handleOpenSpeeds = () => {
+    setState({ ...state, speedViewState: !state.speedViewState });
+  };
+
+  // handle fast forward
+  const handleFastForward = () => {
+    playerRef.current.seekTo(playerRef.current.getCurrentTime() + 5);
+  };
+
+  // handle rewind
+  const handleRewind = () => {
+    playerRef.current.seekTo(playerRef.current.getCurrentTime() - 5);
+  };
+
+  React.useEffect(() => {
+    setState({ ...state, caption: !state.caption });
+    console.log(caption);
+  }, [reducer]);
+
   return (
     <>
       <div id={id} className="ds-relative ds-w-full ds-pt-56.25% ">
-        <ReactPlayer
-          ref={playerRef}
-          className="ds-absolute ds-top-0 ds-left-0"
-          url={videoURL}
-          playing={pausePlay}
-          width="100%"
-          height="100%"
-          volume={volume}
-          muted={mute}
-          onPlay={() => {
-            setState({ ...state, pausePlay: true });
-          }}
-          onPause={() => {
-            setState({ ...state, pausePlay: false });
-          }}
-          onProgress={handleTime}
-          onDuration={(e) => {
-            let time = "";
-            if (!isNaN(e)) {
-              time = new Date((e - 1) * 1000).toISOString().substring(11, 19);
-            } else {
-              time = "00:00:00";
-            }
-            setState({
-              ...state,
-              totalTime: e - 1,
-              totalTimeDisplay: time,
-            });
-          }}
-          onEnded={handleEnd}
-          config={{
-            file: {
-              tracks: [
-                {
-                  kind: trackProps.kind,
-                  src: trackProps.src,
-                  srcLang: trackProps.srcLang,
-                  default: true,
-                  // mode: "showing"
-                },
-              ],
-            },
-          }}
-        >
-          {/* <track
-            src={trackProps.src}
-            kind="captions"
-            srcLang="en"
-            label="English"
-          /> */}
-        </ReactPlayer>
-        <div className="ds-absolute ds-w-full ds-bg-multi-neutrals-grey100">
+        {caption ? (
+          <ReactPlayer
+            ref={playerRef}
+            className="ds-absolute ds-top-0 ds-left-0"
+            url={videoURL}
+            playing={pausePlay}
+            width="100%"
+            height="100%"
+            volume={volume}
+            muted={mute}
+            playbackRate={speed}
+            onPlay={() => {
+              setState({ ...state, pausePlay: true });
+            }}
+            onPause={() => {
+              setState({ ...state, pausePlay: false });
+            }}
+            onProgress={handleTime}
+            onDuration={(e) => {
+              let time = "";
+              if (!isNaN(e)) {
+                time = new Date((e - 1) * 1000).toISOString().substring(11, 19);
+              } else {
+                time = "00:00:00";
+              }
+              setState({
+                ...state,
+                totalTime: e - 1,
+                totalTimeDisplay: time,
+              });
+            }}
+            onEnded={handleEnd}
+            config={{
+              youtube: { playerVars: { cc_load_policy: 1, showinfo: 1 } },
+            }}
+          />
+        ) : (
+          <ReactPlayer
+            ref={playerRef}
+            className="ds-absolute ds-top-0 ds-left-0"
+            url={videoURL}
+            playing={pausePlay}
+            width="100%"
+            height="100%"
+            volume={volume}
+            muted={mute}
+            onPlay={() => {
+              setState({ ...state, pausePlay: true });
+            }}
+            onPause={() => {
+              setState({ ...state, pausePlay: false });
+            }}
+            onProgress={handleTime}
+            onDuration={(e) => {
+              let time = "";
+              if (!isNaN(e)) {
+                time = new Date((e - 1) * 1000).toISOString().substring(11, 19);
+              } else {
+                time = "00:00:00";
+              }
+              setState({
+                ...state,
+                totalTime: e - 1,
+                totalTimeDisplay: time,
+              });
+            }}
+            onEnded={handleEnd}
+            config={{
+              youtube: { playerVars: { cc_load_policy: 0, showinfo: 1 } },
+            }}
+          />
+        )}
+        <div className="ds-absolute ds-w-full ds-bg-multi-neutrals-grey100 ds-pb-10px">
           {/* top controls */}
           <section className="ds-p-8px">
             <progress
@@ -151,47 +215,81 @@ export function YoutubePlayer(props) {
             />
           </section>
           {/* bottom controls */}
-          <section className="ds-pb-20px ds-pt-10px ds-flex ds-flex-row">
-            {/* pause play controls */}
-            <button onClick={handlePausePlay} className="ds-pl-20px ds-pr-10px">
-              <Image
-                alt="Default Image"
-                id="image"
-                className="ds-filter-color ds-w-25px ds-h-25px"
-                src={pausePlay === false ? playBtn : pauseBtn}
-              />
-            </button>
+          <section className="ds-flex sm:ds-flex-row ds-flex-col sm:ds-px-10px">
+            <div className="ds-flex ds-flex-row">
+              {/* rewind */}
+              <button
+                onClick={handleRewind}
+                className="ds-media-player-buttons"
+              >
+                <Image
+                  alt="Default Image"
+                  id="image"
+                  className="ds-filter-color ds-w-23px ds-h-23px"
+                  src={rewindIcon}
+                />
+              </button>
+              {/* pause play controls */}
+              <button
+                onClick={handlePausePlay}
+                className="ds-media-player-buttons"
+              >
+                <Image
+                  alt="Default Image"
+                  id="image"
+                  className="ds-filter-color ds-w-23px ds-h-23px"
+                  src={pausePlay === false ? playBtn : pauseBtn}
+                />
+              </button>
+              {/* fast forward */}
+              <button
+                onClick={handleFastForward}
+                className="ds-media-player-buttons"
+              >
+                <Image
+                  alt="Default Image"
+                  id="image"
+                  className="ds-filter-color ds-w-23px ds-h-23px"
+                  src={fastForwardIcon}
+                />
+              </button>
 
-            {/* volume controls */}
-            <button onClick={handleMute} className="ds-pl-10px ds-pr-10px">
-              <Image
-                alt="Default Image"
-                id="image"
-                className="ds-filter-color ds-w-25px ds-h-25px"
-                src={mute === true ? volumeNoneImage : volumeImage}
-              />
-            </button>
-            <div className="ds-pl-10px ds-pr-10px">
-              <p id="wb-auto-2-md-vlm-lbl" className="ds-hidden">
-                Volume
-              </p>
-              <input
-                type="range"
-                className="volume"
-                aria-label="Volume slider"
-                aria-controls="wb-auto-2-md"
-                aria-labelledby="wb-auto-2-md"
-                aria-describedby="wb-auto-2-md-vlm-lbl"
-                title="Volume"
-                min="0"
-                max="100"
-                step="5"
-                onChange={handleVolumeChange}
-              />
+              {/* volume controls */}
+              <div className="ds-flex ds-flex-row ds-ml-auto">
+                <button
+                  onClick={handleMute}
+                  className="ds-media-player-buttons"
+                >
+                  <Image
+                    alt="Default Image"
+                    id="image"
+                    className="ds-filter-color ds-w-23px ds-h-23px"
+                    src={mute === true ? volumeNoneImage : volumeImage}
+                  />
+                </button>
+                <div className="ds-mr-12px ds-my-12px">
+                  <p id="wb-auto-2-md-vlm-lbl" className="ds-hidden">
+                    Volume
+                  </p>
+                  <input
+                    type="range"
+                    className="volume"
+                    aria-label="Volume slider"
+                    aria-controls="wb-auto-2-md"
+                    aria-labelledby="wb-auto-2-md"
+                    aria-describedby="wb-auto-2-md-vlm-lbl"
+                    title="Volume"
+                    min="0"
+                    max="100"
+                    step="5"
+                    onChange={handleVolumeChange}
+                  />
+                </div>
+              </div>
             </div>
 
-            <div className="ds-pl-10px">
-              <div className="ds-text-multi-neutrals-white ds-flex">
+            <div className="ds-flex ds-flex-row sm:ds-ml-auto">
+              <div className="ds-m-12px ds-text-multi-neutrals-white ds-flex">
                 <p className="">
                   <span className="ds-hidden">Current position:</span>
                   <span>{curTimeDisplay}</span>
@@ -202,19 +300,69 @@ export function YoutubePlayer(props) {
                   <span>{totalTimeDisplay}</span>
                 </p>
               </div>
+              {/* captions */}
+              <button
+                onClick={handleCaption}
+                className="ds-media-player-buttons ds-ml-auto"
+              >
+                <Image
+                  alt="Default Image"
+                  id="image"
+                  className="ds-filter-color ds-w-23px ds-h-23px"
+                  src={caption === false ? captionIcon : captionClosedIcon}
+                />
+                <span className="ds-hidden">Show closed captioning</span>
+              </button>
+              {/* playback speed */}
+              {/* set up mobile breakpoints and adjust absolute positioning based mobile */}
+              <div
+                className={
+                  speedViewState
+                    ? "menuPos ds-bg-multi-neutrals-grey90 ds-flex ds-flex-col"
+                    : "ds-hidden"
+                }
+              >
+                {[2, 1.5, 1, 0.5].map((rate) => {
+                  return (
+                    <button
+                      onClick={() => {
+                        setState({ ...state, speed: rate });
+                      }}
+                      className={
+                        rate === speed
+                          ? "ds-w-44px ds-h-30px ds-bg-multi-neutrals-grey40 sm:ds-mx-10px"
+                          : "ds-w-44px ds-h-30px sm:ds-mx-10px"
+                      }
+                    >
+                      {rate}
+                    </button>
+                  );
+                })}
+              </div>
+              <button
+                onClick={handleOpenSpeeds}
+                className="ds-media-player-buttons"
+              >
+                <Image
+                  alt="Default Image"
+                  id="image"
+                  className="ds-filter-color ds-w-23px ds-h-23px"
+                  src={gaugeIcon}
+                />
+              </button>
+              {/* expand collapse */}
+              <button
+                onClick={handleScreen}
+                className="ds-media-player-buttons"
+              >
+                <Image
+                  alt="Default Image"
+                  id="image"
+                  className="ds-filter-color ds-w-23px ds-h-23px"
+                  src={!screen ? expandIcon : collapseIcon}
+                />
+              </button>
             </div>
-            <button
-              onClick={handleCaption}
-              className="ds-ml-auto ds-pl-20px ds-pr-20px"
-            >
-              <Image
-                alt="Default Image"
-                id="image"
-                className="ds-filter-color ds-w-25px ds-h-25px"
-                src={caption === false ? captionIcon : captionClosedIcon}
-              />
-              <span className="ds-hidden">Show closed captioning</span>
-            </button>
           </section>
         </div>
       </div>
@@ -248,16 +396,4 @@ YoutubePlayer.propTypes = {
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
   ]),
-
-  /**
-   * track props (captions)
-   * src: path to captions file
-   * srcLang: language of text
-   * kind: captions, subtitles, etc...
-   */
-  trackProps: PropTypes.shape({
-    src: PropTypes.string,
-    srcLang: PropTypes.string,
-    kind: PropTypes.string,
-  }),
 };

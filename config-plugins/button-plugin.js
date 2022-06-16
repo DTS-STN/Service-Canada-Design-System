@@ -1,6 +1,22 @@
 const plugin = require("tailwindcss/plugin");
 const button = plugin(function ({ addUtilities, theme }) {
   const newUtilities = {
+    ".media-player-buttons": {
+      padding: "12px",
+      "&:hover": {
+        borderColor: theme("colors.multi.blue.blue60g"),
+        borderWidth: "1px",
+      },
+      "&:active": {
+        borderColor: theme("colors.multi.blue.blue65"),
+        borderWidth: "1px",
+      },
+      "&:focus": {
+        "--tw-ring-color": theme("colors.multi.blue.blue60f"),
+        borderColor: theme("colors.multi.blue.blue60g"),
+        borderWidth: "1px",
+      },
+    },
     ".btn-supertask": {
       fontFamily: theme("fontFamily.header"),
       fontWeight: theme("fontWeight.bold"),
@@ -18,8 +34,6 @@ const button = plugin(function ({ addUtilities, theme }) {
       "&:focus": {
         "--tw-ring-color": theme("colors.multi.blue.blue60f"),
         backgroundColor: theme("colors.specific.green.green70"),
-        //   "--tw-ring-offset": "2px",
-        //   "--tw-ring-offset-width": "2px",
       },
     },
     ".btn-primary": {
