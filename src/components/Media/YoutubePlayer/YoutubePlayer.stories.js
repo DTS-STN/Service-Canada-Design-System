@@ -11,8 +11,6 @@ export const Youtube = Template.bind({});
 
 Youtube.args = {
   id: "youtube",
-  title: "Suspects",
-  type: "video/youtube",
   videoURL: "https://www.youtube.com/watch?v=LLg-UsTr7us",
   description: [
     <div key={1}>
