@@ -46,7 +46,7 @@ export function YoutubePlayer(props) {
     speed,
     speedViewState,
   } = state;
-  const [, setPlayerRef] = React.useState(playerRef1);
+  // const [, setPlayerRef] = React.useState(playerRef1);
   const playerRef1 = React.useRef(null);
   const playerRef2 = React.useRef(null);
 
@@ -123,13 +123,8 @@ export function YoutubePlayer(props) {
     playerRef2.current.seekTo(playerRef2.current.getCurrentTime() - 5);
   };
 
-  React.useEffect(() => {
-    setPlayerRef(caption ? playerRef1 : playerRef2);
-  }, [caption]);
-
   return (
     <>
-      {caption ? "true" : "false"}
       <div id={id} className="ds-relative ds-w-full ds-pt-56.25% ">
         <div className={`${!caption ? "ds-hidden" : ""} `}>
           <ReactPlayer
