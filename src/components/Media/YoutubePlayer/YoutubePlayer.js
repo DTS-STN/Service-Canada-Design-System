@@ -46,8 +46,9 @@ export function YoutubePlayer(props) {
     speed,
     speedViewState,
   } = state;
-  const playerRef = React.useRef(null);
-  const [reducer, forceUpdate] = React.useReducer((x) => x + 1, 0);
+  const [, setPlayerRef] = React.useState(playerRef1);
+  const playerRef1 = React.useRef(null);
+  const playerRef2 = React.useRef(null);
 
   // pausing and playing the video
   const handlePausePlay = () => {
@@ -68,9 +69,7 @@ export function YoutubePlayer(props) {
 
   // turn captions on and off
   const handleCaption = () => {
-    // setState({ ...state, caption: !state.caption });
-    forceUpdate(reducer);
-    // console.log(playerRef.current.getInternalPlayer().setOption('captions', 'reload', true))
+    setState({ ...state, caption: !state.caption });
   };
 
   // current video time
@@ -90,7 +89,8 @@ export function YoutubePlayer(props) {
     let totalWidth = pBar.offsetWidth;
     let timeRatio = e.pageX / totalWidth;
     setState({ ...state, time: parseFloat(timeRatio) });
-    playerRef.current.seekTo(parseFloat(timeRatio));
+    playerRef1.current.seekTo(parseFloat(timeRatio));
+    playerRef2.current.seekTo(parseFloat(timeRatio));
   };
 
   // handle end of the video
@@ -113,32 +113,34 @@ export function YoutubePlayer(props) {
 
   // handle fast forward
   const handleFastForward = () => {
-    playerRef.current.seekTo(playerRef.current.getCurrentTime() + 5);
+    playerRef1.current.seekTo(playerRef1.current.getCurrentTime() + 5);
+    playerRef2.current.seekTo(playerRef2.current.getCurrentTime() + 5);
   };
 
   // handle rewind
   const handleRewind = () => {
-    playerRef.current.seekTo(playerRef.current.getCurrentTime() - 5);
+    playerRef1.current.seekTo(playerRef1.current.getCurrentTime() - 5);
+    playerRef2.current.seekTo(playerRef2.current.getCurrentTime() - 5);
   };
 
   React.useEffect(() => {
-    setState({ ...state, caption: !state.caption });
-    console.log(caption);
-  }, [reducer]);
+    setPlayerRef(caption ? playerRef1 : playerRef2);
+  }, [caption]);
 
   return (
     <>
+      {caption ? "true" : "false"}
       <div id={id} className="ds-relative ds-w-full ds-pt-56.25% ">
-        {caption ? (
+        <div className={`${!caption ? "ds-hidden" : ""} `}>
           <ReactPlayer
-            ref={playerRef}
-            className="ds-absolute ds-top-0 ds-left-0"
+            ref={playerRef1}
+            className={`ds-absolute ds-top-0 ds-left-0 `}
             url={videoURL}
             playing={pausePlay}
             width="100%"
             height="100%"
             volume={volume}
-            muted={mute}
+            muted={caption ? mute : !mute}
             playbackRate={speed}
             onPlay={() => {
               setState({ ...state, pausePlay: true });
@@ -165,16 +167,17 @@ export function YoutubePlayer(props) {
               youtube: { playerVars: { cc_load_policy: 1, showinfo: 1 } },
             }}
           />
-        ) : (
+        </div>
+        <div className={`${caption ? "ds-hidden" : ""} `}>
           <ReactPlayer
-            ref={playerRef}
-            className="ds-absolute ds-top-0 ds-left-0"
+            ref={playerRef2}
+            className={`ds-absolute ds-top-0 ds-left-0 ds-border ds-border-solid ds-border-multi-neutrals-grey85a`}
             url={videoURL}
             playing={pausePlay}
             width="100%"
             height="100%"
             volume={volume}
-            muted={mute}
+            muted={caption ? !mute : mute}
             onPlay={() => {
               setState({ ...state, pausePlay: true });
             }}
@@ -200,7 +203,7 @@ export function YoutubePlayer(props) {
               youtube: { playerVars: { cc_load_policy: 0, showinfo: 1 } },
             }}
           />
-        )}
+        </div>
         <div className="ds-absolute ds-w-full ds-bg-multi-neutrals-grey100 ds-pb-10px">
           {/* top controls */}
           <section className="ds-p-8px">
@@ -289,7 +292,7 @@ export function YoutubePlayer(props) {
             </div>
 
             <div className="ds-flex ds-flex-row sm:ds-ml-auto">
-              <div className="ds-m-12px ds-text-multi-neutrals-white ds-flex">
+              <div className="ds-m-12px ds-ml-10px ds-text-multi-neutrals-white ds-flex">
                 <p className="">
                   <span className="ds-hidden">Current position:</span>
                   <span>{curTimeDisplay}</span>

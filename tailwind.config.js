@@ -275,6 +275,7 @@ module.exports = {
         "5px": "5px",
         "8px": "8px",
         "10px": "10px",
+        "11px": "11px",
         "12px": "12px",
         "14px": "14px",
         "15px": "15px",
