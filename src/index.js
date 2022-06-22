@@ -180,7 +180,7 @@ export { AudioPlayer } from "./components/Media/AudioPlayer/AudioPlayer";
 /**
  * Contributors Component
  */
-export { VideoPlayer } from "./components/Media/VideoPlayer/VideoPlayer";
+export { Video } from "./components/Media/VideoPlayer/Video";
 
 /**
  * Contributors Component
