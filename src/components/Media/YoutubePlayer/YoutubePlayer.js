@@ -275,7 +275,7 @@ export function YoutubePlayer(props) {
                 <div
                   className={
                     volumeViewState
-                      ? "volumePos ds-bg-multi-neutrals-grey90"
+                      ? "volumePos ds-volume-bar ds-bg-multi-neutrals-grey90"
                       : "ds-hidden"
                   }
                 >
@@ -298,7 +298,7 @@ export function YoutubePlayer(props) {
                 </div>
               </div>
 
-              <div className="ds-order-first ds-m-12px ds-ml-10px ds-text-multi-neutrals-white ds-flex">
+              <div className="timePos  ds-m-12px ds-ml-10px ds-text-multi-neutrals-white ds-flex">
                 <p>
                   <span className="ds-hidden">Current position:</span>
                   <span>{curTimeDisplay}</span>
@@ -321,16 +321,27 @@ export function YoutubePlayer(props) {
                   alt="Default Image"
                   id="image"
                   className="ds-filter-color ds-w-25px ds-h-25px"
-                  src={caption === false ? captionIcon : captionClosedIcon}
+                  src={caption === false ? captionClosedIcon : captionIcon}
                 />
                 <span className="ds-hidden">Show closed captioning</span>
               </button>
+              {/* caption active state indicator */}
+              <div
+                className={
+                  caption ? `capIndicator ds-bg-multi-blue-blue15` : ""
+                }
+              />
               {/* playback speed */}
-              {/* set up mobile breakpoints and adjust absolute positioning based mobile */}
+              <button
+                onClick={handleOpenSpeeds}
+                className="ds-media-player-buttons ds-py-12px ds-px-6px ds-playback-font"
+              >
+                <p className="ds-w-33px ds-h-23px">{speed}x</p>
+              </button>
               <div
                 className={
                   speedViewState
-                    ? "menuPos ds-playback-font ds-bg-multi-neutrals-grey90 ds-flex ds-flex-col"
+                    ? "menuPos ds-playback-font ds-bg-multi-neutrals-grey90a ds-flex ds-flex-col"
                     : "ds-hidden"
                 }
               >
@@ -342,7 +353,7 @@ export function YoutubePlayer(props) {
                       }}
                       className={
                         rate === speed
-                          ? "ds-w-44px ds-h-30px ds-bg-multi-neutrals-grey70"
+                          ? "ds-w-44px ds-h-30px ds-bg-multi-blue-blue15 ds-text-multi-neutrals-grey100"
                           : "ds-w-44px ds-h-30px"
                       }
                     >
@@ -351,12 +362,6 @@ export function YoutubePlayer(props) {
                   );
                 })}
               </div>
-              <button
-                onClick={handleOpenSpeeds}
-                className="ds-media-player-buttons ds-py-12px ds-px-6px ds-playback-font"
-              >
-                <p className="ds-w-33px ds-h-23px">{speed}x</p>
-              </button>
               {/* expand collapse */}
               <button
                 onClick={handleScreen}

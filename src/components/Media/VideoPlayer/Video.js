@@ -233,7 +233,7 @@ export function Video(props) {
             ) : null}
           </button>
         </div>
-        <div className="ds-absolute ds-w-full ds-bg-multi-neutrals-grey100 ds-pb-10px ds-h-fit ">
+        <div className="ds-absolute ds-w-full ds-bg-multi-neutrals-grey100 ds-pb-10px ds-h-fit">
           {/* top controls */}
           <section className="ds-p-8px progressBar">
             <progress
@@ -347,10 +347,16 @@ export function Video(props) {
                   alt="Default Image"
                   id="image"
                   className="ds-filter-color ds-w-25px ds-h-25px"
-                  src={caption === false ? captionIcon : captionClosedIcon}
+                  src={caption === false ? captionClosedIcon : captionIcon}
                 />
                 <span className="ds-hidden">Show closed captioning</span>
               </button>
+              {/* caption active state indicator */}
+              <div
+                className={
+                  caption ? `capIndicator ds-bg-multi-blue-blue15` : ""
+                }
+              />
               {/* playback speed */}
               <button
                 onClick={handleOpenSpeeds}

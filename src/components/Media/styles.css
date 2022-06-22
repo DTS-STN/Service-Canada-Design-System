@@ -123,6 +123,15 @@ progress[value]::-webkit-progress-bar {
   font-weight: bolder;
 }
 
+.capIndicator {
+  position: absolute;
+  bottom: 15px;
+  right: 106px;
+  height: 4px;
+  width: 18px;
+  border-radius: 4px;
+}
+
 @media (max-width: 550px) {
   .newLayout {
     position: absolute;
