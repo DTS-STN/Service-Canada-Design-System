@@ -100,6 +100,10 @@ input[type="range"]:focus::-ms-fill-upper {
     brightness(104%) contrast(100%);
 }
 
+.pauseScreen {
+  background-color: transparent;
+}
+
 progress::-webkit-progress-value {
   background: #2572b4;
   border-radius: 12px;
@@ -114,9 +118,74 @@ progress[value]::-webkit-progress-bar {
   border-radius: 12px;
 }
 
-.menuPos {
-  position: absolute;
-  bottom: 100px;
-  right: 50px;
-  border: 1px solid grey;
+.ds-playback-font {
+  color: white;
+  font-weight: bolder;
+}
+
+@media (max-width: 550px) {
+  .newLayout {
+    position: absolute;
+    margin-top: -40px;
+    left: 0;
+  }
+
+  .progressBar {
+    margin-bottom: 18px;
+  }
+
+  .bottomControls {
+    padding-top: 10px;
+  }
+
+  .menuPos {
+    position: absolute;
+    bottom: 126px;
+    right: 47px;
+    border: 1px solid grey;
+  }
+
+  .volumePos {
+    position: absolute;
+    padding: 4px;
+    padding-bottom: 8px;
+    bottom: 119px;
+    width: 120px;
+    left: 127px;
+    transform: rotate(-90deg);
+  }
+
+  .desPos {
+    padding-top: 123px;
+  }
+  .timePos {
+    order: -1;
+  }
+}
+
+@media (min-width: 550px) {
+  .menuPos {
+    position: absolute;
+    bottom: 100px;
+    right: 47px;
+    border: 1px solid grey;
+  }
+
+  .volumePos {
+    position: absolute;
+    padding: 4px;
+    padding-bottom: 8px;
+    bottom: 152px;
+    left: 96px;
+    border: 1px solid grey;
+    transform: rotate(-90deg);
+  }
+
+  .desPos {
+    padding-top: 97px;
+  }
+
+  .timePos {
+    order: 1;
+  }
 }

@@ -17,8 +17,8 @@ import screenfull from "screenfull";
 import { Image } from "../../Image/Image";
 import "../styles.css";
 
-export function YoutubePlayer(props) {
-  const { id, videoURL, description } = props;
+export function Video(props) {
+  const { id, videoURL, poster, description, trackProps } = props;
   const [state, setState] = React.useState({
     pausePlay: false,
     mute: false,
@@ -129,7 +129,7 @@ export function YoutubePlayer(props) {
     <>
       <div
         id={id}
-        className="ds-relative ds-w-full ds-pt-56.25% ds-border ds-border-solid ds-border-multi-neutrals-grey85a"
+        className="ds-relative ds-w-full ds-pt-56.25% ds-border ds-border-multi-neutrals-grey85a"
       >
         <div className={`${!caption ? "ds-hidden" : ""} `}>
           <ReactPlayer
@@ -152,19 +152,29 @@ export function YoutubePlayer(props) {
             onDuration={(e) => {
               let time = "";
               if (!isNaN(e)) {
-                time = new Date((e - 1) * 1000).toISOString().substring(11, 19);
+                time = new Date(e * 1000).toISOString().substring(11, 19);
               } else {
                 time = "00:00:00";
               }
               setState({
                 ...state,
-                totalTime: e - 1,
+                totalTime: e,
                 totalTimeDisplay: time,
               });
             }}
             onEnded={handleEnd}
             config={{
-              youtube: { playerVars: { cc_load_policy: 1, showinfo: 1 } },
+              file: {
+                attributes: { poster: poster },
+                tracks: [
+                  {
+                    kind: trackProps.kind,
+                    src: trackProps.src,
+                    srcLang: trackProps.srcLang,
+                    default: true,
+                  },
+                ],
+              },
             }}
           />
         </div>
@@ -189,23 +199,41 @@ export function YoutubePlayer(props) {
             onDuration={(e) => {
               let time = "";
               if (!isNaN(e)) {
-                time = new Date((e - 1) * 1000).toISOString().substring(11, 19);
+                time = new Date(e * 1000).toISOString().substring(11, 19);
               } else {
                 time = "00:00:00";
               }
               setState({
                 ...state,
-                totalTime: e - 1,
+                totalTime: e,
                 totalTimeDisplay: time,
               });
             }}
-            onEnded={handleEnd}
             config={{
-              youtube: { playerVars: { cc_load_policy: 0, showinfo: 1 } },
+              file: {
+                attributes: { poster: poster },
+              },
             }}
+            onEnded={handleEnd}
           />
         </div>
-        <div className="ds-absolute ds-w-full ds-bg-multi-neutrals-grey100 ds-pb-10px ds-h-fit">
+        {/* center play button */}
+        <div>
+          <button
+            onClick={handlePausePlay}
+            className="pauseScreen ds-absolute ds-left-0 ds-top-0 ds-w-full ds-pt-56.25%"
+          >
+            {!pausePlay ? (
+              <Image
+                alt="Default Image"
+                id="image"
+                className="ds-absolute ds-inset-1/2 ds-w-23px ds-h-23px"
+                src={playBtn}
+              />
+            ) : null}
+          </button>
+        </div>
+        <div className="ds-absolute ds-w-full ds-bg-multi-neutrals-grey100 ds-pb-10px ds-h-fit ">
           {/* top controls */}
           <section className="ds-p-8px progressBar">
             <progress
@@ -274,9 +302,7 @@ export function YoutubePlayer(props) {
                 </button>
                 <div
                   className={
-                    volumeViewState
-                      ? "volumePos ds-bg-multi-neutrals-grey90"
-                      : "ds-hidden"
+                    volumeViewState ? "volumePos ds-volume-bar" : "ds-hidden"
                   }
                 >
                   <p id="wb-auto-2-md-vlm-lbl" className="ds-hidden">
@@ -298,7 +324,7 @@ export function YoutubePlayer(props) {
                 </div>
               </div>
 
-              <div className="ds-order-first ds-m-12px ds-ml-10px ds-text-multi-neutrals-white ds-flex">
+              <div className="timePos ds-m-12px ds-ml-10px ds-text-multi-neutrals-white ds-flex">
                 <p>
                   <span className="ds-hidden">Current position:</span>
                   <span>{curTimeDisplay}</span>
@@ -326,11 +352,16 @@ export function YoutubePlayer(props) {
                 <span className="ds-hidden">Show closed captioning</span>
               </button>
               {/* playback speed */}
-              {/* set up mobile breakpoints and adjust absolute positioning based mobile */}
+              <button
+                onClick={handleOpenSpeeds}
+                className="ds-media-player-buttons ds-py-12px ds-px-6px ds-playback-font"
+              >
+                <p className="ds-w-33px ds-h-23px">{speed}x</p>
+              </button>
               <div
                 className={
                   speedViewState
-                    ? "menuPos ds-playback-font ds-bg-multi-neutrals-grey90 ds-flex ds-flex-col"
+                    ? "menuPos ds-playback-font ds-bg-multi-neutrals-grey90a ds-flex ds-flex-col"
                     : "ds-hidden"
                 }
               >
@@ -342,7 +373,7 @@ export function YoutubePlayer(props) {
                       }}
                       className={
                         rate === speed
-                          ? "ds-w-44px ds-h-30px ds-bg-multi-neutrals-grey70"
+                          ? "ds-w-44px ds-h-30px ds-bg-multi-blue-blue15 ds-text-multi-neutrals-grey100"
                           : "ds-w-44px ds-h-30px"
                       }
                     >
@@ -351,12 +382,6 @@ export function YoutubePlayer(props) {
                   );
                 })}
               </div>
-              <button
-                onClick={handleOpenSpeeds}
-                className="ds-media-player-buttons ds-py-12px ds-px-6px ds-playback-font"
-              >
-                <p className="ds-w-33px ds-h-23px">{speed}x</p>
-              </button>
               {/* expand collapse */}
               <button
                 onClick={handleScreen}
@@ -384,7 +409,7 @@ export function YoutubePlayer(props) {
   );
 }
 
-YoutubePlayer.propTypes = {
+Video.propTypes = {
   /**
    * component id
    */
@@ -403,4 +428,18 @@ YoutubePlayer.propTypes = {
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
   ]),
+
+  /** track props (captions)
+   * src: if using a .vtt file add 'file-loader!' infront of file path
+   * so .vtt can be loaded correctly.
+   *
+   * kind: captions, subtitles, etc
+   *
+   * srcLang: what language are the video captions for
+   **/
+  trackProps: PropTypes.shape({
+    src: PropTypes.string,
+    srcLang: PropTypes.oneOf(["en", "fr"]),
+    kind: PropTypes.string,
+  }),
 };

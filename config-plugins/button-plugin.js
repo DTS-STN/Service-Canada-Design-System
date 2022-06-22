@@ -1,19 +1,20 @@
 const plugin = require("tailwindcss/plugin");
 const button = plugin(function ({ addUtilities, theme }) {
   const newUtilities = {
-    ".media-player-buttons": {
-      padding: "12px",
-      "&:hover": {
-        borderColor: theme("colors.multi.blue.blue60g"),
+    ".volume-bar": {
+      backgroundColor: theme("colors.multi.neutrals.grey90"),
+      "&:focus": {
+        backgroundColor: theme("colors.multi.neutrals.grey70"),
+        borderColor: theme("colors.multi.blue.blue15"),
         borderWidth: "1px",
       },
+    },
+    ".media-player-buttons": {
       "&:active": {
-        borderColor: theme("colors.multi.blue.blue65"),
-        borderWidth: "1px",
+        backgroundColor: theme("colors.multi.neutrals.grey70"),
       },
       "&:focus": {
-        "--tw-ring-color": theme("colors.multi.blue.blue60f"),
-        borderColor: theme("colors.multi.blue.blue60g"),
+        borderColor: theme("colors.multi.blue.blue15"),
         borderWidth: "1px",
       },
     },
