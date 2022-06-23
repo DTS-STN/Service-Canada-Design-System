@@ -24,6 +24,7 @@ const button = plugin(function ({ addUtilities, theme }) {
     ".playbackButton": {
       "&:active": {
         backgroundColor: theme("colors.multi.neutrals.grey70"),
+        color: theme("colors.multi.neutrals.black"),
       },
       "&:focus": {
         borderColor: theme("colors.multi.blue.blue15"),
