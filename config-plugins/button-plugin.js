@@ -8,10 +8,15 @@ const button = plugin(function ({ addUtilities, theme }) {
         borderColor: theme("colors.multi.blue.blue15"),
         borderWidth: "1px",
       },
+      "&:focus-visible": {
+        outline: "none",
+      },
     },
-    ".media-player-buttons": {
+    ".filter": {
       filter:
         "invert(95%) sepia(99%) saturate(17%) hue-rotate(249deg) brightness(104%) contrast(100%)",
+    },
+    ".media-player-buttons": {
       "&:active": {
         backgroundColor: theme("colors.multi.neutrals.grey70"),
         filter: "none",
@@ -19,6 +24,9 @@ const button = plugin(function ({ addUtilities, theme }) {
       "&:focus": {
         borderColor: theme("colors.multi.blue.blue15"),
         borderWidth: "1px",
+      },
+      "&:focus-visible": {
+        outline: "none",
       },
     },
     ".playbackButton": {
@@ -29,6 +37,9 @@ const button = plugin(function ({ addUtilities, theme }) {
       "&:focus": {
         borderColor: theme("colors.multi.blue.blue15"),
         borderWidth: "1px",
+      },
+      "&:focus-visible": {
+        outline: "none",
       },
     },
     ".btn-supertask": {
