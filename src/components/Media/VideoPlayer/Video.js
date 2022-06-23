@@ -258,7 +258,7 @@ export function Video(props) {
                 <Image
                   alt="Default Image"
                   id="image"
-                  className="ds-filter-color ds-w-23px ds-h-23px"
+                  className="ds-filter-color active:ds-filter-none ds-w-23px ds-h-23px"
                   src={rewindIcon}
                 />
               </button>
@@ -360,7 +360,7 @@ export function Video(props) {
               {/* playback speed */}
               <button
                 onClick={handleOpenSpeeds}
-                className="ds-media-player-buttons ds-py-12px ds-px-6px ds-playback-font"
+                className="ds-playbackButton ds-py-12px ds-px-6px ds-playback-font"
               >
                 <p className="ds-w-33px ds-h-23px">{speed}x</p>
               </button>
@@ -396,7 +396,7 @@ export function Video(props) {
                 <Image
                   alt="Default Image"
                   id="image"
-                  className="ds-filter-color ds-w-23px ds-h-23px"
+                  className="ds-w-23px ds-h-23px"
                   src={!screen ? expandIcon : collapseIcon}
                 />
               </button>

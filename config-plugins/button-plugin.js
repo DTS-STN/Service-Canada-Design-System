@@ -10,6 +10,18 @@ const button = plugin(function ({ addUtilities, theme }) {
       },
     },
     ".media-player-buttons": {
+      filter:
+        "invert(95%) sepia(99%) saturate(17%) hue-rotate(249deg) brightness(104%) contrast(100%)",
+      "&:active": {
+        backgroundColor: theme("colors.multi.neutrals.grey70"),
+        filter: "none",
+      },
+      "&:focus": {
+        borderColor: theme("colors.multi.blue.blue15"),
+        borderWidth: "1px",
+      },
+    },
+    ".playbackButton": {
       "&:active": {
         backgroundColor: theme("colors.multi.neutrals.grey70"),
       },

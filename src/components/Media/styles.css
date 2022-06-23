@@ -95,11 +95,6 @@ input[type="range"]:focus::-ms-fill-upper {
   background: #989da6;
 }
 
-.ds-filter-color {
-  filter: invert(95%) sepia(99%) saturate(17%) hue-rotate(249deg)
-    brightness(104%) contrast(100%);
-}
-
 .pauseScreen {
   background-color: transparent;
 }
