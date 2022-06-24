@@ -171,3 +171,18 @@ export { RelatedLinks } from "./components/RelatedLinks/RelatedLinks";
  * What Component
  */
 export { What } from "./components/What/What";
+
+/**
+ * Contributors Component
+ */
+export { AudioPlayer } from "./components/Media/AudioPlayer/AudioPlayer";
+
+/**
+ * Contributors Component
+ */
+export { Video } from "./components/Media/VideoPlayer/Video";
+
+/**
+ * Contributors Component
+ */
+export { YoutubePlayer } from "./components/Media/YoutubePlayer/YoutubePlayer";

@@ -1,6 +1,6 @@
 {
   "name": "@dts-stn/decd-design-system",
-  "version": "1.40.0",
+  "version": "1.41.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "source": "src/index.js",
@@ -19,6 +19,8 @@
     "react": "^17.0.2",
     "react-app-polyfill": "^3.0.0",
     "react-dom": "^17.0.2",
+    "react-full-screen": "^1.1.1",
+    "react-player": "^2.10.1",
     "user": "^0.0.0"
   },
   "scripts": {
@@ -102,6 +104,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.27.1",
     "fetch-mock": "^9.11.0",
+    "file-loader": "^6.2.0",
     "husky": "^6.0.0",
     "jest-axe": "^5.0.1",
     "lint-staged": "^11.0.0",

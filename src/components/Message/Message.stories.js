@@ -16,12 +16,15 @@ Success.args = {
   type: "success",
   message_heading: "COVID-19 New services and service changes",
   message_body: [
-    <p>
+    <>
       Find out about new support for Canadians during the COVID-19 pandemic and
       how Service Canada’s services are affectedFind out about new support for
       Canadians during the COVID-19 pandemic and how Service Canada’s services
       are affected
-    </p>,
+      <a href="https://healthycanadians.gc.ca/video/suspect-eng.php#trans">
+        Transcript
+      </a>
+    </>,
   ],
   alert_icon_alt_text: "success icon",
   alert_icon_id: "success icon",
@@ -57,6 +60,9 @@ Danger.args = {
       how Service Canada’s services are affectedFind out about new support for
       Canadians during the COVID-19 pandemic and how Service Canada’s services
       are affected
+      <a href="https://healthycanadians.gc.ca/video/suspect-eng.php#trans">
+        Transcript
+      </a>
     </p>,
   ],
   alert_icon_alt_text: "danger icon",

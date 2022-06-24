@@ -1,0 +1,195 @@
+input[type="range"] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+/* Special styling for WebKit/Blink */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 26px;
+  width: 12px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -10px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+
+/* All the same stuff for Firefox */
+input[type="range"]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 26px;
+  width: 12px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type="range"]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 26px;
+  width: 12px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #989da6;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #989da6;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 12px 0;
+  color: transparent;
+}
+
+input[type="range"] {
+  background: #989da6;
+}
+
+input[type="range"]:focus::-ms-fill-upper {
+  background: #989da6;
+}
+
+.pauseScreen {
+  background-color: transparent;
+}
+
+progress::-webkit-progress-value {
+  background: #2572b4;
+  border-radius: 12px;
+}
+progress::-moz-progress-bar {
+  background: #2572b4;
+  border-radius: 12px;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #ffffff;
+  border-radius: 12px;
+}
+
+.ds-playback-font {
+  color: white;
+  font-weight: bolder;
+}
+
+.capIndicator {
+  position: absolute;
+  bottom: 15px;
+  right: 106px;
+  height: 4px;
+  width: 18px;
+  border-radius: 4px;
+}
+
+@media (max-width: 550px) {
+  .newLayout {
+    position: absolute;
+    margin-top: -40px;
+    left: 0;
+  }
+
+  .progressBar {
+    margin-bottom: 18px;
+  }
+
+  .bottomControls {
+    padding-top: 10px;
+  }
+
+  .menuPos {
+    position: absolute;
+    bottom: 126px;
+    right: 47px;
+    border: 1px solid grey;
+  }
+
+  .volumePos {
+    position: absolute;
+    padding: 4px;
+    padding-bottom: 8px;
+    bottom: 119px;
+    width: 120px;
+    left: 127px;
+    transform: rotate(-90deg);
+  }
+
+  .desPos {
+    padding-top: 123px;
+  }
+  .timePos {
+    order: -1;
+  }
+}
+
+@media (min-width: 550px) {
+  .menuPos {
+    position: absolute;
+    bottom: 100px;
+    right: 47px;
+    border: 1px solid grey;
+  }
+
+  .volumePos {
+    position: absolute;
+    padding: 4px;
+    padding-bottom: 8px;
+    bottom: 152px;
+    left: 96px;
+    border: 1px solid grey;
+    transform: rotate(-90deg);
+  }
+
+  .desPos {
+    padding-top: 97px;
+  }
+
+  .timePos {
+    order: 1;
+  }
+}
