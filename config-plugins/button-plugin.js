@@ -1,6 +1,47 @@
 const plugin = require("tailwindcss/plugin");
 const button = plugin(function ({ addUtilities, theme }) {
   const newUtilities = {
+    ".volume-bar": {
+      backgroundColor: theme("colors.multi.neutrals.grey90"),
+      "&:focus": {
+        backgroundColor: theme("colors.multi.neutrals.grey70"),
+        borderColor: theme("colors.multi.blue.blue15"),
+        borderWidth: "1px",
+      },
+      "&:focus-visible": {
+        outline: "none",
+      },
+    },
+    ".filter": {
+      filter:
+        "invert(95%) sepia(99%) saturate(17%) hue-rotate(249deg) brightness(104%) contrast(100%)",
+    },
+    ".media-player-buttons": {
+      "&:active": {
+        backgroundColor: theme("colors.multi.neutrals.grey70"),
+        filter: "none",
+      },
+      "&:focus": {
+        borderColor: theme("colors.multi.blue.blue15"),
+        borderWidth: "1px",
+      },
+      "&:focus-visible": {
+        outline: "none",
+      },
+    },
+    ".playbackButton": {
+      "&:active": {
+        backgroundColor: theme("colors.multi.neutrals.grey70"),
+        color: theme("colors.multi.neutrals.black"),
+      },
+      "&:focus": {
+        borderColor: theme("colors.multi.blue.blue15"),
+        borderWidth: "1px",
+      },
+      "&:focus-visible": {
+        outline: "none",
+      },
+    },
     ".btn-supertask": {
       fontFamily: theme("fontFamily.header"),
       fontWeight: theme("fontWeight.bold"),
@@ -18,8 +59,6 @@ const button = plugin(function ({ addUtilities, theme }) {
       "&:focus": {
         "--tw-ring-color": theme("colors.multi.blue.blue60f"),
         backgroundColor: theme("colors.specific.green.green70"),
-        //   "--tw-ring-offset": "2px",
-        //   "--tw-ring-offset-width": "2px",
       },
     },
     ".btn-primary": {
