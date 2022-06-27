@@ -12,7 +12,7 @@ import bg_img from "../../assets/footer_bg_img.svg";
 import upArrow from "../../assets/upArrow.svg";
 
 export function Footer(props) {
-  const { error, lang, btnLink, id, containerClass } = props;
+  const { error, lang, btnLink, id, containerClass, isAuthenticated } = props;
   let langBrand =
     lang === "en" ? ENbrandLinks : lang === "fr" ? FRbrandLinks : [];
   let langLand =
@@ -78,6 +78,22 @@ export function Footer(props) {
     },
   ];
 
+  const brandLinksAuth = [
+    {
+      brandLink: langBrand.link6link,
+      brandLinkText: langBrand.link6,
+    },
+    {
+      brandLink: langBrand.link4link,
+      brandLinkText: langBrand.link4,
+    },
+  ];
+  let bLinks = isAuthenticated ? brandLinksAuth : brandLinks;
+  let bLinksBg = isAuthenticated
+    ? "ds-bg-multi-neutrals-grey5 ds-h-86px"
+    : "ds-h-full";
+  let bottomSectionPad = isAuthenticated ? "ds-pt-12px" : "ds-pt-5";
+
   const container = containerClass || "ds-container";
 
   return (
@@ -92,46 +108,48 @@ export function Footer(props) {
         </section>
       ) : (
         <>
-          <div
-            className="ds-bg-multi-blue-blue70 ds-landscape ds-bg-no-repeat bg-clip-border sm:ds-bg-right-bottom ds-bg-bottom"
-            style={{
-              backgroundImage: `url(${bg_img})`,
-            }}
-          >
-            <section className={container}>
-              <nav
-                className="ds-pt-6 ds-pb-6"
-                role="navigation"
-                aria-labelledby="accessibleSectionHeader1"
-              >
-                <h2 className="ds-sr-only" id="accessibleSectionHeader1">
-                  About Government
-                </h2>
-                <ul className="sm:ds-grid sm:ds-grid-cols-3 ds-flex ds-flex-col ds-gap-1 ds-text-xs">
-                  {" "}
-                  {landscapeLinks.map((value, index) => {
-                    return (
-                      <li
-                        key={value + index}
-                        className="ds-text-white ds-w-64 sm:ds-w-56 lg:ds-w-80 ds-my-2.5 hover:ds-underline"
-                      >
-                        <Link
-                          id={value + index}
-                          href={value.landscapeLink}
-                          text={value.landscapeLinkText}
-                          linkStyle="smfooterWhite"
-                          yt
-                        />
-                      </li>
-                    );
-                  })}
-                </ul>
-              </nav>
-            </section>
-          </div>
-          <div className="ds-h-full ds-pb-4 ds-bg-color-multi-neutrals-white ">
+          {!isAuthenticated ? (
+            <div
+              className="ds-bg-multi-blue-blue70 ds-landscape ds-bg-no-repeat bg-clip-border sm:ds-bg-right-bottom ds-bg-bottom"
+              style={{
+                backgroundImage: `url(${bg_img})`,
+              }}
+            >
+              <section className={container}>
+                <nav
+                  className="ds-pt-6 ds-pb-6"
+                  role="navigation"
+                  aria-labelledby="accessibleSectionHeader1"
+                >
+                  <h2 className="ds-sr-only" id="accessibleSectionHeader1">
+                    About Government
+                  </h2>
+                  <ul className="sm:ds-grid sm:ds-grid-cols-3 ds-flex ds-flex-col ds-gap-1 ds-text-xs">
+                    {" "}
+                    {landscapeLinks.map((value, index) => {
+                      return (
+                        <li
+                          key={value + index}
+                          className="ds-text-white ds-w-64 sm:ds-w-56 lg:ds-w-80 ds-my-2.5 hover:ds-underline"
+                        >
+                          <Link
+                            id={value + index}
+                            href={value.landscapeLink}
+                            text={value.landscapeLinkText}
+                            linkStyle="smfooterWhite"
+                            yt
+                          />
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </nav>
+              </section>
+            </div>
+          ) : null}
+          <div className={`${bLinksBg} ds-pb-4`}>
             <section
-              className={`${container} ds-h-auto ds-pt-5 ds-flex ds-flex-col md:ds-flex-row ds-justify-between`}
+              className={`${container} ds-h-auto ${bottomSectionPad} ds-flex ds-flex-col md:ds-flex-row ds-justify-between`}
             >
               <nav
                 className="ds-mt-3.5 xl:ds-mt-5"
@@ -142,7 +160,7 @@ export function Footer(props) {
                   About this site
                 </h2>
                 <ul className="ds-flex ds-flex-col sm:ds-flex sm:ds-flex-row">
-                  {brandLinks.map((value, index) => {
+                  {bLinks.map((value, index) => {
                     return (
                       <li
                         key={index}
@@ -199,9 +217,9 @@ Footer.propTypes = {
   id: PropTypes.string.isRequired,
 
   /**
-   * If true will display the error page version of the footer component
-   */
-  error: PropTypes.bool,
+   * isAuthenticated: bool to switch between authenticated and non authenticated menus
+   **/
+  isAuthenticated: PropTypes.bool,
 
   /**
    * Switch between english and french footer. Pass in "en" or "fr"
@@ -218,4 +236,9 @@ Footer.propTypes = {
    * replaced by the passed in class name.
    **/
   containerClass: PropTypes.string,
+
+  /**
+   * If true will display the error page version of the footer component
+   */
+  error: PropTypes.bool,
 };
