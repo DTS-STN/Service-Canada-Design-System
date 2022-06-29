@@ -116,6 +116,20 @@ const typography = plugin(function ({ addUtilities, theme }) {
       fontFamily: theme("fontFamily.body"),
       color: theme("colors.multi.neutrals.grey85a"),
     },
+
+    ".form-date": {
+      fontSize: theme("fontSize.mobileh5"),
+      fontWeight: theme("fontWeight.medium"),
+      fontFamily: theme("fontFamily.body"),
+      color: theme("colors.multi.neutrals.grey100"),
+    },
+
+    ".date-text": {
+      fontSize: theme("fontSize.mobileh5"),
+      fontWeight: theme("fontWeight.regular"),
+      fontFamily: theme("fontFamily.body"),
+      color: theme("colors.multi.neutrals.grey100"),
+    },
   };
 
   addUtilities(newUtilities);

@@ -1,0 +1,11 @@
+#date-month select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.dropdownPos {
+  position: absolute;
+  left: 136px;
+  top: 48px;
+}
