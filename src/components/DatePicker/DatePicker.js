@@ -10,16 +10,19 @@ import "./styles.css";
 export function DatePicker(props) {
   const {
     id,
+    onMonthChange,
+    onDayChange,
+    onYearChange,
     hasDay,
     hasYear,
+    minYear,
+    maxYear,
     hasLabel,
     hasError,
     formLabelProps,
     formErrorProps,
   } = props;
   const date = new Date();
-  const curYear = date.getFullYear();
-  const curMonth = date.getMonth();
 
   const dayLimit = new Date(
     date.getFullYear(),
@@ -43,6 +46,7 @@ export function DatePicker(props) {
           <p className="ds-form-date">Month</p>
           <select
             id="datePickerMonth"
+            onChange={onMonthChange}
             className="ds-w-165px ds-py-5px  ds-px-14px ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-rounded"
           >
             <option value="January">January</option>
@@ -75,6 +79,7 @@ export function DatePicker(props) {
               type="number"
               min={"1"}
               max={dayLimit.toString()}
+              onChange={onDayChange}
               className="ds-w-46px sm:ds-w-68px ds-px-10px ds-rounded ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-py-5px "
             />
           </div>
@@ -84,6 +89,10 @@ export function DatePicker(props) {
             <p className="ds-form-date">Year</p>
             <input
               id="datePickerYear"
+              type="number"
+              min={minYear}
+              max={maxYear}
+              onChange={onYearChange}
               className="ds-w-70px sm:ds-w-165px ds-py-5px ds-px-10px ds-rounded ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a"
             />
           </div>
@@ -97,10 +106,15 @@ export function DatePicker(props) {
 }
 
 DatePicker.defaultProps = {
+  onMonthChange: () => {},
+  onDayChange: () => {},
+  onYearChange: () => {},
   hasDay: true,
   hasYear: true,
   hasError: false,
   hasLabel: false,
+  minYear: 0,
+  maxYear: 10000,
 };
 
 DatePicker.propTypes = {
@@ -109,10 +123,16 @@ DatePicker.propTypes = {
    */
   id: PropTypes.string,
 
+  onMonthChange: PropTypes.func,
+  onDayChange: PropTypes.func,
+  onYearChange: PropTypes.func,
+
   hasDay: PropTypes.bool,
   hasYear: PropTypes.bool,
   hasError: PropTypes.bool,
   hasLabel: PropTypes.bool,
+  minYear: PropTypes.number,
+  maxYear: PropTypes.number,
 
   /**
    * Form Error Props

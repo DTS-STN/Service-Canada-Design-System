@@ -12,6 +12,8 @@ Default.args = {
   id: "DatePicker",
   // hasYear: false,
   // hasDay: false,
+  minYear: 1999,
+  maxYear: 2050,
   hasError: true,
   hasLabel: true,
   formErrorProps: {
