@@ -15,6 +15,7 @@ export function DatePicker(props) {
     onYearChange,
     hasDay,
     hasYear,
+    maxDay,
     minYear,
     maxYear,
     hasLabel,
@@ -24,12 +25,11 @@ export function DatePicker(props) {
   } = props;
   const date = new Date();
 
-  const dayLimit = new Date(
-    date.getFullYear(),
-    date.getMonth() + 1,
-    0
-  ).getDate();
-  console.log(dayLimit);
+  // const dayLimit = new Date(
+  //   date.getFullYear(),
+  //   date.getMonth() + 1,
+  //   0
+  // ).getDate();
 
   return (
     <>
@@ -78,7 +78,7 @@ export function DatePicker(props) {
               id="datePickerDay"
               type="number"
               min={"1"}
-              max={dayLimit.toString()}
+              max={maxDay}
               onChange={onDayChange}
               className="ds-w-46px sm:ds-w-68px ds-px-10px ds-rounded ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-py-5px "
             />
@@ -113,6 +113,7 @@ DatePicker.defaultProps = {
   hasYear: true,
   hasError: false,
   hasLabel: false,
+  maxDay: 31,
   minYear: 0,
   maxYear: 10000,
 };
@@ -131,6 +132,7 @@ DatePicker.propTypes = {
   hasYear: PropTypes.bool,
   hasError: PropTypes.bool,
   hasLabel: PropTypes.bool,
+  maxDay: PropTypes.number,
   minYear: PropTypes.number,
   maxYear: PropTypes.number,
 
