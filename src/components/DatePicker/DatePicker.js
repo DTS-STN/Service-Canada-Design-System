@@ -75,14 +75,6 @@ export function DatePicker(props) {
               type="number"
               min={"1"}
               max={dayLimit.toString()}
-              onKeyPress={(e) => {
-                if (
-                  !/[0-9]/.test(e.key) &&
-                  (e.value > dayLimit || e.value < 1)
-                ) {
-                  e.preventDefault();
-                }
-              }}
               className="ds-w-46px sm:ds-w-68px ds-px-10px ds-rounded ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-py-5px "
             />
           </div>
