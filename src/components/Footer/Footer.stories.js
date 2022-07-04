@@ -28,3 +28,19 @@ ErrorPageFooter.args = {
   btnLink: "/",
   error: true,
 };
+
+export const FrFooterAuth = Template.bind({});
+FrFooterAuth.args = {
+  id: "footer",
+  lang: "fr",
+  btnLink: "/",
+  isAuthenticated: true,
+};
+
+export const EnFooterAuth = Template.bind({});
+EnFooterAuth.args = {
+  id: "footer",
+  lang: "en",
+  btnLink: "/",
+  isAuthenticated: true,
+};

@@ -122,7 +122,6 @@ const button = plugin(function ({ addUtilities, theme }) {
       fontFamily: theme("fontFamily.header"),
       fontWeight: theme("fontWeight.regular"),
       fontSize: theme("fontSize.btnother"),
-      backgroundColor: theme("colors.multi.neutrals.white"),
       color: theme("colors.multi.blue.blue60c"),
       borderRadius: "4px",
       padding: "6px 14px",
