@@ -39,7 +39,6 @@ EnglishAuth.args = {
 FrenchAuth.args = {
   id: "header",
   lang: "fr",
-  // isAuthenticated: true,
   menuProps: {
     dashboardPath: "/examplePath",
     onSignOut: () => {},

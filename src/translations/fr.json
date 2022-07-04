@@ -25,11 +25,13 @@
     "link3": "À propos de Canada.ca",
     "link4": "Avis",
     "link5": "Confidentialité",
+    "link6": "Coordonnées",
     "link1link": "https://www.canada.ca/fr/social.html",
     "link2link": "https://www.canada.ca/fr/mobile.html",
     "link3link": "https://www.canada.ca/fr/government/about.html",
     "link4link": "https://www.canada.ca/fr/transparency/terms.html",
-    "link5link": "https://www.canada.ca/fr/transparency/privacy.html"
+    "link5link": "https://www.canada.ca/fr/transparency/privacy.html",
+    "link6link": "/"
   },
   "errorPageHeadingTitle404": "Nous ne pouvons trouver cette page Web",
   "errorPageHeadingTitle500": "Nous éprouvons des difficultés avec cette page",
