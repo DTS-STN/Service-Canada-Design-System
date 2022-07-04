@@ -51,6 +51,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 - More Information Component
 - What Component
 - Related Component
+- Auth Footer Component
+- MediaPlayer Component
+- Updated Date Picker Component
 
 ### Changed
 
@@ -145,4 +148,8 @@ Initial release of the Design System Package
 - What Component
 - Related Component
 
-## [v1.38.0] - 2022-06-02
+## [v1.42.0] - 2022-06-02
+
+- Auth Footer Component
+- MediaPlayer Component
+- Updated Date Picker Component
