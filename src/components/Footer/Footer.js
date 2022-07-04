@@ -90,9 +90,10 @@ export function Footer(props) {
   ];
   let bLinks = isAuthenticated ? brandLinksAuth : brandLinks;
   let bLinksBg = isAuthenticated
-    ? "ds-bg-multi-neutrals-grey5 ds-h-86px"
+    ? "ds-bg-multi-neutrals-grey5 sm:ds-h-86px"
     : "ds-h-full";
   let bottomSectionPad = isAuthenticated ? "ds-pt-12px" : "ds-pt-5";
+  let flex = isAuthenticated ? "sm:ds-flex-row" : "md:ds-flex-row";
 
   const container = containerClass || "ds-container";
 
@@ -149,7 +150,7 @@ export function Footer(props) {
           ) : null}
           <div className={`${bLinksBg} ds-pb-4`}>
             <section
-              className={`${container} ds-h-auto ${bottomSectionPad} ds-flex ds-flex-col md:ds-flex-row ds-justify-between`}
+              className={`${container} ds-h-auto ${bottomSectionPad} ds-flex ds-flex-col ds-justify-between ${flex}`}
             >
               <nav
                 className="ds-mt-3.5 xl:ds-mt-5"
@@ -159,7 +160,7 @@ export function Footer(props) {
                 <h2 className="ds-sr-only" id="accessibleSectionHeader2">
                   About this site
                 </h2>
-                <ul className="ds-flex ds-flex-col sm:ds-flex sm:ds-flex-row">
+                <ul className="ds-flex ds-flex-col sm:ds-flex-row">
                   {bLinks.map((value, index) => {
                     return (
                       <li
