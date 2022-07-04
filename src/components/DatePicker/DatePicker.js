@@ -23,7 +23,7 @@ export function DatePicker(props) {
     formLabelProps,
     formErrorProps,
   } = props;
-  const date = new Date();
+  // const date = new Date();
 
   // const dayLimit = new Date(
   //   date.getFullYear(),
