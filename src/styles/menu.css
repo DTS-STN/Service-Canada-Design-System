@@ -26,11 +26,7 @@
   background: #ebf2fc;
 }
 .ds-menuHeader {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 28.8px;
+  padding-right: 0px;
   margin-bottom: 0;
   color: #ffffff;
 }
@@ -81,11 +77,6 @@ nav {
   }
 }
 
-/* @media (max-width: 320px) {
-  #menuButtonParent {
-    padding-right: 12px !important;
-  }
-} */
 @media (max-width: 768px) {
   #menuDropdownSub li,
   #menuButtonParent,
@@ -101,5 +92,13 @@ nav {
   #buttonNav {
     padding-top: 0;
     padding-bottom: 0;
+  }
+
+  .menuMobile {
+    width: 190px;
+  }
+
+  .menuOuterShell {
+    width: 320px;
   }
 }

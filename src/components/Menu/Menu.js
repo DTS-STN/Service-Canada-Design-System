@@ -72,21 +72,24 @@ export function Menu(props) {
   }
 
   return (
-    <div className="ds-headerNav ds-bg-multi-blue-blue70" ref={ref}>
-      <nav className="sm:ds-container ds-flex ds-items-center ds-justify-between ds-flex-wrap ds-w-full ds-relative">
-        <div className="ds-flex ds-items-center ds-flex-shrink-0 ds-text-white">
-          <h3 id="mainSiteNav" className="sm:ds-p-0 ds-container ds-menuHeader">
+    <div className="ds-w-full ds-headerNav ds-bg-multi-blue-blue70" ref={ref}>
+      <nav className="sm:ds-container ds-flex ds-items-center ds-justify-between sm:ds-flex-nowrap ds-flex-wrap ds-relative">
+        <div className="menuMobile sm:ds-h-full ds-h-76px ds-flex ds-items-center">
+          <p
+            id="mainSiteNav"
+            className="ds-header-font-custom sm:ds-p-0 ds-container ds-menuHeader"
+          >
             {lang === "fr" ? FR.menuHeaderTitle : EN.menuHeaderTitle}
-          </h3>
+          </p>
         </div>
         <div
           id="menuButtonParent"
-          className="ds-menuButtonParent ds-block sm:ds-hidden sm:ds-pr-16px ds-pr-10px focus:ds-bg-multi-blue-blue2 ds-text-white ds-border-l-2 ds-border-white"
+          className="ds-inline ds-menuButtonParent sm:ds-hidden sm:ds-pr-16px ds-pr-10px focus:ds-bg-multi-blue-blue2 ds-text-white ds-border-l-2 ds-border-white"
         >
           <button
             id="menuButton"
             onClick={onMenuClick}
-            className="ds-text-h4 ds-text-canada-footer-font focus:ds-outline-none ds-py-4"
+            className="focus:ds-outline-none ds-py-24px"
             aria-haspopup="true"
             aria-expanded={menuDisplayed}
             aria-controls="menuDropdown"
