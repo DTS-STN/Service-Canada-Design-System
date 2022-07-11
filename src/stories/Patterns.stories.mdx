@@ -1,234 +1,608 @@
 import { Meta } from '@storybook/addon-docs/blocks';
+import { Message } from '../components/Message/Message'
+import { Image } from '../components/Image/Image'
+import { Link } from '../components/Link/Link'
+import { Collapse } from '../components/Collapse/Collapse'
 
 <Meta title="Documentation/Patterns" />
 
-# DECD Design System Component Library 🎨
-
-This repository contains the source code for the React component library which corresponds to DECD designs following the [canada.ca guidelines](https://www.canada.ca/en/government/about/design-system.html).
-
-This library contains reusable components that are accessible and can be used across DECD products in order to ensure brand and design consistency and to speed up development through reusability.
-
-## Using this Package in Your Project 🤓
-
-The package is hosted in npm public registry. To use it simply install it as one of your dependencies
-
-This specifies that any package scoped @dts-stn should come from the github npm registry (where this package is located).
-
-**Step 1:** Install the package using this command
-
-```bash
-$ npm install --save @dts-stn/decd-design-system
-```
-
-**Step 2:** You can now import the components you wish to use anywhere in your project
-
-```js
-import { Component } from "@dts-stn/decd-design-system";
-```
-
-## Developing this Package 👨🏽‍💻👩🏽‍💻
-
-### Tech Stack
-
-| Layer                 | Stragety                                      |
-| :-------------------- | :-------------------------------------------- |
-| Web Client Tech       | HTML5, CSS3+, JS                              |
-| Framework             | React                                         |
-| Version Control       | Git                                           |
-| Pre-commit Git Hooks  | Husky                                         |
-| JS Linter             | ESLint                                        |
-| Code Formatter        | Prettier                                      |
-| JS Compiler           | Babel                                         |
-| Task Runner           | NPM Scripts                                   |
-| Module Bundler        | Rollup                                        |
-| CSS & JS Integration  | PostCSS & Tailwind CSS                        |
-| Packaging Stragety    | NPM Packages                                  |
-| Dev Environment       | Storybook                                     |
-| Unit & React Testing  | Jest (React Testing Library)                  |
-| Accessibility Testing | Jest-axe, Storybook Accessibility Addon (axe) |
-| CI/CD Pipeline        | Github Actions                                |
-
-### Getting Started
-
-[Install Nodes.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-
-```bash
-# Install Packages
-$ npm install
-```
-
-### Developing and Documenting Components 📝
-
-This project uses [storybook](https://storybook.js.org/) to document and provide a playground to visually see components in action while you are developing them. To run storybook, run the command below from the root directory
-
-```bash
-# Start dev environment
-$ npm run storybook
-```
-
-### Testing Strategies 🧪
-
-This project uses Jest and the React Testing Library for testing. We've decided to use Jest as it is a widely used testing tool and provides sufficient resources for testing a component library. The React Testing Library provides useful helpers to further push the flexibility of the jest testing tool. Some example test cases include;
-
-- Testing components with multiple styles (ex. button component with different button styles) [src/components/ActionButton.test.js](src/components/ActionButton.test.js)
-- Components styles are correctly rendered (Dimensions, Color, Fontstyle, Fontsize, etc) line 12 [src/components/Banner.test.js](src/components/Banner.test.js)
-- Clickable components (ex. button component has an onclick prop) line 17 [src/components/Menu.test.js](src/components/Menu.test.js)
-- Rendering with different input props line 19 [src/components/TextField.test.js](src/components/TextField.testjs)
-
-To manually run tests simply use the following command in the root directory
-
-```bash
-# run tests
-$ npm run test
-```
-
-The test script is automatically run when creating a new pull request.
-
-For more information on tools and resources refer to our [wiki page](https://github.com/DTS-STN/DECD-Design-System/wiki#testing-documentation)
-
-### Accessibility Testing Strategies
-
-**Important Note:** we are testing for [WCAG 2.1 Level AA compliance](https://www.w3.org/TR/WCAG21/) according to the [Standard on Web Accessibility](https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=23601)
-
-We are using multiple tools and steps to do accessibility testing, as no one tool is capable of checking for all accessibility concerns.
-
-1. We are using the [Storybook Accessibility Addon](https://storybook.js.org/blog/accessibility-testing-with-storybook/) as our main tool for accessibility testing. The Addon uses the Axe accessibility engine developed by Deque Systems. Axe is run on each component in Storybook and the addon will provide a list of accessibility violations, vulnerabilities and links to documentaion to help fix the violations. To use, simply run Storybook locally.
-
-2. We are also preforming manual tests to check for accessibility concerns. The following manual tests should be completed on each component:
-
-   - Zoom content to 200% to ensure it is readable
-   - Tab through content using keyboard only
-   - Verify new content using at least 1 screen reader tool from the following list: https://dequeuniversity.com/screenreaders/
-
-3. Jest-axe is ran along with other unit tests. Jest-axe is time efficient but only covers about 30% of unit test cases. To run unit tests follow instructions listed under the [Testing Strategies 🧪](#Testing-Strategies-🧪) section. The following is an example test case:
-
-   - Passing the Action Button Props through jest-axe tool line 73 [src/components/ActionButton.test.js](src/components/ActionButton.test.js)
-
-For more information on accessibility tools and resources refer to our [wiki page](https://github.com/DTS-STN/DECD-Design-System/wiki#accessibility-documentation)
-
-### Browser & Device Testing
-
-We will be building components for mobile first, but also supporting web browsers and all screen sizes.
-
-Testing will be done manually, to confirm components are displaying correctly on different web browsers. Based on data collected, we will be supporting and testing on the following 3 most used browsers (Make sure to test on atleast one of the given versions listed under each web browser);
-
-- Google Chrome
-  - Version 80, 81, 85
-- Safari
-  - Version 12.1, 13, 13.1, 14
-- Internet Explorer
-  - Version 11
-- Edge
-  - Version 17, 18, 87, 89
-
-### Linting
-
-We are using eslint a11y plugin to check for any accessibility errors and Prettier formatter to clean up/format our code. We use Husky to automate these two processes during the commit process, so we can ensure that our code is checked before pushing any of our work to the repo. These are the most commonly used tools for formatting react projects and have many use cases confirming their reliability.
-
-Whenever any files are committed, prettier formatter will be ran to format and clean up the files before comfirming the commit. Eslint will also automatically be ran at the same point in the process to check for any a11y concerns.
-
-To manually run eslinting and check for accessibility errors run the following command in the root directory
-
-```bash
-$ npm run eslint
-```
-
-To manually run linting on all files (Prettier formatting) run the following command in the root directory
-
-```bash
-$ npm run lint
-```
-
-### Building the Package 👷🏽‍♀️👷🏽
-
-This package uses babel and rollup to transpile and create production bundles which are generated in the `/dist` folder at the root level of the project. To build the production bundle at any time simply run the following command
-
-```bash
-$ npm run build
-```
-
-Rollup looks at the following file [src/index.js](src/index.js) to determine what it should include in the production bundle... as such only import and export things in this file that you want to be included, otherwise do not touch this file.
-
-### Testing Package Locally
-
-Sometimes it's helpful to test a component your working on in an actual application to test it's import or see it being rendered in the browser. There are a couple of ways you can test our package locally:
-
-1. Simulating a client project in another code base:
-
-   You can create a tarball file based on your local branch to simulate what the decd-design-system package would look like with your new code. To create a tarball file run the following command in the top most folder in your local branch
-
-   ```bash
-   $ npm pack
-   ```
-
-   This will create a dts-stn-decd-design-system-0.0.0.tgz file in your project.
-
-   Next follow steps 2 - 5 under [Testing a pre-release:](#testing-a-pre-release) to install the tarball file on another chosen application on your local and import individual components just as you would with an npm package.
-
-### Package Release Process
-
-A [pre-release](https://github.com/DTS-STN/DECD-Design-System/releases/tag/latest) is a development build created whenever new components or bug fixes are ready to be tested by other teams before they are released to production as a new version of our npm package. Pre-release assets (a tarball file) that can be used for testing are created every time there is a change to the release branch.
-
-A [release](https://github.com/DTS-STN/DECD-Design-System/packages/847413) is created whenever new components or bug fixes are ready to go to production. Releases should be completed by an member from the DECD Design System team. A new version of our npm package is created on every release.
-
-#### **Creating a pre-release:**
-
-1. Update documentation:
-
-   - Create a new feature branch and add any changes to unreleased section in CHANGELOG.md
-   - Merge feature branch into develop
-   - Note: If you are repo admin, you can commit any changes to CHANGELOG.md directly to develop
-
-2. Create a PR from the delevop branch into the release branch.
-
-3. Once the PR is approved and merged, the [Generate Pre-release](https://github.com/DTS-STN/DECD-Design-System/actions/workflows/generate-pre-release.yml) Github Action will be triggered.
-
-4. A release will be created with the tag ["latest"](https://github.com/DTS-STN/DECD-Design-System/releases/tag/latest) which will include a .tgz asset.
-
-#### **Testing a pre-release:**
-
-To test the pre-release you will be downloading a tarball file onto your local machine to mimic an npm package. Once you download the tarball file, you can install it on your local application and import individual components just as you would with an npm package. Follow the steps below to test components using the pre-release:
-
-1.  Download the asset onto your local machine (can be anywhere on your local).
-
-2.  Go to the root folder of the project/application you want to test the new release on (or the folder with your package.json where you would be downlading our npm package).
-
-3.  Run the below command with the correct version number and path to the .tgz asset. This will install the pre-release package that is sitting on your local.
-
-    ```bash
-    $ npm install ~/dts-stn-decd-design-system-0.0.0.tgz
-    ```
-
-4.  Start testing out the package by adding a component from the package to your repo (insert link to ).
-
-    ```js
-    import { Component } from "@dts-stn/decd-design-system";
-    ```
-
-5.  When testing is completed, to ensure you are no longer using the pre-release version of the package, run the below command in your repo with the [current version of the npm package](https://github.com/DTS-STN/DECD-Design-System/packages/847413). This will uninstall the pre-relase .tgz file and reinstall the npm package back in your local project/application.
-
-    ```bash
-    $ npm install --save @dts-stn/decd-design-system
-    ```
-
-**Creating a release:**
-
-1. Update documentation:
-
-   - Create a new feature branch
-   - Update version number in package.json & package-lock.json
-   - Create a dated version entry in CHANGELOG.md and add any changes/fixes/additions
-   - Merge feature branch into release
-   - Note: If you are repo admin, you can commit any changes to CHANGELOG.md, package.json & package-lock.json directly to release
-
-2. Create a PR from the release branch into the main branch.
-
-3. Once the PR is approved and merged, the [Publish Package on Release](https://github.com/DTS-STN/DECD-Design-System/actions/workflows/publish-package-on-release.yml) Github Action will be triggered and a new version (verison number is based on your package.json updates) will be created.
-
-### License
-
-Unless otherwise noted, the source code of this project is covered under Crown Copyright, Government of Canada, and is distrubuted under the [MIT](https://github.com/DTS-STN/DECD-Design-System/blob/main/LICENSE.md).
-
-The Canada wordmark and related graphics associated with this distribution are protected under trademark law and copyright law. No permission is granted to use them outside the parameters of the Government of Canada's corporate identity program. For more information, see [Federal identity requirements](https://www.canada.ca/en/treasury-board-secretariat/topics/government-communications/federal-identity-requirements.html).
-
-All content of the Design System Library is available under the [Open Government Licence - Canada](https://open.canada.ca/en/open-government-licence-canada)
+<h1 className="ds-heading1"> Opt-in to give consent</h1>
+<Message
+  alert_icon_alt_text="info icon"
+  alert_icon_id="info icon"
+  id="info"
+  message_heading={[<p>This pattern is currently <b>under development.</b></p>]}
+  type="info"
+/>
+<br/>
+
+<h2 className="ds-heading2"> Notifying the user of data collection and asking them to consent to it</h2>
+
+<div className="ds-flex">
+<div>
+  <p>
+  We have a responsibility to ask users for consent when we want to collect, store, or use their data especially personal information.
+  </p>
+  <p className="ds-body-bold">
+  This pattern asks the user to:
+  </p>
+  <ul>
+    <li>read a summarized privacy notice</li>
+    <li>confirm that they clearly understand and freely agree to how their data will be collected and used</li>
+  </ul>
+</div>
+<Image
+  alt="Default Image"
+  id="image"
+  src="https://dpl-bmd.alpha.service.canada.ca/assets/images/opt-in.png"
+/>
+</div>
+
+<h2 className="ds-heading2"> Notifying the user of data collection and asking them to consent to it</h2>
+<p className="ds-body-bold">
+Use this pattern when:
+</p>
+<ul>
+ <li>privacy notices (statements, terms of use, etc.) are required. For example, signing up for a new service or storing data in cookies</li>
+ <li>you are required by law to record when and how consent is given. This includes the version of a privacy notice the user agreed to</li>
+ <li>the user understands what data is collected, where it is stored, what it is used for, and for how long</li>
+ <li>the user is able to opt-out, correct, or delete their data at any time</li>
+</ul>
+
+<h2 className="ds-heading2">When not to use this pattern</h2>
+<p className="ds-body-bold">
+Don’t use this pattern when:
+</p>
+<ul>
+  <li>the type of data collected, where it is stored, what it is used for, and for how long, is unspecified or will change often</li>
+  <li>the user cannot see or access the other data that organization collects and its purposes or uses</li>
+  <li>there isn’t a clear process for the user to opt-out, correct, or delete their data at any time</li>
+</ul>
+
+<h2 className="ds-heading2">How this pattern works</h2>
+<p>
+When you collect a user’s data, make sure the following are <b>present, easy to find, read, and use.</b>
+</p>
+
+<h4 className="ds-heading4">Privacy statement</h4>
+<p>
+A summarized privacy statement highlighting the type(s) of data collection, storage, and use, with links to the full statement. Be sure to use proper heading levels, typically a h2 is used.
+</p>
+
+
+<h4 className="ds-heading4">Example of a privacy statement</h4>
+<div className="ds-rounded ds-shadow-md ds-pt-20px ds-pb-20px ds-px-24px">
+      <h2 className="ds-heading2">Privacy policy</h2>
+      <p className="ds-body ds-mb-10px">
+        [You can add a custom privacy statement here that adheres to the
+        Government of Canada privacy. It should be clear how the users personal
+        information will and will not be used. Examples follow.]
+      </p>
+      <p className="ds-body ds-mb-10px">
+        Your information <strong>will not</strong> be used for any
+        decision-making process that affects your access to Government of Canada
+        services. Your personal information <strong>will not</strong> be used
+        for any administrative purposes.
+      </p>
+      <p className="ds-body ds-mb-10px">
+        Your personal information and feedback are confidential.
+      </p>
+      <p className="ds-body ds-mb-10px">
+        Your information <strong>will</strong> be used by Employment and Social
+        Development Canada for [Briefly explain what the information will be
+        used for].
+      </p>
+      <h3 className="ds-heading3">What we will collect</h3>
+      <p className="ds-body ds-mb-10px">
+        We need the following information so we can [Briefly explain why you
+        need the following data]:
+      </p>
+      <ul className="ds-body ds-pl-4 ds-mb-5 ds-list-inside ds-list-disc ds-mb-10px">
+        <li>Email address</li>
+        <li>[List more optional personal identifying fields]</li>
+      </ul>
+      <p className="ds-body ds-mb-10px">
+        You can also choose to share more information with us so we can [Briefly
+        explain how providing the following data will enable services for the
+        user]:
+      </p>
+      <ul className="ds-body ds-pl-4 ds-mb-5 ds-list-inside ds-list-disc ds-mb-10px">
+        <li>Province or territory</li>
+        <li>[List more optional personal identifying fields]</li>
+      </ul>
+      <p className="ds-body ds-mb-10px">
+        We collect this information to ensure our research groups are diverse,
+        and to identify trends in feedback for specific groups.
+      </p>
+      <Link
+        href="https://www.canada.ca/en/transparency/privacy.html"
+        id="link"
+        text="Read the full privacy policy."
+      />
+    </div>
+
+<Collapse
+  id="pattern1"
+  title="Code"
+>
+  <pre>
+    <ol>
+      <li>
+        <code>
+          <span>
+            &lt;h2&gt;
+          </span>
+          <span>
+            Privacy policy
+          </span>
+          <span>
+            &lt;/h2&gt;
+          </span>
+        </code>
+      </li>
+      <li>
+        <code>
+          <span>
+            &lt;p&gt;
+          </span>
+          <span>
+            Your information
+          </span>
+          <span>
+           &lt;strong&gt;
+          </span>
+          <span>
+           will not
+          </span>
+          <span>
+           &lt;/strong&gt;
+          </span>
+          <span>
+            be used for any decision-making process that affects your access to Government of Canada services. Your personal information
+          </span>
+          <span>
+           &lt;strong&gt;
+          </span>
+          <span>
+           will not
+          </span>
+          <span>
+           &lt;/strong&gt;
+          </span>
+          <span>
+           &lt;be used for any administrative purposes.&gt;
+          </span>
+          <span>
+           &lt;/p&gt;
+          </span>
+        </code>
+      </li>
+      <li>
+        <code>
+          <span>
+            &lt;p&gt;
+          </span>
+          <span>
+           Your personal information and feedback are confidential.
+          </span>
+          <span>
+            &lt;/p&gt;
+          </span>
+        </code>
+      </li>
+      <li>
+        <code>
+          <span>
+            &lt;p&gt;
+          </span>
+          <span>
+           Your information
+          </span>
+          <span>
+            &lt;strong&gt;
+          </span>
+          <span>
+           will
+          </span>
+          <span>
+            &lt;/strong&gt;
+          </span>
+          <span>
+            be used by Employment and Social Development Canada for ...
+          </span>
+          <span>
+            &lt;/p&gt;
+          </span>
+        </code>
+      </li>
+      <li>
+        <code>
+          <span>
+            &lt;p&gt;
+          </span>
+          <span>
+            Your information
+          </span>
+          <span>
+            &lt;strong&gt;
+          </span>
+          <span>
+            will
+          </span>
+          <span>
+            &lt;/strong&gt;
+          </span>
+          <span>
+           be used by Employment and Social Development Canada for ...
+          </span>
+          <span>
+            &lt;/p&gt;
+          </span>
+        </code>
+      </li>
+      <li>
+        <code>
+          <span>
+            &lt;h3&gt;
+          </span>
+          <span>
+            What we will collect
+          </span>
+          <span>
+            &lt;/h3&gt;
+          </span>
+        </code>
+      </li>
+      <li>
+        <code>
+          <span>
+            &lt;p&gt;
+          </span>
+          <span>
+            We need the following information so we can ...:
+          </span>
+          <span>
+            &lt;/p&gt;
+          </span>
+        </code>
+      </li>
+      <li>
+        <code>
+          <span>
+            &lt;ul&gt;
+          </span>
+        </code>
+      </li>
+      <li>
+        <code>
+          <span>    </span>
+          <span>
+            &lt;li&gt;
+          </span>
+          <span>
+            Email address
+          </span>
+          <span>
+            &lt;/li&gt;
+          </span>
+        </code>
+      </li>
+      <li>
+        <code>
+          <span>    </span>
+          <span>
+            &lt;li&gt;
+          </span>
+          <span>
+            ...
+          </span>
+          <span>
+            &lt;/li&gt;
+          </span>
+        </code>
+      </li>
+      <li>
+        <code>
+          <span>
+            &lt;/ul&gt;
+          </span>
+        </code>
+      </li>
+      <li>
+        <code>
+          <span>
+            &lt;p&gt;
+          </span>
+          <span>
+            You can also choose to share more information with us so we can ...:
+          </span>
+          <span>
+            &lt;/p&gt;
+          </span>
+        </code>
+      </li>
+      <li>
+        <code>
+          <span>
+            &lt;ul&gt;
+          </span>
+        </code>
+      </li>
+      <li>
+        <code>
+          <span>    </span>
+          <span>
+            &lt;li&gt;
+          </span>
+          <span>
+            &lt;Province or territory&gt;
+          </span>
+          <span>
+            &lt;/li&gt;
+          </span>
+        </code>
+      </li>
+      <li>
+        <code>
+          <span>    </span>
+          <span>
+            &lt;li&gt;
+          </span>
+          <span>
+            &lt;...&gt;
+          </span>
+          <span>
+            &lt;/li&gt;
+          </span>
+        </code>
+      </li>
+      <li>
+        <code>
+           <span>&lt;/ul&gt;</span>
+        </code>
+      </li>
+      <li>
+        <code>
+          <span>
+            &lt;p&gt;
+          </span>
+          <span>
+            &lt;We collect this information to ensure our research groups are diverse, and to identify trends in feedback for specific groups.&gt;
+          </span>
+          <span>
+            &lt;/p&gt;
+          </span>
+        </code>
+      </li>
+      <li>
+        <code>
+          <span>
+            &lt;p&gt;
+          </span>
+          <span>
+            &lt;a href="https://www.canada.ca/en/transparency/privacy.html" &gt;
+          </span>
+          <span>
+            Read the full privacy policy.
+          </span>
+          <span>
+            &lt;/p&gt;
+          </span>
+        </code>
+      </li>
+    </ol>
+  </pre>
+
+</Collapse>
+
+<h4 className="ds-heading4">Opt-out Description</h4>
+<p>
+A brief description of how to opt-out, correct, or delete their data later. The section should start with the same level heading as the Privacy statement, typically a h2.
+</p>
+
+<h4 className="ds-heading4">Example of a privacy statement</h4>
+<div className="ds-rounded ds-shadow-md ds-pt-20px ds-pb-20px ds-px-24px">
+    <div>
+      <h2 className="ds-heading2">
+        How to unsubscribe from [identify what the user is unsubscribing from]
+      </h2>
+      <p className="ds-body">
+        If you have previously signed up to become a participant and no longer
+        wish to be contacted for future [explain in detail what the user is
+        unsubscribing from], you can{" "}
+        <Link href="#unsubscribe" id="link" text="unsubscribe" /> yourself from
+        the participant list and we will remove your personal information.
+      </p>
+    </div>
+</div>
+<Collapse
+  id="pattern2"
+  title="Code"
+>  
+  <pre>
+    <ol>
+      <li>
+        <code>
+          <span>
+            &lt;h2&gt;
+          </span>
+          <span>
+            How to unsubscribe from ...
+          </span>
+          <span>
+            &lt;/h2&gt;
+          </span>
+        </code>
+      </li>
+      <li>
+        <code>
+          <span>
+            &lt;p&gt;
+          </span>
+          <span>
+            If you have previously signed up to become a participant and no longer wish to be contacted for future ..., you can
+          </span>
+          <span>
+            &lt;a href="#unsubscribe">unsubscribe&gt;
+          </span>
+          <span>
+            unsubscribe 
+          </span>
+          <span>
+            &lt;/a&gt;
+          </span>
+          <span>
+            yourself from the participant list and we will remove your personal information.
+          </span>
+          <span>
+            &lt;/p&gt;
+          </span>
+        </code>
+      </li>
+    </ol>
+  </pre>
+</Collapse>
+
+<h4 className="ds-heading4">Affirmative action</h4>
+<p>
+An affirmative action the user can take to opt-in by agreeing to the privacy statement (for example, a checkbox that isn’t pre-selected).
+</p>
+
+<h4 className="ds-heading4">Example of an affirmative action</h4>
+<div className="ds-rounded ds-shadow-md ds-pt-20px ds-pb-20px ds-px-24px">
+    <>
+      <div class="checkbox-inline">
+        <label for="consent" class="required">
+          <input type="checkbox" id="consent" name="consent" value="consent" />
+          <strong>
+            {" "}
+            I have read, understood and agree to the above. I affirm that I am
+            18 years old, or older. I understand that I can withdraw from this
+            [service name] at any time without consequence.
+          </strong>
+        </label>
+      </div>
+    </>
+</div>
+
+<Collapse
+  id="pattern3"
+  title="Code"
+>  
+<pre>
+  <ol>
+    <li>
+      <code>
+        <span>
+            &lt;div class="checkbox-inline"&gt;
+        </span>
+      </code>
+    </li>
+    <li>
+      <code>
+        <span>    </span>
+        <span>
+            &lt;label for="consent" class="required"&gt;
+        </span>
+      </code>
+    </li>
+    <li>
+      <code>
+        <span>        </span>
+        <span>
+            &lt;input type="checkbox" id="consent" name="consent" value="consent"&gt;
+        </span>
+      </code>
+    </li>
+    <li>
+      <code>
+        <span>        </span>
+        <span>
+            &lt;strong&gt;
+        </span>
+        <span>
+            I have read, understood and agree to the above. I affirm that I am 18 years old, or older. I understand that I can withdraw from this ... at any time without consequence.
+        </span>
+        <span>
+            &lt;/strong&gt;
+        </span>
+      </code>
+    </li>
+    <li> 
+      <code>
+        <span>    </span>
+        <span>
+            &lt;/label&gt;
+        </span>
+      </code>
+    </li>
+    <li>
+      <code>
+        <span>
+            &lt;/div&gt;
+        </span>
+      </code>
+    </li>
+  </ol>
+</pre>
+</Collapse>
+
+<h2 className="ds-heading2">Research and Impacts</h2>
+<p>
+Coming soon
+</p>
+
+<h2 className="ds-heading2">Related patterns and components</h2>
+<ul>
+  <li>
+    <Link
+      href="https://design.canada.ca/common-design-patterns/privacy-disclaimer.html"
+      id="link"
+      text="Privacy Disclaimer (Canada.ca Design System)"
+    />
+  </li>
+  <li>
+    <Link
+      href="https://privacy-statements.cds.alpha.canada.ca/en/"
+      id="link"
+      text="Privacy Statements Generator (Canadian Digital Service)"
+    />
+  </li>
+</ul>
+
+
+<h2 className="ds-heading4">Recent Changes</h2>
+<ul>
+  <li>
+    <p>2021-07-13 - Started development</p>
+  </li>
+  <li>
+    <p>2021-07-22 - Published first draft</p>
+  </li>
+</ul>
+
+<Collapse
+  id="contributeDP"
+  title="Contribute to a Data Pattern"
+>
+  <>
+    <p>
+      We love receiving feedback! If you notice something we should fix or if you would like to add a new one to our list, please make that request by forking the project and submitting a Pull Request to our GitHub repository. You can also send us an email.
+    </p>
+    <p>
+      See our <Link
+      href="https://github.com/DTS-STN/Data-Patterns/blob/main/CONTRIBUTING.md"
+      id="link"
+      text="CONTRIBUTING.md guide"
+      /> on how to do this.
+    </p>
+  </>
+
+</Collapse>
+
+<p>All content of the Data Patterns Library is available under the <Link
+      href="https://open.canada.ca/en/open-government-licence-canada"
+      id="link"
+      text="Open Government Licence - Canada"
+      />
+</p>
