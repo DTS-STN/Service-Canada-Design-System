@@ -15,6 +15,7 @@ export function Message(props) {
     alert_icon_id,
     alert_icon_alt_text,
     asHtml,
+    whiteBG,
   } = props;
   let alert_type =
     type === "warning"
@@ -42,10 +43,12 @@ export function Message(props) {
       ? "ds-border-specific-cyan-cyan50 ds-rounded ds-border-solid ds-border-3"
       : "ds-border-specific-green-green50a ds-rounded ds-border-solid ds-border-3";
 
+  let white_BG = whiteBG ? "ds-bg-multi-neutrals-white" : " ";
+
   return (
     <div
       id={id}
-      className={`ds-relative ${style_type} ds-min-w-290px sm:ds-py-28px sm:ds-px-24px ds-py-16px ds-px-16px`}
+      className={`ds-relative ${style_type} ds-min-w-290px sm:ds-py-28px sm:ds-px-24px ds-py-16px ds-px-16px ${white_BG}`}
     >
       <div className="ds-absolute ds-top-10 sm:ds-left-3.5 ds-left-1.5 ds-bg-multi-neutrals-white ds-py-4px">
         {/* change back to image component once fixed */}
@@ -114,4 +117,9 @@ Message.propTypes = {
    * HTML toggle. Determines if text is parsed as plain text or HTML.
    */
   asHtml: PropTypes.bool,
+
+  /**
+   * If true the background will be white, default is transparent.
+   */
+  whiteBG: PropTypes.bool,
 };
