@@ -23,6 +23,7 @@ export const RequiredWithInfo = Template.bind({});
 Default.args = {
   id: "default",
   label: "Default Label",
+  optionalText: "",
 };
 
 Required.args = {
