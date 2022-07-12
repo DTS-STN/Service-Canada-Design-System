@@ -147,6 +147,12 @@ export { TopNav } from "./components/TopNav/TopNav";
  * Date Modified component
  */
 export { Date } from "./components/Date/Date";
+
+/*
+ * Date Picker component
+ */
+export { DatePicker } from "./components/DatePicker/DatePicker";
+
 /**
  * Contributors Component
  */
