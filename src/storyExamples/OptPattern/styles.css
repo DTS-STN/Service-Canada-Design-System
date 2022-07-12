@@ -1,0 +1,5 @@
+label.required:after {
+  content: " (required)";
+  color: #d3080c;
+  font-weight: 700;
+}
