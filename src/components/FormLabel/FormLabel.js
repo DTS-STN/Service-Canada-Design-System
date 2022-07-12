@@ -26,7 +26,10 @@ export function FormLabel(props) {
         {props.infoText && (
           <button
             className="ds-infoText ds-cursor-pointer ds-ml-auto md:ds-ml-0 ds-pl-8px"
-            onClick={() => setHelpTextState(!displayHelpText)}
+            onClick={(e) => {
+              e.preventDefault();
+              setHelpTextState(!displayHelpText);
+            }}
           >
             <Image tabIndex={-1} src={infoImage} alt="Click on to show info" />
           </button>
