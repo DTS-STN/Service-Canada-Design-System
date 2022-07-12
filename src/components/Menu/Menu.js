@@ -239,7 +239,7 @@ export function Menu(props) {
             </ul>
           </div>
         </div>
-        <div className="sm:ds-pl-22px sm:ds-block ds-hidden">
+        <div className="sm:ds-pl-10px sm:ds-block ds-hidden">
           <Button
             id="secondary"
             onClick={onSignOut}
