@@ -1,0 +1,547 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Message } from '../components/Message/Message'
+import { Image } from '../components/Image/Image'
+import { Link } from '../components/Link/Link'
+import { Collapse } from '../components/Collapse/Collapse'
+
+<Meta title="Documentation/Patterns" />
+
+<h1 className="ds-heading1"> Opt-in to give consent</h1>
+<Message
+  alert_icon_alt_text="info icon"
+  alert_icon_id="info icon"
+  id="info"
+  message_heading={[<p>This pattern is currently <b>under development.</b></p>]}
+  type="info"
+/>
+<br/>
+
+<h2 className="ds-heading2"> Notifying the user of data collection and asking them to consent to it</h2>
+
+<div className="ds-flex">
+<div>
+  <p>
+  We have a responsibility to ask users for consent when we want to collect, store, or use their data especially personal information.
+  </p>
+  <p className="ds-body-bold">
+  This pattern asks the user to:
+  </p>
+  <ul>
+    <li>read a summarized privacy notice</li>
+    <li>confirm that they clearly understand and freely agree to how their data will be collected and used</li>
+  </ul>
+</div>
+<Image
+  alt="Default Image"
+  id="image"
+  src="https://dpl-bmd.alpha.service.canada.ca/assets/images/opt-in.png"
+/>
+</div>
+
+<h2 className="ds-heading2"> Notifying the user of data collection and asking them to consent to it</h2>
+<p className="ds-body-bold">
+Use this pattern when:
+</p>
+<ul>
+ <li>privacy notices (statements, terms of use, etc.) are required. For example, signing up for a new service or storing data in cookies</li>
+ <li>you are required by law to record when and how consent is given. This includes the version of a privacy notice the user agreed to</li>
+ <li>the user understands what data is collected, where it is stored, what it is used for, and for how long</li>
+ <li>the user is able to opt-out, correct, or delete their data at any time</li>
+</ul>
+
+<h2 className="ds-heading2">When not to use this pattern</h2>
+<p className="ds-body-bold">
+Don’t use this pattern when:
+</p>
+<ul>
+  <li>the type of data collected, where it is stored, what it is used for, and for how long, is unspecified or will change often</li>
+  <li>the user cannot see or access the other data that organization collects and its purposes or uses</li>
+  <li>there isn’t a clear process for the user to opt-out, correct, or delete their data at any time</li>
+</ul>
+
+<h2 className="ds-heading2">How this pattern works</h2>
+<p>
+When you collect a user’s data, make sure the following are <b>present, easy to find, read, and use.</b>
+</p>
+
+<h4 className="ds-heading4">Privacy statement</h4>
+<p>
+A summarized privacy statement highlighting the type(s) of data collection, storage, and use, with links to the full statement. Be sure to use proper heading levels, typically a h2 is used.
+</p>
+
+
+<h4 className="ds-heading4">Example of a privacy statement</h4>
+<div className="ds-rounded ds-shadow-md ds-pt-20px ds-pb-20px ds-px-24px">
+      <h2 className="ds-heading2">Privacy policy</h2>
+      <p className="ds-body ds-mb-10px">
+        [You can add a custom privacy statement here that adheres to the
+        Government of Canada privacy. It should be clear how the users personal
+        information will and will not be used. Examples follow.]
+      </p>
+      <p className="ds-body ds-mb-10px">
+        Your information <strong>will not</strong> be used for any
+        decision-making process that affects your access to Government of Canada
+        services. Your personal information <strong>will not</strong> be used
+        for any administrative purposes.
+      </p>
+      <p className="ds-body ds-mb-10px">
+        Your personal information and feedback are confidential.
+      </p>
+      <p className="ds-body ds-mb-10px">
+        Your information <strong>will</strong> be used by Employment and Social
+        Development Canada for [Briefly explain what the information will be
+        used for].
+      </p>
+      <h3 className="ds-heading3">What we will collect</h3>
+      <p className="ds-body ds-mb-10px">
+        We need the following information so we can [Briefly explain why you
+        need the following data]:
+      </p>
+      <ul className="ds-body ds-pl-4 ds-mb-5 ds-list-inside ds-list-disc ds-mb-10px">
+        <li>Email address</li>
+        <li>[List more optional personal identifying fields]</li>
+      </ul>
+      <p className="ds-body ds-mb-10px">
+        You can also choose to share more information with us so we can [Briefly
+        explain how providing the following data will enable services for the
+        user]:
+      </p>
+      <ul className="ds-body ds-pl-4 ds-mb-5 ds-list-inside ds-list-disc ds-mb-10px">
+        <li>Province or territory</li>
+        <li>[List more optional personal identifying fields]</li>
+      </ul>
+      <p className="ds-body ds-mb-10px">
+        We collect this information to ensure our research groups are diverse,
+        and to identify trends in feedback for specific groups.
+      </p>
+      <Link
+        href="https://www.canada.ca/en/transparency/privacy.html"
+        id="link"
+        text="Read the full privacy policy."
+      />
+    </div>
+
+ <h4 className="ds-heading4">Code:</h4>
+  <pre>
+    <code>
+    <ol>
+      <li>
+          <span>
+            &lt;h2&gt;
+          </span>
+          <span>
+            Privacy policy
+          </span>
+          <span>
+            &lt;/h2&gt;
+          </span>
+      </li>
+      <li>
+          <span>
+            &lt;p&gt;
+          </span>
+          <span>
+            Your information
+          </span>
+          <span>
+           &lt;strong&gt;
+          </span>
+          <span>
+           will not
+          </span>
+          <span>
+           &lt;/strong&gt;
+          </span>
+          <span>
+            be used for any decision-making process that affects your access to Government of Canada services. Your personal information
+          </span>
+          <span>
+           &lt;strong&gt;
+          </span>
+          <span>
+           will not
+          </span>
+          <span>
+           &lt;/strong&gt;
+          </span>
+          <span>
+           &lt;be used for any administrative purposes.&gt;
+          </span>
+          <span>
+           &lt;/p&gt;
+          </span>
+      </li>
+      <li>
+          <span>
+            &lt;p&gt;
+          </span>
+          <span>
+           Your personal information and feedback are confidential.
+          </span>
+          <span>
+            &lt;/p&gt;
+          </span>
+      </li>
+      <li>
+          <span>
+            &lt;p&gt;
+          </span>
+          <span>
+           Your information
+          </span>
+          <span>
+            &lt;strong&gt;
+          </span>
+          <span>
+           will
+          </span>
+          <span>
+            &lt;/strong&gt;
+          </span>
+          <span>
+            be used by Employment and Social Development Canada for ...
+          </span>
+          <span>
+            &lt;/p&gt;
+          </span>
+      </li>
+      <li>
+          <span>
+            &lt;p&gt;
+          </span>
+          <span>
+            Your information
+          </span>
+          <span>
+            &lt;strong&gt;
+          </span>
+          <span>
+            will
+          </span>
+          <span>
+            &lt;/strong&gt;
+          </span>
+          <span>
+           be used by Employment and Social Development Canada for ...
+          </span>
+          <span>
+            &lt;/p&gt;
+          </span>
+      </li>
+      <li>
+          <span>
+            &lt;h3&gt;
+          </span>
+          <span>
+            What we will collect
+          </span>
+          <span>
+            &lt;/h3&gt;
+          </span>
+      </li>
+      <li>
+          <span>
+            &lt;p&gt;
+          </span>
+          <span>
+            We need the following information so we can ...:
+          </span>
+          <span>
+            &lt;/p&gt;
+          </span>
+      </li>
+      <li>
+          <span>
+            &lt;ul&gt;
+          </span>
+      </li>
+      <li>
+          <span>    </span>
+          <span>
+            &lt;li&gt;
+          </span>
+          <span>
+            Email address
+          </span>
+          <span>
+            &lt;/li&gt;
+          </span>
+      </li>
+      <li>
+          <span>    </span>
+          <span>
+            &lt;li&gt;
+          </span>
+          <span>
+            ...
+          </span>
+          <span>
+            &lt;/li&gt;
+          </span>
+      </li>
+      <li>
+          <span>
+            &lt;/ul&gt;
+          </span>
+      </li>
+      <li>
+          <span>
+            &lt;p&gt;
+          </span>
+          <span>
+            You can also choose to share more information with us so we can ...:
+          </span>
+          <span>
+            &lt;/p&gt;
+          </span>
+      </li>
+      <li>
+          <span>
+            &lt;ul&gt;
+          </span>
+      </li>
+      <li>
+          <span>    </span>
+          <span>
+            &lt;li&gt;
+          </span>
+          <span>
+            &lt;Province or territory&gt;
+          </span>
+          <span>
+            &lt;/li&gt;
+          </span>
+      </li>
+      <li>
+          <span>    </span>
+          <span>
+            &lt;li&gt;
+          </span>
+          <span>
+            &lt;...&gt;
+          </span>
+          <span>
+            &lt;/li&gt;
+          </span>
+      </li>
+      <li>
+           <span>&lt;/ul&gt;</span>
+      </li>
+      <li>
+          <span>
+            &lt;p&gt;
+          </span>
+          <span>
+            &lt;We collect this information to ensure our research groups are diverse, and to identify trends in feedback for specific groups.&gt;
+          </span>
+          <span>
+            &lt;/p&gt;
+          </span>
+      </li>
+      <li>
+          <span>
+            &lt;p&gt;
+          </span>
+          <span>
+            &lt;a href="https://www.canada.ca/en/transparency/privacy.html" &gt;
+          </span>
+          <span>
+            Read the full privacy policy.
+          </span>
+          <span>
+            &lt;/p&gt;
+          </span>
+      </li>
+    </ol>
+    </code>
+  </pre>
+
+<h4 className="ds-heading4">Opt-out Description</h4>
+<p>
+A brief description of how to opt-out, correct, or delete their data later. The section should start with the same level heading as the Privacy statement, typically a h2.
+</p>
+
+<h4 className="ds-heading4">Example of a privacy statement</h4>
+<div className="ds-rounded ds-shadow-md ds-pt-20px ds-pb-20px ds-px-24px">
+    <div>
+      <h2 className="ds-heading2">
+        How to unsubscribe from [identify what the user is unsubscribing from]
+      </h2>
+      <p className="ds-body">
+        If you have previously signed up to become a participant and no longer
+        wish to be contacted for future [explain in detail what the user is
+        unsubscribing from], you can{" "}
+        <Link href="#unsubscribe" id="link" text="unsubscribe" /> yourself from
+        the participant list and we will remove your personal information.
+      </p>
+    </div>
+</div>
+
+ <h4 className="ds-heading4">Code:</h4>
+  <pre>
+    <code>
+    <ol>
+      <li>
+          <span>
+            &lt;h2&gt;
+          </span>
+          <span>
+            How to unsubscribe from ...
+          </span>
+          <span>
+            &lt;/h2&gt;
+          </span>
+      </li>
+      <li>
+          <span>
+            &lt;p&gt;
+          </span>
+          <span>
+            If you have previously signed up to become a participant and no longer wish to be contacted for future ..., you can
+          </span>
+          <span>
+            &lt;a href="#unsubscribe">unsubscribe&gt;
+          </span>
+          <span>
+            unsubscribe 
+          </span>
+          <span>
+            &lt;/a&gt;
+          </span>
+          <span>
+            yourself from the participant list and we will remove your personal information.
+          </span>
+          <span>
+            &lt;/p&gt;
+          </span>
+      </li>
+    </ol>
+    </code>
+  </pre>
+
+<h4 className="ds-heading4">Affirmative action</h4>
+<p>
+An affirmative action the user can take to opt-in by agreeing to the privacy statement (for example, a checkbox that isn’t pre-selected).
+</p>
+
+<h4 className="ds-heading4">Example of an affirmative action</h4>
+<div className="ds-rounded ds-shadow-md ds-pt-20px ds-pb-20px ds-px-24px">
+    <>
+      <div class="checkbox-inline">
+        <label for="consent" class="required">
+          <input type="checkbox" id="consent" name="consent" value="consent" />
+          <strong>
+            {" "}
+            I have read, understood and agree to the above. I affirm that I am
+            18 years old, or older. I understand that I can withdraw from this
+            [service name] at any time without consequence.
+          </strong>
+        </label>
+      </div>
+    </>
+</div>
+
+ <h4 className="ds-heading4">Code:</h4>
+<pre>
+  <code>
+  <ol>
+    <li>
+        <span>
+            &lt;div class="checkbox-inline"&gt;
+        </span>
+    </li>
+    <li>
+        <span>    </span>
+        <span>
+            &lt;label for="consent" class="required"&gt;
+        </span>
+    </li>
+    <li>
+        <span>        </span>
+        <span>
+            &lt;input type="checkbox" id="consent" name="consent" value="consent"&gt;
+        </span>
+    </li>
+    <li>
+        <span>        </span>
+        <span>
+            &lt;strong&gt;
+        </span>
+        <span>
+            I have read, understood and agree to the above. I affirm that I am 18 years old, or older. I understand that I can withdraw from this ... at any time without consequence.
+        </span>
+        <span>
+            &lt;/strong&gt;
+        </span>
+    </li>
+    <li> 
+        <span>    </span>
+        <span>
+            &lt;/label&gt;
+        </span>
+    </li>
+    <li>
+        <span>
+            &lt;/div&gt;
+        </span>
+    </li>
+  </ol>
+  </code>
+</pre>
+
+<h2 className="ds-heading2">Research and Impacts</h2>
+<p>
+Coming soon
+</p>
+
+<h2 className="ds-heading2">Related patterns and components</h2>
+<ul>
+  <li>
+    <Link
+      href="https://design.canada.ca/common-design-patterns/privacy-disclaimer.html"
+      id="link"
+      text="Privacy Disclaimer (Canada.ca Design System)"
+    />
+  </li>
+  <li>
+    <Link
+      href="https://privacy-statements.cds.alpha.canada.ca/en/"
+      id="link"
+      text="Privacy Statements Generator (Canadian Digital Service)"
+    />
+  </li>
+</ul>
+
+
+<h2 className="ds-heading4">Recent Changes</h2>
+<ul>
+  <li>
+    <p>2021-07-13 - Started development</p>
+  </li>
+  <li>
+    <p>2021-07-22 - Published first draft</p>
+  </li>
+</ul>
+
+ <h4 className="ds-heading4">Contribute to a Data Pattern:</h4>
+  <pre>
+  <code>
+    <p>
+      We love receiving feedback! If you notice something we should fix or if you would like to add a new one to our list, please make that request by forking the project and submitting a Pull Request to our GitHub repository. You can also send us an email.
+    </p>
+    <p>
+      See our <Link
+      href="https://github.com/DTS-STN/Data-Patterns/blob/main/CONTRIBUTING.md"
+      id="link"
+      text="CONTRIBUTING.md guide"
+      /> on how to do this.
+    </p>
+    </code>
+  </pre>
+
+<p>All content of the Data Patterns Library is available under the <Link
+      href="https://open.canada.ca/en/open-government-licence-canada"
+      id="link"
+      text="Open Government Licence - Canada"
+      />
+</p>
