@@ -153,3 +153,7 @@ Initial release of the Design System Package
 - Auth Footer Component
 - MediaPlayer Component
 - Updated Date Picker Component
+
+## [v1.43.0] - 2022-07-12
+
+- Adding boolean for a white background on the message component
