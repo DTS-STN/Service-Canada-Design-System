@@ -15,18 +15,21 @@ export function FormLabel(props) {
           {props.label}{" "}
           {props.required ? (
             <p className="ds-inline ds-text-error-border-red ds-text-xl ds-font-medium">
-              &nbsp;{`(${props.requiredText})`}
+              &nbsp;{`${props.requiredText}`}
             </p>
           ) : (
             <p className="ds-inline ds-text-form-input-gray ds-text-xl lg:ds-text-xl ds-font-medium">
-              &nbsp;{`(${props.optionalText})`}
+              &nbsp;{`${props.optionalText}`}
             </p>
           )}
         </div>
         {props.infoText && (
           <button
             className="ds-infoText ds-cursor-pointer ds-ml-auto md:ds-ml-0 ds-pl-8px"
-            onClick={() => setHelpTextState(!displayHelpText)}
+            onClick={(e) => {
+              e.preventDefault();
+              setHelpTextState(!displayHelpText);
+            }}
           >
             <Image tabIndex={-1} src={infoImage} alt="Click on to show info" />
           </button>
@@ -49,8 +52,8 @@ export function FormLabel(props) {
 
 FormLabel.defaultProps = {
   label: "Label Text",
-  optionalText: "optional",
-  requiredText: "required",
+  optionalText: "(optional)",
+  requiredText: "(required)",
 };
 
 FormLabel.propTypes = {
