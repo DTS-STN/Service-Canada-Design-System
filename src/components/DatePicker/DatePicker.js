@@ -50,37 +50,30 @@ export function DatePicker(props) {
             onChange={onMonthChange}
             className="ds-w-165px ds-py-5px  ds-px-14px ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-rounded"
           >
-            {lang === "en" ? (
-              <>
-                <option value="1">January</option>
-                <option value="2">February</option>
-                <option value="3">March</option>
-                <option value="4">April</option>
-                <option value="5">May</option>
-                <option value="6">June</option>
-                <option value="7">July</option>
-                <option value="8">August</option>
-                <option value="9">September</option>
-                <option value="10">October</option>
-                <option value="11">November</option>
-                <option value="12">December</option>
-              </>
-            ) : (
-              <>
-                <option value="1">Janvier</option>
-                <option value="2">Février</option>
-                <option value="3">Mars</option>
-                <option value="4">Avril</option>
-                <option value="5">Peut</option>
-                <option value="6">Juin</option>
-                <option value="7">Juillet</option>
-                <option value="8">Août</option>
-                <option value="9">Septembre</option>
-                <option value="10">Octobre</option>
-                <option value="11">Novembre</option>
-                <option value="12">Décembre</option>
-              </>
-            )}
+            <>
+              <option value="1">{lang === "en" ? "January" : "Janvier"}</option>
+              <option value="2">
+                {lang === "en" ? "February" : "Février"}
+              </option>
+              <option value="3">{lang === "en" ? "March" : "Mars"}</option>
+              <option value="4">{lang === "en" ? "April" : "Avril"}</option>
+              <option value="5">{lang === "en" ? "May" : "Peut"}</option>
+              <option value="6">{lang === "en" ? "June" : "Juin"}</option>
+              <option value="7">{lang === "en" ? "July" : "Juillet"}</option>
+              <option value="8">{lang === "en" ? "August" : "Août"}</option>
+              <option value="9">
+                {lang === "en" ? "September" : "Septembre"}
+              </option>
+              <option value="10">
+                {lang === "en" ? "October" : "Octobre"}
+              </option>
+              <option value="11">
+                {lang === "en" ? "November" : "Novembre"}
+              </option>
+              <option value="12">
+                {lang === "en" ? "December" : "Décembre"}
+              </option>
+            </>
           </select>
           <div className="dropdownPos">
             <Image
