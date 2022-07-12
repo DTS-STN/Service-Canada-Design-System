@@ -77,7 +77,7 @@ export function Menu(props) {
         <div className="menuMobile sm:ds-h-full ds-h-76px ds-flex ds-items-center">
           <p
             id="mainSiteNav"
-            className="ds-header-font-custom sm:ds-p-0 ds-container ds-menuHeader"
+            className="ds-text-white ds-header-font-custom sm:ds-p-0 ds-container ds-menuHeader"
           >
             {lang === "fr" ? FR.menuHeaderTitle : EN.menuHeaderTitle}
           </p>

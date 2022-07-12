@@ -15,11 +15,11 @@ export function FormLabel(props) {
           {props.label}{" "}
           {props.required ? (
             <p className="ds-inline ds-text-error-border-red ds-text-xl ds-font-medium">
-              &nbsp;{`(${props.requiredText})`}
+              &nbsp;{`${props.requiredText}`}
             </p>
           ) : (
             <p className="ds-inline ds-text-form-input-gray ds-text-xl lg:ds-text-xl ds-font-medium">
-              &nbsp;{`(${props.optionalText})`}
+              &nbsp;{`${props.optionalText}`}
             </p>
           )}
         </div>
@@ -49,8 +49,8 @@ export function FormLabel(props) {
 
 FormLabel.defaultProps = {
   label: "Label Text",
-  optionalText: "optional",
-  requiredText: "required",
+  optionalText: "(optional)",
+  requiredText: "(required)",
 };
 
 FormLabel.propTypes = {
