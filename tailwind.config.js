@@ -299,6 +299,7 @@ module.exports = {
         "22px": "22px",
         "24px": "24px",
         "34px": "34px",
+        "176px": "176px",
         "4.5rem": "4.5rem",
       },
 
