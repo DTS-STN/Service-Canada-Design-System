@@ -1,12 +1,12 @@
 {
-  "name": "@dts-stn/decd-design-system",
+  "name": "@dts-stn/service-canada-design-system",
   "version": "1.46.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "source": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DTS-STN/DECD-Design-System"
+    "url": "git+https://github.com/DTS-STN/Service-Canada-Design-System"
   },
   "resolutions": {
     "webpack": "5.41.1"
