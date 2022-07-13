@@ -47,7 +47,7 @@ jobs:
           comment-author: 'github-actions[bot]'
           body-includes: |
             Storybooks Link For Branch
-            https://dts-stn.github.io/DECD-Design-System/${{ steps.extract_branch.outputs.branch }}
+            https://dts-stn.github.io/Service-Canada-Design-System/${{ steps.extract_branch.outputs.branch }}
 
       - name: Create or update comment # comment in pull request storybooks link
         if: steps.extract_branch.outputs.branch != 'main'
@@ -57,4 +57,4 @@ jobs:
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             Storybooks Link For Branch
-            https://dts-stn.github.io/DECD-Design-System/${{ steps.extract_branch.outputs.branch }}
+            https://dts-stn.github.io/Service-Canada-Design-System/${{ steps.extract_branch.outputs.branch }}
