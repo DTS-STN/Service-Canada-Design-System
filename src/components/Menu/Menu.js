@@ -125,7 +125,9 @@ export function Menu(props) {
           <div>
             <ul
               id="menuDropdownSub"
-              className="sm:ds-mr-176px ds-menuDropdown ds-menuRight sm:ds-text-white ds-text-gray-700"
+              className={`${
+                lang === "en" ? "sm:ds-mr-71px" : "sm:ds-mr-17px"
+              } ds-menuDropdown ds-menuRight sm:ds-text-white ds-text-gray-700`}
             >
               {isAuthenticated ? (
                 <li
@@ -239,7 +241,7 @@ export function Menu(props) {
             </ul>
           </div>
         </div>
-        <div className="sm:ds-pl-10px sm:ds-block ds-hidden">
+        <div className="sm:ds-block ds-hidden">
           <Button
             id="secondary"
             onClick={onSignOut}
