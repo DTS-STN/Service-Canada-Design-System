@@ -23,13 +23,6 @@ const Template = (args) => <Footer {...args} />;
 //   btnLink: "/",
 // };
 
-// export const ErrorPageFooter = Template.bind({});
-// ErrorPageFooter.args = {
-//   id: "footer",
-//   btnLink: "/",
-//   error: true,
-// };
-
 export const EnglishAuth = Template.bind({});
 EnglishAuth.args = {
   id: "footer",
@@ -44,4 +37,11 @@ FrenchAuth.args = {
   lang: "fr",
   btnLink: "/",
   isAuthenticated: true,
+};
+
+export const ErrorPageFooter = Template.bind({});
+ErrorPageFooter.args = {
+  id: "footer",
+  btnLink: "/",
+  error: true,
 };
