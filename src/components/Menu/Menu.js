@@ -120,18 +120,20 @@ export function Menu(props) {
             </svg>
           </button>
         </div>
-        <div className="ds-w-full ds-block ds-flex-grow sm:ds-flex sm:ds-items-center sm:ds-w-auto ds-bg-multi-blue-blue2 sm:ds-bg-multi-blue-blue70">
+        <div className="sm:ds-w-276px ds-w-full ds-block ds-flex-grow sm:ds-flex sm:ds-items-center sm:ds-w-auto ds-bg-multi-blue-blue2 sm:ds-bg-multi-blue-blue70">
           <div className="sm:ds-flex-grow sm:ds-text-center sm:ds-flex"></div>
           <div>
             <ul
               id="menuDropdownSub"
-              className="ds-menuDropdown ds-menuRight sm:ds-text-white ds-text-gray-700"
+              className={`${
+                lang === "en" ? "sm:ds-mr-71px" : "sm:ds-mr-17px"
+              } ds-menuDropdown ds-menuRight sm:ds-text-white ds-text-gray-700`}
             >
               {isAuthenticated ? (
                 <li
                   key={"authList"}
                   id="buttonNav"
-                  className={`sm:ds-pb-4 ds-pt-4 sm:ds-pl-0 sm:ds-pr-0 ds-buttonNav`}
+                  className={`sm:ds-pb-14px ds-pt-4 sm:ds-pl-0 sm:ds-pr-0 ds-buttonNav`}
                 >
                   <button
                     id="dropdownNavbarLink"
@@ -158,9 +160,9 @@ export function Menu(props) {
                         ? setHeaderDropdownClass("ds-block")
                         : setHeaderDropdownClass("ds-hidden");
                     }}
-                    className="sm:ds-w-276px ds-hidden sm:ds-flex ds-whitespace-nowrap ds-font-bold ds-font-body ds-justify-between ds-items-center sm:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 sm:ds-pr-16px ds-pr-10px sm:ds-pl-18px ds-w-full"
+                    className="ds-hidden sm:ds-flex ds-whitespace-nowrap ds-font-bold ds-font-body ds-justify-between ds-items-center sm:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 sm:ds-pr-16px ds-pr-10px sm:ds-pl-18px ds-w-full"
                   >
-                    {lang === "fr" ? FR.myAccountTitle : EN.myAccountTitle}
+                    {lang === "fr" ? FR.menuButtonTitle : EN.menuButtonTitle}
                     <svg
                       className="ds-ml-1 ds-w-4 ds-h-4"
                       fill="currentColor"
@@ -239,7 +241,7 @@ export function Menu(props) {
             </ul>
           </div>
         </div>
-        <div className="sm:ds-pl-10px sm:ds-block ds-hidden">
+        <div className="sm:ds-block ds-hidden">
           <Button
             id="secondary"
             onClick={onSignOut}

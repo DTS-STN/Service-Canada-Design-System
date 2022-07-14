@@ -157,3 +157,7 @@ Initial release of the Design System Package
 ## [v1.43.0] - 2022-07-12
 
 - Adding boolean for a white background on the message component
+
+## [v1.44.0] - 2022-07-14
+
+- Adding a min-width to blue portion of the step number of the accordion form component

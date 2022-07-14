@@ -86,7 +86,7 @@ export function AccordionForm(props) {
           {/* Number for the given card */}
           <div className="ds-flex-col ds-pb-12px">
             <div className="cardNumber ds-flex ds-flex-row">
-              <div className="ds-relative ds-rounded-full ds-w-48px ds-h-48px ds-bg-multi-blue-blue60d">
+              <div className="ds-relative ds-rounded-full ds-min-w-[48px] ds-w-48px ds-h-48px ds-bg-multi-blue-blue60d">
                 <p className="ds-leading-48px ds-absolute ds-left-3.5 ds-bottom-0.5 ds-accordion-num">
                   {index + 1}
                 </p>
