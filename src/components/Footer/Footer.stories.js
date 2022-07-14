@@ -8,39 +8,40 @@ export default {
 
 const Template = (args) => <Footer {...args} />;
 
-export const EnFooter = Template.bind({});
-EnFooter.args = {
+// Non Authenticated space footers. Leaving code incase it is needed in the future
+// export const EnFooter = Template.bind({});
+// EnFooter.args = {
+//   id: "footer",
+//   lang: "en",
+//   btnLink: "/",
+// };
+
+// export const FrFooter = Template.bind({});
+// FrFooter.args = {
+//   id: "footer",
+//   lang: "fr",
+//   btnLink: "/",
+// };
+
+// export const ErrorPageFooter = Template.bind({});
+// ErrorPageFooter.args = {
+//   id: "footer",
+//   btnLink: "/",
+//   error: true,
+// };
+
+export const EnglishAuth = Template.bind({});
+EnglishAuth.args = {
   id: "footer",
   lang: "en",
-  btnLink: "/",
-};
-
-export const FrFooter = Template.bind({});
-FrFooter.args = {
-  id: "footer",
-  lang: "fr",
-  btnLink: "/",
-};
-
-export const ErrorPageFooter = Template.bind({});
-ErrorPageFooter.args = {
-  id: "footer",
-  btnLink: "/",
-  error: true,
-};
-
-export const FrFooterAuth = Template.bind({});
-FrFooterAuth.args = {
-  id: "footer",
-  lang: "fr",
   btnLink: "/",
   isAuthenticated: true,
 };
 
-export const EnFooterAuth = Template.bind({});
-EnFooterAuth.args = {
+export const FrenchAuth = Template.bind({});
+FrenchAuth.args = {
   id: "footer",
-  lang: "en",
+  lang: "fr",
   btnLink: "/",
   isAuthenticated: true,
 };

@@ -87,6 +87,10 @@ export function Footer(props) {
       brandLink: langBrand.link4link,
       brandLinkText: langBrand.link4,
     },
+    {
+      brandLink: langBrand.link5link,
+      brandLinkText: langBrand.link5,
+    },
   ];
   let bLinks = isAuthenticated ? brandLinksAuth : brandLinks;
   let bLinksBg = isAuthenticated
