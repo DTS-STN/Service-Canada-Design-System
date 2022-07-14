@@ -2,7 +2,7 @@ import React from "react";
 import { axe, toHaveNoViolations } from "jest-axe";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import { ErrorPageFooter, FrFooter } from "../Footer/Footer.stories";
+import { ErrorPageFooter, FrenchAuth } from "../Footer/Footer.stories";
 
 expect.extend(toHaveNoViolations);
 
@@ -21,7 +21,7 @@ describe("Fr Footer Component", () => {
   // });
 
   it("French has no a11y violations", async () => {
-    const { container } = render(<FrFooter {...FrFooter.args} />);
+    const { container } = render(<FrenchAuth {...FrenchAuth.args} />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
