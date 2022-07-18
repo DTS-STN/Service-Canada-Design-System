@@ -135,7 +135,6 @@ const typography = plugin(function ({ addUtilities, theme }) {
       fontSize: theme("fontSize.mobileh6"),
       fontWeight: theme("fontWeight.bold"),
       fontFamily: theme("fontFamily.header"),
-      color: theme("colors.multi.neutrals.grey100"),
       '@media (min-width: theme("screens.sm"))': {
         fontSize: theme("fontSize.browserh3"),
       },

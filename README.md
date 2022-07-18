@@ -241,7 +241,19 @@ To test the pre-release you will be downloading a tarball file onto your local m
 
 2. Create a PR from the release branch into the main branch.
 
-3. Once the PR is approved and merged, the [Publish Package on Release](https://github.com/DTS-STN/Service-Canada-Design-System/actions/workflows/publish-package-on-release.yml) Github Action will be triggered and a new version (verison number is based on your package.json updates) will be created.
+3. Once the PR is approved and merged, the package needs to be manually published to npm using the following commands.
+
+   - npm add user
+   - npm version minor
+   - npm publish --access public
+
+4. Once the package has been published to npm, manually create release notes on github as follows:
+
+   - Go to the [releases](https://github.com/DTS-STN/Service-Canada-Design-System/releases) tab on github page
+   - Click the "draft a new release" button
+   - Add a tag (package release number) and make sure the target is set to main branch (make sure the pre-release option is not checked)
+   - Auto generate release notes or add them manually
+   - Click the "Publish release" button
 
 ### License
 
