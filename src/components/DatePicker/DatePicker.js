@@ -16,6 +16,9 @@ export function DatePicker(props) {
     onYearChange,
     hasDay,
     hasYear,
+    day,
+    month,
+    year,
     maxDay,
     minYear,
     maxYear,
@@ -47,6 +50,7 @@ export function DatePicker(props) {
           <p className="ds-form-date">{lang === "en" ? "Month" : "Mois"}</p>
           <select
             id="datePickerMonth"
+            value={month}
             onChange={onMonthChange}
             className="ds-w-165px ds-py-5px  ds-px-14px ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-rounded"
           >
@@ -89,6 +93,7 @@ export function DatePicker(props) {
             <p className="ds-form-date">{lang === "en" ? "Day" : "Jour"}</p>
             <input
               id="datePickerDay"
+              value={day}
               type="number"
               min={"1"}
               max={maxDay}
@@ -102,6 +107,7 @@ export function DatePicker(props) {
             <p className="ds-form-date">{lang === "en" ? "Year" : "An"}</p>
             <input
               id="datePickerYear"
+              value={year}
               type="number"
               min={minYear}
               max={maxYear}
@@ -149,6 +155,9 @@ DatePicker.propTypes = {
 
   hasDay: PropTypes.bool,
   hasYear: PropTypes.bool,
+  day: PropTypes.number,
+  month: PropTypes.number,
+  year: PropTypes.number,
   hasError: PropTypes.bool,
   hasLabel: PropTypes.bool,
   maxDay: PropTypes.number,
