@@ -139,6 +139,18 @@ To manually run linting on all files (Prettier formatting) run the following com
 $ npm run lint
 ```
 
+### Pull Request Procedures
+
+**Branching Strategy:**
+
+| Branch   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Associated Github Actions                                         |
+| :------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------- |
+| main     | Production branch. Triggers a build to Storybook & publishes a new npm package release.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Publish Package on Release Build and Deploy Storybooks |
+| hotfix   | Can be created off of main to allow for immediate fixes to bugs and will not affect current development. Any changes should be pulled back into develop and feature branches                                                                                                                                                                                                                                                                                                                                                                                                                  |                                                                   |
+| release  | Final culmination of all branches that will be used to test beta versions of the new release. After testing is complete, release will be merged into main.                                                                                                                                                                                                                                                                                                                                                                                                                                    | Generate Pre-Release Build and Deploy Storybooks        |
+| develop  | Culmination of feature branches                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Build and Deploy Storybooks                                       |
+| features | Created off of develop to work on new features locally that are intended for the next release. Each feature branch should be prefixed by the relevant Jira issue and component ID (if applicable), eg. DS-56-A003-Footer. Feature branches should be merged into develop using a PR. Each PR should include an update to the CHANGELOG.md if necessary and have at least one person review it before it can be merged. Check out [these tips](https://github.com/DTS-STN/Service-Canada-Design-System/wiki#code-review-helpful-tips) for giving productive and thoughtful feedback. | Build and Deploy Storybooks on PR   
+
 ### Building the Package 👷🏽‍♀️👷🏽
 
 This package uses babel and rollup to transpile and create production bundles which are generated in the `/dist` folder at the root level of the project. To build the production bundle at any time simply run the following command
@@ -223,7 +235,19 @@ To test the pre-release you will be downloading a tarball file onto your local m
 
 2. Create a PR from the release branch into the main branch.
 
-3. Once the PR is approved and merged, the [Publish Package on Release](https://github.com/DTS-STN/Service-Canada-Design-System/actions/workflows/publish-package-on-release.yml) Github Action will be triggered and a new version (verison number is based on your package.json updates) will be created.
+3. Once the PR is approved and merged, the package needs to be manually published to npm using the following commands.
+    
+    - npm add user
+    - npm version minor
+    - npm publish --access public
+
+4. Once the package has been published to npm, manually create release notes on github as follows:
+
+    - Go to the [releases](https://github.com/DTS-STN/Service-Canada-Design-System/releases) tab on github page
+    - Click the "draft a new release" button
+    - Add a tag (package release number) and make sure the target is set to main branch (make sure the pre-release option is not checked)
+    - Auto generate release notes or add them manually
+    - Click the "Publish release" button
 
 ### License
 
