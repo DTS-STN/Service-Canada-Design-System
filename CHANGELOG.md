@@ -161,3 +161,9 @@ Initial release of the Design System Package
 ## [v1.44.0] - 2022-07-14
 
 - Adding a min-width to blue portion of the step number of the accordion form component
+
+## [v1.49.0] - 2022-07-18
+
+- Documentation improvements
+- Updated footer component with a new link
+- Updated header component. Made changes to menu styling and fixed font color bug

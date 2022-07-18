@@ -1,3 +1,4 @@
+Currently not automatically publishing the package. Can use this file in the future if it's setup later.
 name: Publish Package on Release
 on:
   push:
