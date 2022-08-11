@@ -30,12 +30,17 @@ export function AccordionForm(props) {
                 ? [...curDirtyCards, nextCard]
                 : curDirtyCards;
             });
-            if (cardsRefs[index + 1].current)
-              window.scrollTo({
-                top: cardsRefs[index + 1].current.offsetTop,
-                left: 0,
-                behavior: "smooth",
-              });
+            if (cardsRefs[index + 1].current) {
+              setTimeout(
+                () =>
+                  window.scrollTo({
+                    top: cardsRefs[index + 1].current.offsetTop,
+                    left: 0,
+                    behavior: "smooth",
+                  }),
+                1
+              );
+            }
           }
         }
       };
