@@ -46,13 +46,16 @@ export function DatePicker(props) {
         />
       ) : null}
       <div id={id} className="ds-relative ds-flex">
-        <label id="date-month">
-          <p className="ds-form-date">{lang === "en" ? "Month" : "Mois"}</p>
+        <div className="flex flex-col">
+          <label className="ds-form-date" htmlFor={"datePickerMonth"}>
+            {lang === "en" ? "Month" : "Mois"}
+          </label>
+
           <select
             id="datePickerMonth"
             defaultValue={month}
             onChange={onMonthChange}
-            className="ds-w-165px ds-py-5px  ds-px-14px ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-rounded"
+            className="ds-w-165px ds-py-5px ds-flex ds-px-14px ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-rounded"
           >
             <>
               <option value="1">{lang === "en" ? "January" : "Janvier"}</option>
@@ -87,10 +90,12 @@ export function DatePicker(props) {
               src={dropdown}
             />
           </div>
-        </label>
+        </div>
         {hasDay ? (
           <div className="ds-flex ds-flex-col sm:ds-pl-24px ds-pl-8px">
-            <p className="ds-form-date">{lang === "en" ? "Day" : "Jour"}</p>
+            <label htmlFor="datePickerDay" className="ds-form-date">
+              {lang === "en" ? "Day" : "Jour"}
+            </label>
             <input
               id="datePickerDay"
               defaultValue={day}
@@ -104,7 +109,9 @@ export function DatePicker(props) {
         ) : null}
         {hasYear ? (
           <div className="ds-flex ds-flex-col sm:ds-pl-24px ds-pl-8px">
-            <p className="ds-form-date">{lang === "en" ? "Year" : "An"}</p>
+            <label htmlFor="datePickerYear" className="ds-form-date">
+              {lang === "en" ? "Year" : "An"}
+            </label>
             <input
               id="datePickerYear"
               defaultValue={year}
