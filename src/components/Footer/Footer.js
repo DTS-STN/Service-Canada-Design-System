@@ -138,7 +138,7 @@ export function Footer(props) {
                           className="ds-text-white ds-w-64 sm:ds-w-56 lg:ds-w-80 ds-my-2.5 hover:ds-underline"
                         >
                           <Link
-                            id={value + index}
+                            id={"LandscapeLink" + index}
                             href={value.landscapeLink}
                             text={value.landscapeLinkText}
                             linkStyle="smfooterWhite"
