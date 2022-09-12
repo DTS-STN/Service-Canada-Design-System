@@ -5,6 +5,8 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { Button } from "../Button/Button";
+import EN from "../../translations/en.json";
+import FR from "../../translations/fr.json";
 
 /**
  * Accordion Component. The following example shows how you may populate the accordion
@@ -48,6 +50,8 @@ export function AccordionForm(props) {
     [cardsState]
   );
 
+  const lang = props.lang === "en" ? EN : props.lang === "fr" ? FR : EN;
+
   const [cardsOpenState] = React.useState(() => {
     return generateCardOpenStates(cardsState);
   });
@@ -87,14 +91,19 @@ export function AccordionForm(props) {
           }
           key={`accordion-form-card-${card.id}${index}`}
           ref={cardsRefs[index]}
+          aria-label={`${lang.accordionStep} ${index + 1}`}
+          role="group"
         >
           {/* Number for the given card */}
           <div className="ds-flex-col ds-pb-12px">
             <div className="cardNumber ds-flex ds-flex-row">
               <div className="ds-relative ds-rounded-full ds-min-w-[48px] ds-w-48px ds-h-48px ds-bg-multi-blue-blue60d">
-                <p className="ds-leading-48px ds-absolute ds-left-3.5 ds-bottom-0.5 ds-accordion-num">
+                <span
+                  className="ds-leading-48px ds-absolute ds-left-3.5 ds-bottom-0.5 ds-accordion-num"
+                  aria-hidden={true}
+                >
                   {index + 1}
-                </p>
+                </span>
               </div>
               {isOpen ? (
                 <p className="ds-accordion-header ds-pl-14px ds-pb-18px">
@@ -176,6 +185,7 @@ AccordionForm.defaultProps = {
   cardState: {
     step1: { isValid: false },
   },
+  lang: "en",
 };
 
 AccordionForm.propTypes = {
@@ -213,4 +223,8 @@ AccordionForm.propTypes = {
    * prop used to help validate each card before opening the next card
    * */
   cardsState: PropTypes.objectOf(PropTypes.any),
+  /**
+   * prop used to pass the language for accordion form
+   * */
+  lang: PropTypes.string,
 };

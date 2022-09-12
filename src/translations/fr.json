@@ -101,5 +101,6 @@
   "mySignOut": "Fermez la session",
   "skipToMain": "Passer au contenu principal",
   "skipToAbout": "Passer à « Au sujet du gouvernement »",
-  "switchToBasic": "Passer à la version HTML simplifiée"
+  "switchToBasic": "Passer à la version HTML simplifiée",
+  "accordionStep": "étape"
 }
