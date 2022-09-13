@@ -80,7 +80,7 @@ export function AccordionForm(props) {
       const nextCardIsOpen =
         !isLastCard && dirtyCards.includes(cardsArr[index + 1].id);
       return (
-        <div
+        <fieldset
           id={card.id}
           className={
             nextCardIsOpen
@@ -105,13 +105,13 @@ export function AccordionForm(props) {
                   {index + 1}
                 </span>
               </div>
-              {isOpen ? (
-                <p className="ds-accordion-header ds-pl-14px ds-pb-18px">
-                  {card.title}
-                </p>
-              ) : (
-                <p className="ds-accordion-header ds-pl-14px">{card.title}</p>
-              )}
+              <legend
+                className={`ds-accordion-header ds-pl-14px ${
+                  isOpen ? "ds-pb-18px" : ""
+                }`}
+              >
+                {card.title}
+              </legend>
             </div>
             {/* Content contained on the given card */}
             <div className="cardContent sm:ds-pl-60px">
@@ -146,7 +146,7 @@ export function AccordionForm(props) {
               )}
             </div>
           </div>
-        </div>
+        </fieldset>
       );
     });
   };

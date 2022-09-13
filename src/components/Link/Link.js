@@ -60,7 +60,7 @@ export function Link(props) {
 }
 
 Link.defaultProps = {
-  target: "_self"
+  target: "_self",
 };
 
 Link.propTypes = {
@@ -77,7 +77,7 @@ Link.propTypes = {
    */
   href: PropTypes.string,
   /**
-   * Target attribute to tell the browser where the linked document should be loaded. 
+   * Target attribute to tell the browser where the linked document should be loaded.
    */
   target: PropTypes.string,
 
