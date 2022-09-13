@@ -5,6 +5,8 @@ import dropdown from "../../assets/dropdown.svg";
 import { Image } from "../Image/Image";
 import { FormLabel } from "../FormLabel/FormLabel";
 import { FormError } from "../FormError/FormError";
+import EN from "../../translations/en.json";
+import FR from "../../translations/fr.json";
 import "./styles.css";
 
 export function DatePicker(props) {
@@ -27,13 +29,23 @@ export function DatePicker(props) {
     formLabelProps,
     formErrorProps,
   } = props;
-  // const date = new Date();
 
-  // const dayLimit = new Date(
-  //   date.getFullYear(),
-  //   date.getMonth() + 1,
-  //   0
-  // ).getDate();
+  const language = lang === "en" ? EN : lang === "fr" ? FR : EN;
+
+  const monthValues = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+  ];
 
   return (
     <>
@@ -48,7 +60,7 @@ export function DatePicker(props) {
       <div id={id} className="ds-relative ds-flex">
         <div className="flex flex-col">
           <label className="ds-form-date" htmlFor={"datePickerMonth"}>
-            {lang === "en" ? "Month" : "Mois"}
+            {language.datePicker.month}
           </label>
 
           <select
@@ -57,30 +69,9 @@ export function DatePicker(props) {
             onChange={onMonthChange}
             className="ds-w-165px ds-py-5px ds-flex ds-px-14px ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-rounded"
           >
-            <>
-              <option value="1">{lang === "en" ? "January" : "Janvier"}</option>
-              <option value="2">
-                {lang === "en" ? "February" : "Février"}
-              </option>
-              <option value="3">{lang === "en" ? "March" : "Mars"}</option>
-              <option value="4">{lang === "en" ? "April" : "Avril"}</option>
-              <option value="5">{lang === "en" ? "May" : "Peut"}</option>
-              <option value="6">{lang === "en" ? "June" : "Juin"}</option>
-              <option value="7">{lang === "en" ? "July" : "Juillet"}</option>
-              <option value="8">{lang === "en" ? "August" : "Août"}</option>
-              <option value="9">
-                {lang === "en" ? "September" : "Septembre"}
-              </option>
-              <option value="10">
-                {lang === "en" ? "October" : "Octobre"}
-              </option>
-              <option value="11">
-                {lang === "en" ? "November" : "Novembre"}
-              </option>
-              <option value="12">
-                {lang === "en" ? "December" : "Décembre"}
-              </option>
-            </>
+            {monthValues.map((mv) => (
+              <option value={mv}>{language.datePicker.months[mv]}</option>
+            ))}
           </select>
           <div className="dropdownPos">
             <Image
@@ -94,7 +85,7 @@ export function DatePicker(props) {
         {hasDay ? (
           <div className="ds-flex ds-flex-col sm:ds-pl-24px ds-pl-8px">
             <label htmlFor="datePickerDay" className="ds-form-date">
-              {lang === "en" ? "Day" : "Jour"}
+              {language.datePicker.day}
             </label>
             <input
               id="datePickerDay"
@@ -110,7 +101,7 @@ export function DatePicker(props) {
         {hasYear ? (
           <div className="ds-flex ds-flex-col sm:ds-pl-24px ds-pl-8px">
             <label htmlFor="datePickerYear" className="ds-form-date">
-              {lang === "en" ? "Year" : "An"}
+              {language.datePicker.year}
             </label>
             <input
               id="datePickerYear"
