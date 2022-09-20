@@ -14,9 +14,9 @@ export function FormLabel(props) {
         <span className="ds-inline ds-text-form-input-gray lg:ds-text-xl ds-font-bold ">
           {props.label}{" "}
           {props.required ? (
-            <scan className="ds-inline ds-text-error-border-red ds-text-xl ds-font-medium">
+            <span className="ds-inline ds-text-error-border-red ds-text-xl ds-font-medium">
               &nbsp;{`${props.requiredText}`}
-            </scan>
+            </span>
           ) : (
             <span className="ds-inline ds-text-form-input-gray ds-text-xl lg:ds-text-xl ds-font-medium">
               &nbsp;{`${props.optionalText}`}
