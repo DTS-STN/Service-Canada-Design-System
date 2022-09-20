@@ -46,6 +46,7 @@ export function Link(props) {
       disabled={props.disabled}
       lang={props.lang}
       target={props.target}
+      aria-label={props.ariaLabel || props.text}
     >
       {/* <!-- English Text: English --> */}
       <span className={props.abbr ? "ds-language-toggle-text" : ""}>
@@ -103,4 +104,9 @@ Link.propTypes = {
    * For tracking on click of forms for analytics
    */
   analyticsTracking: PropTypes.bool,
+
+  /**
+   * use ariaLabel to provide more descriptive text for a link (screen reader friendly)
+   */
+  ariaLabel: PropTypes.string,
 };

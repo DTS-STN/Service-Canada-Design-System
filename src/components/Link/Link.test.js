@@ -31,6 +31,7 @@ describe("Link", () => {
     expect(screen.getByRole("link")).toHaveClass(
       "ds-underline ds-text-multi-blue-blue70b ds-font-body ds-text-browserh5 ds-leading-33px hover:ds-text-multi-blue-blue50b"
     );
+    expect(screen.getByLabelText(Default.args.text)).toBeInTheDocument();
   });
 
   it("renders regular link with emphasis", () => {
@@ -41,6 +42,9 @@ describe("Link", () => {
     expect(screen.getByRole("link")).toHaveClass(
       "ds-underline ds-text-multi-blue-blue70b ds-font-body ds-text-browserh5 ds-font-bold ds-text-mobileh5 ds-leading-33px hover:ds-text-multi-blue-blue50b"
     );
+    expect(
+      screen.getByLabelText(RegularLinkwithEmphasis.args.text)
+    ).toBeInTheDocument();
   });
 
   it("renders Title link", () => {
@@ -51,6 +55,7 @@ describe("Link", () => {
     expect(screen.getByRole("link")).toHaveClass(
       "ds-underline ds-text-multi-blue-blue70b ds-font-header ds-text-browserh5  ds-leading-23px ds-font-bold hover:ds-text-multi-blue-blue50b"
     );
+    expect(screen.getByLabelText(TitleLink.args.text)).toBeInTheDocument();
   });
 
   it("renders Card Action link", () => {
@@ -61,6 +66,7 @@ describe("Link", () => {
     expect(screen.getByRole("link")).toHaveClass(
       "ds-text-multi-blue-blue70b ds-font-body ds-text-browserh5 ds-underline ds-leading-28px ds-font-regular hover:ds-text-multi-blue-blue50b"
     );
+    expect(screen.getByLabelText(CardActionLink.args.text)).toBeInTheDocument();
   });
 
   it("renders Small link - Footer Blue", () => {
@@ -71,6 +77,7 @@ describe("Link", () => {
     expect(screen.getByRole("link")).toHaveClass(
       "ds-underline ds-text-multi-blue-blue70b ds-font-body ds-leading-20px ds-text-browserh7 hover:ds-underline"
     );
+    expect(screen.getByLabelText(FooterBlueLink.args.text)).toBeInTheDocument();
   });
 
   it("renders Small link - Footer White", () => {
@@ -81,6 +88,9 @@ describe("Link", () => {
     expect(screen.getByRole("link")).toHaveClass(
       "ds-text-multi-neutrals-white ds-font-body ds-text-browserh7 ds-leading-20px ds-font-regular hover:ds-text-multi-neutrals-white hover:ds-underline"
     );
+    expect(
+      screen.getByLabelText(FooterWhiteLink.args.text)
+    ).toBeInTheDocument();
   });
 
   it("renders breadcrumb link", () => {
@@ -91,6 +101,9 @@ describe("Link", () => {
     expect(screen.getByRole("link")).toHaveClass(
       "ds-text-multi-blue-blue70b ds-font-body ds-text-browserh8 ds-leading-23px ds-font-regular hover:ds-text-multi-blue-blue50b"
     );
+    expect(
+      screen.getByLabelText(BreadcrumbsLink.args.text)
+    ).toBeInTheDocument();
   });
   it("has no a11y violations", async () => {
     const { container } = render(<Default {...Default.args} />);
