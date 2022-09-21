@@ -69,8 +69,10 @@ export function DatePicker(props) {
             onChange={onMonthChange}
             className="ds-w-165px ds-py-5px ds-flex ds-px-14px ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-rounded"
           >
-            {monthValues.map((mv) => (
-              <option value={mv}>{language.datePicker.months[mv]}</option>
+            {monthValues.map((mv, index) => (
+              <option value={mv} key={index}>
+                {language.datePicker.months[mv]}
+              </option>
             ))}
           </select>
           <div className="dropdownPos">
