@@ -1,13 +1,15 @@
-#date-month select {
+#datePickerMonth {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background: transparent;
 }
 
 .dropdownPos {
   position: absolute;
   left: 136px;
   top: 48px;
+  z-index: -1;
 }
 
 input::-webkit-outer-spin-button,

@@ -89,17 +89,37 @@
   "feedbackRequired": "Feedback - This field is required",
   "breadCrumbsHref2": "https://alpha.service.canada.ca/projects",
   "menuHeaderTitle": "My Service Canada Account",
-  "menuButtonTitle": "MENU",
+  "menuButtonTitle": "Menu",
   "menuItems1": "Services",
   "menuItems2": "Life events",
   "menuItems3": "Contact us",
   "myAccountTitle": "My Service Canada Account",
-  "myDashboard": "Dashboard",
+  "myDashboard": "My dashboard",
   "mySecurity": "Security Settings",
-  "myProfile": "Manage Profile",
+  "myProfile": "Profile",
   "myCRA": "Switch to CRA My Account",
   "mySignOut": "Sign out",
   "skipToMain": "Skip to main content",
   "skipToAbout": "Skip to 'About government'",
-  "switchToBasic": "Switch to basic HTML version"
+  "switchToBasic": "Switch to basic HTML version",
+  "accordionStep": "step",
+  "datePicker": {
+    "month": "Month",
+    "year": "Year",
+    "day": "Day",
+    "months": {
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August",
+      "9": "September",
+      "10": "October",
+      "11": "November",
+      "12": "December"
+    }
+  }
 }
