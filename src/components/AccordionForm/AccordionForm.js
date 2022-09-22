@@ -5,6 +5,8 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { Button } from "../Button/Button";
+import EN from "../../translations/en.json";
+import FR from "../../translations/fr.json";
 
 /**
  * Accordion Component. The following example shows how you may populate the accordion
@@ -30,18 +32,25 @@ export function AccordionForm(props) {
                 ? [...curDirtyCards, nextCard]
                 : curDirtyCards;
             });
-            if (cardsRefs[index + 1].current)
-              window.scrollTo({
-                top: cardsRefs[index + 1].current.offsetTop,
-                left: 0,
-                behavior: "smooth",
-              });
+            if (cardsRefs[index + 1].current) {
+              setTimeout(
+                () =>
+                  window.scrollTo({
+                    top: cardsRefs[index + 1].current.offsetTop,
+                    left: 0,
+                    behavior: "smooth",
+                  }),
+                1
+              );
+            }
           }
         }
       };
     },
     [cardsState]
   );
+
+  const lang = props.lang === "en" ? EN : props.lang === "fr" ? FR : EN;
 
   const [cardsOpenState] = React.useState(() => {
     return generateCardOpenStates(cardsState);
@@ -71,7 +80,7 @@ export function AccordionForm(props) {
       const nextCardIsOpen =
         !isLastCard && dirtyCards.includes(cardsArr[index + 1].id);
       return (
-        <div
+        <fieldset
           id={card.id}
           className={
             nextCardIsOpen
@@ -82,22 +91,27 @@ export function AccordionForm(props) {
           }
           key={`accordion-form-card-${card.id}${index}`}
           ref={cardsRefs[index]}
+          aria-label={`${lang.accordionStep} ${index + 1}`}
+          role="group"
         >
           {/* Number for the given card */}
           <div className="ds-flex-col ds-pb-12px">
             <div className="cardNumber ds-flex ds-flex-row">
               <div className="ds-relative ds-rounded-full ds-min-w-[48px] ds-w-48px ds-h-48px ds-bg-multi-blue-blue60d">
-                <p className="ds-leading-48px ds-absolute ds-left-3.5 ds-bottom-0.5 ds-accordion-num">
+                <span
+                  className="ds-leading-48px ds-absolute ds-left-3.5 ds-bottom-0.5 ds-accordion-num"
+                  aria-hidden={true}
+                >
                   {index + 1}
-                </p>
+                </span>
               </div>
-              {isOpen ? (
-                <p className="ds-accordion-header ds-pl-14px ds-pb-18px">
-                  {card.title}
-                </p>
-              ) : (
-                <p className="ds-accordion-header ds-pl-14px">{card.title}</p>
-              )}
+              <legend
+                className={`ds-accordion-header ds-pl-14px ${
+                  isOpen ? "ds-pb-18px" : ""
+                }`}
+              >
+                {card.title}
+              </legend>
             </div>
             {/* Content contained on the given card */}
             <div className="cardContent sm:ds-pl-60px">
@@ -132,7 +146,7 @@ export function AccordionForm(props) {
               )}
             </div>
           </div>
-        </div>
+        </fieldset>
       );
     });
   };
@@ -171,6 +185,7 @@ AccordionForm.defaultProps = {
   cardState: {
     step1: { isValid: false },
   },
+  lang: "en",
 };
 
 AccordionForm.propTypes = {
@@ -208,4 +223,8 @@ AccordionForm.propTypes = {
    * prop used to help validate each card before opening the next card
    * */
   cardsState: PropTypes.objectOf(PropTypes.any),
+  /**
+   * prop used to pass the language for accordion form
+   * */
+  lang: PropTypes.string,
 };
