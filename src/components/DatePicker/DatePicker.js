@@ -75,7 +75,7 @@ export function DatePicker(props) {
               </option>
             ))}
           </select>
-          <div className="dropdownPos">
+          <div className="dropdownPos" aria-hidden="true">
             <Image
               alt="Default Image"
               id="image"
