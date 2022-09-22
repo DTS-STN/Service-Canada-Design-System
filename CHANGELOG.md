@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.51.1](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.51.0...v1.51.1) (2022-09-22)
+
 ### 1.0.7 (2022-01-21)
 
 # Changelog
