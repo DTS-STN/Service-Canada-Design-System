@@ -185,9 +185,9 @@ export function Menu(props) {
                       className=""
                       aria-labelledby="dropdownLargeButton"
                     >
-                      {menuList.forEach((element) => {
+                      {menuList.map((element) => {
                         return (
-                          <li key={"dashKey"}>
+                          <li key={element.key}>
                             <a
                               href={element.path}
                               className="ds-block ds-whitespace-nowrap ds-py-18px sm:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body "
@@ -256,7 +256,7 @@ Menu.propTypes = {
   /**
    * List of menu items to display in dropdown with links
    */
-  menuList: PropTypes.array(
+  menuList: PropTypes.arrayOf(
     PropTypes.shape({
       key: PropTypes.string,
       value: PropTypes.string,
