@@ -72,13 +72,9 @@ export function Header(props) {
         </div>
         {!menuProps.hasNoMenu && (
           <Menu
-            craPath={menuProps.craPath}
-            dashboardPath={menuProps.dashboardPath}
-            profilePath={menuProps.profilePath}
-            securityPath={menuProps.securityPath}
-            signOutPath={menuProps.signOutPath}
             lang={lang}
             isAuthenticated={isAuthenticated}
+            menuList={menuProps.menuList}
             onSignOut={menuProps.onSignOut}
           />
         )}
@@ -103,11 +99,12 @@ Header.defaultProps = {
   menuProps: {
     onSignOut: () => {},
     isAuthenticated: true,
-    signOutPath: "/",
-    dashboardPath: "/",
-    securityPath: "/",
-    profilePath: "/",
-    craPath: "/",
+    menuList: [
+      { key: "dashKey", value: "My dashboard", path: "/" },
+      { key: "securityKey", value: "Security Settings", path: "/" },
+      { key: "profileKey", value: "Profile", path: "/" },
+      { key: "outKey", value: "Sign out", path: "/" },
+    ],
     hasNoMenu: false,
   },
   topnavProps: {
@@ -171,11 +168,14 @@ Header.propTypes = {
    *
    */
   menuProps: PropTypes.shape({
-    dashboardPath: PropTypes.string,
     onSignOut: PropTypes.func,
-    profilePath: PropTypes.string,
-    securityPath: PropTypes.string,
-    signOutPath: PropTypes.string,
+    menuList: PropTypes.arrayOf(
+      PropTypes.shape({
+        key: PropTypes.string,
+        value: PropTypes.string,
+        path: PropTypes.string,
+      })
+    ),
     hasNoMenu: PropTypes.bool,
     useParentContainer: PropTypes.bool,
   }),
