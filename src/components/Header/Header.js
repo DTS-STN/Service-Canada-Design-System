@@ -28,7 +28,7 @@ export function Header(props) {
   const containerClass = useParentContainer ? "" : "ds-container";
 
   return (
-    <div className="ds-header" id={id}>
+    <div className="ds-header" id={id} data-testid="ds-header">
       <TopNav
         lang={lang}
         skipToMainPath={topnavProps.skipToMainPath}

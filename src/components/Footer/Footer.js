@@ -102,7 +102,7 @@ export function Footer(props) {
   const container = containerClass || "ds-container";
 
   return (
-    <footer id={id} className="ds-w-full">
+    <footer id={id} className="ds-w-full" data-testid="ds-footer">
       {error ? (
         <section className={`${container} ds-h-16 ds-bg-multi-neutrals-grey5`}>
           <Image
