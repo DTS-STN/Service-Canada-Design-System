@@ -7,15 +7,7 @@ import FR from "../../translations/fr.json";
  * Menu component
  */
 export function Menu(props) {
-  const {
-    onSignOut,
-    isAuthenticated,
-    lang,
-    dashboardPath,
-    signOutPath,
-    securityPath,
-    profilePath,
-  } = props;
+  const { onSignOut, isAuthenticated, menuList, lang } = props;
   const ref = useRef();
   const [menuDisplayed, setMenuDisplayed] = React.useState(false);
 
@@ -193,39 +185,18 @@ export function Menu(props) {
                       className=""
                       aria-labelledby="dropdownLargeButton"
                     >
-                      <li key={"dashKey"}>
-                        <a
-                          href={dashboardPath}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px sm:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body "
-                        >
-                          {lang === "fr" ? FR.myDashboard : EN.myDashboard}
-                        </a>
-                      </li>
-                      <li key={"securityKey"}>
-                        <a
-                          href={securityPath}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px sm:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
-                        >
-                          {lang === "fr" ? FR.mySecurity : EN.mySecurity}
-                        </a>
-                      </li>
-                      <li key={"profileKey"}>
-                        <a
-                          href={profilePath}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px sm:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
-                        >
-                          {lang === "fr" ? FR.myProfile : EN.myProfile}
-                        </a>
-                      </li>
-                      <li key={"outKey"}>
-                        <a
-                          href={signOutPath}
-                          onClick={onSignOut}
-                          className="ds-block ds-whitespace-nowrap ds-py-18px sm:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body"
-                        >
-                          {lang === "fr" ? FR.mySignOut : EN.mySignOut}
-                        </a>
-                      </li>
+                      {menuList.map((element) => {
+                        return (
+                          <li key={element.key}>
+                            <a
+                              href={element.path}
+                              className="ds-block ds-whitespace-nowrap ds-py-18px sm:ds-pl-18px sm:ds-w-276px ds-pl-14px ds-text-gray-700 ds-bg-multi-blue-blue2 ds-font-bold ds-font-body "
+                            >
+                              {element.value}
+                            </a>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 </li>
@@ -258,11 +229,12 @@ export function Menu(props) {
 Menu.defaultProps = {
   lang: "en",
   onSignOut: () => {},
-  signOutPath: "/",
-  dashboardPath: "/",
-  securityPath: "/",
-  profilePath: "/",
-  craPath: "/",
+  menuList: [
+    { key: "dashKey", value: "My dashboard", path: "/" },
+    { key: "securityKey", value: "Security Settings", path: "/" },
+    { key: "profileKey", value: "Profile", path: "/" },
+    { key: "outKey", value: "Sign out", path: "/" },
+  ],
 };
 
 Menu.propTypes = {
@@ -282,22 +254,13 @@ Menu.propTypes = {
   onSignOut: PropTypes.func,
 
   /**
-   * href path, which the signout button will redirect to
+   * List of menu items to display in dropdown with links
    */
-  signOutPath: PropTypes.string,
-
-  /**
-   * href path, which redirects to the dashboard page
-   */
-  dashboardPath: PropTypes.string,
-
-  /**
-   * href path, which redirects to the security settings page
-   */
-  securityPath: PropTypes.string,
-
-  /**
-   * href path, which redirects to the profile page
-   */
-  profilePath: PropTypes.string,
+  menuList: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string,
+      value: PropTypes.string,
+      path: PropTypes.string,
+    })
+  ),
 };
