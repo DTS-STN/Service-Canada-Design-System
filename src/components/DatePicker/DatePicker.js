@@ -70,7 +70,7 @@ export function DatePicker(props) {
             className="ds-w-165px ds-py-5px ds-flex ds-px-14px ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-rounded"
           >
             {monthValues.map((mv, index) => (
-              <option value={mv} key={index}>
+              <option value={mv} key={`datePicker-month-option-${index}`}>
                 {language.datePicker.months[mv]}
               </option>
             ))}
