@@ -94,6 +94,10 @@ export function AccordionForm(props) {
           aria-label={`${lang.accordionStep} ${index + 1}`}
           role="group"
         >
+          <legend className={"ds-hidden"} aria-hidden>
+            {card.title}
+          </legend>
+
           {/* Number for the given card */}
           <div className="ds-flex-col ds-pb-12px">
             <div className="cardNumber ds-flex ds-flex-row">
@@ -105,13 +109,13 @@ export function AccordionForm(props) {
                   {index + 1}
                 </span>
               </div>
-              <legend
+              <div
                 className={`ds-accordion-header ds-pl-14px ${
                   isOpen ? "ds-pb-18px" : ""
                 }`}
               >
                 {card.title}
-              </legend>
+              </div>
             </div>
             {/* Content contained on the given card */}
             <div className="cardContent sm:ds-pl-60px">
