@@ -1,7 +1,7 @@
 {
   "convention": {
     "commitTypes": [
-      "feat",
+      "featvcx",
       "fix",
       "perf",
       "refactor",
