@@ -15,12 +15,14 @@
     "dist/**/*"
   ],
   "dependencies": {
+    "git-conventional-commits": "^2.1.2",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-app-polyfill": "^3.0.0",
     "react-dom": "^17.0.2",
     "react-full-screen": "^1.1.1",
     "react-player": "^2.10.1",
+    "release-please": "^14.11.2",
     "user": "^0.0.0"
   },
   "scripts": {
