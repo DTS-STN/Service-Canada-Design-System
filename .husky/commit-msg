@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# fix for windows systems
-PATH="$PATH"
-
-git-conventional-commits commit-msg-hook "$1"
