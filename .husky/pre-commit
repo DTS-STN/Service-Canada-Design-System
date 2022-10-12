@@ -5,11 +5,11 @@ LC_ALL=C
 
 local_branch="$(git rev-parse --abbrev-ref HEAD)"
 
-valid_branch_regex="^(feat\/git-hooks)$"
+invalid_branch_regex="^(main|hotfix|release|develop|features)$"
 
 message="This branch violates the branch naming rules. Please rename your branch."
 
-if [[ ! $local_branch =~ $valid_branch_regex ]]
+if [[ $local_branch =~ $invalid_branch_regex ]]
 then
     echo "$message"
     exit 1
