@@ -32,6 +32,7 @@
     "i-all": "npm i",
     "test": "cross-env SKIP_PREFLIGHT_CHECK=true react-scripts test",
     "test:unit": "jest --forceExit",
+    "pre-commit": "node ./.husky/pre-commit.js && lint-staged",
     "lint": "prettier --write \"*.{js,md}\" --write \".storybook/**/*.{js,jsx,ts,tsx,json,md,css}\" --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
     "eslint": "eslint src",
     "prepare": "husky install",
@@ -41,7 +42,7 @@
     "build-storybook": "build-storybook"
   },
   "husky": {
-    "pre-commit": "node ./.husky/pre-commit.js && lint-staged"
+    "pre-commit": "npm run pre-commit"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,md,css}": [
