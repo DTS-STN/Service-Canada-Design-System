@@ -1,4 +1,21 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+LC_ALL=C
+
+local_branch="$(git rev-parse --abbrev-ref HEAD)"
+
+valid_branch_regex="^(feat\/git-hooks)$"
+
+message="This branch violates the branch naming rules. Please rename your branch."
+
+if [[ ! $local_branch =~ $valid_branch_regex ]]
+then
+    echo "$message"
+    exit 1
+fi
+
+# exit 0
+# exec git diff-index --check --cached $against --
+
 npm run pre-commit
