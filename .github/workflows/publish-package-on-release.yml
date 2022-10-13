@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'CHANGELOG.md'
 jobs:
   release:
     name: publish
