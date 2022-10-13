@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-    files:
+    paths:
       - 'CHANGELOG.md'
 jobs:
   release:
