@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.52.4](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.3...v1.52.4) (2022-10-13)
+
+
+### Bug Fixes
+
+* updated var name ([93749c5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/93749c52191fec1c78a38a31e29e62181217bf91))
+
 ## [1.52.3](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.2...v1.52.3) (2022-10-13)
 
 
