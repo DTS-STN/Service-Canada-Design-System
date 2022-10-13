@@ -2,8 +2,7 @@ name: Publish Package on Release
 on:
   push:
     branches:
-      - main
-
+      - chore:version-bump
 jobs:
   release:
     name: publish
