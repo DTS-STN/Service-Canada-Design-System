@@ -2,7 +2,9 @@ name: Publish Package on Release
 on:
   push:
     branches:
-      - chore:version-bump
+      - main
+    paths:
+      - 'CHANGELOG.md'
 jobs:
   release:
     name: publish
