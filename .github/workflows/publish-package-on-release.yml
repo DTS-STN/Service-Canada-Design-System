@@ -31,4 +31,4 @@ jobs:
       - name: Publish the package
         run: npm publish
         env: 
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN_LOCAL }}
