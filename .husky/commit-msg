@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# fix for windows systems
+PATH="/c/Program Files/nodejs:$HOME/AppData/Roaming/npm/:$PATH"
+pwd=$(pwd)
+npx git-conventional-commits commit-msg-hook "$1"
+
