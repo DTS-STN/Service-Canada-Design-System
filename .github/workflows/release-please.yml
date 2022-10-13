@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - develop
+      - main
 name: release-please
 jobs:
   release-please:
@@ -12,4 +12,5 @@ jobs:
           release-type: node
           package-name: release-please-action
           changelog-types: '[{"type":"feat","section":"Features","hidden":false},{"type":"fix","section":"Bug Fixes","hidden":false},{"type":"chore","section":"Miscellaneous","hidden":false}]'
-          default-branch: release
+          default-branch: main
+          pull-request-title-pattern: chore:version-bump
