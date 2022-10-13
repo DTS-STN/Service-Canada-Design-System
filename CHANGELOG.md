@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.52.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.51.2...v1.52.0) (2022-10-13)
+
+
+### Features
+
+* added git-conventional-commits to husky ([ff8284d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ff8284d286fee450fb4d347ea395b93ee4a05058))
+* added release-please workflow step ([07bc70e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/07bc70e3d019bb0728b97aa8ef2f8d424276a8f6))
+
+
+### Bug Fixes
+
+* added back main branch github action trigger for build to npm ([200bc04](https://github.com/DTS-STN/Service-Canada-Design-System/commit/200bc0449b7cf3b44f6dfb4a91da0f68081dad28))
+* cleaned up dead code ([3c0cf14](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3c0cf14d98763c73ae125b90b5cd3d1f7b949099))
+* moved the github action for release-please to separate and for dev ([3457e2a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3457e2ab9f3712589833fa4d59be6f933da0df03))
+* updated github actions for the right branches...hopefully ([7afb345](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7afb3456b51fbaad52a13449c33af8090e050e99))
+
 ### [1.51.2](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.51.1...v1.51.2) (2022-10-04)
 
 ### Bug Fixes
