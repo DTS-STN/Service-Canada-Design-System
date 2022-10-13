@@ -8,7 +8,9 @@ on:
 name: release-please
 jobs:
   release-please:
-    if: github.event.pull_request.merged == true
+    if: 
+      - startsWith(github.head_ref, 'release-please-') == false
+      - github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/release-please-action@v3
