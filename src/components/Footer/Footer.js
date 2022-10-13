@@ -11,12 +11,14 @@ import logo from "../../assets/wmms-blk.svg";
 import bg_img from "../../assets/footer_bg_img.svg";
 import upArrow from "../../assets/upArrow.svg";
 
+const EN = "en";
+const FR = "fr";
+
 export function Footer(props) {
   const { error, lang, btnLink, id, containerClass, isAuthenticated } = props;
-  let langBrand =
-    lang === "en" ? ENbrandLinks : lang === "fr" ? FRbrandLinks : [];
+  let langBrand = lang === EN ? ENbrandLinks : lang === FR ? FRbrandLinks : [];
   let langLand =
-    lang === "en" ? ENlandscapeLinks : lang === "fr" ? FRlandscapeLinks : [];
+    lang === EN ? ENlandscapeLinks : lang === FR ? FRlandscapeLinks : [];
   const landscapeLinks = [
     {
       landscapeLink: langLand.link1link,
@@ -213,7 +215,7 @@ export function Footer(props) {
 }
 
 Footer.defaultProps = {
-  lang: "en",
+  lang: EN,
 };
 Footer.propTypes = {
   /**
@@ -229,7 +231,7 @@ Footer.propTypes = {
   /**
    * Switch between english and french footer. Pass in "en" or "fr"
    */
-  lang: PropTypes.oneOf(["en", "fr"]),
+  lang: PropTypes.oneOf([EN, FR]),
 
   /**
    * Add the path Link to the top of your page for the "to the Top" button in mobile
