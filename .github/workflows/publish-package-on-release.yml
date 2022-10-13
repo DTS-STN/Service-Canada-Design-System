@@ -1,10 +1,8 @@
-Currently not automatically publishing the package. Can use this file in the future if it's setup later.
 name: Publish Package on Release
 on:
   push:
     branches:
-      - main
-
+      - chore:version-bump
 jobs:
   release:
     name: publish
@@ -15,9 +13,9 @@ jobs:
         with:
           fetch-depth: 0
       - name: Node
-        uses: actions/setup-node@v2 # set up node 12 on the machine
+        uses: actions/setup-node@v3 # set up node 12 on the machine
         with:
-          node-version: '12'
+          node-version: '16'
           registry-url: 'https://registry.npmjs.org'
 
       # install dependencies

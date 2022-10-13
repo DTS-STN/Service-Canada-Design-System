@@ -16,11 +16,12 @@ export const NotAuthenticatedFR = Template.bind({});
 AuthenticatedEN.args = {
   isAuthenticated: true,
   lang: "en",
-  dashboardPath: "/examplePath",
-  securityPath: "/examplePath",
-  craPath: "/examplePath",
-  signOutPath: "/examplePath",
-  profilePath: "/examplePath",
+  menuList: [
+    { key: "dashKey", value: "My dashboard", path: "/" },
+    { key: "securityKey", value: "Security Settings", path: "/" },
+    { key: "profileKey", value: "Profile", path: "/" },
+    { key: "outKey", value: "Sign out", path: "/" },
+  ],
   onSignOut: () => {},
 };
 

@@ -175,3 +175,8 @@ Initial release of the Design System Package
 - Documentation improvements
 - Updated footer component with a new link
 - Updated header component. Made changes to menu styling and fixed font color bug
+
+## [v1.51.0] - 2022-09-23
+
+- Updated header and footer to include test ids to test if rendering
+- Updated header and menu to have dynamic menu items

@@ -15,11 +15,13 @@ EnglishAuth.args = {
   lang: "en",
   // isAuthenticated: true,
   menuProps: {
-    dashboardPath: "/examplePath",
     onSignOut: () => {},
-    profilePath: "/examplePath",
-    securityPath: "/examplePath",
-    signOutPath: "/examplePath",
+    menuList: [
+      { key: "dashKey", value: "My dashboard", path: "/" },
+      { key: "securityKey", value: "Security Settings", path: "/" },
+      { key: "profileKey", value: "Profile", path: "/" },
+      { key: "outKey", value: "Sign out", path: "/" },
+    ],
   },
   topnavProps: {
     skipToMainPath: "#wb-cont",
@@ -40,11 +42,13 @@ FrenchAuth.args = {
   id: "header",
   lang: "fr",
   menuProps: {
-    dashboardPath: "/examplePath",
     onSignOut: () => {},
-    profilePath: "/examplePath",
-    securityPath: "/examplePath",
-    signOutPath: "/examplePath",
+    menuList: [
+      { key: "dashKey", value: "My dashboard", path: "/" },
+      { key: "securityKey", value: "Security Settings", path: "/" },
+      { key: "profileKey", value: "Profile", path: "/" },
+      { key: "outKey", value: "Sign out", path: "/" },
+    ],
   },
   topnavProps: {
     skipToMainPath: "#wb-cont",
