@@ -28,9 +28,10 @@ jobs:
       #   run: npm run test
       #   env:
       #     CI: true
-      # run build and create a tarball from the package
-      - name: Create Tarball
-        run: npm pack  
+      - name: Publish the package
+        run: npm publish --tag next
+        env: 
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN_LOCAL }}
       - uses: google-github-actions/release-please-action@v3
         id: ga
         with:
@@ -41,4 +42,4 @@ jobs:
           prerelease: true
           commit-search-depth: 32
           release-search-depth: 3
-          component: latest
+          component: next
