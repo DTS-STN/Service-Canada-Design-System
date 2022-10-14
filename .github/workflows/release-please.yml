@@ -42,20 +42,3 @@ jobs:
           commit-search-depth: 32
           release-search-depth: 3
           component: latest
-      - name: Find Comment
-        uses: peter-evans/find-comment@v2
-        id: fc
-        with:
-          issue-number: ${{ github.event.pull_request.number }}
-          comment-author: 'github-actions[bot]'
-          body-includes: |
-            Storybooks Link For Branch
-            https://dts-stn.github.io/Service-Canada-Design-System/${{ steps.ga.pr.headBranchName }}
-      - name: Create or update comment # comment in pull request storybooks link
-        uses: peter-evans/create-or-update-comment@v2
-        with:
-          comment-id: ${{ steps.fc.outputs.comment-id }}
-          issue-number: ${{ steps.ga.outputs.pr.number }}
-          body: |
-            Storybooks Link For Branch
-            https://dts-stn.github.io/Service-Canada-Design-System/${{ steps.ga.outputs.pr.headBranchName }}
