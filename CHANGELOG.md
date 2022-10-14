@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.52.6](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.5...v1.52.6) (2022-10-14)
+
+
+### Bug Fixes
+
+* typo ([7e8f13a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7e8f13ad26da93821b0683dc2478679df2a7c22c))
+* updated changelog directly ([bee2c7a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/bee2c7a1d8624ac6458a00abe6f6ff1bfa3221a0))
+
+
+### Build
+
+* fixed changelog generation for more types ([6959b72](https://github.com/DTS-STN/Service-Canada-Design-System/commit/6959b72769f20383cc54cf1c8336d08d3c731a41))
+
 ## [1.52.5](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.4...v1.52.5) (2022-10-14)
 
 ### Bug Fixes
