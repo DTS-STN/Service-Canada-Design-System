@@ -1,18 +1,59 @@
+name: Pre-release
 on:
   push:
     branches:
-      - main
+      - release
   pull_request:
     types:
       - closed
-name: release-please
 jobs:
   release-please:
     if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org'
+      # install dependencies
+      - name: Install 🔧
+        run: npm ci
+      # test components
+      - name: Test 🧪
+        run: npm run test
+        env:
+          CI: true
+      # run build and create a tarball from the package
+      - name: Create Tarball
+        run: npm pack  
+      - name: Find Comment
+        uses: peter-evans/find-comment@v1
+        id: fc
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: |
+            Storybooks Link For Branch
+            https://dts-stn.github.io/Service-Canada-Design-System/${{ steps.extract_branch.outputs.branch }}
+      - name: Create or update comment # comment in pull request storybooks link
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            Storybooks Link For Branch
+            https://dts-stn.github.io/Service-Canada-Design-System/${{ steps.extract_branch.outputs.branch }}
       - uses: google-github-actions/release-please-action@v3
         with:
           release-type: node
           package-name: 'dts-stn/service-canada-design-system'
           changelog-types: '[{"type":"feat","section":"Features"},{"type":"fix","section":"Bug Fixes"},{"type":"perf","section":"Performance Improvements"},{"type":"test","section":"Tests"},{"type":"docs","section":"Documentation"},{"type":"build","section":"Build System"},{"type":"ops","section":"CI/CD Changes"},{"type":"chore","section":"Miscellaneous Chores"},{"type":"refactor","section":"Refactored"}]'
+          default-branch: main
+          prerelease: true
+          extra-files: |
+            *.tgz
