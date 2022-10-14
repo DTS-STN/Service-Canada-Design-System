@@ -8,26 +8,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly
-
-      - uses: actions/setup-node@v2 # set up node 12 on the machine
+        uses: actions/checkout@v3 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
         with:
-          node-version: '12'
-
+          fetch-depth: 0
+      - name: Node
+        uses: actions/setup-node@v3 # set up node 12 on the machine
+        with:
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org'
       # install dependencies
       - name: Install 🔧
-        run: npm install
-
+        run: npm ci
       # test components
       - name: Test 🧪
         run: npm run test
         env:
           CI: true
-     
      # run build and create a tarball from the package
       - name: Create Tarball
         run: npm pack
-        
      # create the github prerelease 
       - name: Pre Release
         uses: marvinpinto/action-automatic-releases@latest
