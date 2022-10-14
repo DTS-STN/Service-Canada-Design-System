@@ -4,6 +4,7 @@ on:
     branches:
       - main
     paths:
+      - 'CHANGELOG.md'
       - 'package.json'
 jobs:
   release:
