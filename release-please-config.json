@@ -48,7 +48,7 @@
         }
       ],
       "draft": false,
-      "prerelease": true
+      "prerelease": false
     }
   },
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
