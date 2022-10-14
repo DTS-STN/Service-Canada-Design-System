@@ -31,27 +31,31 @@ jobs:
       # run build and create a tarball from the package
       - name: Create Tarball
         run: npm pack  
+      - uses: google-github-actions/release-please-action@v3
+        id: ga
+        with:
+          release-type: node
+          package-name: dts-stn/service-canada-design-system
+          changelog-types: '[{"type":"feat","section":"Features"},{"type":"fix","section":"Bug Fixes"},{"type":"perf","section":"Performance Improvements"},{"type":"test","section":"Tests"},{"type":"docs","section":"Documentation"},{"type":"build","section":"Build System"},{"type":"ops","section":"CI/CD Changes"},{"type":"chore","section":"Miscellaneous Chores"},{"type":"refactor","section":"Refactored"}]'
+          default-branch: release
+          prerelease: true
+          commit-search-depth: 32
+          release-search-depth: 3
+          component: latest
       - name: Find Comment
-        uses: peter-evans/find-comment@v1
+        uses: peter-evans/find-comment@v2
         id: fc
         with:
           issue-number: ${{ github.event.pull_request.number }}
           comment-author: 'github-actions[bot]'
           body-includes: |
             Storybooks Link For Branch
-            https://dts-stn.github.io/Service-Canada-Design-System/${{ steps.extract_branch.outputs.branch }}
+            https://dts-stn.github.io/Service-Canada-Design-System/${{ steps.ga.pr.headBranchName }}
       - name: Create or update comment # comment in pull request storybooks link
-        uses: peter-evans/create-or-update-comment@v1
+        uses: peter-evans/create-or-update-comment@v2
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
-          issue-number: ${{ github.event.pull_request.number }}
+          issue-number: ${{ steps.ga.pr.number }}
           body: |
             Storybooks Link For Branch
-            https://dts-stn.github.io/Service-Canada-Design-System/${{ steps.extract_branch.outputs.branch }}
-      - uses: google-github-actions/release-please-action@v3
-        with:
-          release-type: node
-          package-name: latest
-          changelog-types: '[{"type":"feat","section":"Features"},{"type":"fix","section":"Bug Fixes"},{"type":"perf","section":"Performance Improvements"},{"type":"test","section":"Tests"},{"type":"docs","section":"Documentation"},{"type":"build","section":"Build System"},{"type":"ops","section":"CI/CD Changes"},{"type":"chore","section":"Miscellaneous Chores"},{"type":"refactor","section":"Refactored"}]'
-          default-branch: release
-          prerelease: true
+            https://dts-stn.github.io/Service-Canada-Design-System/${{ steps.ga.pr.headBranchName }}
