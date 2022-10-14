@@ -1,10 +1,10 @@
 name: Build and Deploy Storybooks
 on:
-  pull_request:
   push:
     branches:
       - main
-
+    paths:
+      - 'package.json'
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
