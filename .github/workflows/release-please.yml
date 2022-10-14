@@ -24,10 +24,10 @@ jobs:
       - name: Install 🔧
         run: npm ci
       # test components
-      - name: Test 🧪
-        run: npm run test
-        env:
-          CI: true
+      # - name: Test 🧪
+      #   run: npm run test
+      #   env:
+      #     CI: true
       # run build and create a tarball from the package
       - name: Create Tarball
         run: npm pack  
