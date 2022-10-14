@@ -11,27 +11,27 @@ jobs:
     if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: 'https://registry.npmjs.org'
-      # install dependencies
-      - name: Install 🔧
-        run: npm ci
-      # test components
-      # - name: Test 🧪
-      #   run: npm run test
-      #   env:
-      #     CI: true
-      - name: Publish the package
-        run: npm publish --tag next
-        env: 
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN_LOCAL }}
+      # - name: Checkout 🛎️
+      #   uses: actions/checkout@v3
+      #   with:
+      #     fetch-depth: 0
+      # - name: Node
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 16
+      #     registry-url: 'https://registry.npmjs.org'
+      # # install dependencies
+      # - name: Install 🔧
+      #   run: npm ci
+      # # test components
+      # # - name: Test 🧪
+      # #   run: npm run test
+      # #   env:
+      # #     CI: true
+      # - name: Publish the package
+      #   run: npm dist-tag add next && npm publish --tag next
+      #   env: 
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN_LOCAL }}
       - uses: google-github-actions/release-please-action@v3
         id: ga
         with:
@@ -39,7 +39,7 @@ jobs:
           package-name: dts-stn/service-canada-design-system
           changelog-types: '[{"type":"feat","section":"Features"},{"type":"fix","section":"Bug Fixes"},{"type":"perf","section":"Performance Improvements"},{"type":"test","section":"Tests"},{"type":"docs","section":"Documentation"},{"type":"build","section":"Build System"},{"type":"ops","section":"CI/CD Changes"},{"type":"chore","section":"Miscellaneous Chores"},{"type":"refactor","section":"Refactored"}]'
           default-branch: release
-          prerelease: true
+          prerelease: next
           commit-search-depth: 32
           release-search-depth: 3
           component: next
