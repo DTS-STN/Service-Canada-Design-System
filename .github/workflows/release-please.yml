@@ -28,25 +28,9 @@ jobs:
         run: npm run test
         env:
           CI: true
-      # Publish the package
-      - name: Publish the package
-        run: npm publish
-        env: 
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN_LOCAL }}
-      - name: Build Storybooks 🔨
-        run: npm run build-storybook
-      - name: Extract branch name
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.6.2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          TARGET_FOLDER: ${{ steps.extract_branch.outputs.branch }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: storybook-static # The folder the action should deploy.
-          CLEAN: true # Automatically remove deleted files from the deploy branch
+      # run build and create a tarball from the package
+      - name: Create Tarball
+        run: npm pack  
       - name: Find Comment
         uses: peter-evans/find-comment@v1
         id: fc
@@ -70,3 +54,6 @@ jobs:
           package-name: 'dts-stn/service-canada-design-system'
           changelog-types: '[{"type":"feat","section":"Features"},{"type":"fix","section":"Bug Fixes"},{"type":"perf","section":"Performance Improvements"},{"type":"test","section":"Tests"},{"type":"docs","section":"Documentation"},{"type":"build","section":"Build System"},{"type":"ops","section":"CI/CD Changes"},{"type":"chore","section":"Miscellaneous Chores"},{"type":"refactor","section":"Refactored"}]'
           default-branch: main
+          prerelease: true
+          extra-files: |
+            *.tgz
