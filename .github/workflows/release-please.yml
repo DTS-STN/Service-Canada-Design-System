@@ -55,7 +55,7 @@ jobs:
         uses: peter-evans/create-or-update-comment@v2
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
-          issue-number: ${{ steps.ga.pr.number }}
+          issue-number: ${{ steps.ga.outputs.pr.number }}
           body: |
             Storybooks Link For Branch
-            https://dts-stn.github.io/Service-Canada-Design-System/${{ steps.ga.pr.headBranchName }}
+            https://dts-stn.github.io/Service-Canada-Design-System/${{ steps.ga.outputs.pr.headBranchName }}
