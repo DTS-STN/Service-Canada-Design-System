@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.52.5](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.4...v1.52.5) (2022-10-14)
+
+### Bug Fixes
+
+- final update for staged workflow ([49843f7](https://github.com/DTS-STN/Service-Canada-Design-System/commit/49843f772935a57ddbfbd0c6f9e9da272f059b0e))
+
+## [1.52.4](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.3...v1.52.4) (2022-10-13)
+
+### Bug Fixes
+
+- updated var name ([93749c5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/93749c52191fec1c78a38a31e29e62181217bf91))
+
+## [1.52.3](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.2...v1.52.3) (2022-10-13)
+
+### Bug Fixes
+
+- cleaned up ([f3c5aad](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f3c5aade769bd0ee91633011a6f3571979c1f5bc))
+- typo ([47f09a0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/47f09a07299e3373b1a05aef6ee252cf2c4d65b9))
+
+## [1.52.2](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.1...v1.52.2) (2022-10-13)
+
+### Bug Fixes
+
+- shouldn't trigger workflow for release ([cde5259](https://github.com/DTS-STN/Service-Canada-Design-System/commit/cde5259792a5c7b4e092a0224a8ce35315b7efdd))
+- trying to fix publish ([9a73bb7](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9a73bb7ac213bf0c68c8db75dc853a27972698b5))
+- updated some stuff ([30969ca](https://github.com/DTS-STN/Service-Canada-Design-System/commit/30969ca9e7420927967fc5d11cc0774ca9653859))
+
 ## [1.52.1](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.0...v1.52.1) (2022-10-13)
 
 ### Bug Fixes

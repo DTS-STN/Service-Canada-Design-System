@@ -1,10 +1,10 @@
-name: Publish Package on Release
+name: Publish Package
 on:
   push:
     branches:
       - main
     paths:
-      - 'CHANGELOG.md'
+      - 'package.json'
 jobs:
   release:
     name: publish
@@ -29,6 +29,6 @@ jobs:
           CI: true
       # Publish the package
       - name: Publish the package
-        run: npm publish --access public
+        run: npm publish
         env: 
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN_LOCAL }}
