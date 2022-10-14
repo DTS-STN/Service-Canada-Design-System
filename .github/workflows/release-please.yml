@@ -8,7 +8,7 @@ on:
 name: release-please
 jobs:
   release-please:
-    if: github.event.pull_request.merged == true
+    if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/release-please-action@v3
@@ -16,6 +16,4 @@ jobs:
           release-type: node
           package-name: 'dts-stn/service-canada-design-system'
           changelog-types: '[{"type":"feat","section":"Features"},{"type":"fix","section":"Bug Fixes"},{"type":"perf","section":"Performance Improvements"},{"type":"test","section":"Tests"},{"type":"docs","section":"Documentation"},{"type":"build","section":"Build System"},{"type":"ops","section":"CI/CD Changes"},{"type":"chore","section":"Miscellaneous Chores"},{"type":"refactor","section":"Refactored"}]'
-          prerelease: true
-          default-branch: main
-
+          
