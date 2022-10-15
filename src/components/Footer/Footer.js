@@ -222,17 +222,14 @@ Footer.propTypes = {
    * id of this component
    */
   id: PropTypes.string.isRequired,
-
   /**
    * isAuthenticated: bool to switch between authenticated and non authenticated menus
    **/
   isAuthenticated: PropTypes.bool,
-
   /**
    * Switch between english and french footer. Pass in "en" or "fr"
    */
   lang: PropTypes.oneOf([EN, FR]),
-
   /**
    * Add the path Link to the top of your page for the "to the Top" button in mobile
    */

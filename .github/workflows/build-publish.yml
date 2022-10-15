@@ -1,40 +1,30 @@
-name: Pre-release
+name: Build Storybook & NPM Publish
 on:
   push:
     branches:
       - main
 jobs:
-  checkout:
+  build-publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v3
         with:
-        fetch-depth: 0
-  init:
-    runs-on: ubuntu-latest
-    if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
-    needs: checkout
-    steps:
+          fetch-depth: 0
       - name: Node
         uses: actions/setup-node@v3
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
-      - name: Install 🔧
+      - name: Install
         run: npm ci
-  build-storybook:
-    runs-on: ubuntu-latest
-    if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
-    needs: checkout
-    steps:
-      - name: Build Storybooks 🔨
+      - name: Build Storybook
         run: npm run build-storybook
       - name: Extract branch name
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
-      - name: Deploy 🚀
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
@@ -42,11 +32,6 @@ jobs:
           BRANCH: gh-pages # The branch the action should deploy to
           FOLDER: storybook-static # The folder the action should deploy
           CLEAN: true # Automatically remove deleted files from the deploy branch
-  publish:
-    runs-on: ubuntu-latest
-    if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
-    needs: build-storybook
-    steps:
       - name: Publish the package
         run: npm publish
         env: 

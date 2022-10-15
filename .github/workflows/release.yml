@@ -1,11 +1,12 @@
-name: Create Bump PR and publish NPM dev package
+name: Bump PR & NPM Dev Publish
 on:
   push:
     branches:
       - release
 jobs:
-  prerelease:
+  bump-pr:
     runs-on: ubuntu-latest
+    if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
     steps:
       - uses: google-github-actions/release-please-action@v3
         id: ga
@@ -13,10 +14,12 @@ jobs:
           release-type: node
           changelog-types: '[{"type":"feat","section":"Features"},{"type":"fix","section":"Bug Fixes"},{"type":"perf","section":"Performance Improvements"},{"type":"test","section":"Tests"},{"type":"docs","section":"Documentation"},{"type":"build","section":"Build System"},{"type":"ops","section":"CI/CD Changes"},{"type":"chore","section":"Miscellaneous Chores"},{"type":"refactor","section":"Refactored"}]'
           prerelease: true
-  publish:
+          default-branch: release
+  npm-dev-publish:
     runs-on: ubuntu-latest
+    if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
