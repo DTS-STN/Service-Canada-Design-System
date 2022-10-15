@@ -1,4 +1,4 @@
-name: Pre-release
+name: Build Storybook & NPM Publish
 on:
   push:
     branches:
@@ -11,10 +11,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-  init:
-    runs-on: ubuntu-latest
-    needs: checkout
-    steps:
       - name: Node
         uses: actions/setup-node@v3
         with:
@@ -22,10 +18,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Install 🔧
         run: npm ci
-  build-storybook:
-    runs-on: ubuntu-latest
-    needs: checkout
-    steps:
       - name: Build Storybooks 🔨
         run: npm run build-storybook
       - name: Extract branch name
@@ -40,10 +32,6 @@ jobs:
           BRANCH: gh-pages # The branch the action should deploy to
           FOLDER: storybook-static # The folder the action should deploy
           CLEAN: true # Automatically remove deleted files from the deploy branch
-  publish:
-    runs-on: ubuntu-latest
-    needs: build-storybook
-    steps:
       - name: Publish the package
         run: npm publish
         env: 

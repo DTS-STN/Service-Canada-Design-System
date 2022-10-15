@@ -1,4 +1,4 @@
-name: Create Bump PR and publish NPM dev package
+name: Bump PR & NPM Dev Publish
 on:
   push:
     branches:
