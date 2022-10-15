@@ -1,0 +1,23 @@
+name: "Test"
+on:
+  pull_request:
+    branches: [ main, release, develop ]
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install 🔧
+        run: npm ci
+      - name: Test 🧪
+        run: npm run test
+        env:
+          CI: true

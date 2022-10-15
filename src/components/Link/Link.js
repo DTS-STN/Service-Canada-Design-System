@@ -81,12 +81,10 @@ Link.propTypes = {
    * Target attribute to tell the browser where the linked document should be loaded.
    */
   target: PropTypes.string,
-
   /**
    * Identify which Text Link being clicked
    */
   id: PropTypes.string.isRequired,
-
   /**
    * Lang attribute for links that do not match the language of the top level document
    */
