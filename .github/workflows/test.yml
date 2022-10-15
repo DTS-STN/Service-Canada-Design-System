@@ -26,7 +26,8 @@ jobs:
     runs-on: ubuntu-latest
     if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
     needs: [checkout, init]
+    steps:
       - name: Test 🧪
-        run: npm run test
-        env:
-          CI: true
+      run: npm run test
+      env:
+        CI: true
