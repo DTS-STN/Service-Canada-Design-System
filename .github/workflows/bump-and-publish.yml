@@ -27,6 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
     needs: checkout
+    steps:
       - name: Build Storybooks 🔨
         run: npm run build-storybook
       - name: Extract branch name
@@ -45,6 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
     needs: build-storybook
+    steps:
       - name: Publish the package
         run: npm publish
         env: 
