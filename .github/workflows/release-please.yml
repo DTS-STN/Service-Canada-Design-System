@@ -42,3 +42,4 @@ jobs:
           commit-search-depth: 32
           release-search-depth: 3
           prerelease: true
+          component: next
