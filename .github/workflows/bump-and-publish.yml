@@ -13,7 +13,6 @@ jobs:
         fetch-depth: 0
   init:
     runs-on: ubuntu-latest
-    if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
     needs: checkout
     steps:
       - name: Node
@@ -25,7 +24,6 @@ jobs:
         run: npm ci
   build-storybook:
     runs-on: ubuntu-latest
-    if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
     needs: checkout
     steps:
       - name: Build Storybooks 🔨
@@ -44,7 +42,6 @@ jobs:
           CLEAN: true # Automatically remove deleted files from the deploy branch
   publish:
     runs-on: ubuntu-latest
-    if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
     needs: build-storybook
     steps:
       - name: Publish the package
