@@ -1,6 +1,7 @@
 name: Bump PR & NPM Dev Publish
 on:
   pull_request:
+    types: [closed]
     branches: release
 jobs:
   bump-pr:
