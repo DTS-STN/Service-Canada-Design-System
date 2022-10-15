@@ -11,10 +11,15 @@ jobs:
     if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      # - name: Checkout 🛎️
-      #   uses: actions/checkout@v3
-      #   with:
-      #     fetch-depth: 0
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+    # # This is the action in this repo! 👇
+    # # Note we set an `id` called `release`. We'll use that later...
+    # - name: Validate and extract release information
+    #   id: release
+    #   uses: manovotny/github-releases-for-automated-package-publishing-action@v1.0.0
       # - name: Node
       #   uses: actions/setup-node@v3
       #   with:
@@ -41,5 +46,3 @@ jobs:
           changelog-types: '[{"type":"feat","section":"Features"},{"type":"fix","section":"Bug Fixes"},{"type":"perf","section":"Performance Improvements"},{"type":"test","section":"Tests"},{"type":"docs","section":"Documentation"},{"type":"build","section":"Build System"},{"type":"ops","section":"CI/CD Changes"},{"type":"chore","section":"Miscellaneous Chores"},{"type":"refactor","section":"Refactored"}]'
           commit-search-depth: 32
           release-search-depth: 3
-          prerelease: true
-          component: next
