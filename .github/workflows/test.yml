@@ -28,6 +28,6 @@ jobs:
     needs: init
     steps:
       - name: Test 🧪
-      run: npm run test
-      env:
-        CI: true
+        run: npm run test
+        env:
+          CI: true
