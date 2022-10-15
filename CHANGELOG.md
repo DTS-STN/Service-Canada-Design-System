@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.52.18](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.17...v1.52.18) (2022-10-15)
+
+
+### CI/CD Changes
+
+* added restriction by right means in `if:` of workflow ([786a454](https://github.com/DTS-STN/Service-Canada-Design-System/commit/786a454367329b049ad358746a5dc9e9df76932e))
+
 ## [1.52.17](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.16...v1.52.17) (2022-10-15)
 
 
