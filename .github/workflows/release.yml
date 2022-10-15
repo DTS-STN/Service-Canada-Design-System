@@ -1,4 +1,4 @@
-name: Pre-release22
+name: Create Bump PR and publish NPM dev package
 on:
   push:
     branches:
@@ -7,15 +7,6 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Make prerelease to npm
-        uses: epeli/npm-release@v1
-        with:
-            type: prerelease
-            token: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN_LOCAL }}
       - uses: google-github-actions/release-please-action@v3
         id: ga
         with:
@@ -25,3 +16,15 @@ jobs:
           release-search-depth: 3
           prerelease: true
           command: github-release
+          default-branch: release
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+        if: ${{ steps.ga.outputs.release_created }}
+        with:
+          fetch-depth: 0
+      - name: Make prerelease to npm
+        uses: epeli/npm-release@v1
+        if: ${{ steps.ga.outputs.release_created }}
+        with:
+            type: prerelease
+            token: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN_LOCAL }}
