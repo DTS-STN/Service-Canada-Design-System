@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.52.10](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.9...v1.52.10) (2022-10-15)
+
+
+### Bug Fixes
+
+* remoevd the conditional ([1ebe0a2](https://github.com/DTS-STN/Service-Canada-Design-System/commit/1ebe0a2f107471ded3103f84fbddbac1cc024de4))
+
 ## [1.52.9](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.8...v1.52.9) (2022-10-15)
 
 
