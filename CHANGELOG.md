@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.52.13](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.12...v1.52.13) (2022-10-15)
+
+
+### Bug Fixes
+
+* adding test commit via workflow ([3b41502](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3b41502c3b428ea06d2d2c1c5168d22cf498cf24))
+
 ## [1.52.12](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.11...v1.52.12) (2022-10-15)
 
 
