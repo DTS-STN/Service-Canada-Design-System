@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.52.14](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.13...v1.52.14) (2022-10-15)
+
+
+### Bug Fixes
+
+* added git checkout action ([d5e386b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d5e386b1a0da362cc725d5524a1c0535d097dae0))
+* updated fetch and checkout opts ([63bf799](https://github.com/DTS-STN/Service-Canada-Design-System/commit/63bf79945860568c4a5de920eb29f3584c53270f))
+
 ## [1.52.13](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.12...v1.52.13) (2022-10-15)
 
 
