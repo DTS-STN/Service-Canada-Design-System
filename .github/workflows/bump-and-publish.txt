@@ -1,38 +1,40 @@
-name: Publish Package
+name: Pre-release
 on:
   push:
     branches:
       - main
-    paths:
-      - 'CHANGELOG.md'
-      - 'package.json'
 jobs:
-  release:
-    name: publish
+  checkout:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+        fetch-depth: 0
+  init:
+    runs-on: ubuntu-latest
+    if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
+    needs: checkout
+    steps:
       - name: Node
         uses: actions/setup-node@v3
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
-      # install dependencies
       - name: Install 🔧
         run: npm ci
-      # test components
+  test:
+    runs-on: ubuntu-latest
+    if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
+    needs: [checkout, init]
       - name: Test 🧪
         run: npm run test
         env:
           CI: true
-      # Publish the package
-      - name: Publish the package
-        run: npm publish
-        env: 
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN_LOCAL }}
+  build-storybook:
+    runs-on: ubuntu-latest
+    if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
+    needs: test
       - name: Build Storybooks 🔨
         run: npm run build-storybook
       - name: Extract branch name
@@ -47,3 +49,11 @@ jobs:
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: storybook-static # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
+  publish:
+    runs-on: ubuntu-latest
+    if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
+    needs: test
+      - name: Publish the package
+        run: npm publish
+        env: 
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN_LOCAL }}
