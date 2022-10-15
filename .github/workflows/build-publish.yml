@@ -4,10 +4,10 @@ on:
     branches:
       - main
 jobs:
-  checkout:
+  build-publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
@@ -16,15 +16,15 @@ jobs:
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
-      - name: Install 🔧
+      - name: Install
         run: npm ci
-      - name: Build Storybooks 🔨
+      - name: Build Storybook
         run: npm run build-storybook
       - name: Extract branch name
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
-      - name: Deploy 🚀
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}

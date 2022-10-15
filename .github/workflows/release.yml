@@ -5,7 +5,7 @@ on:
       - release
       - '!release-please-*'
 jobs:
-  prerelease:
+  bump-pr:
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/release-please-action@v3
@@ -15,10 +15,10 @@ jobs:
           changelog-types: '[{"type":"feat","section":"Features"},{"type":"fix","section":"Bug Fixes"},{"type":"perf","section":"Performance Improvements"},{"type":"test","section":"Tests"},{"type":"docs","section":"Documentation"},{"type":"build","section":"Build System"},{"type":"ops","section":"CI/CD Changes"},{"type":"chore","section":"Miscellaneous Chores"},{"type":"refactor","section":"Refactored"}]'
           prerelease: true
           default-branch: release
-  publish:
+  npm-dev-publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
