@@ -40,5 +40,4 @@ jobs:
           changelog-types: '[{"type":"feat","section":"Features"},{"type":"fix","section":"Bug Fixes"},{"type":"perf","section":"Performance Improvements"},{"type":"test","section":"Tests"},{"type":"docs","section":"Documentation"},{"type":"build","section":"Build System"},{"type":"ops","section":"CI/CD Changes"},{"type":"chore","section":"Miscellaneous Chores"},{"type":"refactor","section":"Refactored"}]'
           commit-search-depth: 32
           release-search-depth: 3
-          release-as: next
-          include-v-in-tag: false
+          release-as: v1.0.0.next
