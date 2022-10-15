@@ -1,4 +1,3 @@
-# should run across the multiple criteria, independently of other jobs 
 name: "Test"
 on:
   pull_request:
