@@ -2,7 +2,7 @@ name: Create Bump PR and publish NPM dev package
 on:
   push:
     branches:
-      - release
+      - main
 jobs:
   prerelease:
     runs-on: ubuntu-latest
@@ -13,13 +13,3 @@ jobs:
           release-type: node
           changelog-types: '[{"type":"feat","section":"Features"},{"type":"fix","section":"Bug Fixes"},{"type":"perf","section":"Performance Improvements"},{"type":"test","section":"Tests"},{"type":"docs","section":"Documentation"},{"type":"build","section":"Build System"},{"type":"ops","section":"CI/CD Changes"},{"type":"chore","section":"Miscellaneous Chores"},{"type":"refactor","section":"Refactored"}]'
           prerelease: true
-
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Make prerelease to npm
-        uses: epeli/npm-release@v1
-        with:
-            type: prerelease
-            token: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN_LOCAL }}
