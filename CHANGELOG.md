@@ -1,5 +1,72 @@
 # Changelog
 
+## [1.52.19](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.18...v1.52.19) (2022-10-15)
+
+
+### Bug Fixes
+
+* added mundane comment to test out the pr stuff ([807cdbd](https://github.com/DTS-STN/Service-Canada-Design-System/commit/807cdbd14ea95de8a4d22b534c443c1b43eb86a5))
+* changing workflow ([8b046ea](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8b046ea622eb91fa8c38419a6fcdf5f8e26b2726))
+* no need for checking out the repo ([da2022e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/da2022e4de5a03df0ffad2e542312d324d0e0dd1))
+* removed space ([0ae219a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0ae219a7ba6596ef8a5bf88e7d17d2c2497a641e))
+* removed the branches thing ([ce7828d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ce7828d0e43e2178732f9421b2ffb873b00e133c))
+* restricting workflow ([8648ecf](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8648ecf95308ae8340ab0f3dbc2a170065f002e4))
+* trying space ([0e93f07](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0e93f07c299593464660e817b80c166a4030f231))
+* trying to fix release workflow ([3db3de1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3db3de1863dc4d46ac33481b31448ad5eaaa8c25))
+* version number crinkle ([c4a13f1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c4a13f14c9a02a1c45a4577b1a63253b592e7a4d))
+
+## [1.52.18](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.17...v1.52.18) (2022-10-15)
+
+
+### CI/CD Changes
+
+* added restriction by right means in `if:` of workflow ([786a454](https://github.com/DTS-STN/Service-Canada-Design-System/commit/786a454367329b049ad358746a5dc9e9df76932e))
+
+## [1.52.17](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.16...v1.52.17) (2022-10-15)
+
+
+### Bug Fixes
+
+* added not ([14d2f0b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/14d2f0b81beaefa9deb014aa6163f72d2448918d))
+* fetch depth fix ([ff9c645](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ff9c6454e6ae52ad8960b99d9e00bc421ffb9543))
+* trivial change to test workflo ([b798e83](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b798e832bb16a96a3a0dea5e945cab60ae1b11a9))
+* updated workflow names for verbosity ([7faf10e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7faf10e83c85ff8bfb7070bdb3e7491bc1284b3d))
+
+
+### Miscellaneous Chores
+
+* added restriction ([56f627e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/56f627e4db9e1300e2825a2ef84772f3bf123455))
+
+## [1.52.16](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.15...v1.52.16) (2022-10-15)
+
+
+### Bug Fixes
+
+* added release to the branch ([a12064b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a12064bf0ad9615eccaed359fd8f7ba3a5935456))
+* another typo ([8c52cd8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8c52cd8353bf700c1bccf31a306d046f3b87af24))
+* another typo fix ([13c8c4b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/13c8c4b147e5152c2992e817c12e65526f59e71b))
+* checking if it works on other branches ([307661e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/307661e33a2cf5fcbb3e7ab8f9dbcdcc98ee1d23))
+* dead code ([63c82a8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/63c82a86a97ccb401eeba6ce6fd8f02760ea98e1))
+* directly on main ([0de9735](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0de97356266067b84f5aa9ee8721fce61adc2ad0))
+* guess what? typo ([f5f4604](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f5f46047d9737bc8e41da6822ed09a2c530a335f))
+* pls be the last one ([9d805a3](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9d805a30da65ef8f307c24cc13cac78b879887d0))
+* removed typo ([f56a6a7](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f56a6a721ba3b864745af892e8ec428a78ae2f47))
+* trigger workflow test ([ceb4bc8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ceb4bc80b0359b02b0f69cae7556e0174f73d12d))
+* typo ([20a37bb](https://github.com/DTS-STN/Service-Canada-Design-System/commit/20a37bba10e60b6c22967093d021d18c4558cb9e))
+* typo typo typo ([2b3e26b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2b3e26bc6277b699742890a5140564a3bb360a41))
+* typo! ([0e8adbc](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0e8adbcd52ff19102c78d10215f1332851e8f490))
+* typooooooo ([af4dd25](https://github.com/DTS-STN/Service-Canada-Design-System/commit/af4dd251d1f64f6a520b62bc67ea092a64fc5cf2))
+* updated pipelione ([9c50614](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9c5061400f4748feeca0a57d9d8308d2c2980364))
+* updated target branch ([11af1c8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/11af1c83609ef046ed85519dd08bbbe88fe2f45a))
+* updated workflow ([9033a9d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9033a9dc8ac4347a9e2cc0b8f7ca593d1f648549))
+* updated workflows ([9cd1b05](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9cd1b053614eeda86462cbe5fab7cdf0c1066008))
+* workflow was outdated with node ([5994e4f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5994e4f4699105eda4be664e711a21cb5f574754))
+
+
+### Miscellaneous Chores
+
+* merged ([06f3efb](https://github.com/DTS-STN/Service-Canada-Design-System/commit/06f3efb68a3115114b05c6715000990ee8b6c0e4))
+
 ## [1.52.15](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.14...v1.52.15) (2022-10-15)
 
 
