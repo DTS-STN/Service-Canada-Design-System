@@ -23,5 +23,5 @@ jobs:
       - name: Make prerelease to npm
         uses: epeli/npm-release@v1
         with:
-            type: prerelease
-            token: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN_LOCAL }}
+          type: prerelease
+          token: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN_LOCAL }}
