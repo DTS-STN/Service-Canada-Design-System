@@ -55,3 +55,5 @@ jobs:
           tagging_message: v${{ steps.ga.outputs.major }}.${{ steps.ga.outputs.minor }}.${{ steps.ga.outputs.patch }}.next
           push_options: '--force'
           create_branch: false
+          skip_fetch: true
+          skip_checkout: true
