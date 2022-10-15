@@ -7,8 +7,9 @@ on:
     types:
       - closed
 jobs:
-  release-please:
+  publish:
     runs-on: ubuntu-latest
+    if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
