@@ -2,7 +2,7 @@ name: Pre-release
 on:
   push:
     branches:
-      - release
+      - main
   pull_request:
     types:
       - closed
