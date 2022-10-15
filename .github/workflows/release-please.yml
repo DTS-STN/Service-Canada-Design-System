@@ -44,3 +44,14 @@ jobs:
           commit-search-depth: 32
           release-search-depth: 3
           prerelease: true
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          # Optional. Commit message for the created commit.
+          # Defaults to "Apply automatic changes"
+          commit_message: |
+            chore: release v${{ steps.ga.outputs.major }}.${{ steps.ga.outputs.minor }}.${{ steps.ga.outputs.patch }}.next
+            Release-As: v${{ steps.ga.outputs.major }}.${{ steps.ga.outputs.minor }}.${{ steps.ga.outputs.patch }}.next
+          branch: ${{ steps.ga.outputs.pr.headBranchName }}
+          tagging_message: v${{ steps.ga.outputs.major }}.${{ steps.ga.outputs.minor }}.${{ steps.ga.outputs.patch }}.next
+          push_options: '--force'
+          create_branch: false
