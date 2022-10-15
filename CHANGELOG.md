@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.52.19](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.18...v1.52.19) (2022-10-15)
+
+
+### Bug Fixes
+
+* added mundane comment to test out the pr stuff ([807cdbd](https://github.com/DTS-STN/Service-Canada-Design-System/commit/807cdbd14ea95de8a4d22b534c443c1b43eb86a5))
+* changing workflow ([8b046ea](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8b046ea622eb91fa8c38419a6fcdf5f8e26b2726))
+* no need for checking out the repo ([da2022e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/da2022e4de5a03df0ffad2e542312d324d0e0dd1))
+* removed space ([0ae219a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0ae219a7ba6596ef8a5bf88e7d17d2c2497a641e))
+* removed the branches thing ([ce7828d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ce7828d0e43e2178732f9421b2ffb873b00e133c))
+* restricting workflow ([8648ecf](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8648ecf95308ae8340ab0f3dbc2a170065f002e4))
+* trying space ([0e93f07](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0e93f07c299593464660e817b80c166a4030f231))
+* trying to fix release workflow ([3db3de1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3db3de1863dc4d46ac33481b31448ad5eaaa8c25))
+* version number crinkle ([c4a13f1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c4a13f14c9a02a1c45a4577b1a63253b592e7a4d))
+
 ## [1.52.18](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.17...v1.52.18) (2022-10-15)
 
 
