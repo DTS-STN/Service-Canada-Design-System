@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - release
-  pull_request:
-    types:
-      - closed
 jobs:
   bump-pr:
     runs-on: ubuntu-latest
