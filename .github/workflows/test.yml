@@ -3,7 +3,7 @@ on:
   pull_request:
     branches: [ main, release, develop ]
 jobs:
-  checkout:
+  checkout-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,9 +15,9 @@ jobs:
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
-      - name: Install 🔧
+      - name: Install
         run: npm ci
-      - name: Test 🧪
+      - name: Run test suite
         run: npm run test
         env:
           CI: true
