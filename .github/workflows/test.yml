@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-        fetch-depth: 0
+          fetch-depth: 0
   init:
     runs-on: ubuntu-latest
     if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
