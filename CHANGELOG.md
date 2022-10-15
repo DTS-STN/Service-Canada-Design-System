@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.52.12](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.11...v1.52.12) (2022-10-15)
+
+
+### Bug Fixes
+
+* removed pckage-name completely ([4160c75](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4160c750dbe3f0ce2e3eb40dd3ad115a39c3a094))
+
 ## [1.52.11](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.10...v1.52.11) (2022-10-15)
 
 
