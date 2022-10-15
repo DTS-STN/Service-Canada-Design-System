@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.52.11](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.10...v1.52.11) (2022-10-15)
+
+
+### Bug Fixes
+
+* no need for checking out the repo ([e33b795](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e33b795564c848bb0731a2fca944e3290df219a0))
+
 ## [1.52.10](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.9...v1.52.10) (2022-10-15)
 
 
