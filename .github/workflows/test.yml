@@ -6,15 +6,10 @@ jobs:
   checkout:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v3
         with:
-        fetch-depth: 0
-  init:
-    runs-on: ubuntu-latest
-    if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
-    needs: checkout
-    steps:
+          fetch-depth: 0
       - name: Node
         uses: actions/setup-node@v3
         with:
@@ -22,10 +17,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Install 🔧
         run: npm ci
-  test:
-    runs-on: ubuntu-latest
-    if: startsWith(github.head_ref, 'release-please-') == false && github.event.pull_request.merged == true
-    needs: [checkout, init]
       - name: Test 🧪
         run: npm run test
         env:

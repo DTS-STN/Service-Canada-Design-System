@@ -12,8 +12,10 @@ jobs:
         with:
           release-type: node
           changelog-types: '[{"type":"feat","section":"Features"},{"type":"fix","section":"Bug Fixes"},{"type":"perf","section":"Performance Improvements"},{"type":"test","section":"Tests"},{"type":"docs","section":"Documentation"},{"type":"build","section":"Build System"},{"type":"ops","section":"CI/CD Changes"},{"type":"chore","section":"Miscellaneous Chores"},{"type":"refactor","section":"Refactored"}]'
-          draft: true
-          command: github-release
+          prerelease: true
+  publish:
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
         with:
@@ -21,5 +23,5 @@ jobs:
       - name: Make prerelease to npm
         uses: epeli/npm-release@v1
         with:
-            type: prerelease
-            token: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN_LOCAL }}
+          type: prerelease
+          token: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN_LOCAL }}
