@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.52.17](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.16...v1.52.17) (2022-10-15)
+
+
+### Bug Fixes
+
+* added not ([14d2f0b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/14d2f0b81beaefa9deb014aa6163f72d2448918d))
+* fetch depth fix ([ff9c645](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ff9c6454e6ae52ad8960b99d9e00bc421ffb9543))
+* trivial change to test workflo ([b798e83](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b798e832bb16a96a3a0dea5e945cab60ae1b11a9))
+* updated workflow names for verbosity ([7faf10e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7faf10e83c85ff8bfb7070bdb3e7491bc1284b3d))
+
+
+### Miscellaneous Chores
+
+* added restriction ([56f627e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/56f627e4db9e1300e2825a2ef84772f3bf123455))
+
 ## [1.52.16](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.15...v1.52.16) (2022-10-15)
 
 
