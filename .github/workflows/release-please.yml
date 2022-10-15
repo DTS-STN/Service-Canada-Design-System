@@ -35,10 +35,9 @@ jobs:
       - uses: google-github-actions/release-please-action@v3
         id: ga
         with:
-          command: github-release
           release-type: node
           package-name: '@dts-stn/service-canada-design-system'
           changelog-types: '[{"type":"feat","section":"Features"},{"type":"fix","section":"Bug Fixes"},{"type":"perf","section":"Performance Improvements"},{"type":"test","section":"Tests"},{"type":"docs","section":"Documentation"},{"type":"build","section":"Build System"},{"type":"ops","section":"CI/CD Changes"},{"type":"chore","section":"Miscellaneous Chores"},{"type":"refactor","section":"Refactored"}]'
-          prerelease: true
           commit-search-depth: 32
           release-search-depth: 3
+          release-as: next
