@@ -38,8 +38,8 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           TARGET_FOLDER: ${{ steps.extract_branch.outputs.branch }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: storybook-static # The folder the action should deploy.
+          BRANCH: gh-pages # The branch the action should deploy to
+          FOLDER: storybook-static # The folder the action should deploy
           CLEAN: true # Automatically remove deleted files from the deploy branch
   publish:
     runs-on: ubuntu-latest
