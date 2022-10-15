@@ -10,10 +10,10 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+      # - name: Checkout 🛎️
+      #   uses: actions/checkout@v3
+      #   with:
+      #     fetch-depth: 0
     # # This is the action in this repo! 👇
     # # Note we set an `id` called `release`. We'll use that later...
     # - name: Validate and extract release information
