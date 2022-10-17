@@ -4,15 +4,9 @@
 
 # DECD Design System Component Library 🎨
 
-This repository contains the source code for the React component library which corresponds to DECD designs following the [canada.ca guidelines](https://www.canada.ca/en/government/about/design-system.html).
+This repository contains the source code for the React component library which corresponds to DECD designs following the [canada.ca guidelines](https://www.canada.ca/en/government/about/design-system.html). This library contains reusable components that are accessible and can be used across DECD products in order to ensure brand and design consistency and to speed up development through reusability.
 
-This library contains reusable components that are accessible and can be used across DECD products in order to ensure brand and design consistency and to speed up development through reusability.
-
-## Using this Package in Your Project 🤓
-
-The package is hosted in [npm public registry](https://www.npmjs.com/package/@dts-stn/service-canada-design-system). To use it simply install it as one of your dependencies
-
-This specifies that any package scoped @dts-stn should come from the github npm registry (where this package is located).
+## Install
 
 **Step 1:** Install the package using this command
 
@@ -26,29 +20,11 @@ $ npm install --save @dts-stn/service-canada-design-system
 import { Component } from "@dts-stn/service-canada-design-system";
 ```
 
-**Important Note** To see available components please refer to our storybook page [DECD Design System Storybook](https://dts-stn.github.io/Service-Canada-Design-System/main). Make sure to view the **Doc tab** of each component to see important information about how to use components and the props you can pass into them.
+**Note:** The package is hosted in [npm public registry](https://www.npmjs.com/package/@dts-stn/service-canada-design-system). There are pre-release versions available as well, which are created based on volume of changes.
 
-## Developing this Package 👨🏽‍💻👩🏽‍💻
+To see available components please refer to our storybook page [DECD Design System Storybook](https://dts-stn.github.io/Service-Canada-Design-System/main). Make sure to view the **Doc tab** of each component to see important information about how to use components and the props you can pass into them.
 
-### Tech Stack
-
-| Layer                 | Stragety                                      |
-| :-------------------- | :-------------------------------------------- |
-| Web Client Tech       | HTML5, CSS3+, JS                              |
-| Framework             | React                                         |
-| Version Control       | Git                                           |
-| Pre-commit Git Hooks  | Husky                                         |
-| JS Linter             | ESLint                                        |
-| Code Formatter        | Prettier                                      |
-| JS Compiler           | Babel                                         |
-| Task Runner           | NPM Scripts                                   |
-| Module Bundler        | Rollup                                        |
-| CSS & JS Integration  | PostCSS & Tailwind CSS                        |
-| Packaging Stragety    | NPM Packages                                  |
-| Dev Environment       | Storybook                                     |
-| Unit & React Testing  | Jest (React Testing Library)                  |
-| Accessibility Testing | Jest-axe, Storybook Accessibility Addon (axe) |
-| CI/CD Pipeline        | Github Actions                                |
+## Contribution 👨🏽‍💻👩🏽‍💻
 
 ### Getting Started
 
@@ -67,6 +43,16 @@ This project uses [storybook](https://storybook.js.org/) to document and provide
 # Start dev environment
 $ npm run storybook
 ```
+
+### Contribution
+
+New feature branches should be created from `main` and Pull Requests should be submitted with the base set as the `develop` branch. Ensure that you've linted and tested your changes locally before publishing any PRs.
+
+#### Commit Messages
+
+[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification is enforced as a `commit-msg` git hook. For more information on the possible `type` of commit that are allowed, take a look at `/git-conventional-commits.json` in the codebase.
+
+Every new release will automatically include a new `CHANGELOG.md` depending on all commit messages filed against the new version of the code in its git history.
 
 ### Testing Strategies 🧪
 
@@ -102,13 +88,9 @@ We are using multiple tools and steps to do accessibility testing, as no one too
    - Tab through content using keyboard only
    - Verify new content using at least 1 screen reader tool from the following list: https://dequeuniversity.com/screenreaders/
 
-   </br>
-
 3. Jest-axe is ran along with other unit tests. Jest-axe is time efficient but only covers about 30% of unit test cases. To run unit tests follow instructions listed under the [Testing Strategies 🧪](#Testing-Strategies-🧪) section. The following is an example test case:
 
    - Passing the Action Button Props through jest-axe tool line 73 [src/components/ActionButton.test.js](src/components/ActionButton.test.js)
-
-  </br>
 
 For more information on accessibility tools and resources refer to our [wiki page](https://github.com/DTS-STN/Service-Canada-Design-System/wiki#accessibility-documentation)
 
@@ -145,18 +127,6 @@ To manually run linting on all files (Prettier formatting) run the following com
 $ npm run lint
 ```
 
-### Pull Request Procedures
-
-**Branching Strategy:**
-
-| Branch   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Associated Github Actions                                         |
-| :------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------- |
-| main     | Production branch. Triggers a build to Storybook & publishes a new npm package release.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Publish Package on Release </br></br> Build and Deploy Storybooks |
-| hotfix   | Can be created off of main to allow for immediate fixes to bugs and will not affect current development. Any changes should be pulled back into develop and feature branches                                                                                                                                                                                                                                                                                                                                                                                                                  |                                                                   |
-| release  | Final culmination of all branches that will be used to test beta versions of the new release. After testing is complete, release will be merged into main.                                                                                                                                                                                                                                                                                                                                                                                                                                    | Generate Pre-Release </br></br>Build and Deploy Storybooks        |
-| develop  | Culmination of feature branches                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Build and Deploy Storybooks                                       |
-| features | Created off of develop to work on new features locally that are intended for the next release. Each feature branch should be prefixed by the relevant Jira issue and component ID (if applicable), eg. DS-56-A003-Footer.</br></br> Feature branches should be merged into develop using a PR. Each PR should include an update to the CHANGELOG.md if necessary and have at least one person review it before it can be merged. Check out [these tips](https://github.com/DTS-STN/Service-Canada-Design-System/wiki#code-review-helpful-tips) for giving productive and thoughtful feedback. | Build and Deploy Storybooks on PR                                 |
-
 ### Building the Package 👷🏽‍♀️👷🏽
 
 This package uses babel and rollup to transpile and create production bundles which are generated in the `/dist` folder at the root level of the project. To build the production bundle at any time simply run the following command
@@ -171,89 +141,49 @@ Rollup looks at the following file [src/index.js](src/index.js) to determine wha
 
 Sometimes it's helpful to test a component your working on in an actual application to test it's import or see it being rendered in the browser. There are a couple of ways you can test our package locally:
 
-1. Simulating a client project in another code base:
+You can create a tarball file based on your local branch to simulate what the service-canada-design-system package would look like with your new code. To create a tarball file run the following command in the top most folder in your local branch
 
-   You can create a tarball file based on your local branch to simulate what the service-canada-design-system package would look like with your new code. To create a tarball file run the following command in the top most folder in your local branch
+```bash
+$ npm pack
+```
 
-   ```bash
-   $ npm pack
-   ```
+This will create a dts-stn-service-canada-design-system-0.0.0.tgz which you can `npm install`.
 
-   This will create a dts-stn-service-canada-design-system-0.0.0.tgz file in your project.
+### Branching Strategy
 
-   Next follow steps 2 - 5 under [Testing a pre-release:](#testing-a-pre-release) to install the tarball file on another chosen application on your local and import individual components just as you would with an npm package.
+| Branch  | Description                                                                                                                                                                                                                                                                                   | Associated Github Actions                                               |
+| :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------- |
+| main    | Production branch. Triggers a build to Storybook & publishes a new npm package release.                                                                                                                                                                                                       | Publish Stable Package; Build and Deploy Storybooks; Test               |
+| release | Final culmination of all branches that will be used to test beta versions of the new release. After testing is complete, release will be merged into main.                                                                                                                                    | Publishing Dev Package; Create Pre-release notes PR for `release`; Test |
+| develop | Culmination of feature branches                                                                                                                                                                                                                                                               | Test                                                                    |
+| \*      | Created off of `main` to work on new features locally that are intended for the next potential release. Each feature branch should be prefixed by the relevant Jira issue and component ID (if applicable), eg. DS-56-A003-Footer. Feature branches should be merged into develop using a PR. | Test                                                                    |
 
-### Package Release Process
+### Release Process
 
-A [pre-release](https://github.com/DTS-STN/Service-Canada-Design-System/releases/tag/latest) is a development build created whenever new components or bug fixes are ready to be tested by other teams before they are released to production as a new version of our npm package. Pre-release assets (a tarball file) that can be used for testing are created every time there is a change to the release branch.
+Github Actions drive all workflow of testing and publishing artifacts on the [npm registry](https://www.npmjs.com/package/@dts-stn/service-canada-design-system). Besides testing and code analysis actions taking place, as outlined in the [Branching Strategy](#branching-strategy), the following automated steps are also taken by Github based on the branch code is committed to:
 
-A [release](https://github.com/DTS-STN/Service-Canada-Design-System/packages/847413) is created whenever new components or bug fixes are ready to go to production. Releases should be completed by an member from the DECD Design System team. A new version of our npm package is created on every release.
+- `release` - A dev package publish to the npm registry, which will allow for pre-release testing by devs. Also a PR will automatically be created that generates a new CHANGELOG.md and version bumps the library based on previous commits for the new potential release.
+- `main` - A stable package is released autoamatically to NPM.
 
-#### **Creating a pre-release:**
+### Tech Stack
 
-1. Update documentation:
-
-   - Create a new feature branch and add any changes to unreleased section in CHANGELOG.md
-   - Merge feature branch into develop
-   - Note: If you are repo admin, you can commit any changes to CHANGELOG.md directly to develop </br></br>
-
-2. Create a PR from the delevop branch into the release branch.
-
-3. Once the PR is approved and merged, the [Generate Pre-release](https://github.com/DTS-STN/Service-Canada-Design-System/actions/workflows/generate-pre-release.yml) Github Action will be triggered.
-
-4. A release will be created with the tag ["latest"](https://github.com/DTS-STN/Service-Canada-Design-System/releases/tag/latest) which will include a .tgz asset.
-
-#### **Testing a pre-release:**
-
-To test the pre-release you will be downloading a tarball file onto your local machine to mimic an npm package. Once you download the tarball file, you can install it on your local application and import individual components just as you would with an npm package. Follow the steps below to test components using the pre-release:
-
-1.  Download the asset onto your local machine (can be anywhere on your local).
-
-2.  Go to the root folder of the project/application you want to test the new release on (or the folder with your package.json where you would be downlading our npm package).
-
-3.  Run the below command with the correct version number and path to the .tgz asset. This will install the pre-release package that is sitting on your local.
-
-    ```bash
-    $ npm install ~/dts-stn-service-canada-design-system-0.0.0.tgz
-    ```
-
-4.  Start testing out the package by adding a component from the package to your repo (insert link to ).
-
-    ```js
-    import { Component } from "@dts-stn/service-canada-design-system";
-    ```
-
-5.  When testing is completed, to ensure you are no longer using the pre-release version of the package, run the below command in your repo with the [current version of the npm package](https://github.com/DTS-STN/Service-Canada-Design-System/packages/847413). This will uninstall the pre-relase .tgz file and reinstall the npm package back in your local project/application.
-
-    ```bash
-    $ npm install --save @dts-stn/service-canada-design-system
-    ```
-
-**Creating a release:**
-
-1. Update documentation:
-
-   - Create a new feature branch
-   - Update version number in package.json & package-lock.json
-   - Create a dated version entry in CHANGELOG.md and add any changes/fixes/additions
-   - Merge feature branch into release
-   - Note: If you are repo admin, you can commit any changes to CHANGELOG.md, package.json & package-lock.json directly to release </br></br>
-
-2. Create a PR from the release branch into the main branch.
-
-3. Once the PR is approved and merged, the package needs to be manually published to npm using the following commands.
-
-   - npm add user
-   - npm version minor
-   - npm publish --access public
-
-4. Once the package has been published to npm, manually create release notes on github as follows:
-
-   - Go to the [releases](https://github.com/DTS-STN/Service-Canada-Design-System/releases) tab on github page
-   - Click the "draft a new release" button
-   - Add a tag (package release number) and make sure the target is set to main branch (make sure the pre-release option is not checked)
-   - Auto generate release notes or add them manually
-   - Click the "Publish release" button
+| Layer                 | Stragety                                      |
+| :-------------------- | :-------------------------------------------- |
+| Web Client Tech       | HTML5, CSS3+, JS                              |
+| Framework             | React                                         |
+| Version Control       | Git                                           |
+| Pre-commit Git Hooks  | Husky                                         |
+| JS Linter             | ESLint                                        |
+| Code Formatter        | Prettier                                      |
+| JS Compiler           | Babel                                         |
+| Task Runner           | NPM Scripts                                   |
+| Module Bundler        | Rollup                                        |
+| CSS & JS Integration  | PostCSS & Tailwind CSS                        |
+| Packaging Stragety    | NPM Packages                                  |
+| Dev Environment       | Storybook                                     |
+| Unit & React Testing  | Jest (React Testing Library)                  |
+| Accessibility Testing | Jest-axe, Storybook Accessibility Addon (axe) |
+| CI/CD Pipeline        | Github Actions                                |
 
 ### License
 

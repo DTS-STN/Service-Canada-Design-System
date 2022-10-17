@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.52.21](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.20...v1.52.21) (2022-10-17)
+
+
+### Documentation
+
+* updated README.md with new branching strategy ([a200537](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a2005379013fa6da1aa507c2c6a35e8e07aeb817))
+
 ## [1.52.20](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.19...v1.52.20) (2022-10-17)
 
 
