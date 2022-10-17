@@ -30,22 +30,18 @@ FormError.propTypes = {
    * Unique id assigned for the component
    */
   id: PropTypes.string,
-
   /**
    * An error message to be displayed below the input.
    */
   errorMessage: PropTypes.string,
-
   /**
    * Unit test selector
    */
   dataTestId: PropTypes.string,
-
   /**
    * cypress tests selector
    */
   dataCy: PropTypes.string,
-
   /**
    * aria-describedBy label id
    */
