@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.52.22](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.21...v1.52.22) (2022-10-17)
+
+
+### Documentation
+
+* updated README badge ([4f0c811](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4f0c811bcea2987ff128ae923c0e03214295ed20))
+
+
+### Build System
+
+* updated workflow ([371af74](https://github.com/DTS-STN/Service-Canada-Design-System/commit/371af74d20332a56b91ef18e7a9f61a066edef7d))
+
 ## [1.52.21](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.20...v1.52.21) (2022-10-17)
 
 
