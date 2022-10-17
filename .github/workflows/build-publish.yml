@@ -33,6 +33,6 @@ jobs:
           FOLDER: storybook-static # The folder the action should deploy
           CLEAN: true # Automatically remove deleted files from the deploy branch
       - name: Publish the package
-        run: npm publish
+        run: npm publish --access=public
         env: 
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN_LOCAL }}
