@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.52.20](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.19...v1.52.20) (2022-10-17)
+
+
+### Bug Fixes
+
+* added trivial change for changelog test ([b6f1451](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b6f1451ac150deda6224eceb24963c122b39d920))
+
+
+### Miscellaneous Chores
+
+* updated workflow ([6c91b89](https://github.com/DTS-STN/Service-Canada-Design-System/commit/6c91b893627996b7a19d546a4343b70c60c72a21))
+
 ## [1.52.19](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.18...v1.52.19) (2022-10-15)
 
 
