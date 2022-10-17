@@ -1,4 +1,4 @@
-[![Build and Deploy Storybooks](https://github.com/DTS-STN/Service-Canada-Design-System/actions/workflows/build-and-deploy-storybooks.yml/badge.svg)](https://github.com/DTS-STN/Service-Canada-Design-System/actions/workflows/build-and-deploy-storybooks.yml)
+[![Build and Deploy Storybooks](https://github.com/DTS-STN/Service-Canada-Design-System/actions/workflows/build-publish.yml/badge.svg)](https://github.com/DTS-STN/Service-Canada-Design-System/actions/workflows/build-publish.yml)
 ![Version](https://img.shields.io/github/package-json/v/dts-stn/service-canada-design-system)
 [![Documentation Tool](https://img.shields.io/badge/Documentation%20Tool-storybooks-pink)](https://dts-stn.github.io/Service-Canada-Design-System/main)
 
