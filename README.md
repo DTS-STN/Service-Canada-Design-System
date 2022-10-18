@@ -44,9 +44,9 @@ This project uses [storybook](https://storybook.js.org/) to document and provide
 $ npm run storybook
 ```
 
-### Contribution
+### New Features
 
-New feature branches should be created from `main` and Pull Requests should be submitted with the base set as the `develop` branch. Ensure that you've linted and tested your changes locally before publishing any PRs.
+Feature branches should be created from `main` and Pull Requests should be submitted with the base set as the `develop` branch. Ensure that you've linted and tested your changes locally before publishing any PRs.
 
 #### Commit Messages
 
