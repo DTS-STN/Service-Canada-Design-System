@@ -41,7 +41,8 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          target-folder: release
+          target-folder: main
           branch: gh-pages
           folder: storybook-static
           clean: true
+          tag: $NPM_RELEASE_TAG
