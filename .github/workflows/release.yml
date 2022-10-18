@@ -54,4 +54,3 @@ jobs:
           branch: gh-pages
           folder: storybook-static
           clean: true
-          tag: "v${{ env.NPM_RELEASE_VERSION }}"
