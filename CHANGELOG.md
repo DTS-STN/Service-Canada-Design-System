@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.52.23](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.22...v1.52.23) (2022-10-18)
+
+
+### Build System
+
+* updated workflow with JamesIves/github-pages-deploy-action v4 ([8f9b8b7](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8f9b8b7795c72ee940a4933630e72533ed7b6268))
+
 ## [1.52.22](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.21...v1.52.22) (2022-10-17)
 
 
