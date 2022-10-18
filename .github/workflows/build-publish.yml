@@ -45,4 +45,4 @@ jobs:
           branch: gh-pages
           folder: storybook-static
           clean: true
-          tag: $NPM_RELEASE_TAG
+          tag: ${ NPM_RELEASE_TAG }
