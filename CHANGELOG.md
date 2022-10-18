@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.52.25](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.24...v1.52.25) (2022-10-18)
+
+
+### Build System
+
+* added npm ci ([d372c2c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d372c2c5df788a6176f6aaef23412a23566bd059))
+
 ## [1.52.24](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.23...v1.52.24) (2022-10-18)
 
 
