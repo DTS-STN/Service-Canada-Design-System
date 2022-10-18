@@ -44,9 +44,9 @@ This project uses [storybook](https://storybook.js.org/) to document and provide
 $ npm run storybook
 ```
 
-### Contribution
+### New Features
 
-New feature branches should be created from `main` and Pull Requests should be submitted with the base set as the `develop` branch. Ensure that you've linted and tested your changes locally before publishing any PRs.
+Feature branches should be created from `main` and Pull Requests should be submitted with the base set as the `develop` branch. Ensure that you've linted and tested your changes locally before publishing any PRs.
 
 #### Commit Messages
 
@@ -153,7 +153,7 @@ This will create a dts-stn-service-canada-design-system-0.0.0.tgz which you can 
 
 | Branch  | Description                                                                                                                                                                                                                                                                                   | Associated Github Actions                                               |
 | :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------- |
-| main    | Production branch. Triggers a build to Storybook & publishes a new npm package release.                                                                                                                                                                                                       | Publish Stable Package; Build and Deploy Storybook; Test               |
+| main    | Production branch. Triggers a build to Storybook & publishes a new npm package release.                                                                                                                                                                                                       | Publish Stable Package; Build and Deploy Storybook; Test                |
 | release | Final culmination of all branches that will be used to test beta versions of the new release. After testing is complete, release will be merged into main.                                                                                                                                    | Publishing Dev Package; Create Pre-release notes PR for `release`; Test |
 | develop | Culmination of feature branches                                                                                                                                                                                                                                                               | Test                                                                    |
 | \*      | Created off of `main` to work on new features locally that are intended for the next potential release. Each feature branch should be prefixed by the relevant Jira issue and component ID (if applicable), eg. DS-56-A003-Footer. Feature branches should be merged into develop using a PR. | Test                                                                    |
