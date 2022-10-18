@@ -27,8 +27,8 @@ jobs:
         with:
           type: prerelease
           token: ${{ secrets.NPM_AUTOMATION_TOKEN_DTSSTN_LOCAL }}
-      - name: Extract tag
-        run: echo "NPM_RELEASE_TAG=$(echo $NPM_RELEASE_TAG | cut -c 1-6)" >> $GITHUB_ENV
+      - name: Extract prerelease version
+        run: echo "NPM_RELEASE_VERSION=$(echo $NPM_RELEASE_VERSION | cut -c 1-6)" >> $GITHUB_ENV
   build-storybook:
     runs-on: ubuntu-latest
     needs: npm-dev-publish
@@ -54,4 +54,4 @@ jobs:
           branch: gh-pages
           folder: storybook-static
           clean: true
-          tag: $NPM_RELEASE_TAG
+          tag: v${ NPM_RELEASE_VERSION }
