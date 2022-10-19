@@ -1,5 +1,41 @@
 # Changelog
 
+## [1.52.25](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.24...v1.52.25) (2022-10-18)
+
+
+### Build System
+
+* added npm ci ([d372c2c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d372c2c5df788a6176f6aaef23412a23566bd059))
+
+## [1.52.24](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.23...v1.52.24) (2022-10-18)
+
+
+### Bug Fixes
+
+* bumping version for workflow ([cea3597](https://github.com/DTS-STN/Service-Canada-Design-System/commit/cea3597b5f5008e26bdf241beea239605d50490a))
+* cleaned up the docs and pipeline ([66f2e96](https://github.com/DTS-STN/Service-Canada-Design-System/commit/66f2e96e49f0010061de9f1755f545e043131f83))
+* updated .gitignore to include /storybook-static ([5633d08](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5633d084f74eb63d9d930c04d95ba3b19b61afbc))
+
+
+### Documentation
+
+* updated storybook readme ([c77ab64](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c77ab646caf31abc7f58f7741639059e0cdd441c))
+
+
+### Build System
+
+* added npm ci before attempting to rebuild storybook ([857ed0d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/857ed0d161b9002fdbbedea6985d2843804eaf63))
+* adding proper env var name ([9645258](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9645258dec5264602c9f8425769de56a7fb74961))
+* can't fix workflow with npm release because of isolated env per job restriction ([76ecd9a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/76ecd9a41a2b5106480d4231c3535b2556bc634e))
+* environment var not running thru in the workflow ([8acf4d6](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8acf4d685a316596aeb4e8db8b6b119337a061e5))
+* more workflow edits for release and main ([1170062](https://github.com/DTS-STN/Service-Canada-Design-System/commit/117006246fce00f219917299d013f9d2eaa52304))
+* updated the destination to hardcoded release path ([0a772ad](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0a772adff258a7bce9d58b9494c16de0aaaa25ef))
+* updated workflow once again for the env vars ([70683a0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/70683a0768a91d169dad763b8c61e1f5cc595302))
+* updated workflow storybook build folder target and tag ([5633d08](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5633d084f74eb63d9d930c04d95ba3b19b61afbc))
+* using string convention for workflow tag ([ae7effa](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ae7effa5ede2a2d7e160a0af364ab2a5230aee2e))
+* workflow changes for npm_release_tag ([fd8f212](https://github.com/DTS-STN/Service-Canada-Design-System/commit/fd8f212aeefb41e6469bdf6afc6474cfe80eba85))
+* workflow update ([96b287b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/96b287b85519e486e540de4ba4d2ea40deaaeec7))
+
 ## [1.52.23](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.22...v1.52.23) (2022-10-18)
 
 
