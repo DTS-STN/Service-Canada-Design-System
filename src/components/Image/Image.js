@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 export function Image(props) {
-  const { src, alt, rounded, className } = props;
+  const { src, alt, rounded = "", className = "" } = props;
 
   return (
     <>

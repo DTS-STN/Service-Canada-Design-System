@@ -1,16 +1,15 @@
 {
   "extends": [
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": "2017"
   },
-  "parser": "@babel/eslint-parser",
-  "ignorePatterns": [
-    "en.json",
-    "fr.json"
-  ],
+  "parser": "@typescript-eslint/parser",
+  "ignorePatterns": ["en.json", "fr.json"],
   // unneed rule causing errors with eslint/jest
   "rules": {
     "jest/valid-describe": "off",
@@ -20,5 +19,7 @@
         "allowRequiredDefaults": true
       }
     ]
-  }
+  },
+  "plugins": ["@typescript-eslint"],
+  "root": true
 }

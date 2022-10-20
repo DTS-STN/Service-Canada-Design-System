@@ -1,13 +1,19 @@
+import * as React from "react";
+import { Meta, Story } from "@storybook/react";
 import { Button } from "./Button";
+
+type ButtonProps = React.ComponentProps<typeof Button>;
 
 export default {
   title: "Components/Button",
   component: Button,
-};
+} as Meta<ButtonProps>;
 
 import btnIcon from "../../assets/plus.svg";
 
-const Template = (args) => <Button {...args} />;
+const Template: Story<ButtonProps & { customArg: number }> = (args) => (
+  <Button {...args} />
+);
 
 export const Supertask = Template.bind({});
 export const SupertaskIcon = Template.bind({});

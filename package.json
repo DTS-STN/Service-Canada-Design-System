@@ -91,6 +91,8 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
     "@whitespace/storybook-addon-html": "^5.0.0",
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.2",
@@ -98,7 +100,7 @@
     "babel-plugin-polyfill-corejs3": "^0.2.2",
     "babel-plugin-polyfill-regenerator": "^0.2.2",
     "cross-env": "^7.0.3",
-    "eslint": "7.32.0",
+    "eslint": "^7.32.0",
     "eslint-plugin-jest": "^25.2.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.27.1",
@@ -122,6 +124,7 @@
     "rollup-plugin-terser": "^7.0.2",
     "standard-version": "^9.3.2",
     "tailwindcss": "^3.0.23",
+    "typescript": "^4.8.4",
     "web-vitals": "^1.1.2",
     "webpack": "5"
   }
