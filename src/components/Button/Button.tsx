@@ -1,7 +1,7 @@
 import React, { MouseEvent } from "react";
 import { Image } from "../Image/Image";
 
-interface IButtonProps {
+export interface IButtonProps {
   /**
    * Identify which button being clicked
    */

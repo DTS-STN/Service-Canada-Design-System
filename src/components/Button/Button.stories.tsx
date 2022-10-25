@@ -1,17 +1,16 @@
 import * as React from "react";
 import { Meta, Story } from "@storybook/react";
-import { Button } from "./Button";
-
-type ButtonProps = React.ComponentProps<typeof Button>;
+import { Button, IButtonProps } from "./Button";
 
 export default {
   title: "Components/Button",
   component: Button,
-} as Meta<ButtonProps>;
+} as Meta<IButtonProps>;
 
+// @ts-ignore
 import btnIcon from "../../assets/plus.svg";
 
-const Template: Story<ButtonProps & { customArg: number }> = (args) => (
+const Template: Story<IButtonProps & { customArg: number }> = (args) => (
   <Button {...args} />
 );
 

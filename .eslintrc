@@ -18,7 +18,8 @@
       {
         "allowRequiredDefaults": true
       }
-    ]
+    ],
+    "@typescript-eslint/ban-ts-comment": "off"
   },
   "plugins": ["@typescript-eslint"],
   "root": true

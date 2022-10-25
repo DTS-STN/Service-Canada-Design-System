@@ -8,9 +8,6 @@ module.exports = {
     "@whitespace/storybook-addon-html",
   ],
   staticDirs: ["../src/assets"],
-  core: {
-    builder: "webpack5",
-  },
   typescript: {
     check: false,
     checkOptions: {},
@@ -25,5 +22,26 @@ module.exports = {
         esModuleInterop: true,
       },
     },
+  },
+  framework: "@storybook/react",
+  webpackFinal: async (config, { configType }) => {
+    // Make whatever fine-grained changes you need
+    config.module.rules.push(
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
+        include: path.resolve(__dirname, "../"),
+      },
+      {
+        test: /\.(vtt)$/i,
+        loader: "file-loader",
+        options: {
+          name: "[path][name].[ext]",
+        },
+      }
+    );
+
+    // Return the altered config
+    return config;
   },
 };
