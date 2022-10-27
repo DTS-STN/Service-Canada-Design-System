@@ -49,12 +49,18 @@ export function DatePicker(props) {
 
   useEffect(() => {
     // blur the input element on scroll instead of changing the value! Does not affect Keyboard input.
-    document.addEventListener("wheel", function (event) {
+    const handleScroll = (e) => {
       const el = document.activeElement;
       if (el?.type === "number") {
         el.blur();
       }
-    });
+    };
+    document.addEventListener("wheel", handleScroll);
+
+    // remove event listener when component unmounts
+    return () => {
+      element.removeEventListener("wheel", handleScroll);
+    };
   }, []);
 
   return (
