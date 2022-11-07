@@ -7,6 +7,8 @@
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "declarationDir": "types",
-    "emitDeclarationOnly": true
-  }
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true
+  },
+  "include": ["./src/setupTests.ts"]
 }

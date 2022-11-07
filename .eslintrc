@@ -4,6 +4,9 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended"
   ],
+  "env": {
+    "jest/globals": true
+  },
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": "2017"
@@ -21,6 +24,6 @@
     ],
     "@typescript-eslint/ban-ts-comment": "off"
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "jest"],
   "root": true
 }

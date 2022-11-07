@@ -69,9 +69,9 @@ export { Message } from "./components/Message/Message";
 export { Cards } from "./components/Cards/Cards";
 
 /**
- * Labels
+ * Label
  */
-export { Labels } from "./components/Labels/Labels";
+export { Label } from "./components/Label/Label";
 
 /**
  * Breadcrumb

@@ -1,18 +1,13 @@
-import * as React from "react";
-import { Meta, Story } from "@storybook/react";
-import { Button, IButtonProps } from "./Button";
+import { Button } from "./Button";
 
 export default {
   title: "Components/Button",
   component: Button,
-} as Meta<IButtonProps>;
+};
 
-// @ts-ignore
 import btnIcon from "../../assets/plus.svg";
 
-const Template: Story<IButtonProps & { customArg: number }> = (args) => (
-  <Button {...args} />
-);
+const Template = (args) => <Button {...args} />;
 
 export const Supertask = Template.bind({});
 export const SupertaskIcon = Template.bind({});
