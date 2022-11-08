@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Button } from "../Button/Button";
 import EN from "../../translations/en.json";
 import FR from "../../translations/fr.json";
+
 /**
  * Menu component
  */
@@ -87,6 +87,19 @@ export function Menu(props) {
             aria-controls="menuDropdown"
             data-testid="menuButton"
           >
+            <svg
+              className="ds-mr-4"
+              width="35"
+              height="35"
+              viewBox="0 0 35 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.5 0.499756C7.84 0.499756 0 8.33976 0 17.9998C0 27.6598 7.84 35.4998 17.5 35.4998C27.16 35.4998 35 27.6598 35 17.9998C35 8.33976 27.16 0.499756 17.5 0.499756ZM17.5 7.49976C20.8775 7.49976 23.625 10.2473 23.625 13.6248C23.625 17.0023 20.8775 19.7498 17.5 19.7498C14.1225 19.7498 11.375 17.0023 11.375 13.6248C11.375 10.2473 14.1225 7.49976 17.5 7.49976ZM17.5 31.9998C13.9475 31.9998 9.7475 30.5648 6.755 26.9598C9.7125 24.6498 13.44 23.2498 17.5 23.2498C21.56 23.2498 25.2875 24.6498 28.245 26.9598C25.2525 30.5648 21.0525 31.9998 17.5 31.9998Z"
+                fill="#26374A"
+              />
+            </svg>
             <span className="ds-inline-block ds-align-middle ds-pl-3 ds-font-body ds-font-bold ds-text-p ds-leading-none">
               {lang === "fr" ? FR.menuButtonTitle : EN.menuButtonTitle}
             </span>
@@ -112,7 +125,7 @@ export function Menu(props) {
             </svg>
           </button>
         </div>
-        <div className="sm:ds-w-276px ds-w-full ds-block ds-flex-grow sm:ds-flex sm:ds-items-center sm:ds-w-auto ds-bg-multi-blue-blue2 sm:ds-bg-multi-blue-blue70">
+        <div className="sm:ds-w-260px ds-w-full ds-block ds-flex-grow sm:ds-flex sm:ds-items-center sm:ds-w-auto ds-bg-multi-blue-blue2 sm:ds-bg-multi-blue-blue70">
           <div className="sm:ds-flex-grow sm:ds-text-center sm:ds-flex"></div>
           <div>
             <ul
@@ -154,6 +167,19 @@ export function Menu(props) {
                     }}
                     className="ds-hidden sm:ds-flex ds-whitespace-nowrap ds-font-bold ds-font-body ds-justify-between ds-items-center sm:ds-py-2px ds-py-18px ds-pl-4 sm:ds-pt-0 sm:ds-pr-16px ds-pr-10px sm:ds-pl-18px ds-w-full"
                   >
+                    <svg
+                      className="ds-mr-4"
+                      width="35"
+                      height="35"
+                      viewBox="0 0 35 36"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.5 0.499756C7.84 0.499756 0 8.33976 0 17.9998C0 27.6598 7.84 35.4998 17.5 35.4998C27.16 35.4998 35 27.6598 35 17.9998C35 8.33976 27.16 0.499756 17.5 0.499756ZM17.5 7.49976C20.8775 7.49976 23.625 10.2473 23.625 13.6248C23.625 17.0023 20.8775 19.7498 17.5 19.7498C14.1225 19.7498 11.375 17.0023 11.375 13.6248C11.375 10.2473 14.1225 7.49976 17.5 7.49976ZM17.5 31.9998C13.9475 31.9998 9.7475 30.5648 6.755 26.9598C9.7125 24.6498 13.44 23.2498 17.5 23.2498C21.56 23.2498 25.2875 24.6498 28.245 26.9598C25.2525 30.5648 21.0525 31.9998 17.5 31.9998Z"
+                        fill="#26374A"
+                      />
+                    </svg>
                     {lang === "fr" ? FR.menuButtonTitle : EN.menuButtonTitle}
                     <svg
                       className="ds-ml-1 ds-w-4 ds-h-4"
@@ -211,15 +237,6 @@ export function Menu(props) {
               )}
             </ul>
           </div>
-        </div>
-        <div className="sm:ds-block ds-hidden">
-          <Button
-            id="secondary"
-            onClick={onSignOut}
-            secondary
-            styling="secondary"
-            text={lang === "fr" ? FR.mySignOut : EN.mySignOut}
-          />
         </div>
       </nav>
     </div>
