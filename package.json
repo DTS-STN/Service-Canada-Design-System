@@ -122,7 +122,6 @@
     "react-scripts": "5.0.0",
     "rollup": "~2.75.4",
     "rollup-plugin-delete": "^2.0.0",
-    "rollup-plugin-dts": "^5.0.0",
     "rollup-plugin-img": "^1.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
