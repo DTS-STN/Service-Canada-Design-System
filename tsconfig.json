@@ -4,11 +4,12 @@
     "module": "es6",
     "moduleResolution": "node",
     "outDir": "./dist",
+    "rootDir": "src",
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "declarationDir": "types",
     "emitDeclarationOnly": true,
-    "esModuleInterop": true
-  },
-  "include": ["./src/setupTests.ts"]
+    "esModuleInterop": true,
+    "allowJs": true
+  }
 }

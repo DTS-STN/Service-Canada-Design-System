@@ -8,7 +8,7 @@ import json from "@rollup/plugin-json";
 import image from "rollup-plugin-img";
 import url from "postcss-url";
 import typescript from "@rollup/plugin-typescript";
-import dts from "rollup-plugin-dts";
+import resolve from "@rollup/plugin-node-resolve";
 
 export default [
   {
@@ -22,13 +22,11 @@ export default [
       image({
         limit: 30000,
       }),
-      external(),
       babel({
         exclude: "node_modules/**",
         presets: ["@babel/preset-react"],
         babelHelpers: "bundled",
       }),
-      typescript(),
       del({ targets: ["dist/*"] }),
       postcss({
         plugins: [
@@ -45,6 +43,9 @@ export default [
           insertAt: "top",
         },
       }),
+      external(),
+      resolve(),
+      typescript(),
       terser(),
     ],
     // anything "external" will not be included into the generated bundle
@@ -56,6 +57,6 @@ export default [
       // https://nodejs.org/es/blog/npm/peer-dependencies/#the-solution-peer-dependencies
       ...Object.keys(pkg.peerDependencies || {}),
     ],
-    extensions: [".js", ".jsx", ".es6", ".es", ".mjs", ".ts", ".tsx"],
+    // extensions: [".js", ".jsx", ".es6", ".es", ".mjs", ".ts", ".tsx"],
   },
 ];

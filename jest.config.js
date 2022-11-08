@@ -1,6 +1,6 @@
 module.exports = {
   rootDir: "./src",
-  setupFilesAfterEnv: ["<rootDir>/setupTests.ts"],
+  setupFilesAfterEnv: ["../setupTests.ts"],
   moduleFileExtensions: ["ts", "tsx", "js"],
   testPathIgnorePatterns: ["node_modules/"],
   transform: {
@@ -13,4 +13,5 @@ module.exports = {
       "identity-obj-proxy",
     "\\.(css|less|scss|sass)$": "identity-obj-proxy",
   },
+  testEnvironment: "jsdom",
 };
