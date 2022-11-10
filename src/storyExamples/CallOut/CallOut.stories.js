@@ -31,7 +31,7 @@ const Template = () => {
       {errorState ? (
         <div className="ds-mt-34px">
           <Message
-            alert_icon_alt_text="warning icon"
+            alert_icon_alt_text="warning"
             alert_icon_id="warning icon"
             id="warning"
             message_body="If you don’t know your net income, you will still be 
