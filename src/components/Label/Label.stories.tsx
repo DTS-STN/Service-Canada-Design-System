@@ -1,10 +1,14 @@
-import { Labels } from "./Labels";
+import * as React from "react";
+import { Label, ILabelProps } from "./Label";
+import { Meta, Story } from "@storybook/react";
 export default {
-  title: "Components/Labels",
-  component: Labels,
-};
+  title: "Components/Label",
+  component: Label,
+} as Meta<ILabelProps>;
 
-const Template = (args) => <Labels {...args} />;
+const Template: Story<ILabelProps & { customArg: number }> = (args) => (
+  <Label {...args} />
+);
 
 export const Default = Template.bind({});
 export const Primary = Template.bind({});

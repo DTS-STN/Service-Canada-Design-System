@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Image } from "../Image/Image";
 import { Link } from "../Link/Link";
-import { Labels } from "../Labels/Labels";
+import { Label } from "../Label/Label";
 
 export function Cards(props) {
   const {
@@ -41,7 +41,7 @@ export function Cards(props) {
         <div className="ds-mb-4">
           {labelProps !== undefined ? (
             <div className="ds-mt-2">
-              <Labels
+              <Label
                 id={id + "cardLabel"}
                 text={labelProps.text}
                 type={labelProps.type}
