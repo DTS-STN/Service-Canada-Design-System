@@ -7,7 +7,7 @@ import FR from "../../translations/fr.json";
  * Menu component
  */
 export function Menu(props) {
-  const { onSignOut, isAuthenticated, menuList, lang } = props;
+  const { isAuthenticated, menuList, lang } = props;
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdown = useRef(null);
 
@@ -90,6 +90,7 @@ export function Menu(props) {
                   ref={dropdown}
                 >
                   {menuList.map((element) => {
+                    const Component = element?.component || "a";
                     return element.key === "outKey" ? (
                       <div className="ds-flex ds-bg-white ds-items-center">
                         <svg
@@ -109,9 +110,12 @@ export function Menu(props) {
                           key={element.key}
                           className="ds-h-[55px] ds-flex ds-items-center ds-px-4"
                         >
-                          <a href={element.path} className="ds-font-body">
+                          <Component
+                            href={element.path}
+                            className="ds-font-body"
+                          >
                             {element.value}
-                          </a>
+                          </Component>
                         </li>
                       </div>
                     ) : (
@@ -119,9 +123,9 @@ export function Menu(props) {
                         key={element.key}
                         className="ds-h-[55px] ds-flex ds-items-center ds-px-4 ds-border-b-2"
                       >
-                        <a href={element.path} className="ds-font-body">
+                        <Component href={element.path} className="ds-font-body">
                           {element.value}
-                        </a>
+                        </Component>
                       </li>
                     );
                   })}
@@ -139,7 +143,6 @@ export function Menu(props) {
 
 Menu.defaultProps = {
   lang: "en",
-  onSignOut: () => {},
   menuList: [
     { key: "dashKey", value: "My dashboard", path: "/" },
     { key: "securityKey", value: "Security Settings", path: "/" },
@@ -160,11 +163,6 @@ Menu.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
 
   /**
-   * On change function used for the signout button on the browser screen
-   */
-  onSignOut: PropTypes.func,
-
-  /**
    * List of menu items to display in dropdown with links
    */
   menuList: PropTypes.arrayOf(
@@ -172,6 +170,7 @@ Menu.propTypes = {
       key: PropTypes.string,
       value: PropTypes.string,
       path: PropTypes.string,
+      component: PropTypes.elementType,
     })
   ),
 };
