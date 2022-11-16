@@ -131,6 +131,7 @@ export function AccordionForm(props) {
                   <div className="ds-pt-32px">
                     {!isLastCard ? (
                       <Button
+                        id={`${card.id}-button`}
                         text={card.buttonLabel}
                         styling="primary"
                         iconAltText="icon"
@@ -139,6 +140,7 @@ export function AccordionForm(props) {
                       />
                     ) : (
                       <Button
+                        id={`${card.id}-button`}
                         text={card.buttonLabel}
                         styling="primary"
                         iconAltText="icon"
