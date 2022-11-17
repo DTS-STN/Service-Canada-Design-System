@@ -5,7 +5,10 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "env": {
-    "jest/globals": true
+    "jest/globals": true,
+    "browser": true,
+    "node": true,
+    "jasmine": true
   },
   "parserOptions": {
     "sourceType": "module",

@@ -12,6 +12,11 @@ export const AuthenticatedEN = Template.bind({});
 export const AuthenticatedFR = Template.bind({});
 export const NotAuthenticatedEN = Template.bind({});
 export const NotAuthenticatedFR = Template.bind({});
+export const CustomComponentLinks = Template.bind({});
+
+function CustomLinkComponent({ children, ...props }) {
+  return <a {...props}>{children}</a>;
+}
 
 AuthenticatedEN.args = {
   isAuthenticated: true,
@@ -22,7 +27,6 @@ AuthenticatedEN.args = {
     { key: "profileKey", value: "Profile", path: "/" },
     { key: "outKey", value: "Sign out", path: "/" },
   ],
-  onSignOut: () => {},
 };
 
 AuthenticatedFR.args = {
@@ -38,4 +42,17 @@ NotAuthenticatedEN.args = {
 NotAuthenticatedFR.args = {
   isAuthenticated: false,
   lang: "fr",
+};
+
+CustomComponentLinks.args = {
+  isAuthenticated: true,
+  lang: "en",
+  menuList: [
+    {
+      key: "customComponent",
+      value: "Custom Component",
+      path: "/",
+      component: CustomLinkComponent,
+    },
+  ],
 };
