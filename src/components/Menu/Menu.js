@@ -13,12 +13,6 @@ export function Menu(props) {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdown = useRef(null);
 
-  Menu.defaultProps = {
-    dashboardPath: "/",
-    securityPath: "/",
-    profilePath: "/",
-  };
-
   useEffect(() => {
     // Hide dropdown when click outside
     if (!showDropdown) return;
