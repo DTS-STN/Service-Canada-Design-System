@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { BrowserRouter, Link } from "react-router-dom";
 import EN from "../../translations/en.json";
 import FR from "../../translations/fr.json";
 
@@ -7,9 +8,16 @@ import FR from "../../translations/fr.json";
  * Menu component
  */
 export function Menu(props) {
-  const { isAuthenticated, menuList, lang } = props;
+  const { isAuthenticated, lang, dashboardPath, securityPath, profilePath } =
+    props;
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdown = useRef(null);
+
+  Menu.defaultProps = {
+    dashboardPath: "/",
+    securityPath: "/",
+    profilePath: "/",
+  };
 
   useEffect(() => {
     // Hide dropdown when click outside
@@ -24,132 +32,140 @@ export function Menu(props) {
   }, [showDropdown]);
 
   return (
-    <div className="ds-w-full ds-h-[60px] ds-bg-[#26374A]">
-      <nav className="ds-h-full sm:ds-container sm:ds-flex ds-items-center ds-justify-between">
-        <div className="ds-h-[60px] ds-flex sm:ds-h-full ds-items-center">
-          <p
-            id="mainSiteNav"
-            className="ds-text-white ds-header-font-custom sm:ds-p-0 ds-container ds-menuHeader"
-          >
-            {lang === "fr" ? FR.menuHeaderTitle : EN.menuHeaderTitle}
-          </p>
-        </div>
-        {isAuthenticated ? (
-          <div className="ds-h-[60px] ds-w-full sm:ds-w-[260px] ds-h-full ds-bg-[#EBF2FC]">
-            <button
-              id="dropdownNavbarLink"
-              onClick={() => setShowDropdown((e) => !e)}
-              aria-haspopup="true"
-              data-testid="menuButton"
-              aria-expanded={showDropdown}
-              className="ds-flex ds-justify-between ds-w-full ds-h-full ds-font-bold ds-font-body ds-items-center sm:ds-py-2px ds-pl-4 ds-text-[#26374A]"
+    <BrowserRouter>
+      <div
+        className={`${
+          showDropdown ? "ds-h-[335px] sm:ds-h-[60px]" : ""
+        } ds-relative ds-w-full ds-bg-[#26374A]`}
+      >
+        <nav className="sm:ds-container sm:ds-flex ds-items-center ds-justify-between">
+          <div className="ds-h-[60px] ds-flex sm:ds-h-full ds-items-center">
+            <p
+              id="mainSiteNav"
+              className="ds-text-white ds-header-font-custom sm:ds-p-0 ds-container ds-menuHeader"
             >
-              <div className="ds-flex ds-items-center">
+              {lang === "fr" ? FR.menuHeaderTitle : EN.menuHeaderTitle}
+            </p>
+          </div>
+          {isAuthenticated ? (
+            <div className="ds-h-[60px] ds-w-full sm:ds-w-[260px] ds-h-full ds-bg-[#EBF2FC]">
+              <button
+                id="dropdownNavbarLink"
+                onClick={() => setShowDropdown((e) => !e)}
+                aria-haspopup="true"
+                data-testid="menuButton"
+                aria-expanded={showDropdown}
+                className="ds-flex ds-justify-between ds-w-full ds-h-full ds-font-bold ds-font-body ds-items-center sm:ds-py-2px ds-pl-4 ds-text-[#26374A]"
+              >
+                <div className="ds-flex ds-items-center">
+                  <svg
+                    className="ds-mr-4"
+                    width="35"
+                    height="35"
+                    viewBox="0 0 35 36"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.5 0.499756C7.84 0.499756 0 8.33976 0 17.9998C0 27.6598 7.84 35.4998 17.5 35.4998C27.16 35.4998 35 27.6598 35 17.9998C35 8.33976 27.16 0.499756 17.5 0.499756ZM17.5 7.49976C20.8775 7.49976 23.625 10.2473 23.625 13.6248C23.625 17.0023 20.8775 19.7498 17.5 19.7498C14.1225 19.7498 11.375 17.0023 11.375 13.6248C11.375 10.2473 14.1225 7.49976 17.5 7.49976ZM17.5 31.9998C13.9475 31.9998 9.7475 30.5648 6.755 26.9598C9.7125 24.6498 13.44 23.2498 17.5 23.2498C21.56 23.2498 25.2875 24.6498 28.245 26.9598C25.2525 30.5648 21.0525 31.9998 17.5 31.9998Z"
+                      fill="#26374A"
+                    />
+                  </svg>
+                  {lang === "fr" ? FR.menuButtonTitle : EN.menuButtonTitle}
+                </div>
                 <svg
-                  className="ds-mr-4"
-                  width="35"
-                  height="35"
-                  viewBox="0 0 35 36"
-                  fill="none"
+                  className="ds-w-4 ds-h-4 ds-mx-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17.5 0.499756C7.84 0.499756 0 8.33976 0 17.9998C0 27.6598 7.84 35.4998 17.5 35.4998C27.16 35.4998 35 27.6598 35 17.9998C35 8.33976 27.16 0.499756 17.5 0.499756ZM17.5 7.49976C20.8775 7.49976 23.625 10.2473 23.625 13.6248C23.625 17.0023 20.8775 19.7498 17.5 19.7498C14.1225 19.7498 11.375 17.0023 11.375 13.6248C11.375 10.2473 14.1225 7.49976 17.5 7.49976ZM17.5 31.9998C13.9475 31.9998 9.7475 30.5648 6.755 26.9598C9.7125 24.6498 13.44 23.2498 17.5 23.2498C21.56 23.2498 25.2875 24.6498 28.245 26.9598C25.2525 30.5648 21.0525 31.9998 17.5 31.9998Z"
-                    fill="#26374A"
-                  />
+                  {!showDropdown ? (
+                    <path
+                      fillRule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    ></path>
+                  ) : (
+                    <path
+                      fillRule="evenodd"
+                      d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                      clipRule="evenodd"
+                    />
+                  )}
                 </svg>
-                {lang === "fr" ? FR.menuButtonTitle : EN.menuButtonTitle}
-              </div>
-              <svg
-                className="ds-w-4 ds-h-4 ds-mx-4"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {!showDropdown ? (
-                  <path
-                    fillRule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  ></path>
-                ) : (
-                  <path
-                    fillRule="evenodd"
-                    d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
-                    clipRule="evenodd"
-                  />
-                )}
-              </svg>
-            </button>
-            {showDropdown && (
-              <div>
-                <ul
+              </button>
+              {showDropdown && (
+                <div
                   id="dropdownNavbar"
-                  className="sm:ds-w-[260px] ds-dropdown-list ds-text-[#284162]"
+                  className="sm:ds-w-[260px] ds-dropdown-list ds-text-[#284162] ds-bg-white"
                   aria-labelledby="dropdownLargeButton"
                   ref={dropdown}
                 >
-                  {menuList.map((element) => {
-                    const Component = element?.component || "a";
-                    return element.key === "outKey" ? (
-                      <div className="ds-flex ds-bg-white ds-items-center">
-                        <svg
-                          width="18"
-                          height="15"
-                          viewBox="0 0 18 15"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="ds-ml-4"
-                        >
-                          <path
-                            d="M13.1665 3.33333L11.9915 4.50833L14.1415 6.66667H5.6665V8.33333H14.1415L11.9915 10.4833L13.1665 11.6667L17.3332 7.5L13.1665 3.33333ZM2.33317 1.66667H8.99984V0H2.33317C1.4165 0 0.666504 0.75 0.666504 1.66667V13.3333C0.666504 14.25 1.4165 15 2.33317 15H8.99984V13.3333H2.33317V1.66667Z"
-                            fill="#284162"
-                          />
-                        </svg>
-                        <li
-                          key={element.key}
-                          className="ds-h-[55px] ds-flex ds-items-center ds-px-4"
-                        >
-                          <Component
-                            href={element.path}
-                            className="ds-font-body"
-                          >
-                            {element.value}
-                          </Component>
-                        </li>
-                      </div>
-                    ) : (
-                      <li
-                        key={element.key}
-                        className="ds-h-[55px] ds-flex ds-items-center ds-px-4 ds-border-b-2"
-                      >
-                        <Component href={element.path} className="ds-font-body">
-                          {element.value}
-                        </Component>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            )}
-          </div>
-        ) : (
-          ""
-        )}
-      </nav>
-    </div>
+                  <div
+                    key="dashKey"
+                    className="ds-h-[55px] ds-flex ds-items-center ds-px-4 ds-border-b-2"
+                  >
+                    <Link
+                      to={`${lang === "en" ? "" : "/fr"}/${dashboardPath}`}
+                      className="ds-font-body"
+                    >
+                      {lang === "en" ? EN.myDashboard : FR.myDashboard}
+                    </Link>
+                  </div>
+                  <div
+                    key="securityKey"
+                    className="ds-h-[55px] ds-flex ds-items-center ds-px-4 ds-border-b-2"
+                  >
+                    <Link
+                      to={`${lang === "en" ? "" : "/fr"}/${securityPath}`}
+                      className="ds-font-body"
+                    >
+                      {lang === "en" ? EN.mySecurity : FR.mySecurity}
+                    </Link>
+                  </div>
+                  <div
+                    key="profileKey"
+                    className="ds-h-[55px] ds-flex ds-items-center ds-px-4 ds-border-b-2"
+                  >
+                    <Link
+                      to={`${lang === "en" ? "" : "/fr"}/${profilePath}`}
+                      className="ds-font-body"
+                    >
+                      {lang === "en" ? EN.myProfile : FR.myProfile}
+                    </Link>
+                  </div>
+                  <div
+                    key="outKey"
+                    className="ds-h-[55px] ds-flex ds-items-center ds-px-4"
+                  >
+                    <svg
+                      width="18"
+                      height="15"
+                      viewBox="0 0 18 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="ds-mr-2"
+                    >
+                      <path
+                        d="M13.1665 3.33333L11.9915 4.50833L14.1415 6.66667H5.6665V8.33333H14.1415L11.9915 10.4833L13.1665 11.6667L17.3332 7.5L13.1665 3.33333ZM2.33317 1.66667H8.99984V0H2.33317C1.4165 0 0.666504 0.75 0.666504 1.66667V13.3333C0.666504 14.25 1.4165 15 2.33317 15H8.99984V13.3333H2.33317V1.66667Z"
+                        fill="#284162"
+                      />
+                    </svg>
+                    <button className="ds-font-body" onClick={!isAuthenticated}>
+                      {lang === "en" ? EN.mySignOut : FR.mySignOut}
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+            ""
+          )}
+        </nav>
+      </div>
+    </BrowserRouter>
   );
 }
-
-Menu.defaultProps = {
-  lang: "en",
-  menuList: [
-    { key: "dashKey", value: "My dashboard", path: "/" },
-    { key: "securityKey", value: "Security Settings", path: "/" },
-    { key: "profileKey", value: "Profile", path: "/" },
-    { key: "outKey", value: "Sign out", path: "/" },
-  ],
-};
 
 Menu.propTypes = {
   /**
@@ -163,14 +179,23 @@ Menu.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
 
   /**
-   * List of menu items to display in dropdown with links
+   * url path for My Dashboard page
    */
-  menuList: PropTypes.arrayOf(
-    PropTypes.shape({
-      key: PropTypes.string,
-      value: PropTypes.string,
-      path: PropTypes.string,
-      component: PropTypes.elementType,
-    })
-  ),
+  dashboardPath: PropTypes.string,
+
+  /**
+   * url path for Security Setting page
+   */
+  securityPath: PropTypes.string,
+
+  /**
+   * url path for Profile page
+   */
+  profilePath: PropTypes.string,
+};
+
+Menu.defaultProps = {
+  dashboardPath: "",
+  securityPath: "",
+  profilePath: "",
 };
