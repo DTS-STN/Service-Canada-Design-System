@@ -15,7 +15,7 @@ export function Link(props) {
       break;
     case "smfooterBlue":
       basicStyle =
-        "ds-underline ds-text-multi-blue-blue70b ds-font-body ds-leading-20px ds-text-browserh7 hover:ds-underline";
+        "ds-text-multi-blue-blue70b ds-font-body ds-leading-20px ds-text-browserh7 hover:ds-underline";
       break;
     case "smfooterWhite":
       basicStyle =
