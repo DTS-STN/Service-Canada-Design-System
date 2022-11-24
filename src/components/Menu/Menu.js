@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import EN from "../../translations/en.json";
@@ -7,17 +8,9 @@ import FR from "../../translations/fr.json";
  * Menu component
  */
 export function Menu(props) {
-  const {
-    isAuthenticated,
-    lang,
-    dashboardPath,
-    securityPath,
-    profilePath,
-    component,
-  } = props;
+  const { onClick, isAuthenticated, menuList, lang } = props;
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdown = useRef(null);
-  const Component = component || "a";
 
   useEffect(() => {
     // Hide dropdown when click outside
@@ -32,12 +25,8 @@ export function Menu(props) {
   }, [showDropdown]);
 
   return (
-    <div
-      className={`${
-        showDropdown ? "ds-h-[335px] sm:ds-h-[60px]" : ""
-      } ds-relative ds-w-full ds-bg-[#26374A]`}
-    >
-      <nav className="sm:ds-container sm:ds-flex ds-items-center ds-justify-between">
+    <div className="ds-relative ds-w-full ds-bg-[#26374A]">
+      <nav className="sm:ds-container sm:ds-flex ds-items-center ds-justify-between sm:ds-h-[60px]">
         <div className="ds-h-[60px] ds-flex sm:ds-h-full ds-items-center">
           <p
             id="mainSiteNav"
@@ -47,14 +36,14 @@ export function Menu(props) {
           </p>
         </div>
         {isAuthenticated ? (
-          <div className="ds-h-[60px] ds-w-full sm:ds-w-[260px] ds-h-full ds-bg-[#EBF2FC]">
+          <div className="ds-w-full sm:ds-w-[260px] ds-bg-[#EBF2FC] hover:ds-bg-[#CFD1D5] focus:ds-bg-[#CFD1D5]">
             <button
               id="dropdownNavbarLink"
               onClick={() => setShowDropdown((e) => !e)}
               aria-haspopup="true"
               data-testid="menuButton"
               aria-expanded={showDropdown}
-              className="ds-flex ds-justify-between ds-w-full ds-h-full ds-font-bold ds-font-body ds-items-center sm:ds-py-2px ds-pl-4 ds-text-[#26374A]"
+              className="ds-flex ds-h-[60px] ds-justify-between ds-w-full ds-h-full ds-font-bold ds-font-body ds-items-center sm:ds-py-2px ds-pl-4 ds-text-[#26374A] ds-ring-offset-2 focus:ds-ring-2 ds-ring-[#0535D2] ds-rounded-sm focus:ds-outline-none focus:ds-mb-1"
             >
               <div className="ds-flex ds-items-center">
                 <svg
@@ -96,64 +85,42 @@ export function Menu(props) {
             {showDropdown && (
               <div
                 id="dropdownNavbar"
-                className="sm:ds-w-[260px] ds-dropdown-list ds-text-[#284162] ds-bg-white"
+                className="sm:ds-absolute sm:ds-w-[260px] ds-dropdown-list ds-text-[#284162] ds-bg-white"
                 aria-labelledby="dropdownLargeButton"
                 ref={dropdown}
               >
-                <div
-                  key="dashKey"
-                  className="ds-h-[55px] ds-flex ds-items-center ds-px-4 ds-border-b-2"
-                >
-                  <Component
-                    href={`${lang === "en" ? "" : "/fr"}/${dashboardPath}`}
-                    className="ds-font-body"
-                  >
-                    {lang === "en" ? EN.myDashboard : FR.myDashboard}
-                  </Component>
-                </div>
-                <div
-                  key="securityKey"
-                  className="ds-h-[55px] ds-flex ds-items-center ds-px-4 ds-border-b-2"
-                >
-                  <Component
-                    href={`${lang === "en" ? "" : "/fr"}/${securityPath}`}
-                    className="ds-font-body"
-                  >
-                    {lang === "en" ? EN.mySecurity : FR.mySecurity}
-                  </Component>
-                </div>
-                <div
-                  key="profileKey"
-                  className="ds-h-[55px] ds-flex ds-items-center ds-px-4 ds-border-b-2"
-                >
-                  <Component
-                    href={`${lang === "en" ? "" : "/fr"}/${profilePath}`}
-                    className="ds-font-body"
-                  >
-                    {lang === "en" ? EN.myProfile : FR.myProfile}
-                  </Component>
-                </div>
-                <div
-                  key="outKey"
-                  className="ds-h-[55px] ds-flex ds-items-center ds-px-4"
-                >
-                  <svg
-                    width="18"
-                    height="15"
-                    viewBox="0 0 18 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="ds-mr-2"
-                  >
-                    <path
-                      d="M13.1665 3.33333L11.9915 4.50833L14.1415 6.66667H5.6665V8.33333H14.1415L11.9915 10.4833L13.1665 11.6667L17.3332 7.5L13.1665 3.33333ZM2.33317 1.66667H8.99984V0H2.33317C1.4165 0 0.666504 0.75 0.666504 1.66667V13.3333C0.666504 14.25 1.4165 15 2.33317 15H8.99984V13.3333H2.33317V1.66667Z"
-                      fill="#284162"
-                    />
-                  </svg>
-                  <button className="ds-font-body" onClick={!isAuthenticated}>
-                    {lang === "en" ? EN.mySignOut : FR.mySignOut}
-                  </button>
-                </div>
+                {menuList.map((element, index) => {
+                  const Component = element?.component || "a";
+                  return (
+                    <Component
+                      href={element.path}
+                      className={`${
+                        index === 0 ? "ds-border-none" : "ds-border-t-2"
+                      } ds-font-body ds-flex ds-items-center ds-h-[55px] ds-px-4 hover:ds-text-[#0535D2] focus:ds-outline-none ds-ring-offset-2 focus:ds-ring-2 ds-ring-[#0535D2] ds-rounded-sm  focus:ds-border-none`}
+                      key={element.key}
+                      onClick={onClick}
+                    >
+                      {element.key === "outKey" ? (
+                        <svg
+                          width="18"
+                          height="15"
+                          viewBox="0 0 18 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="ds-mr-3"
+                        >
+                          <path
+                            d="M13.1665 3.33333L11.9915 4.50833L14.1415 6.66667H5.6665V8.33333H14.1415L11.9915 10.4833L13.1665 11.6667L17.3332 7.5L13.1665 3.33333ZM2.33317 1.66667H8.99984V0H2.33317C1.4165 0 0.666504 0.75 0.666504 1.66667V13.3333C0.666504 14.25 1.4165 15 2.33317 15H8.99984V13.3333H2.33317V1.66667Z"
+                            fill="#284162"
+                          />
+                        </svg>
+                      ) : (
+                        ""
+                      )}
+                      {element.value}
+                    </Component>
+                  );
+                })}
               </div>
             )}
           </div>
@@ -164,6 +131,18 @@ export function Menu(props) {
     </div>
   );
 }
+
+Menu.defaultProps = {
+  lang: "en",
+  onClick: () => {},
+  menuList: [
+    { key: "dashKey", value: "My dashboard", path: "/" },
+    { key: "securityKey", value: "Security Settings", path: "/" },
+    { key: "profileKey", value: "Profile", path: "/" },
+    { key: "craAccountKey", value: "Switch to CRA My Account", path: "/" },
+    { key: "outKey", value: "Sign out", path: "/" },
+  ],
+};
 
 Menu.propTypes = {
   /**
@@ -177,28 +156,19 @@ Menu.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
 
   /**
-   * url path for My Dashboard page
+   * function for handling on click
    */
-  dashboardPath: PropTypes.string,
+  onClick: PropTypes.func,
 
   /**
-   * url path for Security Setting page
+   * List of menu items to display in dropdown with links
    */
-  securityPath: PropTypes.string,
-
-  /**
-   * url path for Profile page
-   */
-  profilePath: PropTypes.string,
-
-  /**
-   * configurable component
-   */
-  component: PropTypes.elementType,
-};
-
-Menu.defaultProps = {
-  dashboardPath: "",
-  securityPath: "",
-  profilePath: "",
+  menuList: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string,
+      value: PropTypes.string,
+      path: PropTypes.string,
+      component: PropTypes.elementType,
+    })
+  ),
 };
