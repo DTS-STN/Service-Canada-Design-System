@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import EN from "../../translations/en.json";
@@ -7,7 +8,7 @@ import FR from "../../translations/fr.json";
  * Menu component
  */
 export function Menu(props) {
-  const { isAuthenticated, menuList, lang } = props;
+  const { onClick, isAuthenticated, menuList, lang } = props;
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdown = useRef(null);
 
@@ -97,6 +98,7 @@ export function Menu(props) {
                         index === 0 ? "ds-border-none" : "ds-border-t-2"
                       } ds-font-body ds-flex ds-items-center ds-h-[55px] ds-px-4 hover:ds-text-[#0535D2] focus:ds-outline-none ds-ring-offset-2 focus:ds-ring-2 ds-ring-[#0535D2] ds-rounded-sm  focus:ds-border-none`}
                       key={element.key}
+                      onClick={onClick}
                     >
                       {element.key === "outKey" ? (
                         <svg
@@ -132,6 +134,7 @@ export function Menu(props) {
 
 Menu.defaultProps = {
   lang: "en",
+  onClick: () => {},
   menuList: [
     { key: "dashKey", value: "My dashboard", path: "/" },
     { key: "securityKey", value: "Security Settings", path: "/" },
@@ -151,6 +154,11 @@ Menu.propTypes = {
    * bool to switch between authenticated and non authenticated menus
    */
   isAuthenticated: PropTypes.bool.isRequired,
+
+  /**
+   * function for handling on click
+   */
+  onClick: PropTypes.func,
 
   /**
    * List of menu items to display in dropdown with links
