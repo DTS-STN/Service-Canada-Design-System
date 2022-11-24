@@ -35,8 +35,10 @@ export function Link(props) {
       break;
   }
 
+  const Component = props.component || "a";
+
   return (
-    <a
+    <Component
       href={props.href}
       className={`${basicStyle}`}
       id={props.id}
@@ -47,6 +49,7 @@ export function Link(props) {
       lang={props.lang}
       target={props.target}
       aria-label={props.ariaLabel || props.text}
+      role="link"
     >
       {/* <!-- English Text: English --> */}
       <span className={props.abbr ? "ds-language-toggle-text" : ""}>
@@ -56,7 +59,7 @@ export function Link(props) {
       <abbr className="ds-language-toggle-abbr" title={props.text}>
         {props.abbr}
       </abbr>
-    </a>
+    </Component>
   );
 }
 
@@ -107,4 +110,9 @@ Link.propTypes = {
    * use ariaLabel to provide more descriptive text for a link (screen reader friendly)
    */
   ariaLabel: PropTypes.string,
+
+  /**
+   * Allow user to use configurable component, default is html anchor tag
+   */
+  component: PropTypes.elementType,
 };

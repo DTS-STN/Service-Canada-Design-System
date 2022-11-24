@@ -23,8 +23,9 @@ AuthenticatedEN.args = {
   lang: "en",
   menuList: [
     { key: "dashKey", value: "My dashboard", path: "/" },
-    { key: "securityKey", value: "Security Settings", path: "/" },
+    { key: "securityKey", value: "Security settings", path: "/" },
     { key: "profileKey", value: "Profile", path: "/" },
+    { key: "craAccountKey", value: "Switch to CRA My Account", path: "/" },
     { key: "outKey", value: "Sign out", path: "/" },
   ],
 };
@@ -32,6 +33,13 @@ AuthenticatedEN.args = {
 AuthenticatedFR.args = {
   isAuthenticated: true,
   lang: "fr",
+  menuList: [
+    { key: "dashKey", value: "Mon tableau de bord", path: "/" },
+    { key: "securityKey", value: "Paramètres de sécurité", path: "/" },
+    { key: "profileKey", value: "Profil", path: "/" },
+    { key: "craAccountKey", value: "Aller à Mon dossier de l’ARC", path: "/" },
+    { key: "outKey", value: "Se déconnecter", path: "/" },
+  ],
 };
 
 NotAuthenticatedEN.args = {
@@ -49,8 +57,20 @@ CustomComponentLinks.args = {
   lang: "en",
   menuList: [
     {
-      key: "customComponent",
-      value: "Custom Component",
+      key: "customComponent1",
+      value: "Custom Component 1",
+      path: "/",
+      component: CustomLinkComponent,
+    },
+    {
+      key: "customComponent2",
+      value: "Custom Component 2",
+      path: "/",
+      component: CustomLinkComponent,
+    },
+    {
+      key: "customComponent3",
+      value: "Custom Component 3",
       path: "/",
       component: CustomLinkComponent,
     },
