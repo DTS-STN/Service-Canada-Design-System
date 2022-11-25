@@ -85,7 +85,7 @@ export function Menu(props) {
             {showDropdown && (
               <div
                 id="dropdownNavbar"
-                className="sm:ds-absolute sm:ds-w-[260px] ds-dropdown-list ds-text-[#284162] ds-bg-white"
+                className="sm:ds-absolute sm:ds-w-[260px] dropdownShadow ds-text-[#284162] ds-bg-white"
                 aria-labelledby="dropdownLargeButton"
                 ref={dropdown}
               >
