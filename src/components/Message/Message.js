@@ -34,23 +34,14 @@ export function Message(props) {
       ? "ds-info-color"
       : "ds-success-color";
 
-  let style_type =
-    type === "warning"
-      ? "ds-border-specific-orange-orange50 ds-rounded ds-border-solid ds-border-3"
-      : type === "danger"
-      ? "ds-border-specific-red-red50b ds-rounded ds-border-solid ds-border-3"
-      : type === "info"
-      ? "ds-border-specific-cyan-cyan50 ds-rounded ds-border-solid ds-border-3"
-      : "ds-border-specific-green-green50a ds-rounded ds-border-solid ds-border-3";
-
   let white_BG = whiteBG ? "ds-bg-multi-neutrals-white" : " ";
 
   return (
     <div
       id={id}
-      className={`ds-relative ${style_type} ds-min-w-290px sm:ds-py-28px sm:ds-px-24px ds-py-16px ds-px-16px ${white_BG}`}
+      className={`ds-relative ds-min-w-290px sm:ds-px-24px ds-px-16px ${white_BG}`}
     >
-      <div className="ds-absolute ds-top-10 sm:ds-left-3.5 ds-left-1.5 ds-bg-multi-neutrals-white ds-py-4px">
+      <div className="ds-absolute ds-top-3 sm:ds-left-3.5 ds-left-1.5 ds-bg-multi-neutrals-white ds-py-4px">
         {/* change back to image component once fixed */}
         <img id={alert_icon_id} src={alert_type} alt={alert_icon_alt_text} />
       </div>
