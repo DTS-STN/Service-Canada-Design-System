@@ -5,21 +5,25 @@ import React from "react";
  *  Breadcrumb component
  */
 export function Breadcrumb(props) {
+  const Component = props.component || "a";
   return (
-    <nav className="ds-pt-4 ds-pb-4" aria-label="breadcrumbs" id={props.id}>
+    <nav className="ds-py-6" aria-label="breadcrumbs" id={props.id}>
       <ul className="ds-block ds-text-custom-blue-dark ds-leading-23px ds-font-body">
         {props.items
           ? props.items.map((item, key) => {
               return (
-                <li key={key * key} className={`ds-inline-block ds-w-100`}>
-                  <a
+                <li
+                  key={key * key}
+                  className={`ds-inline-block ds-w-100 ds-pb-4 sm:ds-pb-0`}
+                >
+                  <Component
                     href={item.link}
                     className="ds-font-body hover:ds-text-canada-footer-hover-font-blue ds-text-multi-blue-blue70b ds-underline"
                   >
                     {item.text}
-                  </a>
+                  </Component>
                   {key < props.items.length - 1 && (
-                    <span className="ds-inline-block ds-align-middle ds-text-multi-blue-blue70b ds-icon-cheveron-right ds-pr-2 ds-pl-2" />
+                    <span className="ds-mx-2 ds-inline-block ds-align-middle ds-text-multi-blue-blue70b ds-icon-cheveron-right ds-pr-2 ds-pl-2" />
                   )}
                 </li>
               );
@@ -73,4 +77,9 @@ Breadcrumb.propTypes = {
    * For tracking click events analytics
    */
   analyticsTracking: PropTypes.bool,
+
+  /**
+   * Allow user to use configurable component, default is html anchor tag
+   */
+  component: PropTypes.elementType,
 };

@@ -16,11 +16,21 @@ EnglishAuth.args = {
   // isAuthenticated: true,
   menuProps: {
     menuList: [
-      { key: "dashKey", value: "My dashboard", path: "/" },
-      { key: "securityKey", value: "Security settings", path: "/" },
-      { key: "profileKey", value: "Profile", path: "/" },
-      { key: "craAccountKey", value: "Switch to CRA My Account", path: "/" },
-      { key: "outKey", value: "Sign out", path: "/" },
+      { key: "dashKey", value: "My dashboard", path: "/", showIcon: false },
+      { key: "profileKey", value: "Profile", path: "/", showIcon: false },
+      {
+        key: "securityKey",
+        value: "Security settings",
+        path: "/",
+        showIcon: false,
+      },
+      {
+        key: "craAccountKey",
+        value: "Switch to CRA My Account",
+        path: "/",
+        showIcon: false,
+      },
+      { key: "outKey", value: "Sign out", path: "/", showIcon: true },
     ],
   },
   topnavProps: {
@@ -43,15 +53,26 @@ FrenchAuth.args = {
   lang: "fr",
   menuProps: {
     menuList: [
-      { key: "dashKey", value: "Mon tableau de bord", path: "/" },
-      { key: "securityKey", value: "Paramètres de sécurité", path: "/" },
-      { key: "profileKey", value: "Profil", path: "/" },
+      {
+        key: "dashKey",
+        value: "Mon tableau de bord",
+        path: "/",
+        showIcon: false,
+      },
+      { key: "profileKey", value: "Profil", path: "/", showIcon: false },
+      {
+        key: "securityKey",
+        value: "Paramètres de sécurité",
+        path: "/",
+        showIcon: false,
+      },
       {
         key: "craAccountKey",
         value: "Aller à Mon dossier de l’ARC",
         path: "/",
+        showIcon: false,
       },
-      { key: "outKey", value: "Se déconnecter", path: "/" },
+      { key: "outKey", value: "Se déconnecter", path: "/", showIcon: true },
     ],
   },
   topnavProps: {
