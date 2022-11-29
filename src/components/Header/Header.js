@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -16,6 +17,7 @@ export function Header(props) {
   const {
     id,
     lang,
+    locale,
     isAuthenticated,
     linkPath,
     searchProps,
@@ -43,13 +45,22 @@ export function Header(props) {
           <div className="ds-flex ds-flex-row sm:ds-pt-12px">
             <div className={`header-logo ds-pt-6px`}>
               <Image
-                className="md:ds-max-w-360px md:ds-max-h-34px ds-max-w-206px ds-max-h-19px"
+                className={`${
+                  lang === "en"
+                    ? "md:ds-max-h-34px ds-max-h-19px"
+                    : "md:ds-max-h-35px ds-max-h-20px"
+                } md:ds-max-w-360px ds-max-w-206px`}
                 src={lang === "en" ? logoFile : logoFileFR}
                 alt="Government of Canada"
               />
             </div>
             <div className="sm:ds-hidden ds-ml-auto ds-pb-10px">
-              <Language id="lang2" lang={lang} path={linkPath} />
+              <Language
+                id="lang2"
+                lang={lang}
+                path={linkPath}
+                locale={locale}
+              />
             </div>
           </div>
           {!isAuthenticated ? (

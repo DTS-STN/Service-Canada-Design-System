@@ -9,14 +9,14 @@ import {
   Warning,
   Info,
   Success,
-} from "./Labels.stories";
-import { Labels } from "./Labels";
+} from "./Label.stories";
+import { Label } from "./Label";
 
 expect.extend(toHaveNoViolations);
 
-describe("Labels", () => {
+describe("Label", () => {
   it("renders default label", () => {
-    render(<Labels {...Default.args} />);
+    render(<Label {...Default.args} />);
     expect(screen.getByText("Label")).toHaveTextContent(Default.args.text);
     expect(screen.getByRole("dialog")).toHaveClass(
       "ds-inline ds-border-l-4 ds-px-9px ds-pb-5px ds-pt-3px ds-label-font-style ds-label-default"
@@ -24,7 +24,7 @@ describe("Labels", () => {
   });
 
   it("renders primary label", () => {
-    render(<Labels {...Primary.args} />);
+    render(<Label {...Primary.args} />);
     expect(screen.getByText("Label")).toHaveTextContent(Primary.args.text);
     expect(screen.getByRole("dialog")).toHaveClass(
       "ds-inline ds-border-l-4 ds-px-9px ds-pb-5px ds-pt-3px ds-label-font-style ds-label-primary"
@@ -32,7 +32,7 @@ describe("Labels", () => {
   });
 
   it("renders danger label", () => {
-    render(<Labels {...Danger.args} />);
+    render(<Label {...Danger.args} />);
     expect(screen.getByText("Label")).toHaveTextContent(Danger.args.text);
     expect(screen.getByRole("dialog")).toHaveClass(
       "ds-inline ds-border-l-4 ds-px-9px ds-pb-5px ds-pt-3px ds-label-font-style ds-label-danger"
@@ -40,7 +40,7 @@ describe("Labels", () => {
   });
 
   it("renders warning label", () => {
-    render(<Labels {...Warning.args} />);
+    render(<Label {...Warning.args} />);
     expect(screen.getByText("Label")).toHaveTextContent(Warning.args.text);
     expect(screen.getByRole("dialog")).toHaveClass(
       "ds-inline ds-border-l-4 ds-px-9px ds-pb-5px ds-pt-3px ds-label-font-style ds-label-warning"
@@ -48,7 +48,7 @@ describe("Labels", () => {
   });
 
   it("renders info label", () => {
-    render(<Labels {...Info.args} />);
+    render(<Label {...Info.args} />);
     expect(screen.getByText("Label")).toHaveTextContent(Info.args.text);
     expect(screen.getByRole("dialog")).toHaveClass(
       "ds-inline ds-border-l-4 ds-px-9px ds-pb-5px ds-pt-3px ds-label-font-style ds-label-info"
@@ -56,7 +56,7 @@ describe("Labels", () => {
   });
 
   it("renders success label", () => {
-    render(<Labels {...Success.args} />);
+    render(<Label {...Success.args} />);
     expect(screen.getByText("Label")).toHaveTextContent(Success.args.text);
     expect(screen.getByRole("dialog")).toHaveClass(
       "ds-inline ds-border-l-4 ds-px-9px ds-pb-5px ds-pt-3px ds-label-font-style ds-label-success"
