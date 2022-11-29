@@ -17,6 +17,7 @@ export function Header(props) {
   const {
     id,
     lang,
+    locale,
     isAuthenticated,
     linkPath,
     searchProps,
@@ -54,7 +55,12 @@ export function Header(props) {
               />
             </div>
             <div className="sm:ds-hidden ds-ml-auto ds-pb-10px">
-              <Language id="lang2" lang={lang} path={linkPath} />
+              <Language
+                id="lang2"
+                lang={lang}
+                path={linkPath}
+                locale={locale}
+              />
             </div>
           </div>
           {!isAuthenticated ? (

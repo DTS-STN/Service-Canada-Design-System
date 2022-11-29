@@ -50,6 +50,7 @@ export function Link(props) {
       target={props.target}
       aria-label={props.ariaLabel || props.text}
       role="link"
+      locale={props.locale}
     >
       {/* <!-- English Text: English --> */}
       <span className={props.abbr ? "ds-language-toggle-text" : ""}>
