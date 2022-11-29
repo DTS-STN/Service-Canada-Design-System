@@ -10,10 +10,10 @@ export function Breadcrumb(props) {
     <nav className="ds-py-6" aria-label="breadcrumbs" id={props.id}>
       <ul className="ds-block ds-text-custom-blue-dark ds-leading-23px ds-font-body">
         {props.items
-          ? props.items.map((item, key) => {
+          ? props.items.map((item, index) => {
               return (
                 <li
-                  key={key * key}
+                  key={index}
                   className={`ds-inline-block ds-w-100 ds-pb-4 sm:ds-pb-0`}
                 >
                   <Component
@@ -22,7 +22,7 @@ export function Breadcrumb(props) {
                   >
                     {item.text}
                   </Component>
-                  {key < props.items.length - 1 && (
+                  {index < props.items.length - 1 && (
                     <span className="ds-mx-2 ds-inline-block ds-align-middle ds-text-multi-blue-blue70b ds-icon-cheveron-right ds-pr-2 ds-pl-2" />
                   )}
                 </li>
