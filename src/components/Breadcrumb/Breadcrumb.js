@@ -13,7 +13,7 @@ export function Breadcrumb(props) {
           ? props.items.map((item, index) => {
               return (
                 <li
-                  key={index}
+                  key={`list-${index}`}
                   className={`ds-inline-block ds-w-100 ds-pb-4 sm:ds-pb-0`}
                 >
                   <Component
