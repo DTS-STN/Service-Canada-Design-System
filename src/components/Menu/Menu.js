@@ -100,7 +100,7 @@ export function Menu(props) {
                       key={element.key}
                       onClick={onClick}
                     >
-                      {element.key === "outKey" ? (
+                      {element.showIcon && (
                         <svg
                           width="18"
                           height="15"
@@ -114,8 +114,6 @@ export function Menu(props) {
                             fill="#284162"
                           />
                         </svg>
-                      ) : (
-                        ""
                       )}
                       {element.value}
                     </Component>
@@ -136,11 +134,21 @@ Menu.defaultProps = {
   lang: "en",
   onClick: () => {},
   menuList: [
-    { key: "dashKey", value: "My dashboard", path: "/" },
-    { key: "securityKey", value: "Security Settings", path: "/" },
-    { key: "profileKey", value: "Profile", path: "/" },
-    { key: "craAccountKey", value: "Switch to CRA My Account", path: "/" },
-    { key: "outKey", value: "Sign out", path: "/" },
+    { key: "dashKey", value: "My dashboard", path: "/", showIcon: false },
+    {
+      key: "securityKey",
+      value: "Security Settings",
+      path: "/",
+      showIcon: false,
+    },
+    { key: "profileKey", value: "Profile", path: "/", showIcon: false },
+    {
+      key: "craAccountKey",
+      value: "Switch to CRA My Account",
+      path: "/",
+      showIcon: false,
+    },
+    { key: "outKey", value: "Sign out", path: "/", showIcon: true },
   ],
 };
 
