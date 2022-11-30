@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable jsx-a11y/label-has-associated-control */
+import React from "react";
 import PropTypes from "prop-types";
 import { useEffect } from "react";
 import dropdown from "../../assets/dropdown.svg";
@@ -49,7 +51,7 @@ export function DatePicker(props) {
 
   useEffect(() => {
     // blur the input element on scroll instead of changing the value! Does not affect Keyboard input.
-    const handleScroll = (e) => {
+    const handleScroll = () => {
       const el = document.activeElement;
       if (el?.type === "number") {
         el.blur();
@@ -58,9 +60,7 @@ export function DatePicker(props) {
     document.addEventListener("wheel", handleScroll);
 
     // remove event listener when component unmounts
-    return () => {
-      element.removeEventListener("wheel", handleScroll);
-    };
+    return () => document.removeEventListener("wheel", handleScroll);
   }, []);
 
   return (
