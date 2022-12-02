@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.53.1](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.53.0...v1.53.1) (2022-12-02)
+
+
+### Bug Fixes
+
+* update date picker ([38b1df5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/38b1df57eef6a28dec601a72961da09ff6a1f23c))
+
 ## [1.53.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.25...v1.53.0) (2022-11-29)
 
 
