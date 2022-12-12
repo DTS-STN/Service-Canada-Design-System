@@ -28,7 +28,9 @@ export function Button(props) {
   ) : (
     <a
       href={props.href}
-      className={`ds-flex ds-flex-row ds-btn-link focus:ds-ring focus:ds-ring-offset-4 ${props.className} `}
+      className={`ds-flex ds-flex-row ${
+        props.style !== "none" ? `ds-btn-link` : ""
+      } focus:ds-ring focus:ds-ring-offset-4 ${props.className} `}
       onClick={props.onClick}
       id={props.id}
       disabled={props.disabled}
@@ -45,7 +47,11 @@ export function Button(props) {
       {props.children}
       {props.icon && props.iconEnd ? (
         <div className="ds-grid ds-place-items-center ds-h-8 ds-w-8">
-          <Image className="ds-pl-2" src={props.icon} alt={props.iconAltText} />
+          <Image
+            className="ds-pl-5 ds-pb-3"
+            src={props.icon}
+            alt={props.iconAltText}
+          />
         </div>
       ) : undefined}
     </a>
