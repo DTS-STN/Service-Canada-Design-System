@@ -107,9 +107,7 @@ export function Footer(props) {
     },
   ];
   let bLinks = isAuthenticated ? brandLinksAuth : brandLinks;
-  let bLinksBg = isAuthenticated
-    ? "ds-bg-multi-neutrals-grey5 sm:ds-h-86px"
-    : "ds-h-full";
+  let bLinksBg = isAuthenticated ? "sm:ds-h-86px" : "ds-h-full";
   let bottomSectionPad = isAuthenticated ? "ds-py-6px" : "ds-pt-5";
   let flex = isAuthenticated ? "sm:ds-flex-row" : "md:ds-flex-row";
 
