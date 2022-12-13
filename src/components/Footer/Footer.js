@@ -168,7 +168,7 @@ export function Footer(props) {
             {isAuthenticated ? (
               <div className="ds-bg-multi-blue-blue70">
                 <section
-                  className={`sm:ds-px-32 ${container} ds-h-23 ds-pb-5 ds-flex ds-flex-col`}
+                  className={`sm:ds-px-16 ${container} ds-h-23 ds-pb-5 ds-flex ds-flex-col`}
                 >
                   <h2 className="ds-pt-3 ds-text-multi-neutrals-white ds-font-body ds-font-bold">
                     {mscaFooterHeading}
@@ -189,7 +189,7 @@ export function Footer(props) {
             >
               <section
                 className={`${
-                  isAuthenticated ? "sm:ds-px-32" : ""
+                  isAuthenticated ? "sm:ds-px-16" : ""
                 } ${container} ds-h-auto ${bottomSectionPad} ds-flex ds-flex-col ds-justify-between ${flex}`}
               >
                 <nav
