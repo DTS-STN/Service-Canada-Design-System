@@ -166,75 +166,83 @@ export function Footer(props) {
           ) : null}
           <div className={`${bLinksBg} ds-pb-2`}>
             {isAuthenticated ? (
-              <section
-                className={`sm:ds-px-32 ${container} ds-bg-multi-blue-blue70 ds-h-23 ds-pb-5 ds-flex ds-flex-col`}
-              >
-                <h2 className="ds-pt-3 ds-text-multi-neutrals-white ds-font-body ds-font-bold">
-                  {mscaFooterHeading}
-                </h2>
-                <Link
-                  id="footerContactUsLink"
-                  text={mscaContactUs.mscaFooterContactUsText}
-                  href={mscaContactUs.mscaFooterContactUsLink}
-                  linkStyle="smfooterWhite"
-                />
-              </section>
+              <div className="ds-bg-multi-blue-blue70">
+                <section
+                  className={`sm:ds-px-32 ${container} ds-h-23 ds-pb-5 ds-flex ds-flex-col`}
+                >
+                  <h2 className="ds-pt-3 ds-text-multi-neutrals-white ds-font-body ds-font-bold">
+                    {mscaFooterHeading}
+                  </h2>
+                  <Link
+                    id="footerContactUsLink"
+                    text={mscaContactUs.mscaFooterContactUsText}
+                    href={mscaContactUs.mscaFooterContactUsLink}
+                    linkStyle="smfooterWhite"
+                  />
+                </section>
+              </div>
             ) : null}
-            <section
+            <div
               className={`${
-                isAuthenticated ? "ds-bg-multi-neutrals-grey5 sm:ds-px-32" : ""
-              } ${container} ds-h-auto ${bottomSectionPad} ds-flex ds-flex-col ds-justify-between ${flex}`}
+                isAuthenticated ? "ds-bg-multi-neutrals-grey5" : ""
+              }`}
             >
-              <nav
-                className="ds-mt-3.5 xl:ds-mt-5"
-                role="navigation"
-                aria-labelledby="accessibleSectionHeader2"
+              <section
+                className={`${
+                  isAuthenticated ? "sm:ds-px-32" : ""
+                } ${container} ds-h-auto ${bottomSectionPad} ds-flex ds-flex-col ds-justify-between ${flex}`}
               >
-                <h2 className="ds-sr-only" id="accessibleSectionHeader2">
-                  About this site
-                </h2>
-                <ul className="ds-flex ds-flex-col sm:ds-flex-row">
-                  {bLinks.map((value, index) => {
-                    return (
-                      <li
-                        key={index}
-                        className={
-                          index === 0
-                            ? "ds-pr-4 sm:ds-mb-4 ds-mb-5 ds-list-inside ds-list-none ds-text-xxs"
-                            : "ds-pr-4 sm:ds-mb-4 ds-mb-5 ds-list-inside ds-list-none sm:ds-list-disc ds-text-xxs"
-                        }
-                      >
-                        <Link
-                          id={"footerLink" + index}
-                          href={value.brandLink}
-                          text={value.brandLinkText}
-                          linkStyle="smfooterBlue"
-                        />
-                      </li>
-                    );
-                  })}
-                </ul>
-              </nav>
-              <div className=" ">
-                <div className="ds-mt-7 ds-float-left sm:ds-hidden">
-                  <Button
-                    id="top_btn"
-                    text={footerTopOfPageButtonText}
-                    style="none"
-                    className="ds-font-body ds-text-browserh7"
-                    href={btnLink}
-                    icon={upArrow}
-                    iconAltText="to the top button"
-                    iconEnd
+                <nav
+                  className="ds-mt-3.5 xl:ds-mt-5"
+                  role="navigation"
+                  aria-labelledby="accessibleSectionHeader2"
+                >
+                  <h2 className="ds-sr-only" id="accessibleSectionHeader2">
+                    About this site
+                  </h2>
+                  <ul className="ds-flex ds-flex-col sm:ds-flex-row">
+                    {bLinks.map((value, index) => {
+                      return (
+                        <li
+                          key={index}
+                          className={
+                            index === 0
+                              ? "ds-pr-4 sm:ds-mb-4 ds-mb-5 ds-list-inside ds-list-none ds-text-xxs"
+                              : "ds-pr-4 sm:ds-mb-4 ds-mb-5 ds-list-inside ds-list-none sm:ds-list-disc ds-text-xxs"
+                          }
+                        >
+                          <Link
+                            id={"footerLink" + index}
+                            href={value.brandLink}
+                            text={value.brandLinkText}
+                            linkStyle="smfooterBlue"
+                          />
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </nav>
+                <div className=" ">
+                  <div className="ds-mt-7 ds-float-left sm:ds-hidden">
+                    <Button
+                      id="top_btn"
+                      text={footerTopOfPageButtonText}
+                      style="none"
+                      className="ds-font-body ds-text-browserh7"
+                      href={btnLink}
+                      icon={upArrow}
+                      iconAltText="to the top button"
+                      iconEnd
+                    />
+                  </div>
+                  <Image
+                    className="sm:ds-h-40px ds-h-25px ds-mb-2.5 sm:ds-mt-6 md:ds-mt-3 ds-mt-5 ds-float-right"
+                    src={logo}
+                    alt="Symbol of the Government of Canada"
                   />
                 </div>
-                <Image
-                  className="sm:ds-h-40px ds-h-25px ds-mb-2.5 sm:ds-mt-6 md:ds-mt-3 ds-mt-5 ds-float-right"
-                  src={logo}
-                  alt="Symbol of the Government of Canada"
-                />
-              </div>
-            </section>
+              </section>
+            </div>
           </div>
         </>
       )}
