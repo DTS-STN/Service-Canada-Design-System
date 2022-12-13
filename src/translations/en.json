@@ -25,14 +25,18 @@
     "link3": "About Canada.ca",
     "link4": "Terms and conditions",
     "link5": "Privacy",
-    "link6": "Contact Us",
     "link1link": "https://www.canada.ca/en/social.html",
     "link2link": "https://www.canada.ca/en/mobile.html",
     "link3link": "https://www.canada.ca/en/government/about.html",
     "link4link": "https://www.canada.ca/en/transparency/terms.html",
-    "link5link": "https://www.canada.ca/en/transparency/privacy.html",
-    "link6link": "/"
+    "link5link": "https://www.canada.ca/en/transparency/privacy.html"
   },
+  "mscaFooterHeading": "My Service Canada Account",
+  "mscaContactUs": {
+    "mscaFooterContactUsText": "Contact Us",
+    "mscaFooterContactUsLink": "/"
+  },
+  "footerTopOfPageButtonText": "Top of page",
   "errorPageHeadingTitle404": "We couldn’t find that web page",
   "errorPageHeadingTitle500": "We're having a problem with that page",
   "errorPageHeadingTitle503": "This service is currently not available",
