@@ -2,257 +2,287 @@
 
 ## [1.53.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.25...v1.53.0) (2022-11-29)
 
+
 ### Features
 
-- add custom attribute to support next/link ([40bfb45](https://github.com/DTS-STN/Service-Canada-Design-System/commit/40bfb45c061bd31b6473a9d560bc8618c95f86cf))
-- added custom `component` support for menu item ([ab33ba8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ab33ba861d732bd364bc24084ee6999694a37700))
-- added typescript compatibility ([b6961b5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b6961b5eb2ea5fd6a52680605e6b5935ea1d7371))
-- enhanced Label in typescript with type definitions! ([eb30aa2](https://github.com/DTS-STN/Service-Canada-Design-System/commit/eb30aa2c0dab1f2eef08a83fc1d0d4931ebd6213))
-- typescript integration and Button as a test; next commit will remove Button for now ([815d1ae](https://github.com/DTS-STN/Service-Canada-Design-System/commit/815d1aef771bf248fc76a88d09ead7348e754e67))
-- update global header ([29e9563](https://github.com/DTS-STN/Service-Canada-Design-System/commit/29e9563578af2ec861681efd5eb87647e8d1e8a5))
-- update header dropdown menu ([f8e856c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f8e856c68b6b3d3e31f71f74c15b839e6d446abb))
-- update header mobile ([62b747b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/62b747babbfdfe9dd0b4a56ce979d01f97f7ce8e))
+* add custom attribute to support next/link ([40bfb45](https://github.com/DTS-STN/Service-Canada-Design-System/commit/40bfb45c061bd31b6473a9d560bc8618c95f86cf))
+* added custom `component` support for menu item ([ab33ba8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ab33ba861d732bd364bc24084ee6999694a37700))
+* added typescript compatibility ([b6961b5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b6961b5eb2ea5fd6a52680605e6b5935ea1d7371))
+* enhanced Label in typescript with type definitions! ([eb30aa2](https://github.com/DTS-STN/Service-Canada-Design-System/commit/eb30aa2c0dab1f2eef08a83fc1d0d4931ebd6213))
+* typescript integration and Button as a test; next commit will remove Button for now ([815d1ae](https://github.com/DTS-STN/Service-Canada-Design-System/commit/815d1aef771bf248fc76a88d09ead7348e754e67))
+* update global header ([29e9563](https://github.com/DTS-STN/Service-Canada-Design-System/commit/29e9563578af2ec861681efd5eb87647e8d1e8a5))
+* update header dropdown menu ([f8e856c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f8e856c68b6b3d3e31f71f74c15b839e6d446abb))
+* update header mobile ([62b747b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/62b747babbfdfe9dd0b4a56ce979d01f97f7ce8e))
+
 
 ### Bug Fixes
 
-- add onclick for component ([84f1b01](https://github.com/DTS-STN/Service-Canada-Design-System/commit/84f1b017211ec2692f63a7e875583154896691b7))
-- added id to the button ([0dd69ad](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0dd69ad4ffac0e14be4128778493ddc6d4395965))
-- blur the input element on scroll instead of changing value ([0d8c16d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0d8c16d1a745e94734d9dd53bc6837a356e8dcce))
-- breadcrumb key ([a31eb10](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a31eb10fbf21187c8618b75fd322549a4df262af))
-- change "Contact Information" in footer to "Contact Us" in en+fr ([265a9eb](https://github.com/DTS-STN/Service-Canada-Design-System/commit/265a9ebb729394495e423259ae4a56027f86d14c))
-- changed alt text on warning icon ([c5ef185](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c5ef1855777ec8703141b9996863b3c828196c14))
-- header bugs ([bc19e6c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/bc19e6cc6d5ade5794aca425d0ce2ff815de3bdc))
-- Link.test.js style check modified to check for new style ([837bf3d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/837bf3d9af14191a4d8168758f2861681b5e004d))
-- menu bugs ([0984da8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0984da8e0ffe9609d9244eac7f6b6e6ac3d8e42c))
-- menu dropdown shadow ([3545116](https://github.com/DTS-STN/Service-Canada-Design-System/commit/354511658d187124df2fcddaca1ab6d5d390bf09))
-- remove border and related padding from Message.js ([cb6f6d9](https://github.com/DTS-STN/Service-Canada-Design-System/commit/cb6f6d96dbdd3c13c641572d2ed038340f470262))
-- remove event listener when the component unmounts ([05d43d4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/05d43d4bebff9040d8a829ae721c84f5564b5257))
-- remove underline from footer links ([29b400a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/29b400a3779836982af7d7134153a7b21afe3e3e))
-- remove unused code ([38d0f89](https://github.com/DTS-STN/Service-Canada-Design-System/commit/38d0f899b41cd8d95112563a297339aa7b5d21a6))
-- removed unused `onSignOut` attribute from `menuList` ([ab33ba8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ab33ba861d732bd364bc24084ee6999694a37700))
-- revert change to use configurable component ([06dd5cc](https://github.com/DTS-STN/Service-Canada-Design-System/commit/06dd5ccb9ef9bc3854e925ccff809267a1dd73b3))
-- style, breadcrumb link component ([25e11d7](https://github.com/DTS-STN/Service-Canada-Design-System/commit/25e11d76ae54de569fc48b0ad76a446d27a83146))
-- unit test and update Link to add configurable component option ([ca71686](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ca7168619d7ac2b0e26cf9c1ca51bf5b3f6fdb2d))
-- updated deps ([7d109a9](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7d109a9d0f9c987a27ee68531af3f861a5f72ba9))
-- upgrade release-please from 14.11.2 to 14.13.2 ([59dd852](https://github.com/DTS-STN/Service-Canada-Design-System/commit/59dd852306c568ea13cbc1c621ec59bd6059de2d))
+* add onclick for component ([84f1b01](https://github.com/DTS-STN/Service-Canada-Design-System/commit/84f1b017211ec2692f63a7e875583154896691b7))
+* added id to the button ([0dd69ad](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0dd69ad4ffac0e14be4128778493ddc6d4395965))
+* blur the input element on scroll instead of changing value ([0d8c16d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0d8c16d1a745e94734d9dd53bc6837a356e8dcce))
+* breadcrumb key ([a31eb10](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a31eb10fbf21187c8618b75fd322549a4df262af))
+* change "Contact Information" in footer to "Contact Us" in en+fr ([265a9eb](https://github.com/DTS-STN/Service-Canada-Design-System/commit/265a9ebb729394495e423259ae4a56027f86d14c))
+* changed alt text on warning icon ([c5ef185](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c5ef1855777ec8703141b9996863b3c828196c14))
+* header bugs ([bc19e6c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/bc19e6cc6d5ade5794aca425d0ce2ff815de3bdc))
+* Link.test.js style check modified to check for new style ([837bf3d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/837bf3d9af14191a4d8168758f2861681b5e004d))
+* menu bugs ([0984da8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0984da8e0ffe9609d9244eac7f6b6e6ac3d8e42c))
+* menu dropdown shadow ([3545116](https://github.com/DTS-STN/Service-Canada-Design-System/commit/354511658d187124df2fcddaca1ab6d5d390bf09))
+* remove border and related padding from Message.js ([cb6f6d9](https://github.com/DTS-STN/Service-Canada-Design-System/commit/cb6f6d96dbdd3c13c641572d2ed038340f470262))
+* remove event listener when the component unmounts ([05d43d4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/05d43d4bebff9040d8a829ae721c84f5564b5257))
+* remove underline from footer links ([29b400a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/29b400a3779836982af7d7134153a7b21afe3e3e))
+* remove unused code ([38d0f89](https://github.com/DTS-STN/Service-Canada-Design-System/commit/38d0f899b41cd8d95112563a297339aa7b5d21a6))
+* removed unused `onSignOut` attribute from `menuList` ([ab33ba8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ab33ba861d732bd364bc24084ee6999694a37700))
+* revert change to use configurable component ([06dd5cc](https://github.com/DTS-STN/Service-Canada-Design-System/commit/06dd5ccb9ef9bc3854e925ccff809267a1dd73b3))
+* style, breadcrumb link component ([25e11d7](https://github.com/DTS-STN/Service-Canada-Design-System/commit/25e11d76ae54de569fc48b0ad76a446d27a83146))
+* unit test and update Link to add configurable component option ([ca71686](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ca7168619d7ac2b0e26cf9c1ca51bf5b3f6fdb2d))
+* updated deps ([7d109a9](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7d109a9d0f9c987a27ee68531af3f861a5f72ba9))
+* upgrade release-please from 14.11.2 to 14.13.2 ([59dd852](https://github.com/DTS-STN/Service-Canada-Design-System/commit/59dd852306c568ea13cbc1c621ec59bd6059de2d))
+
 
 ### Tests
 
-- updated jest configuration and added babel for transpilation ([dd3ac51](https://github.com/DTS-STN/Service-Canada-Design-System/commit/dd3ac51f785f6d883bca5b25642270a938e21c92))
+* updated jest configuration and added babel for transpilation ([dd3ac51](https://github.com/DTS-STN/Service-Canada-Design-System/commit/dd3ac51f785f6d883bca5b25642270a938e21c92))
+
 
 ### Build System
 
-- **deps:** bump loader-utils from 1.4.0 to 1.4.1 ([7a3fd93](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7a3fd9377e1af0e71a454c6b9999b1afae622ac6))
-- updated build steps for unit test coverage + typescript ([7bbedb4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7bbedb4d50dcb24a5ad87da49628b1273c8ef398))
-- updated eslint for window global ([ab33ba8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ab33ba861d732bd364bc24084ee6999694a37700))
-- updated test command for ts testing ([652373a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/652373a029921b593c197d23f796018ffe1b95d8))
+* **deps:** bump loader-utils from 1.4.0 to 1.4.1 ([7a3fd93](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7a3fd9377e1af0e71a454c6b9999b1afae622ac6))
+* updated build steps for unit test coverage + typescript ([7bbedb4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7bbedb4d50dcb24a5ad87da49628b1273c8ef398))
+* updated eslint for window global ([ab33ba8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ab33ba861d732bd364bc24084ee6999694a37700))
+* updated test command for ts testing ([652373a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/652373a029921b593c197d23f796018ffe1b95d8))
 
 ## [1.52.25](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.24...v1.52.25) (2022-10-18)
 
+
 ### Build System
 
-- added npm ci ([d372c2c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d372c2c5df788a6176f6aaef23412a23566bd059))
+* added npm ci ([d372c2c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d372c2c5df788a6176f6aaef23412a23566bd059))
 
 ## [1.52.24](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.23...v1.52.24) (2022-10-18)
 
+
 ### Bug Fixes
 
-- bumping version for workflow ([cea3597](https://github.com/DTS-STN/Service-Canada-Design-System/commit/cea3597b5f5008e26bdf241beea239605d50490a))
-- cleaned up the docs and pipeline ([66f2e96](https://github.com/DTS-STN/Service-Canada-Design-System/commit/66f2e96e49f0010061de9f1755f545e043131f83))
-- updated .gitignore to include /storybook-static ([5633d08](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5633d084f74eb63d9d930c04d95ba3b19b61afbc))
+* bumping version for workflow ([cea3597](https://github.com/DTS-STN/Service-Canada-Design-System/commit/cea3597b5f5008e26bdf241beea239605d50490a))
+* cleaned up the docs and pipeline ([66f2e96](https://github.com/DTS-STN/Service-Canada-Design-System/commit/66f2e96e49f0010061de9f1755f545e043131f83))
+* updated .gitignore to include /storybook-static ([5633d08](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5633d084f74eb63d9d930c04d95ba3b19b61afbc))
+
 
 ### Documentation
 
-- updated storybook readme ([c77ab64](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c77ab646caf31abc7f58f7741639059e0cdd441c))
+* updated storybook readme ([c77ab64](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c77ab646caf31abc7f58f7741639059e0cdd441c))
+
 
 ### Build System
 
-- added npm ci before attempting to rebuild storybook ([857ed0d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/857ed0d161b9002fdbbedea6985d2843804eaf63))
-- adding proper env var name ([9645258](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9645258dec5264602c9f8425769de56a7fb74961))
-- can't fix workflow with npm release because of isolated env per job restriction ([76ecd9a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/76ecd9a41a2b5106480d4231c3535b2556bc634e))
-- environment var not running thru in the workflow ([8acf4d6](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8acf4d685a316596aeb4e8db8b6b119337a061e5))
-- more workflow edits for release and main ([1170062](https://github.com/DTS-STN/Service-Canada-Design-System/commit/117006246fce00f219917299d013f9d2eaa52304))
-- updated the destination to hardcoded release path ([0a772ad](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0a772adff258a7bce9d58b9494c16de0aaaa25ef))
-- updated workflow once again for the env vars ([70683a0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/70683a0768a91d169dad763b8c61e1f5cc595302))
-- updated workflow storybook build folder target and tag ([5633d08](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5633d084f74eb63d9d930c04d95ba3b19b61afbc))
-- using string convention for workflow tag ([ae7effa](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ae7effa5ede2a2d7e160a0af364ab2a5230aee2e))
-- workflow changes for npm_release_tag ([fd8f212](https://github.com/DTS-STN/Service-Canada-Design-System/commit/fd8f212aeefb41e6469bdf6afc6474cfe80eba85))
-- workflow update ([96b287b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/96b287b85519e486e540de4ba4d2ea40deaaeec7))
+* added npm ci before attempting to rebuild storybook ([857ed0d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/857ed0d161b9002fdbbedea6985d2843804eaf63))
+* adding proper env var name ([9645258](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9645258dec5264602c9f8425769de56a7fb74961))
+* can't fix workflow with npm release because of isolated env per job restriction ([76ecd9a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/76ecd9a41a2b5106480d4231c3535b2556bc634e))
+* environment var not running thru in the workflow ([8acf4d6](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8acf4d685a316596aeb4e8db8b6b119337a061e5))
+* more workflow edits for release and main ([1170062](https://github.com/DTS-STN/Service-Canada-Design-System/commit/117006246fce00f219917299d013f9d2eaa52304))
+* updated the destination to hardcoded release path ([0a772ad](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0a772adff258a7bce9d58b9494c16de0aaaa25ef))
+* updated workflow once again for the env vars ([70683a0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/70683a0768a91d169dad763b8c61e1f5cc595302))
+* updated workflow storybook build folder target and tag ([5633d08](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5633d084f74eb63d9d930c04d95ba3b19b61afbc))
+* using string convention for workflow tag ([ae7effa](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ae7effa5ede2a2d7e160a0af364ab2a5230aee2e))
+* workflow changes for npm_release_tag ([fd8f212](https://github.com/DTS-STN/Service-Canada-Design-System/commit/fd8f212aeefb41e6469bdf6afc6474cfe80eba85))
+* workflow update ([96b287b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/96b287b85519e486e540de4ba4d2ea40deaaeec7))
 
 ## [1.52.23](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.22...v1.52.23) (2022-10-18)
 
+
 ### Build System
 
-- updated workflow with JamesIves/github-pages-deploy-action v4 ([8f9b8b7](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8f9b8b7795c72ee940a4933630e72533ed7b6268))
+* updated workflow with JamesIves/github-pages-deploy-action v4 ([8f9b8b7](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8f9b8b7795c72ee940a4933630e72533ed7b6268))
 
 ## [1.52.22](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.21...v1.52.22) (2022-10-17)
 
+
 ### Documentation
 
-- updated README badge ([4f0c811](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4f0c811bcea2987ff128ae923c0e03214295ed20))
+* updated README badge ([4f0c811](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4f0c811bcea2987ff128ae923c0e03214295ed20))
+
 
 ### Build System
 
-- updated workflow ([371af74](https://github.com/DTS-STN/Service-Canada-Design-System/commit/371af74d20332a56b91ef18e7a9f61a066edef7d))
+* updated workflow ([371af74](https://github.com/DTS-STN/Service-Canada-Design-System/commit/371af74d20332a56b91ef18e7a9f61a066edef7d))
 
 ## [1.52.21](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.20...v1.52.21) (2022-10-17)
 
+
 ### Documentation
 
-- updated README.md with new branching strategy ([a200537](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a2005379013fa6da1aa507c2c6a35e8e07aeb817))
+* updated README.md with new branching strategy ([a200537](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a2005379013fa6da1aa507c2c6a35e8e07aeb817))
 
 ## [1.52.20](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.19...v1.52.20) (2022-10-17)
 
+
 ### Bug Fixes
 
-- added trivial change for changelog test ([b6f1451](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b6f1451ac150deda6224eceb24963c122b39d920))
+* added trivial change for changelog test ([b6f1451](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b6f1451ac150deda6224eceb24963c122b39d920))
+
 
 ### Miscellaneous Chores
 
-- updated workflow ([6c91b89](https://github.com/DTS-STN/Service-Canada-Design-System/commit/6c91b893627996b7a19d546a4343b70c60c72a21))
+* updated workflow ([6c91b89](https://github.com/DTS-STN/Service-Canada-Design-System/commit/6c91b893627996b7a19d546a4343b70c60c72a21))
 
 ## [1.52.19](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.18...v1.52.19) (2022-10-15)
 
+
 ### Bug Fixes
 
-- added mundane comment to test out the pr stuff ([807cdbd](https://github.com/DTS-STN/Service-Canada-Design-System/commit/807cdbd14ea95de8a4d22b534c443c1b43eb86a5))
-- changing workflow ([8b046ea](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8b046ea622eb91fa8c38419a6fcdf5f8e26b2726))
-- no need for checking out the repo ([da2022e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/da2022e4de5a03df0ffad2e542312d324d0e0dd1))
-- removed space ([0ae219a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0ae219a7ba6596ef8a5bf88e7d17d2c2497a641e))
-- removed the branches thing ([ce7828d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ce7828d0e43e2178732f9421b2ffb873b00e133c))
-- restricting workflow ([8648ecf](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8648ecf95308ae8340ab0f3dbc2a170065f002e4))
-- trying space ([0e93f07](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0e93f07c299593464660e817b80c166a4030f231))
-- trying to fix release workflow ([3db3de1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3db3de1863dc4d46ac33481b31448ad5eaaa8c25))
-- version number crinkle ([c4a13f1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c4a13f14c9a02a1c45a4577b1a63253b592e7a4d))
+* added mundane comment to test out the pr stuff ([807cdbd](https://github.com/DTS-STN/Service-Canada-Design-System/commit/807cdbd14ea95de8a4d22b534c443c1b43eb86a5))
+* changing workflow ([8b046ea](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8b046ea622eb91fa8c38419a6fcdf5f8e26b2726))
+* no need for checking out the repo ([da2022e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/da2022e4de5a03df0ffad2e542312d324d0e0dd1))
+* removed space ([0ae219a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0ae219a7ba6596ef8a5bf88e7d17d2c2497a641e))
+* removed the branches thing ([ce7828d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ce7828d0e43e2178732f9421b2ffb873b00e133c))
+* restricting workflow ([8648ecf](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8648ecf95308ae8340ab0f3dbc2a170065f002e4))
+* trying space ([0e93f07](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0e93f07c299593464660e817b80c166a4030f231))
+* trying to fix release workflow ([3db3de1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3db3de1863dc4d46ac33481b31448ad5eaaa8c25))
+* version number crinkle ([c4a13f1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c4a13f14c9a02a1c45a4577b1a63253b592e7a4d))
 
 ## [1.52.18](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.17...v1.52.18) (2022-10-15)
 
+
 ### CI/CD Changes
 
-- added restriction by right means in `if:` of workflow ([786a454](https://github.com/DTS-STN/Service-Canada-Design-System/commit/786a454367329b049ad358746a5dc9e9df76932e))
+* added restriction by right means in `if:` of workflow ([786a454](https://github.com/DTS-STN/Service-Canada-Design-System/commit/786a454367329b049ad358746a5dc9e9df76932e))
 
 ## [1.52.17](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.16...v1.52.17) (2022-10-15)
 
+
 ### Bug Fixes
 
-- added not ([14d2f0b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/14d2f0b81beaefa9deb014aa6163f72d2448918d))
-- fetch depth fix ([ff9c645](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ff9c6454e6ae52ad8960b99d9e00bc421ffb9543))
-- trivial change to test workflo ([b798e83](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b798e832bb16a96a3a0dea5e945cab60ae1b11a9))
-- updated workflow names for verbosity ([7faf10e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7faf10e83c85ff8bfb7070bdb3e7491bc1284b3d))
+* added not ([14d2f0b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/14d2f0b81beaefa9deb014aa6163f72d2448918d))
+* fetch depth fix ([ff9c645](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ff9c6454e6ae52ad8960b99d9e00bc421ffb9543))
+* trivial change to test workflo ([b798e83](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b798e832bb16a96a3a0dea5e945cab60ae1b11a9))
+* updated workflow names for verbosity ([7faf10e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7faf10e83c85ff8bfb7070bdb3e7491bc1284b3d))
+
 
 ### Miscellaneous Chores
 
-- added restriction ([56f627e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/56f627e4db9e1300e2825a2ef84772f3bf123455))
+* added restriction ([56f627e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/56f627e4db9e1300e2825a2ef84772f3bf123455))
 
 ## [1.52.16](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.15...v1.52.16) (2022-10-15)
 
+
 ### Bug Fixes
 
-- added release to the branch ([a12064b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a12064bf0ad9615eccaed359fd8f7ba3a5935456))
-- another typo ([8c52cd8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8c52cd8353bf700c1bccf31a306d046f3b87af24))
-- another typo fix ([13c8c4b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/13c8c4b147e5152c2992e817c12e65526f59e71b))
-- checking if it works on other branches ([307661e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/307661e33a2cf5fcbb3e7ab8f9dbcdcc98ee1d23))
-- dead code ([63c82a8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/63c82a86a97ccb401eeba6ce6fd8f02760ea98e1))
-- directly on main ([0de9735](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0de97356266067b84f5aa9ee8721fce61adc2ad0))
-- guess what? typo ([f5f4604](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f5f46047d9737bc8e41da6822ed09a2c530a335f))
-- pls be the last one ([9d805a3](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9d805a30da65ef8f307c24cc13cac78b879887d0))
-- removed typo ([f56a6a7](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f56a6a721ba3b864745af892e8ec428a78ae2f47))
-- trigger workflow test ([ceb4bc8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ceb4bc80b0359b02b0f69cae7556e0174f73d12d))
-- typo ([20a37bb](https://github.com/DTS-STN/Service-Canada-Design-System/commit/20a37bba10e60b6c22967093d021d18c4558cb9e))
-- typo typo typo ([2b3e26b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2b3e26bc6277b699742890a5140564a3bb360a41))
-- typo! ([0e8adbc](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0e8adbcd52ff19102c78d10215f1332851e8f490))
-- typooooooo ([af4dd25](https://github.com/DTS-STN/Service-Canada-Design-System/commit/af4dd251d1f64f6a520b62bc67ea092a64fc5cf2))
-- updated pipelione ([9c50614](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9c5061400f4748feeca0a57d9d8308d2c2980364))
-- updated target branch ([11af1c8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/11af1c83609ef046ed85519dd08bbbe88fe2f45a))
-- updated workflow ([9033a9d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9033a9dc8ac4347a9e2cc0b8f7ca593d1f648549))
-- updated workflows ([9cd1b05](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9cd1b053614eeda86462cbe5fab7cdf0c1066008))
-- workflow was outdated with node ([5994e4f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5994e4f4699105eda4be664e711a21cb5f574754))
+* added release to the branch ([a12064b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a12064bf0ad9615eccaed359fd8f7ba3a5935456))
+* another typo ([8c52cd8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8c52cd8353bf700c1bccf31a306d046f3b87af24))
+* another typo fix ([13c8c4b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/13c8c4b147e5152c2992e817c12e65526f59e71b))
+* checking if it works on other branches ([307661e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/307661e33a2cf5fcbb3e7ab8f9dbcdcc98ee1d23))
+* dead code ([63c82a8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/63c82a86a97ccb401eeba6ce6fd8f02760ea98e1))
+* directly on main ([0de9735](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0de97356266067b84f5aa9ee8721fce61adc2ad0))
+* guess what? typo ([f5f4604](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f5f46047d9737bc8e41da6822ed09a2c530a335f))
+* pls be the last one ([9d805a3](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9d805a30da65ef8f307c24cc13cac78b879887d0))
+* removed typo ([f56a6a7](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f56a6a721ba3b864745af892e8ec428a78ae2f47))
+* trigger workflow test ([ceb4bc8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ceb4bc80b0359b02b0f69cae7556e0174f73d12d))
+* typo ([20a37bb](https://github.com/DTS-STN/Service-Canada-Design-System/commit/20a37bba10e60b6c22967093d021d18c4558cb9e))
+* typo typo typo ([2b3e26b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2b3e26bc6277b699742890a5140564a3bb360a41))
+* typo! ([0e8adbc](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0e8adbcd52ff19102c78d10215f1332851e8f490))
+* typooooooo ([af4dd25](https://github.com/DTS-STN/Service-Canada-Design-System/commit/af4dd251d1f64f6a520b62bc67ea092a64fc5cf2))
+* updated pipelione ([9c50614](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9c5061400f4748feeca0a57d9d8308d2c2980364))
+* updated target branch ([11af1c8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/11af1c83609ef046ed85519dd08bbbe88fe2f45a))
+* updated workflow ([9033a9d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9033a9dc8ac4347a9e2cc0b8f7ca593d1f648549))
+* updated workflows ([9cd1b05](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9cd1b053614eeda86462cbe5fab7cdf0c1066008))
+* workflow was outdated with node ([5994e4f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5994e4f4699105eda4be664e711a21cb5f574754))
+
 
 ### Miscellaneous Chores
 
-- merged ([06f3efb](https://github.com/DTS-STN/Service-Canada-Design-System/commit/06f3efb68a3115114b05c6715000990ee8b6c0e4))
+* merged ([06f3efb](https://github.com/DTS-STN/Service-Canada-Design-System/commit/06f3efb68a3115114b05c6715000990ee8b6c0e4))
 
 ## [1.52.15](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.14...v1.52.15) (2022-10-15)
 
+
 ### Bug Fixes
 
-- added directly to main.. ([5d9b023](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5d9b02361c943eb4dc42af66142ab1d2c3a753e0))
-- typo again ([025b5b6](https://github.com/DTS-STN/Service-Canada-Design-System/commit/025b5b657a4f2d30977548225967125d8c1150a1))
-- updated a whole bunch of stuff ([c194c8d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c194c8d101f1f9cd13699b0ebdc2eedce0e5f78f))
-- updated workflows yet again ([a7e50ee](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a7e50ee8819556af25d26e8c04b11ff8a2b1900b))
+* added directly to main.. ([5d9b023](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5d9b02361c943eb4dc42af66142ab1d2c3a753e0))
+* typo again ([025b5b6](https://github.com/DTS-STN/Service-Canada-Design-System/commit/025b5b657a4f2d30977548225967125d8c1150a1))
+* updated a whole bunch of stuff ([c194c8d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c194c8d101f1f9cd13699b0ebdc2eedce0e5f78f))
+* updated workflows yet again ([a7e50ee](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a7e50ee8819556af25d26e8c04b11ff8a2b1900b))
 
 ## [1.52.14](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.13...v1.52.14) (2022-10-15)
 
+
 ### Bug Fixes
 
-- added git checkout action ([d5e386b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d5e386b1a0da362cc725d5524a1c0535d097dae0))
-- updated fetch and checkout opts ([63bf799](https://github.com/DTS-STN/Service-Canada-Design-System/commit/63bf79945860568c4a5de920eb29f3584c53270f))
+* added git checkout action ([d5e386b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d5e386b1a0da362cc725d5524a1c0535d097dae0))
+* updated fetch and checkout opts ([63bf799](https://github.com/DTS-STN/Service-Canada-Design-System/commit/63bf79945860568c4a5de920eb29f3584c53270f))
 
 ## [1.52.13](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.12...v1.52.13) (2022-10-15)
 
+
 ### Bug Fixes
 
-- adding test commit via workflow ([3b41502](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3b41502c3b428ea06d2d2c1c5168d22cf498cf24))
+* adding test commit via workflow ([3b41502](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3b41502c3b428ea06d2d2c1c5168d22cf498cf24))
 
 ## [1.52.12](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.11...v1.52.12) (2022-10-15)
 
+
 ### Bug Fixes
 
-- removed pckage-name completely ([4160c75](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4160c750dbe3f0ce2e3eb40dd3ad115a39c3a094))
+* removed pckage-name completely ([4160c75](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4160c750dbe3f0ce2e3eb40dd3ad115a39c3a094))
 
 ## [1.52.11](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.10...v1.52.11) (2022-10-15)
 
+
 ### Bug Fixes
 
-- no need for checking out the repo ([e33b795](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e33b795564c848bb0731a2fca944e3290df219a0))
+* no need for checking out the repo ([e33b795](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e33b795564c848bb0731a2fca944e3290df219a0))
 
 ## [1.52.10](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.9...v1.52.10) (2022-10-15)
 
+
 ### Bug Fixes
 
-- remoevd the conditional ([1ebe0a2](https://github.com/DTS-STN/Service-Canada-Design-System/commit/1ebe0a2f107471ded3103f84fbddbac1cc024de4))
+* remoevd the conditional ([1ebe0a2](https://github.com/DTS-STN/Service-Canada-Design-System/commit/1ebe0a2f107471ded3103f84fbddbac1cc024de4))
 
 ## [1.52.9](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.8...v1.52.9) (2022-10-15)
 
+
 ### Bug Fixes
 
-- added github release back in the workflow ([061adab](https://github.com/DTS-STN/Service-Canada-Design-System/commit/061adabdb82a69b4e34d37c657b1dd38adf92733))
-- added prerelease ([37c9060](https://github.com/DTS-STN/Service-Canada-Design-System/commit/37c90604a9630923117427204562b9ff9e61bec7))
-- added prerelease option back in the config ([38035ee](https://github.com/DTS-STN/Service-Canada-Design-System/commit/38035eefb4475b0a35222d6e81eb61148adbe52f))
-- added special next flag for npm publish ([d3c6f07](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d3c6f075d57b7f2ec17ee4322f7d02d0bea29cb3))
-- am i going crazy ([533dab3](https://github.com/DTS-STN/Service-Canada-Design-System/commit/533dab392a72add1b6d517c5ab62ad0a0fe5cde1))
-- change to release as target branch for workflow ([e96e982](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e96e982688149760db120bcfd9bd7890d11c7582))
-- fixed tpo ([b60053a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b60053aeaa882b05ab4026dbe93e1f76affefc3b))
-- made mods to release pipeline ([4ff8312](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4ff8312157547d4f21a76040bf69a15854842df6))
-- name reversion ([d26db1e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d26db1eb56ee5586c96496b838c563323b87458f))
-- oops, removed testing for now for quicker testing ([6664246](https://github.com/DTS-STN/Service-Canada-Design-System/commit/66642468ff9e7b7667945d8ee7466a256176d14c))
-- removed prerelease ([4d40480](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4d4048004785d93a6aadf6e306c479a8829c6645))
-- removed release and added main ([622ceea](https://github.com/DTS-STN/Service-Canada-Design-System/commit/622ceea0a4dde935062c4353bea8a351b0b4bb62))
-- removed storybook build ([8aed074](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8aed07427b99190928967375267c55acdc5ebb73))
-- removed storybook comment linking ([087909e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/087909ef86ee72213567e91052662ae27771ee26))
-- removed the other two workflow actions for quicker testing ([faa6e23](https://github.com/DTS-STN/Service-Canada-Design-System/commit/faa6e23385020e1e14d0fc0aec9f9ff4ee4a4e14))
-- restored release branch pre-release build ([d5321ee](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d5321ee589903331f1fa9711c0d732313f0549a6))
-- testing prerelease flag ([1c780aa](https://github.com/DTS-STN/Service-Canada-Design-System/commit/1c780aa8e3b5973eb199aacbda97231dbd087a49))
-- trivial push to test changelog again ([dc78c39](https://github.com/DTS-STN/Service-Canada-Design-System/commit/dc78c39a0f712c2d755ea0cb30715cbde13cd1fc))
-- trying for a new release ([344a561](https://github.com/DTS-STN/Service-Canada-Design-System/commit/344a561fb802427faab3ae52a9f828a4cc3542b3))
-- typo again!! ([e516b5d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e516b5db2866ddade943c6100bd84082c2c676a9))
-- updated package name ([f6d583c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f6d583cd714a480d56cdb4c24f411b42d3e58919))
-- updated tYpo ([4551a4c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4551a4c172405f5d568b2fdd6a21b0c00e87983b))
-- updating prerelease strategy ([d1142c2](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d1142c2adfd968631ba8dd639c610180c7df6357))
-- workflow up ([d77f50c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d77f50c7c89f15281a26124fc49604b91b990550))
+* added github release back in the workflow ([061adab](https://github.com/DTS-STN/Service-Canada-Design-System/commit/061adabdb82a69b4e34d37c657b1dd38adf92733))
+* added prerelease ([37c9060](https://github.com/DTS-STN/Service-Canada-Design-System/commit/37c90604a9630923117427204562b9ff9e61bec7))
+* added prerelease option back in the config ([38035ee](https://github.com/DTS-STN/Service-Canada-Design-System/commit/38035eefb4475b0a35222d6e81eb61148adbe52f))
+* added special next flag for npm publish ([d3c6f07](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d3c6f075d57b7f2ec17ee4322f7d02d0bea29cb3))
+* am i going crazy ([533dab3](https://github.com/DTS-STN/Service-Canada-Design-System/commit/533dab392a72add1b6d517c5ab62ad0a0fe5cde1))
+* change to release as target branch for workflow ([e96e982](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e96e982688149760db120bcfd9bd7890d11c7582))
+* fixed tpo ([b60053a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b60053aeaa882b05ab4026dbe93e1f76affefc3b))
+* made mods to release pipeline ([4ff8312](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4ff8312157547d4f21a76040bf69a15854842df6))
+* name reversion ([d26db1e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d26db1eb56ee5586c96496b838c563323b87458f))
+* oops, removed testing for now for quicker testing ([6664246](https://github.com/DTS-STN/Service-Canada-Design-System/commit/66642468ff9e7b7667945d8ee7466a256176d14c))
+* removed prerelease ([4d40480](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4d4048004785d93a6aadf6e306c479a8829c6645))
+* removed release and added main ([622ceea](https://github.com/DTS-STN/Service-Canada-Design-System/commit/622ceea0a4dde935062c4353bea8a351b0b4bb62))
+* removed storybook build ([8aed074](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8aed07427b99190928967375267c55acdc5ebb73))
+* removed storybook comment linking ([087909e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/087909ef86ee72213567e91052662ae27771ee26))
+* removed the other two workflow actions for quicker testing ([faa6e23](https://github.com/DTS-STN/Service-Canada-Design-System/commit/faa6e23385020e1e14d0fc0aec9f9ff4ee4a4e14))
+* restored release branch pre-release build ([d5321ee](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d5321ee589903331f1fa9711c0d732313f0549a6))
+* testing prerelease flag ([1c780aa](https://github.com/DTS-STN/Service-Canada-Design-System/commit/1c780aa8e3b5973eb199aacbda97231dbd087a49))
+* trivial push to test changelog again ([dc78c39](https://github.com/DTS-STN/Service-Canada-Design-System/commit/dc78c39a0f712c2d755ea0cb30715cbde13cd1fc))
+* trying for a new release ([344a561](https://github.com/DTS-STN/Service-Canada-Design-System/commit/344a561fb802427faab3ae52a9f828a4cc3542b3))
+* typo again!! ([e516b5d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e516b5db2866ddade943c6100bd84082c2c676a9))
+* updated package name ([f6d583c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f6d583cd714a480d56cdb4c24f411b42d3e58919))
+* updated tYpo ([4551a4c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4551a4c172405f5d568b2fdd6a21b0c00e87983b))
+* updating prerelease strategy ([d1142c2](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d1142c2adfd968631ba8dd639c610180c7df6357))
+* workflow up ([d77f50c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d77f50c7c89f15281a26124fc49604b91b990550))
+
 
 ### Build System
 
-- fixed typo ([a3b9cf1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a3b9cf137c1b6e7294093a829b82a281706d1a0e))
+* fixed typo ([a3b9cf1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a3b9cf137c1b6e7294093a829b82a281706d1a0e))
+
 
 ### CI/CD Changes
 
-- name for workflow branch ([c4945b4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c4945b463a08d6bab314f33ee72fc171002effdf))
-- updated workflows for storybook ([3103c19](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3103c19d93ae4d66383f7528f7aebf591c6e4f2b))
+* name for workflow branch ([c4945b4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c4945b463a08d6bab314f33ee72fc171002effdf))
+* updated workflows for storybook ([3103c19](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3103c19d93ae4d66383f7528f7aebf591c6e4f2b))
+
 
 ### Documentation
 
-- updating reference ([4a2ada4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4a2ada4c276de388fb041499e729ef285a94b208))
+* updating reference ([4a2ada4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4a2ada4c276de388fb041499e729ef285a94b208))
 
 ## [1.52.8](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.52.7...v1.52.8) (2022-10-14)
 
