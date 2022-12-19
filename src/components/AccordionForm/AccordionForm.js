@@ -18,9 +18,11 @@ export function AccordionForm(props) {
   const { cards, id, cardsState } = props;
   const cardsRefs = cards.map(() => React.useRef(null));
   const sectionNextClick = React.useCallback(
-    (cardId, index) => {
+    (cardId, index, customFunc) => {
       return (e) => {
         e.preventDefault();
+        if (customFunc) customFunc();
+
         if (cardsState[cardId].isValid) {
           const curIndex = cards.findIndex(({ id }) => {
             return id === cardId;
@@ -135,7 +137,11 @@ export function AccordionForm(props) {
                         text={card.buttonLabel}
                         styling="primary"
                         iconAltText="icon"
-                        onClick={sectionNextClick(card.id, index)}
+                        onClick={sectionNextClick(
+                          card.id,
+                          index,
+                          card.buttonOnChange
+                        )}
                         disabled={nextCardIsOpen}
                       />
                     ) : (
@@ -186,7 +192,6 @@ AccordionForm.defaultProps = {
     title: "card1",
     children: <>default</>,
     buttonLabel: "card1 button",
-    buttonOnChange: () => {},
   },
   cardState: {
     step1: { isValid: false },
