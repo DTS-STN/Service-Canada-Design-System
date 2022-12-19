@@ -107,6 +107,8 @@
   "skipToAbout": "Passer à « Au sujet du gouvernement »",
   "switchToBasic": "Passer à la version HTML simplifiée",
   "accordionStep": "étape",
+  "accordionExpanded": "affiché",
+  "accordionCollapsed": "masqué",
   "datePicker": {
     "month": "Mois",
     "year": "Année",
