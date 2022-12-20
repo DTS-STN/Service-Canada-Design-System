@@ -11,6 +11,7 @@ export function Button(props) {
       type={props.type}
       id={props.id}
       disabled={props.disabled}
+      {...props.attribute}
     >
       {props.icon && !props.iconEnd ? (
         <div className="ds-grid ds-place-items-center ds-h-8 ds-w-8">
@@ -130,6 +131,11 @@ Button.propTypes = {
    * css overrides for button
    */
   className: PropTypes.string,
+
+  /**
+   * additional attribute for button
+   */
+  attribute: PropTypes.object,
 
   /**
    * any other elements you want to add to the button
