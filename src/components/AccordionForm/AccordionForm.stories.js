@@ -40,6 +40,10 @@ const Template = () => {
       id: "step1",
       title: "Age",
       buttonLabel: "Income",
+      buttonAttributes: {
+        "data-gc-analytics-customclick":
+          "ESDC-EDSC:Canadian OAS Benefits Est. Next Step Click:Marital Status",
+      },
       buttonOnChange: customOnNext,
       children: [
         <div>

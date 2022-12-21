@@ -118,6 +118,7 @@ export function AccordionForm(props) {
                 aria-label={`${card.title} ${
                   isOpen ? lang.accordionExpanded : lang.accordionCollapsed
                 }`}
+                // eslint-disable-next-line
                 tabIndex="0"
               >
                 {card.title}
@@ -147,6 +148,7 @@ export function AccordionForm(props) {
                           card.buttonOnChange
                         )}
                         disabled={nextCardIsOpen}
+                        attributes={card.buttonAttributes}
                       />
                     ) : (
                       <Button
@@ -155,6 +157,7 @@ export function AccordionForm(props) {
                         styling="primary"
                         iconAltText="icon"
                         onClick={card.buttonOnChange}
+                        attributes={card.buttonAttributes}
                       />
                     )}
                   </div>
@@ -231,6 +234,7 @@ AccordionForm.propTypes = {
         PropTypes.arrayOf(PropTypes.element),
       ]),
       buttonLabel: PropTypes.string,
+      buttonAttributes: PropTypes.object,
       buttonOnChange: PropTypes.func,
     })
   ),
