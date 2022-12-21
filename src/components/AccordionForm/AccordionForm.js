@@ -148,7 +148,7 @@ export function AccordionForm(props) {
                           card.buttonOnChange
                         )}
                         disabled={nextCardIsOpen}
-                        attribute={card.buttonAttribute}
+                        attributes={card.buttonAttributes}
                       />
                     ) : (
                       <Button
@@ -157,7 +157,7 @@ export function AccordionForm(props) {
                         styling="primary"
                         iconAltText="icon"
                         onClick={card.buttonOnChange}
-                        attribute={card.buttonAttribute}
+                        attributes={card.buttonAttributes}
                       />
                     )}
                   </div>
@@ -234,7 +234,7 @@ AccordionForm.propTypes = {
         PropTypes.arrayOf(PropTypes.element),
       ]),
       buttonLabel: PropTypes.string,
-      buttonAttribute: PropTypes.object,
+      buttonAttributes: PropTypes.object,
       buttonOnChange: PropTypes.func,
     })
   ),
