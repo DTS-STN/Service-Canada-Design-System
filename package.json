@@ -24,7 +24,7 @@
     "react-full-screen": "^1.1.1",
     "react-player": "^2.10.1",
     "react-router-dom": "^6.4.3",
-    "release-please": "^14.13.2",
+    "release-please": "^14.17.3",
     "shelljs": "^0.8.5",
     "ts-jest": "^29.0.3",
     "user": "^0.0.0"
