@@ -30,11 +30,21 @@ const Template = () => {
       });
     }
   };
+
+  const customOnNext = () => {
+    console.log("CUSTOM ON CLICK");
+  };
+
   const cards = [
     {
       id: "step1",
       title: "Age",
       buttonLabel: "Income",
+      buttonAttributes: {
+        "data-gc-analytics-customclick":
+          "ESDC-EDSC:Canadian OAS Benefits Est. Next Step Click:Marital Status",
+      },
+      buttonOnChange: customOnNext,
       children: [
         <div>
           <TextField
@@ -78,6 +88,7 @@ const Template = () => {
         </div>,
       ],
       buttonLabel: "Residency",
+      buttonOnChange: customOnNext,
     },
     {
       id: "step3",
@@ -102,6 +113,7 @@ const Template = () => {
         </div>,
       ],
       buttonLabel: "Marital Status",
+      buttonOnChange: customOnNext,
     },
 
     {
@@ -127,6 +139,7 @@ const Template = () => {
         </div>,
       ],
       buttonLabel: "Next",
+      buttonOnChange: customOnNext,
     },
   ];
   return <AccordionForm id="testing" cards={cards} cardsState={cardsValid} />;

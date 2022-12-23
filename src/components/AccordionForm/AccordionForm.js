@@ -17,10 +17,13 @@ import FR from "../../translations/fr.json";
 export function AccordionForm(props) {
   const { cards, id, cardsState } = props;
   const cardsRefs = cards.map(() => React.useRef(null));
+  const titleRefs = cards.map(() => React.useRef(null));
   const sectionNextClick = React.useCallback(
-    (cardId, index) => {
+    (cardId, index, customFunc) => {
       return (e) => {
         e.preventDefault();
+        if (customFunc) customFunc();
+
         if (cardsState[cardId].isValid) {
           const curIndex = cards.findIndex(({ id }) => {
             return id === cardId;
@@ -33,15 +36,15 @@ export function AccordionForm(props) {
                 : curDirtyCards;
             });
             if (cardsRefs[index + 1].current) {
-              setTimeout(
-                () =>
-                  window.scrollTo({
-                    top: cardsRefs[index + 1].current.offsetTop,
-                    left: 0,
-                    behavior: "smooth",
-                  }),
-                1
-              );
+              setTimeout(() => {
+                window.scrollTo({
+                  top: cardsRefs[index + 1].current.offsetTop,
+                  left: 0,
+                  behavior: "smooth",
+                });
+              }, 1);
+
+              titleRefs[index + 1].current.focus();
             }
           }
         }
@@ -94,9 +97,7 @@ export function AccordionForm(props) {
           aria-label={`${lang.accordionStep} ${index + 1}`}
           role="group"
         >
-          <legend className={"ds-hidden"} aria-hidden>
-            {card.title}
-          </legend>
+          <legend className={"ds-hidden"}>{card.title}</legend>
 
           {/* Number for the given card */}
           <div className="ds-flex-col ds-pb-12px">
@@ -113,6 +114,12 @@ export function AccordionForm(props) {
                 className={`ds-accordion-header ds-pl-14px ${
                   isOpen ? "ds-pb-18px" : ""
                 }`}
+                ref={titleRefs[index]}
+                aria-label={`${card.title} ${
+                  isOpen ? lang.accordionExpanded : lang.accordionCollapsed
+                }`}
+                // eslint-disable-next-line
+                tabIndex="0"
               >
                 {card.title}
               </div>
@@ -135,8 +142,13 @@ export function AccordionForm(props) {
                         text={card.buttonLabel}
                         styling="primary"
                         iconAltText="icon"
-                        onClick={sectionNextClick(card.id, index)}
+                        onClick={sectionNextClick(
+                          card.id,
+                          index,
+                          card.buttonOnChange
+                        )}
                         disabled={nextCardIsOpen}
+                        attributes={card.buttonAttributes}
                       />
                     ) : (
                       <Button
@@ -145,6 +157,7 @@ export function AccordionForm(props) {
                         styling="primary"
                         iconAltText="icon"
                         onClick={card.buttonOnChange}
+                        attributes={card.buttonAttributes}
                       />
                     )}
                   </div>
@@ -186,7 +199,6 @@ AccordionForm.defaultProps = {
     title: "card1",
     children: <>default</>,
     buttonLabel: "card1 button",
-    buttonOnChange: () => {},
   },
   cardState: {
     step1: { isValid: false },
@@ -222,6 +234,7 @@ AccordionForm.propTypes = {
         PropTypes.arrayOf(PropTypes.element),
       ]),
       buttonLabel: PropTypes.string,
+      buttonAttributes: PropTypes.object,
       buttonOnChange: PropTypes.func,
     })
   ),
