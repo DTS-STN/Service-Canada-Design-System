@@ -164,11 +164,6 @@ export { Contributors } from "./components/Contributors/Contributors";
 export { TableContent } from "./components/TableContent/TableContent";
 
 /**
- * More Info Component
- */
-export { MoreInfo } from "./components/MoreInfo/MoreInfo";
-
-/**
  * Related Links Component
  */
 export { RelatedLinks } from "./components/RelatedLinks/RelatedLinks";
