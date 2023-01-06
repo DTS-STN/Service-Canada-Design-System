@@ -15,7 +15,7 @@
     "dist/**/*"
   ],
   "dependencies": {
-    "git-conventional-commits": "^2.1.2",
+    "git-conventional-commits": "^2.4.0",
     "identity-obj-proxy": "^3.0.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
