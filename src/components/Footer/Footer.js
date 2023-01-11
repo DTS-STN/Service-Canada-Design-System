@@ -6,7 +6,6 @@ import { Link } from "../Link/Link";
 import { ENlandscapeLinks } from "../../translations/en.json";
 import { ENbrandLinks } from "../../translations/en.json";
 import { FRlandscapeLinks } from "../../translations/fr.json";
-import { FRbrandLinks } from "../../translations/fr.json";
 import { mscaFooterHeading as mscaFooterHeadingEn } from "../../translations/en.json";
 import { mscaFooterHeading as mscaFooterHeadingFr } from "../../translations/fr.json";
 import { mscaContactUs as mscacontactUsEn } from "../../translations/en.json";
@@ -21,8 +20,16 @@ const EN = "en";
 const FR = "fr";
 
 export function Footer(props) {
-  const { error, lang, btnLink, id, containerClass, isAuthenticated } = props;
-  let langBrand = lang === EN ? ENbrandLinks : lang === FR ? FRbrandLinks : [];
+  const {
+    error,
+    lang,
+    btnLink,
+    id,
+    containerClass,
+    isAuthenticated,
+    contactLink,
+    brandLinks,
+  } = props;
   let langLand =
     lang === EN ? ENlandscapeLinks : lang === FR ? FRlandscapeLinks : [];
   let mscaFooterHeading =
@@ -73,40 +80,7 @@ export function Footer(props) {
       landscapeLinkText: langLand.link9,
     },
   ];
-  const brandLinks = [
-    {
-      brandLink: langBrand.link1link,
-      brandLinkText: langBrand.link1,
-    },
-    {
-      brandLink: langBrand.link2link,
-      brandLinkText: langBrand.link2,
-    },
-    {
-      brandLink: langBrand.link3link,
-      brandLinkText: langBrand.link3,
-    },
-    {
-      brandLink: langBrand.link4link,
-      brandLinkText: langBrand.link4,
-    },
-    {
-      brandLink: langBrand.link5link,
-      brandLinkText: langBrand.link5,
-    },
-  ];
 
-  const brandLinksAuth = [
-    {
-      brandLink: langBrand.link4link,
-      brandLinkText: langBrand.link4,
-    },
-    {
-      brandLink: langBrand.link5link,
-      brandLinkText: langBrand.link5,
-    },
-  ];
-  let bLinks = isAuthenticated ? brandLinksAuth : brandLinks;
   let bLinksBg = isAuthenticated ? "sm:ds-h-86px" : "ds-h-full";
   let bottomSectionPad = isAuthenticated ? "ds-py-6px" : "ds-pt-5";
   let flex = isAuthenticated ? "sm:ds-flex-row" : "md:ds-flex-row";
@@ -176,7 +150,7 @@ export function Footer(props) {
                   <Link
                     id="footerContactUsLink"
                     text={mscaContactUs.mscaFooterContactUsText}
-                    href={mscaContactUs.mscaFooterContactUsLink}
+                    href={contactLink}
                     linkStyle="smfooterWhite"
                   />
                 </section>
@@ -199,7 +173,7 @@ export function Footer(props) {
                     About this site
                   </h2>
                   <ul className="ds-flex ds-flex-col sm:ds-flex-row">
-                    {bLinks.map((value, index) => {
+                    {brandLinks.map((value, index) => {
                       return (
                         <li
                           key={index}
@@ -211,8 +185,8 @@ export function Footer(props) {
                         >
                           <Link
                             id={"footerLink" + index}
-                            href={value.brandLink}
-                            text={value.brandLinkText}
+                            href={value.href}
+                            text={value.text}
                             linkStyle="smfooterBlue"
                           />
                         </li>
@@ -250,6 +224,33 @@ export function Footer(props) {
 
 Footer.defaultProps = {
   lang: EN,
+  brandLinks: [
+    {
+      id: "link1",
+      text: ENbrandLinks.link1,
+      href: ENbrandLinks.link1link,
+    },
+    {
+      id: "link2",
+      text: ENbrandLinks.link2,
+      href: ENbrandLinks.link2link,
+    },
+    {
+      id: "link3",
+      text: ENbrandLinks.link3,
+      href: ENbrandLinks.link3link,
+    },
+    {
+      id: "link4",
+      text: ENbrandLinks.link4,
+      href: ENbrandLinks.link4link,
+    },
+    {
+      id: "link5",
+      text: ENbrandLinks.link5,
+      href: ENbrandLinks.link5link,
+    },
+  ],
 };
 Footer.propTypes = {
   /**
@@ -279,4 +280,20 @@ Footer.propTypes = {
    * If true will display the error page version of the footer component
    */
   error: PropTypes.bool,
+
+  /**
+   * Allow user to pass in their own contact link
+   */
+  contactLink: PropTypes.string,
+
+  /**
+   * List of links to display on the footer
+   */
+  brandLinks: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      text: PropTypes.string,
+      href: PropTypes.string,
+    })
+  ),
 };
