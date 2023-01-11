@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.0.1...v1.0.2) (2023-01-11)
+
+
+### Documentation
+
+* updated README to test workflow ([cf84033](https://github.com/DTS-STN/Service-Canada-Design-System/commit/cf840332c6c889296df33265637b00b90eeb7f24))
+
 ## [1.0.1](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.0.0...v1.0.1) (2023-01-11)
 
 
