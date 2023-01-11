@@ -154,11 +154,6 @@ export { Date } from "./components/Date/Date";
 export { DatePicker } from "./components/DatePicker/DatePicker";
 
 /**
- * Contributors Component
- */
-export { Contributors } from "./components/Contributors/Contributors";
-
-/**
  * Table of Content Component
  */
 export { TableContent } from "./components/TableContent/TableContent";
@@ -174,16 +169,16 @@ export { RelatedLinks } from "./components/RelatedLinks/RelatedLinks";
 export { What } from "./components/What/What";
 
 /**
- * Contributors Component
+ * AudioPlayer Component
  */
 export { AudioPlayer } from "./components/Media/AudioPlayer/AudioPlayer";
 
 /**
- * Contributors Component
+ * Video Component
  */
 export { Video } from "./components/Media/VideoPlayer/Video";
 
 /**
- * Contributors Component
+ * YoutubePlayer Component
  */
 export { YoutubePlayer } from "./components/Media/YoutubePlayer/YoutubePlayer";
