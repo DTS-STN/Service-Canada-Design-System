@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.53.8](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.53.7...v1.53.8) (2023-01-12)
+
+
+### Documentation
+
+* updated documentation for clarity ([df00a48](https://github.com/DTS-STN/Service-Canada-Design-System/commit/df00a48c729f567c7d1f39f686e6738a4f862b65))
+
 ## [1.53.7](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.0.2...v1.53.7) (2023-01-11)
 
 
