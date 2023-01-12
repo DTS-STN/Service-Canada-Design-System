@@ -14,6 +14,9 @@ import "./styles.css";
 export function DatePicker(props) {
   const {
     id,
+    yearId,
+    monthId,
+    dayId,
     lang,
     onMonthChange,
     onDayChange,
@@ -73,14 +76,14 @@ export function DatePicker(props) {
           helpText={formLabelProps.helpText}
         />
       ) : null}
-      <div id={id} className="ds-relative ds-flex">
+      <div id={id} className="datePicker ds-relative ds-flex">
         <div className="flex flex-col">
-          <label className="ds-form-date" htmlFor={"datePickerMonth"}>
+          <label className="ds-form-date" htmlFor={monthId}>
             {language.datePicker.month}
           </label>
 
           <select
-            id="datePickerMonth"
+            id={monthId}
             defaultValue={month}
             onChange={onMonthChange}
             className="ds-w-165px ds-py-5px ds-flex ds-px-14px ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-rounded"
@@ -102,11 +105,11 @@ export function DatePicker(props) {
         </div>
         {hasDay ? (
           <div className="ds-flex ds-flex-col sm:ds-pl-24px ds-pl-8px">
-            <label htmlFor="datePickerDay" className="ds-form-date">
+            <label htmlFor={dayId} className="ds-form-date">
               {language.datePicker.day}
             </label>
             <input
-              id="datePickerDay"
+              id={dayId}
               defaultValue={day}
               type="number"
               min={"1"}
@@ -118,11 +121,11 @@ export function DatePicker(props) {
         ) : null}
         {hasYear ? (
           <div className="ds-flex ds-flex-col sm:ds-pl-24px ds-pl-8px">
-            <label htmlFor="datePickerYear" className="ds-form-date">
+            <label htmlFor={yearId} className="ds-form-date">
               {language.datePicker.year}
             </label>
             <input
-              id="datePickerYear"
+              id={yearId}
               defaultValue={year}
               type="number"
               min={minYear}
@@ -152,6 +155,9 @@ DatePicker.defaultProps = {
   minYear: 0,
   maxYear: 10000,
   lang: "en",
+  yearId: "datePickerYear",
+  monthId: "datePickerMonth",
+  dayId: "datePickerDay",
 };
 
 DatePicker.propTypes = {
@@ -159,7 +165,9 @@ DatePicker.propTypes = {
    * component id
    */
   id: PropTypes.string,
-
+  yearId: PropTypes.string,
+  monthId: PropTypes.string,
+  dayId: PropTypes.string,
   /**
    * Switch between english and french header. Pass in "en" or "fr"
    */
