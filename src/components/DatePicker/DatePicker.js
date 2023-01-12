@@ -76,7 +76,7 @@ export function DatePicker(props) {
           helpText={formLabelProps.helpText}
         />
       ) : null}
-      <div id={id} className="ds-relative ds-flex">
+      <div id={id} className="datePicker ds-relative ds-flex">
         <div className="flex flex-col">
           <label className="ds-form-date" htmlFor={monthId}>
             {language.datePicker.month}
