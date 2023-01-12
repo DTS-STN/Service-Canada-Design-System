@@ -169,7 +169,7 @@ Github Actions drive all workflow of testing and publishing artifacts on the [np
 
 | Layer                 | Stragety                                      |
 | :-------------------- | :-------------------------------------------- |
-| Web Client Tech       | HTML5, CSS3+, JS, TS                          |
+| Web Client Tech       | HTML, CSS, JS/TS                              |
 | Framework             | React                                         |
 | Version Control       | Git                                           |
 | Pre-commit Git Hooks  | Husky                                         |
