@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.53.9](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.53.8...v1.53.9) (2023-01-12)
+
+
+### Bug Fixes
+
+* add datePicker class for select style ([ac721ad](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ac721ad8c7b7c6fe7c85ef848775cc278f9fc8cc))
+
 ## [1.53.8](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.53.7...v1.53.8) (2023-01-12)
 
 
