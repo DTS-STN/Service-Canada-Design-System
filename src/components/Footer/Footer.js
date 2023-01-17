@@ -29,7 +29,6 @@ export function Footer(props) {
     isAuthenticated,
     contactLink,
     brandLinks,
-    target,
   } = props;
   let langLand =
     lang === EN ? ENlandscapeLinks : lang === FR ? FRlandscapeLinks : [];
@@ -129,7 +128,6 @@ export function Footer(props) {
                             href={value.landscapeLink}
                             text={value.landscapeLinkText}
                             linkStyle="smfooterWhite"
-                            target={target}
                             yt
                           />
                         </li>
@@ -154,7 +152,6 @@ export function Footer(props) {
                     text={mscaContactUs.mscaFooterContactUsText}
                     href={contactLink}
                     linkStyle="smfooterWhite"
-                    target={target}
                   />
                 </section>
               </div>
@@ -191,7 +188,6 @@ export function Footer(props) {
                             href={value.href}
                             text={value.text}
                             linkStyle="smfooterBlue"
-                            target={target}
                           />
                         </li>
                       );
@@ -228,7 +224,6 @@ export function Footer(props) {
 
 Footer.defaultProps = {
   lang: EN,
-  contactLink: "https://www.canada.ca/en/contact.html",
   brandLinks: [
     {
       id: "link1",
@@ -301,9 +296,4 @@ Footer.propTypes = {
       href: PropTypes.string,
     })
   ),
-
-  /**
-   * Specifies where to open the linked document
-   */
-  target: PropTypes.string,
 };
