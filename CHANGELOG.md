@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.54.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.53.9...v1.54.0) (2023-01-17)
+
+
+### Features
+
+* add tartget prop to allow user to specify where to open links ([8738273](https://github.com/DTS-STN/Service-Canada-Design-System/commit/87382733069d1639a19f13927f2f5d3307addead))
+
+
+### Bug Fixes
+
+* change harded coded target value ([b945907](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b945907464ad084126fa2b27cdcc648bdefe8ab1))
+* remove square bracket for table content ([490fd7f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/490fd7f2bb75ea68c70612456683a646dedbb62b))
+
 ## [1.53.9](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.53.8...v1.53.9) (2023-01-12)
 
 
