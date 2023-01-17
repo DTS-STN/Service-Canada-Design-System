@@ -129,7 +129,7 @@ export function Footer(props) {
                             href={value.landscapeLink}
                             text={value.landscapeLinkText}
                             linkStyle="smfooterWhite"
-                            target="_blank"
+                            target={target}
                             yt
                           />
                         </li>
@@ -154,7 +154,7 @@ export function Footer(props) {
                     text={mscaContactUs.mscaFooterContactUsText}
                     href={contactLink}
                     linkStyle="smfooterWhite"
-                    target="_self"
+                    target={target}
                   />
                 </section>
               </div>
