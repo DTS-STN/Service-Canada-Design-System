@@ -15,9 +15,7 @@ EnglishAuth.args = {
   id: "footer",
   lang: "en",
   btnLink: "/",
-  contactLink: "https://www.canada.ca/en/contact.html",
   isAuthenticated: true,
-  target: "_blank",
   brandLinks: [
     {
       id: "link1",
@@ -37,9 +35,7 @@ FrenchAuth.args = {
   id: "footer",
   lang: "fr",
   btnLink: "/",
-  contactLink: "https://www.canada.ca/fr/contact.html",
   isAuthenticated: true,
-  target: "_blank",
   brandLinks: [
     {
       id: "link1",
@@ -59,7 +55,6 @@ EnglishNonAuth.args = {
   id: "footer",
   lang: "en",
   btnLink: "/",
-  target: "_blank",
   brandLinks: [
     {
       id: "link1",
@@ -94,7 +89,6 @@ FrenchNonAuth.args = {
   id: "footer",
   lang: "fr",
   btnLink: "/",
-  target: "_blank",
   brandLinks: [
     {
       id: "link1",

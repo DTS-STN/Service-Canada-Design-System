@@ -21,7 +21,7 @@ export function TableContent(props) {
                 <Link
                   href={option.link}
                   id={`tableLink${index + 1}`}
-                  text={option.name}
+                  text={`[${option.name}]`}
                   linkStyle="cardActionLink"
                 />
               </li>
