@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { Heading } from "../Heading/Heading";
-import { Link } from "../Link/Link";
-import EN from "../../translations/en.json";
-import FR from "../../translations/fr.json";
+import { Heading } from "../../../../components/Heading/Heading";
+import { Link } from "../../../../components/Link/Link";
+import EN from "../../../../translations/en.json";
+import FR from "../../../../translations/fr.json";
 
 export function ErrorPage(props) {
   const { isAuth, errType, lang, homePageLink, accountPageLink } = props;

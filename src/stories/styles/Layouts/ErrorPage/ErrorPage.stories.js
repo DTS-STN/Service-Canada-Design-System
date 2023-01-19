@@ -2,7 +2,7 @@ import React from "react";
 import { ErrorPage } from "./ErrorPage";
 
 export default {
-  title: "Components/ErrorPage",
+  title: "Styles/Layouts/Error Pages",
   component: ErrorPage,
 };
 
