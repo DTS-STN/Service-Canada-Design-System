@@ -6,7 +6,7 @@ import warning_img from "../../assets/warning_img.svg";
 import danger_img from "../../assets/danger_img.svg";
 import info_img from "../../assets/info_img.svg";
 
-export function Message(props) {
+export function ContextualAlert(props) {
   const {
     message_heading,
     message_body,
@@ -69,7 +69,7 @@ export function Message(props) {
   );
 }
 
-Message.propTypes = {
+ContextualAlert.propTypes = {
   /**
    * component id
    */

@@ -59,9 +59,9 @@ export { Menu } from "./components/Menu/Menu";
 export { Footer } from "./components/Footer/Footer";
 
 /**
- * Message
+ * ContextualAlert
  */
-export { Message } from "./components/Message/Message";
+export { ContextualAlert } from "./components/ContextualAlert/ContextualAlert";
 
 /**
  * Cards

@@ -1,10 +1,10 @@
-import { Message } from "./Message";
+import { ContextualAlert } from "./ContextualAlert";
 export default {
-  title: "Components/Message",
-  component: Message,
+  title: "Components/ContextualAlert",
+  component: ContextualAlert,
 };
 
-const Template = (args) => <Message {...args} />;
+const Template = (args) => <ContextualAlert {...args} />;
 
 export const Success = Template.bind({});
 export const Info = Template.bind({});
