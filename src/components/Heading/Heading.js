@@ -12,7 +12,12 @@ export function Heading(props) {
       {fromLink && fromText && (
         <p className="">
           <strong>From: </strong>
-          <a href={fromLink}>{fromText}</a>
+          <a
+            href={fromLink}
+            className="ds-underline ds-text-multi-blue-blue70b ds-font-body ds-text-browserh5 ds-font-bold ds-text-mobileh5 ds-leading-33px hover:ds-text-multi-blue-blue50b"
+          >
+            {fromText}
+          </a>
         </p>
       )}
     </>
