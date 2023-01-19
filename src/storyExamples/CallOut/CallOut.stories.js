@@ -1,6 +1,6 @@
 import { CallOut } from "./CallOut";
-import { CheckBoxes } from "../../components/CheckBoxes/CheckBoxes";
-import { CheckBoxForm } from "../../components/CheckBoxForm/CheckBoxForm";
+import { CheckBox } from "../../components/CheckBox/CheckBox";
+import { FormCheckBox } from "../../components/FormCheckBox/FormCheckBox";
 import { ContextualAlert } from "../../components/ContextualAlert/ContextualAlert";
 import React from "react";
 
@@ -19,7 +19,7 @@ const Template = () => {
   const [errorState, setErrorState] = React.useState(false);
   const exampleCode = [
     <div>
-      <CheckBoxes
+      <CheckBox
         id="checkbox1"
         label="Not sure what my annual net income is"
         name="ChexBox1"
@@ -61,7 +61,7 @@ const Template2 = () => {
   const onSubmit = React.useCallback(() => true, []);
   const exampleCode = [
     <div>
-      <CheckBoxForm
+      <FormCheckBox
         checkBoxList={[
           {
             id: "checkbox1",

@@ -12,7 +12,6 @@ import "./styles/forms.css";
 import "./styles/menu.css";
 import "./styles/header.css";
 import "./icomoon/style.css";
-import "./components/CheckBoxes/checkbox.css";
 
 /**
  * layout components and navigational page elements
@@ -104,12 +103,7 @@ export { FormRadioButton } from "./components/FormRadioButton/FormRadioButton";
 /*
  * Check box
  */
-export { CheckBoxes } from "./components/CheckBoxes/CheckBoxes";
-
-/*
- * Check box
- */
-export { CheckBoxForm } from "./components/CheckBoxForm/CheckBoxForm";
+export { FormCheckBox } from "./components/FormCheckBox/FormCheckBox";
 
 /*
  * FormMultiTextField
@@ -146,7 +140,7 @@ export { Date } from "./components/Date/Date";
 /*
  * Date Picker component
  */
-export { DatePicker } from "./components/DatePicker/DatePicker";
+export { FormDatePicker } from "./components/FormDatePicker/FormDatePicker";
 
 /**
  * Table of Content Component

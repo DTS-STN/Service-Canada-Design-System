@@ -1,10 +1,10 @@
-import { CheckBoxForm } from "./CheckBoxForm";
+import { FormCheckBox } from "./FormCheckBox";
 export default {
-  title: "Components/CheckBoxForm",
-  component: CheckBoxForm,
+  title: "Components/FormCheckBox",
+  component: FormCheckBox,
 };
 
-const Template = (args) => <CheckBoxForm {...args} />;
+const Template = (args) => <FormCheckBox {...args} />;
 
 export const WithError = Template.bind({});
 WithError.args = {

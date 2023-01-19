@@ -7,9 +7,9 @@ import checkMark from "../../assets/check_mark.svg";
 /**
  * check box component for forms okay
  */
-export function CheckBoxes(props) {
+export function CheckBox(props) {
   const { id, name, value, label, hasError } = props;
-  var onChange = props.onChange === undefined ? () => {} : props.onChange;
+  var onChange = props.onChange === undefined ? () => true : props.onChange;
   const [checked, setCheckState] = useState(false);
   let display = checked === true ? "ds-visible" : "ds-hidden";
   const validationClass = hasError
@@ -44,12 +44,12 @@ export function CheckBoxes(props) {
   );
 }
 
-CheckBoxes.defaultProps = {
+CheckBox.defaultProps = {
   checked: false,
   value: "false",
 };
 
-CheckBoxes.propTypes = {
+CheckBox.propTypes = {
   /**
    * additional css for the component
    */

@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import React from "react";
 import { FormLabel } from "../FormLabel/FormLabel";
 import { FormError } from "../FormError/FormError";
-import { CheckBoxes } from "../CheckBoxes/CheckBoxes";
+import { CheckBox } from "../CheckBox/CheckBox";
 
-export function CheckBoxForm(props) {
+export function FormCheckBox(props) {
   const { id, formErrorProps, formLabelProps, checkBoxList } = props;
   let size = checkBoxList.length;
   return (
@@ -24,7 +24,7 @@ export function CheckBoxForm(props) {
               index === 0 ? " md:ds-pt-2px md:ds-pb-8px ds-pb-24px" : style
             }
           >
-            <CheckBoxes
+            <CheckBox
               id={value.id}
               name={value.name}
               value={value.value}
@@ -42,9 +42,9 @@ export function CheckBoxForm(props) {
   );
 }
 
-CheckBoxForm.defaultProps = {};
+FormCheckBox.defaultProps = {};
 
-CheckBoxForm.propTypes = {
+FormCheckBox.propTypes = {
   /**
    * component id
    */

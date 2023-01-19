@@ -11,7 +11,7 @@ import EN from "../../translations/en.json";
 import FR from "../../translations/fr.json";
 import "./styles.css";
 
-export function DatePicker(props) {
+export function FormDatePicker(props) {
   const {
     id,
     yearId,
@@ -143,7 +143,7 @@ export function DatePicker(props) {
   );
 }
 
-DatePicker.defaultProps = {
+FormDatePicker.defaultProps = {
   onMonthChange: () => {},
   onDayChange: () => {},
   onYearChange: () => {},
@@ -160,7 +160,7 @@ DatePicker.defaultProps = {
   dayId: "datePickerDay",
 };
 
-DatePicker.propTypes = {
+FormDatePicker.propTypes = {
   /**
    * component id
    */

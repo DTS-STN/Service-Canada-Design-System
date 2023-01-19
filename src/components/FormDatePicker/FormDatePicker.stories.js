@@ -1,16 +1,16 @@
 import React from "react";
-import { DatePicker } from "./DatePicker";
+import { FormDatePicker } from "./FormDatePicker";
 export default {
-  title: "Components/DatePicker",
-  component: DatePicker,
+  title: "Components/FormDatePicker",
+  component: FormDatePicker,
 };
 
-const Template = (args) => <DatePicker {...args} />;
+const Template = (args) => <FormDatePicker {...args} />;
 
 export const English = Template.bind({});
 
 English.args = {
-  id: "DatePicker",
+  id: "FormDatePicker",
   // hasYear: false,
   // hasDay: false,
   lang: "en",
@@ -36,7 +36,7 @@ English.args = {
 export const French = Template.bind({});
 
 French.args = {
-  id: "DatePicker",
+  id: "FormDatePicker",
   // hasYear: false,
   // hasDay: false,
   lang: "fr",
