@@ -38,7 +38,7 @@ export function Cards(props) {
           </p>
         )}
         {/* Replace with Label Component */}
-        <div className="ds-mb-4">
+        <div className={`${imageProps ? "ds-mb-4" : ""}`}>
           {labelProps !== undefined ? (
             <div className="ds-mt-2">
               <Label
