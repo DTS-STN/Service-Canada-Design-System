@@ -5,7 +5,7 @@ import { ContextualAlert } from "../../components/ContextualAlert/ContextualAler
 import React from "react";
 
 export default {
-  title: "Story Examples/Consequential CallOut",
+  title: "Examples/Consequential CallOut",
   parameters: {
     viewMode: "docs",
     previewTabs: {
