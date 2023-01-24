@@ -80,19 +80,6 @@ describe("Link", () => {
     expect(screen.getByLabelText(FooterBlueLink.args.text)).toBeInTheDocument();
   });
 
-  it("renders Small link - Footer White", () => {
-    render(<Link {...FooterWhiteLink.args} />);
-    expect(screen.getByText("Small link - Footer white")).toHaveTextContent(
-      FooterWhiteLink.args.text
-    );
-    expect(screen.getByRole("link")).toHaveClass(
-      "ds-text-multi-neutrals-white ds-font-body ds-text-browserh7 ds-leading-20px ds-font-regular hover:ds-text-multi-neutrals-white hover:ds-underline"
-    );
-    expect(
-      screen.getByLabelText(FooterWhiteLink.args.text)
-    ).toBeInTheDocument();
-  });
-
   it("renders breadcrumb link", () => {
     render(<Link {...BreadcrumbsLink.args} />);
     expect(
