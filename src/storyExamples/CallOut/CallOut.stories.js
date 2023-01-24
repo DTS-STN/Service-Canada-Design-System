@@ -1,11 +1,11 @@
 import { CallOut } from "./CallOut";
-import { CheckBoxes } from "../../components/CheckBoxes/CheckBoxes";
-import { CheckBoxForm } from "../../components/CheckBoxForm/CheckBoxForm";
-import { Message } from "../../components/Message/Message";
+import { CheckBox } from "../../components/CheckBox/CheckBox";
+import { FormCheckBox } from "../../components/FormCheckBox/FormCheckBox";
+import { ContextualAlert } from "../../components/ContextualAlert/ContextualAlert";
 import React from "react";
 
 export default {
-  title: "Story Examples/Consequential CallOut",
+  title: "Examples/Consequential CallOut",
   parameters: {
     viewMode: "docs",
     previewTabs: {
@@ -19,7 +19,7 @@ const Template = () => {
   const [errorState, setErrorState] = React.useState(false);
   const exampleCode = [
     <div>
-      <CheckBoxes
+      <CheckBox
         id="checkbox1"
         label="Not sure what my annual net income is"
         name="ChexBox1"
@@ -30,7 +30,7 @@ const Template = () => {
       />
       {errorState ? (
         <div className="ds-mt-34px">
-          <Message
+          <ContextualAlert
             alert_icon_alt_text="warning"
             alert_icon_id="warning icon"
             id="warning"
@@ -58,9 +58,10 @@ Default.args = {};
 const Template2 = () => {
   const [errorState, setErrorState] = React.useState(false);
   const [errorState2, setErrorState2] = React.useState(false);
+  const onSubmit = React.useCallback(() => true, []);
   const exampleCode = [
     <div>
-      <CheckBoxForm
+      <FormCheckBox
         checkBoxList={[
           {
             id: "checkbox1",
@@ -96,11 +97,11 @@ const Template2 = () => {
           required: true,
         }}
         id="temp"
-        onSubmit={() => {}}
+        onSubmit={onSubmit}
       />
       {errorState ? (
         <div className="ds-mt-34px">
-          <Message
+          <ContextualAlert
             alert_icon_alt_text="danger icon"
             alert_icon_id="danger icon"
             id="danger"
@@ -112,7 +113,7 @@ const Template2 = () => {
       ) : null}
       {errorState2 ? (
         <div className="ds-mt-34px">
-          <Message
+          <ContextualAlert
             alert_icon_alt_text="success icon"
             alert_icon_id="success icon"
             id="success"

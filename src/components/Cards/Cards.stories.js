@@ -1,5 +1,5 @@
 import { Cards } from "./Cards";
-import img from "../../assets/image3.png";
+import img from "../../assets/image4.jpg";
 export default {
   title: "Components/Cards",
   component: Cards,
@@ -10,6 +10,7 @@ const Template = (args) => <Cards {...args} />;
 export const Default = Template.bind({});
 export const DefaultLink = Template.bind({});
 export const TitleLink = Template.bind({});
+export const TitleLinkWithoutImage = Template.bind({});
 export const OneLink = Template.bind({});
 export const TwoLinkCol = Template.bind({});
 export const TwoLink = Template.bind({});
@@ -68,6 +69,20 @@ TitleLink.args = {
   },
   description:
     "Recent changes made to Employment Insurance in order to make it more flexible, inclusive and easier to access.",
+  firstLinkProps: {
+    name: "link 1",
+    path: "/",
+  },
+};
+
+TitleLinkWithoutImage.args = {
+  id: "basic card",
+  titleProps: {
+    hasLink: true,
+    title: "Card Title",
+    path: "/",
+  },
+  secondaryText: "secondary Text",
   firstLinkProps: {
     name: "link 1",
     path: "/",
