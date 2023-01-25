@@ -1,5 +1,34 @@
 # Changelog
 
+## [1.54.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.53.9...v1.54.0) (2023-01-25)
+
+
+### Features
+
+* `ErrorPage` is no longer a component and instead is a layout ([a631641](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a6316418f96302e8eb5f56891c0fbe88b4b593e3))
+* add tartget prop to allow user to specify where to open links ([8738273](https://github.com/DTS-STN/Service-Canada-Design-System/commit/87382733069d1639a19f13927f2f5d3307addead))
+* renamed DatePicker and CheckBoxForm components to FormDatePicker and FormCheckBox ([5208bea](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5208bea080547031a42e3697d8d8500e5751bbd0))
+* updated `Message` to `ContextualAlert` to match GCWeb ([5d4f35d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5d4f35d856d2057ce3f088f4710e50b69c7005b2))
+
+
+### Bug Fixes
+
+* added styling for the Heading links ([90f73f8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/90f73f89d7eb69431ec69ffc5ca0ccf1b3cc19f7))
+* change harded coded target value ([b945907](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b945907464ad084126fa2b27cdcc648bdefe8ab1))
+* footer unit test ([77991c5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/77991c5aae4fe3b06e119d435e42b221a790b13e))
+* remove square bracket for table content ([490fd7f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/490fd7f2bb75ea68c70612456683a646dedbb62b))
+* removed CheckBoxes component from storybook; serving as a lower-level component now; renamed to CheckBox ([5208bea](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5208bea080547031a42e3697d8d8500e5751bbd0))
+
+
+### Documentation
+
+* added font-family in Typography ([9ddf57d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9ddf57d0dae34f042b0c68fa655fcad0d6d522cf))
+* converted error pages to Layouts instead of actual components ([a631641](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a6316418f96302e8eb5f56891c0fbe88b4b593e3))
+* removed Footer white link story ([2a37cd4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2a37cd4b2b063280ac3c5eb9aa7cb205e930c7b4))
+* removed In Development section ([171812f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/171812fe765424293bc478f0f84b7bfed8bdbaf7))
+* renamed Storybook Examples to just Examples ([fbb1405](https://github.com/DTS-STN/Service-Canada-Design-System/commit/fbb14051f8a0b12b98626d2b5554cd41339e9f2f))
+* updated Card image; added Card story for title link without image ([fdf4302](https://github.com/DTS-STN/Service-Canada-Design-System/commit/fdf4302ea42ccdcc81164c00b72a4b0a466ce9c4))
+
 ## [1.53.9](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.53.8...v1.53.9) (2023-01-12)
 
 
