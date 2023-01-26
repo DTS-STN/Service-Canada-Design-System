@@ -8,7 +8,7 @@ import FR from "../../translations/fr.json";
  * Menu component
  */
 export function Menu(props) {
-  const { onClick, isAuthenticated, menuList, lang } = props;
+  const { onClick, isAuthenticated, menuList, lang, customLink } = props;
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdown = useRef(null);
 
@@ -89,36 +89,37 @@ export function Menu(props) {
                 aria-labelledby="dropdownLargeButton"
                 ref={dropdown}
               >
-                {menuList.map((element, index) => {
-                  const Component = element?.component || "a";
-                  return (
-                    <Component
-                      href={element.path}
-                      className={`${
-                        index === 0 ? "ds-border-none" : "ds-border-t-2"
-                      } ds-font-body ds-flex ds-items-center ds-h-[55px] ds-px-4 hover:ds-text-[#0535D2] focus:ds-outline-none ds-ring-offset-2 focus:ds-ring-2 ds-ring-[#0535D2] ds-rounded-sm  focus:ds-border-none`}
-                      key={element.key}
-                      onClick={onClick}
-                    >
-                      {element.showIcon && (
-                        <svg
-                          width="18"
-                          height="15"
-                          viewBox="0 0 18 15"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="ds-mr-3"
+                {customLink
+                  ? props.children
+                  : menuList.map((element, index) => {
+                      return (
+                        <a
+                          href={element.path}
+                          className={`${
+                            index === 0 ? "ds-border-none" : "ds-border-t-2"
+                          } ds-font-body ds-flex ds-items-center ds-h-[55px] ds-px-4 hover:ds-text-[#0535D2] focus:ds-outline-none ds-ring-offset-2 focus:ds-ring-2 ds-ring-[#0535D2] ds-rounded-sm  focus:ds-border-none`}
+                          key={element.key}
+                          onClick={onClick}
                         >
-                          <path
-                            d="M13.1665 3.33333L11.9915 4.50833L14.1415 6.66667H5.6665V8.33333H14.1415L11.9915 10.4833L13.1665 11.6667L17.3332 7.5L13.1665 3.33333ZM2.33317 1.66667H8.99984V0H2.33317C1.4165 0 0.666504 0.75 0.666504 1.66667V13.3333C0.666504 14.25 1.4165 15 2.33317 15H8.99984V13.3333H2.33317V1.66667Z"
-                            fill="#284162"
-                          />
-                        </svg>
-                      )}
-                      {element.value}
-                    </Component>
-                  );
-                })}
+                          {element.showIcon && (
+                            <svg
+                              width="18"
+                              height="15"
+                              viewBox="0 0 18 15"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="ds-mr-3"
+                            >
+                              <path
+                                d="M13.1665 3.33333L11.9915 4.50833L14.1415 6.66667H5.6665V8.33333H14.1415L11.9915 10.4833L13.1665 11.6667L17.3332 7.5L13.1665 3.33333ZM2.33317 1.66667H8.99984V0H2.33317C1.4165 0 0.666504 0.75 0.666504 1.66667V13.3333C0.666504 14.25 1.4165 15 2.33317 15H8.99984V13.3333H2.33317V1.66667Z"
+                                fill="#284162"
+                              />
+                            </svg>
+                          )}
+                          {element.value}
+                        </a>
+                      );
+                    })}
               </div>
             )}
           </div>
@@ -169,6 +170,11 @@ Menu.propTypes = {
   onClick: PropTypes.func,
 
   /**
+   * Allow user to pass in their own Link component when set true
+   */
+  customLink: PropTypes.bool,
+
+  /**
    * List of menu items to display in dropdown with links
    */
   menuList: PropTypes.arrayOf(
@@ -176,7 +182,6 @@ Menu.propTypes = {
       key: PropTypes.string,
       value: PropTypes.string,
       path: PropTypes.string,
-      component: PropTypes.elementType,
     })
   ),
 };
