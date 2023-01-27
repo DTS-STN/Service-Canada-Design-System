@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.55.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.54.0...v1.55.0) (2023-01-26)
+
+
+### Features
+
+* Add children prop to Menu to allow user to pass in child component for menu  links ([58c6a87](https://github.com/DTS-STN/Service-Canada-Design-System/commit/58c6a878c12838fa92a7d7732462df718496eb00))
+
 ## [1.54.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.53.9...v1.54.0) (2023-01-25)
 
 
