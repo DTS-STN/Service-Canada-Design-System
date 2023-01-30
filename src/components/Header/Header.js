@@ -87,7 +87,7 @@ export function Header(props) {
             isAuthenticated={isAuthenticated}
             menuList={menuProps.menuList}
             onSignOut={menuProps.onSignOut}
-            customLink={menuProps.customLink}
+            hasCustomLink={menuProps.hasCustomLink}
           >
             {props.children}
           </Menu>
