@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.55.1](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.55.0...v1.55.1) (2023-01-30)
+
+
+### Bug Fixes
+
+* add children props for header ([57f5a3d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/57f5a3d504bde5fe6bda6c6131917642799a8adf))
+* typo in prop name ([54ce9cc](https://github.com/DTS-STN/Service-Canada-Design-System/commit/54ce9cc8df2cc82ca6678baa2a38431ab741c8d1))
+
 ## [1.55.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.54.0...v1.55.0) (2023-01-26)
 
 
