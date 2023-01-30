@@ -87,7 +87,10 @@ export function Header(props) {
             isAuthenticated={isAuthenticated}
             menuList={menuProps.menuList}
             onSignOut={menuProps.onSignOut}
-          />
+            hasCustomLink={menuProps.hasCustomLink}
+          >
+            {props.children}
+          </Menu>
         )}
         {breadCrumbItems && (
           <div className={containerClass}>
@@ -117,6 +120,7 @@ Header.defaultProps = {
       { key: "outKey", value: "Sign out", path: "/" },
     ],
     hasNoMenu: false,
+    hasCustomLink: false,
   },
   topnavProps: {
     skipToMainPath: "#wb-cont",
@@ -189,6 +193,7 @@ Header.propTypes = {
     ),
     hasNoMenu: PropTypes.bool,
     useParentContainer: PropTypes.bool,
+    hasCustomLink: PropTypes.bool,
   }),
 
   /**

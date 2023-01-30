@@ -8,7 +8,7 @@ import FR from "../../translations/fr.json";
  * Menu component
  */
 export function Menu(props) {
-  const { onClick, isAuthenticated, menuList, lang, customLink } = props;
+  const { onClick, isAuthenticated, menuList, lang, hasCustomLink } = props;
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdown = useRef(null);
 
@@ -89,7 +89,7 @@ export function Menu(props) {
                 aria-labelledby="dropdownLargeButton"
                 ref={dropdown}
               >
-                {customLink
+                {hasCustomLink
                   ? props.children
                   : menuList.map((element, index) => {
                       return (
@@ -172,7 +172,7 @@ Menu.propTypes = {
   /**
    * Allow user to pass in their own Link component when set true
    */
-  customLink: PropTypes.bool,
+  hasCustomLink: PropTypes.bool,
 
   /**
    * List of menu items to display in dropdown with links
