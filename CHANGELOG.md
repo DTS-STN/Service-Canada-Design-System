@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.55.2](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.55.1...v1.55.2) (2023-02-01)
+
+
+### Bug Fixes
+
+* revert custom component change ([895a648](https://github.com/DTS-STN/Service-Canada-Design-System/commit/895a648878a563ea168657391f4e483a1383df2f))
+
 ## [1.55.1](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.55.0...v1.55.1) (2023-01-30)
 
 
