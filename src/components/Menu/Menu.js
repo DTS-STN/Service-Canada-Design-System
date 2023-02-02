@@ -100,7 +100,7 @@ export function Menu(props) {
                       key={element.key}
                       onClick={onClick}
                     >
-                      <div className="ds-flex ds-items-center">
+                      <span className="ds-flex ds-items-center">
                         {element.showIcon && (
                           <svg
                             width="18"
@@ -117,7 +117,7 @@ export function Menu(props) {
                           </svg>
                         )}
                         {element.value}
-                      </div>
+                      </span>
                     </Component>
                   );
                 })}
