@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.55.3](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.55.2...v1.55.3) (2023-02-02)
+
+
+### Bug Fixes
+
+* change div to span for header links ([753c6f8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/753c6f82109153b65cb740477ac3965cf452d083))
+* wrap text and icon in div on the link ([11f6cff](https://github.com/DTS-STN/Service-Canada-Design-System/commit/11f6cffb132ce1542fd65fafbc589c4d8f0e13be))
+
 ## [1.55.2](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.55.1...v1.55.2) (2023-02-01)
 
 
