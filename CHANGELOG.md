@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.56.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.55.4...v1.56.0) (2023-02-06)
+
+
+### Features
+
+* add custom link support for language toggle link ([723b536](https://github.com/DTS-STN/Service-Canada-Design-System/commit/723b5366eede47e1f4e75ccd811b503324c17794))
+
 ## [1.55.4](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.55.3...v1.55.4) (2023-02-06)
 
 
