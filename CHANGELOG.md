@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.55.4](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.55.3...v1.55.4) (2023-02-06)
+
+
+### Bug Fixes
+
+* dropdown menu not open when using Link ([6e532a5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/6e532a52185f7ae0fdc3ee8c06fac9e535b53121))
+
 ## [1.55.3](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.55.2...v1.55.3) (2023-02-02)
 
 
