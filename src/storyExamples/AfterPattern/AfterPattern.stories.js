@@ -4,7 +4,7 @@ import { TextField } from "../../components/TextField/TextField";
 import React from "react";
 
 export default {
-  title: "Story Examples/Exposed After Pattern",
+  title: "Examples/Exposed After Pattern",
   // parameters: {
   //   viewMode: "docs",
   //   previewTabs: {
@@ -56,7 +56,7 @@ const Template = () => {
             You will still be able to view your eligibility results. "
             name="textField1"
             className="ds-max-w-165px"
-            onChange={() => {}}
+            onChange={() => true}
             requiredText="required"
             uncontrolled
           />

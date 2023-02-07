@@ -24,6 +24,7 @@ Primary.args = {
         <p className="ds-body-bold">class-name: ds-display</p>
         <p className="ds-body">Styles: Smaller Devices</p>
         <ul>
+          <li>font-family: Patua One, cursive</li>
           <li>font-size: 60px</li>
           <li>line-height: 60px</li>
           <li>font-weight: 400</li>
@@ -43,6 +44,7 @@ Primary.args = {
         <p className="ds-body-bold">class-name: ds-heading1</p>
         <p className="ds-body">Styles: Smaller Devices</p>
         <ul>
+          <li>font-family: Lato, font-serif</li>
           <li>font-size: 34px</li>
           <li>line-height: 38px</li>
           <li>font-weight: 700</li>
@@ -64,6 +66,7 @@ Primary.args = {
         <p className="ds-body-bold">class-name: ds-heading2</p>
         <p className="ds-body">Styles: Smaller Devices</p>
         <ul>
+          <li>font-family: Lato, font-serif</li>
           <li>font-size: 32px</li>
           <li>line-height: 36px</li>
           <li>font-weight: 700</li>
@@ -83,6 +86,7 @@ Primary.args = {
         <p className="ds-body-bold">class-name: ds-heading3</p>
         <p className="ds-body">Styles: Smaller Devices/Desktop and Tablet</p>
         <ul>
+          <li>font-family: Lato, font-serif</li>
           <li>font-size: 24px</li>
           <li>line-height: 26px</li>
           <li>font-weight: 700</li>
@@ -95,6 +99,7 @@ Primary.args = {
         <p className="ds-body-bold">class-name: ds-heading4</p>
         <p className="ds-body">Styles: Smaller Devices/Desktop and Tablet</p>
         <ul>
+          <li>font-family: Lato, font-serif</li>
           <li>font-size: 22px</li>
           <li>line-height: 24px</li>
           <li>font-weight: 700</li>
@@ -107,6 +112,7 @@ Primary.args = {
         <p className="ds-body-bold">class-name: ds-heading5</p>
         <p className="ds-body">Styles: Smaller Devices/Desktop and Tablet</p>
         <ul>
+          <li>font-family: Lato, font-serif</li>
           <li>font-size: 20px</li>
           <li>line-height: 22px</li>
           <li>font-weight: 700</li>
@@ -119,6 +125,7 @@ Primary.args = {
         <p className="ds-body-bold">class-name: ds-heading6</p>
         <p className="ds-body">Styles: Smaller Devices/Desktop and Tablet</p>
         <ul>
+          <li>font-family: Lato, font-serif</li>
           <li>font-size: 19px</li>
           <li>line-height: 21px</li>
           <li>font-weight: 400</li>
@@ -134,6 +141,7 @@ Primary.args = {
         <p className="ds-body-bold">class-name: ds-body</p>
         <p className="ds-body">Styles: Smaller Devices/Desktop and Tablet</p>
         <ul>
+          <li>font-family: Noto sans, font-mono</li>
           <li>font-size: 20px</li>
           <li>line-height: 33px</li>
           <li>font-weight: 400</li>
@@ -148,6 +156,7 @@ Primary.args = {
         <p className="ds-body-bold">class-name: ds-body-bold</p>
         <p className="ds-body">Styles: Smaller Devices/Desktop and Tablet</p>
         <ul>
+          <li>font-family: Noto sans, font-mono</li>
           <li>font-size: 20px</li>
           <li>line-height: 33px</li>
           <li>font-weight: 700</li>
@@ -162,6 +171,7 @@ Primary.args = {
       <div className="ds-bg-gray-200 ds-p-4 ds-m-4">
         <p className="ds-body-bold">class-name: ds-card-title-non-link</p>
         <ul>
+          <li>font-family: Lato, font-serif</li>
           <li>font-size: 22px</li>
           <li>line-height: 28px</li>
           <li>font-weight: 700</li>
@@ -188,6 +198,7 @@ Primary.args = {
       <div className="ds-bg-gray-200 ds-p-4 ds-m-4">
         <p className="ds-body-bold">class-name: ds-caption-large</p>
         <ul>
+          <li>font-family: Noto sans, font-mono</li>
           <li>font-size: 18px</li>
           <li>line-height: 22px</li>
           <li>font-weight: 500</li>
@@ -200,6 +211,7 @@ Primary.args = {
       <div className="ds-bg-gray-200 ds-p-4 ds-m-4">
         <p className="ds-body-bold">class-name: ds-caption-regular</p>
         <ul>
+          <li>font-family: Noto sans, font-mono</li>
           <li>font-size: 16px</li>
           <li>line-height: 20px</li>
           <li>font-weight: 500</li>
@@ -212,6 +224,7 @@ Primary.args = {
       <div className="ds-bg-gray-200 ds-p-4 ds-m-4">
         <p className="ds-body-bold">class-name: ds-caption-small</p>
         <ul>
+          <li>font-family: Noto sans, font-mono</li>
           <li>font-size: 14x</li>
           <li>line-height: 18px</li>
           <li>font-weight: 500</li>

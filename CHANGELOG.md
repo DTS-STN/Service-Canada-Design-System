@@ -1,37 +1,96 @@
 # Changelog
 
-## [1.53.9](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.53.8...v1.53.9) (2023-01-12)
+## [1.56.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.55.4...v1.56.0) (2023-02-06)
 
+### Features
+
+- add custom link support for language toggle link ([723b536](https://github.com/DTS-STN/Service-Canada-Design-System/commit/723b5366eede47e1f4e75ccd811b503324c17794))
+
+## [1.55.4](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.55.3...v1.55.4) (2023-02-06)
 
 ### Bug Fixes
 
-* add datePicker class for select style ([ac721ad](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ac721ad8c7b7c6fe7c85ef848775cc278f9fc8cc))
+- dropdown menu not open when using Link ([6e532a5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/6e532a52185f7ae0fdc3ee8c06fac9e535b53121))
+
+## [1.55.3](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.55.2...v1.55.3) (2023-02-02)
+
+### Bug Fixes
+
+- change div to span for header links ([753c6f8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/753c6f82109153b65cb740477ac3965cf452d083))
+- wrap text and icon in div on the link ([11f6cff](https://github.com/DTS-STN/Service-Canada-Design-System/commit/11f6cffb132ce1542fd65fafbc589c4d8f0e13be))
+
+## [1.55.2](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.55.1...v1.55.2) (2023-02-01)
+
+### Bug Fixes
+
+- revert custom component change ([895a648](https://github.com/DTS-STN/Service-Canada-Design-System/commit/895a648878a563ea168657391f4e483a1383df2f))
+
+## [1.55.1](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.55.0...v1.55.1) (2023-01-30)
+
+### Bug Fixes
+
+- add children props for header ([57f5a3d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/57f5a3d504bde5fe6bda6c6131917642799a8adf))
+- typo in prop name ([54ce9cc](https://github.com/DTS-STN/Service-Canada-Design-System/commit/54ce9cc8df2cc82ca6678baa2a38431ab741c8d1))
+
+## [1.55.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.54.0...v1.55.0) (2023-01-26)
+
+### Features
+
+- Add children prop to Menu to allow user to pass in child component for menu links ([58c6a87](https://github.com/DTS-STN/Service-Canada-Design-System/commit/58c6a878c12838fa92a7d7732462df718496eb00))
+
+## [1.54.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.53.9...v1.54.0) (2023-01-25)
+
+### Features
+
+- `ErrorPage` is no longer a component and instead is a layout ([a631641](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a6316418f96302e8eb5f56891c0fbe88b4b593e3))
+- add tartget prop to allow user to specify where to open links ([8738273](https://github.com/DTS-STN/Service-Canada-Design-System/commit/87382733069d1639a19f13927f2f5d3307addead))
+- renamed DatePicker and CheckBoxForm components to FormDatePicker and FormCheckBox ([5208bea](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5208bea080547031a42e3697d8d8500e5751bbd0))
+- updated `Message` to `ContextualAlert` to match GCWeb ([5d4f35d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5d4f35d856d2057ce3f088f4710e50b69c7005b2))
+
+### Bug Fixes
+
+- added styling for the Heading links ([90f73f8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/90f73f89d7eb69431ec69ffc5ca0ccf1b3cc19f7))
+- change harded coded target value ([b945907](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b945907464ad084126fa2b27cdcc648bdefe8ab1))
+- footer unit test ([77991c5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/77991c5aae4fe3b06e119d435e42b221a790b13e))
+- remove square bracket for table content ([490fd7f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/490fd7f2bb75ea68c70612456683a646dedbb62b))
+- removed CheckBoxes component from storybook; serving as a lower-level component now; renamed to CheckBox ([5208bea](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5208bea080547031a42e3697d8d8500e5751bbd0))
+
+### Documentation
+
+- added font-family in Typography ([9ddf57d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9ddf57d0dae34f042b0c68fa655fcad0d6d522cf))
+- converted error pages to Layouts instead of actual components ([a631641](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a6316418f96302e8eb5f56891c0fbe88b4b593e3))
+- removed Footer white link story ([2a37cd4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2a37cd4b2b063280ac3c5eb9aa7cb205e930c7b4))
+- removed In Development section ([171812f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/171812fe765424293bc478f0f84b7bfed8bdbaf7))
+- renamed Storybook Examples to just Examples ([fbb1405](https://github.com/DTS-STN/Service-Canada-Design-System/commit/fbb14051f8a0b12b98626d2b5554cd41339e9f2f))
+- updated Card image; added Card story for title link without image ([fdf4302](https://github.com/DTS-STN/Service-Canada-Design-System/commit/fdf4302ea42ccdcc81164c00b72a4b0a466ce9c4))
+
+## [1.53.9](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.53.8...v1.53.9) (2023-01-12)
+
+### Bug Fixes
+
+- add datePicker class for select style ([ac721ad](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ac721ad8c7b7c6fe7c85ef848775cc278f9fc8cc))
 
 ## [1.53.8](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.53.7...v1.53.8) (2023-01-12)
 
-
 ### Documentation
 
-* updated documentation for clarity ([df00a48](https://github.com/DTS-STN/Service-Canada-Design-System/commit/df00a48c729f567c7d1f39f686e6738a4f862b65))
+- updated documentation for clarity ([df00a48](https://github.com/DTS-STN/Service-Canada-Design-System/commit/df00a48c729f567c7d1f39f686e6738a4f862b65))
 
 ## [1.53.7](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.0.2...v1.53.7) (2023-01-11)
 
-
 ### Bug Fixes
 
-* bumping version manually back down ([06d1908](https://github.com/DTS-STN/Service-Canada-Design-System/commit/06d1908007fa60ce257a6065317aebb0a5f0519d))
-* modified lock version ([4b28ff8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4b28ff82334825877a1799ca066c3094555e96c9))
-
+- bumping version manually back down ([06d1908](https://github.com/DTS-STN/Service-Canada-Design-System/commit/06d1908007fa60ce257a6065317aebb0a5f0519d))
+- modified lock version ([4b28ff8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4b28ff82334825877a1799ca066c3094555e96c9))
 
 ### Documentation
 
-* cleaned up ([3ae5f27](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3ae5f273f171474d72de65f850c7b2f7f60c4ab6))
-* manually modified CHANGELOG to remove old release notes ([715d598](https://github.com/DTS-STN/Service-Canada-Design-System/commit/715d59831614ccd75451a67339da904f78f9ea07))
-
+- cleaned up ([3ae5f27](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3ae5f273f171474d72de65f850c7b2f7f60c4ab6))
+- manually modified CHANGELOG to remove old release notes ([715d598](https://github.com/DTS-STN/Service-Canada-Design-System/commit/715d59831614ccd75451a67339da904f78f9ea07))
 
 ### Miscellaneous Chores
 
-* release 1.53.7 ([5535cc5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5535cc5be1d5af17e77a49a961f5a40e37988e86))
+- release 1.53.7 ([5535cc5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5535cc5be1d5af17e77a49a961f5a40e37988e86))
 
 ## 1.53.6 (2023-01-11)
 

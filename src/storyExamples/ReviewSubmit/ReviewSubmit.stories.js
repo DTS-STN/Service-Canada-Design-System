@@ -3,7 +3,7 @@ import { ReviewSubmit } from "../../components/ReviewSubmit/ReviewSubmit";
 import { Button } from "../../components/Button/Button";
 
 export default {
-  title: "Story Examples/ReviewSubmit",
+  title: "Examples/ReviewSubmit",
   component: ReviewSubmit,
 };
 
@@ -99,7 +99,7 @@ const Template = () => {
       id="testingReview"
       required_children={required_children}
       optional_children={optional_children}
-      back_btn_onClick={() => {}}
+      back_btn_onClick={() => true}
     />
   );
 };

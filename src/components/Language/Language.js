@@ -16,6 +16,7 @@ export function Language(props) {
           text="Français"
           abbr="FR"
           locale={props.locale}
+          component={props.customLink}
         />
       ) : (
         <Link
@@ -25,6 +26,7 @@ export function Language(props) {
           text="English"
           abbr="EN"
           locale={props.locale}
+          component={props.customLink}
         />
       )}
     </>
