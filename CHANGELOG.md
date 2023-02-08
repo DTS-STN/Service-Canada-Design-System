@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.56.3](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.56.2...v1.56.3) (2023-02-08)
+
+
+### Bug Fixes
+
+* close dropdown on click link ([467e7e9](https://github.com/DTS-STN/Service-Canada-Design-System/commit/467e7e92d192336f6107c2db0389a59acc654b33))
+
 ## [1.56.2](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.56.1...v1.56.2) (2023-02-08)
 
 
