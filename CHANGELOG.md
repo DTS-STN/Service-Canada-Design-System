@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.56.2](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.56.1...v1.56.2) (2023-02-08)
+
+
+### Bug Fixes
+
+* move link props back to parent component ([c7a5acc](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c7a5acc5e5bab0867dbf8ec8e06ad931bd55b828))
+
 ## [1.56.1](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.56.0...v1.56.1) (2023-02-08)
 
 
