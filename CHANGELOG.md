@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.56.1](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.56.0...v1.56.1) (2023-02-08)
+
+
+### Bug Fixes
+
+* adding locale prop to the link ([7f19632](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7f19632236b5e281822705c455b2f3681c46d284))
+* forcing workflow to publish ([32928de](https://github.com/DTS-STN/Service-Canada-Design-System/commit/32928deae26048a103c49ae13abc0188b69c6bd6))
+* update dependencies ([1b894f2](https://github.com/DTS-STN/Service-Canada-Design-System/commit/1b894f22bce428d4da10b50dc868c29861030efc))
+* upgrade react-router-dom from 6.6.1 to 6.6.2 ([383c86d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/383c86d57e11dc6d2ee5b840580ba327f8162dde))
+
 ## [1.56.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.55.4...v1.56.0) (2023-02-06)
 
 ### Features
