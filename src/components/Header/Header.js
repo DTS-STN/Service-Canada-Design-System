@@ -61,6 +61,7 @@ export function Header(props) {
                 lang={lang}
                 path={linkPath}
                 locale={locale}
+                customLink={customLink}
               />
             </div>
           </div>
@@ -78,6 +79,7 @@ export function Header(props) {
                   lang={lang}
                   path={linkPath}
                   customLink={customLink}
+                  locale={locale}
                 />
               </div>
             </>
@@ -88,6 +90,7 @@ export function Header(props) {
                 lang={lang}
                 path={linkPath}
                 customLink={customLink}
+                locale={locale}
               />
             </div>
           )}
