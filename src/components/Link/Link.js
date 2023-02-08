@@ -39,21 +39,19 @@ export function Link(props) {
   const Component = props.component || "a";
 
   return Component !== "a" ? (
-    <Component
-      href={props.href}
-      className={`${basicStyle}`}
-      id={props.id}
-      data-testid={props.dataTestId}
-      data-cy={props.dataCy || props.id}
-      data-cy-button={props.dataCyButton}
-      disabled={props.disabled}
-      lang={props.lang}
-      target={props.target}
-      aria-label={props.ariaLabel || props.text}
-      role="link"
-      locale={props.locale}
-    >
-      <a>
+    <Component href={props.href}>
+      <a
+        className={`${basicStyle}`}
+        id={props.id}
+        data-testid={props.dataTestId}
+        data-cy={props.dataCy || props.id}
+        data-cy-button={props.dataCyButton}
+        disabled={props.disabled}
+        lang={props.lang}
+        target={props.target}
+        aria-label={props.ariaLabel || props.text}
+        locale={props.locale}
+      >
         {/* <!-- English Text: English --> */}
         <span className={props.abbr ? "ds-language-toggle-text" : ""}>
           {props.text}
