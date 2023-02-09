@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.56.5](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.56.4...v1.56.5) (2023-02-09)
+
+
+### Bug Fixes
+
+* update proptype for lang ([605a799](https://github.com/DTS-STN/Service-Canada-Design-System/commit/605a799503c58c68559e6ed95682ec9a75e5f8fd))
+
 ## [1.56.4](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.56.3...v1.56.4) (2023-02-09)
 
 
