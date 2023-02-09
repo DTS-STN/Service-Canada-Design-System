@@ -14,7 +14,6 @@ export function Menu(props) {
   const { onClick, isAuthenticated, menuList, lang } = props;
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdown = useRef(null);
-  console.log(menuList);
 
   useEffect(() => {
     // Hide dropdown when click outside
