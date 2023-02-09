@@ -92,6 +92,7 @@ export function Link(props) {
 
 Link.defaultProps = {
   target: "_self",
+  href: "#",
 };
 
 Link.propTypes = {
