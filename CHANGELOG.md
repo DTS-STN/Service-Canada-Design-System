@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.56.4](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.56.3...v1.56.4) (2023-02-09)
+
+
+### Bug Fixes
+
+* give href a default value for links ([4afbd23](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4afbd235e3b012d8e5ac7d4d143b81fb51edc676))
+* remove console.log in menu ([1cf700c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/1cf700cf978763512efd2146a071d9a36afbeaa2))
+* update default href for link ([2a142b9](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2a142b93fe05c94ce80c7661c34ce3817d21f7a8))
+
 ## [1.56.3](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.56.2...v1.56.3) (2023-02-08)
 
 
