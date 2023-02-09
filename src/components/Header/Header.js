@@ -149,7 +149,7 @@ Header.propTypes = {
   /**
    * Switch between english and french header. Pass in "en" or "fr"
    */
-  lang: PropTypes.oneOf(["en", "fr"]),
+  lang: PropTypes.string,
 
   /**
    * Language toggle redirection link
