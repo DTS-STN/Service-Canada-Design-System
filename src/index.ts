@@ -171,3 +171,8 @@ export { Video } from "./components/Media/VideoPlayer/Video";
  * YoutubePlayer Component
  */
 export { YoutubePlayer } from "./components/Media/YoutubePlayer/YoutubePlayer";
+
+/**
+ * Error Page
+ */
+export { ErrorPage } from "./stories/styles/Layouts/ErrorPage/ErrorPage";
