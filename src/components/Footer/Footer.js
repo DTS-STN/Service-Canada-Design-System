@@ -176,7 +176,8 @@ export function Footer(props) {
                     About this site
                   </h2>
                   <ul className="ds-flex ds-flex-col sm:ds-flex-row">
-                    {brandLinks.map((value, index) => {
+                    {brandLinks.map(({ href, text, onClick }, index) => {
+                      console.log(">Q", text, href, onClick);
                       return (
                         <li
                           key={index}
@@ -187,9 +188,10 @@ export function Footer(props) {
                           }
                         >
                           <Link
+                            onClick={onClick ? onClick : undefined}
                             id={"footerLink" + index}
-                            href={value.href}
-                            text={value.text}
+                            href={href}
+                            text={text}
                             linkStyle="smfooterBlue"
                             target={target}
                           />
