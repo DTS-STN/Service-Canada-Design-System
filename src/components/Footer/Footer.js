@@ -177,7 +177,6 @@ export function Footer(props) {
                   </h2>
                   <ul className="ds-flex ds-flex-col sm:ds-flex-row">
                     {brandLinks.map(({ href, text, onClick }, index) => {
-                      console.log(">Q", text, href, onClick);
                       return (
                         <li
                           key={index}
