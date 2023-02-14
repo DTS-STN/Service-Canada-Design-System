@@ -25,6 +25,7 @@ export function Header(props) {
     breadCrumbItems,
     topnavProps,
     useParentContainer,
+    customLink,
   } = props;
 
   const containerClass = useParentContainer ? "" : "ds-container";
@@ -60,6 +61,7 @@ export function Header(props) {
                 lang={lang}
                 path={linkPath}
                 locale={locale}
+                customLink={customLink}
               />
             </div>
           </div>
@@ -72,12 +74,24 @@ export function Header(props) {
                 />
               </div>
               <div className="ds-hidden sm:ds-flex sm:ds-pt-10px md:ds-pt-18px">
-                <Language id="lang1" lang={lang} path={linkPath} />
+                <Language
+                  id="lang1"
+                  lang={lang}
+                  path={linkPath}
+                  customLink={customLink}
+                  locale={locale}
+                />
               </div>
             </>
           ) : (
             <div className="ds-pb-10px sm:ds-pb-14px md:ds-pb-0 ds-hidden sm:ds-ml-auto sm:ds-flex sm:ds-pt-10px md:ds-pt-18px">
-              <Language id="lang1" lang={lang} path={linkPath} />
+              <Language
+                id="lang1"
+                lang={lang}
+                path={linkPath}
+                customLink={customLink}
+                locale={locale}
+              />
             </div>
           )}
         </div>
@@ -135,12 +149,17 @@ Header.propTypes = {
   /**
    * Switch between english and french header. Pass in "en" or "fr"
    */
-  lang: PropTypes.oneOf(["en", "fr"]),
+  lang: PropTypes.string,
 
   /**
    * Language toggle redirection link
    */
   linkPath: PropTypes.string,
+
+  /**
+   * Allow user to pass in custom Link component
+   **/
+  customLink: PropTypes.elementType,
 
   /**
    * isAuthenticated: bool to switch between authenticated and non authenticated menus

@@ -15,7 +15,9 @@ EnglishAuth.args = {
   id: "footer",
   lang: "en",
   btnLink: "/",
+  contactLink: "https://www.canada.ca/en/contact.html",
   isAuthenticated: true,
+  target: "_blank",
   brandLinks: [
     {
       id: "link1",
@@ -35,7 +37,9 @@ FrenchAuth.args = {
   id: "footer",
   lang: "fr",
   btnLink: "/",
+  contactLink: "https://www.canada.ca/fr/contact.html",
   isAuthenticated: true,
+  target: "_blank",
   brandLinks: [
     {
       id: "link1",
@@ -55,6 +59,7 @@ EnglishNonAuth.args = {
   id: "footer",
   lang: "en",
   btnLink: "/",
+  target: "_blank",
   brandLinks: [
     {
       id: "link1",
@@ -89,6 +94,7 @@ FrenchNonAuth.args = {
   id: "footer",
   lang: "fr",
   btnLink: "/",
+  target: "_blank",
   brandLinks: [
     {
       id: "link1",
@@ -123,4 +129,27 @@ ErrorPageFooter.args = {
   id: "footer",
   btnLink: "/",
   error: true,
+};
+
+export const FooterWithClickHandler = Template.bind({});
+FooterWithClickHandler.args = {
+  id: "footer",
+  btnLink: "/",
+  brandLinks: [
+    {
+      id: "link1",
+      text: "Without onClick",
+      href: FRbrandLinks.link1link,
+    },
+    {
+      id: "link2",
+      text: "With onClick",
+      href: FRbrandLinks.link1link,
+      onClick: (e) => {
+        console.log(e);
+        e.preventDefault();
+        alert("Add any click handler to footer links");
+      },
+    },
+  ],
 };

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -37,7 +38,7 @@ export function Link(props) {
 
   const Component = props.component || "a";
 
-  return (
+  return Component !== "a" ? (
     <Component
       href={props.href}
       className={`${basicStyle}`}
@@ -51,6 +52,33 @@ export function Link(props) {
       aria-label={props.ariaLabel || props.text}
       role="link"
       locale={props.locale}
+      onClick={props.onClick ? props.onClick : undefined}
+    >
+      <a>
+        {/* <!-- English Text: English --> */}
+        <span className={props.abbr ? "ds-language-toggle-text" : ""}>
+          {props.text}
+        </span>
+        {/* <!-- English Text: title="English", en --> */}
+        <abbr className="ds-language-toggle-abbr" title={props.text}>
+          {props.abbr}
+        </abbr>
+      </a>
+    </Component>
+  ) : (
+    <a
+      href={props.href}
+      className={`${basicStyle}`}
+      id={props.id}
+      data-testid={props.dataTestId}
+      data-cy={props.dataCy || props.id}
+      data-cy-button={props.dataCyButton}
+      disabled={props.disabled}
+      lang={props.lang}
+      target={props.target}
+      aria-label={props.ariaLabel || props.text}
+      locale={props.locale}
+      onClick={props.onClick ? props.onClick : undefined}
     >
       {/* <!-- English Text: English --> */}
       <span className={props.abbr ? "ds-language-toggle-text" : ""}>
@@ -60,12 +88,13 @@ export function Link(props) {
       <abbr className="ds-language-toggle-abbr" title={props.text}>
         {props.abbr}
       </abbr>
-    </Component>
+    </a>
   );
 }
 
 Link.defaultProps = {
   target: "_self",
+  href: "#",
 };
 
 Link.propTypes = {

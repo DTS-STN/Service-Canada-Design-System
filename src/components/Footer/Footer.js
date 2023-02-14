@@ -29,6 +29,7 @@ export function Footer(props) {
     isAuthenticated,
     contactLink,
     brandLinks,
+    target,
   } = props;
   let langLand =
     lang === EN ? ENlandscapeLinks : lang === FR ? FRlandscapeLinks : [];
@@ -128,6 +129,7 @@ export function Footer(props) {
                             href={value.landscapeLink}
                             text={value.landscapeLinkText}
                             linkStyle="smfooterWhite"
+                            target={target}
                             yt
                           />
                         </li>
@@ -152,6 +154,7 @@ export function Footer(props) {
                     text={mscaContactUs.mscaFooterContactUsText}
                     href={contactLink}
                     linkStyle="smfooterWhite"
+                    target={target}
                   />
                 </section>
               </div>
@@ -173,7 +176,7 @@ export function Footer(props) {
                     About this site
                   </h2>
                   <ul className="ds-flex ds-flex-col sm:ds-flex-row">
-                    {brandLinks.map((value, index) => {
+                    {brandLinks.map(({ href, text, onClick }, index) => {
                       return (
                         <li
                           key={index}
@@ -184,10 +187,12 @@ export function Footer(props) {
                           }
                         >
                           <Link
+                            onClick={onClick ? onClick : undefined}
                             id={"footerLink" + index}
-                            href={value.href}
-                            text={value.text}
+                            href={href}
+                            text={text}
                             linkStyle="smfooterBlue"
+                            target={target}
                           />
                         </li>
                       );
@@ -224,6 +229,7 @@ export function Footer(props) {
 
 Footer.defaultProps = {
   lang: EN,
+  contactLink: "https://www.canada.ca/en/contact.html",
   brandLinks: [
     {
       id: "link1",
@@ -296,4 +302,9 @@ Footer.propTypes = {
       href: PropTypes.string,
     })
   ),
+
+  /**
+   * Specifies where to open the linked document
+   */
+  target: PropTypes.string,
 };

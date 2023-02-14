@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
@@ -36,7 +39,10 @@ export function Menu(props) {
           </p>
         </div>
         {isAuthenticated ? (
-          <div className="ds-w-full sm:ds-w-[260px] ds-bg-[#EBF2FC] hover:ds-bg-[#CFD1D5] focus:ds-bg-[#CFD1D5]">
+          <div
+            className="ds-w-full sm:ds-w-[260px] ds-bg-[#EBF2FC] hover:ds-bg-[#CFD1D5] focus:ds-bg-[#CFD1D5]"
+            ref={dropdown}
+          >
             <button
               id="dropdownNavbarLink"
               onClick={() => setShowDropdown((e) => !e)}
@@ -87,18 +93,46 @@ export function Menu(props) {
                 id="dropdownNavbar"
                 className="sm:ds-absolute sm:ds-w-[260px] dropdownShadow ds-text-[#284162] ds-bg-white"
                 aria-labelledby="dropdownLargeButton"
-                ref={dropdown}
               >
                 {menuList.map((element, index) => {
                   const Component = element?.component || "a";
-                  return (
-                    <Component
-                      href={element.path}
+                  return Component !== "a" ? (
+                    <div onClick={() => setShowDropdown(false)}>
+                      <Component href={element.path}>
+                        <a
+                          className={`${
+                            index === 0 ? "ds-border-none" : "ds-border-t-2"
+                          } ds-font-body ds-flex ds-items-center ds-h-[55px] ds-px-4 hover:ds-text-[#0535D2] focus:ds-outline-none ds-ring-offset-2 focus:ds-ring-2 ds-ring-[#0535D2] ds-rounded-sm  focus:ds-border-none`}
+                          key={element.key}
+                          onClick={onClick}
+                        >
+                          {element.showIcon && (
+                            <svg
+                              width="18"
+                              height="15"
+                              viewBox="0 0 18 15"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="ds-mr-3"
+                            >
+                              <path
+                                d="M13.1665 3.33333L11.9915 4.50833L14.1415 6.66667H5.6665V8.33333H14.1415L11.9915 10.4833L13.1665 11.6667L17.3332 7.5L13.1665 3.33333ZM2.33317 1.66667H8.99984V0H2.33317C1.4165 0 0.666504 0.75 0.666504 1.66667V13.3333C0.666504 14.25 1.4165 15 2.33317 15H8.99984V13.3333H2.33317V1.66667Z"
+                                fill="#284162"
+                              />
+                            </svg>
+                          )}
+                          {element.value}
+                        </a>
+                      </Component>
+                    </div>
+                  ) : (
+                    <a
                       className={`${
                         index === 0 ? "ds-border-none" : "ds-border-t-2"
                       } ds-font-body ds-flex ds-items-center ds-h-[55px] ds-px-4 hover:ds-text-[#0535D2] focus:ds-outline-none ds-ring-offset-2 focus:ds-ring-2 ds-ring-[#0535D2] ds-rounded-sm  focus:ds-border-none`}
                       key={element.key}
                       onClick={onClick}
+                      href={element.path}
                     >
                       {element.showIcon && (
                         <svg
@@ -116,7 +150,7 @@ export function Menu(props) {
                         </svg>
                       )}
                       {element.value}
-                    </Component>
+                    </a>
                   );
                 })}
               </div>
