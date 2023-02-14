@@ -52,6 +52,12 @@ export function FormDatePicker(props) {
     "12",
   ];
 
+  function preventNumberInput(ev) {
+    var sKey = String.fromCharCode(ev.which);
+    if ((!sKey.match(/[0-9]/) || !sKey === "") && ev.key !== "Backspace")
+      ev.preventDefault();
+  }
+
   useEffect(() => {
     // blur the input element on scroll instead of changing the value! Does not affect Keyboard input.
     const handleScroll = () => {
@@ -65,6 +71,10 @@ export function FormDatePicker(props) {
     // remove event listener when component unmounts
     return () => document.removeEventListener("wheel", handleScroll);
   }, []);
+
+  const validationClass = hasError
+    ? "ds-border-specific-red-red50b focus:ds-border-multi-blue-blue60f focus:ds-shadow-text-input"
+    : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f focus:ds-shadow-text-input";
 
   return (
     <>
@@ -86,7 +96,7 @@ export function FormDatePicker(props) {
             id={monthId}
             defaultValue={month}
             onChange={onMonthChange}
-            className="ds-w-165px ds-py-5px ds-flex ds-px-14px ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-rounded"
+            className={`ds-w-165px ds-py-5px ds-flex ds-px-14px ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-rounded ${validationClass}`}
           >
             {monthValues.map((mv, index) => (
               <option value={mv} key={`datePicker-month-option-${index}`}>
@@ -115,7 +125,9 @@ export function FormDatePicker(props) {
               min={"1"}
               max={maxDay}
               onChange={onDayChange}
-              className="ds-w-46px sm:ds-w-68px ds-px-10px ds-rounded ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-py-5px "
+              onKeyDown={preventNumberInput}
+              onKeyUp={preventNumberInput}
+              className={`ds-w-46px sm:ds-w-68px ds-px-10px ds-rounded ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-py-5px ${validationClass}`}
             />
           </div>
         ) : null}
@@ -131,7 +143,9 @@ export function FormDatePicker(props) {
               min={minYear}
               max={maxYear}
               onChange={onYearChange}
-              className="ds-w-70px sm:ds-w-165px ds-py-5px ds-px-10px ds-rounded ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a"
+              onKeyDown={preventNumberInput}
+              onKeyUp={preventNumberInput}
+              className={`ds-w-70px sm:ds-w-165px ds-py-5px ds-px-10px ds-rounded ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ${validationClass}`}
             />
           </div>
         ) : null}
