@@ -5,10 +5,14 @@ import faUserO from "../../assets/user-o.svg";
 
 export function FeedbackTool(props) {
   return (
-    <div className="ds-flex-col ds-pb-12px">
-      <div className="cardNumber ds-flex ds-flex-row">
-        <div className="ds-relative">
-          <Image src={faUserO} className="ds-w-28px ds-h-28px" />
+    <div className="ds-bg-multi-blue-blue2 ds-p-3">
+      <div className="ds-flex ds-flex-row">
+        <div className="ds-flex ds-flex-col ds-w-[60px] ds-shrink-0">
+          <Image src={faUserO} className="ds-w-[60px]" />
+          <div className="ds-flex-grow ds-divide-x-2 ds-divide-multi-blue-blue60a ds-flex ds-flex-row ds-justify-center ds-mt-3">
+            <div></div>
+            <div></div>
+          </div>
           {/* <span
           className="ds-leading-48px ds-absolute ds-left-3.5 ds-bottom-0.5 ds-accordion-num"
           aria-hidden={true}
@@ -16,18 +20,61 @@ export function FeedbackTool(props) {
           1
         </span> */}
         </div>
-        <div
-          className={`ds-accordion-header ds-pl-14px ds-pb-18px ds-text-multi-neutrals-grey100`}
-          // ref={titleRefs[index]}
-          // aria-label={`${card.title} ${isOpen ? lang.accordionExpanded : lang.accordionCollapsed
-          // }`}
-          // eslint-disable-next-line
-          tabIndex="0"
-        >
-          Sign up to get invited to research sessions
+        <div className=" ds-pt-0 ds-pl-5 ds-pb-18px ">
+          <h3
+            className={`ds-heading2 ds-text-multi-neutrals-grey100`}
+            // ref={titleRefs[index]}
+            // aria-label={`${card.title} ${isOpen ? lang.accordionExpanded : lang.accordionCollapsed
+            // }`}
+            // eslint-disable-next-line
+            tabIndex="0"
+          >
+            Sign up to get invited to research sessions
+          </h3>
+          <p className="ds-body">
+            You’re invited to test our experimental ideas and participate in
+            research interviews to make Service Canada better for everyone.
+            Every bit of feedback helps us make sure we’re making our services
+            simple and easy to use.
+          </p>
+          <aside class="pt-3 border-l-2 ml-2 lg:ml-3.5 border-custom-blue-blue xl:w-3/4">
+            <div class="text-base lg:text-p ml-6 pb-3 whitespace-pre-line">
+              You’re invited to test our experimental ideas and participate in
+              research interviews to make Service Canada better for everyone.
+              Every bit of feedback helps us make sure we’re making our services
+              simple and easy to use. Your participation will not affect your
+              access to government services. You can{" "}
+              <a href="/unsubscribe" style={{ textDecoration: "underline" }}>
+                unsubscribe
+              </a>{" "}
+              at any time.
+            </div>
+            <div class="ml-6">
+              <p class="flex mb-4 text-center">
+                <a
+                  aria-label="undefined"
+                  class="rounded focus:ring-1 focus:ring-black focus:ring-offset-2 py-1.5 px-3 rounded text-white text-base lg:text-p font-display bg-custom-blue-dark hover:bg-custom-blue-light border border-custom-blue-darker active:bg-custom-blue-darker hover:ring-2 hover:ring-white"
+                  id="become-a-participant-btn"
+                  data-cy="become-a-participant-btn"
+                  role="button"
+                  draggable="false"
+                  href="/en/signup-info"
+                >
+                  Sign up to get invited to research sessions
+                </a>
+              </p>
+              <p>
+                <a
+                  class="text-base lg:text-p underline flex xl:inline lg:mr-10"
+                  href="/en/signup/privacy"
+                >
+                  Review the privacy policy
+                </a>
+              </p>
+            </div>
+          </aside>
         </div>
       </div>
-      <div className="cardContent sm:ds-pl-60px"></div>
     </div>
   );
 
