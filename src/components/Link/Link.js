@@ -52,6 +52,7 @@ export function Link(props) {
       aria-label={props.ariaLabel || props.text}
       role="link"
       locale={props.locale}
+      onClick={props.onClick ? props.onClick : undefined}
     >
       <a>
         {/* <!-- English Text: English --> */}
@@ -77,6 +78,7 @@ export function Link(props) {
       target={props.target}
       aria-label={props.ariaLabel || props.text}
       locale={props.locale}
+      onClick={props.onClick ? props.onClick : undefined}
     >
       {/* <!-- English Text: English --> */}
       <span className={props.abbr ? "ds-language-toggle-text" : ""}>

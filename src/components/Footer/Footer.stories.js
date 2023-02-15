@@ -130,3 +130,26 @@ ErrorPageFooter.args = {
   btnLink: "/",
   error: true,
 };
+
+export const FooterWithClickHandler = Template.bind({});
+FooterWithClickHandler.args = {
+  id: "footer",
+  btnLink: "/",
+  brandLinks: [
+    {
+      id: "link1",
+      text: "Without onClick",
+      href: FRbrandLinks.link1link,
+    },
+    {
+      id: "link2",
+      text: "With onClick",
+      href: FRbrandLinks.link1link,
+      onClick: (e) => {
+        console.log(e);
+        e.preventDefault();
+        alert("Add any click handler to footer links");
+      },
+    },
+  ],
+};
