@@ -42,10 +42,6 @@ export function Link(props) {
     <Component
       href={props.href}
       className={`${basicStyle}`}
-      id={props.id}
-      data-testid={props.dataTestId}
-      data-cy={props.dataCy || props.id}
-      data-cy-button={props.dataCyButton}
       disabled={props.disabled}
       lang={props.lang}
       target={props.target}
@@ -54,7 +50,12 @@ export function Link(props) {
       locale={props.locale}
       onClick={props.onClick ? props.onClick : undefined}
     >
-      <a>
+      <a
+        id={props.id}
+        data-testid={props.dataTestId}
+        data-cy={props.dataCy || props.id}
+        data-cy-button={props.dataCyButton}
+      >
         {/* <!-- English Text: English --> */}
         <span className={props.abbr ? "ds-language-toggle-text" : ""}>
           {props.text}
