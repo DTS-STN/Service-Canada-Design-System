@@ -14,16 +14,16 @@ export function Button(props) {
       {...props.attributes}
     >
       {props.icon && !props.iconEnd ? (
-        <div className="ds-grid ds-place-items-center ds-h-8 ds-w-8">
+        <span className="ds-grid ds-place-items-center ds-h-8 ds-w-8">
           <Image className="ds-pr-2" src={props.icon} alt={props.iconAltText} />
-        </div>
+        </span>
       ) : undefined}
       {props.text}
       {props.children}
       {props.icon && props.iconEnd ? (
-        <div className="ds-grid ds-place-items-center ds-h-8 ds-w-8">
+        <span className="ds-grid ds-place-items-center ds-h-8 ds-w-8">
           <Image className="ds-pl-2" src={props.icon} alt={props.iconAltText} />
-        </div>
+        </span>
       ) : undefined}
     </button>
   ) : (
