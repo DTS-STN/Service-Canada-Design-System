@@ -51,7 +51,7 @@ export function Menu(props) {
               aria-expanded={showDropdown}
               className="ds-flex ds-h-[60px] ds-justify-between ds-w-full ds-h-full ds-font-bold ds-font-body ds-items-center sm:ds-py-2px ds-pl-4 ds-text-[#26374A] ds-ring-offset-2 focus:ds-ring-2 ds-ring-[#0535D2] ds-rounded-sm focus:ds-outline-none focus:ds-mb-1"
             >
-              <div className="ds-flex ds-items-center">
+              <span className="ds-flex ds-items-center">
                 <svg
                   className="ds-mr-4"
                   width="35"
@@ -66,7 +66,7 @@ export function Menu(props) {
                   />
                 </svg>
                 {lang === "fr" ? FR.menuButtonTitle : EN.menuButtonTitle}
-              </div>
+              </span>
               <svg
                 className="ds-w-4 ds-h-4 ds-mx-4"
                 fill="currentColor"
