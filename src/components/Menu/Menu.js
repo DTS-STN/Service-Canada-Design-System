@@ -43,9 +43,12 @@ export function Menu(props) {
             className="ds-w-full sm:ds-w-[260px] ds-bg-[#EBF2FC] hover:ds-bg-[#CFD1D5] focus:ds-bg-[#CFD1D5]"
             ref={dropdown}
           >
-            <button
+            <div
+              role="button"
+              tabIndex={0}
               id="dropdownNavbarLink"
               onClick={() => setShowDropdown((e) => !e)}
+              onKeyUp={() => setShowDropdown((e) => !e)}
               aria-haspopup="true"
               data-testid="menuButton"
               aria-expanded={showDropdown}
@@ -87,7 +90,7 @@ export function Menu(props) {
                   />
                 )}
               </svg>
-            </button>
+            </div>
             {showDropdown && (
               <div
                 id="dropdownNavbar"

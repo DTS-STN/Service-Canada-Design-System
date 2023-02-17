@@ -5,7 +5,10 @@ import { Image } from "../Image/Image";
 export function Button(props) {
   const style = "ds-btn-" + props.styling;
   return props.href === "no ref" ? (
-    <button
+    <div
+      role="button"
+      tabIndex={0}
+      onKeyUp={props.onClick}
       className={`ds-flex ds-flex-row ${style} focus:ds-ring focus:ds-ring-offset-4 ${props.className} `}
       onClick={props.onClick}
       type={props.type}
@@ -25,7 +28,7 @@ export function Button(props) {
           <Image className="ds-pl-2" src={props.icon} alt={props.iconAltText} />
         </div>
       ) : undefined}
-    </button>
+    </div>
   ) : (
     <a
       href={props.href}
