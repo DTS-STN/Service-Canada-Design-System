@@ -178,6 +178,6 @@ export { YoutubePlayer } from "./components/Media/YoutubePlayer/YoutubePlayer";
 export { ErrorPage } from "./stories/styles/Layouts/ErrorPage/ErrorPage";
 
 /**
- * FeedbackTool
+ * CTA
  */
-export { FeedbackTool } from "./components/FeedbackTool/FeedbackTool";
+export { CTA } from "./components/CTA/CTA";
