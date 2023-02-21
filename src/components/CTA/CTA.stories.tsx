@@ -30,6 +30,5 @@ WithoutLink.args = {
   body: "This sentence explains the action we want the users to take.",
   ButtonProps: {
     text: "Action Button",
-    id: "cta-button-2",
   },
 };
