@@ -71,6 +71,7 @@ export function Header(props) {
                 <SearchBar
                   onChange={searchProps.onChange}
                   onSubmit={searchProps.onSubmit}
+                  lang={lang}
                 />
               </div>
               <div className="ds-hidden sm:ds-flex sm:ds-pt-10px md:ds-pt-18px">
