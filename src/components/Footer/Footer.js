@@ -114,7 +114,9 @@ export function Footer(props) {
                   aria-labelledby="accessibleSectionHeader1"
                 >
                   <h2 className="ds-sr-only" id="accessibleSectionHeader1">
-                    About Government
+                    {lang === EN
+                      ? ENlandscapeLinks.aboutGovernment
+                      : FRlandscapeLinks.aboutGovernment}
                   </h2>
                   <ul className="sm:ds-grid sm:ds-grid-cols-3 ds-flex ds-flex-col ds-gap-1 ds-text-xs">
                     {" "}
@@ -173,7 +175,9 @@ export function Footer(props) {
                   aria-labelledby="accessibleSectionHeader2"
                 >
                   <h2 className="ds-sr-only" id="accessibleSectionHeader2">
-                    About this site
+                    {lang === EN
+                      ? ENlandscapeLinks.aboutSite
+                      : FRlandscapeLinks.aboutSite}
                   </h2>
                   <ul className="ds-flex ds-flex-col sm:ds-flex-row">
                     {brandLinks.map(({ href, text, onClick }, index) => {
