@@ -129,5 +129,7 @@
       "11": "novembre",
       "12": "décembre"
     }
-  }
+  },
+  "searchPlaceholderText": "Rechercher dans Canada.ca",
+  "searchButtonHoverText": "Bouton du champ de recherche"
 }
