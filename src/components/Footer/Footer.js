@@ -5,6 +5,7 @@ import { Image } from "../Image/Image";
 import { Link } from "../Link/Link";
 import { ENlandscapeLinks } from "../../translations/en.json";
 import { ENbrandLinks } from "../../translations/en.json";
+import { FRbrandLinks } from "../../translations/fr.json";
 import { FRlandscapeLinks } from "../../translations/fr.json";
 import { mscaFooterHeading as mscaFooterHeadingEn } from "../../translations/en.json";
 import { mscaFooterHeading as mscaFooterHeadingFr } from "../../translations/fr.json";
@@ -30,9 +31,11 @@ export function Footer(props) {
     contactLink,
     brandLinks,
     target,
+    onClick,
   } = props;
   let langLand =
     lang === EN ? ENlandscapeLinks : lang === FR ? FRlandscapeLinks : [];
+  let langBrand = lang === EN ? ENbrandLinks : lang === FR ? FRbrandLinks : [];
   let mscaFooterHeading =
     lang === EN ? mscaFooterHeadingEn : lang === FR ? mscaFooterHeadingFr : "";
   let mscaContactUs =
@@ -82,6 +85,29 @@ export function Footer(props) {
     },
   ];
 
+  const brandLinksDefault = [
+    {
+      href: langBrand.link1link,
+      text: langBrand.link1,
+    },
+    {
+      href: langBrand.link2link,
+      text: langBrand.link2,
+    },
+    {
+      href: langBrand.link3link,
+      text: langBrand.link3,
+    },
+    {
+      href: langBrand.link4link,
+      text: langBrand.link4,
+    },
+    {
+      href: langBrand.link5link,
+      text: langBrand.link5,
+    },
+  ];
+
   let bLinksBg = isAuthenticated ? "sm:ds-h-86px" : "ds-h-full";
   let bottomSectionPad = isAuthenticated ? "ds-py-6px" : "ds-pt-5";
   let flex = isAuthenticated ? "sm:ds-flex-row" : "md:ds-flex-row";
@@ -114,7 +140,9 @@ export function Footer(props) {
                   aria-labelledby="accessibleSectionHeader1"
                 >
                   <h2 className="ds-sr-only" id="accessibleSectionHeader1">
-                    About Government
+                    {lang === EN
+                      ? ENlandscapeLinks.aboutGovernment
+                      : FRlandscapeLinks.aboutGovernment}
                   </h2>
                   <ul className="sm:ds-grid sm:ds-grid-cols-3 ds-flex ds-flex-col ds-gap-1 ds-text-xs">
                     {" "}
@@ -173,30 +201,54 @@ export function Footer(props) {
                   aria-labelledby="accessibleSectionHeader2"
                 >
                   <h2 className="ds-sr-only" id="accessibleSectionHeader2">
-                    About this site
+                    {lang === EN
+                      ? ENlandscapeLinks.aboutSite
+                      : FRlandscapeLinks.aboutSite}
                   </h2>
                   <ul className="ds-flex ds-flex-col sm:ds-flex-row">
-                    {brandLinks.map(({ href, text, onClick }, index) => {
-                      return (
-                        <li
-                          key={index}
-                          className={
-                            index === 0
-                              ? "ds-pr-4 sm:ds-mb-4 ds-mb-5 ds-list-inside ds-list-none ds-text-xxs"
-                              : "ds-pr-4 sm:ds-mb-4 ds-mb-5 ds-list-inside ds-list-none sm:ds-list-disc ds-text-xxs"
-                          }
-                        >
-                          <Link
-                            onClick={onClick ? onClick : undefined}
-                            id={"footerLink" + index}
-                            href={href}
-                            text={text}
-                            linkStyle="smfooterBlue"
-                            target={target}
-                          />
-                        </li>
-                      );
-                    })}
+                    {brandLinks
+                      ? brandLinks.map(({ href, text, onClick }, index) => {
+                          return (
+                            <li
+                              key={index}
+                              className={
+                                index === 0
+                                  ? "ds-pr-4 sm:ds-mb-4 ds-mb-5 ds-list-inside ds-list-none ds-text-xxs"
+                                  : "ds-pr-4 sm:ds-mb-4 ds-mb-5 ds-list-inside ds-list-none sm:ds-list-disc ds-text-xxs"
+                              }
+                            >
+                              <Link
+                                onClick={onClick ? onClick : undefined}
+                                id={"footerLink" + index}
+                                href={href}
+                                text={text}
+                                linkStyle="smfooterBlue"
+                                target={target}
+                              />
+                            </li>
+                          );
+                        })
+                      : brandLinksDefault.map(({ href, text }, index) => {
+                          return (
+                            <li
+                              key={index}
+                              className={
+                                index === 0
+                                  ? "ds-pr-4 sm:ds-mb-4 ds-mb-5 ds-list-inside ds-list-none ds-text-xxs"
+                                  : "ds-pr-4 sm:ds-mb-4 ds-mb-5 ds-list-inside ds-list-none sm:ds-list-disc ds-text-xxs"
+                              }
+                            >
+                              <Link
+                                onClick={onClick ? onClick : undefined}
+                                id={"footerLink" + index}
+                                href={href}
+                                text={text}
+                                linkStyle="smfooterBlue"
+                                target={target}
+                              />
+                            </li>
+                          );
+                        })}
                   </ul>
                 </nav>
                 <div className=" ">
@@ -230,34 +282,8 @@ export function Footer(props) {
 Footer.defaultProps = {
   lang: EN,
   contactLink: "https://www.canada.ca/en/contact.html",
-  brandLinks: [
-    {
-      id: "link1",
-      text: ENbrandLinks.link1,
-      href: ENbrandLinks.link1link,
-    },
-    {
-      id: "link2",
-      text: ENbrandLinks.link2,
-      href: ENbrandLinks.link2link,
-    },
-    {
-      id: "link3",
-      text: ENbrandLinks.link3,
-      href: ENbrandLinks.link3link,
-    },
-    {
-      id: "link4",
-      text: ENbrandLinks.link4,
-      href: ENbrandLinks.link4link,
-    },
-    {
-      id: "link5",
-      text: ENbrandLinks.link5,
-      href: ENbrandLinks.link5link,
-    },
-  ],
 };
+
 Footer.propTypes = {
   /**
    * id of this component
@@ -307,4 +333,9 @@ Footer.propTypes = {
    * Specifies where to open the linked document
    */
   target: PropTypes.string,
+
+  /**
+   * Handle onclick on the footer media link
+   */
+  onClick: PropTypes.func,
 };
