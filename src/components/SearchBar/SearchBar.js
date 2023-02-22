@@ -2,6 +2,8 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Image } from "../Image/Image";
 import searchIcon from "../../assets/search-icon.svg";
+import EN from "../../translations/en.json";
+import FR from "../../translations/fr.json";
 
 /**
  *  Search bar component
@@ -16,17 +18,30 @@ export function SearchBar(props) {
       onSubmit={props.onSubmit}
     >
       <label className="ds-sr-only ds-search-label" htmlFor="search-input">
-        Search Canada.ca
+        {props.lang === "en"
+          ? EN.searchPlaceholderText
+          : FR.searchPlaceholderText}
       </label>
       <input
         onChange={props.onChange}
         id="search-input"
         className="ds-search-input"
         type="search"
-        placeholder="Search Canada.ca"
+        placeholder={
+          props.lang === "en"
+            ? EN.searchPlaceholderText
+            : FR.searchPlaceholderText
+        }
       />
       <div className="ds-search-button">
-        <button title="Search bar button" type="submit">
+        <button
+          title={
+            props.lang === "en"
+              ? EN.searchButtonHoverText
+              : FR.searchButtonHoverText
+          }
+          type="submit"
+        >
           <Image
             className="ds-search-icon"
             src={searchIcon}
@@ -40,6 +55,7 @@ export function SearchBar(props) {
 
 SearchBar.defaultProps = {
   searchIcon: searchIcon,
+  lang: "en",
 };
 
 SearchBar.propTypes = {
@@ -47,6 +63,11 @@ SearchBar.propTypes = {
    * path to icon
    */
   searchIcon: PropTypes.string,
+
+  /**
+   * Switch between english and french. Pass in "en" or "fr"
+   */
+  lang: PropTypes.string,
 
   /**
    * Action to do on input change
