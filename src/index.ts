@@ -176,3 +176,8 @@ export { YoutubePlayer } from "./components/Media/YoutubePlayer/YoutubePlayer";
  * Error Page
  */
 export { ErrorPage } from "./stories/styles/Layouts/ErrorPage/ErrorPage";
+
+/**
+ * CTA
+ */
+export { CTA } from "./components/CTA/CTA";
