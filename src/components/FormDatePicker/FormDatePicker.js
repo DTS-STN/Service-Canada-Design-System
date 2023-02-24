@@ -11,6 +11,11 @@ import EN from "../../translations/en.json";
 import FR from "../../translations/fr.json";
 import "./styles.css";
 
+const restrictNonNumbers = (e) => {
+  const matcher = new RegExp(/[\D]/g);
+  e.target.value = e.target.value.replaceAll(matcher, "");
+};
+
 export function FormDatePicker(props) {
   const {
     id,
@@ -35,6 +40,8 @@ export function FormDatePicker(props) {
     formErrorProps,
   } = props;
 
+  // const [currentDay, setCurrentMonth] = React.useState(month)
+
   const language = lang === "en" ? EN : lang === "fr" ? FR : EN;
 
   const monthValues = [
@@ -52,11 +59,15 @@ export function FormDatePicker(props) {
     "12",
   ];
 
-  function preventNumberInput(ev) {
-    var sKey = String.fromCharCode(ev.which);
-    if ((!sKey.match(/[0-9]/) || !sKey === "") && ev.key !== "Backspace")
-      ev.preventDefault();
-  }
+  const _onDayChange = (e) => {
+    restrictNonNumbers(e);
+    onDayChange(e);
+  };
+
+  const _onYearChange = (e) => {
+    restrictNonNumbers(e);
+    onDayChange(e);
+  };
 
   useEffect(() => {
     // blur the input element on scroll instead of changing the value! Does not affect Keyboard input.
@@ -124,9 +135,7 @@ export function FormDatePicker(props) {
               type="number"
               min={"1"}
               max={maxDay}
-              onChange={onDayChange}
-              onKeyDown={preventNumberInput}
-              onKeyUp={preventNumberInput}
+              onChange={_onDayChange}
               className={`ds-w-46px sm:ds-w-68px ds-px-10px ds-rounded ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-py-5px ${validationClass}`}
             />
           </div>
@@ -142,9 +151,7 @@ export function FormDatePicker(props) {
               type="number"
               min={minYear}
               max={maxYear}
-              onChange={onYearChange}
-              onKeyDown={preventNumberInput}
-              onKeyUp={preventNumberInput}
+              onChange={_onYearChange}
               className={`ds-w-70px sm:ds-w-165px ds-py-5px ds-px-10px ds-rounded ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ${validationClass}`}
             />
           </div>
