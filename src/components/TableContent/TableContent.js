@@ -8,9 +8,9 @@ export function TableContent(props) {
   return (
     <>
       <section id={id}>
-        <h3 className="ds-heading3">
-          {lang === "en" ? "On this Page" : "Sur cette page"}
-        </h3>
+        <h2 className="ds-heading3">
+          {lang === "en" ? "On this page" : "Sur cette page"}
+        </h2>
         <ul className="ds-pl-22px ds-ml-14px">
           {sectionList.map((option, index) => {
             return (
