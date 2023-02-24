@@ -3,14 +3,12 @@ import React from "react";
 import { Link } from "../Link/Link";
 
 export function TableContent(props) {
-  const lang = props.lang?.trim?.() === "fr" ? "fr" : "en";
   const { id, sectionList } = props;
+
   return (
     <>
       <section id={id}>
-        <h3 className="ds-heading3">
-          {lang === "en" ? "On this Page" : "Sur cette page"}
-        </h3>
+        <p className="ds-heading3">On this Page:</p>
         <ul className="ds-pl-22px ds-ml-14px">
           {sectionList.map((option, index) => {
             return (
@@ -50,5 +48,4 @@ TableContent.propTypes = {
       link: PropTypes.string,
     })
   ),
-  lang: PropTypes.string,
 };

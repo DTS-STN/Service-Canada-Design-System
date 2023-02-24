@@ -6,26 +6,13 @@ export default {
 
 const Template = (args) => <TableContent {...args} />;
 
-export const EN = Template.bind({});
+export const Default = Template.bind({});
 
-EN.args = {
+Default.args = {
   id: "TableContent",
   sectionList: [
     { name: "Section Heading", link: "#section1" },
     { name: "Section Heading", link: "#section2" },
     { name: "Section Heading", link: "#section3" },
   ],
-  lang: "en",
-};
-
-export const FR = Template.bind({});
-
-FR.args = {
-  id: "TableContent",
-  sectionList: [
-    { name: "En-tête de la section", link: "#section1" },
-    { name: "En-tête de la section", link: "#section2" },
-    { name: "En-tête de la section", link: "#section3" },
-  ],
-  lang: "fr",
 };
