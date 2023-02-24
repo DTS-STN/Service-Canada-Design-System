@@ -60,13 +60,14 @@ export function FormDatePicker(props) {
   ];
 
   const _onDayChange = (e) => {
+    console.log("DAYT");
     restrictNonNumbers(e);
     onDayChange(e);
   };
 
   const _onYearChange = (e) => {
     restrictNonNumbers(e);
-    onDayChange(e);
+    onYearChange(e);
   };
 
   useEffect(() => {
@@ -132,7 +133,7 @@ export function FormDatePicker(props) {
             <input
               id={dayId}
               defaultValue={day}
-              type="number"
+              type="tel"
               min={"1"}
               max={maxDay}
               onChange={_onDayChange}
@@ -148,7 +149,7 @@ export function FormDatePicker(props) {
             <input
               id={yearId}
               defaultValue={year}
-              type="number"
+              type="tel"
               min={minYear}
               max={maxYear}
               onChange={_onYearChange}
