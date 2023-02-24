@@ -20,7 +20,7 @@ export function Link(props) {
       break;
     case "smfooterWhite":
       basicStyle =
-        "ds-text-multi-neutrals-white ds-font-body ds-text-browserh7 ds-leading-20px ds-font-regular hover:ds-text-multi-neutrals-white hover:ds-underline";
+        "ds-text-multi-neutrals-white ds-font-body ds-text-browserh7 ds-leading-20px ds-font-regular hover:ds-text-multi-neutrals-white hover:ds-underline focus:ds-ring-1 focus:ds-ring-white";
       break;
     case "smBreadcrumbs":
       basicStyle =
