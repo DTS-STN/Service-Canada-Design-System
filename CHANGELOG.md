@@ -1,5 +1,58 @@
 # Changelog
 
+## [1.57.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.56.5...v1.57.0) (2023-02-24)
+
+
+### Features
+
+* add lang prop to searchBar to enable content change when switch language ([970324e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/970324e3764ffa6d830f9adc530a2c0944489c48))
+* added `onClick` support for `Link` as well as the instances within `Footer` ([9cf118f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9cf118fc23e7a2536589c38e38891ea2ee2fd235))
+* added first iteration of feedback tool - wip - might be renamed ([69bac8b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/69bac8b37c3a7047de4d874d04c9d489c444c14a))
+* added new CTA component with stories and tests; included in TypeScript ([788640a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/788640ad3295c99dcc339b470c24545b09267bb8))
+
+
+### Bug Fixes
+
+* added `containerClass` functionality to `CTA` ([c940513](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c940513fa8d5b95491b16bfcd6822d55bdd192a6))
+* added error classes for `FormDatePicker` ([94ac9de](https://github.com/DTS-STN/Service-Canada-Design-System/commit/94ac9def80537de0e4ca7703836d6d3a6d3fd2a5))
+* added ErrorPage layout back as an export ([02c82f6](https://github.com/DTS-STN/Service-Canada-Design-System/commit/02c82f6dd432955030af46e2d7922008443a11ed))
+* added lang support in `TableContent` ([ad4ecc1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ad4ecc115b201e5e8805cb9a1af6b775fd4d3815))
+* changed divs to spans ([551e8f0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/551e8f0a5fee38f3c29bcbeafc7ad8fadea359a3))
+* changed h3 to h2 for `TableContent` heading ([f4b1618](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f4b16184300af5e523bd920f9da5892783e59f1d))
+* cleaned up Button ([7ee4779](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7ee477932e2f9cb8f3e4fa2363e846639a27a2e6))
+* corrected broken html from nesting div within button ([84b84c3](https://github.com/DTS-STN/Service-Canada-Design-System/commit/84b84c31e043468b8bce4579b928c7a91441d97b))
+* fixes `Link` focus colour ([ca5ed09](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ca5ed097cbf7056dbdd17d133ef6396378e851ce))
+* inverted language tag for language link ([9079cc0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9079cc0716b2e28978c69a7b25ff89464163e9d8))
+* made top-level compoinent into button ([60d66cd](https://github.com/DTS-STN/Service-Canada-Design-System/commit/60d66cd99c0325664718948d2883a9dc6d90519e))
+* media links stays in English when switch to French content ([4ae7005](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4ae7005ea8fb7a52fe4ba60a03be4284f2b0c04a))
+* passing in ID and test IDs to nested &lt;A/&gt; for `Link` ([bbab503](https://github.com/DTS-STN/Service-Canada-Design-System/commit/bbab5037f823b10e6674755d1a90417f39d994b2))
+* removed `tabIndex` from `AccordionForm` for accessibility ([cfa4a9f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/cfa4a9f5ba06b88fc01b3a979174abf9febe9eb1))
+* removed log ([7532e6a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7532e6af27fa2ce3e0078899cdd5f4154a86ca72))
+* restricting `FormDatePicker` input to numbers only, using js ([94ac9de](https://github.com/DTS-STN/Service-Canada-Design-System/commit/94ac9def80537de0e4ca7703836d6d3a6d3fd2a5))
+* restricting `FormDatePicker` to only numbers ([dab9734](https://github.com/DTS-STN/Service-Canada-Design-System/commit/dab9734c47ff84eacd81e81db4c6a2985e77c28e))
+* Update French links, change hard-coded heading ([0706820](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0706820c9c0c135cfc6f6f427ba553042ca5e8e6))
+* updated `FormDatePicker` to use `tel` instead of `number` for onChange events ([388f6aa](https://github.com/DTS-STN/Service-Canada-Design-System/commit/388f6aabde7e2e795fe3c1c96c5aac728010a3d9))
+* updated alignment of links in `Footer` to not span across the component ([7b0823c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7b0823c5a9f05931018886f9afa7e95a198c1b2d))
+* updated alignment of links in `Footer` to not span across the component ([5174922](https://github.com/DTS-STN/Service-Canada-Design-System/commit/51749220f27a64b8247ef23985e660a703d15ae4))
+* updated DOM element from `p` to `h3` for accessibility ([ad4ecc1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ad4ecc115b201e5e8805cb9a1af6b775fd4d3815))
+* upgrade git-conventional-commits from 2.4.0 to 2.5.0 ([24ede62](https://github.com/DTS-STN/Service-Canada-Design-System/commit/24ede62c8a28b4a7ecea14d439639ac21bbde224))
+
+
+### Build System
+
+* updated the tsconfig to include declarations for *.svg ([788640a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/788640ad3295c99dcc339b470c24545b09267bb8))
+
+
+### Tests
+
+* updated tests for `TableContent` ([ad4ecc1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ad4ecc115b201e5e8805cb9a1af6b775fd4d3815))
+
+
+### Refactored
+
+* clean up ([a79d213](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a79d213497ff99717eeb11553b2c1ec24c9b90ed))
+* cleaned up the semantic html of feedbacktool ([d4dbe9a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d4dbe9a2d364f8e8d00a126c54fe719b4cb69f62))
+
 ## [1.56.5](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.56.4...v1.56.5) (2023-02-09)
 
 
