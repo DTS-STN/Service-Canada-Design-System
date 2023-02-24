@@ -16,6 +16,7 @@ export function Language(props) {
         abbr={lang === "en" ? "FR" : "EN"}
         locale={props.locale}
         component={props.customLink}
+        lang={lang === "en" ? "fr" : "en"}
       />
     </>
   );
