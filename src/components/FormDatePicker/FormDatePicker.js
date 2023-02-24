@@ -40,8 +40,6 @@ export function FormDatePicker(props) {
     formErrorProps,
   } = props;
 
-  // const [currentDay, setCurrentMonth] = React.useState(month)
-
   const language = lang === "en" ? EN : lang === "fr" ? FR : EN;
 
   const monthValues = [
@@ -60,7 +58,6 @@ export function FormDatePicker(props) {
   ];
 
   const _onDayChange = (e) => {
-    console.log("DAYT");
     restrictNonNumbers(e);
     onDayChange(e);
   };
