@@ -8,25 +8,16 @@ export function Language(props) {
   return (
     <>
       <h2 className="ds-sr-only">Language Selection</h2>
-      {lang === "en" ? (
-        <Link
-          className="ds-language-toggle-text"
-          href={path}
-          id={id}
-          text="Français"
-          abbr="FR"
-          locale={props.locale}
-        />
-      ) : (
-        <Link
-          className="ds-language-toggle-text"
-          href={path}
-          id={id}
-          text="English"
-          abbr="EN"
-          locale={props.locale}
-        />
-      )}
+      <Link
+        className="ds-language-toggle-text"
+        href={path}
+        id={id}
+        text={lang === "en" ? "Français" : "English"}
+        abbr={lang === "en" ? "FR" : "EN"}
+        locale={props.locale}
+        component={props.customLink}
+        lang={lang === "en" ? "fr" : "en"}
+      />
     </>
   );
 }

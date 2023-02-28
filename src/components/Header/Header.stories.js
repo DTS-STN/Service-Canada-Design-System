@@ -13,7 +13,6 @@ export const FrenchAuth = Template.bind({});
 EnglishAuth.args = {
   id: "header",
   lang: "en",
-  // isAuthenticated: true,
   menuProps: {
     menuList: [
       { key: "dashKey", value: "My dashboard", path: "/", showIcon: false },

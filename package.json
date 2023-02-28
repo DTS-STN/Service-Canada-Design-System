@@ -1,6 +1,6 @@
 {
   "name": "@dts-stn/service-canada-design-system",
-  "version": "1.53.9",
+  "version": "1.57.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -15,7 +15,7 @@
     "dist/**/*"
   ],
   "dependencies": {
-    "git-conventional-commits": "^2.1.2",
+    "git-conventional-commits": "^2.5.0",
     "identity-obj-proxy": "^3.0.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
@@ -23,11 +23,11 @@
     "react-dom": "^17.0.2",
     "react-full-screen": "^1.1.1",
     "react-player": "^2.10.1",
-    "react-router-dom": "^6.4.4",
+    "react-router-dom": "^6.7.0",
     "react-syntax-highlighter": "^15.5.0",
     "release-please": "^14.17.3",
     "shelljs": "^0.8.5",
-    "ts-jest": "^29.0.3",
+    "ts-jest": "^29.0.5",
     "user": "^0.0.0"
   },
   "scripts": {

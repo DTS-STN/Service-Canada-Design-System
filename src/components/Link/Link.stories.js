@@ -11,7 +11,6 @@ export const Default = Template.bind({});
 export const RegularLinkwithEmphasis = Template.bind({});
 export const TitleLink = Template.bind({});
 export const FooterBlueLink = Template.bind({});
-export const FooterWhiteLink = Template.bind({});
 export const BreadcrumbsLink = Template.bind({});
 export const CardActionLink = Template.bind({});
 
@@ -40,13 +39,6 @@ FooterBlueLink.args = {
   text: "Small link - Footer blue",
   href: "/",
   linkStyle: "smfooterBlue",
-};
-
-FooterWhiteLink.args = {
-  id: "link",
-  text: "Small link - Footer white",
-  href: "/",
-  linkStyle: "smfooterWhite",
 };
 
 BreadcrumbsLink.args = {

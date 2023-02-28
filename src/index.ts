@@ -12,7 +12,6 @@ import "./styles/forms.css";
 import "./styles/menu.css";
 import "./styles/header.css";
 import "./icomoon/style.css";
-import "./components/CheckBoxes/checkbox.css";
 
 /**
  * layout components and navigational page elements
@@ -40,11 +39,6 @@ export { Heading } from "./components/Heading/Heading";
 export { Image } from "./components/Image/Image";
 
 /**
- * Error Page
- */
-export { ErrorPage } from "./components/ErrorPage/ErrorPage";
-
-/**
  * Header Component
  */
 export { Header } from "./components/Header/Header";
@@ -59,9 +53,9 @@ export { Menu } from "./components/Menu/Menu";
 export { Footer } from "./components/Footer/Footer";
 
 /**
- * Message
+ * ContextualAlert
  */
-export { Message } from "./components/Message/Message";
+export { ContextualAlert } from "./components/ContextualAlert/ContextualAlert";
 
 /**
  * Cards
@@ -109,12 +103,7 @@ export { FormRadioButton } from "./components/FormRadioButton/FormRadioButton";
 /*
  * Check box
  */
-export { CheckBoxes } from "./components/CheckBoxes/CheckBoxes";
-
-/*
- * Check box
- */
-export { CheckBoxForm } from "./components/CheckBoxForm/CheckBoxForm";
+export { FormCheckBox } from "./components/FormCheckBox/FormCheckBox";
 
 /*
  * FormMultiTextField
@@ -151,7 +140,7 @@ export { Date } from "./components/Date/Date";
 /*
  * Date Picker component
  */
-export { DatePicker } from "./components/DatePicker/DatePicker";
+export { FormDatePicker } from "./components/FormDatePicker/FormDatePicker";
 
 /**
  * Table of Content Component
@@ -182,3 +171,13 @@ export { Video } from "./components/Media/VideoPlayer/Video";
  * YoutubePlayer Component
  */
 export { YoutubePlayer } from "./components/Media/YoutubePlayer/YoutubePlayer";
+
+/**
+ * Error Page
+ */
+export { ErrorPage } from "./stories/styles/Layouts/ErrorPage/ErrorPage";
+
+/**
+ * CTA
+ */
+export { CTA } from "./components/CTA/CTA";

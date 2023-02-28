@@ -3,7 +3,7 @@ import { Link } from "../../components/Link/Link";
 import { OptPattern } from "./OptPattern";
 
 export default {
-  title: "Story Examples/Opt Patterns",
+  title: "Examples/Opt Patterns",
   component: OptPattern,
 };
 

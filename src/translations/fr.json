@@ -1,5 +1,7 @@
 {
   "FRlandscapeLinks": {
+    "aboutGovernment": "Au sujet du gouvernement",
+    "aboutSite": "À propos de ce site",
     "link1": "Contactez-nous",
     "link4": "Ministères et organismes",
     "link7": "Fonction publique et force militaire",
@@ -10,13 +12,13 @@
     "link6": "À propos du gouvernement",
     "link9": "Gouvernement ouvert",
     "link1link": "https://www.canada.ca/fr/contact.html",
-    "link4link": "https://www.canada.ca/fr/government/dept.html",
-    "link7link": "https://www.canada.ca/fr/government/publicservice.html",
-    "link2link": "https://www.canada.ca/fr/news.html",
-    "link5link": "https://www.canada.ca/fr/government/system/laws.html",
-    "link8link": "https://www.canada.ca/fr/transparency/reporting.html",
+    "link4link": "https://www.canada.ca/fr/gouvernement/min.html",
+    "link7link": "https://www.canada.ca/fr/gouvernement/fonctionpublique.html",
+    "link2link": "https://www.canada.ca/fr/nouvelles.html",
+    "link5link": "https://www.canada.ca/fr/gouvernement/systeme/lois.html",
+    "link8link": "https://www.canada.ca/fr/transparence/rapports.html",
     "link3link": "https://pm.gc.ca/fr",
-    "link6link": "https://www.canada.ca/fr/government/system.html",
+    "link6link": "https://www.canada.ca/fr/gouvernement/systeme.html",
     "link9link": "https://open.canada.ca/fr"
   },
   "FRbrandLinks": {
@@ -25,11 +27,11 @@
     "link3": "À propos de Canada.ca",
     "link4": "Avis",
     "link5": "Confidentialité",
-    "link1link": "https://www.canada.ca/fr/social.html",
+    "link1link": "https://www.canada.ca/fr/sociaux.html",
     "link2link": "https://www.canada.ca/fr/mobile.html",
-    "link3link": "https://www.canada.ca/fr/government/about.html",
-    "link4link": "https://www.canada.ca/fr/transparency/terms.html",
-    "link5link": "https://www.canada.ca/fr/transparency/privacy.html"
+    "link3link": "https://www.canada.ca/fr/gouvernement/a-propos.html",
+    "link4link": "https://www.canada.ca/fr/transparence/avis.html",
+    "link5link": "https://www.canada.ca/fr/transparence/confidentialite.html"
   },
   "mscaFooterHeading": "Mon dossier Service Canada",
   "mscaContactUs": {
@@ -127,5 +129,7 @@
       "11": "novembre",
       "12": "décembre"
     }
-  }
+  },
+  "searchPlaceholderText": "Rechercher dans Canada.ca",
+  "searchButtonHoverText": "Bouton du champ de recherche"
 }

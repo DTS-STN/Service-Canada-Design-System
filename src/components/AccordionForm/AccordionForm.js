@@ -118,8 +118,6 @@ export function AccordionForm(props) {
                 aria-label={`${card.title} ${
                   isOpen ? lang.accordionExpanded : lang.accordionCollapsed
                 }`}
-                // eslint-disable-next-line
-                tabIndex="0"
               >
                 {card.title}
               </div>
