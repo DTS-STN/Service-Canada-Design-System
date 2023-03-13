@@ -2,6 +2,10 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background-position: right 50%;
+  background-position-x: calc(100% - 10px);
+  background-image: url("../../assets/dropdown.svg");
+  background-repeat: no-repeat;
 }
 
 .dropdownPos {
