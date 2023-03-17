@@ -24,7 +24,7 @@ export function Link(props) {
       break;
     case "smBreadcrumbs":
       basicStyle =
-        "ds-text-multi-blue-blue70b ds-font-body ds-text-browserh8 ds-leading-23px ds-font-regular hover:ds-text-multi-blue-blue50b hover:ds-underline";
+        "ds-text-multi-blue-blue70b ds-font-body ds-text-browserh8 ds-leading-23px ds-font-regular hover:ds-text-multi-blue-blue50b";
       break;
     case "cardActionLink":
       basicStyle =
@@ -38,23 +38,31 @@ export function Link(props) {
 
   const Component = props.component || "a";
 
+  function onKeyDown() {
+    true;
+  }
+
   return Component !== "a" ? (
     <Component
       href={props.href}
-      className={`${basicStyle}`}
+      passHref
       disabled={props.disabled}
       lang={props.lang}
       target={props.target}
       aria-label={props.ariaLabel || props.text}
-      role="link"
       locale={props.locale}
-      onClick={props.onClick ? props.onClick : undefined}
+      role="link"
     >
       <a
+        href={props.href}
+        onClick={props.onClick ? props.onClick : undefined}
+        passHref
         id={props.id}
+        className={`${basicStyle}`}
         data-testid={props.dataTestId}
         data-cy={props.dataCy || props.id}
         data-cy-button={props.dataCyButton}
+        onKeyDown={onKeyDown}
       >
         {/* <!-- English Text: English --> */}
         <span className={props.abbr ? "ds-language-toggle-text" : ""}>
