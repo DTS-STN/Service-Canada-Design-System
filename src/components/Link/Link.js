@@ -24,7 +24,7 @@ export function Link(props) {
       break;
     case "smBreadcrumbs":
       basicStyle =
-        "ds-text-multi-blue-blue70b ds-font-body ds-text-browserh8 ds-leading-23px ds-font-regular hover:ds-text-multi-blue-blue50b";
+        "ds-text-multi-blue-blue70b ds-font-body ds-text-browserh8 ds-leading-23px ds-font-regular hover:ds-text-multi-blue-blue50b hover:ds-underline";
       break;
     case "cardActionLink":
       basicStyle =
