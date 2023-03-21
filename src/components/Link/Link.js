@@ -45,7 +45,6 @@ export function Link(props) {
   return Component !== "a" ? (
     <Component
       href={props.href}
-      passHref
       disabled={props.disabled}
       lang={props.lang}
       target={props.target}
@@ -56,7 +55,6 @@ export function Link(props) {
       <a
         href={props.href}
         onClick={props.onClick ? props.onClick : undefined}
-        passHref
         id={props.id}
         className={`${basicStyle}`}
         data-testid={props.dataTestId}
