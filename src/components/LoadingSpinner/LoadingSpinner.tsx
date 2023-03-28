@@ -40,8 +40,7 @@ export function LoadingSpinner({ className, text = "" }: ILoadingSpinnerProps) {
         className={classNames(
           `${DESIGN_SYSTEM_PREFIX}-loading-spinner__spinner`,
           `${DESIGN_SYSTEM_PREFIX}-mr-0`,
-          `${DESIGN_SYSTEM_PREFIX}-mr-2-md`,
-          className
+          `${DESIGN_SYSTEM_PREFIX}-mr-2-md`
         )}
       >
         <Spoke />
