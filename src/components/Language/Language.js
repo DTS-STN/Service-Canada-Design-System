@@ -4,6 +4,10 @@ import { Link } from "../Link/Link";
 
 export function Language(props) {
   const { id, lang, path } = props;
+  console.log(
+    props.dataGcAnalyticsCustomClickInstitutionVariable,
+    "inside Language prop"
+  );
 
   return (
     <>

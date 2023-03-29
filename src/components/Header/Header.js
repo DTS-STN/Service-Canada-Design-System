@@ -29,6 +29,10 @@ export function Header(props) {
   } = props;
 
   const containerClass = useParentContainer ? "" : "ds-container";
+  console.log(
+    props.dataGcAnalyticsCustomClickInstitutionVariable,
+    "dataGcAnalyticsCustomClickInstitutionVariable"
+  );
 
   return (
     <div className="ds-header" id={id} data-testid="ds-header">
@@ -62,8 +66,8 @@ export function Header(props) {
                 path={linkPath}
                 locale={locale}
                 customLink={customLink}
-                dataGcAnalyticsCustomClick={
-                  props.dataGcAnalyticsCustomClickLanguage
+                dataGcAnalyticsCustomClickInstitutionVariable={
+                  props.dataGcAnalyticsCustomClickInstitutionVariable
                 }
               />
             </div>
@@ -84,8 +88,8 @@ export function Header(props) {
                   path={linkPath}
                   customLink={customLink}
                   locale={locale}
-                  dataGcAnalyticsCustomClick={
-                    props.dataGcAnalyticsCustomClickLanguage
+                  dataGcAnalyticsCustomClickInstitutionVariable={
+                    props.dataGcAnalyticsCustomClickInstitutionVariable
                   }
                 />
               </div>
@@ -98,7 +102,7 @@ export function Header(props) {
                 path={linkPath}
                 customLink={customLink}
                 locale={locale}
-                dataGcAnalyticsCustomClick={
+                dataGcAnalyticsCustomClickInstitutionVariable={
                   props.dataGcAnalyticsCustomClickInstitutionVariable
                 }
               />
@@ -111,7 +115,7 @@ export function Header(props) {
             isAuthenticated={isAuthenticated}
             menuList={menuProps.menuList}
             onSignOut={menuProps.onSignOut}
-            dataGcAnalyticsCustomClick={
+            dataGcAnalyticsCustomClickInstitutionVariable={
               props.dataGcAnalyticsCustomClickInstitutionVariable
             }
           />
