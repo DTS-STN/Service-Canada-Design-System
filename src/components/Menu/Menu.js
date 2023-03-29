@@ -104,7 +104,7 @@ export function Menu(props) {
                 {menuList.map((element, index) => {
                   const Component = element?.component || "a";
                   return Component !== "a" ? (
-                    <div onClick={() => setShowDropdown(false)}>
+                    <div onClick={() => setShowDropdown(false)} key={index}>
                       <Component
                         href={element.path}
                         passHref={element.passHref}
