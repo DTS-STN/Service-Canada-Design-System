@@ -29,10 +29,6 @@ export function Header(props) {
   } = props;
 
   const containerClass = useParentContainer ? "" : "ds-container";
-  console.log(
-    props.dataGcAnalyticsCustomClickInstitutionVariable,
-    "dataGcAnalyticsCustomClickInstitutionVariable"
-  );
 
   return (
     <div className="ds-header" id={id} data-testid="ds-header">
