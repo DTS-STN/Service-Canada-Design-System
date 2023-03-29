@@ -49,7 +49,7 @@ export function Menu(props) {
               data-gc-analytics-customclick={`${
                 props.dataGcAnalyticsCustomClickInstitutionVariable
               }:${
-                setShowDropdown
+                showDropdown
                   ? "Menu Contract-Diminuer Menu"
                   : "Expand Menu-Etendre Menu"
               }`}
