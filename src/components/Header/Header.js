@@ -62,6 +62,9 @@ export function Header(props) {
                 path={linkPath}
                 locale={locale}
                 customLink={customLink}
+                dataGcAnalyticsCustomClick={
+                  props.dataGcAnalyticsCustomClickLanguage
+                }
               />
             </div>
           </div>
@@ -81,6 +84,9 @@ export function Header(props) {
                   path={linkPath}
                   customLink={customLink}
                   locale={locale}
+                  dataGcAnalyticsCustomClick={
+                    props.dataGcAnalyticsCustomClickLanguage
+                  }
                 />
               </div>
             </>
@@ -92,6 +98,9 @@ export function Header(props) {
                 path={linkPath}
                 customLink={customLink}
                 locale={locale}
+                dataGcAnalyticsCustomClick={
+                  props.dataGcAnalyticsCustomClickInstitutionVariable
+                }
               />
             </div>
           )}
@@ -102,6 +111,9 @@ export function Header(props) {
             isAuthenticated={isAuthenticated}
             menuList={menuProps.menuList}
             onSignOut={menuProps.onSignOut}
+            dataGcAnalyticsCustomClick={
+              props.dataGcAnalyticsCustomClickInstitutionVariable
+            }
           />
         )}
         {breadCrumbItems && (
