@@ -108,6 +108,7 @@ export function Menu(props) {
                       <Component
                         href={element.path}
                         passHref={element.passHref}
+                        key={index}
                       >
                         <a
                           className={`${
