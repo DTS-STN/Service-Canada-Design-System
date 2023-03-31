@@ -10,8 +10,14 @@ const Template: Story<ILoadingSpinnerProps> = (args) => (
   <LoadingSpinner {...args} />
 );
 
-export const Default = Template.bind({});
+export const ENText = Template.bind({});
 
-Default.args = {
+ENText.args = {
   text: "Please wait while we gather your account information. Thank you.",
+};
+
+export const FRText = Template.bind({});
+
+FRText.args = {
+  text: "Veuillez patienter pendant que nous recueillons les renseignements de votre compte. Merci.",
 };
