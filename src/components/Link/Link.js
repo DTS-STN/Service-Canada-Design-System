@@ -38,24 +38,30 @@ export function Link(props) {
 
   const Component = props.component || "a";
 
+  function onKeyDown() {
+    true;
+  }
+
   return Component !== "a" ? (
     <Component
       href={props.href}
-      className={`${basicStyle}`}
       disabled={props.disabled}
       lang={props.lang}
       target={props.target}
       aria-label={props.ariaLabel || props.text}
-      role="link"
       locale={props.locale}
-      onClick={props.onClick ? props.onClick : undefined}
+      role="link"
     >
       <a
+        href={props.href}
+        onClick={props.onClick ? props.onClick : undefined}
         id={props.id}
+        className={`${basicStyle}`}
         data-testid={props.dataTestId}
         data-cy={props.dataCy || props.id}
         data-cy-button={props.dataCyButton}
         data-gc-analytics-customclick={props.dataGcAnalyticsCustomClick}
+        onKeyDown={onKeyDown}
       >
         {/* <!-- English Text: English --> */}
         <span className={props.abbr ? "ds-language-toggle-text" : ""}>

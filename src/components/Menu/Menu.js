@@ -104,17 +104,15 @@ export function Menu(props) {
                 {menuList.map((element, index) => {
                   const Component = element?.component || "a";
                   return Component !== "a" ? (
-                    <div onClick={() => setShowDropdown(false)} key={index}>
-                      <Component
-                        href={element.path}
-                        passHref={element.passHref}
-                        key={index}
-                      >
+                    <div
+                      onClick={() => setShowDropdown(false)}
+                      key={element.key}
+                    >
+                      <Component href={element.path}>
                         <a
                           className={`${
                             index === 0 ? "ds-border-none" : "ds-border-t-2"
                           } ds-font-body ds-flex ds-items-center ds-h-[55px] ds-px-4 hover:ds-text-[#0535D2] focus:ds-outline-none ds-ring-offset-2 focus:ds-ring-2 ds-ring-[#0535D2] ds-rounded-sm  focus:ds-border-none`}
-                          key={element.key}
                           onClick={onClick}
                           data-gc-analytics-customclick={`${props.dataGcAnalyticsCustomClickInstitutionVariable}:Menu-${element.value}`}
                         >

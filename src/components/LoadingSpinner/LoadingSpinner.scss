@@ -1,0 +1,99 @@
+@import "../../styles/mixins";
+
+@include ds-namespace {
+  &-loading-spinner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @include media(sm) {
+      max-width: 450px;
+    }
+    @include media(md) {
+      flex-direction: row;
+    }
+    &__spinner {
+      position: relative;
+      width: 100px;
+      min-width: 100px;
+      height: 100px;
+      min-height: 100px;
+      .spoke {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(0deg) translateY(-24px);
+        path {
+          stroke: #d4d6da;
+          animation: spoke-color 3.2s infinite;
+        }
+      }
+      .spoke:nth-child(1) {
+        transform: translate(-50%, -50%) rotate(0deg) translateY(-24px);
+        path {
+          animation-delay: 0s;
+        }
+      }
+      .spoke:nth-child(2) {
+        transform: translate(-50%, -50%) rotate(45deg) translateY(-24px);
+        path {
+          animation-delay: 0.2s;
+        }
+      }
+      .spoke:nth-child(3) {
+        transform: translate(-50%, -50%) rotate(90deg) translateY(-24px);
+        path {
+          animation-delay: 0.4s;
+        }
+      }
+      .spoke:nth-child(4) {
+        transform: translate(-50%, -50%) rotate(135deg) translateY(-24px);
+        path {
+          animation-delay: 0.6s;
+        }
+      }
+      .spoke:nth-child(5) {
+        transform: translate(-50%, -50%) rotate(180deg) translateY(-24px);
+        path {
+          animation-delay: 0.8s;
+        }
+      }
+      .spoke:nth-child(6) {
+        transform: translate(-50%, -50%) rotate(225deg) translateY(-24px);
+        path {
+          animation-delay: 1s;
+        }
+      }
+      .spoke:nth-child(7) {
+        transform: translate(-50%, -50%) rotate(270deg) translateY(-24px);
+        path {
+          animation-delay: 1.2s;
+        }
+      }
+      .spoke:nth-child(8) {
+        transform: translate(-50%, -50%) rotate(315deg) translateY(-24px);
+        path {
+          animation-delay: 1.4s;
+        }
+      }
+      @keyframes spoke-color {
+        0% {
+          stroke: #65b234;
+          animation-timing-function: steps(1);
+        }
+        50% {
+          stroke: #989da6;
+          animation-timing-function: steps(1);
+        }
+      }
+    }
+
+    &__text {
+      span {
+        font-family: Lato, font-serif;
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 700;
+      }
+    }
+  }
+}
