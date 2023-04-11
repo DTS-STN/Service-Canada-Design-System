@@ -60,6 +60,7 @@ export function Link(props) {
         data-testid={props.dataTestId}
         data-cy={props.dataCy || props.id}
         data-cy-button={props.dataCyButton}
+        data-gc-analytics-customclick={props.dataGcAnalyticsCustomClick}
         onKeyDown={onKeyDown}
       >
         {/* <!-- English Text: English --> */}
@@ -86,6 +87,7 @@ export function Link(props) {
       aria-label={props.ariaLabel || props.text}
       locale={props.locale}
       onClick={props.onClick ? props.onClick : undefined}
+      data-gc-analytics-customclick={props.dataGcAnalyticsCustomClick}
     >
       {/* <!-- English Text: English --> */}
       <span className={props.abbr ? "ds-language-toggle-text" : ""}>

@@ -46,6 +46,13 @@ export function Menu(props) {
             <button
               id="dropdownNavbarLink"
               onClick={() => setShowDropdown((e) => !e)}
+              data-gc-analytics-customclick={`${
+                props.dataGcAnalyticsCustomClickInstitutionVariable
+              }:${
+                showDropdown
+                  ? "Menu Contract-Diminuer Menu"
+                  : "Expand Menu-Etendre Menu"
+              }`}
               aria-haspopup="true"
               data-testid="menuButton"
               aria-expanded={showDropdown}
@@ -107,6 +114,7 @@ export function Menu(props) {
                             index === 0 ? "ds-border-none" : "ds-border-t-2"
                           } ds-font-body ds-flex ds-items-center ds-h-[55px] ds-px-4 hover:ds-text-[#0535D2] focus:ds-outline-none ds-ring-offset-2 focus:ds-ring-2 ds-ring-[#0535D2] ds-rounded-sm  focus:ds-border-none`}
                           onClick={onClick}
+                          data-gc-analytics-customclick={`${props.dataGcAnalyticsCustomClickInstitutionVariable}:Menu-${element.value}`}
                         >
                           {element.showIcon && (
                             <svg
@@ -135,6 +143,7 @@ export function Menu(props) {
                       key={element.key}
                       onClick={onClick}
                       href={element.path}
+                      data-gc-analytics-customclick={`${props.dataGcAnalyticsCustomClickInstitutionVariable}:Menu-${element.value}`}
                     >
                       {element.showIcon && (
                         <svg
