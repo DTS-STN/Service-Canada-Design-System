@@ -10,9 +10,9 @@ const Template: Story<ILoadingSpinnerProps> = (args) => (
   <LoadingSpinner {...args} />
 );
 
-export const ENText = Template.bind({});
+export const Default = Template.bind({});
 
-ENText.args = {
+Default.args = {
   text: "Please wait while we gather your account information. Thank you.",
 };
 
