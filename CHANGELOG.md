@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.59.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.58.0...v1.59.0) (2023-04-13)
+
+
+### Features
+
+* next link support for contact link ([f59a4f0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f59a4f07ccd13c1c0336b0077ca961baf781a410))
+
+
+### Bug Fixes
+
+* update loading spinner color ([f05210f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f05210f62589e0c37a65e70a64be4baff1e3e39c))
+
 ## [1.58.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.57.0...v1.58.0) (2023-04-11)
 
 
