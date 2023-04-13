@@ -15,6 +15,7 @@
     "dist/**/*"
   ],
   "dependencies": {
+    "classnames": "^2.3.2",
     "git-conventional-commits": "^2.5.0",
     "identity-obj-proxy": "^3.0.0",
     "prop-types": "^15.7.2",
@@ -23,9 +24,11 @@
     "react-dom": "^17.0.2",
     "react-full-screen": "^1.1.1",
     "react-player": "^2.12.0",
-    "react-router-dom": "^6.7.0",
+    "react-router-dom": "^6.9.0",
     "react-syntax-highlighter": "^15.5.0",
     "release-please": "^14.17.3",
+    "sass": "^1.60.0",
+    "sass-loader": "^10.4.1",
     "shelljs": "^0.8.5",
     "ts-jest": "^29.0.5",
     "user": "^0.0.0"
