@@ -1,0 +1,81 @@
+@mixin ds-namespace {
+  $prefix: "ds";
+  $selector: &;
+
+  @at-root .#{$prefix} {
+    @content;
+  }
+}
+$DS: ".ds";
+
+@mixin body-text {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: Noto sans, font-mono;
+  color: #333333;
+}
+
+$breakpoints: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+);
+
+@mixin media($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$breakpoint} not defined in $breakpoints map.";
+  }
+}
+
+$spacer: 0.5rem;
+
+@for $i from 0 through 5 {
+  @include ds-namespace {
+    &-m-#{$i} {
+      margin: $i * $spacer;
+    }
+    &-mt-#{$i} {
+      margin-top: $i * $spacer;
+    }
+    &-mr-#{$i} {
+      margin-right: $i * $spacer;
+    }
+    &-mb-#{$i} {
+      margin-top: $i * $spacer;
+    }
+    &-ml-#{$i} {
+      margin-left: $i * $spacer;
+    }
+    &-m-#{$i}-md {
+      @include media(md) {
+        margin-top: $i * $spacer;
+      }
+    }
+    &-mt-#{$i}-md {
+      @include media(md) {
+        margin-top: $i * $spacer;
+      }
+    }
+    &-mr-#{$i}-md {
+      @include media(md) {
+        margin-right: $i * $spacer;
+      }
+    }
+    &-mt-#{$i}-mb {
+      @include media(md) {
+        margin-bottom: $i * $spacer;
+      }
+    }
+    &-mt-#{$i}-ml {
+      @include media(md) {
+        margin-left: $i * $spacer;
+      }
+    }
+  }
+}
