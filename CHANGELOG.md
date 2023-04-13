@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.59.1](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.59.0...v1.59.1) (2023-04-13)
+
+
+### Bug Fixes
+
+* align text center in mobile view ([f673915](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f673915e8cea9e3f23a6dc90760229c070cae740))
+* update dependencies ([2443a35](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2443a3526fb21d6cf4cc75aafabed4e0217851a5))
+* update dependencies ([40f9b32](https://github.com/DTS-STN/Service-Canada-Design-System/commit/40f9b326ff0d5a8e9eb9c694d7dfb824f1892036))
+
 ## [1.59.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.58.0...v1.59.0) (2023-04-13)
 
 
