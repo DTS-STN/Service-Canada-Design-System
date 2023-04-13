@@ -1,5 +1,50 @@
 # Changelog
 
+## [1.59.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.58.0...v1.59.0) (2023-04-13)
+
+
+### Features
+
+* next link support for contact link ([f59a4f0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f59a4f07ccd13c1c0336b0077ca961baf781a410))
+
+
+### Bug Fixes
+
+* update loading spinner color ([f05210f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f05210f62589e0c37a65e70a64be4baff1e3e39c))
+
+## [1.58.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.57.0...v1.58.0) (2023-04-11)
+
+
+### Features
+
+* aa tracking for menu, language, link, header ([9f897fc](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9f897fcba1bad693e1f07fffd54397f505a48259))
+* added `LoadingSpinner` component ([62a2fb4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/62a2fb4c2b413963c313935eba648c9a139ff878))
+
+
+### Bug Fixes
+
+* key ([909c62d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/909c62d6c87f048729dc56232322627b76d5430c))
+* loading spinner test ([913ca28](https://github.com/DTS-STN/Service-Canada-Design-System/commit/913ca28f93c23b56e1bc4174b38c08ef7411973f))
+* missing key ([9551c49](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9551c49ee1ce1cc932e2fb75feb87105671f70cd))
+* passing props down ([ebbf365](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ebbf365242b1a4d537a33eaed6fc1fbdd2a987cc))
+* passing props down ([b54d781](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b54d781f825072799b4e786368f6de776900e1a2))
+* propagating `customClass` into `Link` for `Language` ([ae6a9d1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ae6a9d171da717f9f10c10fb77859c0b27b091ea))
+* remove passHref from Link ([0a3c3aa](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0a3c3aa8256aec4cd22eb75f059ccf1a4da236a2))
+* removed console logs ([82cbc9c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/82cbc9c18a9556298fd6b18de6e6a99acae72b17))
+* updated `FormDatePicker` css to make the caret clickable ([993f0d1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/993f0d1050a440d94a41f36189df4a58924fd23c))
+* updated `Link` with hover for breadcrumbs ([6fa8d6a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/6fa8d6a74fbd09f3dc83ea26375be5dba0198142))
+* use key of menu items instead of index for key ([d0289d4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d0289d40082a098dbd536705b77b2d8c20f8eafa))
+
+
+### Refactored
+
+* cleaned up `className` usage within `LoadingSpinner` child ([2fa5cf7](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2fa5cf74363acc0479b9d0784ed49274b5f5d644))
+
+
+### Documentation
+
+* cleaned up stories for `LoadingSpinner` ([531a3aa](https://github.com/DTS-STN/Service-Canada-Design-System/commit/531a3aa247ee416097682ba22c2677c7bade2875))
+
 ## [1.57.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.56.5...v1.57.0) (2023-02-24)
 
 
