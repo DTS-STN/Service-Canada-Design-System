@@ -32,6 +32,7 @@ export function Footer(props) {
     brandLinks,
     target,
     onClick,
+    customLink,
   } = props;
   let langLand =
     lang === EN ? ENlandscapeLinks : lang === FR ? FRlandscapeLinks : [];
@@ -183,6 +184,8 @@ export function Footer(props) {
                     href={contactLink}
                     linkStyle="smfooterWhite"
                     target={target}
+                    component={customLink}
+                    locale={props.locale}
                   />
                 </section>
               </div>
