@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.59.2](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.59.1...v1.59.2) (2023-04-14)
+
+
+### Bug Fixes
+
+* add onSignOut prop on Menu ([8e60f53](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8e60f530e597194b14df4be987b159013b3dd2d9))
+
 ## [1.59.1](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.59.0...v1.59.1) (2023-04-13)
 
 
