@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.59.3](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.59.2...v1.59.3) (2023-04-20)
+
+
+### Bug Fixes
+
+* align alert text with icon ([ad438e6](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ad438e69d987df92d838e237085350b3c5ed100a))
+
 ## [1.59.2](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.59.1...v1.59.2) (2023-04-14)
 
 
