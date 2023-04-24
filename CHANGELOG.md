@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.59.4](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.59.3...v1.59.4) (2023-04-24)
+
+
+### Bug Fixes
+
+* update Alert styling ([3a149a4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3a149a47a32858240b0bb94ecf406af66e6188af))
+
 ## [1.59.3](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.59.2...v1.59.3) (2023-04-20)
 
 
