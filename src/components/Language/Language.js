@@ -17,6 +17,9 @@ export function Language(props) {
         locale={props.locale}
         component={props.customLink}
         lang={lang === "en" ? "fr" : "en"}
+        dataGcAnalyticsCustomClick={`${
+          props.dataGcAnalyticsCustomClickInstitutionVariable
+        }:${lang === "en" ? "Français" : "English"}`}
       />
     </>
   );

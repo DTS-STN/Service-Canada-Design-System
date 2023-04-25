@@ -3,8 +3,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useEffect } from "react";
-import dropdown from "../../assets/dropdown.svg";
-import { Image } from "../Image/Image";
 import { FormLabel } from "../FormLabel/FormLabel";
 import { FormError } from "../FormError/FormError";
 import EN from "../../translations/en.json";
@@ -113,14 +111,6 @@ export function FormDatePicker(props) {
               </option>
             ))}
           </select>
-          <div className="dropdownPos" aria-hidden="true">
-            <Image
-              alt="Default Image"
-              id="image"
-              className="ds-w-16px ds-h-10px"
-              src={dropdown}
-            />
-          </div>
         </div>
         {hasDay ? (
           <div className="ds-flex ds-flex-col sm:ds-pl-24px ds-pl-8px">
