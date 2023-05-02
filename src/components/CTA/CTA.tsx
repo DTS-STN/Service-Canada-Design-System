@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import React from "react";
 import { Image } from "../Image/Image";
 import commentBubble from "../../assets/comment_bubble.svg";
