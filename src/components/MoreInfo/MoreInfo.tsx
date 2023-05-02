@@ -38,7 +38,7 @@ export const MoreInfo: React.FC<MoreInfoProps> = ({ title, body }) => {
             <Modal.Header className="modal-header">
               <Modal.Title className="modal-title">{title}</Modal.Title>
               <button onClick={handleClose}>
-                <img src={Close} alt="" />
+                <img src={Close} alt="close button" />
               </button>
             </Modal.Header>
             <Modal.Body>

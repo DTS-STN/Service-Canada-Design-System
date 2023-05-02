@@ -108,14 +108,6 @@ svg:hover {
   margin-top: 2rem;
 }
 
-/* @media (max-width: 768px) {
-  .modal {
-    max-width: 90%;
-    max-height: 90%;
-    padding: 20px;
-  }
-} */
-
 @media (max-width: 480px) {
   .modal {
     padding: 20px;
