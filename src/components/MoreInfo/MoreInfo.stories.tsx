@@ -9,8 +9,14 @@ export default {
 const Template: Story<MoreInfoProps> = (args) => <MoreInfo {...args} />;
 
 export const Default = Template.bind({});
+export const SampleAlpha = Template.bind({});
 
 Default.args = {
+  title: "Descriptive title / Term requiring explanation",
+  body: "Description",
+};
+
+SampleAlpha.args = {
   title: "Alpha",
-  body: "Alpha means building a proof of concept tool or service to meet user needs and testing it with users.",
+  body: `Alpha means building a "proof of concept" tool or service to meet user needs and testing it with users.`,
 };
