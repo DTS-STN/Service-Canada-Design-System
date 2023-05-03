@@ -1,5 +1,304 @@
 # Changelog
 
+## [1.53.7](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.59.4...v1.53.7) (2023-05-02)
+
+
+### Features
+
+* `ErrorPage` is no longer a component and instead is a layout ([a631641](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a6316418f96302e8eb5f56891c0fbe88b4b593e3))
+* aa tracking for menu, language, link, header ([9f897fc](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9f897fcba1bad693e1f07fffd54397f505a48259))
+* Add children prop to Menu to allow user to pass in child component for menu  links ([58c6a87](https://github.com/DTS-STN/Service-Canada-Design-System/commit/58c6a878c12838fa92a7d7732462df718496eb00))
+* add custom attribute to support next/link ([1e4db8b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/1e4db8b82096de5885cbc58dba3ba6724903cf5c))
+* add custom link support for language toggle link ([723b536](https://github.com/DTS-STN/Service-Canada-Design-System/commit/723b5366eede47e1f4e75ccd811b503324c17794))
+* add lang prop to searchBar to enable content change when switch language ([970324e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/970324e3764ffa6d830f9adc530a2c0944489c48))
+* add monthId, dayId, yearId props for datePicker component ([46eb147](https://github.com/DTS-STN/Service-Canada-Design-System/commit/46eb1477114a05a078dec59cf139f282f7021dab))
+* add tartget prop to allow user to specify where to open links ([8738273](https://github.com/DTS-STN/Service-Canada-Design-System/commit/87382733069d1639a19f13927f2f5d3307addead))
+* added `LoadingSpinner` component ([62a2fb4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/62a2fb4c2b413963c313935eba648c9a139ff878))
+* added `onClick` support for `Link` as well as the instances within `Footer` ([9cf118f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9cf118fc23e7a2536589c38e38891ea2ee2fd235))
+* added ability to trigger custom method on "next" click for cards that are not last ([8ef6d5a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8ef6d5a98a805556dccf401a0ac27f73dac34664))
+* added custom `component` support for menu item ([51dc3f0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/51dc3f05d331f38174dfd21b852804e772e49338))
+* added first iteration of feedback tool - wip - might be renamed ([69bac8b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/69bac8b37c3a7047de4d874d04c9d489c444c14a))
+* Added MoreInfo component for updated help icon and modal ([5d0a1fd](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5d0a1fd556df451fd576044f165de6129d46d3f1))
+* added new CTA component with stories and tests; included in TypeScript ([788640a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/788640ad3295c99dcc339b470c24545b09267bb8))
+* added typescript compatibility ([0f2952e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0f2952ed5a0e32b2a88f9314cee50c6d5761f38c))
+* enable accordion from to get button attribute ([d7e702c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d7e702cce2228177c4b8f5392088833a93f520a3))
+* enhanced Label in typescript with type definitions! ([be6f46b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/be6f46b451436c45ee77df41b78f9c7e0cb9be00))
+* New props for footer links ([5695097](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5695097881b7547ae4e88fb613597f4f8f10cbed))
+* next link support for contact link ([f59a4f0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f59a4f07ccd13c1c0336b0077ca961baf781a410))
+* removed Contributors component ([70e2ece](https://github.com/DTS-STN/Service-Canada-Design-System/commit/70e2ecebb1c5f43dedd3eb7cd7de7db5f870b44a))
+* removed MoreInfo component ([06c0a4c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/06c0a4c52c88470c245cc5d5fef30450af4dcf9c))
+* renamed DatePicker and CheckBoxForm components to FormDatePicker and FormCheckBox ([5208bea](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5208bea080547031a42e3697d8d8500e5751bbd0))
+* typescript integration and Button as a test; next commit will remove Button for now ([14d2aa4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/14d2aa49f6da2d97b1ba116d36e4944ce9c32217))
+* update global header ([a3bbdfa](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a3bbdfa672a00ff8993ab38975e248212d86cf54))
+* update header dropdown menu ([e3211b5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e3211b53665f5d0a3305d4ac9228eb21d6f328bc))
+* update header mobile ([595c93b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/595c93bca9cba8b77f71d7eec1b5406bd3584b5e))
+* updated `Message` to `ContextualAlert` to match GCWeb ([5d4f35d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5d4f35d856d2057ce3f088f4710e50b69c7005b2))
+
+
+### Bug Fixes
+
+* add children props for header ([57f5a3d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/57f5a3d504bde5fe6bda6c6131917642799a8adf))
+* add datePicker class for select style ([ac721ad](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ac721ad8c7b7c6fe7c85ef848775cc278f9fc8cc))
+* add onclick for component ([886d6f4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/886d6f4bb38514329b12ef004706db0bea20af39))
+* add onSignOut prop on Menu ([8e60f53](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8e60f530e597194b14df4be987b159013b3dd2d9))
+* added `containerClass` functionality to `CTA` ([c940513](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c940513fa8d5b95491b16bfcd6822d55bdd192a6))
+* added error classes for `FormDatePicker` ([94ac9de](https://github.com/DTS-STN/Service-Canada-Design-System/commit/94ac9def80537de0e4ca7703836d6d3a6d3fd2a5))
+* added ErrorPage layout back as an export ([02c82f6](https://github.com/DTS-STN/Service-Canada-Design-System/commit/02c82f6dd432955030af46e2d7922008443a11ed))
+* added id to the button ([340d55d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/340d55dfc8a3002e1cc265d2eeb9dbef31a39de0))
+* added lang support in `TableContent` ([ad4ecc1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ad4ecc115b201e5e8805cb9a1af6b775fd4d3815))
+* added mundane comment to test out the pr stuff ([ee46bdf](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ee46bdf8549d0df0455ea332365712720a03152c))
+* added styling for the Heading links ([90f73f8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/90f73f89d7eb69431ec69ffc5ca0ccf1b3cc19f7))
+* added trivial change for changelog test ([2f2eb62](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2f2eb62d9013864a46d1bd1fe0a0d72884b7ab9c))
+* adding locale prop to the link ([7f19632](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7f19632236b5e281822705c455b2f3681c46d284))
+* align alert text with icon ([ad438e6](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ad438e69d987df92d838e237085350b3c5ed100a))
+* align text center in mobile view ([f673915](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f673915e8cea9e3f23a6dc90760229c070cae740))
+* auth footer now spans the width of the page in wider viewports ([6ace64f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/6ace64f33efd8c678a81cc3f0a03bf8e6b9aa980))
+* blur the input element on scroll instead of changing value ([0db5d6a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0db5d6ac710903d3e2fae376a98599ebc7c06b7d))
+* breadcrumb key ([327bb6f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/327bb6f7a577b53948349a15b1c22645af9ccc90))
+* bumping version for workflow ([2963283](https://github.com/DTS-STN/Service-Canada-Design-System/commit/29632832003796dbbbd05d3321c6188ed35629ec))
+* bumping version manually back down ([06d1908](https://github.com/DTS-STN/Service-Canada-Design-System/commit/06d1908007fa60ce257a6065317aebb0a5f0519d))
+* Call to Action component broken test ([01716d4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/01716d42cdc0f68a3c4ca9b9d530ebe95a1671f4))
+* change "Contact Information" in footer to "Contact Us" in en+fr ([e15b44e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e15b44e17d678337675796da51b877881d2c6c5a))
+* change div to span for header links ([753c6f8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/753c6f82109153b65cb740477ac3965cf452d083))
+* change harded coded target value ([b945907](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b945907464ad084126fa2b27cdcc648bdefe8ab1))
+* change to plural ([d6b6afa](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d6b6afa811172e34a500096e4162f6f394e3d04c))
+* changed alt text on warning icon ([95131ee](https://github.com/DTS-STN/Service-Canada-Design-System/commit/95131eea2eed9c21739ba27e67d67b9f27809d54))
+* changed divs to spans ([551e8f0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/551e8f0a5fee38f3c29bcbeafc7ad8fadea359a3))
+* changed h3 to h2 for `TableContent` heading ([f4b1618](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f4b16184300af5e523bd920f9da5892783e59f1d))
+* changing workflow ([3142e7a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3142e7ac87394024cbea9164dc7fe1c5819d75a2))
+* cleaned up Button ([7ee4779](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7ee477932e2f9cb8f3e4fa2363e846639a27a2e6))
+* cleaned up the docs and pipeline ([6ca98b0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/6ca98b0aa423c229de1298234de833619904ca06))
+* close dropdown on click link ([467e7e9](https://github.com/DTS-STN/Service-Canada-Design-System/commit/467e7e92d192336f6107c2db0389a59acc654b33))
+* corrected broken html from nesting div within button ([84b84c3](https://github.com/DTS-STN/Service-Canada-Design-System/commit/84b84c31e043468b8bce4579b928c7a91441d97b))
+* dropdown menu not open when using Link ([6e532a5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/6e532a52185f7ae0fdc3ee8c06fac9e535b53121))
+* fixes `Link` focus colour ([ca5ed09](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ca5ed097cbf7056dbdd17d133ef6396378e851ce))
+* footer unit test ([77991c5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/77991c5aae4fe3b06e119d435e42b221a790b13e))
+* forcing workflow to publish ([32928de](https://github.com/DTS-STN/Service-Canada-Design-System/commit/32928deae26048a103c49ae13abc0188b69c6bd6))
+* give href a default value for links ([4afbd23](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4afbd235e3b012d8e5ac7d4d143b81fb51edc676))
+* header bugs ([439d3fb](https://github.com/DTS-STN/Service-Canada-Design-System/commit/439d3fb2ac9a2622186607dc66f585211178fbaf))
+* inverted language tag for language link ([9079cc0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9079cc0716b2e28978c69a7b25ff89464163e9d8))
+* key ([909c62d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/909c62d6c87f048729dc56232322627b76d5430c))
+* Link.test.js style check modified to check for new style ([4f00949](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4f009499e93d118fc4b37550e03eb7df1d6d5173))
+* loading spinner test ([913ca28](https://github.com/DTS-STN/Service-Canada-Design-System/commit/913ca28f93c23b56e1bc4174b38c08ef7411973f))
+* made top-level compoinent into button ([60d66cd](https://github.com/DTS-STN/Service-Canada-Design-System/commit/60d66cd99c0325664718948d2883a9dc6d90519e))
+* media links stays in English when switch to French content ([4ae7005](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4ae7005ea8fb7a52fe4ba60a03be4284f2b0c04a))
+* menu bugs ([dddd6b5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/dddd6b55dae069b2e6bb530a75382587ecce3fc0))
+* menu dropdown shadow ([49eac51](https://github.com/DTS-STN/Service-Canada-Design-System/commit/49eac51049986c1be7a508b6eb072d9b4d19b2f5))
+* missing key ([9551c49](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9551c49ee1ce1cc932e2fb75feb87105671f70cd))
+* modified button to support passing classNames when style is "none" ([62270f3](https://github.com/DTS-STN/Service-Canada-Design-System/commit/62270f3ee4bf2eaf06a10b0f72f04e23d8ef826f))
+* modified footer.js auth state to match new design and added translation strings ([6b90c39](https://github.com/DTS-STN/Service-Canada-Design-System/commit/6b90c39c95fe0098c60259ad96543c2ccb2d7cd5))
+* modified lock version ([4b28ff8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4b28ff82334825877a1799ca066c3094555e96c9))
+* move link props back to parent component ([c7a5acc](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c7a5acc5e5bab0867dbf8ec8e06ad931bd55b828))
+* no need for checking out the repo ([ef6d242](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ef6d242fc67cf423fd4d3e5f863ad515540fea4e))
+* passing in ID and test IDs to nested &lt;A/&gt; for `Link` ([bbab503](https://github.com/DTS-STN/Service-Canada-Design-System/commit/bbab5037f823b10e6674755d1a90417f39d994b2))
+* passing props down ([ebbf365](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ebbf365242b1a4d537a33eaed6fc1fbdd2a987cc))
+* passing props down ([b54d781](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b54d781f825072799b4e786368f6de776900e1a2))
+* propagating `customClass` into `Link` for `Language` ([ae6a9d1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ae6a9d171da717f9f10c10fb77859c0b27b091ea))
+* reduce x-axis padding of footer content ([5ce76c2](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5ce76c2d6d4feb0cce0aa4d9f21faaa2c2fbe58d))
+* remove border and related padding from Message.js ([8c7a421](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8c7a421c6b86bbe8b42fe083b8b81124cf5a08ab))
+* remove console.log in menu ([1cf700c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/1cf700cf978763512efd2146a071d9a36afbeaa2))
+* remove event listener when the component unmounts ([2744aad](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2744aad156032ee7c39bef90ff9370d47cd6da8b))
+* remove git filter repo file ([0cf462c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0cf462cc66c287b231151d69801b26ce86ff25aa))
+* remove grey background from auth state header ([5be80b9](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5be80b9ac86ca0fe04333358947e67aaf7546e16))
+* remove passHref from Link ([0a3c3aa](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0a3c3aa8256aec4cd22eb75f059ccf1a4da236a2))
+* remove personal info files ([1fb4e7f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/1fb4e7f6051375f664bf830580a00eb473f2fa06))
+* remove sample data folder ([610d8eb](https://github.com/DTS-STN/Service-Canada-Design-System/commit/610d8eb926655faa71ac00721d1ce63c9e44b8f9))
+* remove square bracket for table content ([490fd7f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/490fd7f2bb75ea68c70612456683a646dedbb62b))
+* remove underline from footer links ([15e5fbb](https://github.com/DTS-STN/Service-Canada-Design-System/commit/15e5fbb2352a9fa25d04162962a942ae5bb30208))
+* remove unnecessary x-axis padding from footer, only use ds-container ([cf6487e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/cf6487efbd8bdaf818e2703aed51b505b2f65708))
+* remove unused code ([b0f8483](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b0f8483b0dc6f1cb5096c66bb8e79034c3b6cbaf))
+* removed `tabIndex` from `AccordionForm` for accessibility ([cfa4a9f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/cfa4a9f5ba06b88fc01b3a979174abf9febe9eb1))
+* removed CheckBoxes component from storybook; serving as a lower-level component now; renamed to CheckBox ([5208bea](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5208bea080547031a42e3697d8d8500e5751bbd0))
+* removed console logs ([82cbc9c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/82cbc9c18a9556298fd6b18de6e6a99acae72b17))
+* removed log ([7532e6a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7532e6af27fa2ce3e0078899cdd5f4154a86ca72))
+* removed space ([80272f7](https://github.com/DTS-STN/Service-Canada-Design-System/commit/80272f7f8f9767488f9eb72f08ef2b5833c7ce7c))
+* removed the branches thing ([8e43ca4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8e43ca4c910c847a367bc9372dbd1b0f0d9fb8d3))
+* removed unused `onSignOut` attribute from `menuList` ([51dc3f0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/51dc3f05d331f38174dfd21b852804e772e49338))
+* restricting `FormDatePicker` input to numbers only, using js ([94ac9de](https://github.com/DTS-STN/Service-Canada-Design-System/commit/94ac9def80537de0e4ca7703836d6d3a6d3fd2a5))
+* restricting `FormDatePicker` to only numbers ([dab9734](https://github.com/DTS-STN/Service-Canada-Design-System/commit/dab9734c47ff84eacd81e81db4c6a2985e77c28e))
+* restricting workflow ([3c9f7ff](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3c9f7ff0d0d84944aa7778084ad6f259f0116fa2))
+* restricting workflow ([1b0daf8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/1b0daf848b26aa70476777330145982dc0ffa324))
+* revert change to use configurable component ([df032f4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/df032f49a00d687470a6e1fba00974326a4aab9a))
+* revert custom component change ([895a648](https://github.com/DTS-STN/Service-Canada-Design-System/commit/895a648878a563ea168657391f4e483a1383df2f))
+* style, breadcrumb link component ([53700eb](https://github.com/DTS-STN/Service-Canada-Design-System/commit/53700eb3cf99812d17dde0dbae15cfb133539c1c))
+* trying space ([f635c93](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f635c9387de1a769adb8e7342edde671a389c043))
+* trying to fix release workflow ([883a6b1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/883a6b1b5973207860e1f91678cd82c8365b66df))
+* typo in prop name ([54ce9cc](https://github.com/DTS-STN/Service-Canada-Design-System/commit/54ce9cc8df2cc82ca6678baa2a38431ab741c8d1))
+* unit test and update Link to add configurable component option ([799ff8c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/799ff8ce78eca90438078353959e79d8343dca62))
+* update Alert styling ([3a149a4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3a149a47a32858240b0bb94ecf406af66e6188af))
+* update date picker ([08808c5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/08808c52a902e1b3c37f140d4507bdc317e78805))
+* update default href for link ([2a142b9](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2a142b93fe05c94ce80c7661c34ce3817d21f7a8))
+* update dependencies ([2443a35](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2443a3526fb21d6cf4cc75aafabed4e0217851a5))
+* update dependencies ([40f9b32](https://github.com/DTS-STN/Service-Canada-Design-System/commit/40f9b326ff0d5a8e9eb9c694d7dfb824f1892036))
+* update dependencies ([1b894f2](https://github.com/DTS-STN/Service-Canada-Design-System/commit/1b894f22bce428d4da10b50dc868c29861030efc))
+* Update French links, change hard-coded heading ([0706820](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0706820c9c0c135cfc6f6f427ba553042ca5e8e6))
+* update loading spinner color ([f05210f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f05210f62589e0c37a65e70a64be4baff1e3e39c))
+* update proptype for lang ([605a799](https://github.com/DTS-STN/Service-Canada-Design-System/commit/605a799503c58c68559e6ed95682ec9a75e5f8fd))
+* updated .gitignore to include /storybook-static ([ffee0ef](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ffee0efabc4b38bd0cc5618b72131411be253aab))
+* updated `FormDatePicker` css to make the caret clickable ([993f0d1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/993f0d1050a440d94a41f36189df4a58924fd23c))
+* updated `FormDatePicker` to use `tel` instead of `number` for onChange events ([388f6aa](https://github.com/DTS-STN/Service-Canada-Design-System/commit/388f6aabde7e2e795fe3c1c96c5aac728010a3d9))
+* updated `Link` with hover for breadcrumbs ([6fa8d6a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/6fa8d6a74fbd09f3dc83ea26375be5dba0198142))
+* updated alignment of links in `Footer` to not span across the component ([7b0823c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7b0823c5a9f05931018886f9afa7e95a198c1b2d))
+* updated alignment of links in `Footer` to not span across the component ([5174922](https://github.com/DTS-STN/Service-Canada-Design-System/commit/51749220f27a64b8247ef23985e660a703d15ae4))
+* updated deps ([42d58c3](https://github.com/DTS-STN/Service-Canada-Design-System/commit/42d58c3b270913d73b411615975221ec576b5ff1))
+* updated DOM element from `p` to `h3` for accessibility ([ad4ecc1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ad4ecc115b201e5e8805cb9a1af6b775fd4d3815))
+* updated lock ([8b877de](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8b877de921377fb927fc9ff5c68804a25dd978b3))
+* upgrade git-conventional-commits from 2.4.0 to 2.5.0 ([24ede62](https://github.com/DTS-STN/Service-Canada-Design-System/commit/24ede62c8a28b4a7ecea14d439639ac21bbde224))
+* upgrade git-conventional-commits from 2.5.0 to 2.6.3 ([0623448](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0623448d60b22cc1ecc9c652ebbe7620a2b5dd0e))
+* upgrade react-player from 2.11.0 to 2.12.0 ([fcd9d3f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/fcd9d3f66e8ee2e88938d39347c68cdd1f20dff7))
+* upgrade react-router-dom from 6.4.3 to 6.4.4 ([b5eb3a6](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b5eb3a6aac7896bdb75e0be322f27c9aed54672d))
+* upgrade react-router-dom from 6.6.1 to 6.6.2 ([383c86d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/383c86d57e11dc6d2ee5b840580ba327f8162dde))
+* upgrade react-router-dom from 6.6.1 to 6.6.2 ([f45c593](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f45c593da14d7db10ce9a034a4af3b75933649c3))
+* upgrade react-router-dom from 6.6.1 to 6.7.0 ([8cbfcfe](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8cbfcfe58cecfc635b76b28cad08934d68c48b36))
+* upgrade react-router-dom from 6.7.0 to 6.9.0 ([29aaa73](https://github.com/DTS-STN/Service-Canada-Design-System/commit/29aaa736fd9494932a4c37ed44a214546295c167))
+* upgrade release-please from 14.11.2 to 14.13.2 ([aa710d6](https://github.com/DTS-STN/Service-Canada-Design-System/commit/aa710d6a8ce7320c7c7e3c1c4625201436d2c627))
+* upgrade release-please from 14.16.0 to 14.17.3 ([b06c6fb](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b06c6fb66ca605074f376b35f2a6c8ce965ec851))
+* upgrade release-please from 14.16.0 to 14.17.3 ([3d8dad0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3d8dad0977b71f5dfa6d624c553cca33d87fbb05))
+* upgrade ts-jest from 29.0.3 to 29.0.4 ([f8cafc4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f8cafc474917b8d56c1d86bc0af00c7be2136703))
+* upgrade ts-jest from 29.0.3 to 29.0.5 ([373cdaa](https://github.com/DTS-STN/Service-Canada-Design-System/commit/373cdaafa15887cc29fe1faf4de0ad6dbb769885))
+* use key of menu items instead of index for key ([d0289d4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d0289d40082a098dbd536705b77b2d8c20f8eafa))
+* version number crinkle ([78935e9](https://github.com/DTS-STN/Service-Canada-Design-System/commit/78935e9b5bc8a861e74e56f72727c9e9a4b5c83d))
+* wrap text and icon in div on the link ([11f6cff](https://github.com/DTS-STN/Service-Canada-Design-System/commit/11f6cffb132ce1542fd65fafbc589c4d8f0e13be))
+
+
+### Performance Improvements
+
+* updated storybook to latest version (6.5.15) ([fef4f63](https://github.com/DTS-STN/Service-Canada-Design-System/commit/fef4f631b409944fae6ad6a2dc7a30d7eb6a98bc))
+
+
+### CI/CD Changes
+
+* added restriction by right means in `if:` of workflow ([b5759dd](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b5759dddce6110ef3f071484a38ef40a7952b0dd))
+
+
+### Build System
+
+* added npm ci ([31aa289](https://github.com/DTS-STN/Service-Canada-Design-System/commit/31aa289cd3798ebf29b5271b6c62addfbb000d83))
+* added npm ci before attempting to rebuild storybook ([02d2bc1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/02d2bc12b9563b71e7abad0402b3cc3e32f9f235))
+* adding proper env var name ([dd6077d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/dd6077de73aabfb3d1c5cd365f418cbdd630d6bb))
+* can't fix workflow with npm release because of isolated env per job restriction ([d570518](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d570518ed523303e8144ae99484a8a6b4f5b6ddb))
+* **deps:** bump decode-uri-component from 0.2.0 to 0.2.2 ([2cda6f6](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2cda6f6f2d6b4232e5570c9c044506c996561b34))
+* **deps:** bump loader-utils from 1.4.0 to 1.4.1 ([dc68682](https://github.com/DTS-STN/Service-Canada-Design-System/commit/dc68682cff45cda2fdcc4760236525edb0039f93))
+* environment var not running thru in the workflow ([67b003e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/67b003e181e2e8e054150b7eaa0d21e5dab68a43))
+* more workflow edits for release and main ([292613d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/292613de9ca20577d813de2059f364db7f7645a8))
+* updated build steps for unit test coverage + typescript ([5b9e7d8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5b9e7d8164fdfde0ff8104fbb4f539349b577956))
+* updated eslint for window global ([51dc3f0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/51dc3f05d331f38174dfd21b852804e772e49338))
+* updated test command for ts testing ([32b8fab](https://github.com/DTS-STN/Service-Canada-Design-System/commit/32b8fabf3328a22b60661c02e74b64d12af8d1cf))
+* updated the destination to hardcoded release path ([77243ab](https://github.com/DTS-STN/Service-Canada-Design-System/commit/77243ab00ffe85765229eabb982be06948b8ddf2))
+* updated the tsconfig to include declarations for *.svg ([788640a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/788640ad3295c99dcc339b470c24545b09267bb8))
+* updated workflow ([df2eb3e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/df2eb3e7467fbf47d85c1e4c2b196b042b1db91c))
+* updated workflow once again for the env vars ([fa1c432](https://github.com/DTS-STN/Service-Canada-Design-System/commit/fa1c432d55d25d1435b86de8c156656c553e2197))
+* updated workflow storybook build folder target and tag ([ffee0ef](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ffee0efabc4b38bd0cc5618b72131411be253aab))
+* updated workflow with JamesIves/github-pages-deploy-action v4 ([232b609](https://github.com/DTS-STN/Service-Canada-Design-System/commit/232b609849e15b436d0ec5e791ccb824748c3b62))
+* using string convention for workflow tag ([9532ea3](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9532ea3eabddbe9e66c8f1a8102f397c53c92234))
+* workflow changes for npm_release_tag ([f4a472b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f4a472be9434564035960cfcbf356ec363c2afbb))
+* workflow update ([8bba228](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8bba22876aa2e1cc456920b8ff5c1d128f43038c))
+
+
+### Tests
+
+* updated jest configuration and added babel for transpilation ([13ffc47](https://github.com/DTS-STN/Service-Canada-Design-System/commit/13ffc47389a87f18c0e5f80251acc6ebbc8f836d))
+* updated tests for `TableContent` ([ad4ecc1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ad4ecc115b201e5e8805cb9a1af6b775fd4d3815))
+
+
+### Refactored
+
+* clean up ([a79d213](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a79d213497ff99717eeb11553b2c1ec24c9b90ed))
+* cleaned up `className` usage within `LoadingSpinner` child ([2fa5cf7](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2fa5cf74363acc0479b9d0784ed49274b5f5d644))
+* cleaned up the semantic html of feedbacktool ([d4dbe9a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d4dbe9a2d364f8e8d00a126c54fe719b4cb69f62))
+
+
+### Documentation
+
+* added font-family in Typography ([9ddf57d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9ddf57d0dae34f042b0c68fa655fcad0d6d522cf))
+* cleaned up ([3ae5f27](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3ae5f273f171474d72de65f850c7b2f7f60c4ab6))
+* cleaned up stories for `LoadingSpinner` ([531a3aa](https://github.com/DTS-STN/Service-Canada-Design-System/commit/531a3aa247ee416097682ba22c2677c7bade2875))
+* converted error pages to Layouts instead of actual components ([a631641](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a6316418f96302e8eb5f56891c0fbe88b4b593e3))
+* manually modified CHANGELOG to remove old release notes ([715d598](https://github.com/DTS-STN/Service-Canada-Design-System/commit/715d59831614ccd75451a67339da904f78f9ea07))
+* removed Footer white link story ([2a37cd4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2a37cd4b2b063280ac3c5eb9aa7cb205e930c7b4))
+* removed In Development section ([171812f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/171812fe765424293bc478f0f84b7bfed8bdbaf7))
+* renamed Storybook Examples to just Examples ([fbb1405](https://github.com/DTS-STN/Service-Canada-Design-System/commit/fbb14051f8a0b12b98626d2b5554cd41339e9f2f))
+* updated Card image; added Card story for title link without image ([fdf4302](https://github.com/DTS-STN/Service-Canada-Design-System/commit/fdf4302ea42ccdcc81164c00b72a4b0a466ce9c4))
+* updated documentation for clarity ([df00a48](https://github.com/DTS-STN/Service-Canada-Design-System/commit/df00a48c729f567c7d1f39f686e6738a4f862b65))
+* updated readme ([164c194](https://github.com/DTS-STN/Service-Canada-Design-System/commit/164c1942863994755ce56e8be79b816289f48fb0))
+* updated README badge ([c8a4cae](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c8a4caecb926eaec90affa94d412e294b8ed9921))
+* updated README to test workflow ([cf84033](https://github.com/DTS-STN/Service-Canada-Design-System/commit/cf840332c6c889296df33265637b00b90eeb7f24))
+* updated README.md with new branching strategy ([393dcc8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/393dcc8b743eac534105b1d77ae86e348afbfa81))
+* updated storybook readme ([41e00a3](https://github.com/DTS-STN/Service-Canada-Design-System/commit/41e00a34d5bad9ee55becb15c3d788fbb3eb9854))
+
+
+### Miscellaneous Chores
+
+* added restriction ([d9e9517](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d9e95179ba5303d38e740e07738031cd3fcb7acf))
+* release 1.53.7 ([5535cc5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5535cc5be1d5af17e77a49a961f5a40e37988e86))
+* **release:** release 1.0.0 ([18eb87c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/18eb87c7c2f1289f4d8eb16b0cd543bfb93dfd33))
+* **release:** release 1.0.1 ([d55770a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d55770a686197ce1dd83836df8f2585c8816b8b3))
+* **release:** release 1.0.2 ([a4ea3b1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a4ea3b142f3e70d000109be82720494bc9525d61))
+* **release:** release 1.52.17 ([74cef1d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/74cef1dabe2675b3294c53fb86e6a5c5f8e8ae13))
+* **release:** release 1.52.18 ([e238c8e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e238c8e0fb3eabb55dfaa195e28a0aa5634db928))
+* **release:** release 1.52.19 ([705d9eb](https://github.com/DTS-STN/Service-Canada-Design-System/commit/705d9eb6f3437b6e5dacd86edb6c1c0dc00849fc))
+* **release:** release 1.52.20 ([2b4d6b1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2b4d6b1f79f2839199e771981cef0dc0fae352d3))
+* **release:** release 1.52.21 ([02eda66](https://github.com/DTS-STN/Service-Canada-Design-System/commit/02eda662c75cda5ade1c1f8b073a7cb41caec1cc))
+* **release:** release 1.52.22 ([70b31d6](https://github.com/DTS-STN/Service-Canada-Design-System/commit/70b31d668976ec8b75cfd39f7f6a0c321000c80e))
+* **release:** release 1.52.23 ([41e8b42](https://github.com/DTS-STN/Service-Canada-Design-System/commit/41e8b425f49863da3bbae7c67434a1898097ba62))
+* **release:** release 1.52.24 ([83364f1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/83364f142d12f04f59f9dd7bfadbfe274f8bdf88))
+* **release:** release 1.52.25 ([0298e53](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0298e53b434639b4baead86d3c7185f154efdef6))
+* **release:** release 1.53.0 ([451e633](https://github.com/DTS-STN/Service-Canada-Design-System/commit/451e633f4dd8fe7d2e84eff5aaf9cb775176544c))
+* **release:** release 1.53.1 ([d07011c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d07011cec104b8900339c97d7f950d695bf57855))
+* **release:** release 1.53.7 ([3542d97](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3542d979d3f3b148172072b4f6ad77cc252548aa))
+* **release:** release 1.53.8 ([39b19b0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/39b19b011156195081a77763b7a2a2e20809f745))
+* **release:** release 1.53.9 ([23e6590](https://github.com/DTS-STN/Service-Canada-Design-System/commit/23e659069d911e3c281ff94351dd40b699625269))
+* **release:** release 1.54.0 ([2b6c80a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2b6c80aa5aafc0c261f002b5844ac285fcc50802))
+* **release:** release 1.55.0 ([a64f0a2](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a64f0a21a96fa1fcfe7b5eb02eeef116200b2475))
+* **release:** release 1.55.1 ([4477009](https://github.com/DTS-STN/Service-Canada-Design-System/commit/44770096986083f5fd7fe446f3e373e447c44f16))
+* **release:** release 1.55.2 ([7edb0b2](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7edb0b287feba6efba42fa8ead75496e9ee7b349))
+* **release:** release 1.55.3 ([72b03c9](https://github.com/DTS-STN/Service-Canada-Design-System/commit/72b03c9d9ba7535d1dec619e43f2c89b22393a96))
+* **release:** release 1.55.4 ([abfb2df](https://github.com/DTS-STN/Service-Canada-Design-System/commit/abfb2df93624b8d23ba33265d663785b6bc2e458))
+* **release:** release 1.56.0 ([fdfd47b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/fdfd47bf2ec4985a583f3dbdb8df9b9e15e204db))
+* **release:** release 1.56.1 ([b3c4a9d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b3c4a9dee8ac3069110e38777d671b1064450524))
+* **release:** release 1.56.2 ([5180bad](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5180badea5c35a5f132c33636466dd92b5f0856d))
+* **release:** release 1.56.3 ([14c530e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/14c530ed77a37cb303ea7fa85ec6c4b7002f838d))
+* **release:** release 1.56.4 ([d8abe52](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d8abe521b1bbe5882b8752028d29d4d555b490bc))
+* **release:** release 1.56.5 ([ecc03c5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ecc03c5a9c204bc19e58a12bdd2c84979468fbf4))
+* **release:** release 1.57.0 ([2bd66ce](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2bd66ce31d26a80cb6795672958acd4f03cffcff))
+* **release:** release 1.58.0 ([e63840b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e63840b8b9c7512dd3b90906efa10a91afcf5b57))
+* **release:** release 1.59.0 ([d497261](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d49726120b809ce26d5ee249da27a5e2750792b0))
+* **release:** release 1.59.1 ([6968876](https://github.com/DTS-STN/Service-Canada-Design-System/commit/6968876f09ec5deace056a56852205aac4fabf02))
+* **release:** release 1.59.2 ([910c20b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/910c20b9c9293c570944fb610a2bfb91553c7f98))
+* **release:** release 1.59.3 ([da58f36](https://github.com/DTS-STN/Service-Canada-Design-System/commit/da58f3688a7666cbc654caeac30bc50538312633))
+* **release:** release 1.59.4 ([14e5165](https://github.com/DTS-STN/Service-Canada-Design-System/commit/14e5165002c89c6660f5dbfe44d29654407d1b3b))
+* updated workflow ([2928449](https://github.com/DTS-STN/Service-Canada-Design-System/commit/29284490d80d4aded7fdb91e20cc36e2de89e193))
+
+## [1.59.4](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.59.3...v1.59.4) (2023-04-24)
+
+
+### Bug Fixes
+
+* update Alert styling ([3a149a4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3a149a47a32858240b0bb94ecf406af66e6188af))
+
+## [1.59.3](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.59.2...v1.59.3) (2023-04-20)
+
+
+### Bug Fixes
+
+* align alert text with icon ([ad438e6](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ad438e69d987df92d838e237085350b3c5ed100a))
+
+## [1.59.2](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.59.1...v1.59.2) (2023-04-14)
+
+
+### Bug Fixes
+
+* add onSignOut prop on Menu ([8e60f53](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8e60f530e597194b14df4be987b159013b3dd2d9))
+
+## [1.59.1](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.59.0...v1.59.1) (2023-04-13)
+
+
+### Bug Fixes
+
+* align text center in mobile view ([f673915](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f673915e8cea9e3f23a6dc90760229c070cae740))
+* update dependencies ([2443a35](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2443a3526fb21d6cf4cc75aafabed4e0217851a5))
+* update dependencies ([40f9b32](https://github.com/DTS-STN/Service-Canada-Design-System/commit/40f9b326ff0d5a8e9eb9c694d7dfb824f1892036))
+
 ## [1.59.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.58.0...v1.59.0) (2023-04-13)
 
 
