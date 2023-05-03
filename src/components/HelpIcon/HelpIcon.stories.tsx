@@ -1,12 +1,12 @@
 import * as React from "react";
-import { MoreInfo, MoreInfoProps } from "./MoreInfo";
+import { HelpIcon, HelpIconProps } from "./HelpIcon";
 import { Meta, Story } from "@storybook/react";
 export default {
-  title: "Components/MoreInfo",
-  component: MoreInfo,
-} as Meta<MoreInfoProps>;
+  title: "Components/HelpIcon",
+  component: HelpIcon,
+} as Meta<HelpIconProps>;
 
-const Template: Story<MoreInfoProps> = (args) => <MoreInfo {...args} />;
+const Template: Story<HelpIconProps> = (args) => <HelpIcon {...args} />;
 
 export const Default = Template.bind({});
 export const SampleAlpha = Template.bind({});

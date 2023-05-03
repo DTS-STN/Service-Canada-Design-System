@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
-import "./MoreInfo.css";
+import "./HelpIcon.css";
 import Close from "../../assets/close.svg";
 
-export interface MoreInfoProps {
+export interface HelpIconProps {
   title: string;
   body: string;
 }
 
-export const MoreInfo: React.FC<MoreInfoProps> = ({ title, body }) => {
+export const HelpIcon: React.FC<HelpIconProps> = ({ title, body }) => {
   const [showModal, setShowModal] = useState(false);
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
