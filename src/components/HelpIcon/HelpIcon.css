@@ -25,6 +25,10 @@ svg:hover {
   align-items: center;
 }
 
+.info:hover svg {
+  fill: #31708f;
+}
+
 .info:focus {
   border: 3px;
   border-style: solid;
@@ -96,6 +100,8 @@ svg:hover {
   font-weight: 700;
   font-size: 36px;
   line-height: 40px;
+  max-width: 947px;
+  margin-right: 1rem;
 }
 
 .modal-body {
