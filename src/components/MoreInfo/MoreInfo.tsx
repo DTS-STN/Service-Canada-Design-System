@@ -18,7 +18,7 @@ export const MoreInfo: React.FC<MoreInfoProps> = ({ title, body }) => {
       <button
         onClick={handleShow}
         className="info"
-        aria-label="more information"
+        aria-label={`Help button ${title}`}
         aria-expanded={showModal}
       >
         <svg
