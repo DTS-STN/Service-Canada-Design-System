@@ -137,4 +137,7 @@ svg:hover {
     width: 100%;
     justify-content: center;
   }
+  .modal-exit {
+    margin-right: 1rem;
+  }
 }
