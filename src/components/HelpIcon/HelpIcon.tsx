@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import "./HelpIcon.css";
-import Close from "../../assets/close.svg";
+import exitIcon from "../../assets/exit-icon.svg";
+import { Button } from "../Button/Button";
 
 export interface HelpIconProps {
   title: string;
@@ -36,18 +37,21 @@ export const HelpIcon: React.FC<HelpIconProps> = ({ title, body }) => {
         <div className="modal-bg">
           <Modal show={showModal} onHide={handleClose} className="modal">
             <Modal.Header className="modal-header">
-              <Modal.Title className="modal-title">{title}</Modal.Title>
-              <button onClick={handleClose}>
-                <img src={Close} alt="close button" />
+              <h2 className="modal-title">{title}</h2>
+              <button onClick={handleClose} className="modal-exit">
+                <img src={exitIcon} alt="close button" />
               </button>
             </Modal.Header>
             <Modal.Body>
               <p className="modal-body">{body}</p>
             </Modal.Body>
-            <Modal.Footer className="ds-mt-4">
-              <button onClick={handleClose} className="modal-close">
-                Close
-              </button>
+            <Modal.Footer>
+              <Button
+                onClick={handleClose}
+                styling="primary"
+                text="Close"
+                className="modal-close"
+              />
             </Modal.Footer>
           </Modal>
         </div>
