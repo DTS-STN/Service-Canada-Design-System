@@ -97,6 +97,14 @@ svg:hover {
   margin-right: 2rem;
 }
 
+.modal-exit:focus {
+  background-color: #e5e5e5;
+  border: 3px;
+  border-style: solid;
+  border-color: #0e62c9;
+  outline: none;
+}
+
 .modal-exit:hover {
   background-color: #e5e5e5;
 }
