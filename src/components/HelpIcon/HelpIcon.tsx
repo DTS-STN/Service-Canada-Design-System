@@ -6,9 +6,10 @@ import { Button } from "../Button/Button";
 export interface HelpIconProps {
   title: string;
   body: string;
+  lang: string;
 }
 
-export const HelpIcon: React.FC<HelpIconProps> = ({ title, body }) => {
+export const HelpIcon: React.FC<HelpIconProps> = ({ title, body, lang }) => {
   const [showModal, setShowModal] = useState(false);
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
@@ -52,13 +53,16 @@ export const HelpIcon: React.FC<HelpIconProps> = ({ title, body }) => {
               </button>
             </Modal.Header>
             <Modal.Body>
-              <p className="modal-body">{body}</p>
+              <p
+                className="modal-body"
+                dangerouslySetInnerHTML={{ __html: body }}
+              />
             </Modal.Body>
             <Modal.Footer>
               <Button
                 onClick={handleClose}
                 styling="primary"
-                text="Close"
+                text={lang === "en" ? "Close" : "Fermer"}
                 className="modal-close"
               />
             </Modal.Footer>
