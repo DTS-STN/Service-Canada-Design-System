@@ -1,5 +1,54 @@
 # Changelog
 
+## [1.60.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.59.0...v1.60.0) (2023-05-10)
+
+
+### Features
+
+* Added MoreInfo component for updated help icon and modal ([5d0a1fd](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5d0a1fd556df451fd576044f165de6129d46d3f1))
+
+
+### Bug Fixes
+
+* add onSignOut prop on Menu ([8e60f53](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8e60f530e597194b14df4be987b159013b3dd2d9))
+* align alert text with icon ([ad438e6](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ad438e69d987df92d838e237085350b3c5ed100a))
+* align text center in mobile view ([f673915](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f673915e8cea9e3f23a6dc90760229c070cae740))
+* bump version number ([f628c83](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f628c838cd2fca91c0a4717be1392547dd4d7b0f))
+* Call to Action component broken test ([01716d4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/01716d42cdc0f68a3c4ca9b9d530ebe95a1671f4))
+* help icon styling update ([bdf0449](https://github.com/DTS-STN/Service-Canada-Design-System/commit/bdf04499db4a17f52bfc6ded4b74b59da1da7a43))
+* import HelpIcon for unit test ([ae9021a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ae9021a0db6f8d2fdd3b856fac16425f61b2eef9))
+* import HelpIcon stories ([6e6bf38](https://github.com/DTS-STN/Service-Canada-Design-System/commit/6e6bf381a7eb34fce88f1231aa9fd1d6857339f0))
+* merge develop from release ([cf7852d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/cf7852d9161b608ac84d3e6e15e16d566df572ab))
+* modal exit button position on mobile ([f87789a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f87789ae709d70da637999367623c890cb5b3d58))
+* remove react-router-dom ([962101d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/962101d744648c0c9244212c95a3597529d5a71e))
+* rename MoreInfo to HelpIcon, minor styling update on icon ([8465ec3](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8465ec31b87d9edd382b44e1a78ac5c196ed66ee))
+* update Alert styling ([3a149a4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3a149a47a32858240b0bb94ecf406af66e6188af))
+* update changelog ([eff3537](https://github.com/DTS-STN/Service-Canada-Design-System/commit/eff3537fd7c45c67c1159f924111e840f63e8649))
+* update dependencies ([2443a35](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2443a3526fb21d6cf4cc75aafabed4e0217851a5))
+* update dependencies ([40f9b32](https://github.com/DTS-STN/Service-Canada-Design-System/commit/40f9b326ff0d5a8e9eb9c694d7dfb824f1892036))
+* update help icon style ([52d18f3](https://github.com/DTS-STN/Service-Canada-Design-System/commit/52d18f3daaef2e43e087a5d6848a7c7e5f74169a))
+* update help modal placeholder text ([4df195f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4df195f0f53c293c5bb58a1a72cd1e247da2f764))
+* update modal exit button focus state ([5ce34cd](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5ce34cd1ad3dff6293bc9baebfa7ff43b0c4d70b))
+* update screen reader text for help button ([514faf5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/514faf51d7ade0df01613a24dab8258b58c3c241))
+* update version number ([13591a1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/13591a13d024dfb5035d314159e40a760bd1e878))
+* updated hover and focus state of exit button on help modal, updated title and font ([707cc97](https://github.com/DTS-STN/Service-Canada-Design-System/commit/707cc97ba5063a339fba45fca03994b2efb8aec6))
+* upgrade ts-jest from 29.0.5 to 29.1.0 ([38bfb73](https://github.com/DTS-STN/Service-Canada-Design-System/commit/38bfb732d1d98c3d23de95040e89ccc5b52a7bbe))
+
+
+### Miscellaneous Chores
+
+* **release:** release 1.53.7 ([44abe00](https://github.com/DTS-STN/Service-Canada-Design-System/commit/44abe004511b4b0f38cdc4ca253cf63e0a098e3f))
+* **release:** release 1.54.0 ([f415c5c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f415c5cc941a88e70ae14dd917ff0be49f4ba1cd))
+* **release:** release 1.55.0 ([74dd2e3](https://github.com/DTS-STN/Service-Canada-Design-System/commit/74dd2e3eceb32871c3a7731a8ff1933a17dbbba6))
+* **release:** release 1.56.0 ([f938cf0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f938cf0bfa8daefdcd2b8808b14ddfcaa621e570))
+* **release:** release 1.57.0 ([f901e11](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f901e110f883fa7d8f0fc32abfc80e264e317baf))
+* **release:** release 1.58.0 ([078b49f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/078b49f9f594fc9674a934ce52c7b999e3dc01ec))
+* **release:** release 1.59.0 ([90f0335](https://github.com/DTS-STN/Service-Canada-Design-System/commit/90f03358b57a519c517ed1759119c3661e2b508e))
+* **release:** release 1.59.1 ([6968876](https://github.com/DTS-STN/Service-Canada-Design-System/commit/6968876f09ec5deace056a56852205aac4fabf02))
+* **release:** release 1.59.2 ([910c20b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/910c20b9c9293c570944fb610a2bfb91553c7f98))
+* **release:** release 1.59.3 ([da58f36](https://github.com/DTS-STN/Service-Canada-Design-System/commit/da58f3688a7666cbc654caeac30bc50538312633))
+* **release:** release 1.59.4 ([14e5165](https://github.com/DTS-STN/Service-Canada-Design-System/commit/14e5165002c89c6660f5dbfe44d29654407d1b3b))
+
 ## [1.59.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.58.0...v1.59.0) (2023-05-10)
 
 
