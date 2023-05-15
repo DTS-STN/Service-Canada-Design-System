@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.61.1](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.61.0...v1.61.1) (2023-05-15)
+
+
+### Bug Fixes
+
+* added French translation for HintExpander, added href prop to the external link ([8190a9f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8190a9f6eabb1ab49d915028c1b462ed46aac00a))
+
 ## [1.61.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.60.0...v1.61.0) (2023-05-15)
 
 
