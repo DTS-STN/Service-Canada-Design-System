@@ -23,6 +23,8 @@ export function TextField(props) {
           infoText={props.infoText}
           describedBy={props.describedBy}
           helpText={props.helpText}
+          hasHint={props.hasHint}
+          hintProps={props.hintProps}
         />
       )}
       <input
@@ -148,4 +150,20 @@ TextField.propTypes = {
    * aria-describedBy label id
    */
   describedBy: PropTypes.string,
+
+  /**
+   * Option to show and custom Hint Expander
+   */
+  hasHint: PropTypes.bool,
+
+  /**
+   * Hint Expander props
+   */
+  hintProps: PropTypes.shape({
+    textLink: PropTypes.string,
+    description: PropTypes.string,
+    withLink: PropTypes.bool,
+    externalLinkText: PropTypes.string,
+    optionalLinkText: PropTypes.string,
+  }),
 };

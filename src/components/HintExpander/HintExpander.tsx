@@ -28,7 +28,7 @@ export const HintExpander: React.FC<HintExpanderProps> = ({
   };
 
   return (
-    <div>
+    <div className="container">
       <div className="expander">
         <img
           src={ExpanderIcon}
