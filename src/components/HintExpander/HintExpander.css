@@ -1,0 +1,39 @@
+.expander {
+  display: flex;
+  align-items: start;
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.expand-icon {
+  margin-top: 6px;
+  transition: transform 0.2s ease-in-out; /* add a smooth transition effect */
+}
+
+.expand-icon.rotate {
+  transform: rotate(90deg); /* apply a 90 degree rotation */
+}
+
+.link-text {
+  text-align: left;
+  text-decoration: underline;
+  color: #284162;
+  padding-left: 1rem;
+}
+
+.external-link-text {
+  white-space: nowrap;
+  text-decoration: underline;
+  color: #284162;
+}
+
+.children {
+  padding: 8px;
+  padding-left: 1.3rem;
+  margin-left: 2px;
+  border-left: 2px solid #284162;
+  color: #5c5c5c;
+}
