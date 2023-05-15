@@ -9,6 +9,7 @@ export interface HintExpanderProps {
   withLink: boolean;
   externalLinkText: string;
   optionalLinkText: string;
+  url: string;
   children: React.ReactNode;
 }
 
@@ -17,6 +18,7 @@ export const HintExpander: React.FC<HintExpanderProps> = ({
   withLink,
   externalLinkText,
   optionalLinkText,
+  url,
   children,
 }) => {
   const [expanded, setExpanded] = useState(false);
@@ -44,10 +46,10 @@ export const HintExpander: React.FC<HintExpanderProps> = ({
           {withLink && (
             <p>
               {optionalLinkText}&nbsp;
-              <span className="external-link-text">
+              <a className="external-link-text" href={url}>
                 {externalLinkText}&nbsp;
                 <FontAwesomeIcon icon={faUpRightFromSquare} />
-              </span>
+              </a>
             </p>
           )}
         </div>
