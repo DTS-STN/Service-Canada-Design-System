@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.61.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.60.0...v1.61.0) (2023-05-15)
+
+
+### Features
+
+* added HintExpander component ([79defec](https://github.com/DTS-STN/Service-Canada-Design-System/commit/79defecef51441f580020449a632961583c33a24))
+* language support for help icon and modal ([9f79dc0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9f79dc0cc1673b7e5476e609b819a8c2065748de))
+
 ## [1.60.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.59.0...v1.60.0) (2023-05-10)
 
 
