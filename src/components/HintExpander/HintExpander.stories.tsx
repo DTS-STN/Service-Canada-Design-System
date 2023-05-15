@@ -8,18 +8,35 @@ export default {
 
 const Template: Story<HintExpanderProps> = (args) => <HintExpander {...args} />;
 
-export const Primary = Template.bind({});
-export const WithLink = Template.bind({});
+export const EN = Template.bind({});
+export const FR = Template.bind({});
+export const WithLinkEN = Template.bind({});
+export const WithLinkFR = Template.bind({});
 
-Primary.args = {
-  linkText: "Why are we asking this question?",
+EN.args = {
+  linkText: "Why are we asking about [topic]?",
   children: "We need to know this because your partner’s annual net income...",
 };
 
-WithLink.args = {
-  linkText: "Why are we asking this question?",
+FR.args = {
+  linkText: "Pourquoi demandons-nous [sujet] ?",
+  children:
+    "Nous devons connaître le revenu net de votre conjoint parce que... .",
+};
+
+WithLinkEN.args = {
+  linkText: "Why are we asking about [topic]?",
   children: "We need to know this because your partner’s annual net income...",
   withLink: true,
   optionalLinkText: "For more information visit",
-  externalLinkText: "Link",
+  externalLinkText: "link",
+};
+
+WithLinkFR.args = {
+  linkText: "Pourquoi demandons-nous [sujet] ?",
+  children:
+    "Nous devons connaître le revenu net de votre conjoint parce que... .",
+  withLink: true,
+  optionalLinkText: "Pour plus d’information, visiter",
+  externalLinkText: "lien",
 };
