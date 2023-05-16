@@ -53,8 +53,8 @@ export function FormRadioButton(props) {
               aria-checked="false"
               tabIndex={0}
             ></span>
-            <span className="ds-pt-2">
-              {label}
+            <span className="ds-pt-2 ds-py-8px">
+              <p className="ds-pb-2">{label}</p>
               {hasHint && (
                 <HintExpander
                   linkText={hintProps.linkText}
