@@ -11,6 +11,7 @@ export interface HintExpanderProps {
   optionalLinkText: string;
   url: string;
   children: React.ReactNode;
+  className: string;
 }
 
 export const HintExpander: React.FC<HintExpanderProps> = ({
@@ -20,6 +21,7 @@ export const HintExpander: React.FC<HintExpanderProps> = ({
   optionalLinkText,
   url,
   children,
+  className,
 }) => {
   const [expanded, setExpanded] = useState(false);
 
@@ -28,7 +30,7 @@ export const HintExpander: React.FC<HintExpanderProps> = ({
   };
 
   return (
-    <div className="container">
+    <div className={`container ${className}`}>
       <div className="expander">
         <img
           src={ExpanderIcon}
