@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.62.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.61.1...v1.62.0) (2023-05-17)
+
+
+### Features
+
+* update checkbox style, add HintExpander to checkbox ([471bd52](https://github.com/DTS-STN/Service-Canada-Design-System/commit/471bd52de3ebc1b09c1f890c95be94369e1c0658))
+* update radio button style, add HintExpander to FormRadioButton ([f447906](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f4479064deccbefbc77c4f150151a6fd1df716ba))
+* Updated DatePicker and TextField, add HintExpander to DatePicker and TextField ([c5067fd](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c5067fdf190ca476ac34f43397cfaa9a2b40e38d))
+
 ## [1.61.1](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.61.0...v1.61.1) (2023-05-15)
 
 
