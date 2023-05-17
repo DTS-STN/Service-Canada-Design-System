@@ -23,12 +23,34 @@ WithError.args = {
     helpText:
       "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
   },
+  hasHint: true,
+  hintProps: {
+    linkText: "Why are we asking about [topic]?",
+    description:
+      "We need to know this because your partner’s annual net income...",
+    withLink: false,
+    externalLinkText: "",
+    optionalLinkText: "",
+    url: "",
+    className: "",
+  },
   checkBoxList: [
     {
       id: "checkbox1",
       name: "ChexBox1",
       value: "IsChecked",
       label: "Option 1",
+      hasHint: true,
+      hintProps: {
+        linkText: "Why are we asking about [topic]?",
+        description:
+          "We need to know this because your partner’s annual net income...",
+        withLink: false,
+        externalLinkText: "",
+        optionalLinkText: "",
+        url: "",
+        className: "",
+      },
     },
     {
       id: "checkbox2",
@@ -74,12 +96,34 @@ NoError.args = {
     helpText:
       "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
   },
+  hasHint: true,
+  hintProps: {
+    linkText: "Why are we asking about [topic]?",
+    description:
+      "We need to know this because your partner’s annual net income...",
+    withLink: false,
+    externalLinkText: "",
+    optionalLinkText: "",
+    url: "",
+    className: "",
+  },
   checkBoxList: [
     {
       id: "checkbox1",
       name: "ChexBox1",
       value: "IsChecked",
       label: "Option 1",
+      hasHint: true,
+      hintProps: {
+        linkText: "Why are we asking about [topic]?",
+        description:
+          "We need to know this because your partner’s annual net income...",
+        withLink: false,
+        externalLinkText: "",
+        optionalLinkText: "",
+        url: "",
+        className: "",
+      },
     },
     {
       id: "checkbox2",
