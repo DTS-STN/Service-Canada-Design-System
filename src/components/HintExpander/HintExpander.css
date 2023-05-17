@@ -1,3 +1,8 @@
+.container {
+  margin-bottom: 8px;
+  margin-left: 2px;
+}
+
 .expander {
   display: flex;
   align-items: start;

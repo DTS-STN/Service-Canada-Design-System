@@ -26,6 +26,7 @@ export function FormDatePicker(props) {
     onYearChange,
     hasDay,
     hasYear,
+    hasHint,
     day,
     month,
     year,
@@ -36,6 +37,7 @@ export function FormDatePicker(props) {
     hasError,
     formLabelProps,
     formErrorProps,
+    hintProps,
   } = props;
 
   const language = lang === "en" ? EN : lang === "fr" ? FR : EN;
@@ -91,6 +93,8 @@ export function FormDatePicker(props) {
           required={formLabelProps.required}
           infoText={formLabelProps.infoText}
           helpText={formLabelProps.helpText}
+          hasHint={hasHint}
+          hintProps={hintProps}
         />
       ) : null}
       <div id={id} className="datePicker ds-relative ds-flex">
@@ -212,7 +216,22 @@ FormDatePicker.propTypes = {
     id: PropTypes.string,
     label: PropTypes.string,
     required: PropTypes.bool,
-    infoText: PropTypes.string,
     helpText: PropTypes.string,
+  }),
+
+  /**
+   * Option to show and custom Hint Expander
+   */
+  hasHint: PropTypes.bool,
+
+  /**
+   * Hint Expander props
+   */
+  hintProps: PropTypes.shape({
+    textLink: PropTypes.string,
+    description: PropTypes.string,
+    withLink: PropTypes.bool,
+    externalLinkText: PropTypes.string,
+    optionalLinkText: PropTypes.string,
   }),
 };

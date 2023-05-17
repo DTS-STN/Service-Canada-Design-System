@@ -3,12 +3,13 @@ import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { Image } from "../Image/Image";
 import checkMark from "../../assets/check_mark.svg";
+import { HintExpander } from "../HintExpander/HintExpander";
 
 /**
  * check box component for forms okay
  */
 export function CheckBox(props) {
-  const { id, name, value, label, hasError } = props;
+  const { id, name, value, label, hasError, hasHint, hintProps } = props;
   var onChange = props.onChange === undefined ? () => true : props.onChange;
   const [checked, setCheckState] = useState(false);
   let display = checked === true ? "ds-visible" : "ds-hidden";
@@ -31,14 +32,26 @@ export function CheckBox(props) {
             onChange={onChange}
           />
           <Image
-            className={`ds-absolute ds-h-8 ds-w-8 ds-left-1.5 ds-bottom-1.5 ${display}`}
+            className={`ds-left-1.5 ds-bottom-1.5 ds-bg-[#0E62C9] ds-rounded-md ${display}`}
             src={checkMark}
             alt="checkMark"
           />
         </>
       </div>
-      <div className="ds-flex">
-        <p className="ds-pl-10px ds-self-center ds-card-body-text">{label}</p>
+      <div className="ds-pl-10px ds-py-8px">
+        <p className="ds-self-center ds-pb-2 ds-card-body-text">{label}</p>
+        {hasHint && (
+          <HintExpander
+            linkText={hintProps.linkText}
+            withLink={hintProps.withLink}
+            externalLinkText={hintProps.externalLinkText}
+            optionalLinkText={hintProps.optionalLinkText}
+            url={hintProps.url}
+            className={hintProps.className}
+          >
+            {hintProps.description}
+          </HintExpander>
+        )}
       </div>
     </label>
   );
