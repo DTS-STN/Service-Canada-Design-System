@@ -29,8 +29,22 @@ export function TextField(props) {
       )}
       <input
         className={`${
-          props.className
-        } ds-rounded ds-outline-0 ds-text-input ds-text-mobileh5 ds-text-multi-neutrals-grey100 ds-w-full ds-min-h-44px ds-text-form-input-gray ds-border-1.5 ds-py-5px ds-px-14px ${
+          props.size === "standard"
+            ? "ds-w-full ds-max-w-[408px]"
+            : props.size === "11"
+            ? "ds-w-[154px]"
+            : props.size === "8"
+            ? "ds-w-[120px]"
+            : props.size === "7"
+            ? "ds-w-[109px]"
+            : props.size === "4"
+            ? "ds-w-[74px]"
+            : props.size === "3"
+            ? "ds-w-[63px]"
+            : props.size === "2"
+            ? "ds-w-[51px]"
+            : props.size
+        } ds-rounded ds-outline-0 ds-text-input ds-text-mobileh5 ds-text-multi-neutrals-grey100 ds-min-h-44px ds-text-form-input-gray ds-border-1.5 ds-py-5px ds-px-14px ${
           props.hasError
             ? "ds-border-specific-red-red50b"
             : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f"
@@ -56,15 +70,10 @@ export function TextField(props) {
 TextField.defaultProps = {
   value: "",
   type: "text",
-  size: "",
+  size: "standard",
 };
 
 TextField.propTypes = {
-  /**
-   * additional css for the component
-   */
-  className: PropTypes.string,
-
   /**
    * the id of the text field
    */
@@ -166,4 +175,10 @@ TextField.propTypes = {
     externalLinkText: PropTypes.string,
     optionalLinkText: PropTypes.string,
   }),
+
+  /**
+   * User can input one of the follow size option to apply
+   * to the input field, the default size is standard.
+   */
+  size: PropTypes.oneOf(["standard", "11", "8", "7", "4", "3", "2"]),
 };
