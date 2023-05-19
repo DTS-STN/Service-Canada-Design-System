@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.63.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.62.0...v1.63.0) (2023-05-19)
+
+
+### Features
+
+* added dropdown component ([784f159](https://github.com/DTS-STN/Service-Canada-Design-System/commit/784f1594e05916301dc37754737f444b4b86f92e))
+* added size options for input field and text area ([eb90fb5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/eb90fb51a628a24a68bd4586fb9f5f52551b4c65))
+
 ## [1.62.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.61.1...v1.62.0) (2023-05-17)
 
 
