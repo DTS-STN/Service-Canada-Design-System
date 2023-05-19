@@ -4,15 +4,6 @@ import { TextField } from "./TextField";
 export default {
   title: "Components/TextField",
   component: TextField,
-  // decorators: [
-  //   (Story) => (
-  //     <div className="ds-w-full ds-flex ds-justify-center">
-  //       <div className="ds-w-96">
-  //         <Story />
-  //       </div>
-  //     </div>
-  //   ),
-  // ],
 };
 
 const Template = (args) => <TextField {...args} />;
@@ -34,6 +25,7 @@ Primary.args = {
     optionalLinkText: "",
     url: "",
   },
+  size: "standard",
   helpText:
     "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
 };
