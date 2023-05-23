@@ -7,25 +7,32 @@ export function Stepper(props) {
   return (
     <div className="ds-border-multi-neutrals-grey85a ds-border ds-px-4 ds-pt-3 ds-pb-7">
       <h1 className="ds-caption-large">{props.name}</h1>
-      <h1 className="ds-heading1 ds-mb-14">{props.heading}</h1> {props.children}
+      <h1 className="ds-heading1 ds-mb-14">
+        {props.step}: {props.heading}
+      </h1>
+      {props.children}
       <div className="ds-flex ds-flex-horizontal ds-justify-between ds-pt-10">
         <div>
-          <Button
-            id={props.nextProps?.id}
-            iconAltText={props.previousProps?.iconAltText}
-            onClick={props.previousProps?.onClick}
-            styling={props.previousProps?.styling}
-            text={props.previousProps?.text}
-          />
+          {props.previousProps && (
+            <Button
+              id={props.nextProps?.id}
+              iconAltText={props.previousProps?.iconAltText}
+              onClick={props.previousProps?.onClick}
+              styling={props.previousProps?.styling}
+              text={props.previousProps?.text}
+            />
+          )}
         </div>
         <div className="ds-w-min">
-          <Button
-            id={props.nextProps?.id}
-            iconAltText={props.nextProps?.iconAltText}
-            onClick={props.nextProps?.onClick}
-            styling={props.nextProps?.styling}
-            text={props.nextProps?.text}
-          />
+          {props.nextProps && (
+            <Button
+              id={props.nextProps?.id}
+              iconAltText={props.nextProps?.iconAltText}
+              onClick={props.nextProps?.onClick}
+              styling={props.nextProps?.styling}
+              text={props.nextProps?.text}
+            />
+          )}
         </div>
       </div>
     </div>
@@ -37,13 +44,16 @@ Stepper.defaultProps = {
 };
 
 Stepper.propTypes = {
+  /**
+   * Unique identifier in the case of multiple components
+   */
   id: PropTypes.string.isRequired,
   /**
-   * Lang attribute for links that do not match the language of the top level document
+   * Tracking variable for data tests
    */
   dataTestId: PropTypes.string,
   /**
-   * Use ariaLabel to provide more descriptive text for a link (screen reader friendly)
+   * Aria label used for accessibility purposes
    */
   ariaLabel: PropTypes.string,
   /**
@@ -51,9 +61,37 @@ Stepper.propTypes = {
    */
   name: PropTypes.string,
   /**
-   * Name of stepper, to be used as part of Heading 1
+   * Step in the process
+   */
+  step: PropTypes.string,
+  /**
+   * Description of the step
    */
   heading: PropTypes.string,
+  /**
+   * Object to define Previous button
+   */
+  previousProps: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      text: PropTypes.string,
+      href: PropTypes.string,
+      styling: PropTypes.string,
+      iconAltText: PropTypes.string,
+    })
+  ),
+  /**
+   * Object to define Next button
+   */
+  nextProps: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      text: PropTypes.string,
+      href: PropTypes.string,
+      styling: PropTypes.string,
+      iconAltText: PropTypes.string,
+    })
+  ),
   /**
    * code passed in to fill stepper body.
    */

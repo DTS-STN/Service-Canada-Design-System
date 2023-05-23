@@ -9,11 +9,8 @@ export default {
 const Template = (args) => <Stepper {...args} />;
 
 export const Default = Template.bind({});
-export const RegularLinkwithEmphasis = Template.bind({});
-export const TitleLink = Template.bind({});
-export const FooterBlueLink = Template.bind({});
-export const BreadcrumbsLink = Template.bind({});
-export const CardActionLink = Template.bind({});
+export const First = Template.bind({});
+export const Last = Template.bind({});
 
 const filler = [
   <>
@@ -29,7 +26,8 @@ const filler = [
 Default.args = {
   id: "Stepper",
   name: "Benefits estimator:",
-  heading: "Step 1 of 4: Age",
+  step: "Step 3 of 4",
+  heading: "Age",
   previousProps: {
     id: "Previous",
     text: "Previous",
@@ -44,5 +42,40 @@ Default.args = {
     styling: "primary",
     iconAltText: "Icon Alt Text - Next",
   },
+  children: filler,
+};
+
+First.args = {
+  id: "Stepper",
+  name: "Benefits estimator:",
+  step: "Step 1 of 4",
+  heading: "Age",
+  dataTestId: "DataTest",
+  ariaLabel: "ariaLabel",
+  nextProps: {
+    id: "Next",
+    text: "Next",
+    href: "#",
+    styling: "primary",
+    iconAltText: "Icon Alt Text - Next",
+  },
+  children: filler,
+};
+
+Last.args = {
+  id: "Stepper",
+  name: "Benefits estimator:",
+  step: "Step 4 of 4",
+  heading: "Age",
+  dataTestId: "DataTest",
+  ariaLabel: "ariaLabel",
+  previousProps: {
+    id: "Previous",
+    text: "Previous",
+    href: "#",
+    styling: "secondary",
+    iconAltText: "Icon Alt Text - Previous",
+  },
+
   children: filler,
 };
