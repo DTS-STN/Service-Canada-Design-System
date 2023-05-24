@@ -92,6 +92,7 @@ const step2 = [
     <div className="ds-w-48">
       <TextField
         dataTestId="textbox-controlled"
+        label=""
         id="textField1"
         name="textField1"
         requiredText="required"
