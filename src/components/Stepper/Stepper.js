@@ -6,9 +6,11 @@ import { Button } from "../Button/Button";
 export function Stepper(props) {
   return (
     <div className="ds-border-multi-neutrals-grey85a ds-border ds-px-4 ds-pt-3 ds-pb-7">
-      <h1 className="ds-caption-large">{props.name}</h1>
-      <h1 className="ds-heading1 ds-mb-14">
-        {props.step}: {props.heading}
+      <h1>
+        <div className="ds-caption-large">{props.name}</div>
+        <div className="ds-heading1 ds-mb-14">
+          {props.step}: {props.heading}
+        </div>
       </h1>
       {props.children}
       <div className="ds-flex ds-flex-horizontal ds-justify-between ds-pt-10">
@@ -53,7 +55,7 @@ Stepper.propTypes = {
    */
   dataTestId: PropTypes.string,
   /**
-   * Aria label used for accessibility purposes
+   * Aria label used for accessibility purposes. Name variable should only be included on the first step only.
    */
   ariaLabel: PropTypes.string,
   /**
