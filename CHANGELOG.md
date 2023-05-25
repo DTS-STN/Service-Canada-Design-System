@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.64.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.63.0...v1.64.0) (2023-05-25)
+
+
+### Features
+
+* added next and previous buttons ([b6b50d4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b6b50d43f0967be9bedd59d47b2ede22ddb533ef))
+* stepper ([5dacc59](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5dacc59100e3dfe1927aef42f849b37b4794337c))
+* variable definitions ([ff7b7d7](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ff7b7d7deed87b57b056232084794dda7a2b643f))
+
+
+### Bug Fixes
+
+* added label ([f99af99](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f99af99f730a4fb9a19e5acb1b644f300ca776ce))
+* contents aligned with figma ([4ace1b0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4ace1b0c683110f6f81ca70d0906702b8f437474))
+* removed empty icon ([f7f7a5d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f7f7a5dc44ce16ec52e3e27b848f06bbe9a19060))
+
 ## [1.63.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.62.0...v1.63.0) (2023-05-19)
 
 
