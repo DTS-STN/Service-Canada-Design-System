@@ -26,7 +26,9 @@ export function CheckBox(props) {
             value={value}
             onClick={() => setCheckState(!checked)}
             type="checkbox"
-            className={`ds-absolute ds-appearance-none ds-checkbox_style ds-outline-none
+            className={`${
+              checked ? "ds-border-multi-blue-blue60f" : ""
+            } ds-absolute ds-appearance-none ds-checkbox_style ds-outline-none
             ${validationClass}
             `}
             onChange={onChange}

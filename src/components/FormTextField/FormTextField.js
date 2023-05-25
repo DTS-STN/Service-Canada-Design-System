@@ -5,7 +5,7 @@ import { FormLabel } from "../FormLabel/FormLabel";
 /**
  * text field component
  */
-export function TextField(props) {
+export function FormTextField(props) {
   const ifControlledProps = !props.uncontrolled
     ? {
         value: props.value,
@@ -44,11 +44,27 @@ export function TextField(props) {
             : props.size === "2"
             ? "ds-w-[51px]"
             : props.size
-        } ds-rounded ds-outline-0 ds-text-input ds-text-mobileh5 ds-text-multi-neutrals-grey100 ds-min-h-44px ds-text-form-input-gray ds-border-1.5 ds-py-5px ds-px-14px ${
+        } ds-rounded ds-text-input ds-text-mobileh5 ds-text-multi-neutrals-grey100 ds-min-h-44px ds-text-form-input-gray ds-border-[1.5px] ds-py-5px ds-px-14px ${
           props.hasError
             ? "ds-border-specific-red-red50b"
             : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f"
         } ${props.exclude ? "exclude" : ""}`}
+        maxLength={`
+          ${
+            props.size === "11"
+              ? "11"
+              : props.size === "8"
+              ? "8"
+              : props.size === "7"
+              ? "7"
+              : props.size === "4"
+              ? "4"
+              : props.size === "3"
+              ? "3"
+              : props.size === "2"
+              ? "2"
+              : ""
+          }`}
         id={props.id}
         aria-describedby={props.describedBy}
         name={props.name}
@@ -67,13 +83,13 @@ export function TextField(props) {
   );
 }
 
-TextField.defaultProps = {
+FormTextField.defaultProps = {
   value: "",
   type: "text",
   size: "standard",
 };
 
-TextField.propTypes = {
+FormTextField.propTypes = {
   /**
    * the id of the text field
    */

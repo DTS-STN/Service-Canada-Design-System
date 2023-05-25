@@ -49,11 +49,11 @@ export const FormDropdown = (props) => {
         <button
           className={`${isOpen ? "ds-rounded-t-[4px]" : "ds-rounded-[4px]"} ${
             props.hasError ? "ds-border-[#D3080C]" : "ds-border-[#6f6f66]"
-          } dropdown-select ds-border-[1px]`}
+          } dropdown-select ds-border-[1.5px]`}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? (
-            <div className="ds-flex">
+            <div className={`ds-flex ${props.hasSearch ? "" : "ds-hidden"}`}>
               <img src={SearchIcon} alt="search icon" />
               <input
                 type="text"
@@ -67,29 +67,35 @@ export const FormDropdown = (props) => {
           ) : (
             selectedOption
           )}
-          <FontAwesomeIcon icon={faCaretDown} style={{ color: "#666666" }} />
+          <FontAwesomeIcon
+            icon={faCaretDown}
+            style={{ color: "#666666" }}
+            className="ds-absolute ds-right-0 ds-px-[14px]"
+          />
         </button>
         <div className="dropdown-open">
           {isOpen && (
             <ul className="dropdown-options">
               {props.options
                 .filter((option) =>
-                  option.toLowerCase().includes(searchOption.toLowerCase())
+                  option.value
+                    .toLowerCase()
+                    .includes(searchOption.toLowerCase())
                 )
                 .map((option, index) => (
                   <li
-                    key={index}
+                    key={option.id}
                     className={`${
                       index === 0
                         ? "ds-border-none"
                         : "ds-border-t-[1px] ds-border-[#666666] ds-border-opacity-60"
-                    } ${option === selectedOption ? "selected" : ""}`}
+                    } ${option.value === selectedOption ? "selected" : ""}`}
                   >
                     <button
-                      onClick={() => handleOptionClick(option)}
+                      onClick={() => handleOptionClick(option.value)}
                       className="dropdown-option"
                     >
-                      {option}
+                      {option.value}
                     </button>
                   </li>
                 ))}
@@ -103,7 +109,9 @@ export const FormDropdown = (props) => {
 };
 
 FormDropdown.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.string),
+  options: PropTypes.arrayOf(
+    PropTypes.shape({ id: PropTypes.string, value: PropTypes.string })
+  ),
   defaultValue: PropTypes.string,
   disabled: PropTypes.bool,
   onChange: PropTypes.func,

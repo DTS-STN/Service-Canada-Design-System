@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { useEffect } from "react";
 import { FormLabel } from "../FormLabel/FormLabel";
 import { FormError } from "../FormError/FormError";
+import { FormDropdown } from "../FormDropdown/FormDropdown";
 import EN from "../../translations/en.json";
 import FR from "../../translations/fr.json";
 import "./styles.css";
@@ -42,19 +43,34 @@ export function FormDatePicker(props) {
 
   const language = lang === "en" ? EN : lang === "fr" ? FR : EN;
 
-  const monthValues = [
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-    "12",
+  const monthValuesEN = [
+    { id: "1", value: "January" },
+    { id: "2", value: "February" },
+    { id: "3", value: "March" },
+    { id: "4", value: "April" },
+    { id: "5", value: "May" },
+    { id: "6", value: "June" },
+    { id: "7", value: "July" },
+    { id: "8", value: "August" },
+    { id: "9", value: "September" },
+    { id: "10", value: "October" },
+    { id: "11", value: "November" },
+    { id: "12", value: "December" },
+  ];
+
+  const monthValuesFR = [
+    { id: "1", value: "janvier" },
+    { id: "2", value: "février" },
+    { id: "3", value: "mars" },
+    { id: "4", value: "avril" },
+    { id: "5", value: "mai" },
+    { id: "6", value: "juin" },
+    { id: "7", value: "juillet" },
+    { id: "8", value: "août" },
+    { id: "9", value: "septembre" },
+    { id: "10", value: "octobre" },
+    { id: "11", value: "novembre" },
+    { id: "12", value: "décembre" },
   ];
 
   const _onDayChange = (e) => {
@@ -98,26 +114,20 @@ export function FormDatePicker(props) {
         />
       ) : null}
       <div id={id} className="datePicker ds-relative ds-flex">
-        <div className="flex flex-col">
+        <div className="ds-flex ds-flex-col sm:ds-pr-24px ds-pr-8px">
           <label className="ds-form-date" htmlFor={monthId}>
             {language.datePicker.month}
           </label>
-
-          <select
-            id={monthId}
-            defaultValue={month}
-            onChange={onMonthChange}
-            className={`ds-w-165px ds-py-5px ds-flex ds-px-14px ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-rounded ${validationClass}`}
-          >
-            {monthValues.map((mv, index) => (
-              <option value={mv} key={`datePicker-month-option-${index}`}>
-                {language.datePicker.months[mv]}
-              </option>
-            ))}
-          </select>
+          <div className="ds-w-[156px]">
+            <FormDropdown
+              defaultValue={month}
+              options={props.lang === "en" ? monthValuesEN : monthValuesFR}
+              onChange={onMonthChange}
+            />
+          </div>
         </div>
         {hasDay ? (
-          <div className="ds-flex ds-flex-col sm:ds-pl-24px ds-pl-8px">
+          <div className="ds-flex ds-flex-col sm:ds-pr-24px ds-pr-8px">
             <label htmlFor={dayId} className="ds-form-date">
               {language.datePicker.day}
             </label>
@@ -128,12 +138,12 @@ export function FormDatePicker(props) {
               min={"1"}
               max={maxDay}
               onChange={_onDayChange}
-              className={`ds-w-46px sm:ds-w-68px ds-px-10px ds-rounded ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-py-5px ${validationClass}`}
+              className={`ds-w-[51px] ds-px-10px ds-rounded ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-py-5px ds-outline-none ${validationClass}`}
             />
           </div>
         ) : null}
         {hasYear ? (
-          <div className="ds-flex ds-flex-col sm:ds-pl-24px ds-pl-8px">
+          <div className="ds-flex ds-flex-col">
             <label htmlFor={yearId} className="ds-form-date">
               {language.datePicker.year}
             </label>
@@ -144,7 +154,7 @@ export function FormDatePicker(props) {
               min={minYear}
               max={maxYear}
               onChange={_onYearChange}
-              className={`ds-w-70px sm:ds-w-165px ds-py-5px ds-px-10px ds-rounded ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ${validationClass}`}
+              className={`ds-w-[74px] ds-py-5px ds-px-10px ds-rounded ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-outline-none ${validationClass}`}
             />
           </div>
         ) : null}
