@@ -2,7 +2,7 @@ import { Stepper } from "./Stepper";
 import { FormDatePicker } from "../FormDatePicker/FormDatePicker";
 import { FormRadioButton } from "../FormRadioButton/FormRadioButton";
 import { Collapse } from "../Collapse/Collapse";
-import { TextField } from "../TextField/TextField";
+import { FormTextField } from "../FormTextField/FormTextField";
 
 export default {
   title: "Components/Stepper",
@@ -90,7 +90,7 @@ const step2 = [
       </p>
     </Collapse>
     <div className="ds-w-48">
-      <TextField
+      <FormTextField
         dataTestId="textbox-controlled"
         label=""
         id="textField1"
