@@ -33,6 +33,7 @@ export { FormRadioButton } from "./components/FormRadioButton/FormRadioButton";
 export { FormCheckBox } from "./components/FormCheckBox/FormCheckBox";
 export { FormMultiTextField } from "./components/FormMultiTextField/FormMultiTextField";
 export { ReviewSubmit } from "./components/ReviewSubmit/ReviewSubmit";
+export { Stepper } from "./components/Stepper/Stepper";
 export { Pagination } from "./components/Pagination/Pagination";
 export { Collapse } from "./components/Collapse/Collapse";
 export { Download } from "./components/Download/Download";
