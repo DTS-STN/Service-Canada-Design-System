@@ -1,6 +1,6 @@
 import React from "react";
 import { AccordionForm } from "./AccordionForm";
-import { TextField } from "../TextField/TextField";
+import { TextField } from "../FormTextField/FormTextField";
 
 export default {
   title: "Components/AccordionForm",

@@ -25,7 +25,7 @@ export { ContextualAlert } from "./components/ContextualAlert/ContextualAlert";
 export { Cards } from "./components/Cards/Cards";
 export { Label } from "./components/Label/Label";
 export { Breadcrumb } from "./components/Breadcrumb/Breadcrumb";
-export { TextField } from "./components/TextField/TextField";
+export { FormTextField } from "./components/FormTextField/FormTextField";
 export { FormError } from "./components/FormError/FormError";
 export { FormLabel } from "./components/FormLabel/FormLabel";
 export { AccordionForm } from "./components/AccordionForm/AccordionForm";

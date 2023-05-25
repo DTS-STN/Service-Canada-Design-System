@@ -5,7 +5,7 @@ import { FormLabel } from "../FormLabel/FormLabel";
 /**
  * text field component
  */
-export function TextField(props) {
+export function FormTextField(props) {
   const ifControlledProps = !props.uncontrolled
     ? {
         value: props.value,
@@ -83,13 +83,13 @@ export function TextField(props) {
   );
 }
 
-TextField.defaultProps = {
+FormTextField.defaultProps = {
   value: "",
   type: "text",
   size: "standard",
 };
 
-TextField.propTypes = {
+FormTextField.propTypes = {
   /**
    * the id of the text field
    */
