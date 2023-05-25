@@ -9,15 +9,15 @@ export function FormLabel(props) {
         className={`ds-flex ds-text-multi-neutrals-grey100 ds-items-center ds-leading-24px ds-text-xl lg:ds-text-p ds-font-body ds-relative`}
         htmlFor={props.id}
       >
-        <span className="ds-inline ds-text-form-input-gray lg:ds-text-xl ds-font-bold ">
+        <span className="ds-inline ds-text-form-input-gray lg:ds-text-xl ds-font-bold">
           {props.label}{" "}
           {props.required ? (
             <span className="ds-inline ds-text-error-border-red ds-text-xl ds-font-medium">
-              &nbsp;{`${props.requiredText}`}
+              &nbsp;{`(${props.requiredText})`}
             </span>
           ) : (
-            <span className="ds-inline ds-text-form-input-gray ds-text-xl lg:ds-text-xl ds-font-medium">
-              &nbsp;{`${props.optionalText}`}
+            <span className="ds-inline ds-text-form-input-gray ds-text-multi-neutrals-grey90a ds-text-xl lg:ds-text-xl ds-font-medium">
+              &nbsp;{`(${props.optionalText})`}
             </span>
           )}
         </span>
@@ -42,8 +42,8 @@ export function FormLabel(props) {
 
 FormLabel.defaultProps = {
   label: "Label Text",
-  optionalText: "(optional)",
-  requiredText: "(required)",
+  optionalText: "optional",
+  requiredText: "required",
   hintProps: {
     linkText: "Why are we asking about [topic]?",
     description:
