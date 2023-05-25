@@ -9,7 +9,7 @@ export function FormLabel(props) {
         className={`ds-flex ds-text-multi-neutrals-grey100 ds-items-center ds-leading-24px ds-text-xl lg:ds-text-p ds-font-body ds-relative`}
         htmlFor={props.id}
       >
-        <span className="ds-inline ds-text-form-input-gray lg:ds-text-xl ds-font-bold ">
+        <span className="ds-inline ds-text-form-input-gray lg:ds-text-xl ds-font-bold">
           {props.label}{" "}
           {props.required ? (
             <span className="ds-inline ds-text-error-border-red ds-text-xl ds-font-medium">
