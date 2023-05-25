@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.64.1](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.64.0...v1.64.1) (2023-05-25)
+
+
+### Bug Fixes
+
+* rename TextField to FormTextField ([e68a8aa](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e68a8aad4f84334f095211743893fb5ec60d2b74))
+* update text field reference, update unit tests ([5ca61ea](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5ca61ea5dfdfa7a8048ebd0f86d3588c11cb1830))
+
 ## [1.64.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.63.0...v1.64.0) (2023-05-25)
 
 
