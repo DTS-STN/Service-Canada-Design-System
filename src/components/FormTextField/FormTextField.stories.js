@@ -1,12 +1,12 @@
 import React from "react";
-import { TextField } from "./TextField";
+import { FormTextField } from "./FormTextField";
 
 export default {
-  title: "Components/TextField",
-  component: TextField,
+  title: "Components/FormTextField",
+  component: FormTextField,
 };
 
-const Template = (args) => <TextField {...args} />;
+const Template = (args) => <FormTextField {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -26,6 +26,7 @@ Primary.args = {
     url: "",
   },
   size: "standard",
+  uncontrolled: true,
   helpText:
     "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
 };

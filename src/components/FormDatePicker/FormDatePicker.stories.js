@@ -14,7 +14,6 @@ English.args = {
   lang: "en",
   minYear: 1999,
   maxYear: 2050,
-  hasError: true,
   hasLabel: true,
   hasHint: true,
   formErrorProps: {
@@ -48,7 +47,6 @@ French.args = {
   lang: "fr",
   minYear: 1999,
   maxYear: 2050,
-  hasError: true,
   hasLabel: true,
   formErrorProps: {
     id: "formErrorId",

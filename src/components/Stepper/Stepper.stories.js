@@ -1,8 +1,8 @@
 import { Stepper } from "./Stepper";
 import { FormDatePicker } from "../FormDatePicker/FormDatePicker";
 import { FormRadioButton } from "../FormRadioButton/FormRadioButton";
-import { TextField } from "../TextField/TextField";
 import { FormDropdown } from "../FormDropdown/FormDropdown";
+import { FormTextField } from "../FormTextField/FormTextField";
 
 export default {
   title: "Components/Stepper",
@@ -87,8 +87,7 @@ const step2 = [
         },
       ]}
     />
-
-    <TextField
+    <FormTextField
       hasHint
       label="What is your annual net income (income after taxes) in Canadian dollars?"
       requiredText="(required)"
