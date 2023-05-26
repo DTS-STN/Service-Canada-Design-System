@@ -5,20 +5,20 @@ import { Button } from "../Button/Button";
 
 export function Stepper(props) {
   return (
-    <div className="ds-border-multi-neutrals-grey85a ds-border ds-pt-3 ds-pb-6">
+    <div className="ds-border-multi-neutrals-grey85a ds-border ds-pt-3 ds-pb-14 sm:ds-pb-40">
       <div className="ds-px-4">
-        <h1 className="sm:ds-pb-12 ds-pb-6">
+        <h1 className="sm:ds-pb-12 ds-pb-9">
           <div className="ds-text-[22px] ds-leading-[33px] ds-text-[#666666] ds-font-[400] font-display font-normal">
             {props.name}
           </div>
-          <div className="ds-heading1">
+          <div className="ds-heading1 ds-pb-2">
             {props.step}: {props.heading}
           </div>
         </h1>
         {props.children}
-        <div className="ds-flex ds-justify-center sm:ds-justify-between ds-pt-8 sm:ds-pt-12">
-          <div className="ds-mr-6 sm:ds-mr-0">
-            {props.previousProps && (
+        <div className="ds-flex ds-justify-left sm:ds-justify-between ds-pt-12 sm:ds-pt-14">
+          {props.previousProps && (
+            <div className="ds-mr-9">
               <Button
                 id={props.nextProps?.id}
                 iconAltText={props.previousProps?.iconAltText}
@@ -26,11 +26,10 @@ export function Stepper(props) {
                 styling={props.previousProps?.styling}
                 text={props.previousProps?.text}
               />
-            )}
-          </div>
-
-          <div className="ds-ml-6 sm:ds-ml-0">
-            {props.nextProps && (
+            </div>
+          )}
+          {props.nextProps && (
+            <div>
               <Button
                 id={props.nextProps?.id}
                 iconAltText={props.nextProps?.iconAltText}
@@ -38,8 +37,8 @@ export function Stepper(props) {
                 styling={props.nextProps?.styling}
                 text={props.nextProps?.text}
               />
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
