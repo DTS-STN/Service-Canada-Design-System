@@ -5,35 +5,39 @@ import { Button } from "../Button/Button";
 
 export function Stepper(props) {
   return (
-    <div className="ds-border-multi-neutrals-grey85a ds-border ds-px-4 ds-pt-3 ds-pb-7">
-      <h1>
-        <div className="ds-caption-large">{props.name}</div>
-        <div className="ds-heading1 ds-mb-14">
-          {props.step}: {props.heading}
-        </div>
-      </h1>
-      {props.children}
-      <div className="ds-flex ds-flex-horizontal ds-justify-between ds-pt-10">
-        <div>
+    <div className="ds-border-multi-neutrals-grey85a ds-border ds-pt-3 ds-pb-14 sm:ds-pb-40">
+      <div className="ds-px-4">
+        <h1 className="sm:ds-pb-12 ds-pb-9">
+          <div className="ds-text-[22px] ds-leading-[33px] ds-text-[#666666] ds-font-[400] font-display font-normal">
+            {props.name}
+          </div>
+          <div className="ds-heading1 ds-pb-2">
+            {props.step}: {props.heading}
+          </div>
+        </h1>
+        {props.children}
+        <div className="ds-flex ds-justify-between ds-pt-14 sm:ds-justify-start sm:ds-pt-12">
           {props.previousProps && (
-            <Button
-              id={props.nextProps?.id}
-              iconAltText={props.previousProps?.iconAltText}
-              onClick={props.previousProps?.onClick}
-              styling={props.previousProps?.styling}
-              text={props.previousProps?.text}
-            />
+            <div className="ds-mr-9">
+              <Button
+                id={props.nextProps?.id}
+                iconAltText={props.previousProps?.iconAltText}
+                onClick={props.previousProps?.onClick}
+                styling={props.previousProps?.styling}
+                text={props.previousProps?.text}
+              />
+            </div>
           )}
-        </div>
-        <div className="ds-w-min">
           {props.nextProps && (
-            <Button
-              id={props.nextProps?.id}
-              iconAltText={props.nextProps?.iconAltText}
-              onClick={props.nextProps?.onClick}
-              styling={props.nextProps?.styling}
-              text={props.nextProps?.text}
-            />
+            <div>
+              <Button
+                id={props.nextProps?.id}
+                iconAltText={props.nextProps?.iconAltText}
+                onClick={props.nextProps?.onClick}
+                styling={props.nextProps?.styling}
+                text={props.nextProps?.text}
+              />
+            </div>
           )}
         </div>
       </div>
