@@ -28,7 +28,7 @@ export function CheckBox(props) {
             type="checkbox"
             className={`${
               checked ? "ds-border-multi-blue-blue60f" : ""
-            } ds-absolute ds-appearance-none ds-checkbox_style ds-outline-none
+            } ds-absolute ds-appearance-none ds-checkbox_style ds-outline-none ds-cursor-pointer
             ${validationClass}
             `}
             onChange={onChange}
