@@ -16,7 +16,7 @@ export function Stepper(props) {
           </div>
         </h1>
         {props.children}
-        <div className="ds-flex ds-justify-left sm:ds-justify-between ds-pt-12 sm:ds-pt-14">
+        <div className="ds-flex ds-justify-between ds-pt-14 sm:ds-justify-start sm:ds-pt-12">
           {props.previousProps && (
             <div className="ds-mr-9">
               <Button
