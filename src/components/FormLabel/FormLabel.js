@@ -33,7 +33,7 @@ export function FormLabel(props) {
           {props.hintProps.description}
         </HintExpander>
       )}
-      <div className="ds-font-body ds-text-lg ds-leading-22px ds-font-medium ds-pb-2 ds-text-multi-neutrals-grey90a">
+      <div className="ds-font-body ds-text-[20px] ds-leading-[26px] ds-font-medium ds-my-[8px] ds-text-multi-neutrals-grey90a">
         {props.helpText}
       </div>
     </>

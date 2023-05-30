@@ -49,7 +49,7 @@ export const FormDropdown = (props) => {
         <button
           className={`${isOpen ? "ds-rounded-t-[4px]" : "ds-rounded-[4px]"} ${
             props.hasError ? "ds-border-[#D3080C]" : "ds-border-[#6f6f66]"
-          } dropdown-select ds-border-[1.5px]`}
+          } dropdown-select ds-border-2`}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? (

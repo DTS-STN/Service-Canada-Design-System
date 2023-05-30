@@ -35,7 +35,7 @@ Default.args = {
   },
   dataTestId: "textbox-controlled",
   requiredText: "required",
-  defaultValue: "option 1",
+  defaultValue: "Select [insert topic]",
   options: [
     { id: "1", value: "option 1" },
     { id: "2", value: "option 2" },

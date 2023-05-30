@@ -6,7 +6,7 @@ const checkboxes = plugin(function ({ addUtilities, theme }) {
       width: "44px",
       // borderColor: theme("colors.multi.neutrals.grey85a"),
       borderRadius: "4px",
-      borderWidth: "1.5px",
+      borderWidth: "2px",
     },
     ".example64": {
       borderRadius: "4px",

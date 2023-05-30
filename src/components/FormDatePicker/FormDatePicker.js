@@ -118,9 +118,11 @@ export function FormDatePicker(props) {
           <label className="ds-form-date" htmlFor={monthId}>
             {language.datePicker.month}
           </label>
-          <div className="ds-w-[156px]">
+          <div className={lang === "en" ? "ds-w-[180px]" : "ds-w-[250px]"}>
             <FormDropdown
-              defaultValue={month}
+              defaultValue={
+                lang === "en" ? "Select month" : "Sélectionner le mois"
+              }
               options={props.lang === "en" ? monthValuesEN : monthValuesFR}
               onChange={onMonthChange}
             />
@@ -138,7 +140,7 @@ export function FormDatePicker(props) {
               min={"1"}
               max={maxDay}
               onChange={_onDayChange}
-              className={`ds-w-[51px] ds-px-10px ds-rounded ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-py-5px ds-outline-none ${validationClass}`}
+              className={`ds-w-[51px] ds-px-10px ds-rounded ds-date-text ds-border-2 ds-border-multi-neutrals-grey85a ds-py-5px ds-outline-none ${validationClass}`}
             />
           </div>
         ) : null}
@@ -154,7 +156,7 @@ export function FormDatePicker(props) {
               min={minYear}
               max={maxYear}
               onChange={_onYearChange}
-              className={`ds-w-[74px] ds-py-5px ds-px-10px ds-rounded ds-date-text ds-border-1.5 ds-border-multi-neutrals-grey85a ds-outline-none ${validationClass}`}
+              className={`ds-w-[74px] ds-py-5px ds-px-10px ds-rounded ds-date-text ds-border-2 ds-border-multi-neutrals-grey85a ds-outline-none ${validationClass}`}
             />
           </div>
         ) : null}
