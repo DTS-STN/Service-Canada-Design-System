@@ -353,6 +353,7 @@ module.exports = {
 
       lineHeight: {
         "48px": "48px",
+        "38px": "38px",
         "30px": "30px",
         "28px": "28px",
         "23px": "23px",
@@ -362,6 +363,8 @@ module.exports = {
         "20px": "20px",
         "24px": "24px",
         header: "1.5em",
+        heading1: "42px",
+        heading1m: "38px",
       },
       outline: {
         "black-solid": ["2px solid #000", "1px"],

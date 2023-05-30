@@ -5,15 +5,11 @@ import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { axe, toHaveNoViolations } from "jest-axe";
-import {
-  Primary,
-  OptionalWithInfoText,
-  RequiredWithError,
-} from "./TextField.stories";
+import { Primary, RequiredWithError } from "./FormTextField.stories";
 
 expect.extend(toHaveNoViolations);
 
-describe("TextField", () => {
+describe("FormTextField", () => {
   let mockFn;
   beforeEach(() => {
     mockFn = jest.fn();

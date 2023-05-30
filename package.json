@@ -1,6 +1,6 @@
 {
   "name": "@dts-stn/service-canada-design-system",
-  "version": "1.59.4",
+  "version": "1.55.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -15,22 +15,28 @@
     "dist/**/*"
   ],
   "dependencies": {
-    "git-conventional-commits": "^2.6.3",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "classnames": "^2.3.2",
+    "focus-trap-react": "^10.1.1",
+    "git-conventional-commits": "^2.6.3",
     "identity-obj-proxy": "^3.0.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-app-polyfill": "^3.0.0",
+    "react-bootstrap": "^2.7.4",
     "react-dom": "^17.0.2",
     "react-full-screen": "^1.1.1",
     "react-player": "^2.12.0",
-    "react-router-dom": "^6.9.0",
+    "react-select": "^5.7.3",
     "react-syntax-highlighter": "^15.5.0",
     "release-please": "^14.17.3",
-    "sass": "^1.62.1",
+    "sass": "^1.62.0",
     "sass-loader": "^10.4.1",
     "shelljs": "^0.8.5",
-    "ts-jest": "^29.0.5",
+    "ts-jest": "^29.1.0",
     "user": "^0.0.0"
   },
   "scripts": {
@@ -139,6 +145,6 @@
     "tailwindcss": "^3.0.23",
     "typescript": "^4.8.4",
     "web-vitals": "^1.1.2",
-    "webpack": "^5.75.0"
+    "webpack": "^5.76.0"
   }
 }
