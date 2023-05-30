@@ -1,6 +1,6 @@
 import React from "react";
 import { AccordionForm } from "./AccordionForm";
-import { TextField } from "../TextField/TextField";
+import { FormTextField } from "../FormTextField/FormTextField";
 
 export default {
   title: "Components/AccordionForm",
@@ -47,7 +47,7 @@ const Template = () => {
       buttonOnChange: customOnNext,
       children: [
         <div>
-          <TextField
+          <FormTextField
             dataTestId="textbox-uncontrolled"
             helpText="Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences"
             id="textField1"
@@ -70,7 +70,7 @@ const Template = () => {
       title: "Income",
       children: [
         <div>
-          <TextField
+          <FormTextField
             dataTestId="textbox-uncontrolled"
             helpText="Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences"
             id="textField1"
@@ -95,7 +95,7 @@ const Template = () => {
       title: "Residency",
       children: [
         <div>
-          <TextField
+          <FormTextField
             dataTestId="textbox-uncontrolled"
             helpText="Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences"
             id="textField1"
@@ -121,7 +121,7 @@ const Template = () => {
       title: "Marital Status",
       children: [
         <div>
-          <TextField
+          <FormTextField
             dataTestId="textbox-uncontrolled"
             helpText="Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences"
             id="textField1"
