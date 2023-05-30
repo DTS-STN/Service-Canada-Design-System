@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.64.3](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.64.2...v1.64.3) (2023-05-30)
+
+
+### Bug Fixes
+
+* update month dropdown placeholder text for French ([07500dd](https://github.com/DTS-STN/Service-Canada-Design-System/commit/07500dd067f4e95c695d4b347f92649ac59fbaa5))
+
 ## [1.64.2](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.64.1...v1.64.2) (2023-05-30)
 
 
