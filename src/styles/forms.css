@@ -37,13 +37,13 @@
 }
 
 .control-input:focus + .control-label::before {
-  border-width: 1 px;
+  border-width: 2px;
   -webkit-box-shadow: 0px 0px 6px rgba(14, 98, 201, 0.6);
   box-shadow: 0px 0px 6px rgba(14, 98, 201, 0.6);
 }
 
 .ds-text-input:focus {
-  border-width: 1px;
+  border-width: 2px;
   box-shadow: 0px 0px 6px rgba(14, 98, 201, 0.6);
   outline: 0;
 }
