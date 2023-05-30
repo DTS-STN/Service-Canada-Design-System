@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.64.2](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.64.1...v1.64.2) (2023-05-30)
+
+
+### Bug Fixes
+
+* conflicts ([b0796c1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b0796c138365ebc15a767ae472855c182f3472a6))
+* conflicts ([e9b2999](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e9b2999c2fcb97da074e02a4d2eff8f4312fc5e3))
+* conflicts ([d2186b7](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d2186b7c8fa650aea5f7b2265ee774bc752471d7))
+* Deleted CTA test ([6ebc242](https://github.com/DTS-STN/Service-Canada-Design-System/commit/6ebc24286969111f28d3ee95bd8561052b365048))
+* figma update ([3b893d1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3b893d1904f8db01af789535c6bd5d2b7c24cd3c))
+* fixed conflicts ([9fcab26](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9fcab26ea9032b5a3dd8c90d8c294b5194e2a519))
+* fixed conflicts ([cd9b7e9](https://github.com/DTS-STN/Service-Canada-Design-System/commit/cd9b7e95feaafe5b0120b72cfa8b3a64902fd1ac))
+* fonts and spacing ([4f02c15](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4f02c15d51d92a03201fe56fb579649701bf5ea4))
+* reversed mediaquery action ([38b12e6](https://github.com/DTS-STN/Service-Canada-Design-System/commit/38b12e6d681941ddd3b89897d81cd0bdc50fa290))
+
 ## [1.64.1](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.64.0...v1.64.1) (2023-05-25)
 
 
