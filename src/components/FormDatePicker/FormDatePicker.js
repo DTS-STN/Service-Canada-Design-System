@@ -118,9 +118,11 @@ export function FormDatePicker(props) {
           <label className="ds-form-date" htmlFor={monthId}>
             {language.datePicker.month}
           </label>
-          <div className="ds-w-[180px]">
+          <div className={lang === "en" ? "ds-w-[180px]" : "ds-w-[250px]"}>
             <FormDropdown
-              defaultValue={month}
+              defaultValue={
+                lang === "en" ? "Select month" : "Sélectionner le mois"
+              }
               options={props.lang === "en" ? monthValuesEN : monthValuesFR}
               onChange={onMonthChange}
             />

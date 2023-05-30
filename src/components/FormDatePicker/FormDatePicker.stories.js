@@ -14,7 +14,6 @@ English.args = {
   lang: "en",
   minYear: 1999,
   maxYear: 2050,
-  month: "Select month",
   hasLabel: true,
   hasHint: true,
   formErrorProps: {
@@ -46,7 +45,6 @@ French.args = {
   // hasYear: false,
   // hasDay: false,
   lang: "fr",
-  month: "Select month",
   minYear: 1999,
   maxYear: 2050,
   hasLabel: true,
