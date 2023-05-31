@@ -23,7 +23,7 @@
     "focus-trap-react": "^10.1.1",
     "git-conventional-commits": "^2.6.3",
     "identity-obj-proxy": "^3.0.0",
-    "prop-types": "^15.8.1",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-app-polyfill": "^3.0.0",
     "react-bootstrap": "^2.7.4",
