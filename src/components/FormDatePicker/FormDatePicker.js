@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useEffect } from "react";
 import { FormLabel } from "../FormLabel/FormLabel";
@@ -28,9 +28,9 @@ export function FormDatePicker(props) {
     hasDay,
     hasYear,
     hasHint,
-    day,
-    month,
-    year,
+    hasAge,
+    defaultDay,
+    defaultYear,
     maxDay,
     minYear,
     maxYear,
@@ -41,7 +41,14 @@ export function FormDatePicker(props) {
     hintProps,
   } = props;
 
+  const [age, setAge] = useState(0);
   const language = lang === "en" ? EN : lang === "fr" ? FR : EN;
+  const [has_year, setHasYear] = useState(false);
+  const [has_month, setHasMonth] = useState(false);
+  const [has_day, setHasDay] = useState(false);
+  const [year, setYear] = useState(0);
+  const [month, setMonth] = useState(0);
+  const [day, setDay] = useState(0);
 
   const monthValuesEN = [
     { id: "1", value: "January" },
@@ -76,14 +83,42 @@ export function FormDatePicker(props) {
   const _onDayChange = (e) => {
     restrictNonNumbers(e);
     onDayChange(e);
+    setHasDay(!!e.target.value);
+    setDay(e.target.value);
+  };
+
+  const _onMonthChange = (option) => {
+    onMonthChange(option);
+    setHasMonth(!!option);
+    setMonth(option);
   };
 
   const _onYearChange = (e) => {
     restrictNonNumbers(e);
     onYearChange(e);
+    setHasYear(!!e.target.value);
+    setYear(e.target.value);
   };
 
   useEffect(() => {
+    // Convert date number into Date object, calculate the difference between currentDate and givenDate to get the age.
+    let givenDate = new Date(year, month, day);
+    let currentDate = new Date();
+    let age = currentDate.getFullYear() - givenDate.getFullYear();
+
+    // The getMonth() method in JavaScript returns a zero-based index for the month of a Date object.
+    let currentMonth = currentDate.getMonth() + 1;
+    let givenMonth = givenDate.getMonth();
+
+    // Calculate the real age. If the current date's month and day is before the given date's month and day, subtract 1 year from the calculated age.
+    if (
+      currentMonth < givenMonth ||
+      (currentMonth === givenMonth &&
+        currentDate.getDate() < givenDate.getDate())
+    ) {
+      return setAge(age - 1); // Subtract 1 year if the current date is before the given date
+    }
+    setAge(age);
     // blur the input element on scroll instead of changing the value! Does not affect Keyboard input.
     const handleScroll = () => {
       const el = document.activeElement;
@@ -95,7 +130,7 @@ export function FormDatePicker(props) {
 
     // remove event listener when component unmounts
     return () => document.removeEventListener("wheel", handleScroll);
-  }, []);
+  }, [year, month, day]);
 
   const validationClass = hasError
     ? "ds-border-specific-red-red50b focus:ds-border-multi-blue-blue60f focus:ds-shadow-text-input"
@@ -113,29 +148,37 @@ export function FormDatePicker(props) {
           hintProps={hintProps}
         />
       ) : null}
-      <div id={id} className="datePicker ds-relative ds-flex">
+      <div id={id} className="datePicker ds-relative ds-flex ds-flex-wrap">
         <div className="ds-flex ds-flex-col sm:ds-pr-24px ds-pr-8px">
           <label className="ds-form-date" htmlFor={monthId}>
             {language.datePicker.month}
           </label>
-          <div className={lang === "en" ? "ds-w-[180px]" : "ds-w-[250px]"}>
+          <div
+            className={`${
+              lang === "en" ? "ds-w-[180px]" : "ds-w-[250px]"
+            } ds-pb-8px`}
+          >
             <FormDropdown
               defaultValue={
-                lang === "en" ? "Select month" : "Sélectionner le mois"
+                lang === "en"
+                  ? EN.monthDropdownPlaceholder
+                  : FR.monthDropdownPlaceholder
               }
+              monthDropdown={true}
+              monthValues={props.lang === "en" ? monthValuesEN : monthValuesFR}
               options={props.lang === "en" ? monthValuesEN : monthValuesFR}
-              onChange={onMonthChange}
+              onChange={_onMonthChange}
             />
           </div>
         </div>
         {hasDay ? (
-          <div className="ds-flex ds-flex-col sm:ds-pr-24px ds-pr-8px">
+          <div className="ds-flex ds-flex-col sm:ds-pr-24px ds-pr-8px ds-pb-8px">
             <label htmlFor={dayId} className="ds-form-date">
               {language.datePicker.day}
             </label>
             <input
               id={dayId}
-              defaultValue={day}
+              defaultValue={defaultDay}
               type="tel"
               min={"1"}
               max={maxDay}
@@ -145,13 +188,13 @@ export function FormDatePicker(props) {
           </div>
         ) : null}
         {hasYear ? (
-          <div className="ds-flex ds-flex-col">
+          <div className="ds-flex ds-flex-col ds-pr-[16px] ds-pb-8px">
             <label htmlFor={yearId} className="ds-form-date">
               {language.datePicker.year}
             </label>
             <input
               id={yearId}
-              defaultValue={year}
+              defaultValue={defaultYear}
               type="tel"
               min={minYear}
               max={maxYear}
@@ -160,6 +203,18 @@ export function FormDatePicker(props) {
             />
           </div>
         ) : null}
+        {hasAge && has_day && has_month && has_year && year > 1000 && (
+          <div className="ds-flex ds-flex-col ds-pb-8px">
+            <label className="ds-form-date">
+              {lang === "en" ? "You are" : "Vous avez"}
+            </label>
+            <p className="ds-h-[44px] ds-flex ds-items-center ds-font-body ds-text-[20px] ds-text-multi-neutrals-grey100 ds-whitespace-nowrap">
+              {`${age < 1 ? 1 : age > 120 ? 120 : age} ${
+                lang === "en" ? (age > 1 ? "years old" : "year old") : "ans"
+              }`}
+            </p>
+          </div>
+        )}
       </div>
       {hasError ? (
         <FormError errorMessage={formErrorProps.errorMessage} />
@@ -246,4 +301,9 @@ FormDatePicker.propTypes = {
     externalLinkText: PropTypes.string,
     optionalLinkText: PropTypes.string,
   }),
+
+  /**
+   * Option to show age
+   */
+  hasAge: PropTypes.bool,
 };
