@@ -1,6 +1,6 @@
 import { AfterPattern } from "./AfterPattern";
 import { FormRadioButton } from "../../components/FormRadioButton/FormRadioButton";
-import { TextField } from "../../components/TextField/TextField";
+import { TextField } from "../../components/FormTextField/FormTextField";
 import React from "react";
 
 export default {

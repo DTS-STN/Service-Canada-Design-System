@@ -5,7 +5,7 @@ import { FormLabel } from "../FormLabel/FormLabel";
 /**
  * text field component
  */
-export function TextField(props) {
+export function FormTextField(props) {
   const ifControlledProps = !props.uncontrolled
     ? {
         value: props.value,
@@ -23,16 +23,48 @@ export function TextField(props) {
           infoText={props.infoText}
           describedBy={props.describedBy}
           helpText={props.helpText}
+          hasHint={props.hasHint}
+          hintProps={props.hintProps}
         />
       )}
       <input
         className={`${
-          props.className
-        } ds-rounded ds-outline-0 ds-text-input ds-text-mobileh5 ds-text-multi-neutrals-grey100 ds-w-full ds-min-h-44px ds-text-form-input-gray ds-border-1.5 ds-py-5px ds-px-14px ${
+          props.size === "standard"
+            ? "ds-w-full ds-max-w-[408px]"
+            : props.size === "11"
+            ? "ds-w-[154px]"
+            : props.size === "8"
+            ? "ds-w-[120px]"
+            : props.size === "7"
+            ? "ds-w-[109px]"
+            : props.size === "4"
+            ? "ds-w-[74px]"
+            : props.size === "3"
+            ? "ds-w-[63px]"
+            : props.size === "2"
+            ? "ds-w-[51px]"
+            : props.size
+        } ds-rounded ds-text-input ds-text-mobileh5 ds-text-multi-neutrals-grey100 ds-min-h-44px ds-text-form-input-gray ds-border-2 ds-py-5px ds-px-14px ${
           props.hasError
             ? "ds-border-specific-red-red50b"
             : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f"
         } ${props.exclude ? "exclude" : ""}`}
+        maxLength={`
+          ${
+            props.size === "11"
+              ? "11"
+              : props.size === "8"
+              ? "8"
+              : props.size === "7"
+              ? "7"
+              : props.size === "4"
+              ? "4"
+              : props.size === "3"
+              ? "3"
+              : props.size === "2"
+              ? "2"
+              : ""
+          }`}
         id={props.id}
         aria-describedby={props.describedBy}
         name={props.name}
@@ -51,18 +83,13 @@ export function TextField(props) {
   );
 }
 
-TextField.defaultProps = {
+FormTextField.defaultProps = {
   value: "",
   type: "text",
-  size: "",
+  size: "standard",
 };
 
-TextField.propTypes = {
-  /**
-   * additional css for the component
-   */
-  className: PropTypes.string,
-
+FormTextField.propTypes = {
   /**
    * the id of the text field
    */
@@ -148,4 +175,26 @@ TextField.propTypes = {
    * aria-describedBy label id
    */
   describedBy: PropTypes.string,
+
+  /**
+   * Option to show and custom Hint Expander
+   */
+  hasHint: PropTypes.bool,
+
+  /**
+   * Hint Expander props
+   */
+  hintProps: PropTypes.shape({
+    textLink: PropTypes.string,
+    description: PropTypes.string,
+    withLink: PropTypes.bool,
+    externalLinkText: PropTypes.string,
+    optionalLinkText: PropTypes.string,
+  }),
+
+  /**
+   * User can input one of the follow size option to apply
+   * to the input field, the default size is standard.
+   */
+  size: PropTypes.oneOf(["standard", "11", "8", "7", "4", "3", "2"]),
 };

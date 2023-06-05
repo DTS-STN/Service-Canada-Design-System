@@ -4,7 +4,7 @@ const datepicker = plugin(function ({ addUtilities, theme }) {
     // default
     ".date-style": {
       borderColor: theme("colors.multi.neutrals.grey50"),
-      borderWidth: "1.5px",
+      borderWidth: "2px",
       borderRadius: "4px",
       borderStyle: "solid",
       paddingLeft: "4px",
