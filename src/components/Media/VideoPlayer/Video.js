@@ -18,7 +18,7 @@ import { Image } from "../../Image/Image";
 import "../styles.css";
 
 export function Video(props) {
-  const { id, videoURL, poster, description, trackProps } = props;
+  const { id, videoURL, poster, description, trackProps, crossOrigin } = props;
   const [state, setState] = React.useState({
     pausePlay: false,
     mute: false,
@@ -180,7 +180,12 @@ export function Video(props) {
               onEnded={handleEnd}
               config={{
                 file: {
-                  attributes: { poster: poster, crossOrigin: "anonymous" },
+                  attributes: {
+                    poster: poster,
+                    crossOrigin: `${
+                      crossOrigin === true ? "anonymous" : false
+                    }`,
+                  },
                   tracks: [
                     {
                       kind: trackProps.kind,
@@ -435,6 +440,10 @@ export function Video(props) {
   );
 }
 
+Video.defaultProps = {
+  crossOrigin: false,
+};
+
 Video.propTypes = {
   /**
    * component id
@@ -468,4 +477,9 @@ Video.propTypes = {
     srcLang: PropTypes.oneOf(["en", "fr"]),
     kind: PropTypes.string,
   }),
+
+  /**
+   * Allow cross-origin requests for subtitle/caption tracks (false by default)
+   */
+  crossOrigin: PropTypes.bool,
 };
