@@ -180,7 +180,7 @@ export function Video(props) {
               onEnded={handleEnd}
               config={{
                 file: {
-                  attributes: { poster: poster },
+                  attributes: { poster: poster, crossOrigin: "anonymous" },
                   tracks: [
                     {
                       kind: trackProps.kind,
