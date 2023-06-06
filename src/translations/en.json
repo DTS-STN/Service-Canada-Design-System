@@ -131,5 +131,6 @@
     }
   },
   "searchPlaceholderText": "Search Canada.ca",
-  "searchButtonHoverText": "Search bar button"
+  "searchButtonHoverText": "Search bar button",
+  "monthDropdownPlaceholder": "Select month"
 }
