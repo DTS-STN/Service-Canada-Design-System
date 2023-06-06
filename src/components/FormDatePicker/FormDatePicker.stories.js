@@ -16,6 +16,7 @@ English.args = {
   maxYear: 2050,
   hasLabel: true,
   hasHint: true,
+  hasAge: true,
   formErrorProps: {
     id: "formErrorId",
     errorMessage: "This is how form error will be displayed",
@@ -45,6 +46,7 @@ French.args = {
   // hasYear: false,
   // hasDay: false,
   lang: "fr",
+  hasAge: true,
   minYear: 1999,
   maxYear: 2050,
   hasLabel: true,

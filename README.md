@@ -2,9 +2,9 @@
 ![Version](https://img.shields.io/github/package-json/v/dts-stn/service-canada-design-system)
 [![Documentation Tool](https://img.shields.io/badge/Documentation%20Tool-storybook-pink)](https://dts-stn.github.io/Service-Canada-Design-System/main)
 
-# DECD Design System Component Library
+# SEDD Design System Component Library
 
-This repository contains the source code for the React component library which corresponds to DECD designs following the [canada.ca guidelines](https://www.canada.ca/en/government/about/design-system.html). This library contains reusable components that are accessible and can be used across DECD products in order to ensure brand and design consistency and to speed up development through reusability.
+This repository contains the source code for the React component library which corresponds to SEDD designs following the [canada.ca guidelines](https://www.canada.ca/en/government/about/design-system.html). This library contains reusable components that are accessible and can be used across SEDD products in order to ensure brand and design consistency and to speed up development through reusability.
 
 ## Install
 
@@ -22,7 +22,7 @@ import { Component } from "@dts-stn/service-canada-design-system";
 
 **Note:** The package is hosted in [npm public registry](https://www.npmjs.com/package/@dts-stn/service-canada-design-system). There are pre-release versions available as well, which are created based on volume of changes.
 
-To see available components please refer to our storybook page [DECD Design System Storybook](https://dts-stn.github.io/Service-Canada-Design-System/main). Make sure to view the **Doc tab** of each component to see important information about how to use components and the props you can pass into them.
+To see available components please refer to our storybook page [SEDD Design System Storybook](https://dts-stn.github.io/Service-Canada-Design-System/main). Make sure to view the **Doc tab** of each component to see important information about how to use components and the props you can pass into them.
 
 ## Contribution
 

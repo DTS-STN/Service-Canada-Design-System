@@ -19,6 +19,16 @@ export const FormDropdown = (props) => {
     setIsOpen(false);
   };
 
+  // When the dropdown is used in DatePicker to select month, corresponding month number should be returned for calculation purpose
+  const handleOptionClickMonth = (option) => {
+    const selectedMonth = props.monthValues.find(
+      (month) => month.value === option
+    );
+    setSelectedOption(selectedMonth.value);
+    props.onChange(selectedMonth.id);
+    setIsOpen(false);
+  };
+
   const handleSearch = (event) => {
     setSearchOption(event.target.value);
   };
@@ -92,7 +102,11 @@ export const FormDropdown = (props) => {
                     } ${option.value === selectedOption ? "selected" : ""}`}
                   >
                     <button
-                      onClick={() => handleOptionClick(option.value)}
+                      onClick={() =>
+                        props.monthDropdown
+                          ? handleOptionClickMonth(option.value)
+                          : handleOptionClick(option.value)
+                      }
                       className="dropdown-option"
                     >
                       {option.value}

@@ -178,7 +178,7 @@ Primary.args = {
           <li>color: grey100</li>
         </ul>
       </div>
-      <div className="card-body-text ds-p-4">
+      <div className="ds-card-body-text ds-p-4">
         Example Text: Card Body text - Lorem Ipsum is simply dummy text.
       </div>
       <div className="ds-bg-gray-200 ds-p-4 ds-m-4">
