@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 /**
- *  Breadcrumb component
+ *  Breadcrumb components
  */
 export function Breadcrumb(props) {
   const Component = props.component || "a";
