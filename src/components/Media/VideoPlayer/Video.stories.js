@@ -30,7 +30,7 @@ VideoPlayer.args = {
   ],
   trackProps: {
     kind: "subtitles",
-    src: exampleCaps,
+    src: "https://raw.githubusercontent.com/vidstack/media-files/main/subs/english.vtt",
     srcLang: "en",
   },
   crossOrigin: false,
