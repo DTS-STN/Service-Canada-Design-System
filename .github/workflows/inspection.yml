@@ -13,7 +13,7 @@ jobs:
           with:
             release-type: node
             changelog-types: '[{"type":"feat","section":"Features"},{"type":"fix","section":"Bug Fixes"},{"type":"perf","section":"Performance Improvements"},{"type":"test","section":"Tests"},{"type":"docs","section":"Documentation"},{"type":"build","section":"Build System"},{"type":"ops","section":"CI/CD Changes"},{"type":"chore","section":"Miscellaneous Chores"},{"type":"refactor","section":"Refactored"}]'
-            default-branch: folderx
+            default-branch: ${{ secrets.GITHUB_TOKEN }}
   build-storybook:
     runs-on: ubuntu-latest
     needs: bump-pr
