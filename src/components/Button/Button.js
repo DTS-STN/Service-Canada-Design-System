@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { Image } from "../Image/Image";
-
+let x;
 export function Button(props) {
   const style = "ds-btn-" + props.styling;
   return props.href === "no ref" ? (
