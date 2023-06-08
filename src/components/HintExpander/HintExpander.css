@@ -15,11 +15,13 @@
 
 .expand-icon {
   margin-top: 6px;
-  transition: transform 0.2s ease-in-out; /* add a smooth transition effect */
+  transition: transform 0.2s ease-in-out;
+  /* add a smooth transition effect */
 }
 
 .expand-icon.rotate {
-  transform: rotate(90deg); /* apply a 90 degree rotation */
+  transform: rotate(90deg);
+  /* apply a 90 degree rotation ---*/
 }
 
 .link-text {
