@@ -49,6 +49,7 @@ Primary.args = {
           <li>line-height: 38px</li>
           <li>font-weight: 700</li>
           <li>color: grey100</li>
+          <li>padding-bottom: 8px</li>
           <li>border-bottom: 1px solid #af3c43</li>
         </ul>
         <p className="ds-body">Styles: Desktop and Tablet</p>
@@ -57,6 +58,7 @@ Primary.args = {
           <li>line-height: 42px</li>
           <li>font-weight: 700</li>
           <li>color: grey100</li>
+          <li>padding-bottom: 8px</li>
           <li>border-bottom: 1px solid #af3c43</li>
         </ul>
       </div>
