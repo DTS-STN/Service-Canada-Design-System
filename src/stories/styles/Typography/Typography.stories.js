@@ -28,7 +28,7 @@ Primary.args = {
           <li>font-size: 60px</li>
           <li>line-height: 60px</li>
           <li>font-weight: 400</li>
-          <li></li>
+          <li>color: grey100</li>
         </ul>
         <p className="ds-body">Styles: Desktop and Tablet</p>
         <ul>
