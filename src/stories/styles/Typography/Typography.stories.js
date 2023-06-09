@@ -57,7 +57,7 @@ Primary.args = {
           <li>line-height: 42px</li>
           <li>font-weight: 700</li>
           <li>color: grey100</li>
-          <li>border-bottom: 4px solid #af3c43</li>
+          <li>border-bottom: 1px solid #af3c43</li>
         </ul>
       </div>
 
