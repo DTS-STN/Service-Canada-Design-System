@@ -17,11 +17,13 @@ const typography = plugin(function ({ addUtilities, theme }) {
       lineHeight: theme("lineHeight.heading1m"),
       fontWeight: theme("fontWeight.bold"),
       fontFamily: theme("fontFamily.header"),
+      paddingBottom: theme("paddingBottom.8px"),
       color: theme("colors.multi.neutrals.grey100"),
       borderBottom: theme("outline.heading-solid"),
       '@media (min-width: theme("screens.sm"))': {
         fontSize: theme("fontSize.browserh1"),
         lineHeight: theme("lineHeight.heading1"),
+        paddingBottom: theme("paddingBottom.8px"),
       },
     },
     ".heading2": {
