@@ -20,11 +20,15 @@ jobs:
         run: npm ci
       - name: Build Storybook
         run: npm run build-storybook
+      - name: Create Folder
+        run: |
+          FOLDER_NAME=$(echo ${{ github.event.pull_request.base.ref }} | sed 's/\//-/g')
+          mkdir -p ${{ github.workspace }}/$GITHUB_REPOSITORY/gh-pages/$FOLDER_NAME
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          target-folder: ${{ github.event.pull_request.head.ref }}
+          target-folder: ${{ $FOLDER_NAME }}
           branch: gh-pages
           folder: storybook-static
           clean: true
