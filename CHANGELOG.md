@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.66.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.65.0...v1.66.0) (2023-06-12)
+
+
+### Features
+
+* add crossOrigin prop to allow users to configure for cross-origin subtitle resources ([5c8a1bc](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5c8a1bc7dc481d69ce4fcac67d4b97ab11d44d9e))
+* added build routines ([e57610b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e57610b5209b66cb89814bd264d2daac95dc018e))
+* Deploy storybook to 3 additional branches. ([61869b8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/61869b8e224d4589db8d47b570a2ebf46af3f1ac))
+* modify ReactPlayer config to allow crossorigin for subtitle tracks ([ff9411e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ff9411e8343bee352d9a361f305de18fbdb8fb07))
+
+
+### Bug Fixes
+
+* inspect1 yaml ([5f9c4dc](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5f9c4dc688c33f40bcca73fb3ad3ff3f770c82a9))
+* storybook deployment workflow ([e727366](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e727366ec3296fcf0135a7a0d5cb1134c615aaae))
+
 ## [1.65.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.64.3...v1.65.0) (2023-06-06)
 
 
