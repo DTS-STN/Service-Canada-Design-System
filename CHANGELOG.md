@@ -1,5 +1,41 @@
 # Changelog
 
+## [1.66.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.65.0...v1.66.0) (2023-06-12)
+
+
+### Features
+
+* add crossOrigin prop to allow users to configure for cross-origin subtitle resources ([5c8a1bc](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5c8a1bc7dc481d69ce4fcac67d4b97ab11d44d9e))
+* added build routines ([e57610b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e57610b5209b66cb89814bd264d2daac95dc018e))
+* Deploy storybook to 3 additional branches. ([61869b8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/61869b8e224d4589db8d47b570a2ebf46af3f1ac))
+* modify ReactPlayer config to allow crossorigin for subtitle tracks ([ff9411e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ff9411e8343bee352d9a361f305de18fbdb8fb07))
+
+
+### Bug Fixes
+
+* inspect1 yaml ([5f9c4dc](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5f9c4dc688c33f40bcca73fb3ad3ff3f770c82a9))
+* storybook deployment workflow ([e727366](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e727366ec3296fcf0135a7a0d5cb1134c615aaae))
+
+## [1.65.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.64.3...v1.65.0) (2023-06-06)
+
+
+### Features
+
+* datepicker has an option to show calculated age ([0658689](https://github.com/DTS-STN/Service-Canada-Design-System/commit/06586893445c242f110369c72d8d6eb51b1b4a73))
+
+
+### Bug Fixes
+
+* audited typography ([10dbe29](https://github.com/DTS-STN/Service-Canada-Design-System/commit/10dbe299116d9046cc2ef64b02cfe6233554427d))
+* CTA test ([94b9165](https://github.com/DTS-STN/Service-Canada-Design-System/commit/94b91650b9c9da7fb690986b2883c2d39e645027))
+* CTA test ([966094f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/966094f31a3d3c4a63ad5171c2ae4f63b05b0538))
+* CTA test ([a18cdb9](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a18cdb9c4ff038f96dead0b4781cf7ee2c0d64b7))
+* resolved conflicts ([d064eae](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d064eaee6344724ae24ee39e31dab09067d18a14))
+* update DECD to SEDD ([8173569](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8173569ed57585eaaec952c0a23bff8cb865e774))
+* updated package-lock ([15ad372](https://github.com/DTS-STN/Service-Canada-Design-System/commit/15ad372643fd655896afed8ca47dadc4f7b0a1ec))
+* updated package-lock ([e382eb4](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e382eb4056d12f49a9cffe8f78ad76c737fc4ef4))
+* upgrade ts-jest from 29.0.5 to 29.1.0 ([0d3430c](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0d3430c079cfc4e7973cc6f910e5152100299d55))
+
 ## [1.64.3](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.64.2...v1.64.3) (2023-05-30)
 
 
