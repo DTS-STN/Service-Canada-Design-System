@@ -1,44 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import "./FormDropdown.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { FormLabel } from "../FormLabel/FormLabel";
-import { FormError } from "../FormError/FormError";
-import SearchIcon from "../../assets/search-icon.svg";
+import { CustomDropdown } from "../CustomDropdown/CustomDropdown";
 
 export const FormDropdown = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(props.defaultValue);
-  const [searchOption, setSearchOption] = useState("");
-  const searchInputRef = useRef(null);
-
-  const handleOptionClick = (option) => {
-    setSelectedOption(option);
-    props.onChange(option);
-    setIsOpen(false);
-  };
-
-  // When the dropdown is used in DatePicker to select month, corresponding month number should be returned for calculation purpose
-  const handleOptionClickMonth = (option) => {
-    const selectedMonth = props.monthValues.find(
-      (month) => month.value === option
-    );
-    setSelectedOption(selectedMonth.value);
-    props.onChange(selectedMonth.id);
-    setIsOpen(false);
-  };
-
-  const handleSearch = (event) => {
-    setSearchOption(event.target.value);
-  };
-
-  useEffect(() => {
-    if (isOpen) {
-      searchInputRef.current.focus();
-    }
-  }, [isOpen]);
-
   return (
     <>
       {props.hasLabel && (
@@ -55,90 +21,101 @@ export const FormDropdown = (props) => {
           hintProps={props.hintProps}
         />
       )}
-      <div className={`dropdown ${isOpen ? "open" : ""}`}>
-        <button
-          className={`${isOpen ? "ds-rounded-t-[4px]" : "ds-rounded-[4px]"} ${
-            props.hasError ? "ds-border-[#D3080C]" : "ds-border-[#6f6f66]"
-          } dropdown-select ds-border-2`}
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? (
-            <div className={`ds-flex ${props.hasSearch ? "" : "ds-hidden"}`}>
-              <img src={SearchIcon} alt="search icon" />
-              <input
-                type="text"
-                value={searchOption}
-                ref={searchInputRef}
-                onChange={handleSearch}
-                placeholder="Search..."
-                className="input-search"
-              />
-            </div>
-          ) : (
-            selectedOption
-          )}
-          <FontAwesomeIcon
-            icon={faCaretDown}
-            style={{ color: "#666666" }}
-            className="ds-absolute ds-right-0 ds-px-[14px]"
-          />
-        </button>
-        <div className="dropdown-open">
-          {isOpen && (
-            <ul className="dropdown-options">
-              {props.options
-                .filter((option) =>
-                  option.value
-                    .toLowerCase()
-                    .includes(searchOption.toLowerCase())
-                )
-                .map((option, index) => (
-                  <li
-                    key={option.id}
-                    className={`${
-                      index === 0
-                        ? "ds-border-none"
-                        : "ds-border-t-[1px] ds-border-[#666666] ds-border-opacity-60"
-                    } ${option.value === selectedOption ? "selected" : ""}`}
-                  >
-                    <button
-                      onClick={() =>
-                        props.monthDropdown
-                          ? handleOptionClickMonth(option.value)
-                          : handleOptionClick(option.value)
-                      }
-                      className="dropdown-option"
-                    >
-                      {option.value}
-                    </button>
-                  </li>
-                ))}
-            </ul>
-          )}
+      {props.doubleDropdown ? (
+        <div className="ds-flex">
+          <div id="dropdown1" className="ds-mr-[48px] ds-w-[80px]">
+            <FormLabel label={props.label1} noneBoldLabel={true} />
+            <CustomDropdown
+              defaultValue={props.dropdownProps.minValue}
+              minValue={props.dropdownProps.minValue}
+              maxValue={props.dropdownProps.maxValue}
+              hasSearch={props.dropdownProps.hasSearch}
+              hasError={props.dropdownProps.hasError}
+              errorText={props.dropdownProps.errorText}
+              onChange={props.dropdownProps.onChange}
+            />
+          </div>
+          <div id="dropdown2" className="ds-w-[80px]">
+            <FormLabel label={props.label2} noneBoldLabel={true} />
+            <CustomDropdown
+              defaultValue={props.dropdown2Props.minValue}
+              minValue={props.dropdown2Props.minValue}
+              maxValue={props.dropdown2Props.maxValue}
+              options={props.dropdown2Props.options}
+              hasSearch={props.dropdown2Props.hasSearch}
+              hasError={props.dropdown2Props.hasError}
+              errorText={props.dropdown2Props.errorText}
+              onChange={props.dropdown2Props.onChange}
+            />
+          </div>
         </div>
-        {props.hasError && <FormError errorMessage={props.errorText} />}
-      </div>
+      ) : (
+        <div className={props.width === "number" ? "ds-w-[80px]" : ""}>
+          <CustomDropdown
+            defaultValue={
+              props.width === "number"
+                ? props.dropdownProps.minValue
+                : props.dropdownProps.defaultValue
+            }
+            minValue={props.dropdownProps.minValue}
+            maxValue={props.dropdownProps.maxValue}
+            options={props.dropdownProps.options}
+            hasSearch={props.dropdownProps.hasSearch}
+            hasError={props.dropdownProps.hasError}
+            errorText={props.dropdownProps.errorText}
+            onChange={props.dropdownProps.onChange}
+          />
+        </div>
+      )}
     </>
   );
 };
 
+FormDropdown.defaultProps = {
+  width: "standard",
+};
+
 FormDropdown.propTypes = {
-  options: PropTypes.arrayOf(
-    PropTypes.shape({ id: PropTypes.string, value: PropTypes.string })
-  ),
-  defaultValue: PropTypes.string,
-  disabled: PropTypes.bool,
-  onChange: PropTypes.func,
   /**
-   * The textfield label
+   * Select the width of the dropdown.
+   */
+  width: PropTypes.oneOf(["standard", "number"]),
+  /**
+   * Determines if the dropdown has a label
    */
   hasLabel: PropTypes.bool,
   /**
-   * Has errors
+   * Dropdown props for a single dropdown
    */
-  hasError: PropTypes.bool,
+  dropdownProps: PropTypes.shape({
+    defaultValue: PropTypes.string,
+    onChange: PropTypes.func,
+    options: PropTypes.arrayOf(
+      PropTypes.shape({ id: PropTypes.string, value: PropTypes.string })
+    ),
+    hasError: PropTypes.bool,
+    errorText: PropTypes.string,
+    minValue: PropTypes.number,
+    maxValue: PropTypes.number,
+    hasSearch: PropTypes.bool,
+  }),
   /**
-   * Form Label Props
+   * Dropdown props for the second dropdown in case of doubleDropdown
+   */
+  dropdown2Props: PropTypes.shape({
+    defaultValue: PropTypes.string,
+    onChange: PropTypes.func,
+    options: PropTypes.arrayOf(
+      PropTypes.shape({ id: PropTypes.string, value: PropTypes.string })
+    ),
+    hasError: PropTypes.bool,
+    errorText: PropTypes.string,
+    minValue: PropTypes.number,
+    maxValue: PropTypes.number,
+    hasSearch: PropTypes.bool,
+  }),
+  /**
+   * Form label props
    */
   formLabelProps: PropTypes.shape({
     id: PropTypes.string,
@@ -146,13 +123,16 @@ FormDropdown.propTypes = {
     required: PropTypes.bool,
     infoText: PropTypes.string,
     helpText: PropTypes.string,
+    requiredText: PropTypes.string,
+    optionalText: PropTypes.string,
+    describedBy: PropTypes.string,
   }),
   /**
-   * Option to show and custom Hint Expander
+   * Determines if the dropdown has a hint
    */
   hasHint: PropTypes.bool,
   /**
-   * Hint Expander props
+   * Hint expander props
    */
   hintProps: PropTypes.shape({
     textLink: PropTypes.string,
