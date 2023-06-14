@@ -12,6 +12,9 @@ export const CustomDropdown = (props) => {
   const [searchOption, setSearchOption] = useState("");
   const searchInputRef = useRef(null);
 
+  const clampedMinValue = Math.max(0, props.minValue);
+  const clampedMaxValue = Math.min(99, props.maxValue);
+
   const handleOptionClick = (option) => {
     setSelectedOption(option);
     props.onChange(option);
@@ -29,7 +32,7 @@ export const CustomDropdown = (props) => {
   }, [isOpen]);
 
   const numberOptions = [];
-  for (let i = props.minValue; i <= props.maxValue; i++) {
+  for (let i = clampedMinValue; i <= clampedMaxValue; i++) {
     numberOptions.push({ id: i.toString(), value: i.toString() });
   }
 
@@ -104,8 +107,8 @@ CustomDropdown.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.shape({ id: PropTypes.string, value: PropTypes.string })
   ),
-  minValue: PropTypes.number,
-  maxValue: PropTypes.number,
+  minValue: PropTypes.oneOf([0, PropTypes.number]),
+  maxValue: PropTypes.oneOf([99, PropTypes.number]),
   defaultValue: PropTypes.string,
   disabled: PropTypes.bool,
   onChange: PropTypes.func,

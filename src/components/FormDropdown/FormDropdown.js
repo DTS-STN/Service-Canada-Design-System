@@ -50,20 +50,36 @@ export const FormDropdown = (props) => {
           </div>
         </div>
       ) : (
-        <CustomDropdown
-          defaultValue={props.dropdownProps.defaultValue}
-          options={props.dropdownProps.options}
-          hasSearch={props.dropdownProps.hasSearch}
-          hasError={props.dropdownProps.hasError}
-          errorText={props.dropdownProps.errorText}
-          onChange={props.dropdownProps.onChange}
-        />
+        <div className={props.width === "number" ? "ds-w-[80px]" : ""}>
+          <CustomDropdown
+            defaultValue={
+              props.width === "number"
+                ? props.dropdownProps.minValue
+                : props.dropdownProps.defaultValue
+            }
+            minValue={props.dropdownProps.minValue}
+            maxValue={props.dropdownProps.maxValue}
+            options={props.dropdownProps.options}
+            hasSearch={props.dropdownProps.hasSearch}
+            hasError={props.dropdownProps.hasError}
+            errorText={props.dropdownProps.errorText}
+            onChange={props.dropdownProps.onChange}
+          />
+        </div>
       )}
     </>
   );
 };
 
+FormDropdown.defaultProps = {
+  width: "standard",
+};
+
 FormDropdown.propTypes = {
+  /**
+   * Select the width of the dropdown.
+   */
+  width: PropTypes.oneOf(["standard", "number"]),
   /**
    * Determines if the dropdown has a label
    */
