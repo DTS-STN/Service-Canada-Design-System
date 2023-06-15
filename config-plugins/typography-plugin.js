@@ -138,6 +138,13 @@ const typography = plugin(function ({ addUtilities, theme }) {
       fontFamily: theme("fontFamily.body"),
       color: theme("colors.multi.neutrals.grey85a"),
     },
+    ".caption-heading1": {
+      fontSize: theme("fontSize.caption_heading1"),
+      lineHeight: theme("lineHeight.caption_heading1"),
+      fontWeight: theme("fontWeight.regular"),
+      fontFamily: theme("fontFamily.body"),
+      color: theme("colors.multi.neutrals.grey85a"),
+    },
 
     ".form-date": {
       fontSize: theme("fontSize.mobileh5"),
