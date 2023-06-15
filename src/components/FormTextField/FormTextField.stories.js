@@ -10,7 +10,7 @@ const Template = (args) => <FormTextField {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  id: "textField1",
+  id: "primary",
   name: "textField1",
   label: "I am a text field",
   dataTestId: "textbox-controlled",
@@ -33,8 +33,8 @@ Primary.args = {
 
 export const OptionalWithInfoText = Template.bind({});
 OptionalWithInfoText.args = {
-  id: "textField1",
-  name: "textField1",
+  id: "optionalTextField",
+  name: "optionalTextField",
   label: "I am a text field",
   requiredText: "required",
   optionalText: "optional",
@@ -57,8 +57,8 @@ OptionalWithInfoText.args = {
 
 export const RequiredWithError = Template.bind({});
 RequiredWithError.args = {
-  id: "textField1",
-  name: "textField1",
+  id: "requiredWithError",
+  name: "requiredWithError",
   label: "I am a text field",
   dataTestId: "textbox-bold",
   requiredText: "required",
