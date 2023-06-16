@@ -40,7 +40,7 @@ export function Menu(props) {
         </div>
         {isAuthenticated ? (
           <div
-            className="ds-w-full sm:ds-w-[260px] ds-bg-[#EBF2FC] hover:ds-bg-[#CFD1D5] focus:ds-bg-[#CFD1D5]"
+            className="ds-w-full sm:ds-w-[260px] ds-h-full ds-bg-[#EBF2FC] hover:ds-bg-[#CFD1D5] focus:ds-bg-[#CFD1D5]"
             ref={dropdown}
           >
             <button
