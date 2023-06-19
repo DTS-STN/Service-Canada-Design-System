@@ -88,7 +88,7 @@ FormDropdown.propTypes = {
    * Dropdown props for a single dropdown
    */
   dropdownProps: PropTypes.shape({
-    defaultValue: PropTypes.string,
+    defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     onChange: PropTypes.func,
     options: PropTypes.arrayOf(
       PropTypes.shape({ id: PropTypes.string, value: PropTypes.string })
@@ -103,7 +103,7 @@ FormDropdown.propTypes = {
    * Dropdown props for the second dropdown in case of doubleDropdown
    */
   dropdown2Props: PropTypes.shape({
-    defaultValue: PropTypes.string,
+    defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     onChange: PropTypes.func,
     options: PropTypes.arrayOf(
       PropTypes.shape({ id: PropTypes.string, value: PropTypes.string })

@@ -107,9 +107,9 @@ CustomDropdown.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.shape({ id: PropTypes.string, value: PropTypes.string })
   ),
-  minValue: PropTypes.oneOf([0, PropTypes.number]),
-  maxValue: PropTypes.oneOf([99, PropTypes.number]),
-  defaultValue: PropTypes.string,
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  minValue: PropTypes.number,
+  maxValue: PropTypes.number,
   disabled: PropTypes.bool,
   onChange: PropTypes.func,
   hasError: PropTypes.bool,
