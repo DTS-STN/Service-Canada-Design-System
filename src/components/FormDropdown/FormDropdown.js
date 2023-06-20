@@ -40,7 +40,7 @@ export const FormDropdown = (props) => {
   }, [isOpen]);
 
   return (
-    <>
+    <div id={props.id}>
       {props.hasLabel && (
         <FormLabel
           id={props.formLabelProps.id}
@@ -118,7 +118,7 @@ export const FormDropdown = (props) => {
         </div>
         {props.hasError && <FormError errorMessage={props.errorText} />}
       </div>
-    </>
+    </div>
   );
 };
 
@@ -126,6 +126,7 @@ FormDropdown.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.shape({ id: PropTypes.string, value: PropTypes.string })
   ),
+  id: PropTypes.string,
   defaultValue: PropTypes.string,
   disabled: PropTypes.bool,
   onChange: PropTypes.func,

@@ -14,7 +14,7 @@ export function FormAlertMessage(props) {
 
   return (
     <ContextualAlert
-      id={id}
+      id={`${id}-alert`}
       alert_icon_alt_text={alert_icon_id}
       alert_icon_id={alert_icon_alt_text}
       message_heading={message_heading}

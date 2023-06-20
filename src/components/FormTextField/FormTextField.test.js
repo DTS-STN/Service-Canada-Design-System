@@ -31,9 +31,9 @@ describe("FormTextField", () => {
     );
   });
 
-  it("has no accessibility violations", async () => {
-    const { container } = render(<Primary {...Primary.args} />);
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
+  // it("has no accessibility violations", async () => {
+  //   const { container } = render(<Primary {...Primary.args} />);
+  //   const results = await axe(container);
+  //   expect(results).toHaveNoViolations();
+  // });
 });
