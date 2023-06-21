@@ -10,52 +10,8 @@ export default {
 
 const Template = (args) => <Footer {...args} />;
 
-export const EnglishAuth = Template.bind({});
-EnglishAuth.args = {
-  id: "footer",
-  lang: "en",
-  btnLink: "/",
-  contactLink: "https://www.canada.ca/en/contact.html",
-  isAuthenticated: true,
-  target: "_blank",
-  brandLinks: [
-    {
-      id: "link1",
-      text: ENbrandLinks.link4,
-      href: ENbrandLinks.link4link,
-    },
-    {
-      id: "link2",
-      text: ENbrandLinks.link5,
-      href: ENbrandLinks.link5link,
-    },
-  ],
-};
-
-export const FrenchAuth = Template.bind({});
-FrenchAuth.args = {
-  id: "footer",
-  lang: "fr",
-  btnLink: "/",
-  contactLink: "https://www.canada.ca/fr/contact.html",
-  isAuthenticated: true,
-  target: "_blank",
-  brandLinks: [
-    {
-      id: "link1",
-      text: FRbrandLinks.link4,
-      href: FRbrandLinks.link4link,
-    },
-    {
-      id: "link2",
-      text: FRbrandLinks.link5,
-      href: FRbrandLinks.link5link,
-    },
-  ],
-};
-
-export const EnglishNonAuth = Template.bind({});
-EnglishNonAuth.args = {
+export const GeneralEn = Template.bind({});
+GeneralEn.args = {
   id: "footer",
   lang: "en",
   btnLink: "/",
@@ -89,35 +45,78 @@ EnglishNonAuth.args = {
   ],
 };
 
-export const FrenchNonAuth = Template.bind({});
-FrenchNonAuth.args = {
+export const GeneralFr = Template.bind({});
+GeneralFr.args = {
   id: "footer",
   lang: "fr",
   btnLink: "/",
   target: "_blank",
+};
+
+export const WithServiceCanada = Template.bind({});
+WithServiceCanada.args = {
+  withServiceCanada: true,
+  id: "footer",
+  lang: "en",
+  btnLink: "/",
+  target: "_blank",
+  serviceCanadaLinks: [
+    {
+      key: "serviceCanadalink1",
+      text: "Contact us",
+      link: "#",
+    },
+    {
+      key: "serviceCanadalink2",
+      text: "[link]",
+      link: "#",
+    },
+    {
+      key: "serviceCanadalink3",
+      text: "[link]",
+      link: "#",
+    },
+  ],
+};
+
+export const AuthenticatedEn = Template.bind({});
+AuthenticatedEn.args = {
+  id: "footer",
+  lang: "en",
+  btnLink: "/",
+  contactLink: "https://www.canada.ca/en/contact.html",
+  isAuthenticated: true,
+  target: "_blank",
   brandLinks: [
     {
       id: "link1",
-      text: FRbrandLinks.link1,
-      href: FRbrandLinks.link1link,
+      text: ENbrandLinks.link4,
+      href: ENbrandLinks.link4link,
     },
     {
       id: "link2",
-      text: FRbrandLinks.link2,
-      href: FRbrandLinks.link2link,
+      text: ENbrandLinks.link5,
+      href: ENbrandLinks.link5link,
     },
+  ],
+};
+
+export const AuthenticatedFr = Template.bind({});
+AuthenticatedFr.args = {
+  id: "footer",
+  lang: "fr",
+  btnLink: "/",
+  contactLink: "https://www.canada.ca/fr/contact.html",
+  isAuthenticated: true,
+  target: "_blank",
+  brandLinks: [
     {
-      id: "link3",
-      text: FRbrandLinks.link3,
-      href: FRbrandLinks.link3link,
-    },
-    {
-      id: "link4",
+      id: "link1",
       text: FRbrandLinks.link4,
       href: FRbrandLinks.link4link,
     },
     {
-      id: "link5",
+      id: "link2",
       text: FRbrandLinks.link5,
       href: FRbrandLinks.link5link,
     },
