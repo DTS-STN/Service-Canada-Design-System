@@ -285,7 +285,6 @@ export function Footer(props) {
 Footer.defaultProps = {
   lang: "en",
   contactLink: "https://www.canada.ca/en/contact.html",
-  brandLinks: [],
 };
 
 Footer.propTypes = {
