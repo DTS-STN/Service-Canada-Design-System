@@ -22,12 +22,15 @@ export function FormAlertMessage(props) {
       type="danger"
       message_body={[
         <ol className="ds-list-decimal ds-pl-7" key="errors">
-          {error_list.map((line, i) => (
-            <li className="ds-body" key={i}>
-              <p className="ds-underline ds-text-multi-blue-blue70b ds-underline-offset-2 ds-decoration-1">
-                {line}
-              </p>
-            </li>
+          {error_list.map(({ line, id }, i) => (
+            <a href={`#${id}`}>
+              {" "}
+              <li className="ds-body" key={i}>
+                <p className="ds-underline ds-text-multi-blue-blue70b ds-underline-offset-2 ds-decoration-1">
+                  {line}
+                </p>
+              </li>
+            </a>
           ))}
         </ol>,
       ]}
@@ -57,11 +60,15 @@ FormAlertMessage.propTypes = {
   message_heading: PropTypes.string.isRequired,
 
   /**
-   * A list of plaintext error messages
+   * An array of plaintext error messages and corresponding DOM ids for anchor links
    */
-  error_list: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string)])
-    .isRequired,
 
+  error_list: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      line: PropTypes.string,
+    })
+  ).isRequired,
   /**
    * If true the background will be white, default is transparent.
    */

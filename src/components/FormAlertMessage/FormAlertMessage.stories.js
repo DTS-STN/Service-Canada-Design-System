@@ -11,10 +11,16 @@ export const Default = Template.bind({});
 Default.args = {
   id: "formerrors",
   error_list: [
-    "Last name is required",
-    "Email address must be in the format of example@email.com",
-    "Password must include both numbers and letters",
-    "A valid postal code is required for your selected city",
+    { line: "Last name is required", id: "last_name" },
+    {
+      line: "Email address must be in the format of example@email.com",
+      id: "email",
+    },
+    { line: "Password must include both numbers and letters", id: "password" },
+    {
+      line: "A valid postal code is required for your selected city",
+      id: "postal_code",
+    },
   ],
   message_heading:
     "The form could not be submitted because 4 errors were found",
