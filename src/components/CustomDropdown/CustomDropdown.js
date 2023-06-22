@@ -36,8 +36,6 @@ export const CustomDropdown = (props) => {
     numberOptions.push({ id: i.toString(), value: i.toString() });
   }
 
-  const combinedOptions = [...numberOptions, ...(props.options || [])];
-
   return (
     <>
       <div className={`dropdown ${isOpen ? "open" : ""}`}>
@@ -49,14 +47,16 @@ export const CustomDropdown = (props) => {
         >
           {isOpen ? (
             <div className={`ds-flex ${props.hasSearch ? "" : "ds-hidden"}`}>
-              <img src={SearchIcon} alt="search icon" />
+              {!props.isNumber && <img src={SearchIcon} alt="search icon" />}
               <input
-                type="text"
+                type={props.isNumber ? "number" : "text"}
                 value={searchOption}
                 ref={searchInputRef}
                 onChange={handleSearch}
-                placeholder="Search..."
-                className="input-search"
+                placeholder={props.isNumber ? "" : "Search..."}
+                className={`${
+                  props.isNumber ? "ds-w-12" : "ds-pl-[14px]"
+                } ds-outline-none`}
               />
             </div>
           ) : (
@@ -71,29 +71,49 @@ export const CustomDropdown = (props) => {
         <div className="dropdown-open">
           {isOpen && (
             <ul className="dropdown-options">
-              {combinedOptions
-                .filter((option) =>
-                  option.value
-                    .toLowerCase()
-                    .includes(searchOption.toLowerCase())
-                )
-                .map((option, index) => (
-                  <li
-                    key={option.id}
-                    className={`${
-                      index === 0
-                        ? "ds-border-none"
-                        : "ds-border-t-[1px] ds-border-[#666666] ds-border-opacity-60"
-                    } ${option.value === selectedOption ? "selected" : ""}`}
-                  >
-                    <button
-                      onClick={() => handleOptionClick(option.value)}
-                      className="dropdown-option"
-                    >
-                      {option.value}
-                    </button>
-                  </li>
-                ))}
+              {props.isNumber
+                ? numberOptions
+                    .filter((option) => option.value.includes(searchOption))
+                    .map((option, index) => (
+                      <li
+                        key={option.id}
+                        className={`${
+                          index === 0
+                            ? "ds-border-none"
+                            : "ds-border-t-[1px] ds-border-[#666666] ds-border-opacity-60"
+                        } ${option.value === selectedOption ? "selected" : ""}`}
+                      >
+                        <button
+                          onClick={() => handleOptionClick(option.value)}
+                          className="dropdown-option"
+                        >
+                          {option.value}
+                        </button>
+                      </li>
+                    ))
+                : props.options
+                    .filter((option) =>
+                      option.value
+                        .toLowerCase()
+                        .includes(searchOption.toLowerCase())
+                    )
+                    .map((option, index) => (
+                      <li
+                        key={option.id}
+                        className={`${
+                          index === 0
+                            ? "ds-border-none"
+                            : "ds-border-t-[1px] ds-border-[#666666] ds-border-opacity-60"
+                        } ${option.value === selectedOption ? "selected" : ""}`}
+                      >
+                        <button
+                          onClick={() => handleOptionClick(option.value)}
+                          className="dropdown-option"
+                        >
+                          {option.value}
+                        </button>
+                      </li>
+                    ))}
             </ul>
           )}
         </div>
@@ -114,4 +134,5 @@ CustomDropdown.propTypes = {
   onChange: PropTypes.func,
   hasError: PropTypes.bool,
   errorText: PropTypes.string,
+  isNumber: PropTypes.bool,
 };

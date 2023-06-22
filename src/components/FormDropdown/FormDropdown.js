@@ -33,6 +33,7 @@ export const FormDropdown = (props) => {
               hasError={props.dropdownProps.hasError}
               errorText={props.dropdownProps.errorText}
               onChange={props.dropdownProps.onChange}
+              isNumber={true}
             />
           </div>
           <div id="dropdown2" className="ds-w-[80px]">
@@ -46,6 +47,7 @@ export const FormDropdown = (props) => {
               hasError={props.dropdown2Props.hasError}
               errorText={props.dropdown2Props.errorText}
               onChange={props.dropdown2Props.onChange}
+              isNumber={true}
             />
           </div>
         </div>
@@ -64,6 +66,7 @@ export const FormDropdown = (props) => {
             hasError={props.dropdownProps.hasError}
             errorText={props.dropdownProps.errorText}
             onChange={props.dropdownProps.onChange}
+            isNumber={props.dropdownProps.isNumber}
           />
         </div>
       )}
@@ -98,6 +101,7 @@ FormDropdown.propTypes = {
     minValue: PropTypes.number,
     maxValue: PropTypes.number,
     hasSearch: PropTypes.bool,
+    isNumber: PropTypes.bool,
   }),
   /**
    * Dropdown props for the second dropdown in case of doubleDropdown

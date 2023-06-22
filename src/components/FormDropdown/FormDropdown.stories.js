@@ -52,7 +52,8 @@ Default.args = {
 Number.args = {
   width: "number",
   dropdownProps: {
-    hasSearch: false,
+    isNumber: true,
+    hasSearch: true,
     minValue: 0,
     maxValue: 10,
     onChange: () => {},
@@ -161,13 +162,13 @@ DoubleDropdown.args = {
   label1: "Label 1",
   label2: "Label 2",
   dropdownProps: {
-    hasSearch: false,
+    hasSearch: true,
     minValue: 0,
     maxValue: 20,
     onChange: () => {},
   },
   dropdown2Props: {
-    hasSearch: false,
+    hasSearch: true,
     minValue: 0,
     maxValue: 20,
     onChange: () => {},
