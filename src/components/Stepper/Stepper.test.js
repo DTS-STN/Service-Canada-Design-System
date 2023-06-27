@@ -30,7 +30,6 @@ describe("Stepper", () => {
   const renderStepper = (props) => {
     render(
       <Stepper name={name} step={step} heading={heading} {...props}>
-        {/* Add any required child components or elements for testing */}
         <div data-testid="child-component">Test child component</div>
       </Stepper>
     );
@@ -103,7 +102,7 @@ describe("Stepper", () => {
     expect(previousButton).toBeInTheDocument();
     expect(previousButton).toHaveAttribute("alt", previousProps.iconAltText);
     expect(previousButton).toHaveClass(`ds-btn-${previousProps.styling}`);
-    expect(previousProps.onClick).toHaveBeenCalledTimes(0); // Make sure onClick is not called yet
+    expect(previousProps.onClick).toHaveBeenCalledTimes(0);
 
     // Check if the next button is not rendered
     expect(screen.queryByTestId(nextProps.id)).not.toBeInTheDocument();
