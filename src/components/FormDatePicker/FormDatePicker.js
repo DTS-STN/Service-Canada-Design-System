@@ -159,15 +159,18 @@ export function FormDatePicker(props) {
             } ds-pb-8px`}
           >
             <FormDropdown
-              defaultValue={
-                lang === "en"
-                  ? EN.monthDropdownPlaceholder
-                  : FR.monthDropdownPlaceholder
-              }
-              monthDropdown={true}
-              monthValues={props.lang === "en" ? monthValuesEN : monthValuesFR}
-              options={props.lang === "en" ? monthValuesEN : monthValuesFR}
-              onChange={_onMonthChange}
+              dropdownProps={{
+                defaultValue:
+                  lang === "en"
+                    ? EN.monthDropdownPlaceholder
+                    : FR.monthDropdownPlaceholder,
+
+                monthDropdown: true,
+                monthValues:
+                  props.lang === "en" ? monthValuesEN : monthValuesFR,
+                options: props.lang === "en" ? monthValuesEN : monthValuesFR,
+                onChange: _onMonthChange,
+              }}
             />
           </div>
         </div>

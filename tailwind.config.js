@@ -58,6 +58,7 @@ module.exports = {
         caption_large: ["18px", "22px"],
         caption_regular: ["16px", "20px"],
         caption_small: ["14px", "18px"],
+        caption_heading1: ["22px", "33px"],
 
         label_font: ["15px", "21px"],
         header_menu_text: ["16px", "20px"],
@@ -421,6 +422,7 @@ module.exports = {
         caption_large: "22px",
         caption_regular: "20px",
         caption_small: "18px",
+        caption_heading1: "33px",
       },
       outline: {
         "black-solid": ["2px solid #000", "1px"],

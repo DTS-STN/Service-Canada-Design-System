@@ -17,11 +17,13 @@ const Template = (args) => <FormLabel {...args} />;
 
 export const Default = Template.bind({});
 export const Required = Template.bind({});
+export const Optional = Template.bind({});
 export const DefaultWithInfo = Template.bind({});
 export const RequiredWithInfo = Template.bind({});
 
 Default.args = {
   id: "default",
+  customLabel: "Label",
   label: "Default Label",
   helpText:
     "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
@@ -32,6 +34,12 @@ Required.args = {
   id: "required",
   label: "Required Label",
   required: true,
+};
+
+Optional.args = {
+  id: "Optional",
+  label: "Optional Label",
+  optional: true,
 };
 
 DefaultWithInfo.args = {

@@ -233,6 +233,19 @@ Primary.args = {
           <li>color: grey85a</li>
         </ul>
       </div>
+      <div className="ds-caption-heading1 ds-p-4">
+        Example Text: Caption Heading1 - Lorem Ipsum is simply dummy text.
+      </div>
+      <div className="ds-bg-gray-200 ds-p-4 ds-m-4">
+        <p className="ds-body-bold">class-name: ds-caption-heading1</p>
+        <ul>
+          <li>font-family: Noto sans, font-mono</li>
+          <li>font-size: 22x</li>
+          <li>line-height: 33px</li>
+          <li>font-weight: 400</li>
+          <li>color: grey85a</li>
+        </ul>
+      </div>
     </>
   ),
 };
