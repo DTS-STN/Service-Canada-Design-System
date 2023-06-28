@@ -9,8 +9,8 @@ import "./theme-srv.css";
 export default function CanadaCAWebMenu(props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const i18nText = {
-    menu: "Lorem Ipsum",
-    lang: "fr",
+    menu: "MENU",
+    lang: "en",
   };
 
   const listItems = [
