@@ -1,8 +1,13 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState } from "react";
+import "./wet-boew.min.css";
+import "./messages.min.css";
+import "./theme.css";
+import "./messages-ie.min.css";
+import "./theme-srv.css";
 
 export default function CanadaCAWebMenu(props) {
-  //   const lang = i18nText.lang;
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const i18nText = {
     menu: "Lorem Ipsum",
     lang: "fr",
@@ -86,27 +91,41 @@ export default function CanadaCAWebMenu(props) {
     },
   ];
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav className="gcweb-menu" typeof="SiteNavigationElement">
       <h2 className="wb-inv">{i18nText.menu}</h2>
-      <button type="button" aria-haspopup="true" aria-expanded="false">
-        {i18nText.menuBtn}{" "}
-        <span className="expicon glyphicon glyphicon-chevron-down"></span>
-      </button>
-      ddddddddddd
-      <ul
-        role="menu"
-        aria-orientation="vertical"
-        data-ajax-replace={i18nText.menuAjax}
+      <button
+        type="button"
+        aria-haspopup="true"
+        aria-expanded={isMenuOpen}
+        onClick={toggleMenu}
       >
-        {listItems.map((item, index) => (
-          <li className={item.className} key={index}>
-            <a className={item.linkClassName} href={item.href}>
-              {item.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+        {i18nText.menu}{" "}
+        <span
+          className={`expicon glyphicon glyphicon-chevron-${
+            isMenuOpen ? "up" : "down"
+          }`}
+        ></span>
+      </button>
+      {isMenuOpen && (
+        <ul
+          role="menu"
+          aria-orientation="vertical"
+          data-ajax-replace={i18nText.menuAjax}
+        >
+          {listItems.map((item, index) => (
+            <li role="presentation" key={index}>
+              <a role="menuitem" href={item.href}>
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
     </nav>
   );
 }

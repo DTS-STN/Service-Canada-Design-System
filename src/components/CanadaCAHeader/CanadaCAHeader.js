@@ -3,6 +3,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import CanadaCAWebMenu from "../CanadaCAWebMenu/CanadaCAWebMenu";
 import "./CanadaCAHeader.css";
 import "./wet-boew.min.css";
+import "./messages.min.css";
+import "./theme.css";
+import "./messages-ie.min.css";
+import "./theme-srv.css";
 
 export default function CanadaCAHeader(props) {
   return (
@@ -121,23 +125,6 @@ export default function CanadaCAHeader(props) {
           <div className="row">
             <div className="col-md-8">
               <CanadaCAWebMenu />
-              <nav className="gcweb-menu" typeof="SiteNavigationElement">
-                <h2 className="wb-inv">Menu</h2>
-                <button
-                  type="button"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <span className="wb-inv">Main </span>
-                  Menu
-                  <span className="expicon glyphicon glyphicon-chevron-down"></span>
-                </button>
-                <ul
-                  role="menu"
-                  aria-orientation="vertical"
-                  data-ajax-replace="https://www.canada.ca/content/dam/canada/sitemenu/sitemenu-v2-en.html"
-                ></ul>
-              </nav>
             </div>
           </div>
         </div>
