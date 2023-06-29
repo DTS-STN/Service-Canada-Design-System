@@ -31,7 +31,7 @@ export function Menu(props) {
   return (
     <div
       className={`ds-relative ds-w-full ds-bg-[#26374A] ${
-        demoBuffer && " ds-mb-10"
+        demoBuffer && " ds-mb-80"
       }`}
     >
       <nav className="sm:ds-container sm:ds-flex ds-items-center ds-justify-between sm:ds-h-[60px]">
