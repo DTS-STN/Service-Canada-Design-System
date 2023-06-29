@@ -39,7 +39,7 @@ export function ContextualAlert(props) {
   return (
     <div
       id={id}
-      className={`ds-relative ds-min-w-290px sm:ds-pl-24px ds-pl-16px -ds-z-10 ${white_BG}`}
+      className={`ds-relative ds-min-w-290px sm:ds-pl-24px ds-pl-16px ${white_BG}`}
     >
       <div className="ds-absolute ds-top-3 sm:ds-left-3.5 ds-left-1.5 ds-bg-multi-neutrals-white ds-py-4px">
         {/* change back to image component once fixed */}
