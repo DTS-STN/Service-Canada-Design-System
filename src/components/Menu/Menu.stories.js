@@ -20,50 +20,87 @@ function CustomLinkComponent({ children, ...props }) {
 
 AuthenticatedEN.args = {
   isAuthenticated: true,
+  dataGcAnalyticsCustomClickInstitutionVariable: "Institution",
   lang: "en",
   menuList: [
-    { key: "dashKey", value: "My dashboard", path: "/", showIcon: false },
-    { key: "profileKey", value: "Profile", path: "/", showIcon: false },
+    {
+      key: "dashKey",
+      value: "My dashboard",
+      id: "dashboard",
+      path: "/",
+      showIcon: false,
+    },
+    {
+      key: "profileKey",
+      value: "Profile",
+      id: "prodfile",
+      path: "/",
+      showIcon: false,
+    },
     {
       key: "securityKey",
       value: "Security settings",
+      id: "security",
       path: "/",
       showIcon: false,
     },
     {
       key: "craAccountKey",
       value: "Switch to CRA My Account",
+      id: "cra",
       path: "/",
       showIcon: false,
     },
-    { key: "outKey", value: "Sign out", path: "/", showIcon: true },
+    {
+      key: "outKey",
+      value: "Sign out",
+      id: "signout",
+      path: "/",
+      showIcon: true,
+    },
   ],
 };
 
 AuthenticatedFR.args = {
   isAuthenticated: true,
+  dataGcAnalyticsCustomClickInstitutionVariable: "Institution",
   lang: "fr",
   menuList: [
     {
       key: "dashKey",
       value: "Mon tableau de bord",
+      id: "dashboard",
       path: "/",
       showIcon: false,
     },
-    { key: "profileKey", value: "Profil", path: "/", showIcon: false },
+    {
+      key: "profileKey",
+      value: "Profil",
+      id: "prodfile",
+      path: "/",
+      showIcon: false,
+    },
     {
       key: "securityKey",
       value: "Paramètres de sécurité",
+      id: "security",
       path: "/",
       showIcon: false,
     },
     {
       key: "craAccountKey",
       value: "Aller à Mon dossier de l’ARC",
+      id: "cra",
       path: "/",
       showIcon: false,
     },
-    { key: "outKey", value: "Se déconnecter", path: "/", showIcon: true },
+    {
+      key: "outKey",
+      value: "Se déconnecter",
+      id: "signout",
+      path: "/",
+      showIcon: true,
+    },
   ],
 };
 

@@ -11,7 +11,14 @@ import FR from "../../translations/fr.json";
  * Menu component
  */
 export function Menu(props) {
-  const { onClick, isAuthenticated, menuList, lang, onSignOut } = props;
+  const {
+    onClick,
+    isAuthenticated,
+    menuList,
+    lang,
+    onSignOut,
+    dataGcAnalyticsCustomClickInstitutionVariable,
+  } = props;
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdown = useRef(null);
 
@@ -208,6 +215,11 @@ Menu.propTypes = {
    * function for handling on click
    */
   onClick: PropTypes.func,
+
+  /**
+   * Adobe Analytics Prefix
+   */
+  dataGcAnalyticsCustomClickInstitutionVariable: PropTypes.string,
 
   /**
    * List of menu items to display in dropdown with links
