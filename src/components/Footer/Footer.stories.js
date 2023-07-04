@@ -10,8 +10,26 @@ export default {
 
 const Template = (args) => <Footer {...args} />;
 
-export const GeneralEn = Template.bind({});
-GeneralEn.args = {
+export const SubFooterEn = Template.bind({});
+SubFooterEn.args = {
+  id: "footer",
+  lang: "en",
+  btnLink: "/",
+  target: "_blank",
+  withMainBand: false,
+};
+
+export const SubFooterFr = Template.bind({});
+SubFooterFr.args = {
+  id: "footer",
+  lang: "fr",
+  btnLink: "/",
+  target: "_blank",
+  withMainBand: false,
+};
+
+export const WithMainBandEn = Template.bind({});
+WithMainBandEn.args = {
   id: "footer",
   lang: "en",
   btnLink: "/",
@@ -45,22 +63,22 @@ GeneralEn.args = {
   ],
 };
 
-export const GeneralFr = Template.bind({});
-GeneralFr.args = {
+export const WithMainBandFr = Template.bind({});
+WithMainBandFr.args = {
   id: "footer",
   lang: "fr",
   btnLink: "/",
   target: "_blank",
 };
 
-export const WithServiceCanada = Template.bind({});
-WithServiceCanada.args = {
-  withServiceCanada: true,
+export const WithContextualBand = Template.bind({});
+WithContextualBand.args = {
+  withContextualBand: true,
   id: "footer",
   lang: "en",
   btnLink: "/",
   target: "_blank",
-  serviceCanadaLinks: [
+  contextualBandLinks: [
     {
       key: "serviceCanadalink1",
       text: "Contact us",
@@ -119,48 +137,6 @@ AuthenticatedFr.args = {
       id: "link2",
       text: FRbrandLinks.link5,
       href: FRbrandLinks.link5link,
-    },
-  ],
-};
-
-export const ErrorPageFooter = Template.bind({});
-ErrorPageFooter.args = {
-  id: "footer",
-  btnLink: "/",
-  error: true,
-};
-
-export const FooterWithClickHandler = Template.bind({});
-FooterWithClickHandler.args = {
-  lang: "fr",
-  id: "footer",
-  btnLink: "/",
-  onClick: (e) => {
-    console.log(e);
-    e.preventDefault();
-    alert("Add any click handler to footer links");
-  },
-};
-
-export const CustomFooterWithClickHandler = Template.bind({});
-CustomFooterWithClickHandler.args = {
-  id: "footer",
-  btnLink: "/",
-  brandLinks: [
-    {
-      id: "link1",
-      text: "Without onClick",
-      href: FRbrandLinks.link1link,
-    },
-    {
-      id: "link2",
-      text: "With onClick",
-      href: FRbrandLinks.link1link,
-      onClick: (e) => {
-        console.log(e);
-        e.preventDefault();
-        alert("Add any click handler to footer links");
-      },
     },
   ],
 };
