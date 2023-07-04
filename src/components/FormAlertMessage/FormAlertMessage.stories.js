@@ -23,7 +23,7 @@ Default.args = {
     },
   ],
   message_heading:
-    "The form could not be submitted because 4 errors were found:",
+    "The form could not be submitted because 4 errors were found",
   alert_icon_alt_text: "danger icon",
   alert_icon_id: "danger icon",
   whiteBG: false,

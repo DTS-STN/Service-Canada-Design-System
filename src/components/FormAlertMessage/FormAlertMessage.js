@@ -24,7 +24,6 @@ export function FormAlertMessage(props) {
         <ol className="ds-list-decimal ds-pl-7" key="errors">
           {error_list.map(({ line, id }, i) => (
             <a href={`#${id}`}>
-              {" "}
               <li className="ds-body" key={i}>
                 <p className="ds-underline ds-text-multi-blue-blue70b ds-underline-offset-2 ds-decoration-1">
                   {line}
