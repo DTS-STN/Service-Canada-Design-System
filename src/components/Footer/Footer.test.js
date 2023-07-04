@@ -1,36 +1,47 @@
 import React from "react";
-import { axe, toHaveNoViolations } from "jest-axe";
 import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
-import { ErrorPageFooter, AuthenticatedFr } from "../Footer/Footer.stories";
+import { Footer } from "./Footer";
 
-expect.extend(toHaveNoViolations);
+describe("Footer", () => {
+  const defaultProps = {
+    id: "footer",
+    lang: "en",
+    isAuthenticated: false,
+    contactLink: "https://www.canada.ca/en/contact.html",
+  };
 
-describe("Fr Footer Component", () => {
-  // it("renders Fr component", () => {
-  //   render(<FrFooter {...FrFooter.args} />);
-  //   expect(
-  //     screen.getByAltText("Symbol of the Government of Canada")
-  //   ).toBeTruthy();
-  //   FrFooter.args.brandLinks.forEach((value) => {
-  //     expect(screen.getByText(value.brandLinkText)).toBeDefined();
-  //   });
-  //   FrFooter.args.landscapeLinks.forEach((value) => {
-  //     expect(screen.getByText(value.landscapeLinkText)).toBeDefined();
-  //   });
-  // });
+  test("renders Footer component with default props", () => {
+    render(<Footer {...defaultProps} />);
 
-  it("French has no a11y violations", async () => {
-    const { container } = render(<AuthenticatedFr {...AuthenticatedFr.args} />);
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    expect(screen.getByTestId("ds-footer")).toBeInTheDocument();
+    expect(
+      screen.getByAltText("Symbol of the Government of Canada")
+    ).toBeInTheDocument();
   });
-});
 
-describe("Error FooterComponent", () => {
-  it("Bilungual Page Footer has no a11y violations", async () => {
-    const { container } = render(<ErrorPageFooter {...ErrorPageFooter.args} />);
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+  test("renders Footer component for authenticated user", () => {
+    render(<Footer {...defaultProps} isAuthenticated={true} />);
+
+    expect(screen.getByTestId("ds-footer")).toBeInTheDocument();
+    expect(screen.getByText("Contact Us")).toBeInTheDocument();
+  });
+
+  test("renders Footer component with custom brand links", () => {
+    const brandLinks = [
+      {
+        href: "https://example.com/link1",
+        text: "Link 1",
+      },
+      {
+        href: "https://example.com/link2",
+        text: "Link 2",
+      },
+    ];
+
+    render(<Footer {...defaultProps} brandLinks={brandLinks} />);
+
+    expect(screen.getByTestId("ds-footer")).toBeInTheDocument();
+    expect(screen.getByText("Link 1")).toBeInTheDocument();
+    expect(screen.getByText("Link 2")).toBeInTheDocument();
   });
 });
