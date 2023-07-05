@@ -36,7 +36,7 @@ export function FormMultiTextField(props) {
     ? "ds-border-specific-red-red50b"
     : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f  focus-visible:ds-border-multi-blue-blue60f";
   return (
-    <div className={`block leading-tight mb-12`}>
+    <div className={`block leading-tight mb-12`} id={props.id}>
       {props.label && (
         <FormLabel
           id={props.id}
@@ -53,7 +53,7 @@ export function FormMultiTextField(props) {
       )}
       <textarea
         className={`ds-min-h-76px ds-resize-none ${sizeOfField} ${props.className} ds-text-input ds-leading-33px ds-rounded ds-outline-0  ds-text-mobileh5 ds-text-multi-neutrals-grey100  ds-text-form-input-gray ds-border ds-py-5px ds-px-14px ${validationClass}`}
-        id={props.id}
+        id={`${props.id}-textarea`}
         name={props.name}
         placeholder={props.placeholder}
         onChange={onChange}
