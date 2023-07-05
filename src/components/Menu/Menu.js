@@ -17,8 +17,10 @@ export function Menu(props) {
     menuList,
     lang,
     onSignOut,
+    demoBuffer,
     dataGcAnalyticsCustomClickInstitutionVariable,
   } = props;
+  
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdown = useRef(null);
 
@@ -35,7 +37,11 @@ export function Menu(props) {
   }, [showDropdown]);
 
   return (
-    <div className="ds-relative ds-w-full ds-bg-[#26374A]">
+    <div
+      className={`ds-relative ds-w-full ds-bg-[#26374A] ${
+        demoBuffer && " ds-mb-80"
+      }`}
+    >
       <nav className="sm:ds-container sm:ds-flex ds-items-center ds-justify-between sm:ds-h-[60px]">
         <div className="ds-h-[60px] ds-flex sm:ds-h-full ds-items-center">
           <p
@@ -92,7 +98,7 @@ export function Menu(props) {
                 ) : (
                   <path
                     fillRule="evenodd"
-                    d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                    d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z z-10"
                     clipRule="evenodd"
                   />
                 )}
@@ -101,7 +107,7 @@ export function Menu(props) {
             {showDropdown && (
               <div
                 id="dropdownNavbar"
-                className="sm:ds-absolute sm:ds-w-[260px] dropdownShadow ds-text-[#284162] ds-bg-white"
+                className="sm:ds-absolute sm:ds-w-[260px] dropdownShadow ds-text-[#284162] ds-bg-white z-10"
                 aria-labelledby="dropdownLargeButton"
               >
                 {menuList.map((element, index) => {
@@ -220,6 +226,11 @@ Menu.propTypes = {
    * Adobe Analytics Prefix
    */
   dataGcAnalyticsCustomClickInstitutionVariable: PropTypes.string,
+
+  /**
+   * set to true for Storybook demos only
+   */
+  demoBuffer: PropTypes.bool,
 
   /**
    * List of menu items to display in dropdown with links

@@ -22,6 +22,7 @@ AuthenticatedEN.args = {
   isAuthenticated: true,
   dataGcAnalyticsCustomClickInstitutionVariable: "Institution",
   lang: "en",
+  demoBuffer: true,
   menuList: [
     {
       key: "dashKey",
@@ -65,6 +66,7 @@ AuthenticatedFR.args = {
   isAuthenticated: true,
   dataGcAnalyticsCustomClickInstitutionVariable: "Institution",
   lang: "fr",
+  demoBuffer: true,
   menuList: [
     {
       key: "dashKey",
@@ -117,6 +119,7 @@ NotAuthenticatedFR.args = {
 CustomComponentLinks.args = {
   isAuthenticated: true,
   lang: "en",
+  demoBuffer: true,
   menuList: [
     {
       key: "customComponent1",
