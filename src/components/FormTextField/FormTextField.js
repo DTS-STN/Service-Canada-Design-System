@@ -57,10 +57,9 @@ export function FormTextField(props) {
   };
 
   return (
-    <div className={`ds-block ds-leading-tight ds-mb-10px`}>
+    <div className={`ds-block ds-leading-tight ds-mb-10px`} id={props.id}>
       {props.label && (
         <FormLabel
-          id={props.id}
           label={props.label}
           required={props.required}
           requiredText={props.requiredText}
