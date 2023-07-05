@@ -1,12 +1,10 @@
 /* eslint-disable no-prototype-builtins */
 import PropTypes from "prop-types";
 import React from "react";
-import { Image } from "../Image/Image";
 import { Link } from "../Link/Link";
 import { ContextualBand } from "../ContextualBand/ContextualBand";
 import { MainBand } from "../MainBand/MainBand";
 import { SubFooterBand } from "../SubFooterBand/SubFooterBand";
-import { Button } from "../Button/Button";
 import {
   mscaContactUs as mscacontactUsEn,
   mscaFooterHeading as mscaFooterHeadingEn,
@@ -21,7 +19,6 @@ import {
 } from "../../translations/fr.json";
 import logo from "../../assets/wmms-blk.svg";
 import bg_img from "../../assets/footer_bg_img.svg";
-import upArrow from "../../assets/upArrow.svg";
 
 const landlinks = { en: [], fr: [] };
 
@@ -157,6 +154,7 @@ export function Footer(props) {
             onClick={onClick}
             target={target}
             logo={logo}
+            error={error}
           />
         </div>
       </>

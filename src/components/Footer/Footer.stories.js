@@ -140,3 +140,11 @@ AuthenticatedFr.args = {
     },
   ],
 };
+
+export const Error = Template.bind({});
+Error.args = {
+  id: "footer",
+  withMainBand: false,
+  btnLink: "/",
+  error: true,
+};
