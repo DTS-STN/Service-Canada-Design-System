@@ -157,6 +157,7 @@ export function Footer(props) {
             onClick={onClick}
             target={target}
             logo={logo}
+            error={error}
           />
         </div>
       </>
