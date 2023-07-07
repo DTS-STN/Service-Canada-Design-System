@@ -50,19 +50,19 @@ export function ContextualAlert(props) {
       >
         {asHtml ? (
           <h3
-            className="ds-heading3"
+            className="ds-heading3 ds-pl-1.5"
             dangerouslySetInnerHTML={{ __html: message_heading }}
           />
         ) : (
-          <h3 className="ds-heading3">{message_heading}</h3>
+          <h3 className="ds-heading3 ds-pl-1.5">{message_heading}</h3>
         )}
         {asHtml ? (
           <div
-            className="ds-body ds-pt-[12px] ds-ml-10"
+            className="ds-body ds-pt-[12px]"
             dangerouslySetInnerHTML={{ __html: message_body }}
           />
         ) : (
-          <div className="ds-body ds-pt-[12px] ds-ml-10">{message_body}</div>
+          <div className="ds-body ds-pt-[12px]">{message_body}</div>
         )}
       </div>
     </div>
