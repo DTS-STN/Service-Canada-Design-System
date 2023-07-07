@@ -90,8 +90,6 @@ export function Footer(props) {
     },
   ];
 
-  let bLinksBg = isAuthenticated ? "sm:ds-h-86px" : "ds-h-full";
-
   const container = containerClass || "ds-container";
 
   return (
@@ -140,23 +138,18 @@ export function Footer(props) {
             </section>
           </div>
         ) : null}
-        <div
-          className={`${
-            isAuthenticated ? "ds-bg-[#F5F5F5]" : "ds-bg-[#F8F8F8]"
-          } ${bLinksBg}`}
-        >
-          <SubFooterBand
-            lang={lang}
-            isAuthenticated={isAuthenticated}
-            container={container}
-            brandLinks={brandLinks}
-            brandLinksDefault={brandLinksDefault}
-            onClick={onClick}
-            target={target}
-            logo={logo}
-            error={error}
-          />
-        </div>
+        <SubFooterBand
+          lang={lang}
+          isAuthenticated={isAuthenticated}
+          container={container}
+          brandLinks={brandLinks}
+          brandLinksDefault={brandLinksDefault}
+          onClick={onClick}
+          target={target}
+          logo={logo}
+          error={error}
+          btnLink={btnLink}
+        />
       </>
     </footer>
   );

@@ -7,9 +7,11 @@ import upArrow from "../../assets/upArrow.svg";
 
 export function SubFooterBand(props) {
   return (
-    <>
+    <div
+      className={props.isAuthenticated ? "ds-bg-[#F5F5F5]" : "ds-bg-[#F8F8F8]"}
+    >
       <div
-        className={`${props.isAuthenticated ? "" : "ds-bg-[#F8F8F8]"} ${
+        className={`${props.isAuthenticated ? "ds-h-[86px]" : "ds-h-[96px]"} ${
           props.error ? "ds-items-center" : ""
         } ds-flex ds-justify-between ${props.container}`}
       >
@@ -30,7 +32,7 @@ export function SubFooterBand(props) {
               props.isAuthenticated
                 ? "sm:ds-flex-row sm:ds-flex-row"
                 : "md:ds-flex-row md:ds-flex-row"
-            } ds-min-h-[96px] ds-flex ds-items-center`}
+            } ds-flex ds-items-center`}
           >
             <nav role="navigation" aria-labelledby="accessibleSectionHeader2">
               <h2 className="ds-sr-only" id="accessibleSectionHeader2">
@@ -96,6 +98,6 @@ export function SubFooterBand(props) {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 }
