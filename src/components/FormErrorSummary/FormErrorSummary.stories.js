@@ -1,10 +1,10 @@
-import { FormAlertMessage } from "./FormAlertMessage";
+import { FormErrorSummary } from "./FormErrorSummary";
 export default {
-  title: "Components/FormAlertMessage",
-  component: FormAlertMessage,
+  title: "Components/FormErrorSummary",
+  component: FormErrorSummary,
 };
 
-const Template = (args) => <FormAlertMessage {...args} />;
+const Template = (args) => <FormErrorSummary {...args} />;
 
 export const Default = Template.bind({});
 

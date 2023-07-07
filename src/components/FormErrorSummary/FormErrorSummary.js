@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { ContextualAlert } from "../ContextualAlert/ContextualAlert";
 
-export function FormAlertMessage(props) {
+export function FormErrorSummary(props) {
   const {
     message_heading,
     id,
@@ -37,7 +37,7 @@ export function FormAlertMessage(props) {
   );
 }
 
-FormAlertMessage.propTypes = {
+FormErrorSummary.propTypes = {
   /**
    * component id
    */
