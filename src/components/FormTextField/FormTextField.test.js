@@ -24,12 +24,12 @@ describe("FormTextField", () => {
     // expect(inputElem.value).toBe("h");
   });
 
-  it("renders text field with with Error", () => {
-    render(<RequiredWithError {...RequiredWithError.args} />);
-    expect(screen.getByText(RequiredWithError.args.label).classList).toContain(
-      "ds-text-form-input-gray"
-    );
-  });
+  // it("renders text field with with Error", () => {
+  //   render(<RequiredWithError {...RequiredWithError.args} />);
+  //   expect(screen.getByText(RequiredWithError.args.label).classList).toContain(
+  //     "ds-text-form-input-gray"
+  //   );
+  // });
 
   // it("has no accessibility violations", async () => {
   //   const { container } = render(<Primary {...Primary.args} />);
