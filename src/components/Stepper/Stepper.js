@@ -5,7 +5,7 @@ import { Button } from "../Button/Button";
 
 export function Stepper(props) {
   return (
-    <div className="ds-border-multi-neutrals-grey85a ds-border ds-pt-3 ds-pb-14 sm:ds-pb-40">
+    <div className="ds-border-multi-neutrals-grey85a ds-border ds-pt-3 ds-pb-6 sm:ds-pb-40">
       <div className="ds-px-4">
         <h1 className="sm:ds-pb-12 ds-pb-9">
           <div className="ds-text-[22px] ds-leading-[33px] ds-text-[#666666] ds-font-[400] font-display font-normal">
@@ -20,7 +20,8 @@ export function Stepper(props) {
           {props.previousProps && (
             <div className="ds-mr-9">
               <Button
-                id={props.nextProps?.id}
+                id={props.previousProps?.id}
+                data-testid={props.previousProps?.id}
                 iconAltText={props.previousProps?.iconAltText}
                 onClick={props.previousProps?.onClick}
                 styling={props.previousProps?.styling}
@@ -32,6 +33,7 @@ export function Stepper(props) {
             <div>
               <Button
                 id={props.nextProps?.id}
+                data-testid={props.nextProps?.id}
                 iconAltText={props.nextProps?.iconAltText}
                 onClick={props.nextProps?.onClick}
                 styling={props.nextProps?.styling}
