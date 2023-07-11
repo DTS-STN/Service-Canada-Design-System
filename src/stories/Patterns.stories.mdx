@@ -143,13 +143,14 @@ import { Collapse } from "../components/Collapse/Collapse";
     We collect this information to ensure our research groups are diverse, and
     to identify trends in feedback for specific groups.
   </p>
-  <a href="https://www.canada.ca/en/transparency/privacy.html" id="link">
-    Read the full privacy policy.
-  </a>
+  <Link
+    href="https://www.canada.ca/en/transparency/privacy.html"
+    id="link"
+    text="Read the full privacy policy."
+  />
 </div>
 
 {" "}
-
 <h4 className="ds-heading4">Code:</h4>
 <pre>
   <code>
@@ -288,16 +289,13 @@ import { Collapse } from "../components/Collapse/Collapse";
       If you have previously signed up to become a participant and no longer
       wish to be contacted for future [explain in detail what the user is
       unsubscribing from], you can{" "}
-      <a href="#unsubscribe" id="link">
-        unsubscribe
-      </a>
-      yourself from the participant list and we will remove your personal information.
+      <Link href="#unsubscribe" id="link" text="unsubscribe" /> yourself from
+      the participant list and we will remove your personal information.
     </p>
   </div>
 </div>
 
 {" "}
-
 <h4 className="ds-heading4">Code:</h4>
 <pre>
   <code>
@@ -350,7 +348,6 @@ import { Collapse } from "../components/Collapse/Collapse";
 </div>
 
 {" "}
-
 <h4 className="ds-heading4">Code:</h4>
 <pre>
   <code>
@@ -396,17 +393,18 @@ import { Collapse } from "../components/Collapse/Collapse";
 <h2 className="ds-heading2">Related patterns and components</h2>
 <ul>
   <li>
-    <a
+    <Link
       href="https://design.canada.ca/common-design-patterns/privacy-disclaimer.html"
       id="link"
-    >
-      Privacy Disclaimer (Canada.ca Design System)
-    </a>
+      text="Privacy Disclaimer (Canada.ca Design System)"
+    />
   </li>
   <li>
-    <a href="https://privacy-statements.cds.alpha.canada.ca/en/" id="link">
-      Privacy Statements Generator (Canadian Digital Service)
-    </a>
+    <Link
+      href="https://privacy-statements.cds.alpha.canada.ca/en/"
+      id="link"
+      text="Privacy Statements Generator (Canadian Digital Service)"
+    />
   </li>
 </ul>
 
@@ -421,7 +419,6 @@ import { Collapse } from "../components/Collapse/Collapse";
 </ul>
 
 {" "}
-
 <h4 className="ds-heading4">Contribute to a Data Pattern:</h4>
 <pre>
   <code>
@@ -433,12 +430,11 @@ import { Collapse } from "../components/Collapse/Collapse";
     </p>
     <p>
       See our{" "}
-      <a
+      <Link
         href="https://github.com/DTS-STN/Data-Patterns/blob/main/CONTRIBUTING.md"
         id="link"
-      >
-        CONTRIBUTING.md guide
-      </a>
+        text="CONTRIBUTING.md guide"
+      />{" "}
       on how to do this.
     </p>
   </code>
@@ -446,7 +442,9 @@ import { Collapse } from "../components/Collapse/Collapse";
 
 <p>
   All content of the Data Patterns Library is available under the{" "}
-  <a href="https://open.canada.ca/en/open-government-licence-canada" id="link">
-    Open Government Licence - Canada
-  </a>
+  <Link
+    href="https://open.canada.ca/en/open-government-licence-canada"
+    id="link"
+    text="Open Government Licence - Canada"
+  />
 </p>

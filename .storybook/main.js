@@ -4,10 +4,17 @@ module.exports = {
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-postcss",
     "@storybook/addon-a11y",
     "@whitespace/storybook-addon-html",
     "@storybook/addon-mdx-gfm",
+    {
+      name: "@storybook/addon-styling",
+      options: {
+        postCss: {
+          implementation: require("postcss"),
+        },
+      },
+    },
   ],
   staticDirs: ["../src/assets"],
   typescript: {
