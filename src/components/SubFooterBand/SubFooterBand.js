@@ -11,9 +11,11 @@ export function SubFooterBand(props) {
       className={props.isAuthenticated ? "ds-bg-[#F5F5F5]" : "ds-bg-[#F8F8F8]"}
     >
       <div
-        className={`${props.isAuthenticated ? "ds-h-[86px]" : "ds-h-[96px]"} ${
-          props.error ? "ds-items-center" : ""
-        } ds-flex ds-justify-between ${props.container}`}
+        className={`${
+          props.isAuthenticated ? "ds-min-h-[86px]" : "ds-min-h-[96px]"
+        } ${props.error ? "ds-items-center" : ""} ds-flex ds-justify-between ${
+          props.container
+        }`}
       >
         {props.error ? (
           <div>
