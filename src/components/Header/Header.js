@@ -12,6 +12,7 @@ import logoFileFR from "../../assets/sig-blk-fr.svg";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { Language } from "../Language/Language";
 import { Breadcrumb } from "../Breadcrumb/Breadcrumb";
+// import GlobalHeader from "./GCSearchBox";
 
 export function Header(props) {
   const {
@@ -30,55 +31,71 @@ export function Header(props) {
   } = props;
 
   const containerClass = useParentContainer ? "" : "ds-container";
+  // return <GlobalHeader />;
 
   return (
-    <div className="ds-header" id={id} data-testid="ds-header">
-      <TopNav
-        lang={lang}
-        skipToMainPath={topnavProps.skipToMainPath}
-        skipToAboutPath={topnavProps.skipToAboutPath}
-        switchToBasicPath={topnavProps.switchToBasicPath}
-        displayAlternateLink={topnavProps.displayAlternateLink}
-      />
-      <header>
-        <div
-          className={`${containerClass} ds-flex ds-flex-col sm:ds-flex-row md:ds-pb-14px`}
-        >
-          <div className="ds-flex ds-flex-row sm:ds-pt-12px">
-            <div className={`header-logo ds-pt-6px`}>
-              <Image
-                className={`${
-                  lang === "en"
-                    ? "md:ds-max-h-34px ds-max-h-19px"
-                    : "md:ds-max-h-35px ds-max-h-20px"
-                } md:ds-max-w-360px ds-max-w-206px`}
-                src={lang === "en" ? logoFile : logoFileFR}
-                alt="Government of Canada"
-              />
-            </div>
-            <div className="sm:ds-hidden ds-ml-auto ds-pb-10px">
-              <Language
-                id="lang2"
-                lang={lang}
-                path={linkPath}
-                locale={locale}
-                customLink={customLink}
-                dataGcAnalyticsCustomClickInstitutionVariable={
-                  dataGcAnalyticsCustomClickInstitutionVariable
-                }
-              />
-            </div>
-          </div>
-          {!isAuthenticated ? (
-            <>
-              <div className="sm:ds-ml-auto ds-w-full md:ds-flex md:ds-w-332px ds-pb-20px ds-pt-10px sm:ds-pr-14px md:ds-pt-20px md:ds-pb-10px">
-                <SearchBar
-                  onChange={searchProps.onChange}
-                  onSubmit={searchProps.onSubmit}
-                  lang={lang}
+    <>
+      <div className="ds-header" id={id} data-testid="ds-header">
+        <TopNav
+          lang={lang}
+          skipToMainPath={topnavProps.skipToMainPath}
+          skipToAboutPath={topnavProps.skipToAboutPath}
+          switchToBasicPath={topnavProps.switchToBasicPath}
+          displayAlternateLink={topnavProps.displayAlternateLink}
+        />
+        <header>
+          <div
+            className={`${containerClass} ds-flex ds-flex-col sm:ds-flex-row md:ds-pb-14px`}
+          >
+            <div className="ds-flex ds-flex-row sm:ds-pt-12px">
+              <div className={`header-logo ds-pt-6px`}>
+                <Image
+                  className={`${
+                    lang === "en"
+                      ? "md:ds-max-h-34px ds-max-h-19px"
+                      : "md:ds-max-h-35px ds-max-h-20px"
+                  } md:ds-max-w-360px ds-max-w-206px`}
+                  src={lang === "en" ? logoFile : logoFileFR}
+                  alt="Government of Canada"
                 />
               </div>
-              <div className="ds-hidden sm:ds-flex sm:ds-pt-10px md:ds-pt-18px">
+              <div className="sm:ds-hidden ds-ml-auto ds-pb-10px">
+                <Language
+                  id="lang2"
+                  lang={lang}
+                  path={linkPath}
+                  locale={locale}
+                  customLink={customLink}
+                  dataGcAnalyticsCustomClickInstitutionVariable={
+                    dataGcAnalyticsCustomClickInstitutionVariable
+                  }
+                />
+              </div>
+            </div>
+            {!isAuthenticated ? (
+              <>
+                <div className="sm:ds-ml-auto ds-w-full md:ds-flex md:ds-w-332px ds-pb-20px ds-pt-10px sm:ds-pr-14px md:ds-pt-20px md:ds-pb-10px">
+                  <SearchBar
+                    onChange={searchProps.onChange}
+                    onSubmit={searchProps.onSubmit}
+                    lang={lang}
+                  />
+                </div>
+                <div className="ds-hidden sm:ds-flex sm:ds-pt-10px md:ds-pt-18px">
+                  <Language
+                    id="lang1"
+                    lang={lang}
+                    path={linkPath}
+                    customLink={customLink}
+                    locale={locale}
+                    dataGcAnalyticsCustomClickInstitutionVariable={
+                      dataGcAnalyticsCustomClickInstitutionVariable
+                    }
+                  />
+                </div>
+              </>
+            ) : (
+              <div className="ds-pb-10px sm:ds-pb-14px md:ds-pb-0 ds-hidden sm:ds-ml-auto sm:ds-flex sm:ds-pt-10px md:ds-pt-18px">
                 <Language
                   id="lang1"
                   lang={lang}
@@ -90,40 +107,27 @@ export function Header(props) {
                   }
                 />
               </div>
-            </>
-          ) : (
-            <div className="ds-pb-10px sm:ds-pb-14px md:ds-pb-0 ds-hidden sm:ds-ml-auto sm:ds-flex sm:ds-pt-10px md:ds-pt-18px">
-              <Language
-                id="lang1"
-                lang={lang}
-                path={linkPath}
-                customLink={customLink}
-                locale={locale}
-                dataGcAnalyticsCustomClickInstitutionVariable={
-                  dataGcAnalyticsCustomClickInstitutionVariable
-                }
-              />
+            )}
+          </div>
+          {!menuProps.hasNoMenu && (
+            <Menu
+              lang={lang}
+              isAuthenticated={isAuthenticated}
+              menuList={menuProps.menuList}
+              onSignOut={menuProps.onSignOut}
+              dataGcAnalyticsCustomClickInstitutionVariable={
+                dataGcAnalyticsCustomClickInstitutionVariable
+              }
+            />
+          )}
+          {breadCrumbItems && (
+            <div className={containerClass}>
+              <Breadcrumb items={breadCrumbItems} />
             </div>
           )}
-        </div>
-        {!menuProps.hasNoMenu && (
-          <Menu
-            lang={lang}
-            isAuthenticated={isAuthenticated}
-            menuList={menuProps.menuList}
-            onSignOut={menuProps.onSignOut}
-            dataGcAnalyticsCustomClickInstitutionVariable={
-              dataGcAnalyticsCustomClickInstitutionVariable
-            }
-          />
-        )}
-        {breadCrumbItems && (
-          <div className={containerClass}>
-            <Breadcrumb items={breadCrumbItems} />
-          </div>
-        )}
-      </header>
-    </div>
+        </header>
+      </div>
+    </>
   );
 }
 
