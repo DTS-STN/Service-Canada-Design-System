@@ -12,7 +12,6 @@ import logoFileFR from "../../assets/sig-blk-fr.svg";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { Language } from "../Language/Language";
 import { Breadcrumb } from "../Breadcrumb/Breadcrumb";
-// import GlobalHeader from "./GCSearchBox";
 
 export function Header(props) {
   const {
@@ -30,8 +29,8 @@ export function Header(props) {
     dataGcAnalyticsCustomClickInstitutionVariable,
   } = props;
 
-  const containerClass = useParentContainer ? "" : "ds-container";
-  // return <GlobalHeader />;
+  const containerClass =
+    useParentContainer || !isAuthenticated ? "" : "ds-container";
 
   return (
     <>
@@ -44,16 +43,28 @@ export function Header(props) {
           displayAlternateLink={topnavProps.displayAlternateLink}
         />
         <header>
+          <div className="ds-justify-end ds-w-full ds-ml-auto">
+            <Language
+              id="lang1"
+              lang={lang}
+              path={linkPath}
+              customLink={customLink}
+              locale={locale}
+              dataGcAnalyticsCustomClickInstitutionVariable={
+                dataGcAnalyticsCustomClickInstitutionVariable
+              }
+            />
+          </div>
           <div
             className={`${containerClass} ds-flex ds-flex-col sm:ds-flex-row md:ds-pb-14px`}
           >
-            <div className="ds-flex ds-flex-row sm:ds-pt-12px">
+            <div className={`ds-flex ds-flex-row ds-w-full sm:ds-pt-12px`}>
               <div className={`header-logo ds-pt-6px`}>
                 <Image
                   className={`${
                     lang === "en"
-                      ? "md:ds-max-h-34px ds-max-h-19px"
-                      : "md:ds-max-h-35px ds-max-h-20px"
+                      ? "lg:ds-max-h-34px ds-max-h-19px"
+                      : "lg:ds-max-h-35px ds-max-h-20px"
                   } md:ds-max-w-360px ds-max-w-206px`}
                   src={lang === "en" ? logoFile : logoFileFR}
                   alt="Government of Canada"
@@ -74,23 +85,11 @@ export function Header(props) {
             </div>
             {!isAuthenticated ? (
               <>
-                <div className="sm:ds-ml-auto ds-w-full md:ds-flex md:ds-w-332px ds-pb-20px ds-pt-10px sm:ds-pr-14px md:ds-pt-20px md:ds-pb-10px">
+                <div className="ds-py-0 ds-justify-end sm:ds-ml-auto ds-w-full md:ds-flex md:ds-w-332px ds-pb-20px ds-pt-10px md:ds-pt-20px md:ds-pb-10px">
                   <SearchBar
                     onChange={searchProps.onChange}
                     onSubmit={searchProps.onSubmit}
                     lang={lang}
-                  />
-                </div>
-                <div className="ds-hidden sm:ds-flex sm:ds-pt-10px md:ds-pt-18px">
-                  <Language
-                    id="lang1"
-                    lang={lang}
-                    path={linkPath}
-                    customLink={customLink}
-                    locale={locale}
-                    dataGcAnalyticsCustomClickInstitutionVariable={
-                      dataGcAnalyticsCustomClickInstitutionVariable
-                    }
                   />
                 </div>
               </>
