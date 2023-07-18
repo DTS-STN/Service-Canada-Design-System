@@ -26,9 +26,9 @@ describe("FormMultiTextField", () => {
     expect(mockFn.mock.calls.length).toBe(0);
   });
 
-  // it("no accessibility violations", async () => {
-  //   const { container } = render(<Primary {...Primary.args} />);
-  //   const results = await axe(container);
-  //   expect(results).toHaveNoViolations();
-  // });
+  it("no accessibility violations", async () => {
+    const { container } = render(<Primary {...Primary.args} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });

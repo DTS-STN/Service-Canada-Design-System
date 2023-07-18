@@ -60,6 +60,7 @@ export function FormTextField(props) {
     <div className={`ds-block ds-leading-tight ds-mb-10px`} id={props.id}>
       {props.label && (
         <FormLabel
+          id={`${props.id}-textarea`}
           label={props.label}
           required={props.required}
           requiredText={props.requiredText}
@@ -74,7 +75,7 @@ export function FormTextField(props) {
       <input
         className={classname}
         maxLength={maxLength}
-        id={props.id}
+        id={`${props.id}-textarea`}
         aria-describedby={props.describedBy}
         name={props.name}
         placeholder={props.placeholder}

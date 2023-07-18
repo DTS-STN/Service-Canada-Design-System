@@ -39,7 +39,7 @@ export function FormMultiTextField(props) {
     <div className={`block leading-tight mb-12`} id={props.id}>
       {props.label && (
         <FormLabel
-          id={props.id}
+          id={`${props.id}-textarea`}
           label={props.label}
           required={props.required}
           requiredText={props.requiredText}
