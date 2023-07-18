@@ -35,7 +35,7 @@ export const CustomDropdown = (props) => {
   for (let i = clampedMinValue; i <= clampedMaxValue; i++) {
     numberOptions.push({ id: i.toString(), value: i.toString() });
   }
-
+  const combinedOptions = [...numberOptions, ...(props.options || [])];
   return (
     <>
       <div className={`dropdown ${isOpen ? "open" : ""}`}>
