@@ -18,7 +18,7 @@ import {
   FRbrandLinks,
 } from "../../translations/fr.json";
 import logo from "../../assets/wmms-blk.svg";
-import bg_img from "../../assets/footer_bg_img.svg";
+import bg_img from "../../assets/footer_bg_img.png";
 
 const landlinks = { en: [], fr: [] };
 

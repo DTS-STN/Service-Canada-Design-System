@@ -49,6 +49,7 @@ Primary.args = {
           <li>line-height: 38px</li>
           <li>font-weight: 700</li>
           <li>color: grey100</li>
+          <li>padding-bottom: 8px</li>
           <li>border-bottom: 1px solid #af3c43</li>
         </ul>
         <p className="ds-body">Styles: Desktop and Tablet</p>
@@ -57,7 +58,8 @@ Primary.args = {
           <li>line-height: 42px</li>
           <li>font-weight: 700</li>
           <li>color: grey100</li>
-          <li>border-bottom: 4px solid #af3c43</li>
+          <li>padding-bottom: 8px</li>
+          <li>border-bottom: 1px solid #af3c43</li>
         </ul>
       </div>
 
@@ -228,6 +230,19 @@ Primary.args = {
           <li>font-size: 14x</li>
           <li>line-height: 18px</li>
           <li>font-weight: 500</li>
+          <li>color: grey85a</li>
+        </ul>
+      </div>
+      <div className="ds-caption-heading1 ds-p-4">
+        Example Text: Caption Heading1 - Lorem Ipsum is simply dummy text.
+      </div>
+      <div className="ds-bg-gray-200 ds-p-4 ds-m-4">
+        <p className="ds-body-bold">class-name: ds-caption-heading1</p>
+        <ul>
+          <li>font-family: Noto sans, font-mono</li>
+          <li>font-size: 22x</li>
+          <li>line-height: 33px</li>
+          <li>font-weight: 400</li>
           <li>color: grey85a</li>
         </ul>
       </div>
