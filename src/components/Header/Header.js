@@ -129,6 +129,7 @@ export function Header(props) {
 
 Header.defaultProps = {
   lang: "en",
+  id: Math.random(),
   isAuthenticated: true,
   useParentContainer: false,
   searchProps: {
