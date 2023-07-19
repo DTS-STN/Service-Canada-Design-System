@@ -5,7 +5,6 @@
  *
  */
 // import "react-app-polyfill/ie11";
-
 import "./styles/tailwind.css";
 import "./styles/fonts.css";
 import "./styles/forms.css";
