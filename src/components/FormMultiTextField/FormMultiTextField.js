@@ -22,14 +22,14 @@ export function FormMultiTextField(props) {
     )}px`;
   }, [value]);
   switch (props.size) {
-    case "medium":
-      sizeOfField = "ds-w-full md:ds-w-5/6";
+    case "large":
+      sizeOfField = "ds-w-full ds-max-w-[556px]";
       break;
-    case "small":
-      sizeOfField = "ds-w-full md:ds-w-3/4";
+    case "standard":
+      sizeOfField = "ds-w-full ds-max-w-[408px]";
       break;
     default:
-      sizeOfField = "ds-w-full";
+      sizeOfField = "ds-w-full ds-max-w-[408px]";
   }
 
   const validationClass = props.hasError
@@ -47,6 +47,8 @@ export function FormMultiTextField(props) {
           infoText={props.infoText}
           describedBy={props.describedBy}
           helpText={props.helpText}
+          hasHint={props.hasHint}
+          hintProps={props.hintProps}
         />
       )}
       <textarea
@@ -127,4 +129,26 @@ FormMultiTextField.propTypes = {
    * aria-describedby label id
    */
   describedby: PropTypes.string,
+
+  /**
+   * Option to show and custom Hint Expander
+   */
+  hasHint: PropTypes.bool,
+
+  /**
+   * Hint Expander props
+   */
+  hintProps: PropTypes.shape({
+    textLink: PropTypes.string,
+    description: PropTypes.string,
+    withLink: PropTypes.bool,
+    externalLinkText: PropTypes.string,
+    optionalLinkText: PropTypes.string,
+  }),
+
+  /**
+   * User can input one of the follow size option to apply
+   * to the input field, the default size is standard.
+   */
+  size: PropTypes.oneOf(["standard", "large"]),
 };

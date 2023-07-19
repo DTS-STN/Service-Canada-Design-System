@@ -37,15 +37,14 @@
 }
 
 .control-input:focus + .control-label::before {
-  border-width: 1 px;
+  border-width: 2px;
   -webkit-box-shadow: 0px 0px 6px rgba(14, 98, 201, 0.6);
   box-shadow: 0px 0px 6px rgba(14, 98, 201, 0.6);
 }
 
 .ds-text-input:focus {
-  border-width: 1px;
   box-shadow: 0px 0px 6px rgba(14, 98, 201, 0.6);
-  outline: 0;
+  outline: 2px solid #0e62c9;
 }
 
 .select-field::-webkit-calendar-picker-indicator {
@@ -96,7 +95,7 @@
   width: 30px;
   height: 30px;
   border-radius: 100%;
-  background: #6f6f6f;
+  background: #0e62c9;
   transform: scale(0);
   transition: all 0.2s ease;
   opacity: 0.08;

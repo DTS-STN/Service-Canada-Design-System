@@ -4,15 +4,6 @@ import { FormMultiTextField } from "./FormMultiTextField";
 export default {
   title: "Components/FormMultiTextField",
   component: FormMultiTextField,
-  // decorators: [
-  //   (Story) => (
-  //     <div className="ds-w-full  ds-flex ds-justify-center">
-  //       <div className="ds-w-96">
-  //         <Story />
-  //       </div>
-  //     </div>
-  //   ),
-  // ],
 };
 
 const Template = (args) => <FormMultiTextField i {...args} />;
@@ -29,20 +20,16 @@ Primary.args = {
   placeholder: "",
   size: "medium",
   value: "",
-  helpText:
-    "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
-};
-
-export const WithInfo = Template.bind({});
-WithInfo.args = {
-  id: "multiTextField2",
-  name: "multiTextField2",
-  label: "Multi Text Field",
-  dataTestId: "multitext-two",
-  requiredText: "required",
-  optionalText: "optional",
-  placeholder: "",
-  infoText: "Help Text",
+  hasHint: true,
+  hintProps: {
+    linkText: "Why are we asking about [topic]?",
+    description:
+      "We need to know this because your partner’s annual net income...",
+    withLink: false,
+    externalLinkText: "",
+    optionalLinkText: "",
+    url: "",
+  },
   helpText:
     "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
 };

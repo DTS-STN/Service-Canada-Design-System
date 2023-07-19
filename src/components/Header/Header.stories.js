@@ -12,6 +12,7 @@ export const FrenchAuth = Template.bind({});
 
 EnglishAuth.args = {
   id: "header",
+  dataGcAnalyticsCustomClickInstitutionVariable: "Institution",
   lang: "en",
   menuProps: {
     menuList: [
@@ -49,6 +50,7 @@ EnglishAuth.args = {
 
 FrenchAuth.args = {
   id: "header",
+  dataGcAnalyticsCustomClickInstitutionVariable: "Institution",
   lang: "fr",
   menuProps: {
     menuList: [
