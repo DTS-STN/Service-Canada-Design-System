@@ -21,6 +21,17 @@ const optionsList = [
     id: "option_1",
     value: "Option 1",
     label: "Options 1: Some Value to show",
+    hasHint: true,
+    hintProps: {
+      linkText: "Why are we asking about [topic]?",
+      description:
+        "We need to know this because your partner’s annual net income...",
+      withLink: false,
+      externalLinkText: "",
+      optionalLinkText: "",
+      url: "",
+      className: "",
+    },
   },
   {
     id: "option_2",
@@ -47,6 +58,17 @@ withLabelHelpText.args = {
   options: optionsList,
   label: "I am a text field",
   infoText: "Help Text",
+  hasHint: true,
+  hintProps: {
+    linkText: "Why are we asking about [topic]?",
+    description:
+      "We need to know this because your partner’s annual net income...",
+    withLink: false,
+    externalLinkText: "",
+    optionalLinkText: "",
+    url: "",
+    className: "",
+  },
   helpText:
     "Help text that is always visible under the label to provide users with primary information needed to fill in the form field. Limit of 2 sentences",
 };

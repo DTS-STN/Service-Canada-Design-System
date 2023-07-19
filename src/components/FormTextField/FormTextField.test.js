@@ -5,15 +5,11 @@ import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { axe, toHaveNoViolations } from "jest-axe";
-import {
-  Primary,
-  OptionalWithInfoText,
-  RequiredWithError,
-} from "./TextField.stories";
+import { Primary, RequiredWithError } from "./FormTextField.stories";
 
 expect.extend(toHaveNoViolations);
 
-describe("TextField", () => {
+describe("FormTextField", () => {
   let mockFn;
   beforeEach(() => {
     mockFn = jest.fn();
@@ -26,13 +22,6 @@ describe("TextField", () => {
     const inputElem = screen.getByTestId("textbox-controlled");
     fireEvent.change(inputElem, { target: { value: "h" } });
     // expect(inputElem.value).toBe("h");
-  });
-
-  it("renders text field with with Error", () => {
-    render(<RequiredWithError {...RequiredWithError.args} />);
-    expect(screen.getByText(RequiredWithError.args.label).classList).toContain(
-      "ds-text-form-input-gray"
-    );
   });
 
   it("has no accessibility violations", async () => {

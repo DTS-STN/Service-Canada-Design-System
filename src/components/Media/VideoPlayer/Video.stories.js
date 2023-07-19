@@ -33,4 +33,5 @@ VideoPlayer.args = {
     src: exampleCaps,
     srcLang: "en",
   },
+  crossOrigin: false,
 };

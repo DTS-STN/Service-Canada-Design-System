@@ -1,4 +1,54 @@
 {
+  "landscapeLinks": {
+    "text": {
+      "contacts": "Toutes les coordonnées",
+      "departments": "Ministères et organismes",
+      "about": "À propos du gouvernement",
+      "jobs": "Emplois",
+      "taxes": "Impôts",
+      "canadaAndWorld": "Le Canada et le monde",
+      "immigration": "Immigration et citoyenneté",
+      "environment": "Environnement et ressources naturelles",
+      "finance": "Argent et finance",
+      "travel": "Voyage et tourisme",
+      "nationalSecurity": "Sécurité nationale et défense",
+      "innovation": "Science et innovation",
+      "business": "Entreprises",
+      "culture": "Culture, histoire et sport",
+      "indigenous": "Autochtones",
+      "benefit": "Prestations",
+      "policing": "Services de police, justice et urgences",
+      "veterans": "Vétérans et militaires",
+      "health": "Santé",
+      "transport": "Transport et infrastructure",
+      "youth": "Jeunesse"
+    },
+    "link": {
+      "contacts": "https://www.canada.ca/fr/contact.html",
+      "departments": "https://www.canada.ca/fr/gouvernement/min.html",
+      "about": "https://www.canada.ca/fr/gouvernement/systeme.html",
+      "jobs": "https://www.canada.ca/fr/services/emplois.html",
+      "taxes": "https://www.canada.ca/fr/services/impots.html",
+      "canadaAndWorld": "https://www.international.gc.ca/world-monde/index.aspx?lang=fra",
+      "immigration": "https://www.canada.ca/fr/services/immigration-citoyennete.html",
+      "environment": "https://www.canada.ca/fr/services/environnement.html",
+      "finance": "https://www.international.gc.ca/world-monde/index.aspx?lang=fra",
+      "travel": "https://voyage.gc.ca/",
+      "nationalSecurity": "https://www.canada.ca/fr/services/defense.html",
+      "innovation": "https://www.canada.ca/fr/services/science.html",
+      "business": "https://www.canada.ca/fr/services/entreprises.html",
+      "culture": "https://www.canada.ca/fr/services/culture.html",
+      "indigenous": "https://www.canada.ca/fr/services/autochtones.html",
+      "benefit": "https://www.canada.ca/fr/services/prestations.html",
+      "policing": "https://www.canada.ca/fr/services/police.html",
+      "veterans": "https://www.canada.ca/fr/services/veterans-militaire.html",
+      "health": "https://www.canada.ca/fr/services/sante.html",
+      "transport": "https://www.canada.ca/fr/services/transport.html",
+      "youth": "https://www.canada.ca/fr/services/jeunesse.html"
+    }
+  },
+  "aboutGovernment": "Au sujet du gouvernement",
+  "aboutSite": "À propos de ce site",
   "FRlandscapeLinks": {
     "aboutGovernment": "Au sujet du gouvernement",
     "aboutSite": "À propos de ce site",
@@ -38,6 +88,7 @@
     "mscaFooterContactUsText": "Contactez-nous",
     "mscaFooterContactUsLink": "/"
   },
+  "footerTitle": "Gouvernement du Canada",
   "footerTopOfPageButtonText": "Haut de la page",
   "errorPageHeadingTitle404": "Nous ne pouvons trouver cette page Web",
   "errorPageHeadingTitle500": "Nous éprouvons des difficultés avec cette page",
@@ -131,5 +182,6 @@
     }
   },
   "searchPlaceholderText": "Rechercher dans Canada.ca",
-  "searchButtonHoverText": "Bouton du champ de recherche"
+  "searchButtonHoverText": "Bouton du champ de recherche",
+  "monthDropdownPlaceholder": "Sélectionner le mois"
 }
