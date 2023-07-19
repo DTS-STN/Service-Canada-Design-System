@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.67.1](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.0...v1.67.1) (2023-07-19)
+
+
+### Bug Fixes
+
+* broken build, clean up ([9d86abf](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9d86abfc728efa08c8ee61f5524010ac9594103c))
+* clean up ([a29bb57](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a29bb57c21c077fae312897725cd5db6a560ed9c))
+* responsive sub-footer ([27aaa19](https://github.com/DTS-STN/Service-Canada-Design-System/commit/27aaa1922f9134f46178e32d34832912347aaedb))
+* update dependencies ([c383852](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c3838520ed8e00169a957424ef28b62ed48d0e73))
+* update subfooter height mobile ([110de39](https://github.com/DTS-STN/Service-Canada-Design-System/commit/110de394f75015e36e6e0e982391cd8b3e447fdf))
+
 ## [1.67.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.66.0...v1.67.0) (2023-07-10)
 
 
