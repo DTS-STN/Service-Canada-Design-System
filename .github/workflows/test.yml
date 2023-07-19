@@ -1,7 +1,7 @@
 name: "Test"
 on:
   pull_request:
-    branches: [ main, release, develop ]
+    branches: [ main, release, develop, inspect1, inspect2, inspect3 ]
 jobs:
   checkout-and-test:
     runs-on: ubuntu-latest

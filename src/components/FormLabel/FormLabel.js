@@ -1,49 +1,42 @@
 import PropTypes from "prop-types";
-import React, { useState } from "react";
-import { Image } from "../Image/Image";
-import infoImage from "../../assets/info_img.svg";
+import React from "react";
+import { HintExpander } from "../HintExpander/HintExpander";
 
 export function FormLabel(props) {
-  const [displayHelpText, setHelpTextState] = useState(false);
   return (
     <>
       <label
-        className={`ds-flex ds-text-multi-neutrals-grey100 ds-items-center ds-leading-24px ds-text-xl lg:ds-text-p ds-font-body ds-mb-8px ds-relative`}
+        className={`ds-flex ds-text-multi-neutrals-grey100 ds-items-center ds-leading-24px ds-text-xl lg:ds-text-p ds-font-body ds-relative`}
         htmlFor={props.id}
       >
-        <span className="ds-inline ds-text-form-input-gray lg:ds-text-xl ds-font-bold ">
-          {props.label}{" "}
-          {props.required ? (
+        <span className="ds-inline ds-text-form-input-gray lg:ds-text-xl ds-font-bold ds-flex ds-items-center">
+          <p className={props.noneBoldLabel ? "ds-font-normal" : ""}>
+            {props.label}
+          </p>{" "}
+          {props.required && (
             <span className="ds-inline ds-text-error-border-red ds-text-xl ds-font-medium">
-              &nbsp;{`${props.requiredText}`}
+              &nbsp;{`(${props.requiredText})`}
             </span>
-          ) : (
-            <span className="ds-inline ds-text-form-input-gray ds-text-xl lg:ds-text-xl ds-font-medium">
-              &nbsp;{`${props.optionalText}`}
+          )}{" "}
+          {props.optional && (
+            <span className="ds-inline ds-text-form-input-gray ds-text-multi-neutrals-grey90a ds-text-xl lg:ds-text-xl ds-font-medium">
+              &nbsp;{`(${props.optionalText})`}
             </span>
           )}
         </span>
-        {props.infoText && (
-          <button
-            className="ds-infoText ds-cursor-pointer ds-ml-auto md:ds-ml-0 ds-pl-8px"
-            onClick={(e) => {
-              e.preventDefault();
-              setHelpTextState(!displayHelpText);
-            }}
-          >
-            <Image tabIndex={-1} src={infoImage} alt="Click on to show info" />
-          </button>
-        )}
       </label>
-      {displayHelpText && (
-        <div
-          id={props.describedBy}
-          className="ds-inline-block ds-rounded ds-font-body ds-text-xl ds-text-multi-neutrals-grey100 ds-p-5px ds-pl-14px ds-pr-14px ds-bg-specific-cyan-cyan5 ds-leading-33px ds-border  ds-border-specific-cyan-cyan50 ds-mb-1.5"
+      {props.hasHint && (
+        <HintExpander
+          linkText={props.hintProps.linkText}
+          withLink={props.hintProps.withLink}
+          externalLinkText={props.hintProps.externalLinkText}
+          optionalLinkText={props.hintProps.optionalLinkText}
+          url={props.hintProps.href}
         >
-          {`${props.infoText}`}
-        </div>
+          {props.hintProps.description}
+        </HintExpander>
       )}
-      <div className="ds-font-body ds-text-lg ds-leading-22px ds-font-medium  ds-text-multi-neutrals-grey90a ds-mb-3">
+      <div className="ds-font-body ds-text-[20px] ds-leading-[26px] ds-font-medium ds-my-[8px] ds-text-multi-neutrals-grey90a">
         {props.helpText}
       </div>
     </>
@@ -52,8 +45,17 @@ export function FormLabel(props) {
 
 FormLabel.defaultProps = {
   label: "Label Text",
-  optionalText: "(optional)",
-  requiredText: "(required)",
+  optionalText: "optional",
+  requiredText: "required",
+  hintProps: {
+    linkText: "Why are we asking about [topic]?",
+    description:
+      "We need to know this because your partner’s annual net income...",
+    withLink: false,
+    externalLinkText: "",
+    optionalLinkText: "",
+    url: "",
+  },
 };
 
 FormLabel.propTypes = {
