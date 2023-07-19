@@ -43,7 +43,8 @@ export function Header(props) {
           displayAlternateLink={topnavProps.displayAlternateLink}
         />
         <header>
-          <div className="ds-justify-end ds-w-full ds-ml-auto">
+          <div className="ds-flex ds-flex-row ds-w-full ds-invisible sm:ds-visible">
+            <div className="ds-w-full"></div>
             <Language
               id="lang1"
               lang={lang}
@@ -109,15 +110,31 @@ export function Header(props) {
             )}
           </div>
           {!menuProps.hasNoMenu && (
-            <Menu
-              lang={lang}
-              isAuthenticated={isAuthenticated}
-              menuList={menuProps.menuList}
-              onSignOut={menuProps.onSignOut}
-              dataGcAnalyticsCustomClickInstitutionVariable={
-                dataGcAnalyticsCustomClickInstitutionVariable
-              }
-            />
+            <>
+              <hr className="ds-border-t-[3px] ds-border-black ds-mt-1" />
+              <button
+                className="ds-bg-black ds-py-2.5 ds-px-5"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-label="Press the SPACEBAR to expand or the escape key to collapse this menu. Use the Up and Down arrow keys to choose a submenu item. Press the Enter or Right arrow key to expand it, or the Left arrow or Escape key to collapse it. Use the Up and Down arrow keys to choose an item on that level and the Enter key to access it."
+              >
+                <span className="ds-text-white ds-text-xl ds-uppercase">
+                  Main{" "}
+                </span>
+                Menu{" "}
+                <span className="expicon glyphicon glyphicon-chevron-down"></span>
+              </button>
+              {/* <Menu
+                lang={lang}
+                isAuthenticated={isAuthenticated}
+                menuList={menuProps.menuList}
+                onSignOut={menuProps.onSignOut}
+                dataGcAnalyticsCustomClickInstitutionVariable={
+                  dataGcAnalyticsCustomClickInstitutionVariable
+                }
+              /> */}
+            </>
           )}
           {breadCrumbItems && (
             <div className={containerClass}>

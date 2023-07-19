@@ -25,7 +25,7 @@ export function SearchBar(props) {
       <input
         onChange={props.onChange}
         id="search-input"
-        className="ds-search-input"
+        className="ds-search-input ds-w-full"
         type="search"
         placeholder={
           props.lang === "en"
