@@ -12,6 +12,7 @@ import logoFileFR from "../../assets/sig-blk-fr.svg";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { Language } from "../Language/Language";
 import { Breadcrumb } from "../Breadcrumb/Breadcrumb";
+import dropdown from "../../assets/dropdown.svg";
 
 export function Header(props) {
   const {
@@ -34,7 +35,11 @@ export function Header(props) {
 
   return (
     <>
-      <div className="ds-header" id={id} data-testid="ds-header">
+      <div
+        className="ds-header ds-px-0 ds-mx-0"
+        id={id}
+        data-testid="ds-header ds-px-0 ds-mx-0"
+      >
         <TopNav
           lang={lang}
           skipToMainPath={topnavProps.skipToMainPath}
@@ -42,8 +47,8 @@ export function Header(props) {
           switchToBasicPath={topnavProps.switchToBasicPath}
           displayAlternateLink={topnavProps.displayAlternateLink}
         />
-        <header>
-          <div className="ds-flex ds-flex-row ds-w-full ds-invisible sm:ds-visible">
+        <header className="">
+          <div className="ds-container ds-flex ds-flex-row ds-invisible sm:ds-visible">
             <div className="ds-w-full"></div>
             <Language
               id="lang1"
@@ -57,7 +62,7 @@ export function Header(props) {
             />
           </div>
           <div
-            className={`${containerClass} ds-flex ds-flex-col sm:ds-flex-row md:ds-pb-14px`}
+            className={`${containerClass} ds-container ds-flex ds-flex-col sm:ds-flex-row md:ds-pb-14px`}
           >
             <div className={`ds-flex ds-flex-row ds-w-full sm:ds-pt-12px`}>
               <div className={`header-logo ds-pt-6px`}>
@@ -83,48 +88,70 @@ export function Header(props) {
                   }
                 />
               </div>
-            </div>
-            {!isAuthenticated ? (
-              <>
-                <div className="ds-py-0 ds-justify-end sm:ds-ml-auto ds-w-full md:ds-flex md:ds-w-332px ds-pb-20px ds-pt-10px md:ds-pt-20px md:ds-pb-10px">
-                  <SearchBar
-                    onChange={searchProps.onChange}
-                    onSubmit={searchProps.onSubmit}
+              {!isAuthenticated ? (
+                <>
+                  <div className="ds-py-0 ds-justify-end sm:ds-ml-auto ds-w-full md:ds-flex md:ds-w-332px ds-pb-20px ds-pt-10px md:ds-pt-20px md:ds-pb-10px">
+                    <SearchBar
+                      onChange={searchProps.onChange}
+                      onSubmit={searchProps.onSubmit}
+                      lang={lang}
+                    />
+                  </div>
+                </>
+              ) : (
+                <div className="ds-pb-10px sm:ds-pb-14px md:ds-pb-0 ds-hidden sm:ds-ml-auto sm:ds-flex sm:ds-pt-10px md:ds-pt-18px">
+                  <Language
+                    id="lang1"
                     lang={lang}
+                    path={linkPath}
+                    customLink={customLink}
+                    locale={locale}
+                    dataGcAnalyticsCustomClickInstitutionVariable={
+                      dataGcAnalyticsCustomClickInstitutionVariable
+                    }
                   />
                 </div>
-              </>
-            ) : (
-              <div className="ds-pb-10px sm:ds-pb-14px md:ds-pb-0 ds-hidden sm:ds-ml-auto sm:ds-flex sm:ds-pt-10px md:ds-pt-18px">
-                <Language
-                  id="lang1"
-                  lang={lang}
-                  path={linkPath}
-                  customLink={customLink}
-                  locale={locale}
-                  dataGcAnalyticsCustomClickInstitutionVariable={
-                    dataGcAnalyticsCustomClickInstitutionVariable
-                  }
-                />
-              </div>
-            )}
+              )}
+            </div>
           </div>
           {!menuProps.hasNoMenu && (
             <>
-              <hr className="ds-border-t-[3px] ds-border-black ds-mt-1" />
-              <button
-                className="ds-bg-black ds-py-2.5 ds-px-5"
-                type="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                aria-label="Press the SPACEBAR to expand or the escape key to collapse this menu. Use the Up and Down arrow keys to choose a submenu item. Press the Enter or Right arrow key to expand it, or the Left arrow or Escape key to collapse it. Use the Up and Down arrow keys to choose an item on that level and the Enter key to access it."
-              >
-                <span className="ds-text-white ds-text-xl ds-uppercase">
-                  Main{" "}
-                </span>
-                Menu{" "}
-                <span className="expicon glyphicon glyphicon-chevron-down"></span>
-              </button>
+              <hr className="ds-border-t-[3px] ds-border-[#26374a] ds-mt-1 ds-px-0" />
+              <div className="ds-container">
+                {" "}
+                <button
+                  className="ds-bg-[#26374a] ds-py-2.5 ds-px-5"
+                  type="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-label="Press the SPACEBAR to expand or the escape key to collapse this menu. Use the Up and Down arrow keys to choose a submenu item. Press the Enter or Right arrow key to expand it, or the Left arrow or Escape key to collapse it. Use the Up and Down arrow keys to choose an item on that level and the Enter key to access it."
+                >
+                  <div className="ds-flex ds-flex-row ds-text-white">
+                    <span className="ds-text-white ds-text-xl ds-uppercase">
+                      Menu
+                    </span>
+                    <div className="ds-parent-div ds-flex ds-items-center ds-ml-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="ds-text-white"
+                        width="16"
+                        height="14"
+                        x="43"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill="none"
+                          stroke-width="3"
+                          stroke="#ffffff"
+                          fill-rule="evenodd"
+                          d="M2.646 4.646a.5.5 0 0 1 .708 0L8 9.293l4.646-4.647a.5.5 0 0 1 .708.708l-5 5a.5.5 0 0 1-.708 0l-5-5a.5.5 0 0 1 0-.708z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </div>
+
               {/* <Menu
                 lang={lang}
                 isAuthenticated={isAuthenticated}
@@ -137,7 +164,7 @@ export function Header(props) {
             </>
           )}
           {breadCrumbItems && (
-            <div className={containerClass}>
+            <div className={`${containerClass} ds-container`}>
               <Breadcrumb items={breadCrumbItems} />
             </div>
           )}
