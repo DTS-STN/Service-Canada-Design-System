@@ -29,7 +29,7 @@ export { FormTextField } from "./components/FormTextField/FormTextField";
 export { FormError } from "./components/FormError/FormError";
 export { FormLabel } from "./components/FormLabel/FormLabel";
 export { AccordionForm } from "./components/AccordionForm/AccordionForm";
-export { FormAlertMessage } from "./components/FormAlertMessage/FormAlertMessage";
+export { FormErrorSummary } from "./components/FormErrorSummary/FormErrorSummary";
 export { FormRadioButton } from "./components/FormRadioButton/FormRadioButton";
 export { FormCheckBox } from "./components/FormCheckBox/FormCheckBox";
 export { FormMultiTextField } from "./components/FormMultiTextField/FormMultiTextField";
