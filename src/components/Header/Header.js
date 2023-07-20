@@ -26,6 +26,7 @@ export function Header(props) {
     topnavProps,
     useParentContainer,
     customLink,
+    dataGcAnalyticsCustomClickInstitutionVariable,
   } = props;
 
   const containerClass = useParentContainer ? "" : "ds-container";
@@ -63,7 +64,7 @@ export function Header(props) {
                 locale={locale}
                 customLink={customLink}
                 dataGcAnalyticsCustomClickInstitutionVariable={
-                  props.dataGcAnalyticsCustomClickInstitutionVariable
+                  dataGcAnalyticsCustomClickInstitutionVariable
                 }
               />
             </div>
@@ -85,7 +86,7 @@ export function Header(props) {
                   customLink={customLink}
                   locale={locale}
                   dataGcAnalyticsCustomClickInstitutionVariable={
-                    props.dataGcAnalyticsCustomClickInstitutionVariable
+                    dataGcAnalyticsCustomClickInstitutionVariable
                   }
                 />
               </div>
@@ -99,7 +100,7 @@ export function Header(props) {
                 customLink={customLink}
                 locale={locale}
                 dataGcAnalyticsCustomClickInstitutionVariable={
-                  props.dataGcAnalyticsCustomClickInstitutionVariable
+                  dataGcAnalyticsCustomClickInstitutionVariable
                 }
               />
             </div>
@@ -112,7 +113,7 @@ export function Header(props) {
             menuList={menuProps.menuList}
             onSignOut={menuProps.onSignOut}
             dataGcAnalyticsCustomClickInstitutionVariable={
-              props.dataGcAnalyticsCustomClickInstitutionVariable
+              dataGcAnalyticsCustomClickInstitutionVariable
             }
           />
         )}
@@ -128,6 +129,7 @@ export function Header(props) {
 
 Header.defaultProps = {
   lang: "en",
+  id: Math.random(),
   isAuthenticated: true,
   useParentContainer: false,
   searchProps: {
@@ -252,6 +254,11 @@ Header.propTypes = {
       link: PropTypes.string,
     })
   ),
+
+  /**
+   * Prefix for Adobe Analytics tag
+   */
+  dataGcAnalyticsCustomClickInstitutionVariable: PropTypes.string,
 
   /**
    * Test id for unit test

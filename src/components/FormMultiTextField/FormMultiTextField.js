@@ -22,24 +22,24 @@ export function FormMultiTextField(props) {
     )}px`;
   }, [value]);
   switch (props.size) {
-    case "medium":
-      sizeOfField = "ds-w-full md:ds-w-5/6";
+    case "large":
+      sizeOfField = "ds-w-full ds-max-w-[556px]";
       break;
-    case "small":
-      sizeOfField = "ds-w-full md:ds-w-3/4";
+    case "standard":
+      sizeOfField = "ds-w-full ds-max-w-[408px]";
       break;
     default:
-      sizeOfField = "ds-w-full";
+      sizeOfField = "ds-w-full ds-max-w-[408px]";
   }
 
   const validationClass = props.hasError
     ? "ds-border-specific-red-red50b"
     : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f  focus-visible:ds-border-multi-blue-blue60f";
   return (
-    <div className={`block leading-tight mb-12`}>
+    <div className={`block leading-tight mb-12`} id={props.id}>
       {props.label && (
         <FormLabel
-          id={props.id}
+          id={`${props.id}-textarea`}
           label={props.label}
           required={props.required}
           requiredText={props.requiredText}
@@ -47,11 +47,13 @@ export function FormMultiTextField(props) {
           infoText={props.infoText}
           describedBy={props.describedBy}
           helpText={props.helpText}
+          hasHint={props.hasHint}
+          hintProps={props.hintProps}
         />
       )}
       <textarea
         className={`ds-min-h-76px ds-resize-none ${sizeOfField} ${props.className} ds-text-input ds-leading-33px ds-rounded ds-outline-0  ds-text-mobileh5 ds-text-multi-neutrals-grey100  ds-text-form-input-gray ds-border ds-py-5px ds-px-14px ${validationClass}`}
-        id={props.id}
+        id={`${props.id}-textarea`}
         name={props.name}
         placeholder={props.placeholder}
         onChange={onChange}
@@ -127,4 +129,26 @@ FormMultiTextField.propTypes = {
    * aria-describedby label id
    */
   describedby: PropTypes.string,
+
+  /**
+   * Option to show and custom Hint Expander
+   */
+  hasHint: PropTypes.bool,
+
+  /**
+   * Hint Expander props
+   */
+  hintProps: PropTypes.shape({
+    textLink: PropTypes.string,
+    description: PropTypes.string,
+    withLink: PropTypes.bool,
+    externalLinkText: PropTypes.string,
+    optionalLinkText: PropTypes.string,
+  }),
+
+  /**
+   * User can input one of the follow size option to apply
+   * to the input field, the default size is standard.
+   */
+  size: PropTypes.oneOf(["standard", "large"]),
 };

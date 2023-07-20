@@ -1,15 +1,15 @@
-import PropTypes from "prop-types";
 import React from "react";
 import { Image } from "../Image/Image";
 import commentBubble from "../../assets/comment_bubble.svg";
 import { Button } from "../Button/Button";
 import { Link } from "../Link/Link";
+import PropTypes from "prop-types";
 
 export interface ICTAProps {
   heading: string;
   body: string;
-  ButtonProps: typeof Button.propTypes;
-  LinkProps?: typeof Link.propTypes;
+  ButtonProps: PropTypes.InferProps<typeof Button.propTypes>;
+  LinkProps?: PropTypes.InferProps<typeof Link.propTypes>;
   containerClass?: string;
 }
 

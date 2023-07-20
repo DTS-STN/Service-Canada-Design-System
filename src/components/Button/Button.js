@@ -12,6 +12,8 @@ export function Button(props) {
       id={props.id}
       disabled={props.disabled}
       {...props.attributes}
+      data-testId={props?.id}
+      alt={props.iconAltText}
     >
       {props.icon && !props.iconEnd ? (
         <span className="ds-grid ds-place-items-center ds-h-8 ds-w-8">

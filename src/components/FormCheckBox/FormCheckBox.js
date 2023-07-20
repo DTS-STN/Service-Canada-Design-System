@@ -5,7 +5,14 @@ import { FormError } from "../FormError/FormError";
 import { CheckBox } from "../CheckBox/CheckBox";
 
 export function FormCheckBox(props) {
-  const { id, formErrorProps, formLabelProps, checkBoxList } = props;
+  const {
+    id,
+    formErrorProps,
+    formLabelProps,
+    checkBoxList,
+    hasHint,
+    hintProps,
+  } = props;
   let size = checkBoxList.length;
   return (
     <div id={id}>
@@ -14,6 +21,9 @@ export function FormCheckBox(props) {
         required={formLabelProps.required}
         infoText={formLabelProps.infoText}
         helpText={formLabelProps.helpText}
+        hasHint={hasHint}
+        hintProps={hintProps}
+        id={id}
       />
       {checkBoxList.map((value, index) => {
         let style = index === size - 1 ? "ds-pb-0" : "md:ds-pb-8px ds-pb-24px";
@@ -31,6 +41,8 @@ export function FormCheckBox(props) {
               label={value.label}
               hasError={formErrorProps.hasError}
               onChange={value.onChange}
+              hasHint={value.hasHint}
+              hintProps={value.hintProps}
             />
           </div>
         );
@@ -63,6 +75,21 @@ FormCheckBox.propTypes = {
       label: PropTypes.string,
       hasError: PropTypes.bool,
       onChange: PropTypes.func,
+      /**
+       * show hint for radio button
+       */
+      hasHint: PropTypes.bool,
+      /**
+       * Hint Expander props
+       */
+      hintProps: PropTypes.shape({
+        linkText: PropTypes.string,
+        description: PropTypes.string,
+        withLink: PropTypes.bool,
+        externalLinkText: PropTypes.string,
+        optionalLinkText: PropTypes.string,
+        className: PropTypes.string,
+      }),
     })
   ).isRequired,
 
@@ -84,5 +111,22 @@ FormCheckBox.propTypes = {
     required: PropTypes.bool,
     infoText: PropTypes.string,
     helpText: PropTypes.string,
+  }),
+
+  /**
+   * Option to show and custom Hint Expander
+   */
+  hasHint: PropTypes.bool,
+
+  /**
+   * Hint Expander props
+   */
+  hintProps: PropTypes.shape({
+    textLink: PropTypes.string,
+    description: PropTypes.string,
+    withLink: PropTypes.bool,
+    externalLinkText: PropTypes.string,
+    optionalLinkText: PropTypes.string,
+    className: PropTypes.string,
   }),
 };

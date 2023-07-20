@@ -13,7 +13,7 @@ export const Supertask = Template.bind({});
 export const SupertaskIcon = Template.bind({});
 export const Primary = Template.bind({});
 export const Secondary = Template.bind({});
-export const DangerDisabled = Template.bind({});
+export const Danger = Template.bind({});
 export const Link = Template.bind({});
 
 Supertask.args = {
@@ -47,12 +47,11 @@ Secondary.args = {
   styling: "secondary",
 };
 
-DangerDisabled.args = {
+Danger.args = {
   id: "danger",
   text: "Danger Button",
+  iconEnd: false,
   styling: "danger",
-  disabled: true,
-  iconAltText: "disabled",
 };
 
 Link.args = {
