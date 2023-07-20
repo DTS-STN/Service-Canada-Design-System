@@ -2,37 +2,35 @@
 
 ## [1.67.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.66.0...v1.67.0) (2023-07-10)
 
-
 ### Features
 
-* add Number variant to FormDropdown ([52def50](https://github.com/DTS-STN/Service-Canada-Design-System/commit/52def507fd4ab86775fc9de6bf45c820ebdb213c))
-* added new font ([11ea96b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/11ea96bafa72b53c8857feeb6146ea2e8109b54e))
-* language-neutral menu tagging ([9d76a55](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9d76a556a469ea616d2943a83b88195c8de42c5b))
-* new 12 character option for input field ([aadaa8d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/aadaa8d4a03eacbab86de13575cc066d3530bc3b))
-* stepper unit test ([37e5a64](https://github.com/DTS-STN/Service-Canada-Design-System/commit/37e5a642253bb45a27f080f07db77fafa6fcdf29))
-
+- add Number variant to FormDropdown ([52def50](https://github.com/DTS-STN/Service-Canada-Design-System/commit/52def507fd4ab86775fc9de6bf45c820ebdb213c))
+- added new font ([11ea96b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/11ea96bafa72b53c8857feeb6146ea2e8109b54e))
+- language-neutral menu tagging ([9d76a55](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9d76a556a469ea616d2943a83b88195c8de42c5b))
+- new 12 character option for input field ([aadaa8d](https://github.com/DTS-STN/Service-Canada-Design-System/commit/aadaa8d4a03eacbab86de13575cc066d3530bc3b))
+- stepper unit test ([37e5a64](https://github.com/DTS-STN/Service-Canada-Design-System/commit/37e5a642253bb45a27f080f07db77fafa6fcdf29))
 
 ### Bug Fixes
 
-* . ([26fa0b1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/26fa0b1770820996a8a533fce6d5a9441f4d74f0))
-* 24px padding ([2fee09f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2fee09f60a7a0651594630379f88441ef5353234))
-* ability to click link on Danger button story ([e16502e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e16502e2645676d083d9b541816b9cb3711f3d6f))
-* ability to click link on Danger button story ([46c2edf](https://github.com/DTS-STN/Service-Canada-Design-System/commit/46c2edf62fb8d9bf33c2b0fdbfeadd8982107c0a))
-* adjust font on inputfield, clear text when width changed ([3b567e5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3b567e58bf5b1b35fef52e63e36fc725e9b9baa7))
-* altered buffer ([21769fd](https://github.com/DTS-STN/Service-Canada-Design-System/commit/21769fd20e112f3903fb27d04e0a582b41a3f168))
-* changed border to outline for text field; input type set to number when width is not standard ([5ab0664](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5ab0664a8443e0861f80e40dc699a45ed98682b4))
-* move lang attribute to html a ([84fe142](https://github.com/DTS-STN/Service-Canada-Design-System/commit/84fe142329ca4dda33448fbd545c0c94ce62a666))
-* number dropdown console error ([947bce9](https://github.com/DTS-STN/Service-Canada-Design-System/commit/947bce97ed2153d457f22da9287463c83b9a9ccc))
-* refined stepper ([4fd62e2](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4fd62e2e934f4d33929f60030bf928eb019a8b9f))
-* removed redundant line ([21bfdc0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/21bfdc01c2f184072ceaae933fd7a64825a5019d))
-* removed zip file ([0fb3de5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0fb3de52b6f656af1926b8e4b342ee22e4660df1))
-* resolved padding ([d6bb1eb](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d6bb1eba13b8c4a5a97c391a5b71b045dc7215a3))
-* separate number and string iteration for dropdown field ([ff5457f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ff5457f1395bb6cf659fdd7da51c094f90abd8ab))
-* storybook z issue ([63ad41e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/63ad41ed10dc38f8ee5246ccb8b48de5ad9eb1bd))
-* update dependencies ([c331373](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c331373374ab76e837c50d8a9abe72a21be206b0))
-* updated Header storybook ([44cff50](https://github.com/DTS-STN/Service-Canada-Design-System/commit/44cff50a1bd010c4c2daa08450fb2703ee134c99))
-* updated stories ([b72505a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b72505ac2f9ff5e3c1805b9586bcbe161357eb62))
-* z-index bug in contextual alert ([f43ab53](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f43ab53ad60df0edf3fe10c06d8078bd0401297f))
+- . ([26fa0b1](https://github.com/DTS-STN/Service-Canada-Design-System/commit/26fa0b1770820996a8a533fce6d5a9441f4d74f0))
+- 24px padding ([2fee09f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/2fee09f60a7a0651594630379f88441ef5353234))
+- ability to click link on Danger button story ([e16502e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/e16502e2645676d083d9b541816b9cb3711f3d6f))
+- ability to click link on Danger button story ([46c2edf](https://github.com/DTS-STN/Service-Canada-Design-System/commit/46c2edf62fb8d9bf33c2b0fdbfeadd8982107c0a))
+- adjust font on inputfield, clear text when width changed ([3b567e5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/3b567e58bf5b1b35fef52e63e36fc725e9b9baa7))
+- altered buffer ([21769fd](https://github.com/DTS-STN/Service-Canada-Design-System/commit/21769fd20e112f3903fb27d04e0a582b41a3f168))
+- changed border to outline for text field; input type set to number when width is not standard ([5ab0664](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5ab0664a8443e0861f80e40dc699a45ed98682b4))
+- move lang attribute to html a ([84fe142](https://github.com/DTS-STN/Service-Canada-Design-System/commit/84fe142329ca4dda33448fbd545c0c94ce62a666))
+- number dropdown console error ([947bce9](https://github.com/DTS-STN/Service-Canada-Design-System/commit/947bce97ed2153d457f22da9287463c83b9a9ccc))
+- refined stepper ([4fd62e2](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4fd62e2e934f4d33929f60030bf928eb019a8b9f))
+- removed redundant line ([21bfdc0](https://github.com/DTS-STN/Service-Canada-Design-System/commit/21bfdc01c2f184072ceaae933fd7a64825a5019d))
+- removed zip file ([0fb3de5](https://github.com/DTS-STN/Service-Canada-Design-System/commit/0fb3de52b6f656af1926b8e4b342ee22e4660df1))
+- resolved padding ([d6bb1eb](https://github.com/DTS-STN/Service-Canada-Design-System/commit/d6bb1eba13b8c4a5a97c391a5b71b045dc7215a3))
+- separate number and string iteration for dropdown field ([ff5457f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/ff5457f1395bb6cf659fdd7da51c094f90abd8ab))
+- storybook z issue ([63ad41e](https://github.com/DTS-STN/Service-Canada-Design-System/commit/63ad41ed10dc38f8ee5246ccb8b48de5ad9eb1bd))
+- update dependencies ([c331373](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c331373374ab76e837c50d8a9abe72a21be206b0))
+- updated Header storybook ([44cff50](https://github.com/DTS-STN/Service-Canada-Design-System/commit/44cff50a1bd010c4c2daa08450fb2703ee134c99))
+- updated stories ([b72505a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/b72505ac2f9ff5e3c1805b9586bcbe161357eb62))
+- z-index bug in contextual alert ([f43ab53](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f43ab53ad60df0edf3fe10c06d8078bd0401297f))
 
 ## [1.66.0](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.65.0...v1.66.0) (2023-06-12)
 
