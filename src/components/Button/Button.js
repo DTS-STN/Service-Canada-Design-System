@@ -17,11 +17,7 @@ export function Button(props) {
     >
       {props.icon && !props.iconEnd ? (
         <span className="ds-grid ds-place-items-center ds-h-8 ds-w-8">
-          <Image
-            className="ds-pr-2 ds-shrink-0"
-            src={props.icon}
-            alt={props.iconAltText}
-          />
+          <Image className="ds-pr-2" src={props.icon} alt={props.iconAltText} />
         </span>
       ) : undefined}
       {props.text}
