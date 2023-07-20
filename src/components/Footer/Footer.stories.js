@@ -73,6 +73,7 @@ WithMainBandFr.args = {
 
 export const WithContextualBand = Template.bind({});
 WithContextualBand.args = {
+  contextualBandTitle: "Service Canada",
   withContextualBand: true,
   id: "footer",
   lang: "en",

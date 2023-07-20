@@ -6,7 +6,7 @@ export function ContextualBand(props) {
     <div className="ds-bg-[#33465C]">
       <section className={`${props.container} ds-min-h-[114px]`}>
         <h2 className="ds-pt-[22px] ds-text-multi-neutrals-white ds-font-body ds-font-bold">
-          Service Canada
+          {props.title}
         </h2>
         <ul className="sm:ds-grid sm:ds-grid-cols-3 ds-flex ds-flex-col ds-gap-1 ds-text-xs ds-pb-[32px]">
           {props.contextualBandLinks.map((value, index) => {

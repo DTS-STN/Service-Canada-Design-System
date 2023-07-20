@@ -52,6 +52,7 @@ export function Footer(props) {
     withMainBand,
     withContextualBand,
     contextualBandLinks,
+    contextualBandTitle,
     btnLink,
   } = props;
 
@@ -97,6 +98,7 @@ export function Footer(props) {
       <>
         {withContextualBand && (
           <ContextualBand
+            title={contextualBandTitle}
             container={container}
             target={target}
             contextualBandLinks={contextualBandLinks}
