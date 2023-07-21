@@ -117,8 +117,8 @@ export function Header(props) {
           {!menuProps.hasNoMenu && (
             <>
               <hr className="ds-border-t-[3px] ds-border-[#26374a] ds-mt-1 ds-px-0" />
+              {/* . */}
               <div className="ds-container">
-                {" "}
                 <button
                   className="ds-bg-[#26374a] ds-py-2.5 ds-px-5"
                   type="button"
@@ -151,6 +151,60 @@ export function Header(props) {
                   </div>
                 </button>
               </div>
+              {/* . */}
+              <div className="ds-container">
+                <button
+                  className="ds-bg-[#444] ds-py-2.5 ds-px-5"
+                  type="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-label="Press the SPACEBAR to expand or the escape key to collapse this menu. Use the Up and Down arrow keys to choose a submenu item. Press the Enter or Right arrow key to expand it, or the Left arrow or Escape key to collapse it. Use the Up and Down arrow keys to choose an item on that level and the Enter key to access it."
+                >
+                  <div className="ds-flex ds-flex-row ds-text-white">
+                    <span className="ds-text-white ds-text-xl ds-uppercase">
+                      Menu
+                    </span>
+                    <div className="ds-parent-div ds-flex ds-items-center ds-ml-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="ds-text-white"
+                        width="16"
+                        height="14"
+                        x="43"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill="none"
+                          stroke-width="3"
+                          stroke="#ffffff"
+                          fill-rule="evenodd"
+                          d="M2.646 4.646a.5.5 0 0 1 .708 0L8 9.293l4.646-4.647a.5.5 0 0 1 .708.708l-5 5a.5.5 0 0 1-.708 0l-5-5a.5.5 0 0 1 0-.708z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+                <div className="ds-bg-white ds-border-black ds-z-100 ds-bg-[#444] ds-text-white ds-w-96">
+                  <ul>
+                    <li className="text-lg ds-border-b-1.5 ds-border-[#555] hover:ds-text-black hover:ds-bg-white ds-py-3.5 ds-px-7">
+                      ssss
+                    </li>
+                    <li className="text-lg ds-border-b-1.5 ds-border-[#555] hover:ds-text-black hover:ds-bg-white ds-py-3.5 ds-px-7">
+                      ssss
+                      <ul className="ds-y-0 ds-left-96 ds-bg-white ds-relative ds-text-black">
+                        ddddddd
+                      </ul>
+                    </li>
+                    <li className="text-lg ds-border-b-1.5 ds-border-[#555] hover:ds-text-black hover:ds-bg-white ds-py-3.5 ds-px-7">
+                      ssss
+                    </li>
+                    <li className="text-lg ds-border-b-1.5 ds-border-[#555] hover:ds-text-black hover:ds-bg-white ds-py-3.5 ds-px-7">
+                      ssss
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              {/* . */}
 
               {/* <Menu
                 lang={lang}
