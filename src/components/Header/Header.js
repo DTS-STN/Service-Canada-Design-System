@@ -184,26 +184,68 @@ export function Header(props) {
                     </div>
                   </div>
                 </button>
-                <div className="ds-bg-white ds-border-black ds-z-100 ds-bg-[#444] ds-text-white ds-w-96">
-                  <ul>
-                    <li className="text-lg ds-border-b-1.5 ds-border-[#555] hover:ds-text-black hover:ds-bg-white ds-py-3.5 ds-px-7">
-                      ssss
-                    </li>
-                    <li className="text-lg ds-border-b-1.5 ds-border-[#555] hover:ds-text-black hover:ds-bg-white ds-py-3.5 ds-px-7">
-                      ssss
-                      <ul className="ds-y-0 ds-left-96 ds-bg-white ds-relative ds-text-black">
-                        ddddddd
-                      </ul>
-                    </li>
-                    <li className="text-lg ds-border-b-1.5 ds-border-[#555] hover:ds-text-black hover:ds-bg-white ds-py-3.5 ds-px-7">
-                      ssss
-                    </li>
-                    <li className="text-lg ds-border-b-1.5 ds-border-[#555] hover:ds-text-black hover:ds-bg-white ds-py-3.5 ds-px-7">
-                      ssss
-                    </li>
-                  </ul>
+                <div className="ds-flex ds-flex-row">
+                  <div className="ds-bg-white ds-border-black ds-z-100 ds-bg-[#444] ds-text-white ds-w-96">
+                    <ul>
+                      <li className="text-lg ds-border-1.5 ds-border-[#555] ds-bg-[#444] hover:ds-text-black hover:ds-bg-white ds-py-3.5 ds-px-7">
+                        ssss
+                      </li>
+                      <li className="text-lg ds-border-1.5 ds-border-[#555] ds-bg-[#444] hover:ds-text-black hover:ds-bg-white ds-py-3.5 ds-px-7">
+                        ssss
+                      </li>
+                      <li className="text-lg ds-border-1.5 ds-border-[#555] ds-bg-[#444] hover:ds-text-black hover:ds-bg-white ds-py-3.5 ds-px-7">
+                        ssss
+                      </li>
+                      <li className="text-lg ds-border-1.5 ds-border-[#555] ds-bg-[#444] hover:ds-text-black hover:ds-bg-white ds-py-3.5 ds-px-7">
+                        ssss
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="ds-bg-white ds-border-t-1 ds-border-solid ds-border-gray-200 ds-shadow-lg ds-text-black ds-mb-6 ds-min-h-[815px] ds-px-10 ds-pb-6 ds-pt-0 ds-top-0 ds-w-full">
+                    <div>This is the text block</div>
+                  </div>
                 </div>
               </div>
+              <div>
+                <ul className="ds-w-auto ds-bg-[#444] ds-text-white ds-w-auto">
+                  <li className="ds-block ds-py-3.5 ds-px-7 ds-border-b ds-w-auto ds-border-gray-500">
+                    Lorem gggggg
+                    <ul className="ds-pl-16 ds-bg-white">
+                      <li className="ds-py-3.5 ds-border-b ds-border-solid ds-border-gray-300 ds-text-black">
+                        ddddddddd
+                      </li>
+                      <li className="ds-py-3.5 ds-border-b ds-border-solid ds-border-gray-300 ds-text-black">
+                        ddddddddd
+                      </li>
+                      <li className="ds-py-3.5 ds-border-b ds-border-solid ds-border-gray-300 ds-text-black">
+                        ddddddddd
+                      </li>
+                      <li className="ds-py-3.5 ds-border-b ds-border-solid ds-border-gray-300 ds-text-black">
+                        ddddddddd
+                      </li>
+                      <li className="ds-py-3.5 ds-border-b ds-border-solid ds-border-gray-300 ds-text-black">
+                        ddddddddd
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="ds-block ds-py-3.5 ds-px-7 ds-border-b ds-w-auto ds-border-gray-500">
+                    Lorem
+                  </li>
+                  <li className="ds-block ds-py-3.5 ds-px-7 ds-border-b ds-w-auto ds-border-gray-500">
+                    Lorem
+                  </li>
+                  <li className="ds-block ds-py-3.5 ds-px-7 ds-border-b ds-w-auto ds-border-gray-500">
+                    Lorem
+                  </li>
+                  <li className="ds-block ds-py-3.5 ds-px-7 ds-border-b ds-w-auto border-gray-500">
+                    Lorem
+                  </li>
+                  <li className="ds-block ds-py-3.5 ds-px-7 ds-border-b ds-w-auto ds-border-gray-500">
+                    Lorem
+                  </li>
+                </ul>
+              </div>
+
               {/* . */}
 
               {/* <Menu
