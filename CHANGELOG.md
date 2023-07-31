@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.67.2](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.1...v1.67.2) (2023-07-31)
+
+
+### Bug Fixes
+
+* add react and react-dom to external in rollup ([8ad6568](https://github.com/DTS-STN/Service-Canada-Design-System/commit/8ad656802c1fe653f0b260e751453e8d9573db98))
+* remove tgz file ([a951fdd](https://github.com/DTS-STN/Service-Canada-Design-System/commit/a951fddcc71dda4da3229ca7593aec14e3e7dacf))
+
 ## [1.67.1](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.0...v1.67.1) (2023-07-20)
 
 
