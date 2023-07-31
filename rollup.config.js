@@ -9,7 +9,6 @@ import image from "rollup-plugin-img";
 import url from "postcss-url";
 import typescript from "@rollup/plugin-typescript";
 import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
 
 export default [
   {
@@ -22,10 +21,6 @@ export default [
       json(),
       image({
         limit: 30000,
-      }),
-      commonjs({
-        include: /node_modules/,
-        requireReturnsDefault: "auto",
       }),
       babel({
         exclude: "node_modules/**",

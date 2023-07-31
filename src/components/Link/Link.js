@@ -46,7 +46,6 @@ export function Link(props) {
     <Component
       href={props.href}
       disabled={props.disabled}
-      lang={props.lang}
       target={props.target}
       aria-label={props.ariaLabel || props.text}
       locale={props.locale}
@@ -54,6 +53,7 @@ export function Link(props) {
     >
       <a
         href={props.href}
+        lang={props.lang}
         onClick={props.onClick ? props.onClick : undefined}
         id={props.id}
         className={`${basicStyle}`}
