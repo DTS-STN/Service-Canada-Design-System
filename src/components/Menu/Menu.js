@@ -20,7 +20,7 @@ export function Menu(props) {
     demoBuffer,
     dataGcAnalyticsCustomClickInstitutionVariable,
   } = props;
-  
+
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdown = useRef(null);
 

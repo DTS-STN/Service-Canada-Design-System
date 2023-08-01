@@ -49,11 +49,11 @@ export function Link(props) {
       lang={props.lang}
       target={props.target}
       aria-label={props.ariaLabel || props.text}
-      locale={props.locale}
       role="link"
     >
       <a
         href={props.href}
+        locale={props.locale}
         onClick={props.onClick ? props.onClick : undefined}
         id={props.id}
         className={`${basicStyle}`}
