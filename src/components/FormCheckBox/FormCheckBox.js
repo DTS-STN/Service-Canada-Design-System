@@ -23,7 +23,6 @@ export function FormCheckBox(props) {
         helpText={formLabelProps.helpText}
         hasHint={hasHint}
         hintProps={hintProps}
-        id={id}
       />
       {checkBoxList.map((value, index) => {
         let style = index === size - 1 ? "ds-pb-0" : "md:ds-pb-8px ds-pb-24px";

@@ -5,7 +5,7 @@
 
 .expander {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   font-family: "Noto Sans";
   font-style: normal;
   font-weight: 400;
