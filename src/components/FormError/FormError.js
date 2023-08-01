@@ -8,7 +8,7 @@ import errorImage from "../../assets/error.svg";
 export function FormError(props) {
   return (
     <div
-      id={`${props.id}-error`}
+      id={props.id}
       className="ds-alertWrapper ds-mt-1.5 ds-text-specific-red-red50b ds-leading-26px ds-font-medium ds-font-body ds-flex"
     >
       <div className="ds-block">
