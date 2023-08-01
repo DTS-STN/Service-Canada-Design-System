@@ -50,3 +50,4 @@ export { YoutubePlayer } from "./components/Media/YoutubePlayer/YoutubePlayer";
 export { ErrorPage } from "./stories/styles/Layouts/ErrorPage/ErrorPage";
 export { CTA } from "./components/CTA/CTA";
 export { LoadingSpinner } from "./components/LoadingSpinner/LoadingSpinner";
+export { HelpIcon } from "./components/HelpIcon/HelpIcon";
