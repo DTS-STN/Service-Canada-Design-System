@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.67.3](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.2...v1.67.3) (2023-08-02)
+
+
+### Bug Fixes
+
+* merge release ([04a21e3](https://github.com/DTS-STN/Service-Canada-Design-System/commit/04a21e3cd11993a940a660c25427bba264eb14c2))
+* update ([264f52a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/264f52a637a308608a257797ae8d8bd2c29aa272))
+* update ([9b55698](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9b55698f604c321fc4134de54c1e87edacbe581f))
+* update ([f492822](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f4928225671c739534d5a8d794f16eb33e99ce36))
+* update ([36bf434](https://github.com/DTS-STN/Service-Canada-Design-System/commit/36bf434197ba212ae12b24d499e360f775e8b5c8))
+
 ## [1.67.2](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.1...v1.67.2) (2023-07-31)
 
 ### Bug Fixes
