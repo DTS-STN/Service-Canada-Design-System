@@ -9,6 +9,7 @@ import image from "rollup-plugin-img";
 import url from "postcss-url";
 import typescript from "@rollup/plugin-typescript";
 import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
 
 export default [
   {
@@ -21,6 +22,10 @@ export default [
       json(),
       image({
         limit: 30000,
+      }),
+      commonjs({
+        include: /node_modules/,
+        requireReturnsDefault: "auto",
       }),
       babel({
         exclude: "node_modules/**",
@@ -51,6 +56,8 @@ export default [
     // anything "external" will not be included into the generated bundle
     // https://rollupjs.org/guide/en/#warning-treating-module-as-external-dependency
     external: [
+      "react",
+      "react-dom",
       // regular dependencies should not be included as they will be automatically installed by the consuming application
       ...Object.keys(pkg.dependencies || {}),
       // peer dependencies should not be included as they are expected to be provided by the consuming application
