@@ -88,7 +88,7 @@ export function MenuGlobal(props) {
   );
 }
 
-const DesktopMenu = (setShowDropdown) => (
+const DesktopMenu = (props) => (
   <div className="ds-container">
     <button
       className="ds-bg-[#444] ds-py-2.5 ds-px-5"
@@ -96,7 +96,7 @@ const DesktopMenu = (setShowDropdown) => (
       aria-haspopup="true"
       aria-expanded="false"
       aria-label="Press the SPACEBAR to expand or the escape key to collapse this menu. Use the Up and Down arrow keys to choose a submenu item. Press the Enter or Right arrow key to expand it, or the Left arrow or Escape key to collapse it. Use the Up and Down arrow keys to choose an item on that level and the Enter key to access it."
-      onClick={() => setShowDropdown(false)}
+      onClick={() => props.setShowDropdown(false)}
     >
       <div className="ds-flex ds-flex-row ds-text-white">
         <span className="ds-text-white ds-text-xl ds-uppercase">Menu</span>
@@ -291,7 +291,7 @@ const DesktopMenu = (setShowDropdown) => (
   </div>
 );
 
-const MobileMenu = (setShowDropdown) => (
+const MobileMenu = (props) => (
   <div className="ds-container">
     <button
       className="ds-bg-[#444] ds-py-2.5 ds-px-5"
@@ -299,7 +299,7 @@ const MobileMenu = (setShowDropdown) => (
       aria-haspopup="true"
       aria-expanded="false"
       aria-label="Press the SPACEBAR to expand or the escape key to collapse this menu. Use the Up and Down arrow keys to choose a submenu item. Press the Enter or Right arrow key to expand it, or the Left arrow or Escape key to collapse it. Use the Up and Down arrow keys to choose an item on that level and the Enter key to access it."
-      onClick={() => setShowDropdown(false)}
+      onClick={() => props.setShowDropdown(false)}
     >
       <div className="ds-flex ds-flex-row ds-text-white">
         <span className="ds-text-white ds-text-xl ds-uppercase">Menu</span>
