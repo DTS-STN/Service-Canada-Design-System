@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.67.6](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.5...v1.67.6) (2023-08-07)
+
+
+### Bug Fixes
+
+* revert svg.d.ts file, update svg path ([fea059f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/fea059ffc3c5239238c4ce66e6d436efce971036))
+
 ## [1.67.5](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.4...v1.67.5) (2023-08-07)
 
 
