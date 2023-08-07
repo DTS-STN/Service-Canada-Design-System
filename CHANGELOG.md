@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.67.5](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.4...v1.67.5) (2023-08-07)
+
+
+### Bug Fixes
+
+* remove svg.d.ts file ([5ea9f7f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5ea9f7fef807ea86e2565e57229cb5af02397403))
+* update dependencies ([c0c2a04](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c0c2a04b726b65913ed22c1d077297ba7fdabb73))
+* update dependencies ([81320ea](https://github.com/DTS-STN/Service-Canada-Design-System/commit/81320ea015bba0413dcd2beebf00ef91643fc93b))
+
 ## [1.67.4](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.3...v1.67.4) (2023-08-07)
 
 
