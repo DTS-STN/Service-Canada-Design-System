@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.67.4](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.3...v1.67.4) (2023-08-07)
+
+
+### Bug Fixes
+
+* add legacyBehavior prop on Link to support next/link ([173adf8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/173adf86129e2c7c456a7b6f7c45467b7ebeea38))
+* update alert heading ([65ce896](https://github.com/DTS-STN/Service-Canada-Design-System/commit/65ce896216ed3525360f91ccf71b98ed94eef32a))
+
 ## [1.67.3](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.2...v1.67.3) (2023-08-02)
 
 
