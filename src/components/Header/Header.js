@@ -29,6 +29,7 @@ export function Header(props) {
     useParentContainer,
     customLink,
     dataGcAnalyticsCustomClickInstitutionVariable,
+    globalMenuProps,
   } = props;
 
   const containerClass =
@@ -118,7 +119,7 @@ export function Header(props) {
           {!menuProps.hasNoMenu && (
             <>
               <hr className="ds-border-t-[3px] ds-border-[#26374a] ds-mt-1 ds-px-0" />
-              <MenuGlobal />
+              <MenuGlobal globalMenuProps={globalMenuProps} />
               {/* <Menu
                 lang={lang}
                 isAuthenticated={isAuthenticated}
@@ -166,6 +167,7 @@ Header.defaultProps = {
     switchToBasicPath: "basic-en.html",
     displayAlternateLink: false,
   },
+  globalMenuProps: { menuList: [] },
 };
 
 Header.propTypes = {
@@ -282,4 +284,9 @@ Header.propTypes = {
    * For tracking click events analytics
    */
   analyticsTracking: PropTypes.bool,
+
+  /**
+   * A custom object configuration called booBoo
+   */
+  globalMenuProps: PropTypes.object,
 };
