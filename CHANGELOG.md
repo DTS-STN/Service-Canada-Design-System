@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.67.8](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.7...v1.67.8) (2023-08-08)
+
+
+### Bug Fixes
+
+* remove react-dom from dependencies ([cd6f092](https://github.com/DTS-STN/Service-Canada-Design-System/commit/cd6f092be8326d601f53cbf8c89c84ef2d2f209d))
+
 ## [1.67.7](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.6...v1.67.7) (2023-08-08)
 
 
