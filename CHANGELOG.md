@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.67.7](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.6...v1.67.7) (2023-08-08)
+
+
+### Bug Fixes
+
+* update locale location in Link ([730e621](https://github.com/DTS-STN/Service-Canada-Design-System/commit/730e621407c015a4077d6ca2810421ee273f1f92))
+
 ## [1.67.6](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.5...v1.67.6) (2023-08-07)
 
 
