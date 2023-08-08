@@ -51,10 +51,10 @@ export function Link(props) {
       aria-label={props.ariaLabel || props.text}
       legacyBehavior={props.legacyBehavior}
       role="link"
+      locale={props.locale}
     >
       <a
         href={props.href}
-        locale={props.locale}
         onClick={props.onClick ? props.onClick : undefined}
         id={props.id}
         className={`${basicStyle}`}
