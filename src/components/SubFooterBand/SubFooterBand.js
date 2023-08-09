@@ -48,7 +48,7 @@ export function SubFooterBand(props) {
                           key={index}
                           className={`${
                             index === 0 ? "" : "md:ds-list-disc"
-                          } ds-pr-4 ds-mb-[17px] ds-list-inside ds-list-none ds-text-xxs ds-ml-0`}
+                          } ds-pr-4 ds-mb-[17px] ds-list-inside ds-list-none ds-text-xxs ds-ml-0 ds-font-body`}
                         >
                           <Link
                             onClick={onClick ? onClick : undefined}
@@ -67,7 +67,7 @@ export function SubFooterBand(props) {
                           key={index}
                           className={`${
                             index === 0 ? "" : "md:ds-list-disc"
-                          } ds-pr-4 ds-mb-[17px] ds-list-inside ds-list-none ds-text-xxs`}
+                          } ds-pr-4 ds-mb-[17px] ds-list-inside ds-list-none ds-text-xxs ds-ml-0 ds-font-body`}
                         >
                           <Link
                             onClick={props.onClick ? props.onClick : undefined}
