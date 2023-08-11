@@ -24,7 +24,13 @@ export function MenuGlobal(props) {
   } = props;
 
   const [showDropdown, setShowDropdown] = useState(true);
-  const [menuItem, setMenuItem] = useState({ top: null, mostRequested: false });
+  const [menuItem, setMenuItem] = useState({ top: 0, mostRequested: false });
+  const [expandedPanel, setExpandedPanel] = useState({
+    itemTitle: null,
+    items: [],
+    mostRequested: [],
+    value: "",
+  });
   const dropdown = useRef(null);
 
   console.log(
@@ -93,6 +99,8 @@ export function MenuGlobal(props) {
           globalMenuProps={props.globalMenuProps}
           menuItem={menuItem}
           setMenuItem={setMenuItem}
+          expandedPanel={expandedPanel}
+          setExpandedPanel={setExpandedPanel}
         />
       ) : (
         <MobileMenu
@@ -100,6 +108,8 @@ export function MenuGlobal(props) {
           globalMenuProps={props.globalMenuProps}
           menuItem={menuItem}
           setMenuItem={setMenuItem}
+          expandedPanel={expandedPanel}
+          setExpandedPanel={setExpandedPanel}
         />
       )}
     </>
@@ -141,101 +151,41 @@ const DesktopMenu = (props) => (
     <div className="ds-flex ds-flex-row ds-border-t ds-border-gray">
       <div className="ds-bg-white ds-border-black ds-z-100 ds-bg-[#444] ds-text-white ds-w-96">
         <ul>
-          <li className="text-lg ds-border-1.5 ds-border-[#555] ds-bg-[#444] hover:ds-text-black hover:ds-bg-white ds-py-3.5 ds-px-7">
-            ssss
-          </li>
-          <li className="text-lg ds-border-1.5 ds-border-[#555] ds-bg-[#444] hover:ds-text-black hover:ds-bg-white ds-py-3.5 ds-px-7">
-            ssss
-          </li>
-          <li className="text-lg ds-border-1.5 ds-border-[#555] ds-bg-[#444] hover:ds-text-black hover:ds-bg-white ds-py-3.5 ds-px-7">
-            ssss
-          </li>
-          <li className="text-lg ds-border-1.5 ds-border-[#555] ds-bg-[#444] hover:ds-text-black hover:ds-bg-white ds-py-3.5 ds-px-7">
-            ssss
-          </li>
+          {props.globalMenuProps.menuList.map((x, i) => (
+            <li className="text-lg ds-border-1.5 ds-border-[#555] ds-bg-[#444] hover:ds-text-black hover:ds-bg-white ds-py-3.5 ds-px-7">
+              <div
+                onClick={() => {
+                  props.setExpandedPanel((prev) => {
+                    return { ...prev, ...x };
+                  });
+                }}
+              >
+                {x.value}
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
       <div className="ds-mb-[24px] ds-pl-[39px] ds-mb-[25px] ds-bg-white ds-border-t-1 ds-border-solid ds-border-gray-200 ds-shadow-lg ds-text-black ds-min-h-[815px] ds-pt-0 ds-top-0 ds-w-full">
         <div className="">
           <ul>
             <li className="ds-mb-[24px] ds-text-[32px] ds-px-[6px] ds-font-bold ds-underline ds-underline-offset-1 ds-text-[#284162]">
-              <a href="#">Jobs</a>
+              <a href="#">{props.expandedPanel.itemTitle}</a>
             </li>
             <div className="ds-flex ds-flex-row">
               <div>
-                <li role="presentation" className="ds-py-1.5 ">
-                  <a
-                    role="menuitem"
-                    tabindex="-1"
-                    href="https://www.canada.ca/en/services/jobs/opportunities.html"
-                    className="ds-text-[#284162] ds-underline ds-text-[18px]"
-                  >
-                    Find a job
-                  </a>
-                </li>
-                <li role="presentation" className="ds-py-1.5 ">
-                  <a
-                    role="menuitem"
-                    tabindex="-1"
-                    href="https://www.canada.ca/en/services/jobs/training.html"
-                    className="ds-text-[#284162] ds-underline ds-text-[18px]"
-                  >
-                    Training
-                  </a>
-                </li>
-                <li role="presentation" className="ds-py-1.5 ">
-                  <a
-                    role="menuitem"
-                    tabindex="-1"
-                    href="https://www.canada.ca/en/services/business/hire.html"
-                    className="ds-text-[#284162] ds-underline ds-text-[18px]"
-                  >
-                    Hiring and managing employees
-                  </a>
-                </li>
-                <li
-                  role="presentation"
-                  className="ds-text-[#284162] ds-underline ds-text-[18px]"
-                >
-                  <a
-                    role="menuitem"
-                    tabindex="-1"
-                    href="https://www.canada.ca/start-business"
-                    className="ds-text-[#284162] ds-underline ds-text-[18px]"
-                  >
-                    Starting a business
-                  </a>
-                </li>
-                <li role="presentation" className="ds-py-1.5 ">
-                  <a
-                    role="menuitem"
-                    tabindex="-1"
-                    href="https://www.canada.ca/en/services/jobs/workplace.html"
-                    className="ds-text-[#284162] ds-underline ds-text-[18px]"
-                  >
-                    Workplace standards
-                  </a>
-                </li>
-                <li role="presentation" className="ds-py-1.5 ">
-                  <a
-                    role="menuitem"
-                    tabindex="-1"
-                    href="https://www.canada.ca/en/services/finance/pensions.html"
-                    className="ds-text-[#284162] ds-underline ds-text-[18px]"
-                  >
-                    Pensions and retirement
-                  </a>
-                </li>
-                <li role="presentation" className="ds-py-1.5 ">
-                  <a
-                    role="menuitem"
-                    tabindex="-1"
-                    href="https://www.canada.ca/en/services/benefits/ei.html"
-                    className="ds-text-[#284162] ds-underline ds-text-[18px]"
-                  >
-                    Employment Insurance benefits and leave
-                  </a>
-                </li>
+                {props.expandedPanel.items.map((x) => (
+                  <li role="presentation" className="ds-py-1.5 ">
+                    <a
+                      role="menuitem"
+                      tabindex="-1"
+                      href="https://www.canada.ca/en/services/jobs/opportunities.html"
+                      className="ds-text-[#284162] ds-underline ds-text-[18px]"
+                    >
+                      {x.value}
+                    </a>
+                  </li>
+                ))}
               </div>
               <div>
                 <li role="separator" aria-orientation="vertical"></li>
@@ -258,16 +208,18 @@ const DesktopMenu = (props) => (
                     aria-orientation="vertical"
                     className="ds-list-disc ds-pl-[39px]"
                   >
-                    <li role="presentation" className="ds-py-1.5">
-                      <a
-                        role="menuitem"
-                        tabindex="-1"
-                        href="https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/ei-roe/access-roe.html"
-                        className="ds-text-[#284162] ds-underline ds-text-[18px]"
-                      >
-                        View your Records of Employment
-                      </a>
-                    </li>
+                    {props.expandedPanel.mostRequested.map((x) => (
+                      <li role="presentation" className="ds-py-1.5">
+                        <a
+                          role="menuitem"
+                          tabindex="-1"
+                          href="https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/ei-roe/access-roe.html"
+                          className="ds-text-[#284162] ds-underline ds-text-[18px]"
+                        >
+                          {x.value}
+                        </a>
+                      </li>
+                    ))}
                     <li role="presentation" className="ds-py-1.5">
                       <a
                         role="menuitem"
