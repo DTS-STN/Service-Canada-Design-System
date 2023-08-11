@@ -23,10 +23,16 @@ export function MenuGlobal(props) {
     dataGcAnalyticsCustomClickInstitutionVariable,
   } = props;
 
-  console.log(props, props.globalMenuProps.menuList.length, "=======");
-
   const [showDropdown, setShowDropdown] = useState(true);
+  const [menuItem, setMenuItem] = useState({ top: null, mostRequested: false });
   const dropdown = useRef(null);
+
+  console.log(
+    props,
+    props.globalMenuProps.menuList.length,
+    menuItem,
+    "======="
+  );
 
   const isDesktop = useMediaQuery({
     query: "(min-width: 700px)",
@@ -61,7 +67,7 @@ export function MenuGlobal(props) {
           <div className="ds-parent-div ds-flex ds-items-center ds-ml-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="ds-text-white"
+              className="ds-text-white"
               width="16"
               height="14"
               x="43"
@@ -69,9 +75,9 @@ export function MenuGlobal(props) {
             >
               <path
                 fill="none"
-                stroke-width="3"
+                strokeWidth="3"
                 stroke="#ffffff"
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M2.646 4.646a.5.5 0 0 1 .708 0L8 9.293l4.646-4.647a.5.5 0 0 1 .708.708l-5 5a.5.5 0 0 1-.708 0l-5-5a.5.5 0 0 1 0-.708z"
               />
             </svg>
@@ -85,11 +91,15 @@ export function MenuGlobal(props) {
         <DesktopMenu
           setShowDropdown={setShowDropdown}
           globalMenuProps={props.globalMenuProps}
+          menuItem={menuItem}
+          setMenuItem={setMenuItem}
         />
       ) : (
         <MobileMenu
           setShowDropdown={setShowDropdown}
           globalMenuProps={props.globalMenuProps}
+          menuItem={menuItem}
+          setMenuItem={setMenuItem}
         />
       )}
     </>
@@ -111,7 +121,7 @@ const DesktopMenu = (props) => (
         <div className="ds-parent-div ds-flex ds-items-center ds-ml-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="ds-text-white"
+            className="ds-text-white"
             width="16"
             height="14"
             x="43"
@@ -119,9 +129,9 @@ const DesktopMenu = (props) => (
           >
             <path
               fill="none"
-              stroke-width="3"
+              strokeWidth="3"
               stroke="#ffffff"
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M2.646 4.646a.5.5 0 0 1 .708 0L8 9.293l4.646-4.647a.5.5 0 0 1 .708.708l-5 5a.5.5 0 0 1-.708 0l-5-5a.5.5 0 0 1 0-.708z"
             />
           </svg>
@@ -314,7 +324,7 @@ const MobileMenu = (props) => (
         <div className="ds-parent-div ds-flex ds-items-center ds-ml-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="ds-text-white"
+            className="ds-text-white"
             width="16"
             height="14"
             x="43"
@@ -322,9 +332,9 @@ const MobileMenu = (props) => (
           >
             <path
               fill="none"
-              stroke-width="3"
+              strokeWidth="3"
               stroke="#ffffff"
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M2.646 4.646a.5.5 0 0 1 .708 0L8 9.293l4.646-4.647a.5.5 0 0 1 .708.708l-5 5a.5.5 0 0 1-.708 0l-5-5a.5.5 0 0 1 0-.708z"
             />
           </svg>
@@ -334,115 +344,87 @@ const MobileMenu = (props) => (
     <div className="ds-flex ds-flex-row ds-border-t ds-border-gray">
       <div className="ds-bg-white ds-border-black ds-z-100 ds-bg-[#444] ds-text-white ds-w-full">
         <ul>
-          <li className="ds-text-[18px] ds-border-1.5 ds-border-[#555] ds-bg-[#444] hover:ds-text-black hover:ds-bg-white ds-py-[14px] ds-px-[30px]">
-            <span className="ds-flex ds-flex-horizontal">
-              <svg
-                class="ds-text-white"
-                width="26"
-                height="24"
-                x="43"
-                viewBox="0 0 16 16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0.285876 10.606C0.372154 10.6509 0.469024 10.6714 0.566089 10.6654C0.663154 10.6594 0.756749 10.6271 0.836827 10.5719L7.77039 5.77174C7.84124 5.72265 7.89913 5.65713 7.93912 5.58077C7.97911 5.50442 8 5.41951 8 5.33332C8 5.24713 7.97911 5.16222 7.93912 5.08587C7.89913 5.00952 7.84124 4.94399 7.77039 4.89491L0.836827 0.0947528C0.756811 0.039387 0.663173 0.00696588 0.566052 0.000999826C0.468932 -0.00496623 0.37203 0.0157502 0.285838 0.0609059C0.199647 0.106062 0.127451 0.173936 0.0770675 0.257179C0.026684 0.340423 3.28455e-05 0.435863 7.24456e-09 0.533167V10.1335C-1.60365e-05 10.2308 0.0266158 10.3263 0.077009 10.4096C0.127402 10.4929 0.199634 10.5609 0.285876 10.606Z"
-                  fill="white"
-                />
-              </svg>
-              gggggg
-            </span>
-          </li>
-          <ul>
-            <li className="ds-text-[18px] ds-bg-white ds-border-b-2 ds-border-solid ds-py-[14px] ds-px-[30px]">
-              <a href="#" className="ds-text-black ">
-                <span className="ds-flex ds-flex-horizontal">
-                  <svg
-                    class="ds-text-white"
-                    width="26"
-                    height="24"
-                    x="43"
-                    viewBox="0 0 16 16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0.285876 10.606C0.372154 10.6509 0.469024 10.6714 0.566089 10.6654C0.663154 10.6594 0.756749 10.6271 0.836827 10.5719L7.77039 5.77174C7.84124 5.72265 7.89913 5.65713 7.93912 5.58077C7.97911 5.50442 8 5.41951 8 5.33332C8 5.24713 7.97911 5.16222 7.93912 5.08587C7.89913 5.00952 7.84124 4.94399 7.77039 4.89491L0.836827 0.0947528C0.756811 0.039387 0.663173 0.00696588 0.566052 0.000999826C0.468932 -0.00496623 0.37203 0.0157502 0.285838 0.0609059C0.199647 0.106062 0.127451 0.173936 0.0770675 0.257179C0.026684 0.340423 3.28455e-05 0.435863 7.24456e-09 0.533167V10.1335C-1.60365e-05 10.2308 0.0266158 10.3263 0.077009 10.4096C0.127402 10.4929 0.199634 10.5609 0.285876 10.606Z"
-                      fill="black"
-                    />
-                  </svg>
-                  Line 1
-                </span>
-              </a>
-            </li>
-
-            <li className="ds-underline ds-text-black ds-text-[18px] ds-bg-white ds-border-b-2 ds-border-solid ds-py-[14px] ds-pr-[30px] ds-pl-[65px]">
-              SubLine 2
-            </li>
-            <li className="ds-underline ds-text-black ds-text-[18px] ds-bg-white ds-border-b-2 ds-border-solid ds-py-[14px] ds-pr-[30px] ds-pl-[65px]">
-              SubLine 3
-            </li>
-            <li className="ds-underline ds-text-black ds-text-[18px] ds-bg-white ds-border-b-2 ds-border-solid ds-py-[14px] ds-pr-[30px] ds-pl-[65px]">
-              SubLine 4
-            </li>
-            <li className="ds-text-[18px] ds-bg-[#999] ds-border-b-2 ds-border-solid ds-py-[14px] ds-px-[30px]">
-              <a href="#" className="ds-text-black ">
-                <span className="ds-flex ds-flex-horizontal">
-                  <svg
-                    class="ds-text-white"
-                    width="26"
-                    height="24"
-                    x="43"
-                    viewBox="0 0 16 16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0.285876 10.606C0.372154 10.6509 0.469024 10.6714 0.566089 10.6654C0.663154 10.6594 0.756749 10.6271 0.836827 10.5719L7.77039 5.77174C7.84124 5.72265 7.89913 5.65713 7.93912 5.58077C7.97911 5.50442 8 5.41951 8 5.33332C8 5.24713 7.97911 5.16222 7.93912 5.08587C7.89913 5.00952 7.84124 4.94399 7.77039 4.89491L0.836827 0.0947528C0.756811 0.039387 0.663173 0.00696588 0.566052 0.000999826C0.468932 -0.00496623 0.37203 0.0157502 0.285838 0.0609059C0.199647 0.106062 0.127451 0.173936 0.0770675 0.257179C0.026684 0.340423 3.28455e-05 0.435863 7.24456e-09 0.533167V10.1335C-1.60365e-05 10.2308 0.0266158 10.3263 0.077009 10.4096C0.127402 10.4929 0.199634 10.5609 0.285876 10.606Z"
-                      fill="black"
-                    />
-                  </svg>
-                  Line 2 {props.globalMenuProps?.menuList.length}
-                </span>
-              </a>
-            </li>
-          </ul>
           {props.globalMenuProps.menuList.map((x, i) => (
-            <li className="ds-text-[18px] ds-border-1.5 ds-border-[#555] ds-bg-[#444] hover:ds-text-black hover:ds-bg-white ds-py-[14px] ds-px-[30px]">
-              <span className="ds-flex ds-flex-horizontal">
-                <svg
-                  class="ds-text-white"
-                  width="26"
-                  height="24"
-                  x="43"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0.285876 10.606C0.372154 10.6509 0.469024 10.6714 0.566089 10.6654C0.663154 10.6594 0.756749 10.6271 0.836827 10.5719L7.77039 5.77174C7.84124 5.72265 7.89913 5.65713 7.93912 5.58077C7.97911 5.50442 8 5.41951 8 5.33332C8 5.24713 7.97911 5.16222 7.93912 5.08587C7.89913 5.00952 7.84124 4.94399 7.77039 4.89491L0.836827 0.0947528C0.756811 0.039387 0.663173 0.00696588 0.566052 0.000999826C0.468932 -0.00496623 0.37203 0.0157502 0.285838 0.0609059C0.199647 0.106062 0.127451 0.173936 0.0770675 0.257179C0.026684 0.340423 3.28455e-05 0.435863 7.24456e-09 0.533167V10.1335C-1.60365e-05 10.2308 0.0266158 10.3263 0.077009 10.4096C0.127402 10.4929 0.199634 10.5609 0.285876 10.606Z"
-                    fill="white"
-                  />
-                </svg>
-                {x.value}
-              </span>
-            </li>
-          ))}
-
-          <li className="ds-text-[18px] ds-border-1.5 ds-border-[#555] ds-bg-[#444] hover:ds-text-black hover:ds-bg-white ds-py-[14px] ds-px-[30px]">
-            <span className="ds-flex ds-flex-horizontal">
-              <svg
-                class="ds-text-white"
-                width="26"
-                height="24"
-                x="43"
-                viewBox="0 0 16 16"
-                xmlns="http://www.w3.org/2000/svg"
+            <>
+              <li
+                className="ds-text-[18px] ds-border-1.5 ds-border-[#555] ds-bg-[#444] hover:ds-text-black hover:ds-bg-white ds-py-[14px] ds-px-[30px]"
+                key={i}
               >
-                <path
-                  d="M0.285876 10.606C0.372154 10.6509 0.469024 10.6714 0.566089 10.6654C0.663154 10.6594 0.756749 10.6271 0.836827 10.5719L7.77039 5.77174C7.84124 5.72265 7.89913 5.65713 7.93912 5.58077C7.97911 5.50442 8 5.41951 8 5.33332C8 5.24713 7.97911 5.16222 7.93912 5.08587C7.89913 5.00952 7.84124 4.94399 7.77039 4.89491L0.836827 0.0947528C0.756811 0.039387 0.663173 0.00696588 0.566052 0.000999826C0.468932 -0.00496623 0.37203 0.0157502 0.285838 0.0609059C0.199647 0.106062 0.127451 0.173936 0.0770675 0.257179C0.026684 0.340423 3.28455e-05 0.435863 7.24456e-09 0.533167V10.1335C-1.60365e-05 10.2308 0.0266158 10.3263 0.077009 10.4096C0.127402 10.4929 0.199634 10.5609 0.285876 10.606Z"
-                  fill="white"
-                />
-              </svg>
-              Most Requested
-            </span>
-          </li>
+                <div
+                  onClick={() => {
+                    props.setMenuItem({
+                      top: i,
+                      mostRequested: false,
+                    });
+                  }}
+                >
+                  <span className="ds-flex ds-flex-horizontal">
+                    <svg
+                      className="ds-text-white"
+                      width="26"
+                      height="24"
+                      x="43"
+                      viewBox="0 0 16 16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0.285876 10.606C0.372154 10.6509 0.469024 10.6714 0.566089 10.6654C0.663154 10.6594 0.756749 10.6271 0.836827 10.5719L7.77039 5.77174C7.84124 5.72265 7.89913 5.65713 7.93912 5.58077C7.97911 5.50442 8 5.41951 8 5.33332C8 5.24713 7.97911 5.16222 7.93912 5.08587C7.89913 5.00952 7.84124 4.94399 7.77039 4.89491L0.836827 0.0947528C0.756811 0.039387 0.663173 0.00696588 0.566052 0.000999826C0.468932 -0.00496623 0.37203 0.0157502 0.285838 0.0609059C0.199647 0.106062 0.127451 0.173936 0.0770675 0.257179C0.026684 0.340423 3.28455e-05 0.435863 7.24456e-09 0.533167V10.1335C-1.60365e-05 10.2308 0.0266158 10.3263 0.077009 10.4096C0.127402 10.4929 0.199634 10.5609 0.285876 10.606Z"
+                        fill="white"
+                      />
+                    </svg>
+                    {x.value}
+                  </span>
+                </div>
+              </li>
+              {props.menuItem.top === i && (
+                <ul key={i}>
+                  {x.items.map((y) => (
+                    <li className="ds-underline ds-text-black ds-text-[18px] ds-bg-white ds-border-b-2 ds-border-solid ds-py-[14px] ds-pr-[30px] ds-pl-[65px]">
+                      {y.value}
+                    </li>
+                  ))}
+                  <li className="ds-text-[18px] ds-bg-[#999] ds-border-b-2 ds-border-solid ds-py-[14px] ds-px-[30px]">
+                    <div
+                      onClick={() => {
+                        props.setMenuItem((prev) => {
+                          return {
+                            ...prev,
+                            top: i,
+                            mostRequested: !prev.mostRequested,
+                          };
+                        });
+                      }}
+                    >
+                      <a href="#" className="ds-text-black ">
+                        <span className="ds-flex ds-flex-horizontal">
+                          <svg
+                            className="ds-text-white"
+                            width="26"
+                            height="24"
+                            x="43"
+                            viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M0.285876 10.606C0.372154 10.6509 0.469024 10.6714 0.566089 10.6654C0.663154 10.6594 0.756749 10.6271 0.836827 10.5719L7.77039 5.77174C7.84124 5.72265 7.89913 5.65713 7.93912 5.58077C7.97911 5.50442 8 5.41951 8 5.33332C8 5.24713 7.97911 5.16222 7.93912 5.08587C7.89913 5.00952 7.84124 4.94399 7.77039 4.89491L0.836827 0.0947528C0.756811 0.039387 0.663173 0.00696588 0.566052 0.000999826C0.468932 -0.00496623 0.37203 0.0157502 0.285838 0.0609059C0.199647 0.106062 0.127451 0.173936 0.0770675 0.257179C0.026684 0.340423 3.28455e-05 0.435863 7.24456e-09 0.533167V10.1335C-1.60365e-05 10.2308 0.0266158 10.3263 0.077009 10.4096C0.127402 10.4929 0.199634 10.5609 0.285876 10.606Z"
+                              fill="black"
+                            />
+                          </svg>
+                          Most Requested {props.menuItem.mostRequested}
+                        </span>
+                      </a>
+                    </div>
+                  </li>
+                  {props.menuItem.mostRequested &&
+                    x.items.map((y, j) => (
+                      <li className="ds-underline ds-text-black ds-text-[18px] ds-bg-white ds-border-b-2 ds-border-solid ds-py-[14px] ds-pr-[30px] ds-pl-[65px]">
+                        {y.value}
+                      </li>
+                    ))}
+                </ul>
+              )}
+            </>
+          ))}
         </ul>
       </div>
     </div>

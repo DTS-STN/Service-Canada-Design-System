@@ -121,6 +121,18 @@ Default.args = {
         path: "/",
         showIcon: false,
         selected: false,
+        items: [
+          { key: "1", value: "find a Job" },
+          { key: "2", value: "Training" },
+          { key: "3", value: "Hiring and managing employees" },
+          { key: "4", value: "Starting a business" },
+        ],
+        mostRequested: [
+          { key: "1", value: "View your record of employment" },
+          { key: "2", value: "Apply for social insurance number" },
+          { key: "3", value: "Hiring foreign workers" },
+          { key: "4", value: "Immigrate as a skilled worker" },
+        ],
       },
       {
         key: "securityKey",
@@ -128,6 +140,18 @@ Default.args = {
         path: "/",
         showIcon: false,
         selected: false,
+        items: [
+          { key: "1", value: "find a Job" },
+          { key: "2", value: "Training" },
+          { key: "3", value: "Hiring and managing employees" },
+          { key: "4", value: "Starting a business" },
+        ],
+        mostRequested: [
+          { key: "1", value: "View your record of employment" },
+          { key: "2", value: "Apply for social insurance number" },
+          { key: "3", value: "Hiring foreign workers" },
+          { key: "4", value: "Immigrate as a skilled worker" },
+        ],
       },
       {
         key: "craAccountKey",
@@ -135,6 +159,18 @@ Default.args = {
         path: "/",
         showIcon: false,
         selected: false,
+        items: [
+          { key: "1", value: "find a Job" },
+          { key: "2", value: "Training" },
+          { key: "3", value: "Hiring and managing employees" },
+          { key: "4", value: "Starting a business" },
+        ],
+        mostRequested: [
+          { key: "1", value: "View your record of employment" },
+          { key: "2", value: "Apply for social insurance number" },
+          { key: "3", value: "Hiring foreign workers" },
+          { key: "4", value: "Immigrate as a skilled worker" },
+        ],
       },
       {
         key: "outKey",
@@ -142,6 +178,18 @@ Default.args = {
         path: "/",
         showIcon: true,
         selected: false,
+        items: [
+          { key: "1", value: "find a Job" },
+          { key: "2", value: "Training" },
+          { key: "3", value: "Hiring and managing employees" },
+          { key: "4", value: "Starting a business" },
+        ],
+        mostRequested: [
+          { key: "1", value: "View your record of employment" },
+          { key: "2", value: "Apply for social insurance number" },
+          { key: "3", value: "Hiring foreign workers" },
+          { key: "4", value: "Immigrate as a skilled worker" },
+        ],
       },
     ],
   },
