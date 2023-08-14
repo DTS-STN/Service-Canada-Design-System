@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.67.9](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.8...v1.67.9) (2023-08-14)
+
+
+### Bug Fixes
+
+* add className prop to footer ([7c6ad94](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7c6ad94756106d7f5d0255192cca06ec31b51ac8))
+* add explicit css class to footer ([4fcdb5a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4fcdb5ab13d6c0c5472622c1af22b81d66ef0259))
+* update font on li ([00b7d7b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/00b7d7bb65ccc7612ab6b0682d9d1396085ccab5))
+
 ## [1.67.8](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.7...v1.67.8) (2023-08-08)
 
 
