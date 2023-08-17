@@ -81,7 +81,9 @@ export const CustomDropdown = (props) => {
                           index === 0
                             ? "ds-border-none"
                             : "ds-border-t-[1px] ds-border-[#666666] ds-border-opacity-60"
-                        } ${option.value === selectedOption ? "selected" : ""}`}
+                        } ${
+                          option.value === selectedOption ? "selected" : ""
+                        } ds-list-none`}
                       >
                         <button
                           onClick={() => handleOptionClick(option.value)}
@@ -104,7 +106,9 @@ export const CustomDropdown = (props) => {
                           index === 0
                             ? "ds-border-none"
                             : "ds-border-t-[1px] ds-border-[#666666] ds-border-opacity-60"
-                        } ${option.value === selectedOption ? "selected" : ""}`}
+                        } ${
+                          option.value === selectedOption ? "selected" : ""
+                        } ds-list-none`}
                       >
                         <button
                           onClick={() => handleOptionClick(option.value)}
