@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.67.10](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.9...v1.67.10) (2023-08-17)
+
+
+### Bug Fixes
+
+* month dropdown background color ([1127772](https://github.com/DTS-STN/Service-Canada-Design-System/commit/1127772b751da0cd680bfc3f8b2539d3a6bc8838))
+
 ## [1.67.9](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.8...v1.67.9) (2023-08-14)
 
 
