@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.67.11](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.10...v1.67.11) (2023-08-17)
+
+
+### Bug Fixes
+
+* update button background and button type in dropdown ([5fd889a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5fd889a3b081ec60699c9654d35a58c55cba4376))
+
 ## [1.67.10](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.9...v1.67.10) (2023-08-17)
 
 
