@@ -15,9 +15,9 @@ export const CustomDropdown = (props) => {
   const clampedMinValue = Math.max(0, props.minValue);
   const clampedMaxValue = Math.min(99, props.maxValue);
 
-  const handleOptionClick = (option) => {
-    setSelectedOption(option);
-    props.onChange(option);
+  const handleOptionClick = (event, optionValue) => {
+    setSelectedOption(optionValue);
+    props.onChange(event); // pass the whole event back up
     setIsOpen(false);
   };
 
@@ -88,7 +88,11 @@ export const CustomDropdown = (props) => {
                         } ds-list-none`}
                       >
                         <button
-                          onClick={() => handleOptionClick(option.value)}
+                          id={option.id}
+                          onClick={(e) => {
+                            e.persist();
+                            handleOptionClick(e, option.value);
+                          }}
                           className="dropdown-option"
                           style={{ backgroundColor: "#FFFFFF" }}
                           type="button"
@@ -115,7 +119,11 @@ export const CustomDropdown = (props) => {
                         } ds-list-none`}
                       >
                         <button
-                          onClick={() => handleOptionClick(option.value)}
+                          id={option.id}
+                          onClick={(e) => {
+                            e.persist();
+                            handleOptionClick(e, option.value);
+                          }}
                           className="dropdown-option"
                           style={{ backgroundColor: "#FFFFFF" }}
                           type="button"
