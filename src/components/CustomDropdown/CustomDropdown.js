@@ -90,6 +90,8 @@ export const CustomDropdown = (props) => {
                         <button
                           onClick={() => handleOptionClick(option.value)}
                           className="dropdown-option"
+                          style={{ backgroundColor: "#FFFFFF" }}
+                          type="button"
                         >
                           {option.value}
                         </button>
@@ -115,6 +117,8 @@ export const CustomDropdown = (props) => {
                         <button
                           onClick={() => handleOptionClick(option.value)}
                           className="dropdown-option"
+                          style={{ backgroundColor: "#FFFFFF" }}
+                          type="button"
                         >
                           {option.value}
                         </button>
