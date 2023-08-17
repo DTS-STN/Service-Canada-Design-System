@@ -44,6 +44,8 @@ export const CustomDropdown = (props) => {
             props.hasError ? "ds-border-[#D3080C]" : "ds-border-[#6f6f66]"
           } dropdown-select ds-border-2`}
           onClick={() => setIsOpen(!isOpen)}
+          style={{ backgroundColor: "#FFFFFF" }}
+          type="button"
         >
           {isOpen ? (
             <div className={`ds-flex ${props.hasSearch ? "" : "ds-hidden"}`}>
