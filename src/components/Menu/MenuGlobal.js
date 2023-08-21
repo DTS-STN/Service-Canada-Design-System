@@ -149,10 +149,10 @@ const DesktopMenu = (props) => (
       </div>
     </button>
     <div className="ds-flex ds-flex-row ds-border-t ds-border-gray">
-      <div className="ds-bg-white ds-border-black ds-z-100 ds-bg-[#444] ds-text-white ds-w-96">
+      <div className="ds-bg-white ds-border-black ds-z-100 ds-bg-[#444] ds-text-white ds-w-[360px]">
         <ul>
           {props.globalMenuProps.menuList.map((x, i) => (
-            <li className="text-lg ds-border-1.5 ds-border-[#555] ds-bg-[#444] hover:ds-text-black hover:ds-bg-white ds-py-3.5 ds-px-7">
+            <li className="text-lg ds-border-1.5 ds-border-[#555] ds-bg-[#444] hover:ds-text-black hover:ds-bg-white ds-py-3.5 ds-px-7 ds-w-[360px]">
               <div
                 onClick={() => {
                   props.setExpandedPanel((prev) => {
@@ -160,7 +160,7 @@ const DesktopMenu = (props) => (
                   });
                 }}
               >
-                {x.value}
+                <p className="ds-text-[18px]">{x.value}</p>
               </div>
             </li>
           ))}
@@ -172,7 +172,7 @@ const DesktopMenu = (props) => (
             <li className="ds-mb-[24px] ds-text-[32px] ds-px-[6px] ds-font-bold ds-underline ds-underline-offset-1 ds-text-[#284162]">
               <a href="#">{props.expandedPanel.itemTitle}</a>
             </li>
-            <div className="ds-flex ds-flex-row">
+            <div className="ds-flex ds-flex-col lg:ds-flex-row">
               <div>
                 {props.expandedPanel.items.map((x) => (
                   <li role="presentation" className="ds-py-1.5 ">
@@ -206,10 +206,10 @@ const DesktopMenu = (props) => (
                     id="gc-mnu-jobs-sub"
                     role="menu"
                     aria-orientation="vertical"
-                    className="ds-list-disc ds-pl-[39px]"
+                    className="ds-list-disc ds-px-[39px] ds-text-[20px] ds-font-body"
                   >
                     {props.expandedPanel.mostRequested.map((x) => (
-                      <li role="presentation" className="ds-py-1.5">
+                      <li role="presentation" className="ds-py-[6px]">
                         <a
                           role="menuitem"
                           tabindex="-1"
@@ -220,36 +220,6 @@ const DesktopMenu = (props) => (
                         </a>
                       </li>
                     ))}
-                    <li role="presentation" className="ds-py-1.5">
-                      <a
-                        role="menuitem"
-                        tabindex="-1"
-                        href="https://www.canada.ca/en/employment-social-development/services/sin.html"
-                        className="ds-text-[#284162] ds-underline ds-text-[18px]"
-                      >
-                        Apply for a Social Insurance Number (SIN)
-                      </a>
-                    </li>
-                    <li role="presentation" className="ds-py-1.5">
-                      <a
-                        role="menuitem"
-                        tabindex="-1"
-                        href="https://www.canada.ca/en/employment-social-development/services/foreign-workers.html"
-                        className="ds-text-[#284162] ds-underline ds-text-[18px]"
-                      >
-                        Hire a temporary foreign worker
-                      </a>
-                    </li>
-                    <li role="presentation" className="ds-py-1.5">
-                      <a
-                        role="menuitem"
-                        tabindex="-1"
-                        href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry.html"
-                        className="ds-text-[#284162] ds-underline ds-text-[18px]"
-                      >
-                        Immigrate as a skilled worker
-                      </a>
-                    </li>
                   </ul>
                 </li>
               </div>
@@ -335,7 +305,7 @@ const MobileMenu = (props) => (
                       {y.value}
                     </li>
                   ))}
-                  <li className="ds-text-[18px] ds-bg-[#999] ds-border-b-2 ds-border-solid ds-py-[14px] ds-px-[30px]">
+                  <li className="ds-text-[18px] ds-bg-[#999] ds-border-b-2 ds-border-solid ds-py-[14px] ds-pr-[30px] ds-pl-[65px]">
                     <div
                       onClick={() => {
                         props.setMenuItem((prev) => {
@@ -369,7 +339,7 @@ const MobileMenu = (props) => (
                   </li>
                   {props.menuItem.mostRequested &&
                     x.items.map((y, j) => (
-                      <li className="ds-underline ds-text-black ds-text-[18px] ds-bg-white ds-border-b-2 ds-border-solid ds-py-[14px] ds-pr-[30px] ds-pl-[65px]">
+                      <li className="ds-ml-[100px] ds-underline ds-text-black ds-text-[18px] ds-bg-white ds-border-b-2 ds-border-solid ds-py-[14px] ds-pr-[30px] ">
                         {y.value}
                       </li>
                     ))}
