@@ -12,9 +12,9 @@ import logoFileFR from "../../assets/sig-blk-fr.svg";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { Language } from "../Language/Language";
 import { Breadcrumb } from "../Breadcrumb/Breadcrumb";
-import { GlobalHeader } from "./GlobalHeader";
+import dropdown from "../../assets/dropdown.svg";
 
-export function Header(props) {
+export function GlobalHeader(props) {
   const {
     id,
     lang,
@@ -28,116 +28,115 @@ export function Header(props) {
     useParentContainer,
     customLink,
     dataGcAnalyticsCustomClickInstitutionVariable,
-    legacyBehavior,
   } = props;
 
-  const containerClass = useParentContainer ? "" : "ds-container";
+  const containerClass =
+    useParentContainer || !isAuthenticated ? "" : "ds-container";
 
-  return isAuthenticated ? (
-    <div className="ds-header" id={id} data-testid="ds-header">
-      <TopNav
-        lang={lang}
-        skipToMainPath={topnavProps.skipToMainPath}
-        skipToAboutPath={topnavProps.skipToAboutPath}
-        switchToBasicPath={topnavProps.switchToBasicPath}
-        displayAlternateLink={topnavProps.displayAlternateLink}
-      />
-      <header>
-        <div
-          className={`${containerClass} ds-flex ds-flex-col sm:ds-flex-row md:ds-pb-14px`}
-        >
-          <div className="ds-flex ds-flex-row sm:ds-pt-12px">
-            <div className={`header-logo ds-pt-6px`}>
-              <Image
-                className={`${
-                  lang === "en"
-                    ? "md:ds-max-h-34px ds-max-h-19px"
-                    : "md:ds-max-h-35px ds-max-h-20px"
-                } md:ds-max-w-360px ds-max-w-206px`}
-                src={lang === "en" ? logoFile : logoFileFR}
-                alt="Government of Canada"
-              />
-            </div>
-            <div className="sm:ds-hidden ds-ml-auto ds-pb-10px">
-              <Language
-                id="lang2"
-                lang={lang}
-                path={linkPath}
-                locale={locale}
-                customLink={customLink}
-                legacyBehavior={legacyBehavior}
-                dataGcAnalyticsCustomClickInstitutionVariable={
-                  dataGcAnalyticsCustomClickInstitutionVariable
-                }
-              />
-            </div>
-          </div>
-          {!isAuthenticated ? (
-            <>
-              <div className="sm:ds-ml-auto ds-w-full md:ds-flex md:ds-w-332px ds-pb-20px ds-pt-10px sm:ds-pr-14px md:ds-pt-20px md:ds-pb-10px">
-                <SearchBar
-                  onChange={searchProps.onChange}
-                  onSubmit={searchProps.onSubmit}
-                  lang={lang}
+  return (
+    <>
+      <div
+        className="ds-header ds-px-0 ds-mx-0"
+        id={id}
+        data-testid="ds-header ds-px-0 ds-mx-0"
+      >
+        <header>
+          {/* Mobile */}
+          <div
+            className={`${containerClass} sm:ds-hidden ds-container ds-flex ds-flex-col  md:ds-pb-14px ds-max-w-6xl`}
+          >
+            <div className={`ds-flex ds-flex-row ds-w-full sm:ds-pt-12px`}>
+              <div className={`header-logo ds-pt-6px`}>
+                <Image
+                  className={`${
+                    lang === "en"
+                      ? "lg:ds-max-h-34px ds-max-h-19px"
+                      : "lg:ds-max-h-35px ds-max-h-20px"
+                  } md:ds-max-w-360px ds-max-w-206px`}
+                  src={lang === "en" ? logoFile : logoFileFR}
+                  alt="Government of Canada"
                 />
               </div>
-              <div className="ds-hidden sm:ds-flex sm:ds-pt-10px md:ds-pt-18px">
+              <div className="sm:ds-hidden ds-ml-auto ds-pb-10px">
                 <Language
-                  id="lang1"
-                  lang={lang}
+                  id="lang2"
+                  lang={lang === "en" ? "fr" : "en"}
                   path={linkPath}
-                  customLink={customLink}
                   locale={locale}
-                  legacyBehavior={legacyBehavior}
+                  customLink={customLink}
                   dataGcAnalyticsCustomClickInstitutionVariable={
                     dataGcAnalyticsCustomClickInstitutionVariable
                   }
                 />
               </div>
-            </>
-          ) : (
-            <div className="ds-pb-10px sm:ds-pb-14px md:ds-pb-0 ds-hidden sm:ds-ml-auto sm:ds-flex sm:ds-pt-10px md:ds-pt-18px">
-              <Language
-                id="lang1"
+            </div>
+            <div>
+              <SearchBar lang={lang} />
+            </div>
+          </div>
+          {/* Desktop */}
+          <div className="ds-max-w-6xl ds-mx-auto">
+            <div className="ds-invisible sm:ds-visible ds-mx-auto ds-w-full">
+              <div className="ds-flex ds-flex-row">
+                <div className="ds-w-full"></div>
+                <Language
+                  id="lang2"
+                  lang={lang === "en" ? "fr" : "en"}
+                  path={linkPath}
+                  locale={locale}
+                  customLink={customLink}
+                  dataGcAnalyticsCustomClickInstitutionVariable={
+                    dataGcAnalyticsCustomClickInstitutionVariable
+                  }
+                />
+              </div>
+
+              <div className="ds-flex ">
+                <div className={`header-logo ds-flex-initial`}>
+                  <Image
+                    className={`${
+                      lang === "en"
+                        ? "lg:ds-max-h-34px ds-max-h-19px"
+                        : "lg:ds-max-h-35px ds-max-h-20px"
+                    } md:ds-max-w-360px ds-max-w-206px`}
+                    src={lang === "en" ? logoFile : logoFileFR}
+                    alt="Government of Canada"
+                  />
+                </div>
+                <div className="ds-flex-auto">
+                  <SearchBar lang={lang} />
+                </div>
+              </div>
+            </div>
+          </div>
+          {!menuProps.hasNoMenu && (
+            <>
+              <hr className="ds-border-t-[3px] ds-border-[#26374a] ds-mt-1 ds-px-0" />
+              {/* <MenuGlobal globalMenuProps={globalMenuProps} /> */}
+              {/* <Menu
                 lang={lang}
-                path={linkPath}
-                customLink={customLink}
-                locale={locale}
-                legacyBehavior={legacyBehavior}
+                isAuthenticated={isAuthenticated}
+                menuList={menuProps.menuList}
+                onSignOut={menuProps.onSignOut}
                 dataGcAnalyticsCustomClickInstitutionVariable={
                   dataGcAnalyticsCustomClickInstitutionVariable
                 }
-              />
+              /> */}
+            </>
+          )}
+          {breadCrumbItems && (
+            <div className={`${containerClass} ds-container`}>
+              <Breadcrumb items={breadCrumbItems} />
             </div>
           )}
-        </div>
-        {!menuProps.hasNoMenu && (
-          <Menu
-            lang={lang}
-            isAuthenticated={isAuthenticated}
-            menuList={menuProps.menuList}
-            onSignOut={menuProps.onSignOut}
-            legacyBehavior={menuProps.legacyBehavior}
-            dataGcAnalyticsCustomClickInstitutionVariable={
-              dataGcAnalyticsCustomClickInstitutionVariable
-            }
-          />
-        )}
-        {breadCrumbItems && (
-          <div className={containerClass}>
-            <Breadcrumb items={breadCrumbItems} />
-          </div>
-        )}
-      </header>
-    </div>
-  ) : (
-    <GlobalHeader {...props} />
+        </header>
+      </div>
+    </>
   );
 }
 
-Header.defaultProps = {
+GlobalHeader.defaultProps = {
   lang: "en",
-  id: Math.random(),
   isAuthenticated: true,
   useParentContainer: false,
   searchProps: {
@@ -161,9 +160,10 @@ Header.defaultProps = {
     switchToBasicPath: "basic-en.html",
     displayAlternateLink: false,
   },
+  globalMenuProps: { menuList: [] },
 };
 
-Header.propTypes = {
+GlobalHeader.propTypes = {
   /**
    * Component ID
    */
@@ -231,7 +231,6 @@ Header.propTypes = {
     ),
     hasNoMenu: PropTypes.bool,
     useParentContainer: PropTypes.bool,
-    legacyBehavior: PropTypes.bool,
   }),
 
   /**
@@ -278,4 +277,9 @@ Header.propTypes = {
    * For tracking click events analytics
    */
   analyticsTracking: PropTypes.bool,
+
+  /**
+   * A custom object configuration called booBoo
+   */
+  globalMenuProps: PropTypes.object,
 };

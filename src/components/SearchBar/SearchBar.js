@@ -33,7 +33,7 @@ export function SearchBar(props) {
             : FR.searchPlaceholderText
         }
       />
-      <div className="ds-search-button">
+      <div className="ds-search-button hover:ds-bg-[#444]">
         <button
           title={
             props.lang === "en"
