@@ -25,7 +25,7 @@ export function SearchBar(props) {
       <input
         onChange={props.onChange}
         id="search-input"
-        className="ds-search-input ds-w-full"
+        className="ds-search-input ds-w-full ds-text-[#5C5C5C]"
         type="search"
         placeholder={
           props.lang === "en"
@@ -43,7 +43,7 @@ export function SearchBar(props) {
           type="submit"
         >
           <Image
-            className="ds-search-icon"
+            className="ds-search-icon ds-ml-[2px]"
             src={searchIcon}
             alt="Search Service Canada"
           />
