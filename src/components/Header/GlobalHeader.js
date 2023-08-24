@@ -60,7 +60,7 @@ export function GlobalHeader(props) {
               <div className="sm:ds-hidden ds-ml-auto ds-pb-10px">
                 <Language
                   id="lang2"
-                  lang={lang === "en" ? "fr" : "en"}
+                  lang={lang}
                   path={linkPath}
                   locale={locale}
                   customLink={customLink}
@@ -81,7 +81,7 @@ export function GlobalHeader(props) {
                 <div className="ds-w-full"></div>
                 <Language
                   id="lang2"
-                  lang={lang === "en" ? "fr" : "en"}
+                  lang={lang}
                   path={linkPath}
                   locale={locale}
                   customLink={customLink}
