@@ -78,7 +78,7 @@ export function GlobalHeader(props) {
           <div className="ds-max-w-[750px] ds-mx-auto">
             <div className="ds-hidden sm:ds-contents ds-mx-auto ds-w-full">
               <div className="ds-flex ds-flex-row">
-                <div className="ds-w-full"></div>
+                <div className="ds-w-full ds-mb-[45px]"></div>
                 <Language
                   id="lang2"
                   lang={lang}
@@ -112,16 +112,6 @@ export function GlobalHeader(props) {
           {!menuProps.hasNoMenu && (
             <>
               <hr className="ds-border-t-[3px] ds-border-[#26374a] ds-mt-1 ds-px-0" />
-              {/* <MenuGlobal globalMenuProps={globalMenuProps} /> */}
-              {/* <Menu
-                lang={lang}
-                isAuthenticated={isAuthenticated}
-                menuList={menuProps.menuList}
-                onSignOut={menuProps.onSignOut}
-                dataGcAnalyticsCustomClickInstitutionVariable={
-                  dataGcAnalyticsCustomClickInstitutionVariable
-                }
-              /> */}
             </>
           )}
           {breadCrumbItems && (
