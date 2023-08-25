@@ -49,13 +49,17 @@ export function GlobalHeader(props) {
               className={`ds-flex ds-flex-row ds-w-full sm:ds-pt-[12px] ds-pb-[22px]`}
             >
               <div className={`header-logo ds-pt-6px`}>
-                <Image
-                  className={`${
-                    lang === "en" ? "ds-max-h-[45px]" : "ds-max-h-[45px]"
-                  } ds-w-[100%] ds-h-[100%] ds-max-w-[441px] ds-pr-[20px]`}
-                  src={lang === "en" ? logoFile : logoFileFR}
-                  alt="Government of Canada"
-                />
+                <a href={breadCrumbItems[0].link}>
+                  <Image
+                    className={`${
+                      lang === "en" ? "ds-max-h-[45px]" : "ds-max-h-[45px]"
+                    } ds-w-[100%] ds-h-[100%] ds-max-w-[441px] ds-pr-[20px]`}
+                    src={lang === "en" ? logoFile : logoFileFR}
+                    alt="Government of Canada"
+                  />
+                </a>
+                <meta property="name" content="Government of Canada" />
+                <meta property="areaServed" typeof="Country" content="Canada" />
               </div>
               <div className="sm:ds-hidden ds-ml-auto ds-pb-10px">
                 <Language
@@ -92,15 +96,29 @@ export function GlobalHeader(props) {
               </div>
 
               <div className="ds-flex ds-items-end ds-pb-[25px]">
-                <div className={`header-logo ds-flex-initial`}>
-                  <Image
-                    className={`${
-                      lang === "en"
-                        ? "md:ds-max-h-[39px] ds-max-h-[33px]"
-                        : "md:ds-max-h-[39px] ds-max-h-[33px]"
-                    } md:ds-max-w-[360px] ds-max-w-[293px]`}
-                    src={lang === "en" ? logoFile : logoFileFR}
-                    alt="Government of Canada"
+                <div
+                  className={`header-logo ds-flex-initial`}
+                  property="publisher"
+                  typeOf="GovernmentOrganization"
+                >
+                  <a href={breadCrumbItems[0].link}>
+                    <Image
+                      className={`${
+                        lang === "en"
+                          ? "md:ds-max-h-[39px] ds-max-h-[33px]"
+                          : "md:ds-max-h-[39px] ds-max-h-[33px]"
+                      } md:ds-max-w-[360px] ds-max-w-[293px]`}
+                      src={lang === "en" ? logoFile : logoFileFR}
+                      alt="Government of Canada"
+                      proprty="logo"
+                    />
+                  </a>
+
+                  <meta property="name" content="Government of Canada" />
+                  <meta
+                    property="areaServed"
+                    typeof="Country"
+                    content="Canada"
                   />
                 </div>
                 <div className="ds-flex-auto">
