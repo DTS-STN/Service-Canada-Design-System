@@ -100,7 +100,7 @@ Default.args = {
   id: "header",
   dataGcAnalyticsCustomClickInstitutionVariable: "Institution",
   lang: "en",
-  isAuthenticated: true,
+  isAuthenticated: false,
   menuProps: {
     menuList: [
       {
