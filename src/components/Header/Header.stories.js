@@ -10,7 +10,7 @@ const Template = (args) => <Header {...args} />;
 export const GlobalEnglish = Template.bind({});
 export const GlobalFrench = Template.bind({});
 
-GlobalEnglish.args = {
+GlobalFrench.args = {
   id: "header",
   dataGcAnalyticsCustomClickInstitutionVariable: "Institution",
   lang: "fr",
@@ -30,7 +30,7 @@ GlobalEnglish.args = {
   ],
 };
 
-GlobalFrench.args = {
+GlobalEnglish.args = {
   id: "header",
   dataGcAnalyticsCustomClickInstitutionVariable: "Institution",
   lang: "en",
