@@ -7,140 +7,140 @@ export default {
 
 const Template = (args) => <Header {...args} />;
 
-export const Default = Template.bind({});
-export const EnglishAuth = Template.bind({});
-export const FrenchAuth = Template.bind({});
-export const EnglishUnauth = Template.bind({});
-export const FrenchUnauth = Template.bind({});
+// export const Default = Template.bind({});
+// export const EnglishAuth = Template.bind({});
+// export const FrenchAuth = Template.bind({});
+export const GlobalEnglish = Template.bind({});
+export const GlobalFrench = Template.bind({});
 
-EnglishAuth.args = {
-  id: "header",
-  dataGcAnalyticsCustomClickInstitutionVariable: "Institution",
-  lang: "en",
-  isAuthenticated: true,
-  menuProps: {
-    menuList: [
-      { key: "dashKey", value: "My dashboard", path: "/", showIcon: false },
-      { key: "profileKey", value: "Profile", path: "/", showIcon: false },
-      {
-        key: "securityKey",
-        value: "Security settings",
-        path: "/",
-        showIcon: false,
-      },
-      {
-        key: "craAccountKey",
-        value: "Switch to CRA My Account",
-        path: "/",
-        showIcon: false,
-      },
-      { key: "outKey", value: "Sign out", path: "/", showIcon: true },
-    ],
-  },
-  topnavProps: {
-    skipToMainPath: "#wb-cont",
-    skipToAboutPath: "#wb-info",
-    switchToBasicPath: "/basic-en.html",
-    displayAlternateLink: false,
-  },
-  breadCrumbItems: [
-    { text: "Canada.ca", link: "/" },
-    { text: "Link1", link: "/" },
-    { text: "Link2", link: "/" },
-    { text: "Max length of breadcrumb 28", link: "/" },
-    { text: "Link3", link: "/" },
-  ],
-};
+// EnglishAuth.args = {
+//   id: "header",
+//   dataGcAnalyticsCustomClickInstitutionVariable: "Institution",
+//   lang: "en",
+//   isAuthenticated: true,
+//   menuProps: {
+//     menuList: [
+//       { key: "dashKey", value: "My dashboard", path: "/", showIcon: false },
+//       { key: "profileKey", value: "Profile", path: "/", showIcon: false },
+//       {
+//         key: "securityKey",
+//         value: "Security settings",
+//         path: "/",
+//         showIcon: false,
+//       },
+//       {
+//         key: "craAccountKey",
+//         value: "Switch to CRA My Account",
+//         path: "/",
+//         showIcon: false,
+//       },
+//       { key: "outKey", value: "Sign out", path: "/", showIcon: true },
+//     ],
+//   },
+//   topnavProps: {
+//     skipToMainPath: "#wb-cont",
+//     skipToAboutPath: "#wb-info",
+//     switchToBasicPath: "/basic-en.html",
+//     displayAlternateLink: false,
+//   },
+//   breadCrumbItems: [
+//     { text: "Canada.ca", link: "/" },
+//     { text: "Link1", link: "/" },
+//     { text: "Link2", link: "/" },
+//     { text: "Max length of breadcrumb 28", link: "/" },
+//     { text: "Link3", link: "/" },
+//   ],
+// };
 
-FrenchAuth.args = {
-  id: "header",
-  dataGcAnalyticsCustomClickInstitutionVariable: "Institution",
-  lang: "fr",
-  isAuthenticated: true,
-  menuProps: {
-    menuList: [
-      {
-        key: "dashKey",
-        value: "Mon tableau de bord",
-        path: "/",
-        showIcon: false,
-      },
-      { key: "profileKey", value: "Profil", path: "/", showIcon: false },
-      {
-        key: "securityKey",
-        value: "Paramètres de sécurité",
-        path: "/",
-        showIcon: false,
-      },
-      {
-        key: "craAccountKey",
-        value: "Aller à Mon dossier de l’ARC",
-        path: "/",
-        showIcon: false,
-      },
-      { key: "outKey", value: "Se déconnecter", path: "/", showIcon: true },
-    ],
-  },
-  topnavProps: {
-    skipToMainPath: "#wb-cont",
-    skipToAboutPath: "#wb-info",
-    switchToBasicPath: "/basic-fr.html",
-    displayAlternateLink: false,
-  },
-  breadCrumbItems: [
-    { text: "Canada.ca", link: "/" },
-    { text: "Link1", link: "/" },
-    { text: "Link2", link: "/" },
-    { text: "Max length of breadcrumb 28", link: "/" },
-    { text: "Link3", link: "/" },
-  ],
-};
+// FrenchAuth.args = {
+//   id: "header",
+//   dataGcAnalyticsCustomClickInstitutionVariable: "Institution",
+//   lang: "fr",
+//   isAuthenticated: true,
+//   menuProps: {
+//     menuList: [
+//       {
+//         key: "dashKey",
+//         value: "Mon tableau de bord",
+//         path: "/",
+//         showIcon: false,
+//       },
+//       { key: "profileKey", value: "Profil", path: "/", showIcon: false },
+//       {
+//         key: "securityKey",
+//         value: "Paramètres de sécurité",
+//         path: "/",
+//         showIcon: false,
+//       },
+//       {
+//         key: "craAccountKey",
+//         value: "Aller à Mon dossier de l’ARC",
+//         path: "/",
+//         showIcon: false,
+//       },
+//       { key: "outKey", value: "Se déconnecter", path: "/", showIcon: true },
+//     ],
+//   },
+//   topnavProps: {
+//     skipToMainPath: "#wb-cont",
+//     skipToAboutPath: "#wb-info",
+//     switchToBasicPath: "/basic-fr.html",
+//     displayAlternateLink: false,
+//   },
+//   breadCrumbItems: [
+//     { text: "Canada.ca", link: "/" },
+//     { text: "Link1", link: "/" },
+//     { text: "Link2", link: "/" },
+//     { text: "Max length of breadcrumb 28", link: "/" },
+//     { text: "Link3", link: "/" },
+//   ],
+// };
 
-Default.args = {
-  id: "header",
-  dataGcAnalyticsCustomClickInstitutionVariable: "Institution",
-  lang: "en",
-  isAuthenticated: true,
-  menuProps: {
-    menuList: [
-      {
-        key: "dashKey",
-        value: "Mon tableau de bord",
-        path: "/",
-        showIcon: false,
-      },
-      { key: "profileKey", value: "Profil", path: "/", showIcon: false },
-      {
-        key: "securityKey",
-        value: "Paramètres de sécurité",
-        path: "/",
-        showIcon: false,
-      },
-      {
-        key: "craAccountKey",
-        value: "Aller à Mon dossier de l’ARC",
-        path: "/",
-        showIcon: false,
-      },
-      { key: "outKey", value: "Se déconnecter", path: "/", showIcon: true },
-    ],
-  },
-  topnavProps: {
-    skipToMainPath: "#wb-cont",
-    skipToAboutPath: "#wb-info",
-    switchToBasicPath: "/basic-fr.html",
-    displayAlternateLink: false,
-  },
-  breadCrumbItems: [
-    { text: "Canada.ca", link: "/" },
-    { text: "Link1", link: "/" },
-    { text: "Link2", link: "/" },
-    { text: "Max length of breadcrumb 28", link: "/" },
-    { text: "Link3", link: "/" },
-  ],
-};
+// Default.args = {
+//   id: "header",
+//   dataGcAnalyticsCustomClickInstitutionVariable: "Institution",
+//   lang: "en",
+//   isAuthenticated: true,
+//   menuProps: {
+//     menuList: [
+//       {
+//         key: "dashKey",
+//         value: "Mon tableau de bord",
+//         path: "/",
+//         showIcon: false,
+//       },
+//       { key: "profileKey", value: "Profil", path: "/", showIcon: false },
+//       {
+//         key: "securityKey",
+//         value: "Paramètres de sécurité",
+//         path: "/",
+//         showIcon: false,
+//       },
+//       {
+//         key: "craAccountKey",
+//         value: "Aller à Mon dossier de l’ARC",
+//         path: "/",
+//         showIcon: false,
+//       },
+//       { key: "outKey", value: "Se déconnecter", path: "/", showIcon: true },
+//     ],
+//   },
+//   topnavProps: {
+//     skipToMainPath: "#wb-cont",
+//     skipToAboutPath: "#wb-info",
+//     switchToBasicPath: "/basic-fr.html",
+//     displayAlternateLink: false,
+//   },
+//   breadCrumbItems: [
+//     { text: "Canada.ca", link: "/" },
+//     { text: "Link1", link: "/" },
+//     { text: "Link2", link: "/" },
+//     { text: "Max length of breadcrumb 28", link: "/" },
+//     { text: "Link3", link: "/" },
+//   ],
+// };
 
-FrenchUnauth.args = {
+GlobalEnglish.args = {
   id: "header",
   dataGcAnalyticsCustomClickInstitutionVariable: "Institution",
   lang: "fr",
@@ -160,7 +160,7 @@ FrenchUnauth.args = {
   ],
 };
 
-EnglishUnauth.args = {
+GlobalFrench.args = {
   id: "header",
   dataGcAnalyticsCustomClickInstitutionVariable: "Institution",
   lang: "en",
