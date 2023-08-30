@@ -12,7 +12,7 @@ export function SearchBar(props) {
   const { searchIcon } = props;
   return (
     <form
-      className="ds-w-full ds-flex ds-justify-end ds-items-center"
+      className="ds-w-full md:ds-w-max-[360px] ds-flex ds-justify-end ds-items-center"
       role="search"
       name="search-box"
       onSubmit={props.onSubmit}

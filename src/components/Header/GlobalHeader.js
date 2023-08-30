@@ -26,12 +26,13 @@ export function GlobalHeader(props) {
     breadCrumbItems,
     topnavProps,
     useParentContainer,
+    containerClass,
     customLink,
     dataGcAnalyticsCustomClickInstitutionVariable,
   } = props;
 
-  const containerClass =
-    useParentContainer || !isAuthenticated ? "" : "ds-container";
+  // const containerClass =
+  //   useParentContainer || !isAuthenticated ? "" : "ds-container";
 
   return (
     <>
@@ -48,7 +49,7 @@ export function GlobalHeader(props) {
             <div
               className={`ds-flex ds-flex-row ds-w-full sm:ds-pt-[12px] ds-pb-[22px]`}
             >
-              <div className={`header-logo ds-pt-6px`}>
+              <div className={`header-logo ds-pt-6px ds-mr-6`}>
                 <a href={breadCrumbItems[0].link}>
                   <Image
                     className={`${
@@ -79,7 +80,7 @@ export function GlobalHeader(props) {
             </div>
           </div>
           {/* Desktop */}
-          <div className="ds-max-w-[750px] ds-mx-auto">
+          <div className={containerClass ? containerClass : "ds-container"}>
             <div className="ds-hidden sm:ds-contents ds-mx-auto ds-w-full">
               <div className="ds-flex ds-flex-row">
                 <div className="ds-w-full ds-mb-[45px]"></div>
@@ -133,7 +134,7 @@ export function GlobalHeader(props) {
             </>
           )}
           {breadCrumbItems && (
-            <div className={`ds-max-w-[750px] ds-mx-auto`}>
+            <div className={containerClass ? containerClass : "ds-container"}>
               <Breadcrumb items={breadCrumbItems} />
             </div>
           )}

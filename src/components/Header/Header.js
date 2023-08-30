@@ -25,13 +25,11 @@ export function Header(props) {
     menuProps,
     breadCrumbItems,
     topnavProps,
-    useParentContainer,
+    containerClass,
     customLink,
     dataGcAnalyticsCustomClickInstitutionVariable,
     legacyBehavior,
   } = props;
-
-  const containerClass = useParentContainer ? "" : "ds-container";
 
   return isAuthenticated ? (
     <div className="ds-header" id={id} data-testid="ds-header">
@@ -44,10 +42,12 @@ export function Header(props) {
       />
       <header>
         <div
-          className={`${containerClass} ds-flex ds-flex-col sm:ds-flex-row md:ds-pb-14px`}
+          className={`${
+            containerClass ? containerClass : "ds-container"
+          } ds-flex ds-flex-col sm:ds-flex-row md:ds-pb-14px`}
         >
           <div className="ds-flex ds-flex-row sm:ds-pt-12px">
-            <div className={`header-logo ds-pt-6px`}>
+            <div className={`header-logo ds-pt-6px ds-mr-6`}>
               <Image
                 className={`${
                   lang === "en"
@@ -124,7 +124,7 @@ export function Header(props) {
           />
         )}
         {breadCrumbItems && (
-          <div className={containerClass}>
+          <div className={containerClass ? containerClass : "ds-container"}>
             <Breadcrumb items={breadCrumbItems} />
           </div>
         )}
