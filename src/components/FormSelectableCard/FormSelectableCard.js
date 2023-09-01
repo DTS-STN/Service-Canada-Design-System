@@ -28,7 +28,7 @@ export function FormSelectableCard(props) {
       )}
       {props.options.map(
         ({ id, label, checked, value, hasHint, hintProps }, index) => (
-          <div className={`ds-radio ds-relative ds-flex`}>
+          <div className={`ds-radio ds-relative ds-flex`} key={index}>
             <div
               className={`ds-min-h-[182px] ds-w-[360px] ds-rounded-lg hover:ds-shadow-[#0E62C9] ds-border-[1px] ${
                 selected === id
@@ -68,6 +68,7 @@ export function FormSelectableCard(props) {
 }
 
 const UpperCard = (props) => {
+  console.log(`${props.id}-${props.dataTestId}`, "llllllllllllll");
   return (
     <div
       className={`ds-h-[72px] ${
