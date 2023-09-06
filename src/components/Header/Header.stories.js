@@ -7,36 +7,18 @@ export default {
 
 const Template = (args) => <Header {...args} />;
 
-export const EnglishAuth = Template.bind({});
-export const FrenchAuth = Template.bind({});
+export const GlobalEnglish = Template.bind({});
+export const GlobalFrench = Template.bind({});
 
-EnglishAuth.args = {
+GlobalFrench.args = {
   id: "header",
   dataGcAnalyticsCustomClickInstitutionVariable: "Institution",
-  lang: "en",
-  menuProps: {
-    menuList: [
-      { key: "dashKey", value: "My dashboard", path: "/", showIcon: false },
-      { key: "profileKey", value: "Profile", path: "/", showIcon: false },
-      {
-        key: "securityKey",
-        value: "Security settings",
-        path: "/",
-        showIcon: false,
-      },
-      {
-        key: "craAccountKey",
-        value: "Switch to CRA My Account",
-        path: "/",
-        showIcon: false,
-      },
-      { key: "outKey", value: "Sign out", path: "/", showIcon: true },
-    ],
-  },
+  lang: "fr",
+  isAuthenticated: false,
   topnavProps: {
     skipToMainPath: "#wb-cont",
     skipToAboutPath: "#wb-info",
-    switchToBasicPath: "/basic-en.html",
+    switchToBasicPath: "/basic-fr.html",
     displayAlternateLink: false,
   },
   breadCrumbItems: [
@@ -48,34 +30,11 @@ EnglishAuth.args = {
   ],
 };
 
-FrenchAuth.args = {
+GlobalEnglish.args = {
   id: "header",
   dataGcAnalyticsCustomClickInstitutionVariable: "Institution",
-  lang: "fr",
-  menuProps: {
-    menuList: [
-      {
-        key: "dashKey",
-        value: "Mon tableau de bord",
-        path: "/",
-        showIcon: false,
-      },
-      { key: "profileKey", value: "Profil", path: "/", showIcon: false },
-      {
-        key: "securityKey",
-        value: "Paramètres de sécurité",
-        path: "/",
-        showIcon: false,
-      },
-      {
-        key: "craAccountKey",
-        value: "Aller à Mon dossier de l’ARC",
-        path: "/",
-        showIcon: false,
-      },
-      { key: "outKey", value: "Se déconnecter", path: "/", showIcon: true },
-    ],
-  },
+  lang: "en",
+  isAuthenticated: false,
   topnavProps: {
     skipToMainPath: "#wb-cont",
     skipToAboutPath: "#wb-info",

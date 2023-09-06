@@ -65,11 +65,12 @@
 }
 
 .ds-language-toggle-abbr {
-  font-family: "Rubik", sans-serif;
+  font-size: 19px;
   text-transform: uppercase;
   color: #333333;
-  font-weight: 500;
+  font-weight: 700;
   text-decoration: none !important;
+  font-family: "Lato", sans-serif;
 }
 
 .search-section {
@@ -84,19 +85,42 @@
 
 .ds-search-input {
   font-family: "Noto Sans", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 23px;
-  width: 322px;
-  height: 35px;
-  border: 1px solid #8c9095;
+  width: full;
+  height: 37px;
+  border: 1px solid #e0e0e0;
   padding: 6px 12px !important;
   outline: none;
 }
 
+.ds-search-input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #5c5c5c;
+  opacity: 1;
+  /* Firefox */
+}
+
+.ds-search-input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #5c5c5c;
+}
+
+.ds-search-input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #5c5c5c;
+}
+
+@media (min-width: 768px) {
+  .ds-search-input {
+    width: 322px;
+  }
+}
+
 .ds-search-button {
   padding: 6px !important;
-  width: 35px;
-  height: 35px;
+  width: 42px;
+  height: 37px;
   background: #26374a;
   border: 1px solid #26374a;
 }
@@ -352,22 +376,27 @@
   .ds-language-toggle-abbr {
     display: none !important;
   }
+
   .ds-language-toggle-text {
     display: block;
   }
 }
+
 @media (min-width: 768px) {
   .ds-language-toggle-abbr {
     display: none !important;
   }
+
   .ds-language-toggle-text {
     display: block;
   }
 }
+
 @media (max-width: 576px) {
   .ds-language-toggle-abbr {
     display: block !important;
   }
+
   .ds-language-toggle-text {
     display: none !important;
   }

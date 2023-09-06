@@ -12,7 +12,7 @@ export function SearchBar(props) {
   const { searchIcon } = props;
   return (
     <form
-      className="ds-w-full ds-flex ds-justify-end ds-items-center"
+      className="ds-w-full md:ds-w-max-[360px] ds-flex ds-justify-end ds-items-center"
       role="search"
       name="search-box"
       onSubmit={props.onSubmit}
@@ -25,7 +25,7 @@ export function SearchBar(props) {
       <input
         onChange={props.onChange}
         id="search-input"
-        className="ds-search-input"
+        className="ds-search-input ds-w-full ds-text-[#5C5C5C]"
         type="search"
         placeholder={
           props.lang === "en"
@@ -33,7 +33,7 @@ export function SearchBar(props) {
             : FR.searchPlaceholderText
         }
       />
-      <div className="ds-search-button">
+      <div className="ds-search-button hover:ds-bg-[#444]">
         <button
           title={
             props.lang === "en"
@@ -43,7 +43,7 @@ export function SearchBar(props) {
           type="submit"
         >
           <Image
-            className="ds-search-icon"
+            className="ds-search-icon ds-ml-[2px]"
             src={searchIcon}
             alt="Search Service Canada"
           />
