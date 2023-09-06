@@ -31,7 +31,7 @@ export function FormSelectableCard(props) {
           <li
             className={`ds-min-h-[182px] ds-max-w-[360px] max-[574px]:ds-max-w-[290px] ds-rounded-lg hover:ds-shadow-[#0E62C9] ds-border-[1px] ${
               selected === id ? "ds-border-[#0E62C9]" : "ds-border-[#ACACAC]"
-            } hover:ds-border-[#0E62C9] hover:ds-shadow-sm ds-cursor-pointer ds-mb-8px`}
+            } hover:ds-border-[#0E62C9] hover:ds-drop-shadow-[0px_0px_6px_rgba(14,98,201,0.5)] ds-cursor-pointer ds-mb-8px`}
             key={index}
             id={index}
           >
@@ -71,7 +71,7 @@ const UpperCard = (props) => {
     <div
       className={`ds-h-[72px] ${
         props.selected === props.id ? "ds-bg-[#F2F8FF]" : "ds-bg-[#F5F5F5]"
-      } ds-rounded-t-lg  ds-border-[1px] ds-border-b-[0px]`}
+      } ds-rounded-t-lg  ds-border-[1px] hover:ds-border-[2px] ds-border-b-[0px]`}
     >
       <label
         htmlFor={props.id}
@@ -116,7 +116,7 @@ const UpperCard = (props) => {
 const LowerCard = (props) => {
   return (
     <div
-      className={`ds-min-h-[110px] ds-bg-white ds-rounded-b-lg ds-border-[1px] ds-border-t-[0px] ds-pl-[80px] max-[574px]:ds-pl-[72px] ds-pr-[24px] max-[574px]:ds-pr-[16px] ds-py-[12px]`}
+      className={`ds-min-h-[110px] ds-bg-white ds-rounded-b-lg ds-border-[1px] hover:ds-border-[2px] ds-border-t-[0px] ds-pl-[80px] max-[574px]:ds-pl-[72px] ds-pr-[24px] max-[574px]:ds-pr-[16px] ds-py-[12px]`}
     >
       <p className="ds-card-body-text ds-font-normal">{props.label}</p>
     </div>
