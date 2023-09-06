@@ -71,7 +71,7 @@ const UpperCard = (props) => {
     <div
       className={`ds-h-[72px] ${
         props.selected === props.id ? "ds-bg-[#F2F8FF]" : "ds-bg-[#F5F5F5]"
-      } ds-rounded-t-lg  ds-border-[1px] ds-border-b-[0px]`}
+      } ds-rounded-t-lg  ds-border-[1px] hover:ds-border-[2px] ds-border-b-[0px]`}
     >
       <label
         htmlFor={props.id}
@@ -116,7 +116,7 @@ const UpperCard = (props) => {
 const LowerCard = (props) => {
   return (
     <div
-      className={`ds-min-h-[110px] ds-bg-white ds-rounded-b-lg ds-border-[1px] ds-border-t-[0px] ds-pl-[80px] max-[574px]:ds-pl-[72px] ds-pr-[24px] max-[574px]:ds-pr-[16px] ds-py-[12px]`}
+      className={`ds-min-h-[110px] ds-bg-white ds-rounded-b-lg ds-border-[1px] hover:ds-border-[2px] ds-border-t-[0px] ds-pl-[80px] max-[574px]:ds-pl-[72px] ds-pr-[24px] max-[574px]:ds-pr-[16px] ds-py-[12px]`}
     >
       <p className="ds-card-body-text ds-font-normal">{props.label}</p>
     </div>
