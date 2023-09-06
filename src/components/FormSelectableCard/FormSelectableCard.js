@@ -2,11 +2,10 @@ import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { FormError } from "../FormError/FormError";
 import { FormLabel } from "../FormLabel/FormLabel";
-import { HintExpander } from "../HintExpander/HintExpander";
 import bank from "../../assets/bank.svg";
 
 export function FormSelectableCard(props) {
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(props.selected || null);
   const validationClass = props.hasError
     ? "ds-border-specific-red-red50b focus:ds-border-multi-blue-blue60f focus:ds-shadow-text-input"
     : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f focus:ds-shadow-text-input";
@@ -27,13 +26,14 @@ export function FormSelectableCard(props) {
           hintProps={props.hintProps}
         />
       )}
-      {props.options.map(
-        ({ id, label, checked, value, hasHint, hintProps }, index) => (
-          <div
+      <ul>
+        {props.options.map(({ id, label, checked, value }, index) => (
+          <li
             className={`ds-min-h-[182px] ds-max-w-[360px] max-[574px]:ds-max-w-[290px] ds-rounded-lg hover:ds-shadow-[#0E62C9] ds-border-[1px] ${
               selected === id ? "ds-border-[#0E62C9]" : "ds-border-[#ACACAC]"
             } hover:ds-border-[#0E62C9] hover:ds-shadow-sm ds-cursor-pointer ds-mb-8px`}
             key={index}
+            id={index}
           >
             <UpperCard
               {...props}
@@ -57,15 +57,16 @@ export function FormSelectableCard(props) {
               setSelected={setSelected}
               checked={checked}
             />
-          </div>
-        )
-      )}
+          </li>
+        ))}
+      </ul>
       {props.hasError && <FormError errorMessage={props.errorText} />}
     </div>
   );
 }
 
 const UpperCard = (props) => {
+  props.selected === props.id && handleScroll(props.index);
   return (
     <div
       className={`ds-h-[72px] ${
@@ -87,12 +88,10 @@ const UpperCard = (props) => {
             tabIndex={0}
             onChange={(e) => {
               props.setSelected((prev) => props.id);
-              console.log(props);
               props.onChange(props.value, e);
             }}
             data-testid={`${props.id}-${props.dataTestId}`}
             checked={props.selected === props.id}
-            defaultChecked={false}
           />
           <span
             role="radio"
@@ -124,6 +123,13 @@ const LowerCard = (props) => {
   );
 };
 
+const handleScroll = (id) => {
+  const scrollTo = document.getElementById(id);
+  if (scrollTo) {
+    scrollTo.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 FormSelectableCard.defaultProps = {
   checked: false,
   dataTestId: "primary-selectable-card",
@@ -144,6 +150,11 @@ FormSelectableCard.propTypes = {
    * trigger an error
    */
   hasError: PropTypes.bool,
+
+  /**
+   * Pre-selected item id
+   */
+  selected: PropTypes.bool,
 
   /**
    * Error message to be displayed
