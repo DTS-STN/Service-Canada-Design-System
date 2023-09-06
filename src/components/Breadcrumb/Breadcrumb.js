@@ -8,7 +8,7 @@ export function Breadcrumb(props) {
   const Component = props.component || "a";
   return (
     <nav className="ds-py-6" aria-label="breadcrumbs" id={props.id}>
-      <ul className="ds-block ds-text-custom-blue-dark ds-leading-23px ds-font-body">
+      <ul className="ds-block ds-text-custom-blue-dark ds-leading-23px ds-font-body ">
         {props.items
           ? props.items.map((item, index) => {
               return (
@@ -16,15 +16,15 @@ export function Breadcrumb(props) {
                   key={`list-${index}`}
                   className={`ds-inline-block ds-w-100 ds-pb-4 sm:ds-pb-0`}
                 >
+                  {index > 0 && (
+                    <span className="ds-mx-2 ds-inline-block ds-align-middle ds-text-multi-blue-blue70b ds-icon-cheveron-right ds-pr-2 ds-pl-2" />
+                  )}
                   <Component
                     href={item.link}
                     className="ds-font-body hover:ds-text-canada-footer-hover-font-blue ds-text-multi-blue-blue70b ds-underline"
                   >
                     {item.text}
                   </Component>
-                  {index < props.items.length - 1 && (
-                    <span className="ds-mx-2 ds-inline-block ds-align-middle ds-text-multi-blue-blue70b ds-icon-cheveron-right ds-pr-2 ds-pl-2" />
-                  )}
                 </li>
               );
             })

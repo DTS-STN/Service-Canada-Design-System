@@ -44,12 +44,14 @@ export function GlobalHeader(props) {
         <header>
           {/* Mobile */}
           <div
-            className={`${containerClass} sm:ds-hidden ds-container ds-flex ds-flex-col  md:ds-pb-14px ds-max-w-6xl ds-pb-[25px]`}
+            className={`${
+              containerClass || ""
+            } sm:ds-hidden ds-container ds-flex ds-flex-col  ds-pb-[12px] ds-max-w-6xl`}
           >
             <div
               className={`ds-flex ds-flex-row ds-w-full sm:ds-pt-[12px] ds-pb-[22px]`}
             >
-              <div className={`header-logo ds-pt-6px ds-mr-6`}>
+              <div className={`header-logo ds-mr-6`}>
                 <a href={breadCrumbItems[0].link}>
                   <Image
                     className={`${
@@ -96,7 +98,7 @@ export function GlobalHeader(props) {
                 />
               </div>
 
-              <div className="ds-flex ds-items-end ds-pb-[25px]">
+              <div className="ds-flex ds-items-start ds-pb-[12px]">
                 <div
                   className={`header-logo ds-flex-initial`}
                   property="publisher"
@@ -108,7 +110,7 @@ export function GlobalHeader(props) {
                         lang === "en"
                           ? "md:ds-max-h-[39px] ds-max-h-[33px]"
                           : "md:ds-max-h-[39px] ds-max-h-[33px]"
-                      } md:ds-max-w-[360px] ds-max-w-[293px]`}
+                      } md:ds-max-w-[360px] ds-max-w-[293px] ds-pt-0`}
                       src={lang === "en" ? logoFile : logoFileFR}
                       alt="Government of Canada"
                       proprty="logo"
