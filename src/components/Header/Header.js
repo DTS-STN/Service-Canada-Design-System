@@ -27,6 +27,7 @@ export function Header(props) {
     useParentContainer,
     customLink,
     dataGcAnalyticsCustomClickInstitutionVariable,
+    legacyBehavior,
   } = props;
 
   const containerClass = useParentContainer ? "" : "ds-container";
@@ -63,6 +64,7 @@ export function Header(props) {
                 path={linkPath}
                 locale={locale}
                 customLink={customLink}
+                legacyBehavior={legacyBehavior}
                 dataGcAnalyticsCustomClickInstitutionVariable={
                   dataGcAnalyticsCustomClickInstitutionVariable
                 }
@@ -85,6 +87,7 @@ export function Header(props) {
                   path={linkPath}
                   customLink={customLink}
                   locale={locale}
+                  legacyBehavior={legacyBehavior}
                   dataGcAnalyticsCustomClickInstitutionVariable={
                     dataGcAnalyticsCustomClickInstitutionVariable
                   }
@@ -99,6 +102,7 @@ export function Header(props) {
                 path={linkPath}
                 customLink={customLink}
                 locale={locale}
+                legacyBehavior={legacyBehavior}
                 dataGcAnalyticsCustomClickInstitutionVariable={
                   dataGcAnalyticsCustomClickInstitutionVariable
                 }
@@ -112,6 +116,7 @@ export function Header(props) {
             isAuthenticated={isAuthenticated}
             menuList={menuProps.menuList}
             onSignOut={menuProps.onSignOut}
+            legacyBehavior={menuProps.legacyBehavior}
             dataGcAnalyticsCustomClickInstitutionVariable={
               dataGcAnalyticsCustomClickInstitutionVariable
             }
@@ -223,6 +228,7 @@ Header.propTypes = {
     ),
     hasNoMenu: PropTypes.bool,
     useParentContainer: PropTypes.bool,
+    legacyBehavior: PropTypes.bool,
   }),
 
   /**

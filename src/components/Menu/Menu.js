@@ -59,9 +59,9 @@ export function Menu(props) {
             <button
               id="dropdownNavbarLink"
               onClick={() => setShowDropdown((e) => !e)}
-              data-gc-analytics-customclick={`${
-                props.dataGcAnalyticsCustomClickInstitutionVariable
-              }:${showDropdown ? "Menu Contract" : "Expand Menu"}`}
+              data-gc-analytics-customclick={`${dataGcAnalyticsCustomClickInstitutionVariable}:${
+                showDropdown ? "Menu Contract" : "Expand Menu"
+              }`}
               aria-haspopup="true"
               data-testid="menuButton"
               aria-expanded={showDropdown}
@@ -98,7 +98,7 @@ export function Menu(props) {
                 ) : (
                   <path
                     fillRule="evenodd"
-                    d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z z-10"
+                    d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
                     clipRule="evenodd"
                   />
                 )}
@@ -117,7 +117,10 @@ export function Menu(props) {
                       onClick={() => setShowDropdown(false)}
                       key={element.key}
                     >
-                      <Component href={element.path}>
+                      <Component
+                        href={element.path}
+                        legacyBehavior={props.legacyBehavior}
+                      >
                         <a
                           className={`${
                             index === 0 ? "ds-border-none" : "ds-border-t-2"
@@ -231,6 +234,11 @@ Menu.propTypes = {
    * set to true for Storybook demos only
    */
   demoBuffer: PropTypes.bool,
+
+  /**
+   * Support Next 13 legacyBehavior on next/link
+   */
+  legacyBehavior: PropTypes.bool,
 
   /**
    * List of menu items to display in dropdown with links
