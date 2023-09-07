@@ -49,11 +49,12 @@ export function Link(props) {
       lang={props.lang}
       target={props.target}
       aria-label={props.ariaLabel || props.text}
+      legacyBehavior={props.legacyBehavior}
       role="link"
+      locale={props.locale}
     >
       <a
         href={props.href}
-        locale={props.locale}
         onClick={props.onClick ? props.onClick : undefined}
         id={props.id}
         className={`${basicStyle}`}
@@ -154,4 +155,9 @@ Link.propTypes = {
    * Allow user to use configurable component, default is html anchor tag
    */
   component: PropTypes.elementType,
+
+  /**
+   * Support Next 13 legacyBehavior on next/link
+   */
+  legacyBehavior: PropTypes.bool,
 };
