@@ -2,61 +2,54 @@
 
 ## [1.67.9](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.8...v1.67.9) (2023-08-14)
 
-
 ### Bug Fixes
 
-* add className prop to footer ([7c6ad94](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7c6ad94756106d7f5d0255192cca06ec31b51ac8))
-* add explicit css class to footer ([4fcdb5a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4fcdb5ab13d6c0c5472622c1af22b81d66ef0259))
-* update font on li ([00b7d7b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/00b7d7bb65ccc7612ab6b0682d9d1396085ccab5))
+- add className prop to footer ([7c6ad94](https://github.com/DTS-STN/Service-Canada-Design-System/commit/7c6ad94756106d7f5d0255192cca06ec31b51ac8))
+- add explicit css class to footer ([4fcdb5a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/4fcdb5ab13d6c0c5472622c1af22b81d66ef0259))
+- update font on li ([00b7d7b](https://github.com/DTS-STN/Service-Canada-Design-System/commit/00b7d7bb65ccc7612ab6b0682d9d1396085ccab5))
 
 ## [1.67.8](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.7...v1.67.8) (2023-08-08)
 
-
 ### Bug Fixes
 
-* remove react-dom from dependencies ([cd6f092](https://github.com/DTS-STN/Service-Canada-Design-System/commit/cd6f092be8326d601f53cbf8c89c84ef2d2f209d))
+- remove react-dom from dependencies ([cd6f092](https://github.com/DTS-STN/Service-Canada-Design-System/commit/cd6f092be8326d601f53cbf8c89c84ef2d2f209d))
 
 ## [1.67.7](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.6...v1.67.7) (2023-08-08)
 
-
 ### Bug Fixes
 
-* update locale location in Link ([730e621](https://github.com/DTS-STN/Service-Canada-Design-System/commit/730e621407c015a4077d6ca2810421ee273f1f92))
+- update locale location in Link ([730e621](https://github.com/DTS-STN/Service-Canada-Design-System/commit/730e621407c015a4077d6ca2810421ee273f1f92))
 
 ## [1.67.6](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.5...v1.67.6) (2023-08-07)
 
-
 ### Bug Fixes
 
-* revert svg.d.ts file, update svg path ([fea059f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/fea059ffc3c5239238c4ce66e6d436efce971036))
+- revert svg.d.ts file, update svg path ([fea059f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/fea059ffc3c5239238c4ce66e6d436efce971036))
 
 ## [1.67.5](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.4...v1.67.5) (2023-08-07)
 
-
 ### Bug Fixes
 
-* remove svg.d.ts file ([5ea9f7f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5ea9f7fef807ea86e2565e57229cb5af02397403))
-* update dependencies ([c0c2a04](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c0c2a04b726b65913ed22c1d077297ba7fdabb73))
-* update dependencies ([81320ea](https://github.com/DTS-STN/Service-Canada-Design-System/commit/81320ea015bba0413dcd2beebf00ef91643fc93b))
+- remove svg.d.ts file ([5ea9f7f](https://github.com/DTS-STN/Service-Canada-Design-System/commit/5ea9f7fef807ea86e2565e57229cb5af02397403))
+- update dependencies ([c0c2a04](https://github.com/DTS-STN/Service-Canada-Design-System/commit/c0c2a04b726b65913ed22c1d077297ba7fdabb73))
+- update dependencies ([81320ea](https://github.com/DTS-STN/Service-Canada-Design-System/commit/81320ea015bba0413dcd2beebf00ef91643fc93b))
 
 ## [1.67.4](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.3...v1.67.4) (2023-08-07)
 
-
 ### Bug Fixes
 
-* add legacyBehavior prop on Link to support next/link ([173adf8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/173adf86129e2c7c456a7b6f7c45467b7ebeea38))
-* update alert heading ([65ce896](https://github.com/DTS-STN/Service-Canada-Design-System/commit/65ce896216ed3525360f91ccf71b98ed94eef32a))
+- add legacyBehavior prop on Link to support next/link ([173adf8](https://github.com/DTS-STN/Service-Canada-Design-System/commit/173adf86129e2c7c456a7b6f7c45467b7ebeea38))
+- update alert heading ([65ce896](https://github.com/DTS-STN/Service-Canada-Design-System/commit/65ce896216ed3525360f91ccf71b98ed94eef32a))
 
 ## [1.67.3](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.2...v1.67.3) (2023-08-02)
 
-
 ### Bug Fixes
 
-* merge release ([04a21e3](https://github.com/DTS-STN/Service-Canada-Design-System/commit/04a21e3cd11993a940a660c25427bba264eb14c2))
-* update ([264f52a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/264f52a637a308608a257797ae8d8bd2c29aa272))
-* update ([9b55698](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9b55698f604c321fc4134de54c1e87edacbe581f))
-* update ([f492822](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f4928225671c739534d5a8d794f16eb33e99ce36))
-* update ([36bf434](https://github.com/DTS-STN/Service-Canada-Design-System/commit/36bf434197ba212ae12b24d499e360f775e8b5c8))
+- merge release ([04a21e3](https://github.com/DTS-STN/Service-Canada-Design-System/commit/04a21e3cd11993a940a660c25427bba264eb14c2))
+- update ([264f52a](https://github.com/DTS-STN/Service-Canada-Design-System/commit/264f52a637a308608a257797ae8d8bd2c29aa272))
+- update ([9b55698](https://github.com/DTS-STN/Service-Canada-Design-System/commit/9b55698f604c321fc4134de54c1e87edacbe581f))
+- update ([f492822](https://github.com/DTS-STN/Service-Canada-Design-System/commit/f4928225671c739534d5a8d794f16eb33e99ce36))
+- update ([36bf434](https://github.com/DTS-STN/Service-Canada-Design-System/commit/36bf434197ba212ae12b24d499e360f775e8b5c8))
 
 ## [1.67.2](https://github.com/DTS-STN/Service-Canada-Design-System/compare/v1.67.1...v1.67.2) (2023-07-31)
 
