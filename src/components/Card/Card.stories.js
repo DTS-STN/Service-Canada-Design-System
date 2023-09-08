@@ -8,12 +8,12 @@ export default {
 
 const Template = (args) => <Card {...args} />;
 
-export const Primary = Template.bind({});
+export const Default = Template.bind({});
 export const WithLabel = Template.bind({});
 export const WithImage = Template.bind({});
 export const WithDate = Template.bind({});
 
-Primary.args = {
+Default.args = {
   size: "standard",
   title: "Title Link",
   href: "/some/link",
