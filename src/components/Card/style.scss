@@ -1,0 +1,43 @@
+.card {
+    width: 100%;
+    border: 1px solid rgba(221, 221, 221, 1);
+    border-radius: 6px;
+    box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.1);
+    padding: 0px 0px 20px 0px;
+
+    &--standard {
+        @media (min-width: 640px) {
+            max-width: 360px;
+        }
+    }
+
+    &--large {
+        @media (min-width: 640px) {
+            max-width: 550px;
+        }
+    }
+}
+
+.image-container {
+    display: flex;
+    width: 100%;
+    background-color: rgba(238, 237, 237, 1);
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 24px 0px 24px;
+    gap: 4px;
+}
+
+.description {
+    font-family: Noto Sans;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 6px;
+    color: rgba(85, 85, 85, 1)
+}
