@@ -1,0 +1,9 @@
+.footerLine::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 36px;
+  height: 4px;
+  background-color: #ffffff;
+}

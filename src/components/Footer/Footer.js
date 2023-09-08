@@ -39,6 +39,7 @@ for (const key in landscapeLinksEn.text) {
 
 export function Footer(props) {
   const {
+    className,
     error,
     lang,
     id,
@@ -52,6 +53,7 @@ export function Footer(props) {
     withMainBand,
     withContextualBand,
     contextualBandLinks,
+    contextualBandTitle,
     btnLink,
   } = props;
 
@@ -93,10 +95,15 @@ export function Footer(props) {
   const container = containerClass || "ds-container";
 
   return (
-    <footer id={id} className="ds-w-full" data-testid="ds-footer">
+    <footer
+      id={id}
+      className={`${className} ds-w-full`}
+      data-testid="ds-footer"
+    >
       <>
         {withContextualBand && (
           <ContextualBand
+            title={contextualBandTitle}
             container={container}
             target={target}
             contextualBandLinks={contextualBandLinks}

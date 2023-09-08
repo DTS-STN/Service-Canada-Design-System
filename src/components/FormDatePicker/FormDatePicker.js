@@ -137,7 +137,7 @@ export function FormDatePicker(props) {
     : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f focus:ds-shadow-text-input";
 
   return (
-    <>
+    <div id={id}>
       {hasLabel ? (
         <FormLabel
           label={formLabelProps.label}
@@ -146,6 +146,7 @@ export function FormDatePicker(props) {
           helpText={formLabelProps.helpText}
           hasHint={hasHint}
           hintProps={hintProps}
+          id={id}
         />
       ) : null}
       <div id={id} className="datePicker ds-relative ds-flex ds-flex-wrap">
@@ -186,7 +187,7 @@ export function FormDatePicker(props) {
               min={"1"}
               max={maxDay}
               onChange={_onDayChange}
-              className={`ds-w-[51px] ds-px-10px ds-rounded ds-date-text ds-border-2 ds-border-multi-neutrals-grey85a ds-py-5px ds-outline-none ${validationClass}`}
+              className={`ds-w-[51px] ds-h-[44px] ds-px-10px ds-rounded ds-date-text ds-border-2 ds-border-multi-neutrals-grey85a ds-py-5px ds-outline-none ${validationClass}`}
             />
           </div>
         ) : null}
@@ -202,7 +203,7 @@ export function FormDatePicker(props) {
               min={minYear}
               max={maxYear}
               onChange={_onYearChange}
-              className={`ds-w-[74px] ds-py-5px ds-px-10px ds-rounded ds-date-text ds-border-2 ds-border-multi-neutrals-grey85a ds-outline-none ${validationClass}`}
+              className={`ds-w-[74px] ds-h-[44px] ds-py-5px ds-px-10px ds-rounded ds-date-text ds-border-2 ds-border-multi-neutrals-grey85a ds-outline-none ${validationClass}`}
             />
           </div>
         ) : null}
@@ -222,7 +223,7 @@ export function FormDatePicker(props) {
       {hasError ? (
         <FormError errorMessage={formErrorProps.errorMessage} />
       ) : null}
-    </>
+    </div>
   );
 }
 

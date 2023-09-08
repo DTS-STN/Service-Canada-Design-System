@@ -15,9 +15,9 @@ export const CustomDropdown = (props) => {
   const clampedMinValue = Math.max(0, props.minValue);
   const clampedMaxValue = Math.min(99, props.maxValue);
 
-  const handleOptionClick = (option) => {
-    setSelectedOption(option);
-    props.onChange(option);
+  const handleOptionClick = (event, optionValue) => {
+    setSelectedOption(optionValue);
+    props.onChange(event); // pass the whole event back up
     setIsOpen(false);
   };
 
@@ -44,6 +44,8 @@ export const CustomDropdown = (props) => {
             props.hasError ? "ds-border-[#D3080C]" : "ds-border-[#6f6f66]"
           } dropdown-select ds-border-2`}
           onClick={() => setIsOpen(!isOpen)}
+          style={{ backgroundColor: "#FFFFFF" }}
+          type="button"
         >
           {isOpen ? (
             <div className={`ds-flex ${props.hasSearch ? "" : "ds-hidden"}`}>
@@ -81,11 +83,19 @@ export const CustomDropdown = (props) => {
                           index === 0
                             ? "ds-border-none"
                             : "ds-border-t-[1px] ds-border-[#666666] ds-border-opacity-60"
-                        } ${option.value === selectedOption ? "selected" : ""}`}
+                        } ${
+                          option.value === selectedOption ? "selected" : ""
+                        } ds-list-none`}
                       >
                         <button
-                          onClick={() => handleOptionClick(option.value)}
+                          id={option.id}
+                          onClick={(e) => {
+                            e.persist();
+                            handleOptionClick(e, option.value);
+                          }}
                           className="dropdown-option"
+                          style={{ backgroundColor: "#FFFFFF" }}
+                          type="button"
                         >
                           {option.value}
                         </button>
@@ -104,11 +114,19 @@ export const CustomDropdown = (props) => {
                           index === 0
                             ? "ds-border-none"
                             : "ds-border-t-[1px] ds-border-[#666666] ds-border-opacity-60"
-                        } ${option.value === selectedOption ? "selected" : ""}`}
+                        } ${
+                          option.value === selectedOption ? "selected" : ""
+                        } ds-list-none`}
                       >
                         <button
-                          onClick={() => handleOptionClick(option.value)}
+                          id={option.id}
+                          onClick={(e) => {
+                            e.persist();
+                            handleOptionClick(e, option.value);
+                          }}
                           className="dropdown-option"
+                          style={{ backgroundColor: "#FFFFFF" }}
+                          type="button"
                         >
                           {option.value}
                         </button>

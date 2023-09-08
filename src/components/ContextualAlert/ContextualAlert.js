@@ -49,20 +49,20 @@ export function ContextualAlert(props) {
         className={`ds-overflow-auto ds-border-l-6 ${alert_color} ds-pl-[24px] ds-py-[17px] ds-leading-8`}
       >
         {asHtml ? (
-          <h3
-            className="ds-heading3"
+          <p
+            className="ds-heading3 ds-ml-1"
             dangerouslySetInnerHTML={{ __html: message_heading }}
           />
         ) : (
-          <h3 className="ds-heading3">{message_heading}</h3>
+          <p className="ds-heading3 ds-ml-1">{message_heading}</p>
         )}
         {asHtml ? (
           <div
-            className="ds-body ds-pt-[12px]"
+            className="ds-body ds-ml-0.5"
             dangerouslySetInnerHTML={{ __html: message_body }}
           />
         ) : (
-          <div className="ds-body ds-pt-[12px]">{message_body}</div>
+          <div className="ds-body ds-ml-0.5">{message_body}</div>
         )}
       </div>
     </div>
