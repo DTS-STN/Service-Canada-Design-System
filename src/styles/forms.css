@@ -87,6 +87,7 @@
 .ds-radio .ds-label {
   -webkit-tap-highlight-color: transparent;
 }
+
 .ds-radio .ds-label:after {
   content: "";
   position: absolute;
@@ -101,6 +102,7 @@
   opacity: 0.08;
   pointer-events: none;
 }
+
 /* 
 input[type="radio"]:checked + .ds-label {
   border-color: #0e62c9;
