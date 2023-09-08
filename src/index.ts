@@ -22,7 +22,7 @@ export { Header } from "./components/Header/Header";
 export { Menu } from "./components/Menu/Menu";
 export { Footer } from "./components/Footer/Footer";
 export { ContextualAlert } from "./components/ContextualAlert/ContextualAlert";
-export { Cards } from "./components/Cards/Cards";
+export { Card } from "./components/Card/Card";
 export { Label } from "./components/Label/Label";
 export { Breadcrumb } from "./components/Breadcrumb/Breadcrumb";
 export { FormTextField } from "./components/FormTextField/FormTextField";
