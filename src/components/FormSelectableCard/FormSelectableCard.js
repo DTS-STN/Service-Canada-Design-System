@@ -35,8 +35,10 @@ export function FormSelectableCard(props) {
             } hover:ds-border-[#0E62C9] hover:ds-drop-shadow-[0px_0px_6px_rgba(14,98,201,0.5)] ds-cursor-pointer ds-mb-8px ds-border-[1px] hover:ds-border-[2px]`}
             key={index}
             id={index}
-            onFocus={() => {
+            onFocus={(e) => {
               setRadioHover(index);
+              props.setSelected(index);
+              props.onChange(value, e);
             }}
             onMouseOver={() => {
               setRadioHover(index);
