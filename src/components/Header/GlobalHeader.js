@@ -49,9 +49,11 @@ export function GlobalHeader(props) {
             } sm:ds-hidden ds-container ds-flex ds-flex-col ds-pb-[12px] ds-max-w-6xl ds-pt-[15px]`}
           >
             <div
-              className={`ds-flex ds-flex-row ds-w-full sm:ds-pt-[12px] ds-pb-[22px]`}
+              className={`ds-grid ds-grid-cols-4 ds-w-full sm:ds-pt-[12px] ds-pb-[22px]`}
             >
-              <div className={`header-logo ds-mt-[10px] ds-mb-[6px]`}>
+              <div
+                className={`header-logo ds-mt-[10px] ds-mb-[6px] ds-col-span-3`}
+              >
                 <a href={breadCrumbItems[0].link}>
                   <Image
                     className={`${
@@ -64,7 +66,7 @@ export function GlobalHeader(props) {
                 <meta property="name" content="Government of Canada" />
                 <meta property="areaServed" typeof="Country" content="Canada" />
               </div>
-              <div className="sm:ds-hidden ds-ml-auto ds-pb-10px">
+              <div className="sm:ds-hidden ds-ml-auto ds-pb-10px ds-col-span-1">
                 <Language
                   id="lang2"
                   lang={lang}
