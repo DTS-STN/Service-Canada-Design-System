@@ -46,17 +46,17 @@ export function GlobalHeader(props) {
           <div
             className={`${
               containerClass || ""
-            } sm:ds-hidden ds-container ds-flex ds-flex-col  ds-pb-[12px] ds-max-w-6xl`}
+            } sm:ds-hidden ds-container ds-flex ds-flex-col ds-pb-[12px] ds-max-w-6xl ds-pt-[15px]`}
           >
             <div
               className={`ds-flex ds-flex-row ds-w-full sm:ds-pt-[12px] ds-pb-[22px]`}
             >
-              <div className={`header-logo ds-mr-6`}>
+              <div className={`header-logo ds-mt-[10px] ds-mb-[6px]`}>
                 <a href={breadCrumbItems[0].link}>
                   <Image
                     className={`${
-                      lang === "en" ? "ds-max-h-[45px]" : "ds-max-h-[45px]"
-                    } ds-w-[100%] ds-h-[100%] ds-max-w-[441px] ds-pr-[20px]`}
+                      lang === "en" ? "ds-max-h-[31px]" : "ds-max-h-[32px]"
+                    } ds-w-[100%] ds-h-[100%] ds-max-w-[323px]`}
                     src={lang === "en" ? logoFile : logoFileFR}
                     alt="Government of Canada"
                   />
@@ -83,7 +83,7 @@ export function GlobalHeader(props) {
           </div>
           {/* Desktop */}
           <div className={containerClass ? containerClass : "ds-container"}>
-            <div className="ds-hidden sm:ds-contents ds-mx-auto ds-w-full">
+            <div className="ds-hidden sm:ds-contents ds-mx-auto ds-w-full ds-pt-[15px]">
               <div className="ds-flex ds-flex-row">
                 <div className="ds-w-full ds-mb-[45px]"></div>
                 <Language
@@ -100,7 +100,7 @@ export function GlobalHeader(props) {
 
               <div className="ds-flex ds-items-start ds-pb-[12px]">
                 <div
-                  className={`header-logo ds-flex-initial`}
+                  className={`header-logo ds-flex-initial ds-px-[15px] ds-pt-[10px] ds-mb-[10px]`}
                   property="publisher"
                   typeOf="GovernmentOrganization"
                 >
@@ -108,9 +108,9 @@ export function GlobalHeader(props) {
                     <Image
                       className={`${
                         lang === "en"
-                          ? "md:ds-max-h-[39px] ds-max-h-[33px]"
-                          : "md:ds-max-h-[39px] ds-max-h-[33px]"
-                      } md:ds-max-w-[360px] ds-max-w-[293px] ds-pt-0`}
+                          ? "md:ds-max-h-[29px] ds-max-h-[33px]"
+                          : "md:ds-max-h-[29px] ds-max-h-[33px]"
+                      } md:ds-max-w-[293px] ds-max-w-[282px] ds-pt-0`}
                       src={lang === "en" ? logoFile : logoFileFR}
                       alt="Government of Canada"
                       proprty="logo"
