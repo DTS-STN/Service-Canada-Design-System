@@ -43,7 +43,7 @@ export function SearchBar(props) {
           type="submit"
         >
           <Image
-            className="ds-search-icon ds-ml-[6px] ds-mt-[3px]"
+            className="ds-search-icon ds-ml-[4px] md:ds-ml-[6px] ds-mt-[3px]"
             src={searchIcon}
             alt="Search Service Canada"
           />
