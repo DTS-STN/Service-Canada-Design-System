@@ -58,7 +58,7 @@ export function GlobalHeader(props) {
                   <Image
                     className={`${
                       lang === "en" ? "ds-max-h-[31px]" : "ds-max-h-[32px]"
-                    } ds-w-[100%] ds-h-[100%] ds-max-w-[323px]p`}
+                    } ds-w-[100%] ds-h-[100%] ds-max-w-[323px]`}
                     src={lang === "en" ? logoFile : logoFileFR}
                     alt="Government of Canada"
                   />
