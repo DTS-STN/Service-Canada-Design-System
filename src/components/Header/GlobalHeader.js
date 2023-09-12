@@ -102,7 +102,7 @@ export function GlobalHeader(props) {
 
               <div className="ds-flex ds-items-start ds-pb-[12px]">
                 <div
-                  className={`header-logo ds-flex-initial ds-px-[15px] ds-pt-[10px] ds-mb-[10px]`}
+                  className={`header-logo ds-flex-initial ds-pr-[15px] ds-pt-[10px] ds-mb-[10px]`}
                   property="publisher"
                   typeOf="GovernmentOrganization"
                 >
