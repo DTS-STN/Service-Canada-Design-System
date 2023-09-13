@@ -9,7 +9,7 @@ export function FormRadioButton(props) {
     ? "ds-border-specific-red-red50b focus:ds-border-multi-blue-blue60f focus:ds-shadow-text-input"
     : "ds-border-multi-neutrals-grey85a focus:ds-border-multi-blue-blue60f focus:ds-shadow-text-input";
   return (
-    <>
+    <div id={props.id}>
       {props.label && (
         <FormLabel
           id={props.id}
@@ -73,7 +73,7 @@ export function FormRadioButton(props) {
         )
       )}
       {props.hasError && <FormError errorMessage={props.errorText} />}
-    </>
+    </div>
   );
 }
 
