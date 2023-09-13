@@ -14,7 +14,7 @@ export function Card(props) {
       data-testid={props.dataTestId}
       data-cy={props.dataCy}
     >
-      <Component href={props.href} {...props.LinkProps} class>
+      <Component href={props.href} {...props.LinkProps}>
         <div>
           {props.showImage && (
             <div className={imageContainer}>
