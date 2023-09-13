@@ -49,7 +49,7 @@ export function GlobalHeader(props) {
             } sm:ds-hidden ds-container ds-flex ds-flex-col ds-pb-[12px] ds-max-w-6xl ds-pt-[15px]`}
           >
             <div
-              className={`ds-grid ds-grid-cols-4 ds-w-full sm:ds-pt-[12px] ds-pb-[22px]`}
+              className={`ds-grid ds-grid-cols-4 ds-w-full sm:ds-pt-[12px] ds-pb-[16px]`}
             >
               <div
                 className={`header-logo ds-mt-[10px] ds-mb-[6px] ds-col-span-3 ds-flex ds-items-start`}
