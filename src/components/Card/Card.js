@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "../Link/Link";
 import { Label } from "../Label/Label";
 import "./style.scss";
 
 export function Card(props) {
   const cardStyle = `card card--${props.size}`;
+  const imageContainer = `image-container image-container--${props.size}`;
+  const Component = props.LinkComponent ? props.LinkComponent : "a";
 
   return (
     <div
@@ -13,27 +14,26 @@ export function Card(props) {
       data-testid={props.dataTestId}
       data-cy={props.dataCy}
     >
-      {props.showImage && (
-        <div className="image-container">
-          <img
-            src={props.imgSrc}
-            alt={props.imgAlt}
-            className="ds-object-fill"
-          />
+      <Component href={props.href} {...props.LinkProps} class>
+        <div>
+          {props.showImage && (
+            <div className={imageContainer}>
+              <img
+                src={props.imgSrc}
+                alt={props.imgAlt}
+                className="ds-object-fill"
+              />
+            </div>
+          )}
+          <div className="body">
+            <p className="title">{props.title}</p>
+            {props.showLabel && (
+              <Label type={props.labelType} text={props.labelText} />
+            )}
+            <p className="description">{props.description}</p>
+          </div>
         </div>
-      )}
-      <div className="body">
-        <Link
-          linkStyle="titleLink"
-          href={props.href}
-          text={props.title}
-          ariaLabel={props.title}
-        />
-        {props.showLabel && (
-          <Label type={props.labelType} text={props.labelText} />
-        )}
-        <p className="description">{props.description}</p>
-      </div>
+      </Component>
     </div>
   );
 }
@@ -87,4 +87,14 @@ Card.propTypes = {
    * Boolean value to show or hide tag
    */
   showLabel: PropTypes.bool,
+
+  /**
+   * Custom link component, e.g. next/link for client-side routing.
+   */
+  LinkComponent: PropTypes.elementType,
+
+  /**
+   * Props for the custom link component.
+   */
+  customLinkProps: PropTypes.object,
 };
