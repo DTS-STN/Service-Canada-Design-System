@@ -4,15 +4,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import PropTypes from "prop-types";
 import React from "react";
-import { TopNav } from "../TopNav/TopNav";
-import { Menu } from "../Menu/Menu";
 import { Image } from "../Image/Image";
 import logoFile from "../../assets/sig-blk-en.svg";
 import logoFileFR from "../../assets/sig-blk-fr.svg";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { Language } from "../Language/Language";
 import { Breadcrumb } from "../Breadcrumb/Breadcrumb";
-import dropdown from "../../assets/dropdown.svg";
 
 export function GlobalHeader(props) {
   const {
@@ -30,9 +27,6 @@ export function GlobalHeader(props) {
     customLink,
     dataGcAnalyticsCustomClickInstitutionVariable,
   } = props;
-
-  // const containerClass =
-  //   useParentContainer || !isAuthenticated ? "" : "ds-container";
 
   return (
     <>
@@ -66,7 +60,7 @@ export function GlobalHeader(props) {
                 <meta property="name" content="Government of Canada" />
                 <meta property="areaServed" typeof="Country" content="Canada" />
               </div>
-              <div className="sm:ds-hidden ds-ml-auto ds-pb-10px ds-col-span-1 ds-align-top">
+              <div className="sm:ds-hidden ds-ml-auto ds-col-span-1 ds-align-top">
                 <Language
                   id="lang2"
                   lang={lang}
