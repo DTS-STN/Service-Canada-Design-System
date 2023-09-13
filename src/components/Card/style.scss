@@ -5,6 +5,10 @@
     box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.1);
     padding: 0px 0px 20px 0px;
 
+    &:hover .title {
+        color: #0535D2
+    }
+
     &--standard {
         @media (min-width: 640px) {
             max-width: 360px;
@@ -13,7 +17,7 @@
 
     &--large {
         @media (min-width: 640px) {
-            max-width: 550px;
+            max-width: 555px;
         }
     }
 }
@@ -22,13 +26,37 @@
     display: flex;
     width: 100%;
     background-color: rgba(238, 237, 237, 1);
+    &--standard {
+        @media (min-width: 640px) {
+            max-height: 208px;
+        }
+    }
+
+    &--large {
+        @media (min-width: 640px) {
+            max-height: 321px;
+        }
+    }
+}
+
+.title {
+    color: #284162;
+    text-decoration: underline;
+    font-family: "Lato";
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 28px;
+
+    &:hover {
+        color: #0535D2
+    }
 }
 
 .body {
     display: flex;
     flex-direction: column;
     padding: 20px 24px 0px 24px;
-    gap: 4px;
+    gap: 6px;
 }
 
 .description {
@@ -38,6 +66,6 @@
     line-height: 26px;
     letter-spacing: 0em;
     text-align: left;
-    margin-top: 6px;
+    margin-top: 4px;
     color: rgba(85, 85, 85, 1)
 }

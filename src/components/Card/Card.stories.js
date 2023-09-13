@@ -11,7 +11,6 @@ const Template = (args) => <Card {...args} />;
 export const Default = Template.bind({});
 export const WithLabel = Template.bind({});
 export const WithImage = Template.bind({});
-export const WithDate = Template.bind({});
 
 Default.args = {
   size: "standard",
