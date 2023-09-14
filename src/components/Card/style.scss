@@ -1,3 +1,5 @@
+$multi_use_blue: rgba(14,98,201,1);
+
 .card {
     width: 100%;
     border: 1px solid rgba(221, 221, 221, 1);
@@ -5,12 +7,17 @@
     box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.1);
 
     &:hover {
-        border: 1px solid rgba(14,98,201,1);
-        box-shadow: 0px 0px 6px rgba(14,98,201,1);
+        border: 1px solid $multi_use_blue;
+        box-shadow: 0px 0px 6px $multi_use_blue;
     }
 
     &:hover .title {
-        color: #0535D2
+        color: #0535D2;
+    }
+
+    &:focus {
+        outline: none;
+        border: 1px solid $multi_use_blue;
     }
 
     &--standard {
