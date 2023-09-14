@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React from "react";
 import PropTypes from "prop-types";
 import { Label } from "../Label/Label";
@@ -13,6 +14,8 @@ export function Card(props) {
       className={cardStyle}
       data-testid={props.dataTestId}
       data-cy={props.dataCy}
+      aria-label={props.ariaLabel}
+      tabIndex="0"
     >
       <Component href={props.href} {...props.LinkProps}>
         <div>
