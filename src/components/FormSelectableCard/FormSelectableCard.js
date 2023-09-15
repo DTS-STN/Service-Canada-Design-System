@@ -37,7 +37,7 @@ export function FormSelectableCard(props) {
             id={index}
             onFocus={(e) => {
               setRadioHover(index);
-              props.setSelected(index);
+              setSelected(index);
               props.onChange(value, e);
             }}
             onMouseOver={() => {
