@@ -31,7 +31,7 @@
     "react-select": "^5.7.3",
     "react-syntax-highlighter": "^15.5.0",
     "release-please": "^14.17.3",
-    "sass": "^1.62.1",
+    "sass": "^1.69.1",
     "sass-loader": "^10.4.1",
     "shelljs": "^0.8.5",
     "ts-jest": "^29.1.0",
